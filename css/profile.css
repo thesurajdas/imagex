@@ -1,0 +1,41 @@
+
+.crd{
+    padding-top: 100px;
+}
+
+.crdbak{
+    height: 100px;
+}
+
+.cardimg{
+    margin: 0;
+    height: 350px;
+    object-fit: cover;
+    border-radius: 25px;
+}
+
+.profilecon{
+    margin-left: 70px;
+    margin-top: 100px;
+}
+
+.profileimg{
+    height: 230px;
+    width: 230px;
+}
+
+.cd{
+    border-radius: 25px;
+}
+
+.profiledes{
+    margin-top: 100px;
+}
+
+.usname{
+    text-align: center;
+}
+
+.det{
+    text-align: center;
+}
