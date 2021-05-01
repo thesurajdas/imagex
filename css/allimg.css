@@ -1,0 +1,46 @@
+.logp{
+    height: 25px;
+    width: 25px;
+}
+
+.navbar-toggler{
+    border: none;
+}
+.glry{
+    margin-top: 100px;
+    padding-top: 10px;
+    align-items: center;
+}
+
+.theading{
+    padding-top: 10px;
+    padding-bottom: 10px;
+    color: cornsilk;
+    text-shadow: 0 0 5px #4e4d4e;
+}
+.sglry{
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+.hi{
+    padding-bottom: 20px;
+    height: 250px;
+    object-fit: cover;
+}
+
+.im{
+    width: 100%;
+    height: 195px;
+    object-fit: cover;
+}
+
+.card:hover{
+    -webkit-box-shadow: -1px 9px 40px -12px rgba(0,0,0,0.75);
+    -moz-box-shadow: -1px 9px 40px -12px rgba(0,0,0,0.75);
+    box-shadow: -1px 9px 40px -12px rgba(0,0,0,0.75);
+}
+
+.pn{
+    padding-top: 10px;
+    padding-bottom: 10px;
+}
