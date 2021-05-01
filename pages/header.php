@@ -9,7 +9,7 @@
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
             <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
                 <li class="nav-item active">
-                    <a class="nav-link" href="fullimg.php" tabindex="-1" aria-disabled="true">Home</a>
+                    <a class="nav-link" href="pages/fullimg.php" tabindex="-1" aria-disabled="true">Home</a>
                 </li>
                 <li class="nav-item dropdown border-right-0">
                     <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Categories</a>
