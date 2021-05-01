@@ -19,7 +19,7 @@
         <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.4.1/font/bootstrap-icons.css">
     </head>
 <body>
-    <?php include 'pages/header.php'; ?>
+    <?php include 'header.php'; ?>
     <p>This is a paragraph.</p>
 </body>
 </html>
