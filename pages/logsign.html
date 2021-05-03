@@ -51,11 +51,11 @@
             </div>
             <div class="input-field">
               <i class="fas fa-lock"></i>
-              <input type="password" placeholder="Password" required/>
+              <input type="password" placeholder="Password" id="password" required/>
             </div>
             <div class="input-field">
               <i class="fas fa-lock"></i>
-              <input type="password" placeholder="Retype Password" required/>
+              <input type="password" placeholder="Confirm Password" id="confirm_password" required/>
             </div>
             <input type="submit" class="btn" value="Sign up" />
             <!--<p class="social-text">Or Sign up with social platforms</p>
@@ -112,6 +112,22 @@
       </div>
     </div>
 
+<!-- Password Retype Password Checker -->
+<script>
+        var password = document.getElementById("password")
+        , confirm_password = document.getElementById("confirm_password");
+
+      function validatePassword(){
+        if(password.value != confirm_password.value) {
+          confirm_password.setCustomValidity("Passwords Don't Match");
+        } else {
+          confirm_password.setCustomValidity('');
+        }
+      }
+
+      password.onchange = validatePassword;
+      confirm_password.onkeyup = validatePassword;
+</script>
     <script src="../js/logsign.js"></script>
   </body>
 </html>
