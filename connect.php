@@ -10,7 +10,4 @@
         if ($connect->connect_error) {
             die ("Failed to connect!");
         }
-        else{
-            echo "<font color='green'>Connected!</font><hr>";
-        }
 ?>
