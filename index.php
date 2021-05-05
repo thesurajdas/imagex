@@ -16,6 +16,7 @@
             }
         </style>
 
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" rel="stylesheet">
         <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.4.1/font/bootstrap-icons.css">
     </head>
     <body>
@@ -50,11 +51,11 @@
                     </ul>
                     <form class="form-inline my-2 my-lg-0">
                         <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
-                        <button class="btn btn btn-outline-info my-2 my-sm-0" type="submit"><i class="bi bi-search"></i></button>
+                        <button class="btn btn btn-outline-info my-2 my-sm-0" type="submit"><i class="fas fa-search"></i></button>
                     </form>
                     <ul class="navbar-nav">
                         <li class="nav-item">
-                            <a class="nav-link" href="pages/upload.html" tabindex="-1" aria-disabled="true"><button type="button" class="btn btn-outline-success"><i class="bi bi-cloud-arrow-up"></i></button></a>
+                            <a class="nav-link" href="pages/upload.html" tabindex="-1" aria-disabled="true"><button type="button" class="btn btn-outline-success"><i class="fas fa-cloud-upload-alt"></i></button></a>
                         </li>
                         <li class="nav-item dropleft text-decoration-none">
                             <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><button type="button" class="btn btn-outline-warning"><img class="logp rounded-circle" src="https://picsum.photos/id/237/200/300" alt=""></button></a>
@@ -68,7 +69,7 @@
                             </div>
                         </li>
                         <li class="nav-item dropleft text-decoration-none">
-                            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><button type="button" class="btn btn-outline-warning"><i class="bi bi-emoji-expressionless-fill"></button></i></a>
+                            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><button type="button" class="btn btn-outline-warning"><i class="fas fa-user-circle"></i></button></a>
                             <div class="dropdown-menu" aria-labelledby="navbarDropdown">
                                 <a class="dropdown-item" href="pages/login.php">Sign In</a>
                                 <div class="dropdown-divider"></div>
@@ -144,164 +145,145 @@
         <!-----------------------------------------------image-section-------------------------------------------->
 
         <div class="container shadow-lg p-3 mb-5 bg-white rounded my-3 glry">
-                <div class="row">
+            <div class="row">
                     <div class="col-lg-4 col-md-6 col-sm-12 sglry">
-                        <div class="card text-center">
-                            <img class="im" src="https://dummyimage.com/600x400/000/fff1.jpg" alt="Card image cap">
-                            <div class="card-body">
-                                <div class="container">
-                                    <div class="row justify-content-between">
-                                        <a href="#" class="btn btn-danger col-2"><i class="bi bi-suit-heart-fill"></i></a>
-                                        <a href="#" class="btn btn-success col-2"><i class="bi bi-download"></i></a>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>         
-                    <div class="col-lg-4 col-md-6 col-sm-12 sglry">
-                        <div class="card text-center">
+                        <div class="card cds">
                             <img class="im" src="https://dummyimage.com/600x400/000/fff2.jpg" alt="Card image cap">
-                            <div class="card-body">
+                            <div class="card-text cds-txt">
+                                <h3>Image Name</h3>
+                                <a href="" class=" text-decoration-none text-white"><h5><img class="upimg" src="https://picsum.photos/id/237/200/300" alt=""> username</h5></a>
                                 <div class="container">
-                                    <div class="row justify-content-between">
-                                        <a href="#" class="btn btn-danger col-2"><i class="bi bi-suit-heart-fill"></i></a>
-                                        <a href="#" class="btn btn-success col-2"><i class="bi bi-download"></i></a>
+                                    <div class="row chbtn">
+                                        <a href="#" class="btn btn-outline-danger cbtn" title="Save This Image" style="margin-right: 5px;"><i class="fas fa-heart"></i> <span>500</span></a>
+                                        <a href="#" class="btn btn btn-outline-light cbtn" title="View Image" style="margin-left: 5px;"><i class="fas fa-eye"></i> <span>500</span></a>
                                     </div>
                                 </div>
                             </div>
                         </div>
                     </div>         
                     <div class="col-lg-4 col-md-6 col-sm-12 sglry">
-                        <div class="card text-center">
-                            <img class="im" src="https://dummyimage.com/600x400/000/fff3.jpg" alt="Card image cap">
-                            <div class="card-body">
+                        <div class="card cds">
+                            <img class="im" src="https://dummyimage.com/600x400/000/fff2.jpg" alt="Card image cap">
+                            <div class="card-text cds-txt">
+                                <h3>Image Name</h3>
+                                <a href="" class=" text-decoration-none text-white"><h5><img class="upimg" src="https://picsum.photos/id/237/200/300" alt=""> username</h5></a>
                                 <div class="container">
-                                    <div class="row justify-content-between">
-                                        <a href="#" class="btn btn-danger col-2"><i class="bi bi-suit-heart-fill"></i></a>
-                                        <a href="#" class="btn btn-success col-2"><i class="bi bi-download"></i></a>
+                                    <div class="row chbtn">
+                                        <a href="#" class="btn btn-outline-danger cbtn" title="Save This Image" style="margin-right: 5px;"><i class="fas fa-heart"></i> <span>500</span></a>
+                                        <a href="#" class="btn btn btn-outline-light cbtn" title="View Image" style="margin-left: 5px;"><i class="fas fa-eye"></i> <span>500</span></a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>               
+                    <div class="col-lg-4 col-md-6 col-sm-12 sglry">
+                        <div class="card cds">
+                            <img class="im" src="https://dummyimage.com/600x400/000/fff2.jpg" alt="Card image cap">
+                            <div class="card-text cds-txt">
+                                <h3>Image Name</h3>
+                                <a href="" class=" text-decoration-none text-white"><h5><img class="upimg" src="https://picsum.photos/id/237/200/300" alt=""> username</h5></a>
+                                <div class="container">
+                                    <div class="row chbtn">
+                                        <a href="#" class="btn btn-outline-danger cbtn" title="Save This Image" style="margin-right: 5px;"><i class="fas fa-heart"></i> <span>500</span></a>
+                                        <a href="#" class="btn btn btn-outline-light cbtn" title="View Image" style="margin-left: 5px;"><i class="fas fa-eye"></i> <span>500</span></a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>               
+                    <div class="col-lg-4 col-md-6 col-sm-12 sglry">
+                        <div class="card cds">
+                            <img class="im" src="https://dummyimage.com/600x400/000/fff2.jpg" alt="Card image cap">
+                            <div class="card-text cds-txt">
+                                <h3>Image Name</h3>
+                                <a href="" class=" text-decoration-none text-white"><h5><img class="upimg" src="https://picsum.photos/id/237/200/300" alt=""> username</h5></a>
+                                <div class="container">
+                                    <div class="row chbtn">
+                                        <a href="#" class="btn btn-outline-danger cbtn" title="Save This Image" style="margin-right: 5px;"><i class="fas fa-heart"></i> <span>500</span></a>
+                                        <a href="#" class="btn btn btn-outline-light cbtn" title="View Image" style="margin-left: 5px;"><i class="fas fa-eye"></i> <span>500</span></a>
                                     </div>
                                 </div>
                             </div>
                         </div>
                     </div>         
                     <div class="col-lg-4 col-md-6 col-sm-12 sglry">
-                        <div class="card text-center">
-                            <img class="im" src="https://dummyimage.com/600x400/000/fff4.jpg" alt="Card image cap">
-                            <div class="card-body">
+                        <div class="card cds">
+                            <img class="im" src="https://dummyimage.com/600x400/000/fff2.jpg" alt="Card image cap">
+                            <div class="card-text cds-txt">
+                                <h3>Image Name</h3>
+                                <a href="" class=" text-decoration-none text-white"><h5><img class="upimg" src="https://picsum.photos/id/237/200/300" alt=""> username</h5></a>
                                 <div class="container">
-                                    <div class="row justify-content-between">
-                                        <a href="#" class="btn btn-danger col-2"><i class="bi bi-suit-heart-fill"></i></a>
-                                        <a href="#" class="btn btn-success col-2"><i class="bi bi-download"></i></a>
+                                    <div class="row chbtn">
+                                        <a href="#" class="btn btn-outline-danger cbtn" title="Save This Image" style="margin-right: 5px;"><i class="fas fa-heart"></i> <span>500</span></a>
+                                        <a href="#" class="btn btn btn-outline-light cbtn" title="View Image" style="margin-left: 5px;"><i class="fas fa-eye"></i> <span>500</span></a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>               
+                    <div class="col-lg-4 col-md-6 col-sm-12 sglry">
+                        <div class="card cds">
+                            <img class="im" src="https://dummyimage.com/600x400/000/fff2.jpg" alt="Card image cap">
+                            <div class="card-text cds-txt">
+                                <h3>Image Name</h3>
+                                <a href="" class=" text-decoration-none text-white"><h5><img class="upimg" src="https://picsum.photos/id/237/200/300" alt=""> username</h5></a>
+                                <div class="container">
+                                    <div class="row chbtn">
+                                        <a href="#" class="btn btn-outline-danger cbtn" title="Save This Image" style="margin-right: 5px;"><i class="fas fa-heart"></i> <span>500</span></a>
+                                        <a href="#" class="btn btn btn-outline-light cbtn" title="View Image" style="margin-left: 5px;"><i class="fas fa-eye"></i> <span>500</span></a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>               
+                    <div class="col-lg-4 col-md-6 col-sm-12 sglry">
+                        <div class="card cds">
+                            <img class="im" src="https://dummyimage.com/600x400/000/fff2.jpg" alt="Card image cap">
+                            <div class="card-text cds-txt">
+                                <h3>Image Name</h3>
+                                <a href="" class=" text-decoration-none text-white"><h5><img class="upimg" src="https://picsum.photos/id/237/200/300" alt=""> username</h5></a>
+                                <div class="container">
+                                    <div class="row chbtn">
+                                        <a href="#" class="btn btn-outline-danger cbtn" title="Save This Image" style="margin-right: 5px;"><i class="fas fa-heart"></i> <span>500</span></a>
+                                        <a href="#" class="btn btn btn-outline-light cbtn" title="View Image" style="margin-left: 5px;"><i class="fas fa-eye"></i> <span>500</span></a>
                                     </div>
                                 </div>
                             </div>
                         </div>
                     </div>         
                     <div class="col-lg-4 col-md-6 col-sm-12 sglry">
-                        <div class="card text-center">
-                            <img class="im" src="https://dummyimage.com/600x400/000/fff5.jpg" alt="Card image cap">
-                            <div class="card-body">
+                        <div class="card cds">
+                            <img class="im" src="https://dummyimage.com/600x400/000/fff2.jpg" alt="Card image cap">
+                            <div class="card-text cds-txt">
+                                <h3>Image Name</h3>
+                                <a href="" class=" text-decoration-none text-white"><h5><img class="upimg" src="https://picsum.photos/id/237/200/300" alt=""> username</h5></a>
                                 <div class="container">
-                                    <div class="row justify-content-between">
-                                        <a href="#" class="btn btn-danger col-2"><i class="bi bi-suit-heart-fill"></i></a>
-                                        <a href="#" class="btn btn-success col-2"><i class="bi bi-download"></i></a>
+                                    <div class="row chbtn">
+                                        <a href="#" class="btn btn-outline-danger cbtn" title="Save This Image" style="margin-right: 5px;"><i class="fas fa-heart"></i> <span>500</span></a>
+                                        <a href="#" class="btn btn btn-outline-light cbtn" title="View Image" style="margin-left: 5px;"><i class="fas fa-eye"></i> <span>500</span></a>
                                     </div>
                                 </div>
                             </div>
                         </div>
-                    </div>         
+                    </div>               
                     <div class="col-lg-4 col-md-6 col-sm-12 sglry">
-                        <div class="card text-center">
-                            <img class="im" src="https://dummyimage.com/600x400/000/fff6.jpg" alt="Card image cap">
-                            <div class="card-body">
+                        <div class="card cds">
+                            <img class="im" src="https://dummyimage.com/600x400/000/fff2.jpg" alt="Card image cap">
+                            <div class="card-text cds-txt">
+                                <h3>Image Name</h3>
+                                <a href="" class=" text-decoration-none text-white"><h5><img class="upimg" src="https://picsum.photos/id/237/200/300" alt=""> username</h5></a>
                                 <div class="container">
-                                    <div class="row justify-content-between">
-                                        <a href="#" class="btn btn-danger col-2"><i class="bi bi-suit-heart-fill"></i></a>
-                                        <a href="#" class="btn btn-success col-2"><i class="bi bi-download"></i></a>
+                                    <div class="row chbtn">
+                                        <a href="#" class="btn btn-outline-danger cbtn" title="Save This Image" style="margin-right: 5px;"><i class="fas fa-heart"></i> <span>500</span></a>
+                                        <a href="#" class="btn btn btn-outline-light cbtn" title="View Image" style="margin-left: 5px;"><i class="fas fa-eye"></i> <span>500</span></a>
                                     </div>
                                 </div>
                             </div>
                         </div>
-                    </div>         
-                    <div class="col-lg-4 col-md-6 col-sm-12 sglry">
-                        <div class="card text-center">
-                            <img class="im" src="https://dummyimage.com/600x400/000/fff7.jpg" alt="Card image cap">
-                            <div class="card-body">
-                                <div class="container">
-                                    <div class="row justify-content-between">
-                                        <a href="#" class="btn btn-danger col-2"><i class="bi bi-suit-heart-fill"></i></a>
-                                        <a href="#" class="btn btn-success col-2"><i class="bi bi-download"></i></a>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>         
-                    <div class="col-lg-4 col-md-6 col-sm-12 sglry">
-                        <div class="card text-center">
-                            <img class="im" src="https://dummyimage.com/600x400/000/fff8.jpg" alt="Card image cap">
-                            <div class="card-body">
-                                <div class="container">
-                                    <div class="row justify-content-between">
-                                        <a href="#" class="btn btn-danger col-2"><i class="bi bi-suit-heart-fill"></i></a>
-                                        <a href="#" class="btn btn-success col-2"><i class="bi bi-download"></i></a>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>         
-                    <div class="col-lg-4 col-md-6 col-sm-12 sglry">
-                        <div class="card text-center">
-                            <img class="im" src="https://dummyimage.com/600x400/000/fff9.jpeg" alt="Card image cap">
-                            <div class="card-body">
-                                <div class="container">
-                                    <div class="row justify-content-between">
-                                        <a href="#" class="btn btn-danger col-2"><i class="bi bi-suit-heart-fill"></i></a>
-                                        <a href="#" class="btn btn-success col-2"><i class="bi bi-download"></i></a>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>         
-                    <div class="col-lg-4 col-md-6 col-sm-12 sglry">
-                        <div class="card text-center">
-                            <img class="im" src="https://dummyimage.com/600x400/000/fff10.jpg" alt="Card image cap">
-                            <div class="card-body">
-                                <div class="container">
-                                    <div class="row justify-content-between">
-                                        <a href="#" class="btn btn-danger col-2"><i class="bi bi-suit-heart-fill"></i></a>
-                                        <a href="#" class="btn btn-success col-2"><i class="bi bi-download"></i></a>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>         
-                    <div class="col-lg-4 col-md-6 col-sm-12 sglry">
-                        <div class="card text-center">
-                            <img class="im" src="https://dummyimage.com/600x400/000/fff11.jpg" alt="Card image cap">
-                            <div class="card-body">
-                                <div class="container">
-                                    <div class="row justify-content-between">
-                                        <a href="#" class="btn btn-danger col-2"><i class="bi bi-suit-heart-fill"></i></a>
-                                        <a href="#" class="btn btn-success col-2"><i class="bi bi-download"></i></a>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>         
-                    <div class="col-lg-4 col-md-6 col-sm-12 sglry">
-                        <div class="card text-center">
-                            <img class="im" src="https://dummyimage.com/600x400/000/fff12.jpg" alt="Card image cap">
-                            <div class="card-body">
-                                <div class="container">
-                                    <div class="row justify-content-between">
-                                        <a href="#" class="btn btn-danger col-2"><i class="bi bi-suit-heart-fill"></i></a>
-                                        <a href="#" class="btn btn-success col-2"><i class="bi bi-download"></i></a>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>         
-                </div>        
+                    </div>               
+                             
+                             
+            </div>        
         </div>
         <!----------------------Footer Section---------------------------------------------------->
         <footer>
@@ -333,15 +315,15 @@
                                 <h5 class="text-uppercase mb-4 font-wight-bold text-info text-dark">Connect With Us</h5>
                                 <hrc class="mb-4">
                                 <p>
-                                    <i class="bi bi-house mr-3" ></i>Short Address,pin-0000000
+                                    <i class="fas fa-house-user"></i> <span>Short Address,pin-0000000</span>
                                         
                                 </p>
                                 <p>
-                                    <i class="bi bi-envelope mr-3"></i>abc@xyz.com
+                                    <i class="fas fa-at"></i> <span>abc@xyz.com</span>
                                         
                                 </p>
                                 <p>
-                                    <i class="bi bi-telephone-plus mr-3"></i>1234567890
+                                    <i class="fas fa-phone-square-alt"></i> <span>1234567890</span>
                                         
                                 </p>
                             </div>
