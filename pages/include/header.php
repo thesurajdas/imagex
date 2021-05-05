@@ -24,7 +24,7 @@
                     <a class="nav-link" href="pages/allimg.php" tabindex="-1" aria-disabled="true">Trending</a>
                 </li>
                 <!-- <li class="nav-item">
-                    <a href="logsign.html"><button type="button" class="btn btn-outline-warning">LogIn/SignUP</button></a>
+                    <a href="login.php"><button type="button" class="btn btn-outline-warning">LogIn/SignUP</button></a>
                 </li> -->
             </ul>
             <form class="form-inline my-2 my-lg-0">
@@ -49,9 +49,9 @@
                 <li class="nav-item dropleft text-decoration-none">
                     <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><button type="button" class="btn btn-outline-warning"><i class="bi bi-emoji-expressionless-fill"></button></i></a>
                     <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                        <a class="dropdown-item" href="pages/logsign.html">Sign In</a>
+                        <a class="dropdown-item" href="pages/login.php">Sign In</a>
                         <div class="dropdown-divider"></div>
-                        <a class="dropdown-item" href="pages/logsign.html">Sign UP</a>
+                        <a class="dropdown-item" href="pages/login.php">Sign UP</a>
                     </div>
                 </li>
             </ul>
