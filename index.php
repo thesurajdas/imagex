@@ -58,7 +58,7 @@
                             <a class="nav-link" href="pages/upload.html" tabindex="-1" aria-disabled="true"><button type="button" class="btn btn-outline-success"><i class="fas fa-cloud-upload-alt"></i></button></a>
                         </li>
                         <li class="nav-item dropleft text-decoration-none">
-                            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><button type="button" class="btn btn-outline-warning"><img class="logp rounded-circle" src="https://picsum.photos/id/237/200/300" alt=""></button></a>
+                            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><img class="logp rounded-circle" src="https://picsum.photos/id/237/200/300" alt=""></a>
                             <div class="dropdown-menu" aria-labelledby="navbarDropdown">
                                 <a class="dropdown-item" href="pages/profile.html">Account</a>
                                 <a class="dropdown-item" href="pages/editprofile.html">Edit Profile</a>
