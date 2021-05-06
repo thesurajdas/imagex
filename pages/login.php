@@ -37,7 +37,7 @@
       if (($_SERVER['REQUEST_METHOD']=='POST')) {
         //Check Empty String
         if (($_REQUEST['username']=="")||($_REQUEST['email']=="")||($_REQUEST['password']=="")) {
-          echo "All fields are required!";
+          echo "<script>alert('All fields are required!');</script>";
         }
         else{
           //Take Form Input Securely
@@ -56,16 +56,16 @@
           $u_result=$connect->query($usql);
           $e_result=$connect->query($esql);
           if (filter_var($email, FILTER_VALIDATE_EMAIL) === false) {
-            echo "This is not a Vaild Email!";
+            echo "<script>alert('This is not a Vaild Email!');</script>";
           }
           elseif ($u_result->num_rows==1 && $e_result->num_rows==1) {
-            echo "Username and Email Already Registered!";
+            echo "<script>alert('Username and Email Already Registered!');</script>";
           }
           elseif ($u_result->num_rows==1) {
-            echo "Username Already Registered!";
+            echo "<script>alert('Username Already Registered!');</script>";
           }
           elseif($e_result->num_rows==1){
-            echo "Email Already Registered!";
+            echo "<script>alert('Email Already Registered!');</script>";
           }
           else{
             //Insert Data into table
@@ -74,13 +74,13 @@
               echo "<script>alert('Account Created Successfully!');</script>";
             }
             else{
-              echo "Unable to create the account!";
+              echo "<script>alert('Unable to create the account!');</script>";
             }
           }
         }
       }
       else{
-        echo "Wrong Submit Method!";
+        echo "<script>alert('Wrong Submit Method!');</script>";
       }
     }
 ?>
