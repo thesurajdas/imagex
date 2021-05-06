@@ -201,6 +201,7 @@
 
 <!-- Custom Javascript Functions -->
 <script>
+// Retype Password Checker
         var password = document.getElementById("password")
         , confirm_password = document.getElementById("confirm_password");
       function validatePassword(){
