@@ -130,7 +130,7 @@
             <h2 class="title">Sign up</h2>
             <div class="input-field">
               <i class="fas fa-user"></i>
-              <input type="username" name="username" placeholder="Username" minlength="3" maxlength="32" required/>
+              <input type="username" name="username" placeholder="Username" minlength="3" maxlength="32" onkeypress="return AvoidSpace(event)" required/>
             </div>
             <div class="input-field">
               <i class="fas fa-envelope"></i>
@@ -199,7 +199,7 @@
       </div>
     </div>
 
-<!-- Password Retype Password Checker -->
+<!-- Custom Javascript Functions -->
 <script>
         var password = document.getElementById("password")
         , confirm_password = document.getElementById("confirm_password");
@@ -212,6 +212,11 @@
       }
       password.onchange = validatePassword;
       confirm_password.onkeyup = validatePassword;
+//Space Remover from text input
+function AvoidSpace(event) {
+      var k = event ? event.which : window.event.keyCode;
+      if (k == 32) return false;
+  }
 </script>
     <script src="../js/logsign.js"></script>
   </body>
