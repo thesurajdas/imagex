@@ -69,7 +69,7 @@
                                 <a class="dropdown-item" href="favimg.html">Saved Images</a>
                                 <a class="dropdown-item" href="usruploadimg.html">Your Uploads</a>
                                 <div class="dropdown-divider"></div>
-                                <a class="dropdown-item" href="#">SignOff</a>
+                                <a class="dropdown-item" href="/logout.php">Sign Out</a>
                             </div>
                         </li>
                         <li class="nav-item dropleft text-decoration-none">
