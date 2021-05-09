@@ -100,9 +100,9 @@
                     </div>
                     <div class="col-md-6">
                         <div class="profile-head">
-                                    <h5>
+                                    <h1>
                                         <?php echo $user_name; ?>
-                                    </h5>
+                                    </h1>
                                     <h6>
                                         Uploader 
                                     </h6>
