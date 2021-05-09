@@ -1,6 +1,4 @@
 <?php
-//Hide All Error Reporting
-  error_reporting(0);
   require('../connect.php');
 //IP Address Function with 
   function user_ip(){
