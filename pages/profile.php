@@ -1,3 +1,6 @@
+<?php
+    require('../auth.php');
+?>
 <!DOCTYPE html>
 <html lang="en">
     <head>
@@ -100,7 +103,7 @@
                     <div class="col-md-6">
                         <div class="profile-head">
                                     <h5>
-                                        Kshiti Ghelani
+                                        <?php echo $user_name; ?>
                                     </h5>
                                     <h6>
                                         Uploader 

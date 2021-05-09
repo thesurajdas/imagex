@@ -1,6 +1,8 @@
 <?php
-  include('../connect.php');
-  //IP Address Function with 
+//Hide All Error Reporting
+  error_reporting(0);
+  require('../connect.php');
+//IP Address Function with 
   function user_ip(){
     //whether ip is from share internet
     if (!empty($_SERVER['HTTP_CLIENT_IP']))   
@@ -31,6 +33,50 @@
       $state="";
       $city="";
     }
+//Check only non-login users and redirect them to login page.
+if(isset($_COOKIE['user_id'])){
+  //Decode login cookie
+  $user_id=$_COOKIE['user_id'];
+  $user_id=convert_uudecode($user_id);
+  //Get Data from SQL
+  $sql="SELECT * FROM users WHERE id='".$user_id."'";
+  $result=$connect->query($sql);
+  $row=$result->fetch_assoc();
+  //Check cookie id with database id with === operator
+  if ($user_id==$row['id']) {
+      header("Location:profile.php");
+      exit();
+  }
+}
+
+//Check Login Information
+if (isset($_REQUEST['login'])) {
+  if (($_SERVER['REQUEST_METHOD']=='POST')){
+  $userid=$connect->real_escape_string($_REQUEST['userid']);
+  $tmp_password=$connect->real_escape_string($_REQUEST['password']);
+  $password=base64_encode($tmp_password);
+  $sql="SELECT id,username,email,password FROM users WHERE (username='".$userid."' OR email='".$userid."') AND password='".$password."' LIMIT 1";
+  $result=$connect->query($sql);
+  $row=$result->fetch_assoc();
+  $user_id=$row['id'];
+  //Encode Cookie Value
+  $user_id=convert_uuencode($user_id);
+  //Check Row Exist or Not
+      if ($result->num_rows==1) {
+          //Add cookies
+          $cookie_time=time()+60*60*24*365;
+          setcookie("user_id",$user_id,$cookie_time);
+          header("Location:profile.php");
+          exit();
+      }
+      else{
+          echo "Invalid username or email or password!";
+      }
+  }
+  else{
+      echo "Wrong Login Method!";
+  }
+}
 
     //Check Signup Input
     if (isset($_REQUEST['register'])) {
@@ -99,17 +145,17 @@
     <div class="container">
       <div class="forms-container">
         <div class="signin-signup">
-          <form action="#" class="sign-in-form">
+          <form action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]);?>" method="POST" class="sign-in-form">
             <h2 class="title">Sign in</h2>
             <div class="input-field">
               <i class="fas fa-user"></i>
-              <input type="text" placeholder="Username" required/>
+              <input type="username" name="userid" placeholder="Username or Email" minlength="3" maxlength="60" onkeypress="return AvoidSpace(event)" required/>
             </div>
             <div class="input-field">
               <i class="fas fa-lock"></i>
-              <input type="password" placeholder="Password" required/>
+              <input type="password" name="password" placeholder="Password" id="password" minlength="5" maxlength="60" onkeypress="return AvoidSpace(event)" required/>
             </div>
-            <input type="submit" value="Login" class="btn solid" />
+            <input type="submit" name="login" value="Login" class="btn solid" />
             <!--<p class="social-text">Or Sign in with social platforms</p>
             <div class="social-media">
               <a href="#" class="social-icon">
