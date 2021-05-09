@@ -50,15 +50,21 @@
                         </li> -->
                     </ul>
                     <form class="form-inline my-2 my-lg-0">
-                        <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
-                        <button class="btn btn btn-outline-info my-2 my-sm-0" type="submit"><i class="fas fa-search"></i></button>
+                        <div class="row no-gutters align-items-center">
+                            <input class="form-control sbdr rounded-pill pr-5" type="text" placeholder="Search" id="example-search-input2">
+                            <div class="col-auto">
+                                <button class="btn btn-outline-light text-dark border-0 rounded-pill ml-n5" type="button">
+                                    <i class="fas fa-search"></i>
+                                </button>
+                            </div>
+                        </div>
                     </form>
                     <ul class="navbar-nav">
                         <li class="nav-item">
                             <a class="nav-link" href="pages/upload.html" tabindex="-1" aria-disabled="true"><button type="button" class="btn btn-outline-success"><i class="fas fa-cloud-upload-alt"></i></button></a>
                         </li>
                         <li class="nav-item dropleft text-decoration-none">
-                            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><button type="button" class="btn btn-outline-warning"><img class="logp rounded-circle" src="https://picsum.photos/id/237/200/300" alt=""></button></a>
+                            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><img class="logp rounded-circle" src="https://picsum.photos/id/237/200/300" alt=""></a>
                             <div class="dropdown-menu" aria-labelledby="navbarDropdown">
                                 <a class="dropdown-item" href="pages/profile.html">Account</a>
                                 <a class="dropdown-item" href="pages/editprofile.html">Edit Profile</a>
@@ -86,14 +92,16 @@
         <!---------------------------------------Search bar------------------------------------->
         <div class="searchbar">
             <div class="container">
-                <div class="col-lg-10 mx-auto sb">
-                    <div class="input-group mb-3 rounded">
-                        <input type="text" class="form-control" placeholder="Search Images" aria-label="Search Images" aria-describedby="button-addon2">
-                        <div class="input-group-append">
-                            <button type="button" class="btn btn-primary">Search</button>
+                <form action="">
+                    <div class="row no-gutters mt-3 align-items-center">
+                        <input class="form-control sbdr bg-light rounded-pill pr-5" type="text" placeholder="Search Images Eg: Nature, Potrait, Abstract etc." id="example-search-input2">
+                        <div class="col-auto">
+                            <button class="btn btn-outline-light text-dark border-0 rounded-pill ml-n5" type="button">
+                                <i class="fas fa-search"></i>
+                            </button>
                         </div>
-                      </div>
-                </div>
+                    </div>
+                </form>
             </div>
         </div>
             <!-------------------------------------**welcome text--------------------------------------->
