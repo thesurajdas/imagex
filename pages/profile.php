@@ -75,9 +75,7 @@
                         <li class="nav-item dropleft text-decoration-none">
                             <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><button type="button" class="btn btn-outline-warning"><i class="bi bi-emoji-expressionless-fill"></button></i></a>
                             <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                                <a class="dropdown-item" href="logsign.html">Sign In</a>
-                                <div class="dropdown-divider"></div>
-                                <a class="dropdown-item" href="logsign.html">Sign UP</a>
+                                <a class="dropdown-item" href="login.php">Sign In</a>
                             </div>
                         </li>
                     </ul>
