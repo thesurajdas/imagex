@@ -1,6 +1,4 @@
 <?php
-//Hide All Error Reporting
-// error_reporting(0);
 //create connection
  require('../connect.php');
 //Check only non-login users and redirect them to login page.
