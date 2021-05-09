@@ -65,7 +65,7 @@ if (isset($_REQUEST['login'])) {
       if ($result->num_rows==1) {
           //Add cookies
           $cookie_time=time()+60*60*24*365;
-          setcookie("user_id",$user_id,$cookie_time);
+          setcookie("user_id",$user_id,$cookie_time,"/");
           header("Location:profile.php");
           exit();
       }
