@@ -59,7 +59,7 @@
                     </form>
                     <ul class="navbar-nav">
                         <li class="nav-item">
-                            <a class="nav-link" href="upload.html" tabindex="-1" aria-disabled="true"><button type="button" class="btn btn-outline-success"><i class="bi bi-cloud-arrow-up"></i></button></a>
+                            <a class="nav-link" href="upload.html" tabindex="-1" aria-disabled="true"><button type="button" class="btn btn-outline-success"><i class="bi bi-cloud-arrow-up"></i> Upload</button></a>
                         </li>
                         <li class="nav-item dropleft text-decoration-none">
                             <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><button type="button" class="btn btn-outline-warning"><img class="logp rounded-circle" src="https://picsum.photos/id/237/200/300" alt=""></button></a>
@@ -141,10 +141,10 @@
                             <div class="tab-pane fade show active" id="home" role="tabpanel" aria-labelledby="home-tab">
                                         <div class="row">
                                             <div class="col-md-6">
-                                                <label>User Id</label>
+                                                <label>Username</label>
                                             </div>
                                             <div class="col-md-6">
-                                                <p>Kshiti123</p>
+                                                <p><?php echo $user_username; ?></p>
                                             </div>
                                         </div>
                                         <div class="row">
@@ -152,7 +152,7 @@
                                                 <label>Name</label>
                                             </div>
                                             <div class="col-md-6">
-                                                <p>Kshiti Ghelani</p>
+                                                <p><?php echo $user_name; ?></p>
                                             </div>
                                         </div>
                                         <div class="row">
@@ -160,7 +160,7 @@
                                                 <label>Email</label>
                                             </div>
                                             <div class="col-md-6">
-                                                <p>kshitighelani@gmail.com</p>
+                                                <p><?php echo $user_email; ?></p>
                                             </div>
                                         </div>
                                         <div class="row">
@@ -168,7 +168,7 @@
                                                 <label>Phone</label>
                                             </div>
                                             <div class="col-md-6">
-                                                <p>123 456 7890</p>
+                                                <p><?php echo $user_phone_no; ?></p>
                                             </div>
                                         </div>
                                         <div class="row">
@@ -176,17 +176,25 @@
                                                 <label>Country</label>
                                             </div>
                                             <div class="col-md-6">
-                                                <p>India</p>
+                                                <p><?php echo $user_country; ?></p>
                                             </div>
                                         </div>
                             </div>
                             <div class="tab-pane fade" id="profile" role="tabpanel" aria-labelledby="profile-tab">
                                         <div class="row">
                                             <div class="col-md-6">
-                                                <label>Camera Model</label>
+                                                <label>Device Name</label>
                                             </div>
                                             <div class="col-md-6">
-                                                <p>Sony IMX300</p>
+                                                <p><?php echo $user_device_name; ?></p>
+                                            </div>
+                                        </div>
+                                        <div class="row">
+                                            <div class="col-md-6">
+                                                <label>Model Name</label>
+                                            </div>
+                                            <div class="col-md-6">
+                                                <p><?php echo $user_device_model; ?></p>
                                             </div>
                                         </div>
                                         <div class="row">
@@ -194,7 +202,7 @@
                                                 <label>Resolution</label>
                                             </div>
                                             <div class="col-md-6">
-                                                <p>13.1</p>
+                                                <p><?php echo $user_resolution." MP (Mega Pixel)"; ?></p>
                                             </div>
                                         </div>
                                         <div class="row">
@@ -202,15 +210,15 @@
                                                 <label>Focal Length</label>
                                             </div>
                                             <div class="col-md-6">
-                                                <p>3.61 mm</p>
+                                                <p><?php echo $user_focal_length; ?></p>
                                             </div>
                                         </div>
                                         <div class="row">
                                             <div class="col-md-6">
-                                                <label>ƒ</label>
+                                                <label>Apperture</label>
                                             </div>
                                             <div class="col-md-6">
-                                                <p>1.7</p>
+                                                <p><?php echo $user_apertures; ?></p>
                                             </div>
                                         </div>
                             </div>

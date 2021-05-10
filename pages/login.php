@@ -68,11 +68,11 @@ if (isset($_REQUEST['login'])) {
           exit();
       }
       else{
-          echo "Invalid username or email or password!";
+          echo "<script>alert('Invalid username or email or password!');</script>";
       }
   }
   else{
-      echo "Wrong Login Method!";
+      echo "<script>alert('Wrong Login Method!');</script>";
   }
 }
 

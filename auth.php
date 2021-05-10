@@ -12,9 +12,16 @@ if(isset($_COOKIE['user_id'])){
     $row=$result->fetch_assoc();
     //Check cookie id with database id with === operator
     if ($user_id===$row['id']) {
-        $user_name=$row['username'];
+        $user_username=$row['username'];
+        $user_name=$row['name'];
         $user_email=$row['email'];
-        $user_city=$row['city'];
+        $user_phone_no=$row['phone_no'];
+        $user_country=$row['country'];
+        $user_device_name=$row['device_name'];
+        $user_device_model=$row['device_model'];
+        $user_apertures=$row['apertures'];
+        $user_resolution=$row['resolution'];
+        $user_focal_length=$row['focal_length'];
     }
     else{
         header("Location:login.php");
