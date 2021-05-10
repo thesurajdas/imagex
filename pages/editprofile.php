@@ -1,5 +1,16 @@
 <?php
-
+    require('../auth.php');
+    $user_phone_no=$row['phone_no'];
+    $user_country=$row['country'];
+    $user_city=$row['city'];
+    $user_device_name=$row['device_name'];
+    $user_device_model=$row['device_model'];
+    $user_apertures=$row['apertures'];
+    $user_resolution=$row['resolution'];
+    $user_focal_length=$row['focal_length'];
+    $user_role=$row['role'];
+    $user_birth_date=$row['birth_date'];
+    $user_zip_code=$row['zip_code'];
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -44,7 +55,7 @@
 
         <header>
             <nav class="navbar shadow-lg p-1 mb-5 bg-white rounded fixed-top navbar-expand-lg navbar-light bg-light">
-                <a class="navbar-brand" href="index.html">Gallery</a>
+                <a class="navbar-brand" href="index.php">Gallery</a>
                 <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
                 </button>
@@ -52,22 +63,22 @@
                 <div class="collapse navbar-collapse" id="navbarSupportedContent">
                     <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
                         <li class="nav-item active">
-                            <a class="nav-link" href="../index.html" tabindex="-1" aria-disabled="true">Home</a>
+                            <a class="nav-link" href="../index.php" tabindex="-1" aria-disabled="true">Home</a>
                         </li>
                         <li class="nav-item dropdown border-right-0">
                             <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Categories</a>
                             <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                                <a class="dropdown-item" href="nature.html">Nature</a>
-                                <a class="dropdown-item" href="potrait.html">Potraite</a>
-                                <a class="dropdown-item" href="landscape.html">Landscape</a>
-                                <a class="dropdown-item" href="astro.html">Astro</a>
+                                <a class="dropdown-item" href="nature.php">Nature</a>
+                                <a class="dropdown-item" href="potrait.php">Potraite</a>
+                                <a class="dropdown-item" href="landscape.php">Landscape</a>
+                                <a class="dropdown-item" href="astro.php">Astro</a>
                             </div>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="trendings.html" tabindex="-1" aria-disabled="true">Trending</a>
+                            <a class="nav-link" href="trendings.php" tabindex="-1" aria-disabled="true">Trending</a>
                         </li>
                         <!-- <li class="nav-item">
-                            <a href="logsign.html"><button type="button" class="btn btn-outline-warning">LogIn/SignUP</button></a>
+                            <a href="logsign.php"><button type="button" class="btn btn-outline-warning">LogIn/SignUP</button></a>
                         </li> -->
                     </ul>
                     <form class="form-inline my-2 my-lg-0">
@@ -76,15 +87,15 @@
                     </form>
                     <ul class="navbar-nav">
                         <li class="nav-item">
-                            <a class="nav-link" href="upload.html" tabindex="-1" aria-disabled="true"><button type="button" class="btn btn-outline-success"><i class="bi bi-cloud-arrow-up"></i></button></a>
+                            <a class="nav-link" href="upload.php" tabindex="-1" aria-disabled="true"><button type="button" class="btn btn-outline-success"><i class="bi bi-cloud-arrow-up"></i></button></a>
                         </li>
                         <li class="nav-item dropleft text-decoration-none">
                             <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><button type="button" class="btn btn-outline-warning"><img class="logp rounded-circle" src="https://picsum.photos/id/237/200/300" alt=""></button></a>
                             <div class="dropdown-menu" aria-labelledby="navbarDropdown">
                                 <a class="dropdown-item" href="profile.php">Account</a>
                                 <a class="dropdown-item" href="editprofile.php">Edit Profile</a>
-                                <a class="dropdown-item" href="favimg.html">Saved Images</a>
-                                <a class="dropdown-item" href="usruploadimg.html">Your Uploads</a>
+                                <a class="dropdown-item" href="favimg.php">Saved Images</a>
+                                <a class="dropdown-item" href="usruploadimg.php">Your Uploads</a>
                                 <div class="dropdown-divider"></div>
                                 <a class="dropdown-item" href="#">SignOff</a>
                             </div>
@@ -92,9 +103,9 @@
                         <li class="nav-item dropleft text-decoration-none">
                             <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><button type="button" class="btn btn-outline-warning"><i class="bi bi-emoji-expressionless-fill"></button></i></a>
                             <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                                <a class="dropdown-item" href="logsign.html">Sign In</a>
+                                <a class="dropdown-item" href="logsign.php">Sign In</a>
                                 <div class="dropdown-divider"></div>
-                                <a class="dropdown-item" href="logsign.html">Sign UP</a>
+                                <a class="dropdown-item" href="logsign.php">Sign UP</a>
                             </div>
                         </li>
                     </ul>
@@ -112,19 +123,18 @@
                     <div class="form-row">
                         <div class="form-group col-md-12">
                             <label for="inputFyllName"><i class="fas fa-signature"></i> Full Name</label>
-                            <input type="text" class="form-control" id="inputFyllName" placeholder="Sylvester Stallone" maxlength="30" required>
+                            <input type="text" class="form-control" id="inputFyllName" placeholder="Enter Full Name" maxlength="30" value="<?php echo $user_name; ?>" required>
                         </div>
                         <div class="form-group col-md-6">
                             <label for="email"><i class="fas fa-at"></i> Email</label>
-                            <input type="text" id="email" class="form-control" value="" placeholder="example@outlook.com" maxlength="30" required>
+                            <input type="text" id="email" class="form-control" placeholder="example@mail.com" value="<?php echo $user_email; ?>" maxlength="30" required>
                         </div>
                         <div class="form-group col-md-4">
                             <label for="inputState"><i class="fas fa-user-cog"></i> Account Type</label>
                             <select id="inputState" class="form-control" required>
-                                <option selected>Choose...</option>
-                                <option value="Viewer">Viewer</option>
-                                <option value="Uploader">Uploader</option>
-                                <option value="Photographer_&_Uploader">Photographer & Uploader</option>
+                                <option value="Viewer" <?php $select="Viewer"; if(isset($select) && $select!=""){ if($user_role==$select){ echo "selected"; }} ?>>Viewer</option>
+                                <option value="Uploader" <?php $select="Uploader"; if(isset($select) && $select!=""){ if($user_role==$select){ echo "selected"; }} ?>>Uploader</option>
+                                <option value="Photographer & Uploader" <?php $select="Photographer & Uploader"; if(isset($select) && $select!=""){ if($user_role==$select){ echo "selected"; }} ?>>Photographer & Uploader</option>
                             </select>
                         </div>        
                         <!--<div class="form-group col-md-6">
@@ -142,25 +152,25 @@
                     </div>-->
                     <div class="form-row">
                         <div class="form-group col-md-6">
-                            <label for="phone"><i class="fas fa-phone-volume"></i> Phone Number</label>
-                            <input type="tel" id="phone" class="form-control" placeholder="1234567890">
+                            <label for="phone"><i class="fas fa-phone-volume"></i> Phone Number (Optional)</label>
+                            <input type="tel" id="phone" class="form-control" placeholder="1234567890" value="<?php echo $user_phone_no; ?>">
                         </div>
                         <div class="form-group dates col-md-6">
                             <label for="picker"><i class="far fa-calendar-alt"></i> Date Of Birth</label>
-                            <input type="date" autocomplete="off" class="form-control" id="user1" placeholder="yyyy-mm-dd" required>
+                            <input type="date" autocomplete="off" class="form-control" id="user1" placeholder="yyyy-mm-dd" value="<?php echo $user_birth_date; ?>" required>
                         </div>
                     </div>
                     <div class="form-row">
                         <div class="form-group col-md-6">
                             <label for="inputCity"><i class="fas fa-city"></i> City</label>
-                            <input type="text" class="form-control" id="inputCity" maxlength="15" placeholder="Florida" required>
+                            <input type="text" class="form-control" id="inputCity" maxlength="15" placeholder="Florida" value="<?php echo $user_city; ?>" required>
                         </div>
                         <div class="form-group col-md-4">
                             <label for="inputState"><i class="far fa-flag"></i> Country</label>
                             <select id="inputState" class="form-control" required>
-                                <option selected>Choose...</option>
-                                <option value="Afganistan">Afghanistan</option>
-                                <option value="Albania">Albania</option>
+                                <option <?php $select="Unkown"; if($user_country==$select){ echo "selected"; } ?>>Choose...</option>
+                                <option value="Afganistan" <?php $select="Afganistan"; if(isset($select) && $select!=""){ if($user_country==$select){ echo "selected"; }} ?>>Afghanistan</option>
+                                <option value="Albania" <?php $select="Albania"; if(isset($select) && $select!=""){ if($user_country==$select){ echo "selected"; }} ?>>Albania</option>
                                 <option value="Algeria">Algeria</option>
                                 <option value="American Samoa">American Samoa</option>
                                 <option value="Andorra">Andorra</option>
@@ -259,7 +269,7 @@
                                 <option value="Hungary">Hungary</option>
                                 <option value="Iceland">Iceland</option>
                                 <option value="Indonesia">Indonesia</option>
-                                <option value="India">India</option>
+                                <option value="India" <?php $select="India"; if(isset($select) && $select!=""){ if($user_country==$select){ echo "selected"; }} ?>>India</option>
                                 <option value="Iran">Iran</option>
                                 <option value="Iraq">Iraq</option>
                                 <option value="Ireland">Ireland</option>
@@ -409,7 +419,7 @@
                         </div>
                         <div class="form-group col-md-2">
                             <label for="inputZip"><i class="fa fa-address-card" aria-hidden="true"></i> Zip Code</label>
-                            <input type="text" class="form-control" placeholder="700001" maxlength="6" id="inputZip">
+                            <input type="text" class="form-control" placeholder="700001" maxlength="6" id="inputZip" value="<?php echo $user_zip_code; ?>">
                         </div>
                     </div>
                     <div class="form-row smit justify-content-between">

@@ -23,13 +23,11 @@
     $ipdata = @json_decode(file_get_contents("http://www.geoplugin.net/json.gp?ip=".$ip_address));
     if(!empty($ipdata)){
     $country=$ipdata->geoplugin_countryName;
-    $state=$ipdata->geoplugin_region;
     $city=$ipdata->geoplugin_city;
     }
     else{
-      $country="";
-      $state="";
-      $city="";
+      $country="Unkown";
+      $city="Unkown";
     }
 //Check only non-login users and redirect them to login page.
 if(isset($_COOKIE['user_id'])){
@@ -80,13 +78,16 @@ if (isset($_REQUEST['login'])) {
     if (isset($_REQUEST['register'])) {
       if (($_SERVER['REQUEST_METHOD']=='POST')) {
         //Check Empty String
-        if (($_REQUEST['username']=="")||($_REQUEST['email']=="")||($_REQUEST['password']=="")) {
+        if (($_REQUEST['username']=="")||($_REQUEST['email']=="")||($_REQUEST['name']=="")||($_REQUEST['password']=="")) {
           echo "<script>alert('All fields are required!');</script>";
         }
         else{
           //Take Form Input Securely
           $username=$connect->real_escape_string($_REQUEST['username']);
           $email=$connect->real_escape_string($_REQUEST['email']);
+          $name=$connect->real_escape_string($_REQUEST['name']);
+          $role="Viewer";
+          $phone_no="N/A";
           // Remove all illegal characters from email
           $email = filter_var($email, FILTER_SANITIZE_EMAIL);
           $temp_password=$connect->real_escape_string($_REQUEST['password']);
@@ -113,9 +114,14 @@ if (isset($_REQUEST['login'])) {
           }
           else{
             //Insert Data into table
-            $sql="INSERT INTO users (username,email,password,register_date,country,state,city,ip_address) VALUES ('$username','$email','$password','$register_date','$country','$state','$city','$ip')";
+            $sql="INSERT INTO users (username,email,phone_no,password,name,register_date,country,city,role,ip_address) VALUES ('$username','$email','$password','$name','$register_date','$country','$city','$role','$ip')";
             if ($connect->query($sql)===TRUE) {
               echo "<script>alert('Account Created Successfully!');</script>";
+              //Add cookies
+              $cookie_time=time()+60*60*24*365;
+              setcookie("user_id",$user_id,$cookie_time,"/");
+              header("Location:profile.php");
+              exit();
             }
             else{
               echo "<script>alert('Unable to create the account!');</script>";
@@ -179,6 +185,10 @@ if (isset($_REQUEST['login'])) {
             <div class="input-field">
               <i class="fas fa-envelope"></i>
               <input type="email" name="email" placeholder="Email" required/>
+            </div>
+            <div class="input-field">
+              <i class="fas fa-user-tie"></i>
+              <input type="text" name="name" placeholder="Full Name" minlength="5" maxlength="60" required/>
             </div>
             <div class="input-field">
               <i class="fas fa-lock"></i>
