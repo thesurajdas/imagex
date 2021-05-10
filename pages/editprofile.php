@@ -131,15 +131,15 @@
                 <hr class="mb-4">
                 <form class="mfrm" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]);?>" method="POST">
                     <div class="form-row">
-                        <div class="form-group col-md-6">
+                        <div class="form-group col-md-4">
                             <label for="inputFyllName"><i class="fas fa-signature"></i> Full Name</label>
                             <input type="text" class="form-control" placeholder="Enter Full Name" minlength="3" maxlength="30" value="<?php echo $user_name; ?>" required>
                         </div>
-                        <div class="form-group col-md-6">
+                        <div class="form-group col-md-4">
                             <label for="inputFyllName"><i class="fas fa-user"></i> Username</label>
                             <input type="text" class="form-control" placeholder="Username" minlength="5" maxlength="60" value="<?php echo $user_username; ?>" onkeypress="return AvoidSpace(event)" disabled>
                         </div>
-                        <div class="form-group col-md-6">
+                        <div class="form-group col-md-4">
                             <label for="email"><i class="fas fa-at"></i> Email</label>
                             <input type="text" id="email" class="form-control" placeholder="example@mail.com" value="<?php echo $user_email; ?>" maxlength="30" disabled>
                         </div>
@@ -155,17 +155,7 @@
                             <label for="inputPassword6">Password <i class="bi bi-file-lock2"></i></label>
                             <input type="password" class="form-control" id="inputPassword6" placeholder="********">
                         </div>-->
-                    </div>
-                    <!--<div class="form-group">
-                        <label for="inputAddress">Address <i class="bi bi-house"></i></label>
-                        <input type="text" class="form-control" id="inputAddress" placeholder="City Name Eg. St Petersburg" required>
-                    </div>-->
-                    <!--<div class="form-group">
-                        <label for="inputAddress2">Address 2 <small>(Optional)</small></label>
-                        <input type="text" class="form-control" id="inputAddress2" placeholder="Apartment, studio, or floor (Optional)">
-                    </div>-->
-                    <div class="form-row">
-                        <div class="form-group col-md-6">
+                        <div class="form-group col-md-4">
                             <label for="phone"><i class="fas fa-phone-volume"></i> Phone Number (Optional)</label>
                             <input type="tel" id="phone" class="form-control" placeholder="1234567890" value="<?php echo $user_phone_no; ?>">
                         </div>
@@ -173,9 +163,7 @@
                             <label for="picker"><i class="far fa-calendar-alt"></i> Date Of Birth</label>
                             <input type="date" autocomplete="off" class="form-control" id="user1" placeholder="yyyy-mm-dd" value="<?php echo $user_birth_date; ?>" required>
                         </div>
-                    </div>
-                    <div class="form-row">
-                        <div class="form-group col-md-5">
+                        <div class="form-group col-md-4">
                             <label for="inputCity"><i class="fas fa-city"></i> City</label>
                             <input type="text" class="form-control" id="inputCity" maxlength="15" placeholder="Florida" value="<?php echo $user_city; ?>" required>
                         </div>
@@ -431,11 +419,19 @@
                                 <option value="Zimbabwe" <?php $select="Zimbabwe"; if(isset($select) && $select!=""){ if($user_country==$select){ echo "selected"; }} ?>>Zimbabwe</option>
                             </select>
                         </div>
-                        <div class="form-group col-md-3">
+                        <div class="form-group col-md-4">
                             <label for="inputZip"><i class="fa fa-address-card" aria-hidden="true"></i> Zip Code</label>
                             <input type="text" class="form-control" placeholder="700001" maxlength="6" id="inputZip" value="<?php echo $user_zip_code; ?>">
                         </div>
                     </div>
+                    <!--<div class="form-group">
+                        <label for="inputAddress">Address <i class="bi bi-house"></i></label>
+                        <input type="text" class="form-control" id="inputAddress" placeholder="City Name Eg. St Petersburg" required>
+                    </div>-->
+                    <!--<div class="form-group">
+                        <label for="inputAddress2">Address 2 <small>(Optional)</small></label>
+                        <input type="text" class="form-control" id="inputAddress2" placeholder="Apartment, studio, or floor (Optional)">
+                    </div>-->
                     <div class="form-row smit justify-content-between">
                         <button type="submit" class="btn btn-primary" name="psave">Save Changes</button>
                         <button type="button" class="btn btn-success" data-toggle="modal" data-target="#exampleModal">
