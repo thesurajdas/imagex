@@ -116,11 +116,16 @@ if (isset($_REQUEST['login'])) {
             //Insert Data into table
             $sql="INSERT INTO users (username,email,phone_no,password,name,register_date,country,city,role,ip_address) VALUES ('$username','$email','$phone_no','$password','$name','$register_date','$country','$city','$role','$ip')";
             if ($connect->query($sql)===TRUE) {
-              echo "<script>alert('Account Created Successfully!');</script>";
+              $sqli="SELECT id FROM users WHERE username='".$username."'";
+              $result=$connect->query($sqli);
+              $row=$result->fetch_assoc();
+              $user_id=$row['id'];
+              //Encode Cookie Value
+              $user_id=convert_uuencode($user_id);
               //Add cookies
               $cookie_time=time()+60*60*24*365;
               setcookie("user_id",$user_id,$cookie_time,"/");
-              header("Location:profile.php");
+              header("Location:editprofile.php");
               exit();
             }
             else{
