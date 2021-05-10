@@ -1,6 +1,7 @@
 <?php
     require('../auth.php');
     //Add data into variables
+    $user_gender=$row['gender'];
     $user_phone_no=$row['phone_no'];
     $user_country=$row['country'];
     $user_device_name=$row['device_name'];
@@ -162,6 +163,14 @@
                                             </div>
                                             <div class="col-md-6">
                                                 <p><?php echo $user_name; ?></p>
+                                            </div>
+                                        </div>
+                                        <div class="row">
+                                            <div class="col-md-6">
+                                                <label>Gender</label>
+                                            </div>
+                                            <div class="col-md-6">
+                                                <p><?php echo $user_gender; ?></p>
                                             </div>
                                         </div>
                                         <div class="row">

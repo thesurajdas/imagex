@@ -1,5 +1,6 @@
 <?php
     require('../auth.php');
+    $user_gender=$row['gender'];
     $user_phone_no=$row['phone_no'];
     $user_country=$row['country'];
     $user_city=$row['city'];
@@ -146,9 +147,9 @@
                         <div class="form-group col-md-4">
                             <label for="inputState"><i class="fas fa-user-cog"></i> Gender</label>
                             <select id="inputState" class="form-control" required>
-                                <option value="Male" <?php $select="Male"; if(isset($select) && $select!=""){ if($user_role==$select){ echo "selected"; }} ?>>Male</option>
-                                <option value="Female" <?php $select="Female"; if(isset($select) && $select!=""){ if($user_role==$select){ echo "selected"; }} ?>>Female</option>
-                                <option value="Others" <?php $select="Others"; if(isset($select) && $select!=""){ if($user_role==$select){ echo "selected"; }} ?>>Others</option>
+                                <option value="Male" <?php $select="Male"; if(isset($select) && $select!=""){ if($user_gender==$select){ echo "selected"; }} ?>>Male</option>
+                                <option value="Female" <?php $select="Female"; if(isset($select) && $select!=""){ if($user_gender==$select){ echo "selected"; }} ?>>Female</option>
+                                <option value="Others" <?php $select="Others"; if(isset($select) && $select!=""){ if($user_gender==$select){ echo "selected"; }} ?>>Others</option>
                             </select>
                         </div>      
                         <!--<div class="form-group col-md-6">
