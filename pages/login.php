@@ -49,7 +49,7 @@ if(isset($_COOKIE['user_id'])){
 if (isset($_REQUEST['login'])) {
   if (($_SERVER['REQUEST_METHOD']=='POST')){
   $userid=$connect->real_escape_string($_REQUEST['userid']);
-  $tmp_password=$connect->real_escape_string($_REQUEST['lpassword']);
+  $tmp_password=$connect->real_escape_string($_REQUEST['password']);
   $password=base64_encode($tmp_password);
   $sql="SELECT id,username,email,password FROM users WHERE (username='".$userid."' OR email='".$userid."') AND password='".$password."' LIMIT 1";
   $result=$connect->query($sql);
