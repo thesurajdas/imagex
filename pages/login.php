@@ -114,7 +114,7 @@ if (isset($_REQUEST['login'])) {
           }
           else{
             //Insert Data into table
-            $sql="INSERT INTO users (username,email,phone_no,password,name,register_date,country,city,role,ip_address) VALUES ('$username','$email','$password','$name','$register_date','$country','$city','$role','$ip')";
+            $sql="INSERT INTO users (username,email,phone_no,password,name,register_date,country,city,role,ip_address) VALUES ('$username','$email','$phone_no','$password','$name','$register_date','$country','$city','$role','$ip')";
             if ($connect->query($sql)===TRUE) {
               echo "<script>alert('Account Created Successfully!');</script>";
               //Add cookies
