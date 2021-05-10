@@ -1,5 +1,14 @@
 <?php
     require('../auth.php');
+    //Add data into variables
+    $user_phone_no=$row['phone_no'];
+    $user_country=$row['country'];
+    $user_device_name=$row['device_name'];
+    $user_device_model=$row['device_model'];
+    $user_apertures=$row['apertures'];
+    $user_resolution=$row['resolution'];
+    $user_focal_length=$row['focal_length'];
+    $user_role=$row['role'];
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -64,8 +73,8 @@
                         <li class="nav-item dropleft text-decoration-none">
                             <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><button type="button" class="btn btn-outline-warning"><img class="logp rounded-circle" src="https://picsum.photos/id/237/200/300" alt=""></button></a>
                             <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                                <a class="dropdown-item" href="profile.html">Account</a>
-                                <a class="dropdown-item" href="editprofile.html">Edit Profile</a>
+                                <a class="dropdown-item" href="profile.php">Account</a>
+                                <a class="dropdown-item" href="editprofile.php">Edit Profile</a>
                                 <a class="dropdown-item" href="favimg.html">Saved Images</a>
                                 <a class="dropdown-item" href="usruploadimg.html">Your Uploads</a>
                                 <div class="dropdown-divider"></div>
@@ -104,7 +113,7 @@
                                         <?php echo $user_name; ?>
                                     </h1>
                                     <h6>
-                                        Uploader 
+                                    <?php echo $user_role; ?>
                                     </h6>
                                     <div class="container">
                                         <div class="row">
@@ -115,10 +124,10 @@
                                     </div>
                             <ul class="nav nav-tabs" id="myTab" role="tablist">
                                 <li class="nav-item">
-                                    <a class="nav-link active" id="home-tab" data-toggle="tab" href="#home" role="tab" aria-controls="home" aria-selected="true">About</a>
+                                    <a class="nav-link active" id="home-tab" data-toggle="tab" href="#home" role="tab" aria-controls="home" aria-selected="true"><i class="bi bi-info-circle"></i> About</a>
                                 </li>
                                 <li class="nav-item">
-                                    <a class="nav-link" id="profile-tab" data-toggle="tab" href="#profile" role="tab" aria-controls="profile" aria-selected="false">Device</a>
+                                    <a class="nav-link" id="profile-tab" data-toggle="tab" href="#profile" role="tab" aria-controls="profile" aria-selected="false"><i class="bi bi-camera"></i> Camera</a>
                                 </li>
                             </ul>
                         </div>

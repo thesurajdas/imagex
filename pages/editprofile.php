@@ -1,3 +1,6 @@
+<?php
+
+?>
 <!DOCTYPE html>
 <html lang="en">
     <head>
@@ -78,8 +81,8 @@
                         <li class="nav-item dropleft text-decoration-none">
                             <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><button type="button" class="btn btn-outline-warning"><img class="logp rounded-circle" src="https://picsum.photos/id/237/200/300" alt=""></button></a>
                             <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                                <a class="dropdown-item" href="profile.html">Account</a>
-                                <a class="dropdown-item" href="editprofile.html">Edit Profile</a>
+                                <a class="dropdown-item" href="profile.php">Account</a>
+                                <a class="dropdown-item" href="editprofile.php">Edit Profile</a>
                                 <a class="dropdown-item" href="favimg.html">Saved Images</a>
                                 <a class="dropdown-item" href="usruploadimg.html">Your Uploads</a>
                                 <div class="dropdown-divider"></div>
@@ -405,8 +408,8 @@
                             </select>
                         </div>
                         <div class="form-group col-md-2">
-                            <label for="inputZip"><i class="fa fa-address-card" aria-hidden="true"></i> Zip</label>
-                            <input type="text" class="form-control" maxlength="6" id="inputZip">
+                            <label for="inputZip"><i class="fa fa-address-card" aria-hidden="true"></i> Zip Code</label>
+                            <input type="text" class="form-control" placeholder="700001" maxlength="6" id="inputZip">
                         </div>
                     </div>
                     <div class="form-row smit justify-content-between">
@@ -423,7 +426,7 @@
 
         <div class="container sndcon">
             <div class="card shadow">
-                <h4 class="col-12 ntxt">Device Detailes <small>(Device Use for Capturing Pictures)</small></h4>
+                <h4 class="col-12 ntxt">Camera Details <small>(Optional)</small></h4>
                 <hr class="mb-4">
                 <form class="mfrm" action="/">
                     <div class="form-row">
