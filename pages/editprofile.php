@@ -135,7 +135,7 @@
                             <label for="inputFyllName"><i class="fas fa-signature"></i> Full Name</label>
                             <input type="text" class="form-control" placeholder="Enter Full Name" minlength="3" maxlength="30" value="<?php echo $user_name; ?>" required>
                         </div>
-                        <div class="form-group col-md-4">
+                        <div class="form-group col-md-6">
                             <label for="inputFyllName"><i class="fas fa-user"></i> Username</label>
                             <input type="text" class="form-control" placeholder="Username" minlength="5" maxlength="60" value="<?php echo $user_username; ?>" onkeypress="return AvoidSpace(event)" disabled>
                         </div>
@@ -185,250 +185,250 @@
                                 <option value="Unkown" <?php $select="Unkown"; if($user_country==$select){ echo "selected"; } ?>>Choose...</option>
                                 <option value="Afganistan" <?php $select="Afganistan"; if(isset($select) && $select!=""){ if($user_country==$select){ echo "selected"; }} ?>>Afghanistan</option>
                                 <option value="Albania" <?php $select="Albania"; if(isset($select) && $select!=""){ if($user_country==$select){ echo "selected"; }} ?>>Albania</option>
-                                <option value="Algeria">Algeria</option>
-                                <option value="American Samoa">American Samoa</option>
-                                <option value="Andorra">Andorra</option>
-                                <option value="Angola">Angola</option>
-                                <option value="Anguilla">Anguilla</option>
-                                <option value="Antigua & Barbuda">Antigua & Barbuda</option>
-                                <option value="Argentina">Argentina</option>
-                                <option value="Armenia">Armenia</option>
-                                <option value="Aruba">Aruba</option>
-                                <option value="Australia">Australia</option>
-                                <option value="Austria">Austria</option>
-                                <option value="Azerbaijan">Azerbaijan</option>
-                                <option value="Bahamas">Bahamas</option>
-                                <option value="Bahrain">Bahrain</option>
-                                <option value="Bangladesh">Bangladesh</option>
-                                <option value="Barbados">Barbados</option>
-                                <option value="Belarus">Belarus</option>
-                                <option value="Belgium">Belgium</option>
-                                <option value="Belize">Belize</option>
-                                <option value="Benin">Benin</option>
-                                <option value="Bermuda">Bermuda</option>
-                                <option value="Bhutan">Bhutan</option>
-                                <option value="Bolivia">Bolivia</option>
-                                <option value="Bonaire">Bonaire</option>
-                                <option value="Bosnia & Herzegovina">Bosnia & Herzegovina</option>
-                                <option value="Botswana">Botswana</option>
-                                <option value="Brazil">Brazil</option>
-                                <option value="British Indian Ocean Ter">British Indian Ocean Ter</option>
-                                <option value="Brunei">Brunei</option>
-                                <option value="Bulgaria">Bulgaria</option>
-                                <option value="Burkina Faso">Burkina Faso</option>
-                                <option value="Burundi">Burundi</option>
-                                <option value="Cambodia">Cambodia</option>
-                                <option value="Cameroon">Cameroon</option>
-                                <option value="Canada">Canada</option>
-                                <option value="Canary Islands">Canary Islands</option>
-                                <option value="Cape Verde">Cape Verde</option>
-                                <option value="Cayman Islands">Cayman Islands</option>
-                                <option value="Central African Republic">Central African Republic</option>
-                                <option value="Chad">Chad</option>
-                                <option value="Channel Islands">Channel Islands</option>
-                                <option value="Chile">Chile</option>
-                                <option value="China">China</option>
-                                <option value="Christmas Island">Christmas Island</option>
-                                <option value="Cocos Island">Cocos Island</option>
-                                <option value="Colombia">Colombia</option>
-                                <option value="Comoros">Comoros</option>
-                                <option value="Congo">Congo</option>
-                                <option value="Cook Islands">Cook Islands</option>
-                                <option value="Costa Rica">Costa Rica</option>
-                                <option value="Cote DIvoire">Cote DIvoire</option>
-                                <option value="Croatia">Croatia</option>
-                                <option value="Cuba">Cuba</option>
-                                <option value="Curaco">Curacao</option>
-                                <option value="Cyprus">Cyprus</option>
-                                <option value="Czech Republic">Czech Republic</option>
-                                <option value="Denmark">Denmark</option>
-                                <option value="Djibouti">Djibouti</option>
-                                <option value="Dominica">Dominica</option>
-                                <option value="Dominican Republic">Dominican Republic</option>
-                                <option value="East Timor">East Timor</option>
-                                <option value="Ecuador">Ecuador</option>
-                                <option value="Egypt">Egypt</option>
-                                <option value="El Salvador">El Salvador</option>
-                                <option value="Equatorial Guinea">Equatorial Guinea</option>
-                                <option value="Eritrea">Eritrea</option>
-                                <option value="Estonia">Estonia</option>
-                                <option value="Ethiopia">Ethiopia</option>
-                                <option value="Falkland Islands">Falkland Islands</option>
-                                <option value="Faroe Islands">Faroe Islands</option>
-                                <option value="Fiji">Fiji</option>
-                                <option value="Finland">Finland</option>
-                                <option value="France">France</option>
-                                <option value="French Guiana">French Guiana</option>
-                                <option value="French Polynesia">French Polynesia</option>
-                                <option value="French Southern Ter">French Southern Ter</option>
-                                <option value="Gabon">Gabon</option>
-                                <option value="Gambia">Gambia</option>
-                                <option value="Georgia">Georgia</option>
-                                <option value="Germany">Germany</option>
-                                <option value="Ghana">Ghana</option>
-                                <option value="Gibraltar">Gibraltar</option>
-                                <option value="Great Britain">Great Britain</option>
-                                <option value="Greece">Greece</option>
-                                <option value="Greenland">Greenland</option>
-                                <option value="Grenada">Grenada</option>
-                                <option value="Guadeloupe">Guadeloupe</option>
-                                <option value="Guam">Guam</option>
-                                <option value="Guatemala">Guatemala</option>
-                                <option value="Guinea">Guinea</option>
-                                <option value="Guyana">Guyana</option>
-                                <option value="Haiti">Haiti</option>
-                                <option value="Hawaii">Hawaii</option>
-                                <option value="Honduras">Honduras</option>
-                                <option value="Hong Kong">Hong Kong</option>
-                                <option value="Hungary">Hungary</option>
-                                <option value="Iceland">Iceland</option>
-                                <option value="Indonesia">Indonesia</option>
+                                <option value="Algeria" <?php $select="Algeria"; if(isset($select) && $select!=""){ if($user_country==$select){ echo "selected"; }} ?>>Algeria</option>
+                                <option value="American Samoa" <?php $select="American Samoa"; if(isset($select) && $select!=""){ if($user_country==$select){ echo "selected"; }} ?>>American Samoa</option>
+                                <option value="Andorra" <?php $select="Andorra"; if(isset($select) && $select!=""){ if($user_country==$select){ echo "selected"; }} ?>>Andorra</option>
+                                <option value="Angola" <?php $select="Angola"; if(isset($select) && $select!=""){ if($user_country==$select){ echo "selected"; }} ?>>Angola</option>
+                                <option value="Anguilla" <?php $select="Anguilla"; if(isset($select) && $select!=""){ if($user_country==$select){ echo "selected"; }} ?>>Anguilla</option>
+                                <option value="Antigua & Barbuda" <?php $select="Antigua & Barbuda"; if(isset($select) && $select!=""){ if($user_country==$select){ echo "selected"; }} ?>>Antigua & Barbuda</option>
+                                <option value="Argentina" <?php $select="Argentina"; if(isset($select) && $select!=""){ if($user_country==$select){ echo "selected"; }} ?>>Argentina</option>
+                                <option value="Armenia" <?php $select="Armenia"; if(isset($select) && $select!=""){ if($user_country==$select){ echo "selected"; }} ?>>Armenia</option>
+                                <option value="Aruba" <?php $select="Aruba"; if(isset($select) && $select!=""){ if($user_country==$select){ echo "selected"; }} ?>>Aruba</option>
+                                <option value="Australia" <?php $select="Australia"; if(isset($select) && $select!=""){ if($user_country==$select){ echo "selected"; }} ?>>Australia</option>
+                                <option value="Austria" <?php $select="Austria"; if(isset($select) && $select!=""){ if($user_country==$select){ echo "selected"; }} ?>>Austria</option>
+                                <option value="Azerbaijan" <?php $select="Azerbaijan"; if(isset($select) && $select!=""){ if($user_country==$select){ echo "selected"; }} ?>>Azerbaijan</option>
+                                <option value="Bahamas" <?php $select="Bahamas"; if(isset($select) && $select!=""){ if($user_country==$select){ echo "selected"; }} ?>>Bahamas</option>
+                                <option value="Bahrain" <?php $select="Bahrain"; if(isset($select) && $select!=""){ if($user_country==$select){ echo "selected"; }} ?>>Bahrain</option>
+                                <option value="Bangladesh" <?php $select="Bangladesh"; if(isset($select) && $select!=""){ if($user_country==$select){ echo "selected"; }} ?>>Bangladesh</option>
+                                <option value="Barbados" <?php $select="Barbados"; if(isset($select) && $select!=""){ if($user_country==$select){ echo "selected"; }} ?>>Barbados</option>
+                                <option value="Belarus" <?php $select="Belarus"; if(isset($select) && $select!=""){ if($user_country==$select){ echo "selected"; }} ?>>Belarus</option>
+                                <option value="Belgium" <?php $select="Belgium"; if(isset($select) && $select!=""){ if($user_country==$select){ echo "selected"; }} ?>>Belgium</option>
+                                <option value="Belize" <?php $select="Belize"; if(isset($select) && $select!=""){ if($user_country==$select){ echo "selected"; }} ?>>Belize</option>
+                                <option value="Benin" <?php $select="Benin"; if(isset($select) && $select!=""){ if($user_country==$select){ echo "selected"; }} ?>>Benin</option>
+                                <option value="Bermuda" <?php $select="Bermuda"; if(isset($select) && $select!=""){ if($user_country==$select){ echo "selected"; }} ?>>Bermuda</option>
+                                <option value="Bhutan" <?php $select="Bhutan"; if(isset($select) && $select!=""){ if($user_country==$select){ echo "selected"; }} ?>>Bhutan</option>
+                                <option value="Bolivia" <?php $select="Bolivia"; if(isset($select) && $select!=""){ if($user_country==$select){ echo "selected"; }} ?>>Bolivia</option>
+                                <option value="Bonaire" <?php $select="Bonaire"; if(isset($select) && $select!=""){ if($user_country==$select){ echo "selected"; }} ?>>Bonaire</option>
+                                <option value="Bosnia & Herzegovina" <?php $select="Bosnia & Herzegovina"; if(isset($select) && $select!=""){ if($user_country==$select){ echo "selected"; }} ?>>Bosnia & Herzegovina</option>
+                                <option value="Botswana" <?php $select="Botswana"; if(isset($select) && $select!=""){ if($user_country==$select){ echo "selected"; }} ?>>Botswana</option>
+                                <option value="Brazil" <?php $select="Brazil"; if(isset($select) && $select!=""){ if($user_country==$select){ echo "selected"; }} ?>>Brazil</option>
+                                <option value="British Indian Ocean Ter" <?php $select="British Indian Ocean Ter"; if(isset($select) && $select!=""){ if($user_country==$select){ echo "selected"; }} ?>>British Indian Ocean Ter</option>
+                                <option value="Brunei" <?php $select="Brunei"; if(isset($select) && $select!=""){ if($user_country==$select){ echo "selected"; }} ?>>Brunei</option>
+                                <option value="Bulgaria" <?php $select="Bulgaria"; if(isset($select) && $select!=""){ if($user_country==$select){ echo "selected"; }} ?>>Bulgaria</option>
+                                <option value="Burkina Faso" <?php $select="Burkina Faso"; if(isset($select) && $select!=""){ if($user_country==$select){ echo "selected"; }} ?>>Burkina Faso</option>
+                                <option value="Burundi" <?php $select="Burundi"; if(isset($select) && $select!=""){ if($user_country==$select){ echo "selected"; }} ?>>Burundi</option>
+                                <option value="Cambodia" <?php $select="Cambodia"; if(isset($select) && $select!=""){ if($user_country==$select){ echo "selected"; }} ?>>Cambodia</option>
+                                <option value="Cameroon" <?php $select="Cameroon"; if(isset($select) && $select!=""){ if($user_country==$select){ echo "selected"; }} ?>>Cameroon</option>
+                                <option value="Canada" <?php $select="Canada"; if(isset($select) && $select!=""){ if($user_country==$select){ echo "selected"; }} ?>>Canada</option>
+                                <option value="Canary Islands" <?php $select="Canary Islands"; if(isset($select) && $select!=""){ if($user_country==$select){ echo "selected"; }} ?>>Canary Islands</option>
+                                <option value="Cape Verde" <?php $select="Cape Verde"; if(isset($select) && $select!=""){ if($user_country==$select){ echo "selected"; }} ?>>Cape Verde</option>
+                                <option value="Cayman Islands" <?php $select="Cayman Islands"; if(isset($select) && $select!=""){ if($user_country==$select){ echo "selected"; }} ?>>Cayman Islands</option>
+                                <option value="Central African Republic" <?php $select="Central African Republic"; if(isset($select) && $select!=""){ if($user_country==$select){ echo "selected"; }} ?>>Central African Republic</option>
+                                <option value="Chad" <?php $select="Chad"; if(isset($select) && $select!=""){ if($user_country==$select){ echo "selected"; }} ?>>Chad</option>
+                                <option value="Channel Islands" <?php $select="Channel Islands"; if(isset($select) && $select!=""){ if($user_country==$select){ echo "selected"; }} ?>>Channel Islands</option>
+                                <option value="Chile" <?php $select="Chile"; if(isset($select) && $select!=""){ if($user_country==$select){ echo "selected"; }} ?>>Chile</option>
+                                <option value="China" <?php $select="China"; if(isset($select) && $select!=""){ if($user_country==$select){ echo "selected"; }} ?>>China</option>
+                                <option value="Christmas Island" <?php $select="Christmas Island"; if(isset($select) && $select!=""){ if($user_country==$select){ echo "selected"; }} ?>>Christmas Island</option>
+                                <option value="Cocos Island" <?php $select="Cocos Island"; if(isset($select) && $select!=""){ if($user_country==$select){ echo "selected"; }} ?>>Cocos Island</option>
+                                <option value="Colombia" <?php $select="Colombia"; if(isset($select) && $select!=""){ if($user_country==$select){ echo "selected"; }} ?>>Colombia</option>
+                                <option value="Comoros" <?php $select="Comoros"; if(isset($select) && $select!=""){ if($user_country==$select){ echo "selected"; }} ?>>Comoros</option>
+                                <option value="Congo" <?php $select="Congo"; if(isset($select) && $select!=""){ if($user_country==$select){ echo "selected"; }} ?>>Congo</option>
+                                <option value="Cook Islands" <?php $select="Cook Islands"; if(isset($select) && $select!=""){ if($user_country==$select){ echo "selected"; }} ?>>Cook Islands</option>
+                                <option value="Costa Rica" <?php $select="Costa Rica"; if(isset($select) && $select!=""){ if($user_country==$select){ echo "selected"; }} ?>>Costa Rica</option>
+                                <option value="Cote DIvoire" <?php $select="Cote DIvoire"; if(isset($select) && $select!=""){ if($user_country==$select){ echo "selected"; }} ?>>Cote DIvoire</option>
+                                <option value="Croatia" <?php $select="Croatia"; if(isset($select) && $select!=""){ if($user_country==$select){ echo "selected"; }} ?>>Croatia</option>
+                                <option value="Cuba" <?php $select="Cuba"; if(isset($select) && $select!=""){ if($user_country==$select){ echo "selected"; }} ?>>Cuba</option>
+                                <option value="Curaco" <?php $select="Curaco"; if(isset($select) && $select!=""){ if($user_country==$select){ echo "selected"; }} ?>>Curacao</option>
+                                <option value="Cyprus" <?php $select="Cyprus"; if(isset($select) && $select!=""){ if($user_country==$select){ echo "selected"; }} ?>>Cyprus</option>
+                                <option value="Czech Republic" <?php $select="Czech Republic"; if(isset($select) && $select!=""){ if($user_country==$select){ echo "selected"; }} ?>>Czech Republic</option>
+                                <option value="Denmark" <?php $select="Denmark"; if(isset($select) && $select!=""){ if($user_country==$select){ echo "selected"; }} ?>>Denmark</option>
+                                <option value="Djibouti" <?php $select="Djibouti"; if(isset($select) && $select!=""){ if($user_country==$select){ echo "selected"; }} ?>>Djibouti</option>
+                                <option value="Dominica" <?php $select="Dominica"; if(isset($select) && $select!=""){ if($user_country==$select){ echo "selected"; }} ?>>Dominica</option>
+                                <option value="Dominican Republic" <?php $select="Dominican Republic"; if(isset($select) && $select!=""){ if($user_country==$select){ echo "selected"; }} ?>>Dominican Republic</option>
+                                <option value="East Timor" <?php $select="East Timor"; if(isset($select) && $select!=""){ if($user_country==$select){ echo "selected"; }} ?>>East Timor</option>
+                                <option value="Ecuador" <?php $select="Ecuador"; if(isset($select) && $select!=""){ if($user_country==$select){ echo "selected"; }} ?>>Ecuador</option>
+                                <option value="Egypt" <?php $select="Egypt"; if(isset($select) && $select!=""){ if($user_country==$select){ echo "selected"; }} ?>>Egypt</option>
+                                <option value="El Salvador" <?php $select="El Salvador"; if(isset($select) && $select!=""){ if($user_country==$select){ echo "selected"; }} ?>>El Salvador</option>
+                                <option value="Equatorial Guinea" <?php $select="Equatorial Guinea"; if(isset($select) && $select!=""){ if($user_country==$select){ echo "selected"; }} ?>>Equatorial Guinea</option>
+                                <option value="Eritrea" <?php $select="Eritrea"; if(isset($select) && $select!=""){ if($user_country==$select){ echo "selected"; }} ?>>Eritrea</option>
+                                <option value="Estonia" <?php $select="Estonia"; if(isset($select) && $select!=""){ if($user_country==$select){ echo "selected"; }} ?>>Estonia</option>
+                                <option value="Ethiopia" <?php $select="Ethiopia"; if(isset($select) && $select!=""){ if($user_country==$select){ echo "selected"; }} ?>>Ethiopia</option>
+                                <option value="Falkland Islands" <?php $select="Falkland Islands"; if(isset($select) && $select!=""){ if($user_country==$select){ echo "selected"; }} ?>>Falkland Islands</option>
+                                <option value="Faroe Islands" <?php $select="Faroe Islands"; if(isset($select) && $select!=""){ if($user_country==$select){ echo "selected"; }} ?>>Faroe Islands</option>
+                                <option value="Fiji" <?php $select="Fiji"; if(isset($select) && $select!=""){ if($user_country==$select){ echo "selected"; }} ?>>Fiji</option>
+                                <option value="Finland" <?php $select="Finland"; if(isset($select) && $select!=""){ if($user_country==$select){ echo "selected"; }} ?>>Finland</option>
+                                <option value="France" <?php $select="France"; if(isset($select) && $select!=""){ if($user_country==$select){ echo "selected"; }} ?>>France</option>
+                                <option value="French Guiana" <?php $select="French Guiana"; if(isset($select) && $select!=""){ if($user_country==$select){ echo "selected"; }} ?>>French Guiana</option>
+                                <option value="French Polynesia" <?php $select="French Polynesia"; if(isset($select) && $select!=""){ if($user_country==$select){ echo "selected"; }} ?>>French Polynesia</option>
+                                <option value="French Southern Ter" <?php $select="French Southern Ter"; if(isset($select) && $select!=""){ if($user_country==$select){ echo "selected"; }} ?>>French Southern Ter</option>
+                                <option value="Gabon" <?php $select="Gabon"; if(isset($select) && $select!=""){ if($user_country==$select){ echo "selected"; }} ?>>Gabon</option>
+                                <option value="Gambia" <?php $select="Gambia"; if(isset($select) && $select!=""){ if($user_country==$select){ echo "selected"; }} ?>>Gambia</option>
+                                <option value="Georgia" <?php $select="Georgia"; if(isset($select) && $select!=""){ if($user_country==$select){ echo "selected"; }} ?>>Georgia</option>
+                                <option value="Germany" <?php $select="Germany"; if(isset($select) && $select!=""){ if($user_country==$select){ echo "selected"; }} ?>>Germany</option>
+                                <option value="Ghana" <?php $select="Ghana"; if(isset($select) && $select!=""){ if($user_country==$select){ echo "selected"; }} ?>>Ghana</option>
+                                <option value="Gibraltar" <?php $select="Gibraltar"; if(isset($select) && $select!=""){ if($user_country==$select){ echo "selected"; }} ?>>Gibraltar</option>
+                                <option value="Great Britain" <?php $select="Great Britain"; if(isset($select) && $select!=""){ if($user_country==$select){ echo "selected"; }} ?>>Great Britain</option>
+                                <option value="Greece" <?php $select="Greece"; if(isset($select) && $select!=""){ if($user_country==$select){ echo "selected"; }} ?>>Greece</option>
+                                <option value="Greenland" <?php $select="Greenland"; if(isset($select) && $select!=""){ if($user_country==$select){ echo "selected"; }} ?>>Greenland</option>
+                                <option value="Grenada" <?php $select="Grenada"; if(isset($select) && $select!=""){ if($user_country==$select){ echo "selected"; }} ?>>Grenada</option>
+                                <option value="Guadeloupe" <?php $select="Guadeloupe"; if(isset($select) && $select!=""){ if($user_country==$select){ echo "selected"; }} ?>>Guadeloupe</option>
+                                <option value="Guam" <?php $select="Guam"; if(isset($select) && $select!=""){ if($user_country==$select){ echo "selected"; }} ?>>Guam</option>
+                                <option value="Guatemala" <?php $select="Guatemala"; if(isset($select) && $select!=""){ if($user_country==$select){ echo "selected"; }} ?>>Guatemala</option>
+                                <option value="Guinea" <?php $select="Guinea"; if(isset($select) && $select!=""){ if($user_country==$select){ echo "selected"; }} ?>>Guinea</option>
+                                <option value="Guyana" <?php $select="Guyana"; if(isset($select) && $select!=""){ if($user_country==$select){ echo "selected"; }} ?>>Guyana</option>
+                                <option value="Haiti" <?php $select="Haiti"; if(isset($select) && $select!=""){ if($user_country==$select){ echo "selected"; }} ?>>Haiti</option>
+                                <option value="Hawaii" <?php $select="Hawaii"; if(isset($select) && $select!=""){ if($user_country==$select){ echo "selected"; }} ?>>Hawaii</option>
+                                <option value="Honduras" <?php $select="Honduras"; if(isset($select) && $select!=""){ if($user_country==$select){ echo "selected"; }} ?>>Honduras</option>
+                                <option value="Hong Kong" <?php $select="Hong Kong"; if(isset($select) && $select!=""){ if($user_country==$select){ echo "selected"; }} ?>>Hong Kong</option>
+                                <option value="Hungary" <?php $select="Hungary"; if(isset($select) && $select!=""){ if($user_country==$select){ echo "selected"; }} ?>>Hungary</option>
+                                <option value="Iceland" <?php $select="Iceland"; if(isset($select) && $select!=""){ if($user_country==$select){ echo "selected"; }} ?>>Iceland</option>
+                                <option value="Indonesia" <?php $select="Indonesia"; if(isset($select) && $select!=""){ if($user_country==$select){ echo "selected"; }} ?>>Indonesia</option>
                                 <option value="India" <?php $select="India"; if(isset($select) && $select!=""){ if($user_country==$select){ echo "selected"; }} ?>>India</option>
-                                <option value="Iran">Iran</option>
-                                <option value="Iraq">Iraq</option>
-                                <option value="Ireland">Ireland</option>
-                                <option value="Isle of Man">Isle of Man</option>
-                                <option value="Israel">Israel</option>
-                                <option value="Italy">Italy</option>
-                                <option value="Jamaica">Jamaica</option>
-                                <option value="Japan">Japan</option>
-                                <option value="Jordan">Jordan</option>
-                                <option value="Kazakhstan">Kazakhstan</option>
-                                <option value="Kenya">Kenya</option>
-                                <option value="Kiribati">Kiribati</option>
-                                <option value="Korea North">Korea North</option>
-                                <option value="Korea Sout">Korea South</option>
-                                <option value="Kuwait">Kuwait</option>
-                                <option value="Kyrgyzstan">Kyrgyzstan</option>
-                                <option value="Laos">Laos</option>
-                                <option value="Latvia">Latvia</option>
-                                <option value="Lebanon">Lebanon</option>
-                                <option value="Lesotho">Lesotho</option>
-                                <option value="Liberia">Liberia</option>
-                                <option value="Libya">Libya</option>
-                                <option value="Liechtenstein">Liechtenstein</option>
-                                <option value="Lithuania">Lithuania</option>
-                                <option value="Luxembourg">Luxembourg</option>
-                                <option value="Macau">Macau</option>
-                                <option value="Macedonia">Macedonia</option>
-                                <option value="Madagascar">Madagascar</option>
-                                <option value="Malaysia">Malaysia</option>
-                                <option value="Malawi">Malawi</option>
-                                <option value="Maldives">Maldives</option>
-                                <option value="Mali">Mali</option>
-                                <option value="Malta">Malta</option>
-                                <option value="Marshall Islands">Marshall Islands</option>
-                                <option value="Martinique">Martinique</option>
-                                <option value="Mauritania">Mauritania</option>
-                                <option value="Mauritius">Mauritius</option>
-                                <option value="Mayotte">Mayotte</option>
-                                <option value="Mexico">Mexico</option>
-                                <option value="Midway Islands">Midway Islands</option>
-                                <option value="Moldova">Moldova</option>
-                                <option value="Monaco">Monaco</option>
-                                <option value="Mongolia">Mongolia</option>
-                                <option value="Montserrat">Montserrat</option>
-                                <option value="Morocco">Morocco</option>
-                                <option value="Mozambique">Mozambique</option>
-                                <option value="Myanmar">Myanmar</option>
-                                <option value="Nambia">Nambia</option>
-                                <option value="Nauru">Nauru</option>
-                                <option value="Nepal">Nepal</option>
-                                <option value="Netherland Antilles">Netherland Antilles</option>
-                                <option value="Netherlands">Netherlands (Holland, Europe)</option>
-                                <option value="Nevis">Nevis</option>
-                                <option value="New Caledonia">New Caledonia</option>
-                                <option value="New Zealand">New Zealand</option>
-                                <option value="Nicaragua">Nicaragua</option>
-                                <option value="Niger">Niger</option>
-                                <option value="Nigeria">Nigeria</option>
-                                <option value="Niue">Niue</option>
-                                <option value="Norfolk Island">Norfolk Island</option>
-                                <option value="Norway">Norway</option>
-                                <option value="Oman">Oman</option>
-                                <option value="Pakistan">Pakistan</option>
-                                <option value="Palau Island">Palau Island</option>
-                                <option value="Palestine">Palestine</option>
-                                <option value="Panama">Panama</option>
-                                <option value="Papua New Guinea">Papua New Guinea</option>
-                                <option value="Paraguay">Paraguay</option>
-                                <option value="Peru">Peru</option>
-                                <option value="Phillipines">Philippines</option>
-                                <option value="Pitcairn Island">Pitcairn Island</option>
-                                <option value="Poland">Poland</option>
-                                <option value="Portugal">Portugal</option>
-                                <option value="Puerto Rico">Puerto Rico</option>
-                                <option value="Qatar">Qatar</option>
-                                <option value="Republic of Montenegro">Republic of Montenegro</option>
-                                <option value="Republic of Serbia">Republic of Serbia</option>
-                                <option value="Reunion">Reunion</option>
-                                <option value="Romania">Romania</option>
-                                <option value="Russia">Russia</option>
-                                <option value="Rwanda">Rwanda</option>
-                                <option value="St Barthelemy">St Barthelemy</option>
-                                <option value="St Eustatius">St Eustatius</option>
-                                <option value="St Helena">St Helena</option>
-                                <option value="St Kitts-Nevis">St Kitts-Nevis</option>
-                                <option value="St Lucia">St Lucia</option>
-                                <option value="St Maarten">St Maarten</option>
-                                <option value="St Pierre & Miquelon">St Pierre & Miquelon</option>
-                                <option value="St Vincent & Grenadines">St Vincent & Grenadines</option>
-                                <option value="Saipan">Saipan</option>
-                                <option value="Samoa">Samoa</option>
-                                <option value="Samoa American">Samoa American</option>
-                                <option value="San Marino">San Marino</option>
-                                <option value="Sao Tome & Principe">Sao Tome & Principe</option>
-                                <option value="Saudi Arabia">Saudi Arabia</option>
-                                <option value="Senegal">Senegal</option>
-                                <option value="Seychelles">Seychelles</option>
-                                <option value="Sierra Leone">Sierra Leone</option>
-                                <option value="Singapore">Singapore</option>
-                                <option value="Slovakia">Slovakia</option>
-                                <option value="Slovenia">Slovenia</option>
-                                <option value="Solomon Islands">Solomon Islands</option>
-                                <option value="Somalia">Somalia</option>
-                                <option value="South Africa">South Africa</option>
-                                <option value="Spain">Spain</option>
-                                <option value="Sri Lanka">Sri Lanka</option>
-                                <option value="Sudan">Sudan</option>
-                                <option value="Suriname">Suriname</option>
-                                <option value="Swaziland">Swaziland</option>
-                                <option value="Sweden">Sweden</option>
-                                <option value="Switzerland">Switzerland</option>
-                                <option value="Syria">Syria</option>
-                                <option value="Tahiti">Tahiti</option>
-                                <option value="Taiwan">Taiwan</option>
-                                <option value="Tajikistan">Tajikistan</option>
-                                <option value="Tanzania">Tanzania</option>
-                                <option value="Thailand">Thailand</option>
-                                <option value="Togo">Togo</option>
-                                <option value="Tokelau">Tokelau</option>
-                                <option value="Tonga">Tonga</option>
-                                <option value="Trinidad & Tobago">Trinidad & Tobago</option>
-                                <option value="Tunisia">Tunisia</option>
-                                <option value="Turkey">Turkey</option>
-                                <option value="Turkmenistan">Turkmenistan</option>
-                                <option value="Turks & Caicos Is">Turks & Caicos Is</option>
-                                <option value="Tuvalu">Tuvalu</option>
-                                <option value="Uganda">Uganda</option>
-                                <option value="United Kingdom">United Kingdom</option>
-                                <option value="Ukraine">Ukraine</option>
-                                <option value="United Arab Erimates">United Arab Emirates</option>
-                                <option value="United States of America">United States of America</option>
-                                <option value="Uraguay">Uruguay</option>
-                                <option value="Uzbekistan">Uzbekistan</option>
-                                <option value="Vanuatu">Vanuatu</option>
-                                <option value="Vatican City State">Vatican City State</option>
-                                <option value="Venezuela">Venezuela</option>
-                                <option value="Vietnam">Vietnam</option>
-                                <option value="Virgin Islands (Brit)">Virgin Islands (Brit)</option>
-                                <option value="Virgin Islands (USA)">Virgin Islands (USA)</option>
-                                <option value="Wake Island">Wake Island</option>
-                                <option value="Wallis & Futana Is">Wallis & Futana Is</option>
-                                <option value="Yemen">Yemen</option>
-                                <option value="Zaire">Zaire</option>
-                                <option value="Zambia">Zambia</option>
-                                <option value="Zimbabwe">Zimbabwe</option>
+                                <option value="Iran" <?php $select="Iran"; if(isset($select) && $select!=""){ if($user_country==$select){ echo "selected"; }} ?>>Iran</option>
+                                <option value="Iraq" <?php $select="Iraq"; if(isset($select) && $select!=""){ if($user_country==$select){ echo "selected"; }} ?>>Iraq</option>
+                                <option value="Ireland" <?php $select="Ireland"; if(isset($select) && $select!=""){ if($user_country==$select){ echo "selected"; }} ?>>Ireland</option>
+                                <option value="Isle of Man" <?php $select="Isle of Man"; if(isset($select) && $select!=""){ if($user_country==$select){ echo "selected"; }} ?>>Isle of Man</option>
+                                <option value="Israel" <?php $select="Israel"; if(isset($select) && $select!=""){ if($user_country==$select){ echo "selected"; }} ?>>Israel</option>
+                                <option value="Italy" <?php $select="Italy"; if(isset($select) && $select!=""){ if($user_country==$select){ echo "selected"; }} ?>>Italy</option>
+                                <option value="Jamaica" <?php $select="Jamaica"; if(isset($select) && $select!=""){ if($user_country==$select){ echo "selected"; }} ?>>Jamaica</option>
+                                <option value="Japan" <?php $select="Japan"; if(isset($select) && $select!=""){ if($user_country==$select){ echo "selected"; }} ?>>Japan</option>
+                                <option value="Jordan" <?php $select="Jordan"; if(isset($select) && $select!=""){ if($user_country==$select){ echo "selected"; }} ?>>Jordan</option>
+                                <option value="Kazakhstan" <?php $select="Kazakhstan"; if(isset($select) && $select!=""){ if($user_country==$select){ echo "selected"; }} ?>>Kazakhstan</option>
+                                <option value="Kenya" <?php $select="Kenya"; if(isset($select) && $select!=""){ if($user_country==$select){ echo "selected"; }} ?>>Kenya</option>
+                                <option value="Kiribati" <?php $select="Kiribati"; if(isset($select) && $select!=""){ if($user_country==$select){ echo "selected"; }} ?>>Kiribati</option>
+                                <option value="Korea North" <?php $select="Korea North"; if(isset($select) && $select!=""){ if($user_country==$select){ echo "selected"; }} ?>>Korea North</option>
+                                <option value="Korea Sout" <?php $select="Korea Sout"; if(isset($select) && $select!=""){ if($user_country==$select){ echo "selected"; }} ?>>Korea South</option>
+                                <option value="Kuwait" <?php $select="Kuwait"; if(isset($select) && $select!=""){ if($user_country==$select){ echo "selected"; }} ?>>Kuwait</option>
+                                <option value="Kyrgyzstan" <?php $select="Kyrgyzstan"; if(isset($select) && $select!=""){ if($user_country==$select){ echo "selected"; }} ?>>Kyrgyzstan</option>
+                                <option value="Laos" <?php $select="Laos"; if(isset($select) && $select!=""){ if($user_country==$select){ echo "selected"; }} ?>>Laos</option>
+                                <option value="Latvia" <?php $select="Latvia"; if(isset($select) && $select!=""){ if($user_country==$select){ echo "selected"; }} ?>>Latvia</option>
+                                <option value="Lebanon" <?php $select="Lebanon"; if(isset($select) && $select!=""){ if($user_country==$select){ echo "selected"; }} ?>>Lebanon</option>
+                                <option value="Lesotho" <?php $select="Lesotho"; if(isset($select) && $select!=""){ if($user_country==$select){ echo "selected"; }} ?>>Lesotho</option>
+                                <option value="Liberia" <?php $select="Liberia"; if(isset($select) && $select!=""){ if($user_country==$select){ echo "selected"; }} ?>>Liberia</option>
+                                <option value="Libya" <?php $select="Libya"; if(isset($select) && $select!=""){ if($user_country==$select){ echo "selected"; }} ?>>Libya</option>
+                                <option value="Liechtenstein" <?php $select="Liechtenstein"; if(isset($select) && $select!=""){ if($user_country==$select){ echo "selected"; }} ?>>Liechtenstein</option>
+                                <option value="Lithuania" <?php $select="Lithuania"; if(isset($select) && $select!=""){ if($user_country==$select){ echo "selected"; }} ?>>Lithuania</option>
+                                <option value="Luxembourg" <?php $select="Luxembourg"; if(isset($select) && $select!=""){ if($user_country==$select){ echo "selected"; }} ?>>Luxembourg</option>
+                                <option value="Macau" <?php $select="Macau"; if(isset($select) && $select!=""){ if($user_country==$select){ echo "selected"; }} ?>>Macau</option>
+                                <option value="Macedonia" <?php $select="Macedonia"; if(isset($select) && $select!=""){ if($user_country==$select){ echo "selected"; }} ?>>Macedonia</option>
+                                <option value="Madagascar" <?php $select="Madagascar"; if(isset($select) && $select!=""){ if($user_country==$select){ echo "selected"; }} ?>>Madagascar</option>
+                                <option value="Malaysia" <?php $select="Malaysia"; if(isset($select) && $select!=""){ if($user_country==$select){ echo "selected"; }} ?>>Malaysia</option>
+                                <option value="Malawi" <?php $select="Malawi"; if(isset($select) && $select!=""){ if($user_country==$select){ echo "selected"; }} ?>>Malawi</option>
+                                <option value="Maldives" <?php $select="Maldives"; if(isset($select) && $select!=""){ if($user_country==$select){ echo "selected"; }} ?>>Maldives</option>
+                                <option value="Mali" <?php $select="Mali"; if(isset($select) && $select!=""){ if($user_country==$select){ echo "selected"; }} ?>>Mali</option>
+                                <option value="Malta" <?php $select="Malta"; if(isset($select) && $select!=""){ if($user_country==$select){ echo "selected"; }} ?>>Malta</option>
+                                <option value="Marshall Islands" <?php $select="Marshall Islands"; if(isset($select) && $select!=""){ if($user_country==$select){ echo "selected"; }} ?>>Marshall Islands</option>
+                                <option value="Martinique" <?php $select="Martinique"; if(isset($select) && $select!=""){ if($user_country==$select){ echo "selected"; }} ?>>Martinique</option>
+                                <option value="Mauritania" <?php $select="Mauritania"; if(isset($select) && $select!=""){ if($user_country==$select){ echo "selected"; }} ?>>Mauritania</option>
+                                <option value="Mauritius" <?php $select="Mauritius"; if(isset($select) && $select!=""){ if($user_country==$select){ echo "selected"; }} ?>>Mauritius</option>
+                                <option value="Mayotte" <?php $select="Mayotte"; if(isset($select) && $select!=""){ if($user_country==$select){ echo "selected"; }} ?>>Mayotte</option>
+                                <option value="Mexico" <?php $select="Mexico"; if(isset($select) && $select!=""){ if($user_country==$select){ echo "selected"; }} ?>>Mexico</option>
+                                <option value="Midway Islands" <?php $select="Midway Islands"; if(isset($select) && $select!=""){ if($user_country==$select){ echo "selected"; }} ?>>Midway Islands</option>
+                                <option value="Moldova" <?php $select="Moldova"; if(isset($select) && $select!=""){ if($user_country==$select){ echo "selected"; }} ?>>Moldova</option>
+                                <option value="Monaco" <?php $select="Monaco"; if(isset($select) && $select!=""){ if($user_country==$select){ echo "selected"; }} ?>>Monaco</option>
+                                <option value="Mongolia" <?php $select="Mongolia"; if(isset($select) && $select!=""){ if($user_country==$select){ echo "selected"; }} ?>>Mongolia</option>
+                                <option value="Montserrat" <?php $select="Montserrat"; if(isset($select) && $select!=""){ if($user_country==$select){ echo "selected"; }} ?>>Montserrat</option>
+                                <option value="Morocco" <?php $select="Morocco"; if(isset($select) && $select!=""){ if($user_country==$select){ echo "selected"; }} ?>>Morocco</option>
+                                <option value="Mozambique" <?php $select="Mozambique"; if(isset($select) && $select!=""){ if($user_country==$select){ echo "selected"; }} ?>>Mozambique</option>
+                                <option value="Myanmar" <?php $select="Myanmar"; if(isset($select) && $select!=""){ if($user_country==$select){ echo "selected"; }} ?>>Myanmar</option>
+                                <option value="Nambia" <?php $select="Nambia"; if(isset($select) && $select!=""){ if($user_country==$select){ echo "selected"; }} ?>>Nambia</option>
+                                <option value="Nauru" <?php $select="Nauru"; if(isset($select) && $select!=""){ if($user_country==$select){ echo "selected"; }} ?>>Nauru</option>
+                                <option value="Nepal" <?php $select="Nepal"; if(isset($select) && $select!=""){ if($user_country==$select){ echo "selected"; }} ?>>Nepal</option>
+                                <option value="Netherland Antilles" <?php $select="Netherland Antilles"; if(isset($select) && $select!=""){ if($user_country==$select){ echo "selected"; }} ?>>Netherland Antilles</option>
+                                <option value="Netherlands" <?php $select="Netherlands"; if(isset($select) && $select!=""){ if($user_country==$select){ echo "selected"; }} ?>>Netherlands (Holland, Europe)</option>
+                                <option value="Nevis" <?php $select="Nevis"; if(isset($select) && $select!=""){ if($user_country==$select){ echo "selected"; }} ?>>Nevis</option>
+                                <option value="New Caledonia" <?php $select="New Caledonia"; if(isset($select) && $select!=""){ if($user_country==$select){ echo "selected"; }} ?>>New Caledonia</option>
+                                <option value="New Zealand" <?php $select="New Zealand"; if(isset($select) && $select!=""){ if($user_country==$select){ echo "selected"; }} ?>>New Zealand</option>
+                                <option value="Nicaragua" <?php $select="Nicaragua"; if(isset($select) && $select!=""){ if($user_country==$select){ echo "selected"; }} ?>>Nicaragua</option>
+                                <option value="Niger" <?php $select="Niger"; if(isset($select) && $select!=""){ if($user_country==$select){ echo "selected"; }} ?>>Niger</option>
+                                <option value="Nigeria" <?php $select="Nigeria"; if(isset($select) && $select!=""){ if($user_country==$select){ echo "selected"; }} ?>>Nigeria</option>
+                                <option value="Niue" <?php $select="Niue"; if(isset($select) && $select!=""){ if($user_country==$select){ echo "selected"; }} ?>>Niue</option>
+                                <option value="Norfolk Island" <?php $select="Norfolk Island"; if(isset($select) && $select!=""){ if($user_country==$select){ echo "selected"; }} ?>>Norfolk Island</option>
+                                <option value="Norway" <?php $select="Norway"; if(isset($select) && $select!=""){ if($user_country==$select){ echo "selected"; }} ?>>Norway</option>
+                                <option value="Oman" <?php $select="Oman"; if(isset($select) && $select!=""){ if($user_country==$select){ echo "selected"; }} ?>>Oman</option>
+                                <option value="Pakistan" <?php $select="Pakistan"; if(isset($select) && $select!=""){ if($user_country==$select){ echo "selected"; }} ?>>Pakistan</option>
+                                <option value="Palau Island" <?php $select="Palau Island"; if(isset($select) && $select!=""){ if($user_country==$select){ echo "selected"; }} ?>>Palau Island</option>
+                                <option value="Palestine" <?php $select="Palestine"; if(isset($select) && $select!=""){ if($user_country==$select){ echo "selected"; }} ?>>Palestine</option>
+                                <option value="Panama" <?php $select="Panama"; if(isset($select) && $select!=""){ if($user_country==$select){ echo "selected"; }} ?>>Panama</option>
+                                <option value="Papua New Guinea" <?php $select="Papua New Guinea"; if(isset($select) && $select!=""){ if($user_country==$select){ echo "selected"; }} ?>>Papua New Guinea</option>
+                                <option value="Paraguay" <?php $select="Paraguay"; if(isset($select) && $select!=""){ if($user_country==$select){ echo "selected"; }} ?>>Paraguay</option>
+                                <option value="Peru" <?php $select="Peru"; if(isset($select) && $select!=""){ if($user_country==$select){ echo "selected"; }} ?>>Peru</option>
+                                <option value="Phillipines" <?php $select="Phillipines"; if(isset($select) && $select!=""){ if($user_country==$select){ echo "selected"; }} ?>>Philippines</option>
+                                <option value="Pitcairn Island" <?php $select="Pitcairn Island"; if(isset($select) && $select!=""){ if($user_country==$select){ echo "selected"; }} ?>>Pitcairn Island</option>
+                                <option value="Poland" <?php $select="Poland"; if(isset($select) && $select!=""){ if($user_country==$select){ echo "selected"; }} ?>>Poland</option>
+                                <option value="Portugal" <?php $select="Portugal"; if(isset($select) && $select!=""){ if($user_country==$select){ echo "selected"; }} ?>>Portugal</option>
+                                <option value="Puerto Rico" <?php $select="Puerto Rico"; if(isset($select) && $select!=""){ if($user_country==$select){ echo "selected"; }} ?>>Puerto Rico</option>
+                                <option value="Qatar" <?php $select="Qatar"; if(isset($select) && $select!=""){ if($user_country==$select){ echo "selected"; }} ?>>Qatar</option>
+                                <option value="Republic of Montenegro" <?php $select="Republic of Montenegro"; if(isset($select) && $select!=""){ if($user_country==$select){ echo "selected"; }} ?>>Republic of Montenegro</option>
+                                <option value="Republic of Serbia" <?php $select="Republic of Serbia"; if(isset($select) && $select!=""){ if($user_country==$select){ echo "selected"; }} ?>>Republic of Serbia</option>
+                                <option value="Reunion" <?php $select="Reunion"; if(isset($select) && $select!=""){ if($user_country==$select){ echo "selected"; }} ?>>Reunion</option>
+                                <option value="Romania" <?php $select="Romania"; if(isset($select) && $select!=""){ if($user_country==$select){ echo "selected"; }} ?>>Romania</option>
+                                <option value="Russia" <?php $select="Russia"; if(isset($select) && $select!=""){ if($user_country==$select){ echo "selected"; }} ?>>Russia</option>
+                                <option value="Rwanda" <?php $select="Rwanda"; if(isset($select) && $select!=""){ if($user_country==$select){ echo "selected"; }} ?>>Rwanda</option>
+                                <option value="St Barthelemy" <?php $select="St Barthelemy"; if(isset($select) && $select!=""){ if($user_country==$select){ echo "selected"; }} ?>>St Barthelemy</option>
+                                <option value="St Eustatius" <?php $select="St Eustatius"; if(isset($select) && $select!=""){ if($user_country==$select){ echo "selected"; }} ?>>St Eustatius</option>
+                                <option value="St Helena" <?php $select="St Helena"; if(isset($select) && $select!=""){ if($user_country==$select){ echo "selected"; }} ?>>St Helena</option>
+                                <option value="St Kitts-Nevis" <?php $select="St Kitts-Nevis"; if(isset($select) && $select!=""){ if($user_country==$select){ echo "selected"; }} ?>>St Kitts-Nevis</option>
+                                <option value="St Lucia" <?php $select="St Lucia"; if(isset($select) && $select!=""){ if($user_country==$select){ echo "selected"; }} ?>>St Lucia</option>
+                                <option value="St Maarten"<?php $select="St Maarten"; if(isset($select) && $select!=""){ if($user_country==$select){ echo "selected"; }} ?>>St Maarten</option>
+                                <option value="St Pierre & Miquelon" <?php $select="St Pierre & Miquelon"; if(isset($select) && $select!=""){ if($user_country==$select){ echo "selected"; }} ?>>St Pierre & Miquelon</option>
+                                <option value="St Vincent & Grenadines" <?php $select="St Vincent & Grenadines"; if(isset($select) && $select!=""){ if($user_country==$select){ echo "selected"; }} ?>>St Vincent & Grenadines</option>
+                                <option value="Saipan" <?php $select="Saipan"; if(isset($select) && $select!=""){ if($user_country==$select){ echo "selected"; }} ?>>Saipan</option>
+                                <option value="Samoa" <?php $select="Samoa"; if(isset($select) && $select!=""){ if($user_country==$select){ echo "selected"; }} ?>>Samoa</option>
+                                <option value="Samoa American" <?php $select="Samoa American"; if(isset($select) && $select!=""){ if($user_country==$select){ echo "selected"; }} ?>>Samoa American</option>
+                                <option value="San Marino" <?php $select="San Marino"; if(isset($select) && $select!=""){ if($user_country==$select){ echo "selected"; }} ?>>San Marino</option>
+                                <option value="Sao Tome & Principe" <?php $select="Sao Tome & Principe"; if(isset($select) && $select!=""){ if($user_country==$select){ echo "selected"; }} ?>>Sao Tome & Principe</option>
+                                <option value="Saudi Arabia" <?php $select="Saudi Arabia"; if(isset($select) && $select!=""){ if($user_country==$select){ echo "selected"; }} ?>>Saudi Arabia</option>
+                                <option value="Senegal" <?php $select="Senegal"; if(isset($select) && $select!=""){ if($user_country==$select){ echo "selected"; }} ?>>Senegal</option>
+                                <option value="Seychelles" <?php $select="Seychelles"; if(isset($select) && $select!=""){ if($user_country==$select){ echo "selected"; }} ?>>Seychelles</option>
+                                <option value="Sierra Leone" <?php $select="Sierra Leone"; if(isset($select) && $select!=""){ if($user_country==$select){ echo "selected"; }} ?>>Sierra Leone</option>
+                                <option value="Singapore" <?php $select="Singapore"; if(isset($select) && $select!=""){ if($user_country==$select){ echo "selected"; }} ?>>Singapore</option>
+                                <option value="Slovakia" <?php $select="Slovakia"; if(isset($select) && $select!=""){ if($user_country==$select){ echo "selected"; }} ?>>Slovakia</option>
+                                <option value="Slovenia" <?php $select="Slovenia"; if(isset($select) && $select!=""){ if($user_country==$select){ echo "selected"; }} ?>>Slovenia</option>
+                                <option value="Solomon Islands" <?php $select="Solomon Islands"; if(isset($select) && $select!=""){ if($user_country==$select){ echo "selected"; }} ?>>Solomon Islands</option>
+                                <option value="Somalia" <?php $select="Somalia"; if(isset($select) && $select!=""){ if($user_country==$select){ echo "selected"; }} ?>>Somalia</option>
+                                <option value="South Africa" <?php $select="South Africa"; if(isset($select) && $select!=""){ if($user_country==$select){ echo "selected"; }} ?>>South Africa</option>
+                                <option value="Spain" <?php $select="Spain"; if(isset($select) && $select!=""){ if($user_country==$select){ echo "selected"; }} ?>>Spain</option>
+                                <option value="Sri Lanka" <?php $select="Sri Lanka"; if(isset($select) && $select!=""){ if($user_country==$select){ echo "selected"; }} ?>>Sri Lanka</option>
+                                <option value="Sudan" <?php $select="Sudan"; if(isset($select) && $select!=""){ if($user_country==$select){ echo "selected"; }} ?>>Sudan</option>
+                                <option value="Suriname" <?php $select="Suriname"; if(isset($select) && $select!=""){ if($user_country==$select){ echo "selected"; }} ?>>Suriname</option>
+                                <option value="Swaziland" <?php $select="Swaziland"; if(isset($select) && $select!=""){ if($user_country==$select){ echo "selected"; }} ?>>Swaziland</option>
+                                <option value="Sweden" <?php $select="Sweden"; if(isset($select) && $select!=""){ if($user_country==$select){ echo "selected"; }} ?>>Sweden</option>
+                                <option value="Switzerland" <?php $select="Switzerland"; if(isset($select) && $select!=""){ if($user_country==$select){ echo "selected"; }} ?>>Switzerland</option>
+                                <option value="Syria" <?php $select="Syria"; if(isset($select) && $select!=""){ if($user_country==$select){ echo "selected"; }} ?>>Syria</option>
+                                <option value="Tahiti" <?php $select="Tahiti"; if(isset($select) && $select!=""){ if($user_country==$select){ echo "selected"; }} ?>>Tahiti</option>
+                                <option value="Taiwan" <?php $select="Taiwan"; if(isset($select) && $select!=""){ if($user_country==$select){ echo "selected"; }} ?>>Taiwan</option>
+                                <option value="Tajikistan" <?php $select="Tajikistan"; if(isset($select) && $select!=""){ if($user_country==$select){ echo "selected"; }} ?>>Tajikistan</option>
+                                <option value="Tanzania" <?php $select="Tanzania"; if(isset($select) && $select!=""){ if($user_country==$select){ echo "selected"; }} ?>>Tanzania</option>
+                                <option value="Thailand" <?php $select="Thailand"; if(isset($select) && $select!=""){ if($user_country==$select){ echo "selected"; }} ?>>Thailand</option>
+                                <option value="Togo" <?php $select="Togo"; if(isset($select) && $select!=""){ if($user_country==$select){ echo "selected"; }} ?>>Togo</option>
+                                <option value="Tokelau" <?php $select="Tokelau"; if(isset($select) && $select!=""){ if($user_country==$select){ echo "selected"; }} ?>>Tokelau</option>
+                                <option value="Tonga" <?php $select="Tonga"; if(isset($select) && $select!=""){ if($user_country==$select){ echo "selected"; }} ?>>Tonga</option>
+                                <option value="Trinidad & Tobago" <?php $select="Trinidad & Tobago"; if(isset($select) && $select!=""){ if($user_country==$select){ echo "selected"; }} ?>>Trinidad & Tobago</option>
+                                <option value="Tunisia" <?php $select="Tunisia"; if(isset($select) && $select!=""){ if($user_country==$select){ echo "selected"; }} ?>>Tunisia</option>
+                                <option value="Turkey" <?php $select="Turkey"; if(isset($select) && $select!=""){ if($user_country==$select){ echo "selected"; }} ?>>Turkey</option>
+                                <option value="Turkmenistan" <?php $select="Turkmenistan"; if(isset($select) && $select!=""){ if($user_country==$select){ echo "selected"; }} ?>>Turkmenistan</option>
+                                <option value="Turks & Caicos Is" <?php $select="Turks & Caicos Is"; if(isset($select) && $select!=""){ if($user_country==$select){ echo "selected"; }} ?>>Turks & Caicos Is</option>
+                                <option value="Tuvalu" <?php $select="Tuvalu"; if(isset($select) && $select!=""){ if($user_country==$select){ echo "selected"; }} ?>>Tuvalu</option>
+                                <option value="Uganda" <?php $select="Uganda"; if(isset($select) && $select!=""){ if($user_country==$select){ echo "selected"; }} ?>>Uganda</option>
+                                <option value="United Kingdom" <?php $select="United Kingdom"; if(isset($select) && $select!=""){ if($user_country==$select){ echo "selected"; }} ?>>United Kingdom</option>
+                                <option value="Ukraine" <?php $select="Ukraine"; if(isset($select) && $select!=""){ if($user_country==$select){ echo "selected"; }} ?>>Ukraine</option>
+                                <option value="United Arab Erimates" <?php $select="United Arab Erimates"; if(isset($select) && $select!=""){ if($user_country==$select){ echo "selected"; }} ?>>United Arab Emirates</option>
+                                <option value="United States of America" <?php $select="United States of America"; if(isset($select) && $select!=""){ if($user_country==$select){ echo "selected"; }} ?>>United States of America</option>
+                                <option value="Uraguay" <?php $select="Uraguay"; if(isset($select) && $select!=""){ if($user_country==$select){ echo "selected"; }} ?>>Uruguay</option>
+                                <option value="Uzbekistan" <?php $select="Uzbekistan"; if(isset($select) && $select!=""){ if($user_country==$select){ echo "selected"; }} ?>>Uzbekistan</option>
+                                <option value="Vanuatu" <?php $select="Vanuatu"; if(isset($select) && $select!=""){ if($user_country==$select){ echo "selected"; }} ?>>Vanuatu</option>
+                                <option value="Vatican City State" <?php $select="Vatican City State"; if(isset($select) && $select!=""){ if($user_country==$select){ echo "selected"; }} ?>>Vatican City State</option>
+                                <option value="Venezuela" <?php $select="Venezuela"; if(isset($select) && $select!=""){ if($user_country==$select){ echo "selected"; }} ?>>Venezuela</option>
+                                <option value="Vietnam" <?php $select="Vietnam"; if(isset($select) && $select!=""){ if($user_country==$select){ echo "selected"; }} ?>>Vietnam</option>
+                                <option value="Virgin Islands (Brit)" <?php $select="Virgin Islands (Brit)"; if(isset($select) && $select!=""){ if($user_country==$select){ echo "selected"; }} ?>>Virgin Islands (Brit)</option>
+                                <option value="Virgin Islands (USA)" <?php $select="Virgin Islands (USA)"; if(isset($select) && $select!=""){ if($user_country==$select){ echo "selected"; }} ?>>Virgin Islands (USA)</option>
+                                <option value="Wake Island" <?php $select="Wake Island"; if(isset($select) && $select!=""){ if($user_country==$select){ echo "selected"; }} ?>>Wake Island</option>
+                                <option value="Wallis & Futana Is" <?php $select="Wallis & Futana Is"; if(isset($select) && $select!=""){ if($user_country==$select){ echo "selected"; }} ?>>Wallis & Futana Is</option>
+                                <option value="Yemen" <?php $select="Yemen"; if(isset($select) && $select!=""){ if($user_country==$select){ echo "selected"; }} ?>>Yemen</option>
+                                <option value="Zaire" <?php $select="Zaire"; if(isset($select) && $select!=""){ if($user_country==$select){ echo "selected"; }} ?>>Zaire</option>
+                                <option value="Zambia" <?php $select="Zambia"; if(isset($select) && $select!=""){ if($user_country==$select){ echo "selected"; }} ?>>Zambia</option>
+                                <option value="Zimbabwe" <?php $select="Zimbabwe"; if(isset($select) && $select!=""){ if($user_country==$select){ echo "selected"; }} ?>>Zimbabwe</option>
                             </select>
                         </div>
                         <div class="form-group col-md-3">
@@ -450,7 +450,7 @@
 
         <div class="container sndcon">
             <div class="card shadow">
-                <h4 class="col-12 ntxt">Camera Details <small>(Optional)</small></h4>
+            <h4 class="col-12 ntxt">Device Detailes <small>(Device Use for Capturing Pictures)</small></h4>
                 <hr class="mb-4">
                 <form class="mfrm" action="/">
                     <div class="form-row">
