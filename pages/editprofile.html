@@ -109,12 +109,21 @@
                     <div class="form-row">
                         <div class="form-group col-md-12">
                             <label for="inputFyllName"><i class="fas fa-signature"></i> Full Name</label>
-                            <input type="text" class="form-control" id="inputFyllName" placeholder="Sylvester Stallone" required>
+                            <input type="text" class="form-control" id="inputFyllName" placeholder="Sylvester Stallone" maxlength="30" required>
                         </div>
                         <div class="form-group col-md-6">
                             <label for="email"><i class="fas fa-at"></i> Email</label>
-                            <input type="text" id="email" class="form-control" value="" placeholder="example@outlook.com" required>
+                            <input type="text" id="email" class="form-control" value="" placeholder="example@outlook.com" maxlength="30" required>
                         </div>
+                        <div class="form-group col-md-4">
+                            <label for="inputState"><i class="fas fa-user-cog"></i> Account Type</label>
+                            <select id="inputState" class="form-control" required>
+                                <option selected>Choose...</option>
+                                <option value="Viewer">Viewer</option>
+                                <option value="Uploader">Uploader</option>
+                                <option value="Photographer_&_Uploader">Photographer & Uploader</option>
+                            </select>
+                        </div>        
                         <!--<div class="form-group col-md-6">
                             <label for="inputPassword6">Password <i class="bi bi-file-lock2"></i></label>
                             <input type="password" class="form-control" id="inputPassword6" placeholder="********">
@@ -131,7 +140,7 @@
                     <div class="form-row">
                         <div class="form-group col-md-6">
                             <label for="phone"><i class="fas fa-phone-volume"></i> Phone Number</label>
-                            <input type="number" id="phone" class="form-control" placeholder="1234567890">
+                            <input type="tel" id="phone" class="form-control" placeholder="1234567890">
                         </div>
                         <div class="form-group dates col-md-6">
                             <label for="picker"><i class="far fa-calendar-alt"></i> Date Of Birth</label>
@@ -141,7 +150,7 @@
                     <div class="form-row">
                         <div class="form-group col-md-6">
                             <label for="inputCity"><i class="fas fa-city"></i> City</label>
-                            <input type="text" class="form-control" id="inputCity" placeholder="Florida" required>
+                            <input type="text" class="form-control" id="inputCity" maxlength="15" placeholder="Florida" required>
                         </div>
                         <div class="form-group col-md-4">
                             <label for="inputState"><i class="far fa-flag"></i> Country</label>
@@ -397,7 +406,7 @@
                         </div>
                         <div class="form-group col-md-2">
                             <label for="inputZip"><i class="fa fa-address-card" aria-hidden="true"></i> Zip</label>
-                            <input type="text" class="form-control" id="inputZip">
+                            <input type="text" class="form-control" maxlength="6" id="inputZip">
                         </div>
                     </div>
                     <div class="form-row smit justify-content-between">
@@ -420,25 +429,25 @@
                     <div class="form-row">
                         <div class="form-group col-md-6">
                             <label for="mobileName"><i class="fas fa-mobile-alt"></i> Device Name</label>
-                            <input type="text" id="mobileName" class="form-control" placeholder="Pixel 2">
+                            <input type="text" id="mobileName" class="form-control" maxlength="25" placeholder="Pixel 2">
                         </div>
                         <div class="form-group col-md-6">
                             <label for="mobileModel">Device Model <small class="badge badge-primary text-wrap">(Check About Device Section)</small></label>
-                            <input type="text" class="form-control" id="mobileModel" placeholder="G011A">
+                            <input type="text" class="form-control" id="mobileModel" maxlength="25" placeholder="G011A">
                         </div>
                     </div>
                     <div class="form-row">
                         <div class="form-group col-md-4">
                             <label for="mobileApertures"><b>ƒ</b> Apertures </label>
-                            <input type="text" id="mobileApertures" class="form-control" placeholder="1.7" required>
+                            <input type="text" id="mobileApertures" class="form-control" maxlength="4" placeholder="1.7" required>
                         </div>
                         <div class="form-group col-md-4">
                             <label for="mobileMp"><i class="fas fa-camera-retro"></i> Resolution <small>MP (Megapixel) </small></label>
-                            <input type="text" class="form-control" id="mobileMp" placeholder="64">
+                            <input type="text" class="form-control" id="mobileMp" maxlength="4" placeholder="64">
                         </div>
                         <div class="form-group col-md-4">
                             <label for="mobileFocalLength"><i class="fas fa-question-circle"></i> Focal Length <small>(mm)</small></label>
-                            <input type="text" class="form-control" id="mobileFocalLength" placeholder="3.61">
+                            <input type="text" class="form-control" id="mobileFocalLength" maxlength="4" placeholder="3.61">
                         </div>
                     </div>
                     <div class="form-row smit">
