@@ -1,5 +1,6 @@
 <?php
     require('../auth.php');
+    $user_gender=$row['gender'];
     $user_phone_no=$row['phone_no'];
     $user_country=$row['country'];
     $user_city=$row['city'];
@@ -144,13 +145,13 @@
                             <input type="text" id="email" class="form-control" placeholder="example@mail.com" value="<?php echo $user_email; ?>" maxlength="30" disabled>
                         </div>
                         <div class="form-group col-md-4">
-                            <label for="inputState"><i class="fas fa-user-cog"></i> Account Type</label>
+                            <label for="inputState"><i class="fas fa-user-cog"></i> Gender</label>
                             <select id="inputState" class="form-control" required>
-                                <option value="Viewer" <?php $select="Viewer"; if(isset($select) && $select!=""){ if($user_role==$select){ echo "selected"; }} ?>>Viewer</option>
-                                <option value="Uploader" <?php $select="Uploader"; if(isset($select) && $select!=""){ if($user_role==$select){ echo "selected"; }} ?>>Uploader</option>
-                                <option value="Photographer & Uploader" <?php $select="Photographer & Uploader"; if(isset($select) && $select!=""){ if($user_role==$select){ echo "selected"; }} ?>>Photographer & Uploader</option>
+                                <option value="Male" <?php $select="Male"; if(isset($select) && $select!=""){ if($user_gender==$select){ echo "selected"; }} ?>>Male</option>
+                                <option value="Female" <?php $select="Female"; if(isset($select) && $select!=""){ if($user_gender==$select){ echo "selected"; }} ?>>Female</option>
+                                <option value="Others" <?php $select="Others"; if(isset($select) && $select!=""){ if($user_gender==$select){ echo "selected"; }} ?>>Others</option>
                             </select>
-                        </div>        
+                        </div>      
                         <!--<div class="form-group col-md-6">
                             <label for="inputPassword6">Password <i class="bi bi-file-lock2"></i></label>
                             <input type="password" class="form-control" id="inputPassword6" placeholder="********">
@@ -163,11 +164,11 @@
                             <label for="picker"><i class="far fa-calendar-alt"></i> Date Of Birth</label>
                             <input type="date" autocomplete="off" class="form-control" id="user1" placeholder="yyyy-mm-dd" value="<?php echo $user_birth_date; ?>" required>
                         </div>
-                        <div class="form-group col-md-4">
+                        <div class="form-group col-md-3">
                             <label for="inputCity"><i class="fas fa-city"></i> City</label>
                             <input type="text" class="form-control" id="inputCity" maxlength="15" placeholder="Florida" value="<?php echo $user_city; ?>" required>
                         </div>
-                        <div class="form-group col-md-4">
+                        <div class="form-group col-md-3">
                             <label for="inputState"><i class="far fa-flag"></i> Country</label>
                             <select id="inputState" class="form-control" required>
                                 <option value="Unkown" <?php $select="Unkown"; if($user_country==$select){ echo "selected"; } ?>>Choose...</option>
@@ -419,9 +420,17 @@
                                 <option value="Zimbabwe" <?php $select="Zimbabwe"; if(isset($select) && $select!=""){ if($user_country==$select){ echo "selected"; }} ?>>Zimbabwe</option>
                             </select>
                         </div>
-                        <div class="form-group col-md-4">
+                        <div class="form-group col-md-3">
                             <label for="inputZip"><i class="fa fa-address-card" aria-hidden="true"></i> Zip Code</label>
                             <input type="text" class="form-control" placeholder="700001" maxlength="6" id="inputZip" value="<?php echo $user_zip_code; ?>">
+                        </div>
+                        <div class="form-group col-md-3">
+                            <label for="inputState"><i class="fas fa-user-cog"></i> Account Type</label>
+                            <select id="inputState" class="form-control" required>
+                                <option value="Viewer" <?php $select="Viewer"; if(isset($select) && $select!=""){ if($user_role==$select){ echo "selected"; }} ?>>Viewer</option>
+                                <option value="Uploader" <?php $select="Uploader"; if(isset($select) && $select!=""){ if($user_role==$select){ echo "selected"; }} ?>>Uploader</option>
+                                <option value="Photographer & Uploader" <?php $select="Photographer & Uploader"; if(isset($select) && $select!=""){ if($user_role==$select){ echo "selected"; }} ?>>Photographer & Uploader</option>
+                            </select>
                         </div>
                     </div>
                     <!--<div class="form-group">
