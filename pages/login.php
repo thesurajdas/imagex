@@ -49,7 +49,7 @@ if(isset($_COOKIE['user_id'])){
 if (isset($_REQUEST['login'])) {
   if (($_SERVER['REQUEST_METHOD']=='POST')){
   $userid=$connect->real_escape_string($_REQUEST['userid']);
-  $tmp_password=$connect->real_escape_string($_REQUEST['password']);
+  $tmp_password=$connect->real_escape_string($_REQUEST['lpassword']);
   $password=base64_encode($tmp_password);
   $sql="SELECT id,username,email,password FROM users WHERE (username='".$userid."' OR email='".$userid."') AND password='".$password."' LIMIT 1";
   $result=$connect->query($sql);
@@ -157,7 +157,7 @@ if (isset($_REQUEST['login'])) {
             </div>
             <div class="input-field">
               <i class="fas fa-lock"></i>
-              <input type="password" name="password" placeholder="Password" id="password" minlength="5" maxlength="60" onkeypress="return AvoidSpace(event)" required/>
+              <input type="password" name="password" placeholder="Password" id="lpassword" minlength="5" maxlength="60" onkeypress="return AvoidSpace(event)" required/>
             </div>
             <input type="submit" name="login" value="Login" class="btn solid" />
             <!--<p class="social-text">Or Sign in with social platforms</p>
