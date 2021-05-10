@@ -76,7 +76,7 @@ if (isset($_REQUEST['login'])) {
 
     //Check Signup Input
     if (isset($_REQUEST['register'])) {
-      if (($_SERVER['REQUEST_METHOD']=='POST')) {
+      if ($_SERVER['REQUEST_METHOD']=='POST') {
         //Check Empty String
         if (($_REQUEST['username']=="")||($_REQUEST['email']=="")||($_REQUEST['name']=="")||($_REQUEST['password']=="")) {
           echo "<script>alert('All fields are required!');</script>";

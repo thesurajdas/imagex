@@ -11,6 +11,16 @@
     $user_role=$row['role'];
     $user_birth_date=$row['birth_date'];
     $user_zip_code=$row['zip_code'];
+
+    //Save Personal Details
+    if (isset($_REQUEST['psave'])) {
+        if ($_SERVER['REQUEST_METHOD']=='POST') {
+            # code...
+        }
+        else{
+            echo "<script>alert('Wrong Submit Method!');</script>";
+        }
+    }
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -119,15 +129,19 @@
             <div class="card shadow">
                 <h4 class="mtxt">Personal Details</h4>
                 <hr class="mb-4">
-                <form class="mfrm" action="/">
+                <form class="mfrm" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]);?>" method="POST">
                     <div class="form-row">
-                        <div class="form-group col-md-12">
+                        <div class="form-group col-md-6">
                             <label for="inputFyllName"><i class="fas fa-signature"></i> Full Name</label>
-                            <input type="text" class="form-control" id="inputFyllName" placeholder="Enter Full Name" maxlength="30" value="<?php echo $user_name; ?>" required>
+                            <input type="text" class="form-control" placeholder="Enter Full Name" minlength="3" maxlength="30" value="<?php echo $user_name; ?>" required>
+                        </div>
+                        <div class="form-group col-md-4">
+                            <label for="inputFyllName"><i class="fas fa-user"></i> Username</label>
+                            <input type="text" class="form-control" placeholder="Username" minlength="5" maxlength="60" value="<?php echo $user_username; ?>" onkeypress="return AvoidSpace(event)" disabled>
                         </div>
                         <div class="form-group col-md-6">
                             <label for="email"><i class="fas fa-at"></i> Email</label>
-                            <input type="text" id="email" class="form-control" placeholder="example@mail.com" value="<?php echo $user_email; ?>" maxlength="30" required>
+                            <input type="text" id="email" class="form-control" placeholder="example@mail.com" value="<?php echo $user_email; ?>" maxlength="30" disabled>
                         </div>
                         <div class="form-group col-md-4">
                             <label for="inputState"><i class="fas fa-user-cog"></i> Account Type</label>
@@ -155,20 +169,20 @@
                             <label for="phone"><i class="fas fa-phone-volume"></i> Phone Number (Optional)</label>
                             <input type="tel" id="phone" class="form-control" placeholder="1234567890" value="<?php echo $user_phone_no; ?>">
                         </div>
-                        <div class="form-group dates col-md-6">
+                        <div class="form-group dates col-md-4">
                             <label for="picker"><i class="far fa-calendar-alt"></i> Date Of Birth</label>
                             <input type="date" autocomplete="off" class="form-control" id="user1" placeholder="yyyy-mm-dd" value="<?php echo $user_birth_date; ?>" required>
                         </div>
                     </div>
                     <div class="form-row">
-                        <div class="form-group col-md-6">
+                        <div class="form-group col-md-5">
                             <label for="inputCity"><i class="fas fa-city"></i> City</label>
                             <input type="text" class="form-control" id="inputCity" maxlength="15" placeholder="Florida" value="<?php echo $user_city; ?>" required>
                         </div>
                         <div class="form-group col-md-4">
                             <label for="inputState"><i class="far fa-flag"></i> Country</label>
                             <select id="inputState" class="form-control" required>
-                                <option <?php $select="Unkown"; if($user_country==$select){ echo "selected"; } ?>>Choose...</option>
+                                <option value="Unkown" <?php $select="Unkown"; if($user_country==$select){ echo "selected"; } ?>>Choose...</option>
                                 <option value="Afganistan" <?php $select="Afganistan"; if(isset($select) && $select!=""){ if($user_country==$select){ echo "selected"; }} ?>>Afghanistan</option>
                                 <option value="Albania" <?php $select="Albania"; if(isset($select) && $select!=""){ if($user_country==$select){ echo "selected"; }} ?>>Albania</option>
                                 <option value="Algeria">Algeria</option>
@@ -417,13 +431,13 @@
                                 <option value="Zimbabwe">Zimbabwe</option>
                             </select>
                         </div>
-                        <div class="form-group col-md-2">
+                        <div class="form-group col-md-3">
                             <label for="inputZip"><i class="fa fa-address-card" aria-hidden="true"></i> Zip Code</label>
                             <input type="text" class="form-control" placeholder="700001" maxlength="6" id="inputZip" value="<?php echo $user_zip_code; ?>">
                         </div>
                     </div>
                     <div class="form-row smit justify-content-between">
-                        <button type="submit" class="btn btn-primary" >Save Changes</button>
+                        <button type="submit" class="btn btn-primary" name="psave">Save Changes</button>
                         <button type="button" class="btn btn-success" data-toggle="modal" data-target="#exampleModal">
                             Change Password
                         </button>
@@ -577,8 +591,9 @@
             </div>
           </div>
 
-          <!-- Password Retype Password Checker -->
+          <!-- Custom Javascript Functions -->
             <script>
+                // Password Retype Password Checker
                 var password = document.getElementById("password")
                 , confirm_password = document.getElementById("confirm_password");
             function validatePassword(){
@@ -590,6 +605,11 @@
             }
             password.onchange = validatePassword;
             confirm_password.onkeyup = validatePassword;
+            //Space Remover from text input
+            function AvoidSpace(event) {
+                var k = event ? event.which : window.event.keyCode;
+                if (k == 32) return false;
+            }
             </script>
     </body>
 </html>
