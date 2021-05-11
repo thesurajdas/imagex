@@ -14,14 +14,43 @@
     $user_zip_code=$row['zip_code'];
 
     //Save Personal Details
+    //Check Signup Input
     if (isset($_REQUEST['psave'])) {
         if ($_SERVER['REQUEST_METHOD']=='POST') {
-            # code...
+          //Check Empty String
+          if (($_REQUEST['name']=="")||($_REQUEST['gender']=="")||($_REQUEST['birth_date']=="")||($_REQUEST['country']=="")||($_REQUEST['city']=="")||($_REQUEST['role']=="")) {
+            echo "<script>alert('All fields are required!');</script>";
+          }
+          else{
+            //Take Form Input Securely
+            // $username=$connect->real_escape_string($_REQUEST['username']);
+            // $email=$connect->real_escape_string($_REQUEST['email']);
+            // $email = filter_var($email, FILTER_SANITIZE_EMAIL);
+            $phone_no="N\A";
+            $phone_no=$connect->real_escape_string($_REQUEST['phone_no']);
+            $name=$connect->real_escape_string($_REQUEST['name']);
+            $gender=$connect->real_escape_string($_REQUEST['gender']);
+            $birth_date=$connect->real_escape_string($_REQUEST['birth_date']);
+            $country=$connect->real_escape_string($_REQUEST['country']);
+            $city=$connect->real_escape_string($_REQUEST['city']);
+            $zip_code="N/A";
+            $zip_code=$connect->real_escape_string($_REQUEST['zip_code']);
+            $role=$connect->real_escape_string($_REQUEST['role']);
+  
+            //Update Data into table
+            $sql="UPDATE users SET phone_no='$phone_no', name='$name', gender='$gender', birth_date='$birth_date', country='$country', city='$city', zip_code='$zip_code', role='$role' WHERE id='$id';";
+            if ($connect->query($sql)===TRUE) {
+                echo "<script>alert('Profile Details Updated Successfully!');</script>";
+            }
+            else{
+                echo "<script>alert('Unable to update the details!');</script>";
+            }
+          }
         }
         else{
-            echo "<script>alert('Wrong Submit Method!');</script>";
+          echo "<script>alert('Wrong Submit Method!');</script>";
         }
-    }
+      }
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -134,19 +163,19 @@
                     <div class="form-row">
                         <div class="form-group col-md-4">
                             <label for="inputFyllName"><i class="fas fa-signature"></i> Full Name</label>
-                            <input type="text" class="form-control" placeholder="Enter Full Name" minlength="3" maxlength="30" value="<?php echo $user_name; ?>" required>
+                            <input type="text" name="name" class="form-control" placeholder="Enter Full Name" minlength="3" maxlength="30" value="<?php echo $user_name; ?>" required>
                         </div>
                         <div class="form-group col-md-4">
                             <label for="inputFyllName"><i class="fas fa-user"></i> Username</label>
-                            <input type="text" class="form-control" placeholder="Username" minlength="5" maxlength="60" value="<?php echo $user_username; ?>" onkeypress="return AvoidSpace(event)" disabled>
+                            <input type="text" name="username" class="form-control" placeholder="Username" minlength="5" maxlength="60" value="<?php echo $user_username; ?>" onkeypress="return AvoidSpace(event)" disabled>
                         </div>
                         <div class="form-group col-md-4">
                             <label for="email"><i class="fas fa-at"></i> Email</label>
-                            <input type="text" id="email" class="form-control" placeholder="example@mail.com" value="<?php echo $user_email; ?>" maxlength="30" disabled>
+                            <input type="text" name="email" class="form-control" placeholder="example@mail.com" value="<?php echo $user_email; ?>" maxlength="30" disabled>
                         </div>
                         <div class="form-group col-md-4">
                             <label for="inputState"><i class="fas fa-user-cog"></i> Gender</label>
-                            <select id="inputState" class="form-control" required>
+                            <select name="gender" class="form-control" required>
                                 <option value="Male" <?php $select="Male"; if(isset($select) && $select!=""){ if($user_gender==$select){ echo "selected"; }} ?>>Male</option>
                                 <option value="Female" <?php $select="Female"; if(isset($select) && $select!=""){ if($user_gender==$select){ echo "selected"; }} ?>>Female</option>
                                 <option value="Others" <?php $select="Others"; if(isset($select) && $select!=""){ if($user_gender==$select){ echo "selected"; }} ?>>Others</option>
@@ -158,19 +187,15 @@
                         </div>-->
                         <div class="form-group col-md-4">
                             <label for="phone"><i class="fas fa-phone-volume"></i> Phone Number (Optional)</label>
-                            <input type="tel" id="phone" class="form-control" placeholder="1234567890" value="<?php echo $user_phone_no; ?>">
+                            <input type="tel" name="phone_no" class="form-control" placeholder="1234567890" value="<?php echo $user_phone_no; ?>">
                         </div>
                         <div class="form-group dates col-md-4">
                             <label for="picker"><i class="far fa-calendar-alt"></i> Date Of Birth</label>
-                            <input type="date" autocomplete="off" class="form-control" id="user1" placeholder="yyyy-mm-dd" value="<?php echo $user_birth_date; ?>" required>
-                        </div>
-                        <div class="form-group col-md-3">
-                            <label for="inputCity"><i class="fas fa-city"></i> City</label>
-                            <input type="text" class="form-control" id="inputCity" maxlength="15" placeholder="Florida" value="<?php echo $user_city; ?>" required>
+                            <input type="date" name="birth_date" autocomplete="off" class="form-control" placeholder="yyyy-mm-dd" value="<?php echo $user_birth_date; ?>" required>
                         </div>
                         <div class="form-group col-md-3">
                             <label for="inputState"><i class="far fa-flag"></i> Country</label>
-                            <select id="inputState" class="form-control" required>
+                            <select name="country" class="form-control" required>
                                 <option value="Unkown" <?php $select="Unkown"; if($user_country==$select){ echo "selected"; } ?>>Choose...</option>
                                 <option value="Afganistan" <?php $select="Afganistan"; if(isset($select) && $select!=""){ if($user_country==$select){ echo "selected"; }} ?>>Afghanistan</option>
                                 <option value="Albania" <?php $select="Albania"; if(isset($select) && $select!=""){ if($user_country==$select){ echo "selected"; }} ?>>Albania</option>
@@ -421,33 +446,28 @@
                             </select>
                         </div>
                         <div class="form-group col-md-3">
-                            <label for="inputZip"><i class="fa fa-address-card" aria-hidden="true"></i> Zip Code</label>
-                            <input type="text" class="form-control" placeholder="700001" maxlength="6" id="inputZip" value="<?php echo $user_zip_code; ?>">
+                            <label for="inputCity"><i class="fas fa-city"></i> City</label>
+                            <input type="text" name="city" class="form-control" maxlength="15" placeholder="Florida" value="<?php echo $user_city; ?>" required>
+                        </div>
+                        <div class="form-group col-md-3">
+                            <label for="inputZip"><i class="fa fa-address-card" aria-hidden="true"></i> Zip Code (Optional)</label>
+                            <input type="text" name="zip_code" class="form-control" placeholder="700001" maxlength="6" id="inputZip" value="<?php echo $user_zip_code; ?>">
                         </div>
                         <div class="form-group col-md-3">
                             <label for="inputState"><i class="fas fa-user-cog"></i> Account Type</label>
-                            <select id="inputState" class="form-control" required>
+                            <select name="role" class="form-control" required>
                                 <option value="Viewer" <?php $select="Viewer"; if(isset($select) && $select!=""){ if($user_role==$select){ echo "selected"; }} ?>>Viewer</option>
                                 <option value="Uploader" <?php $select="Uploader"; if(isset($select) && $select!=""){ if($user_role==$select){ echo "selected"; }} ?>>Uploader</option>
                                 <option value="Photographer & Uploader" <?php $select="Photographer & Uploader"; if(isset($select) && $select!=""){ if($user_role==$select){ echo "selected"; }} ?>>Photographer & Uploader</option>
                             </select>
                         </div>
                     </div>
-                    <!--<div class="form-group">
-                        <label for="inputAddress">Address <i class="bi bi-house"></i></label>
-                        <input type="text" class="form-control" id="inputAddress" placeholder="City Name Eg. St Petersburg" required>
-                    </div>-->
-                    <!--<div class="form-group">
-                        <label for="inputAddress2">Address 2 <small>(Optional)</small></label>
-                        <input type="text" class="form-control" id="inputAddress2" placeholder="Apartment, studio, or floor (Optional)">
-                    </div>-->
                     <div class="form-row smit justify-content-between">
                         <button type="submit" class="btn btn-primary" name="psave">Save Changes</button>
-                        <button type="button" class="btn btn-success" data-toggle="modal" data-target="#exampleModal">
-                            Change Password
-                        </button>
+                    </form>
+                        <button type="button" class="btn btn-success" data-toggle="modal" data-target="#exampleModal">Change Password</button>
                     </div>
-                </form>
+                
             </div>
         </div>    
 

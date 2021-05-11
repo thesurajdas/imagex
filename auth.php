@@ -12,6 +12,7 @@ if(isset($_COOKIE['user_id'])){
     $row=$result->fetch_assoc();
     //Check cookie id with database id with === operator
     if ($user_id===$row['id']) {
+        $id=$row['id'];
         $user_username=$row['username'];
         $user_name=$row['name'];
         $user_email=$row['email'];
