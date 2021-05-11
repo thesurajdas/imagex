@@ -14,7 +14,6 @@
     $user_zip_code=$row['zip_code'];
 
     //Save Personal Details
-    //Check Signup Input
     if (isset($_REQUEST['psave'])) {
         if ($_SERVER['REQUEST_METHOD']=='POST') {
           //Check Empty String
@@ -26,14 +25,12 @@
             // $username=$connect->real_escape_string($_REQUEST['username']);
             // $email=$connect->real_escape_string($_REQUEST['email']);
             // $email = filter_var($email, FILTER_SANITIZE_EMAIL);
-            $phone_no="N\A";
             $phone_no=$connect->real_escape_string($_REQUEST['phone_no']);
             $name=$connect->real_escape_string($_REQUEST['name']);
             $gender=$connect->real_escape_string($_REQUEST['gender']);
             $birth_date=$connect->real_escape_string($_REQUEST['birth_date']);
             $country=$connect->real_escape_string($_REQUEST['country']);
             $city=$connect->real_escape_string($_REQUEST['city']);
-            $zip_code="N/A";
             $zip_code=$connect->real_escape_string($_REQUEST['zip_code']);
             $role=$connect->real_escape_string($_REQUEST['role']);
   
@@ -46,6 +43,28 @@
                 echo "<script>alert('Unable to update the details!');</script>";
             }
           }
+        }
+        else{
+          echo "<script>alert('Wrong Submit Method!');</script>";
+        }
+      }
+    //Save Device Details
+    if (isset($_REQUEST['dsave'])) {
+        if ($_SERVER['REQUEST_METHOD']=='POST') {
+            //Take Form Input Securely
+            $device_name=$connect->real_escape_string($_REQUEST['device_name']);
+            $device_model=$connect->real_escape_string($_REQUEST['device_model']);
+            $apertures=$connect->real_escape_string($_REQUEST['apertures']);
+            $resolution=$connect->real_escape_string($_REQUEST['resolution']);
+            $focal_length=$connect->real_escape_string($_REQUEST['focal_length']);
+            //Update Data into table
+            $sql="UPDATE users SET device_name='$device_name', device_model='$device_model', apertures='$apertures', resolution='$resolution', focal_length='$focal_length' WHERE id='$id';";
+            if ($connect->query($sql)===TRUE) {
+                echo "<script>alert('Device Details Updated Successfully!');</script>";
+            }
+            else{
+                echo "<script>alert('Unable to update the details!');</script>";
+            }
         }
         else{
           echo "<script>alert('Wrong Submit Method!');</script>";
@@ -475,35 +494,35 @@
 
         <div class="container sndcon">
             <div class="card shadow">
-            <h4 class="col-12 ntxt">Device Detailes <small>(Device Use for Capturing Pictures)</small></h4>
+            <h4 class="col-12 ntxt">Device Details <small>(Device Use for Capturing Pictures)</small></h4>
                 <hr class="mb-4">
-                <form class="mfrm" action="/">
+                <form class="mfrm" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]);?>" method="POST">
                     <div class="form-row">
                         <div class="form-group col-md-6">
                             <label for="mobileName"><i class="fas fa-mobile-alt"></i> Device Name</label>
-                            <input type="text" id="mobileName" class="form-control" maxlength="25" placeholder="Pixel 2">
+                            <input type="text" name="device_name" class="form-control" maxlength="25" placeholder="Pixel 2" value="<?php echo $user_device_name; ?>">
                         </div>
                         <div class="form-group col-md-6">
                             <label for="mobileModel">Device Model <small class="badge badge-primary text-wrap">(Check About Device Section)</small></label>
-                            <input type="text" class="form-control" id="mobileModel" maxlength="25" placeholder="G011A">
+                            <input type="text" name="device_model" class="form-control" maxlength="25" placeholder="G011A" value="<?php echo $user_device_model; ?>">
                         </div>
                     </div>
                     <div class="form-row">
                         <div class="form-group col-md-4">
                             <label for="mobileApertures"><b>ƒ</b> Apertures </label>
-                            <input type="text" id="mobileApertures" class="form-control" maxlength="4" placeholder="1.7" required>
+                            <input type="text" name="apertures" class="form-control" maxlength="4" placeholder="1.7" value="<?php echo $user_apertures; ?>">
                         </div>
                         <div class="form-group col-md-4">
                             <label for="mobileMp"><i class="fas fa-camera-retro"></i> Resolution <small>MP (Megapixel) </small></label>
-                            <input type="text" class="form-control" id="mobileMp" maxlength="4" placeholder="64">
+                            <input type="text" name="resolution" class="form-control" maxlength="4" placeholder="50" value="<?php echo $user_resolution; ?>">
                         </div>
                         <div class="form-group col-md-4">
                             <label for="mobileFocalLength"><i class="fas fa-question-circle"></i> Focal Length <small>(mm)</small></label>
-                            <input type="text" class="form-control" id="mobileFocalLength" maxlength="4" placeholder="3.61">
+                            <input type="text" name="focal_length" class="form-control" maxlength="4" placeholder="3.61" value="<?php echo $user_focal_length; ?>">
                         </div>
                     </div>
                     <div class="form-row smit">
-                        <button type="submit" class="btn btn-primary">Save Changes</button>
+                        <button type="submit" name="dsave" class="btn btn-primary">Save Changes</button>
                     </div>
                 </form>
             </div>
