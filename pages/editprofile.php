@@ -70,6 +70,41 @@
           echo "<script>alert('Wrong Submit Method!');</script>";
         }
       }
+      //Change Old Password
+      if (isset($_REQUEST['pwsave'])) {
+        if ($_SERVER['REQUEST_METHOD']=='POST') {
+          //Check Empty String
+          if (($_REQUEST['opassword']=="")||($_REQUEST['npassword']=="")) {
+            echo "<script>alert('All fields are required!');</script>";
+          }
+          else{
+            //Take Form Input Securely
+            $opassword=$connect->real_escape_string($_REQUEST['opassword']);
+            $temp_password=$connect->real_escape_string($_REQUEST['npassword']);
+            $sqli="SELECT password FROM users WHERE id='$id'";
+            $result=$connect->query($sqli);
+            $row=$result->fetch_assoc();
+            $password=base64_decode($row['password']);     
+            if ($password===$opassword) {
+                //Insert Password into table
+                $npassword=base64_encode($temp_password); 
+                $sql="UPDATE users SET password='$npassword' WHERE id='$id'";
+                if ($connect->query($sql)===TRUE){
+                    echo "<script>alert('Password Changed Successfully!');</script>";
+                }
+                else{
+                    echo "<script>alert('Unable to change the password!');</script>";
+                }
+            }
+            else{
+                echo "<script>alert('Old password does not matching!');</script>";
+                }
+            }
+        }
+        else{
+          echo "<script>alert('Wrong Submit Method!');</script>";
+        }
+      }
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -600,8 +635,7 @@
             <div>    
         </footer>
         
-        <!----------------------------------------------------------------------------------------------------->
-
+        <!--Password Change-->
         <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
             <div class="modal-dialog">
               <div class="modal-content">
@@ -612,20 +646,20 @@
                   </button>
                 </div>
                 <div class="modal-body">
-                    <form action="/">
+                    <form action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]);?>" method="POST">
                         <div class="form-group">
                             <label for="oldpassword">Old Password</label>
-                            <input type="password" class="form-control" id="oldpassword" required>
+                            <input type="password" class="form-control" name="opassword" required>
                         </div>
                         <div class="form-group">
                             <label for="password">New Password</label>
-                            <input type="password" class="form-control" id="password" required>
+                            <input type="password" class="form-control" name="npassword" id="password" required>
                         </div>
                         <div class="form-group">
                             <label for="confirm_password">Confirm New Password</label>
                             <input type="password" class="form-control" id="confirm_password" required>
                         </div>
-                        <button type="submit" class="btn btn-primary">Submit</button>
+                        <button type="submit" name="pwsave" class="btn btn-primary">Change Password</button>
                     </form>
                 </div>
                 <div class="modal-footer">
