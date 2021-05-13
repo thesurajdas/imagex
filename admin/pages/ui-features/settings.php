@@ -1,3 +1,7 @@
+<?php
+    //Add database connection
+    require('../../auth.php');
+?>
 <!DOCTYPE html>
 <html lang="en">
     <head>

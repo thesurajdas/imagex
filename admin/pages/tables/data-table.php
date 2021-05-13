@@ -1,5 +1,19 @@
 <?php
-  
+    //Add database connection
+    require('../../auth.php');
+    $user_gender=$row['gender'];
+    $user_phone_no=$row['phone_no'];
+    $user_country=$row['country'];
+    $user_city=$row['city'];
+    $user_device_name=$row['device_name'];
+    $user_device_model=$row['device_model'];
+    $user_apertures=$row['apertures'];
+    $user_resolution=$row['resolution'];
+    $user_focal_length=$row['focal_length'];
+    $user_role=$row['role'];
+    $user_birth_date=$row['birth_date'];
+    $user_zip_code=$row['zip_code'];
+
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -59,10 +73,10 @@
                 <i class="ti-settings text-primary"></i>
                 Settings
               </a>-->
-              <a class="dropdown-item">
+              <a class="dropdown-item" href="../../../pages/logout.php">
                 <i class="ti-power-off text-primary"></i>
-                Logout
-              </a>
+                 Logout
+                </a>
             </div>
           </li>
         </ul>
@@ -150,7 +164,7 @@
                       <tbody>
                         <tr>
                             <td>1</td>
-                            <th>memento</th>
+                            <th><?php echo $user_username; ?></th>
                             <td>Edinburgh</td>
                             <td>New York</td>
                             <td>abc@xyz.com</td>

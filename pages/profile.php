@@ -1,4 +1,5 @@
 <?php
+    //Add database connection
     require('../auth.php');
     //Add data into variables
     $user_gender=$row['gender'];
@@ -78,6 +79,9 @@
                                 <a class="dropdown-item" href="editprofile.php">Edit Profile</a>
                                 <a class="dropdown-item" href="favimg.html">Saved Images</a>
                                 <a class="dropdown-item" href="usruploadimg.html">Your Uploads</a>
+                                <?php if ($row['admin']==1) {
+                                    echo "<div class='dropdown-divider'></div><a class='dropdown-item' href='../admin'>Admin Panel</a>";
+                                } ?>
                                 <div class="dropdown-divider"></div>
                                 <a class="dropdown-item" href="logout.php">Sign Out</a>
                             </div>

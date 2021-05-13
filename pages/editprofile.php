@@ -1,4 +1,5 @@
 <?php
+    //Add databse connection
     require('../auth.php');
     $user_gender=$row['gender'];
     $user_phone_no=$row['phone_no'];
