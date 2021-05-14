@@ -1,18 +1,23 @@
 <?php
     //Add database connection
     require('../../auth.php');
-    $user_gender=$row['gender'];
-    $user_phone_no=$row['phone_no'];
-    $user_country=$row['country'];
-    $user_city=$row['city'];
-    $user_device_name=$row['device_name'];
-    $user_device_model=$row['device_model'];
-    $user_apertures=$row['apertures'];
-    $user_resolution=$row['resolution'];
-    $user_focal_length=$row['focal_length'];
-    $user_role=$row['role'];
-    $user_birth_date=$row['birth_date'];
-    $user_zip_code=$row['zip_code'];
+    if (isset($_REQUEST['update'])) {
+      $username=$_REQUEST['username'];
+      $sql2="UPDATE users SET username='$username' WHERE id={$_REQUEST['id']}";
+      if ($connect->query($sql2)) {
+          echo "Updated Successfully!";
+      }else{
+          echo "Update failed!";
+      }
+  }
+          //Trigger Update input box and button
+          if (isset($_REQUEST['edit'])) {
+              $sql3="SELECT * FROM users WHERE id={$_REQUEST['id']}";
+              $r=$connect->query($sql3);
+              $row=$r->fetch_assoc();
+          }
+          $sql1="SELECT * FROM users;";
+          $ur=$connect->query($sql1);
 
 ?>
 <!DOCTYPE html>
@@ -152,214 +157,29 @@
                             <th>ID</th>
                             <th>Username</th>
                             <th>Full Name</th>
-                            <th>Country</th>
                             <th>Email</th>
+                            <th>Country</th>
                             <th>Status</th>
-                            
                             <th>Last Active</th>
                             <th>Actions</th>
                             
                         </tr>
                       </thead>
                       <tbody>
+                      <?php while($rd=mysqli_fetch_array($ur)): ?>
                         <tr>
-                            <td>1</td>
-                            <th><?php echo $user_username; ?></th>
-                            <td>Edinburgh</td>
-                            <td>New York</td>
-                            <td>abc@xyz.com</td>
-                            <td>Online</td>
-                            
-                            <td>2012/08/03</td>
+                            <th><?php if (isset($rd['id'])) { echo $rd['id']; } ?></th>
+                            <td><?php if (isset($rd['username'])) { echo $rd['username']; } ?></td>
+                            <td><?php if (isset($rd['name'])) { echo $rd['name']; } ?></td>
+                            <td><?php if (isset($rd['email'])) { echo $rd['email']; } ?></td>
+                            <td><?php if (isset($rd['country'])) { echo $rd['country']; } ?></td>
+                            <td><?php if (isset($rd['active'])) { echo $rd['active']; } ?></td>
+                            <td><?php if (isset($rd['last_active'])) { echo $rd['last_active']; } ?></td>
                             <td>
                               <button type="button" class="btn btn-outline-primary" data-toggle="modal" data-target="#exampleModal"><i class="bi bi-pencil-square"></i></button>
                               <button class="btn btn-outline-primary" onclick="showSwal('success-message')"><i class="bi bi-trash"></i></button>
                             </td>
                         </tr>
-                        <tr>
-                            <td>2</td>
-                            <td>mementot</td>
-                            <td>Edinburgh</td>
-                            <td>New York</td>
-                            <td>abc@xyz.com</td>
-                            <td>
-                              Offline
-                            </td>
-                            
-                            <td>2012/08/03</td>
-                            <td>
-                              <button type="button" class="btn btn-outline-primary" data-toggle="modal" data-target="#exampleModal"><i class="bi bi-pencil-square"></i></button>
-                              <button class="btn btn-outline-primary" onclick="showSwal('success-message')"><i class="bi bi-trash"></i></button>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td>3</td>
-                            <td>beespirite</td>
-                            <td>Edinburgh</td>
-                            <td>New York</td>
-                            <td>abc@xyz.com</td>
-                            <td>
-                              Online
-                            </td>
-                            
-                            <td>2012/08/03</td>
-                            <td>
-                              <button type="button" class="btn btn-outline-primary" data-toggle="modal" data-target="#exampleModal"><i class="bi bi-pencil-square"></i></button>
-                              <button class="btn btn-outline-primary" onclick="showSwal('success-message')"><i class="bi bi-trash"></i></button>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td>4</td>
-                            <td>beespirite</td>
-                            <td>Edinburgh</td>
-                            <td>New York</td>
-                            <td>abc@xyz.com</td>
-                            <td>
-                             Offline
-                            </td>
-                            
-                            <td>2012/08/03</td>
-                            <td>
-                              <button type="button" class="btn btn-outline-primary" data-toggle="modal" data-target="#exampleModal"><i class="bi bi-pencil-square"></i></button>
-                              <button class="btn btn-outline-primary" onclick="showSwal('success-message')"><i class="bi bi-trash"></i></button>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td>5</td>
-                            
-                            <td>mementotheh</td>
-                            <td>Edinburgh</td>
-                            <td>New York</td>
-                            <td>abc@xyz.com</td>
-                            <td>
-                              Offline
-                            </td>
-                            
-                            <td>2012/08/03</td>
-                            <td>
-                              <button type="button" class="btn btn-outline-primary" data-toggle="modal" data-target="#exampleModal"><i class="bi bi-pencil-square"></i></button>
-                              <button class="btn btn-outline-primary" onclick="showSwal('success-message')"><i class="bi bi-trash"></i></button>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td>6</td>
-                            <td>mementothehu</td>
-                            <td>Edinburgh</td>
-                            <td>New York</td>
-                            <td>abc@xyz.com</td>
-                            <td>
-                              Online
-                            </td>
-                            
-                            <td>2012/08/03</td>
-                            <td>
-                              <button type="button" class="btn btn-outline-primary" data-toggle="modal" data-target="#exampleModal"><i class="bi bi-pencil-square"></i></button>
-                              <button class="btn btn-outline-primary" onclick="showSwal('success-message')"><i class="bi bi-trash"></i></button>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td>7</td>
-                            <td>beespirited</td>
-                            <td>Edinburgh</td>
-                            <td>New York</td>
-                            <td>abc@xyz.com</td>
-                            <td>
-                              Offline
-                            </td>
-                            
-                            <td>2012/08/03</td>
-                            <td>
-                              <button type="button" class="btn btn-outline-primary" data-toggle="modal" data-target="#exampleModal"><i class="bi bi-pencil-square"></i></button>
-                              <button class="btn btn-outline-primary" onclick="showSwal('success-message')"><i class="bi bi-trash"></i></button>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td>8</td>
-                            
-                            <td>beespiritedawa</td>
-                            <td>Edinburgh</td>
-                            <td>New York</td>
-                            <td>abc@xyz.com</td>
-                            <td>
-                              Online
-                            </td>
-                            
-                            <td>2012/08/03</td>
-                            <td>
-                              <button type="button" class="btn btn-outline-primary" data-toggle="modal" data-target="#exampleModal"><i class="bi bi-pencil-square"></i></button>
-                              <button class="btn btn-outline-primary" onclick="showSwal('success-message')"><i class="bi bi-trash"></i></button>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td>9</td>
-                            <td>rollpolar</td>
-                            <td>Edinburgh</td>
-                            <td>California</td>
-                            <td>abc@xyz.com</td>
-                            <td>
-                              Offline
-                            </td>
-                            
-                            <td>2012/08/03</td>
-                            <td>
-                              <button type="button" class="btn btn-outline-primary" data-toggle="modal" data-target="#exampleModal"><i class="bi bi-pencil-square"></i></button>
-                              <button class="btn btn-outline-primary" onclick="showSwal('success-message')"><i class="bi bi-trash"></i></button>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td>10</td>
-                            <td>rollpolar</td>
-                            <td>Edinburgh</td>
-                            <td>New York</td>
-                            <td>abc@xyz.com</td>
-                            <td>
-                              Offline
-                            </td>
-                            
-                            <td>2012/08/03</td>
-                            <td>
-                              <button type="button" class="btn btn-outline-primary" data-toggle="modal" data-target="#exampleModal"><i class="bi bi-pencil-square"></i></button>
-                              <button class="btn btn-outline-primary" onclick="showSwal('success-message')"><i class="bi bi-trash"></i></button>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td>11</td>
-                            <td>rollpolar</td>
-                            <td>Edinburgh</td>
-                            <td>New York</td>
-                            <td>abc@xyz.com</td>
-                            <td>
-                              Offline
-                            </td>
-                            
-                            <td>2012/08/03</td>
-                            <td>
-                              <button type="button" class="btn btn-outline-primary" data-toggle="modal" data-target="#exampleModal"><i class="bi bi-pencil-square"></i></button>
-                              <button class="btn btn-outline-primary" onclick="showSwal('success-message')"><i class="bi bi-trash"></i></button>
-                            </td>
-                        </tr>
-                      </tbody>
-                    </table>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-        <!-- content-wrapper ends -->
-        <!-- partial:../../partials/_footer.php -->
-        <footer class="footer">
-          <div class="d-sm-flex justify-content-center justify-content-sm-between">
-            <span class="text-muted text-center text-sm-left d-block d-sm-inline-block">Copyright © 2021. <a href="#" target="_blank">our_gallery_name</a> All rights reserved.</span>
-          </div>
-        </footer>
-        <!-- partial -->
-      </div>
-      <!-- main-panel ends -->
-    </div>
-    <!-- page-body-wrapper ends -->
-  </div>
-
   <!-- Modal -->
   <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalScrollableTitle" aria-hidden="true">
     <div class="modal-dialog modal-dialog-scrollable" role="document">
@@ -377,11 +197,11 @@
               <div class="form-row">
                 <div class="form-group col-md-6">
                   <label for="jd">Joining Date</label>
-                  <input type="date" class="form-control" id="jd" placeholder="User Joining Date" readonly>
+                  <input type="date" class="form-control" id="jd" placeholder="Register Date" value="<?php if (isset($rd['register_date'])) { echo $rd['register_date']; } ?>" readonly>
                 </div>
                 <div class="form-group col-md-6">
                     <label for="ipaddress">IP Address</label>
-                    <input type="ip" class="form-control" id="ipaddress" readonly>
+                    <input type="ip" class="form-control" id="ipaddress" value="<?php if (isset($rd['ip_address'])) { echo $rd['ip_address']; } ?>" readonly>
                 </div>
               </div>
           </form>
@@ -393,15 +213,15 @@
             <div class="form-row">
               <div class="form-group col-md-12">
                 <label for="fname">Full Name</label>
-                <input type="text" class="form-control" id="fname" placeholder="Joe" required>
+                <input type="text" class="form-control" id="fname" placeholder="Joe" value="<?php if (isset($rd['name'])) { echo $rd['name']; } ?>" required>
               </div>
               <div class="form-group col-md-6">
                 <label for="uname">Username</label>
-                <input type="text" class="form-control " id="uname" placeholder="User Name" readonly>
+                <input type="text" class="form-control " id="uname" placeholder="Username" value="<?php if (isset($rd['username'])) { echo $rd['username']; } ?>" readonly>
               </div>
               <div class="form-group col-md-6">
                 <label for="inputEmail4">Email</label>
-                <input type="email" class="form-control" id="inputEmail4" placeholder="someone@xyz.com" required>
+                <input type="email" class="form-control" id="inputEmail4" placeholder="someone@xyz.com" value="<?php if (isset($rd['email'])) { echo $rd['email']; } ?>" required>
               </div>
               <div class="form-group col-md-6">
                 <label for="phone">Phone Number</label>
@@ -741,6 +561,29 @@
       </div>
     </div>
   </div>
+                      <?php endwhile; ?>
+                      </tbody>
+                    </table>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!-- content-wrapper ends -->
+        <!-- partial:../../partials/_footer.php -->
+        <footer class="footer">
+          <div class="d-sm-flex justify-content-center justify-content-sm-between">
+            <span class="text-muted text-center text-sm-left d-block d-sm-inline-block">Copyright © 2021. <a href="#" target="_blank">our_gallery_name</a> All rights reserved.</span>
+          </div>
+        </footer>
+        <!-- partial -->
+      </div>
+      <!-- main-panel ends -->
+    </div>
+    <!-- page-body-wrapper ends -->
+  </div>
+
   <!-- Modal -->
   <!-- container-scroller -->
   <!-- plugins:js -->
