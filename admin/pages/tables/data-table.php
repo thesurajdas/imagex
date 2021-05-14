@@ -41,6 +41,29 @@ if (isset($_REQUEST['psave'])) {
     echo "<script>alert('Wrong Submit Method!');</script>";
   }
 }
+ //Save Device Details
+ if (isset($_REQUEST['dsave'])) {
+  if ($_SERVER['REQUEST_METHOD']=='POST') {
+      //Take Form Input Securely
+      $u_id=$connect->real_escape_string($_REQUEST['id']);
+      $device_name=$connect->real_escape_string($_REQUEST['device_name']);
+      $device_model=$connect->real_escape_string($_REQUEST['device_model']);
+      $apertures=$connect->real_escape_string($_REQUEST['apertures']);
+      $resolution=$connect->real_escape_string($_REQUEST['resolution']);
+      $focal_length=$connect->real_escape_string($_REQUEST['focal_length']);
+      //Update Data into table
+      $sql="UPDATE users SET device_name='$device_name', device_model='$device_model', apertures='$apertures', resolution='$resolution', focal_length='$focal_length' WHERE id='$u_id';";
+      if ($connect->query($sql)===TRUE) {
+          echo "<script>alert('Device Details Updated Successfully!');</script>";
+      }
+      else{
+          echo "<script>alert('Unable to update the details!');</script>";
+      }
+  }
+  else{
+    echo "<script>alert('Wrong Submit Method!');</script>";
+  }
+}
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -551,31 +574,32 @@ if (isset($_REQUEST['psave'])) {
             <hr class="mb-4">
             <h4 class="col-12 ntxt">Device Details</h4>
                 <hr class="mb-4">
-                <form action="/">
+                <form action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]);?>" method="POST">
                     <div class="form-row">
                         <div class="form-group col-md-6">
                             <label for="mobileName"><i class="fas fa-mobile-alt"></i> Device Name</label>
-                            <input type="text" id="mobileName" class="form-control" maxlength="25" placeholder="Pixel 2">
+                            <input type="hidden" name="id" value="<?php if (isset($rd['id'])) { echo $rd['id']; } ?>">
+                            <input type="text" name="device_name" class="form-control" maxlength="25" placeholder="Pixel 2" value="<?php if (isset($rd['device_name'])) { echo $rd['device_name']; } ?>">
                         </div>
                         <div class="form-group col-md-6">
                             <label for="mobileModel">Device Model</label>
-                            <input type="text" class="form-control" id="mobileModel" maxlength="25" placeholder="G011A">
+                            <input type="text" name="device_model" class="form-control" maxlength="25" placeholder="G011A" value="<?php if (isset($rd['device_model'])) { echo $rd['device_model']; } ?>">
                         </div>
                         <div class="form-group col-md-4">
                             <label for="mobileApertures"><b>ƒ</b> Apertures </label>
-                            <input type="text" id="mobileApertures" class="form-control" maxlength="4" placeholder="1.7" required>
+                            <input type="text" name="apertures" class="form-control" maxlength="4" placeholder="1.7" value="<?php if (isset($rd['apertures'])) { echo $rd['apertures']; } ?>">
                         </div>
                         <div class="form-group col-md-4">
                             <label for="mobileMp"><i class="fas fa-camera-retro"></i> Resolution</label>
-                            <input type="text" class="form-control" id="mobileMp" maxlength="4" placeholder="64">
+                            <input type="text" name="resolution" class="form-control" maxlength="4" placeholder="64" value="<?php if (isset($rd['resolution'])) { echo $rd['resolution']; } ?>">
                         </div>
                         <div class="form-group col-md-4">
                             <label for="mobileFocalLength"><i class="fas fa-question-circle"></i> Focal Length</label>
-                            <input type="text" class="form-control" id="mobileFocalLength" maxlength="4" placeholder="3.61">
+                            <input type="text" name="focal_length" class="form-control" maxlength="4" placeholder="3.61" value="<?php if (isset($rd['focal_length'])) { echo $rd['focal_length']; } ?>">
                         </div>
                     </div>
                     <div class="form-row smit">
-                        <button type="submit" class="btn btn-primary">Save Changes</button>
+                        <button type="submit" name="dsave" class="btn btn-primary">Save Changes</button>
                     </div>
                 </form>
                 
