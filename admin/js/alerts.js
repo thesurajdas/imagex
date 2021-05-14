@@ -54,8 +54,8 @@
       )
     } else if (type === 'warning-message-and-cancel') {
       swal({
-        title: 'Are you sure?',
-        text: "You won't be able to revert this!",
+        title: 'Delete user?',
+        text: "Are you sure you want to delete this user?!",
         icon: 'warning',
         showCancelButton: true,
         confirmButtonColor: '#3f51b5',
