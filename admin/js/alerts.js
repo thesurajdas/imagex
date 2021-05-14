@@ -24,10 +24,10 @@
         }
       })
 
-    } else if (type === 'success-message') {
+    } else if (type === 'success-message-update-profile') {
       swal({
         title: 'Completed!',
-        text: 'You Have Successfully Deleted the Person',
+        text: 'You Have Successfully Updated Profile Details',
         icon: 'success',
         button: {
           text: "Continue",
@@ -36,7 +36,35 @@
           className: "btn btn-primary"
         }
       })
+    }
 
+    else if (type === 'success-message-update-device') {
+      swal({
+        title: 'Completed!',
+        text: 'You Have Successfully Updated Device Details',
+        icon: 'success',
+        button: {
+          text: "Continue",
+          value: true,
+          visible: true,
+          className: "btn btn-primary"
+        }
+      })
+    }
+
+    else if (type === 'success-message-delete') {
+      swal({
+        title: 'Completed!',
+        text: 'User Deleted Successfully!',
+        icon: 'success',
+        button: {
+          text: "Continue",
+          value: true,
+          visible: true,
+          className: "btn btn-primary"
+        }
+      })
+      
     } else if (type === 'auto-close') {
       swal({
         title: 'Auto close alert!',
@@ -55,7 +83,7 @@
     } else if (type === 'warning-message-and-cancel') {
       swal({
         title: 'Delete user?',
-        text: "Are you sure you want to delete this user?!",
+        text: "Are you sure you want to delete this user?",
         icon: 'warning',
         showCancelButton: true,
         confirmButtonColor: '#3f51b5',

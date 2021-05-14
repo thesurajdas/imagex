@@ -30,7 +30,7 @@ if (isset($_REQUEST['psave'])) {
       //Update Data into table
       $sql="UPDATE users SET username='$username', email='$email', phone_no='$phone_no', name='$name', gender='$gender', birth_date='$birth_date', active='$active', country='$country', city='$city', zip_code='$zip_code', role='$role' WHERE id='$u_id';";
       if ($connect->query($sql)===TRUE) {
-          echo "<script>alert('Profile Details Updated Successfully!');</script>";
+          echo "<script>alert('Profile Updated Successfully!');</script>";
       }
       else{
           echo "<script>alert('Unable to update the details!');</script>";
@@ -222,7 +222,7 @@ if (isset($_REQUEST['psave'])) {
                             <td><?php if (isset($rd['last_active'])) { echo $rd['last_active']; } ?></td>
                             <td>
                               <button type="button" class="btn btn-outline-primary" data-toggle="modal" data-target="#usersModal<?php if (isset($rd['id'])) { echo $rd['id']; } ?>"><i class="bi bi-pencil-square"></i></button>
-                              <button class="btn btn-outline-primary" onclick="showSwal('warning-message-and-cancel')"><i class="bi bi-trash"></i></button>
+                              <button class="btn btn-outline-primary" name="" onClick="showSwal('warning-message-and-cancel');"><i class="bi bi-trash"></i></button>
                             </td>
                         </tr>
   <!-- Modal -->
