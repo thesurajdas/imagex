@@ -138,7 +138,7 @@
                         </div>
                     </div>
                     <div class="col-md-2 d-none d-xl-block d-lg-block d-xl-none">
-                        <input type="submit" class="profile-edit-btn" name="btnAddMore" value="Edit Profile"/>
+                        <a href="editprofile.php" class="btn btn-outline-warning">Edit Profile</a>
                     </div>
                 </div>
                 <div class="row">
