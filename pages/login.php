@@ -78,7 +78,7 @@ if (isset($_REQUEST['login'])) {
     if (isset($_REQUEST['register'])) {
       if ($_SERVER['REQUEST_METHOD']=='POST') {
         //Check Empty String
-        if (($_REQUEST['username']=="")||($_REQUEST['email']=="")||($_REQUEST['name']=="")||($_REQUEST['password']=="")) {
+        if (($_REQUEST['username']=="")||($_REQUEST['name']=="")||($_REQUEST['email']=="")||($_REQUEST['name']=="")||($_REQUEST['password']=="")) {
           echo "<script>alert('All fields are required!');</script>";
         }
         else{
@@ -94,6 +94,7 @@ if (isset($_REQUEST['login'])) {
           $password=base64_encode($temp_password);
           $ip=filter_var(user_ip(), FILTER_VALIDATE_IP);
           $register_date=date("Y-m-d");
+          $last_active=date("Y-m-d");
 
           //Check Username and Email Exist or Not
           $usql="SELECT username FROM users WHERE username='$username'";
@@ -114,7 +115,7 @@ if (isset($_REQUEST['login'])) {
           }
           else{
             //Insert Data into table
-            $sql="INSERT INTO users (username,email,phone_no,password,name,register_date,country,city,role,ip_address) VALUES ('$username','$email','$phone_no','$password','$name','$register_date','$country','$city','$role','$ip')";
+            $sql="INSERT INTO users (username,email,phone_no,password,name,register_date,last_active,country,city,role,ip_address) VALUES ('$username','$email','$phone_no','$password','$name','$register_date','$last_active','$country','$city','$role','$ip')";
             if ($connect->query($sql)===TRUE) {
               $sqli="SELECT id FROM users WHERE username='".$username."'";
               $result=$connect->query($sqli);
