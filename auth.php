@@ -16,6 +16,7 @@ if(isset($_COOKIE['user_id'])){
         $user_username=$row['username'];
         $user_name=$row['name'];
         $user_email=$row['email'];
+        $last_active=date("Y-m-d");
     }
     else{
         header("Location:login.php");
