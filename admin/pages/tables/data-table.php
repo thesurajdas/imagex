@@ -222,7 +222,7 @@ if (isset($_REQUEST['psave'])) {
                             <td><?php if (isset($rd['last_active'])) { echo $rd['last_active']; } ?></td>
                             <td>
                               <button type="button" class="btn btn-outline-primary" data-toggle="modal" data-target="#usersModal<?php if (isset($rd['id'])) { echo $rd['id']; } ?>"><i class="bi bi-pencil-square"></i></button>
-                              <button class="btn btn-outline-primary" name="" onClick="showSwal('warning-message-and-cancel');"><i class="bi bi-trash"></i></button>
+                              <button class="btn btn-outline-primary" name="" onClick="showSwal('warning-message-and-cancel')"><i class="bi bi-trash"></i></button>
                             </td>
                         </tr>
   <!-- Modal -->
@@ -286,7 +286,7 @@ if (isset($_REQUEST['psave'])) {
               </div>
               <div class="form-group col-md-6">
                 <label for="inputState">Gender</label>
-                              <select id="inputState" class="form-control" name="gender" required>
+                              <select class="form-control" name="gender" required>
                                   <option value="Male" <?php $select="Male"; if(isset($select) && $select!=""){ if($rd['gender']==$select){ echo "selected"; }} ?>>Male</option>
                                   <option value="Female" <?php $select="Female"; if(isset($select) && $select!=""){ if($rd['gender']==$select){ echo "selected"; }} ?>>Female</option>
                                   <option value="Others" <?php $select="Others"; if(isset($select) && $select!=""){ if($rd['gender']==$select){ echo "selected"; }} ?>>Others</option>
@@ -302,7 +302,7 @@ if (isset($_REQUEST['psave'])) {
               </div>        
               <div class="form-group col-md-6">
                 <label for="inputState">Country <i class="bi bi-geo-alt"></i></label>
-                              <select id="inputState" class="form-control" name="country" required>
+                              <select class="form-control" name="country" required>
                               <?php $user_country=$rd['country']; ?>
                               <option value="Unkown" <?php $select="Unkown"; if($user_country==$select){ echo "selected"; } ?>>Choose...</option>
                                 <option value="Afganistan" <?php $select="Afganistan"; if(isset($select) && $select!=""){ if($user_country==$select){ echo "selected"; }} ?>>Afghanistan</option>
@@ -555,7 +555,7 @@ if (isset($_REQUEST['psave'])) {
               </div>
               <div class="form-group col-md-6">
                 <label for="inputState">Account Type</label>
-                              <select id="inputState" class="form-control" name="role" required>
+                              <select class="form-control" name="role" required>
                                   <option value="Viewer" <?php $select="Viewer"; if(isset($select) && $select!=""){ if($rd['role']==$select){ echo "selected"; }} ?>>Viewer</option>
                                   <option value="Uploader" <?php $select="Uploader"; if(isset($select) && $select!=""){ if($rd['role']==$select){ echo "selected"; }} ?>>Uploader</option>
                                   <option value="Photographer & Uploader" <?php $select="Photographer & Uploader"; if(isset($select) && $select!=""){ if($rd['role']==$select){ echo "selected"; }} ?>>Photographer & Uploader</option>
@@ -563,7 +563,7 @@ if (isset($_REQUEST['psave'])) {
               </div>
               <div class="form-group col-md-6">
                 <label for="inputState">Upload</label>
-                    <select id="inputState" class="form-control" name="active" required>
+                    <select class="form-control" name="active" required>
                      <option value="0" <?php $select=0; if(isset($select) && $select!=""){ if($rd['active']==$select){ echo "selected"; }} ?>>Active</option>
                      <option value="1" <?php $select=1; if(isset($select) && $select!=""){ if($rd['active']==$select){ echo "selected"; }} ?>>Blocked</option>
                      </select>
