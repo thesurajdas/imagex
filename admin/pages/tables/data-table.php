@@ -97,6 +97,7 @@ if (isset($_REQUEST['delete'])) {
   <link rel="shortcut icon" href="../../images/favicon.png" />
 
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.4.1/font/bootstrap-icons.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" rel="stylesheet">
 
 </head>
 
@@ -232,8 +233,8 @@ if (isset($_REQUEST['delete'])) {
                             <td><?php if (isset($rd['active'])) { if($rd['active']==0){ $active="Active"; $badge="badge-success"; }else{ $active="Blocked"; $badge="badge-danger"; } echo "<label class='badge ".$badge."'>".$active."</lable>"; } ?></td>
                             <td><?php if (isset($rd['last_active'])) { echo $rd['last_active']; } ?></td>
                             <td>
-                              <button type="button" class="btn btn-outline-primary" data-toggle="modal" data-target="#usersModal<?php if (isset($rd['id'])) { echo $rd['id']; } ?>"><i class="bi bi-pencil-square"></i></button>
-                              <form action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]);?>" method="POST"><input type="hidden" name="id" value="<?php if (isset($rd['id'])) { echo $rd['id']; } ?>"><button type="submit" class="btn btn-outline-primary" name="delete"><i class="bi bi-trash"></i></button></form>
+                              <button type="button" class="btn btn-outline-primary mb-1 text"  style="line-height: 1.5;" data-toggle="modal" data-target="#usersModal<?php if (isset($rd['id'])) { echo $rd['id']; } ?>"><i class="bi bi-pencil-square"></i></button>
+                              <form action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]);?>" method="POST"><input type="hidden" name="id" value="<?php if (isset($rd['id'])) { echo $rd['id']; } ?>"><button type="submit" class="btn btn-outline-primary mt-1 " name="delete" style="line-height: 1.5;"><i class="fas fa-trash-alt"></i></button></form>
                             </td>
                         </tr>
   <!-- Modal -->
