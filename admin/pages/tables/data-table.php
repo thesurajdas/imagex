@@ -64,6 +64,17 @@ if (isset($_REQUEST['psave'])) {
     echo "<script>alert('Wrong Submit Method!');</script>";
   }
 }
+//Delete User
+if (isset($_REQUEST['delete'])) {
+  $u_id=$_REQUEST['id'];
+  $sql="DELETE FROM users WHERE id='$u_id';";
+  if ($connect->query($sql)===TRUE) {
+    echo "<script>alert('User Deleted Successfully!');</script>";
+  }
+  else{
+    echo "<script>alert('Unable to Delete the User!');</script>";
+  }
+}
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -222,7 +233,7 @@ if (isset($_REQUEST['psave'])) {
                             <td><?php if (isset($rd['last_active'])) { echo $rd['last_active']; } ?></td>
                             <td>
                               <button type="button" class="btn btn-outline-primary" data-toggle="modal" data-target="#usersModal<?php if (isset($rd['id'])) { echo $rd['id']; } ?>"><i class="bi bi-pencil-square"></i></button>
-                              <button class="btn btn-outline-primary" name="" onClick="showSwal('success-message')"><i class="bi bi-trash"></i></button>
+                              <form action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]);?>" method="POST"><input type="hidden" name="id" value="<?php if (isset($rd['id'])) { echo $rd['id']; } ?>"><button type="submit" class="btn btn-outline-primary" name="delete"><i class="bi bi-trash"></i></button></form>
                             </td>
                         </tr>
   <!-- Modal -->
