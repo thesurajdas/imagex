@@ -24,7 +24,7 @@
         }
       })
 
-    } else if (type === 'success-message-update-profile') {
+    } else if (type === 'success-message') {
       swal({
         title: 'Completed!',
         text: 'You Have Successfully Updated Profile Details',

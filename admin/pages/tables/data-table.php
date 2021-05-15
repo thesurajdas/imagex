@@ -222,7 +222,7 @@ if (isset($_REQUEST['psave'])) {
                             <td><?php if (isset($rd['last_active'])) { echo $rd['last_active']; } ?></td>
                             <td>
                               <button type="button" class="btn btn-outline-primary" data-toggle="modal" data-target="#usersModal<?php if (isset($rd['id'])) { echo $rd['id']; } ?>"><i class="bi bi-pencil-square"></i></button>
-                              <button class="btn btn-outline-primary" name="" onClick="showSwal('warning-message-and-cancel')"><i class="bi bi-trash"></i></button>
+                              <button class="btn btn-outline-primary" name="" onClick="showSwal('success-message')"><i class="bi bi-trash"></i></button>
                             </td>
                         </tr>
   <!-- Modal -->
