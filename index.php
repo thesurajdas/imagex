@@ -141,21 +141,21 @@
                 </ol>
                 <div class="carousel-inner">
                   <div class="carousel-item active">
-                    <img src="https://dummyimage.com/600x400/000/fffa.jpg" class="d-block w-100" alt="...">
+                    <img src="https://dummyimage.com/600x400/000/fff2.jpg" class="d-block w-100" alt="...">
                     <div class="carousel-caption d-none d-md-block">
                       <h5>Welcome to the Gallery</h5>
                       <p>Scrole For More.</p>
                     </div>
                   </div>
                   <div class="carousel-item">
-                    <img src="https://dummyimage.com/600x400/000/fffb.jpg" class="d-block w-100" alt="...">
+                    <img src="https://dummyimage.com/600x400/000/fff2.jpg" class="d-block w-100" alt="...">
                     <div class="carousel-caption d-none d-md-block">
                       <h5>Second slide label</h5>
                       <p>Some representative placeholder content for the second slide.</p>
                     </div>
                   </div>
                   <div class="carousel-item">
-                    <img src="https://dummyimage.com/600x400/000/fffc.jpg" class="d-block w-100" alt="...">
+                    <img src="https://dummyimage.com/600x400/000/fff2.jpg" class="d-block w-100" alt="...">
                     <div class="carousel-caption d-none d-md-block">
                       <h5>Third slide label</h5>
                       <p>Some representative placeholder content for the third slide.</p>
