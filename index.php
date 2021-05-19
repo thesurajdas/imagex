@@ -33,23 +33,46 @@
                         <li class="nav-item active">
                             <a class="nav-link" href="index.php" tabindex="-1" aria-disabled="true">Home</a>
                         </li>
-                        <li class="nav-item dropdown border-right-0">
-                            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Categories</a>
-                            <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                                <a class="dropdown-item" href="pages/nature.php">Nature</a>
-                                <a class="dropdown-item" href="pages/potrait.php">Potraite</a>
-                                <a class="dropdown-item" href="pages/landscape.php">Landscape</a>
-                                <a class="dropdown-item" href="pages/astro.php">Astro</a>
-                            </div>
-                        </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="pages/trendings.php" tabindex="-1" aria-disabled="true">Trending</a>
+                            <a class="nav-link" href="pages/trendings.html" tabindex="-1" aria-disabled="true">Trending</a>
                         </li>
                         <!-- <li class="nav-item">
                             <a href="login.php"><button type="button" class="btn btn-outline-warning">LogIn/SignUP</button></a>
                         </li> -->
-                    </ul>
-                    <form class="form-inline my-2 my-lg-0">
+                    
+
+                        <li class="nav-item">
+                            <div class="btn-group">
+                                <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown" style="padding-left: 0;">Category</button>
+                                <ul class="dropdown-menu scrollable-menu" role="menu">
+                                    <li><a class="dropdown-item" href="pages/abstract.html">Abstract</a></li>
+                                    <li><a class="dropdown-item" href="pages/animals.html">Animals</a></li>
+                                    <li><a class="dropdown-item" href="pages/art.html">Art</a></li>
+                                    <li><a class="dropdown-item" href="pages/astro.html">Astro</a></li>
+                                    <li><a class="dropdown-item" href="pages/black.html">Black</a></li>
+                                    <li><a class="dropdown-item" href="pages/bridge.html">Bridge</a></li>
+                                    <li><a class="dropdown-item" href="pages/cars.html">Cars</a></li>
+                                    <li><a class="dropdown-item" href="pages/city.html">City</a></li>
+                                    <li><a class="dropdown-item" href="pages/cloud.html">Cloud</a></li>
+                                    <li><a class="dropdown-item" href="pages/dark.html">Dark</a></li>
+                                    <li><a class="dropdown-item" href="pages/fashion.html">Fashion</a></li>
+                                    <li><a class="dropdown-item" href="pages/flowers.html">Flowers</a></li>
+                                    <li><a class="dropdown-item" href="pages/food.html">Food</a></li>
+                                    <li><a class="dropdown-item" href="pages/macro.html">Macro</a></li>
+                                    <li><a class="dropdown-item" href="pages/nature.html">Nature</a></li>
+                                    <li><a class="dropdown-item" href="pages/motion.html">Motion</a></li>
+                                    <li><a class="dropdown-item" href="pages/other.html">Other</a></li>
+                                    <li><a class="dropdown-item" href="pages/people.html">people</a></li>
+                                    <li><a class="dropdown-item" href="pages/sport.html">Sport</a></li>
+                                    <li><a class="dropdown-item" href="pages/street.html">Street</a></li>
+                                    <li><a class="dropdown-item" href="pages/technologie.html">Technologie</a></li>
+                                    <li><a class="dropdown-item" href="pages/texture.html">Texture</a></li>
+                                    <li><a class="dropdown-item" href="pages/travel.html">Travel</a></li>
+                                </ul>
+                            </div>
+                        </li>    
+                </ul>
+                    <form class="my-2 my-lg-0">
                         <div class="row no-gutters align-items-center">
                             <input class="form-control sbdr rounded-pill pr-5" type="text" placeholder="Search" id="example-search-input2">
                             <div class="col-auto">
