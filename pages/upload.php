@@ -36,6 +36,7 @@
     </style>
 
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.4.1/font/bootstrap-icons.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" rel="stylesheet">
 </head>
 <body>
     <!-----------------------------------nav section---------------------------------------------------->
@@ -121,7 +122,7 @@
                     </div>
             </div>
             <div class="col-12 text-center" style="margin-top: 20px;">
-                <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#staticBackdrop">
+                <button type="button" class="btn btn-primary bt" data-toggle="modal" data-target="#staticBackdrop">
                     Save & Continue to Publish
                 </button>
             </div>    
@@ -211,19 +212,54 @@
                 </button>
             </div>
             <div class="modal-body">
-                <div class="container justify-content-center">
-                    <div class="form-group col-md-4">
-                        <label for="inputimgtyp">Image Type  <i class="bi bi-image"></i></label>
-                        <select id="inputimgtyp" class="form-control" required>
-                            <option selected>Choose...</option>
-                            <option value="Astro">Astro</option>
-                        </select>
+                <form>
+                    <div class="form-row">
+                        <div class="form-group col-md-4">
+                            <label for="inputimgtype"><i class="fas fa-grip-horizontal"></i> Image Type</label>
+                            <select id="inputimgtype" class="fc form-control" required>
+                                <option selected></option>
+                                <option value="Abstract">Abstract</option>
+                                <option value="Animals">Animals</option>
+                                <option value="Anime">Anime</option>
+                                <option value="Art">Art</option>
+                                <option value="Astro">Astro</option>
+                                <option value="Black">Black</option>
+                                <option value="Cars">Cars</option>
+                                <option value="City">City</option>
+                                <option value="Cloud">Cloud</option>
+                                <option value="Dark">Dark</option>
+                                <option value="Fashion">Fashion</option>
+                                <option value="Flowers">Flowers</option>
+                                <option value="Food">Food</option>
+                                <option value="Holiday">Holiday</option>
+                                <option value="Love">Love</option>
+                                <option value="Macro">Macro</option>
+                                <option value="Motorcycles">Motorcycles</option>
+                                <option value="Music">Music</option>
+                                <option value="Nature">Nature</option>
+                                <option value="Motion">Motion</option>
+                                <option value="Other">Other</option>
+                                <option value="People">people</option>
+                                <option value="Smilies">Smilies</option>
+                                <option value="Space">Space</option>
+                                <option value="Sport">Sport</option>
+                                <option value="Street">Street</option>
+                                <option value="Technologie">Technologie</option>
+                                <option value="Textures">Texture</option>
+                                <option value="Travel">Travel</option>
+                                <option value="Vector">Vector</option>
+                            </select>
+                        </div>
+                        <div class="form-group col-md-8">
+                            <label for="title"><i class="fas fa-file-signature"></i> Image Name</label>
+                            <input type="text" class="fc form-control" id="title" placeholder="MyImage" required>
+                        </div>
                     </div>
-                </div>
+                    <button type="submit" class="btn btn-success col-12 bt"><i class="fas fa-arrow-circle-up"></i> Upload</button>
+                </form>
             </div>
             <div class="modal-footer">
-                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                <button type="button" class="btn btn-primary">Publish</button>
+                <button type="button" class="btn btn-danger col-12 bt" data-dismiss="modal"><i class="fas fa-window-close"></i> Close</button>
             </div>
         </div>
         </div>
