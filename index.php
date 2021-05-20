@@ -30,13 +30,13 @@
                 <span class="navbar-toggler-icon"></span>
                 </button>
                 <a class="navbar-brand" href="#">PIXWAVE</a>
-                <!--<div class="d-md-none d-lg-none d-lg-none d-lx-none">
+                <div class="d-md-none d-lg-none d-lg-none d-lx-none">
                     <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><button type="button" class="btn btn-outline-warning bt"><i class="fas fa-user-circle"></i></button></a>
                     <div class="dropdown-menu" style="left: auto; right: 0;" aria-labelledby="navbarDropdown">
                         <a class="dropdown-item" href="pages/login.php">Sign In</a>
                     </div>   
-                </div>-->
-               <div class="d-md-none d-lg-none d-lg-none d-lx-none">
+                </div>
+                <div class="d-md-none d-lg-none d-lg-none d-lx-none">
                     <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><img class="logp rounded-circle" src="https://picsum.photos/id/237/200/300" alt=""></a>
                     <div class="dropdown-menu" style="left: auto; right: 0;" aria-labelledby="navbarDropdown">
                         <a class="dropdown-item" href="pages/profile.php">Account</a>
