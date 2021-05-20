@@ -24,6 +24,11 @@
     padding-top: 60px;
 }
 
+.cimg{
+    height: 575px;
+    width: 100%;
+    object-fit: cover;
+}
 
 .wlc{
     align-items: center;

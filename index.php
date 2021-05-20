@@ -26,17 +26,17 @@
         <!-----------------------------------nav section---------------------------------------------------->
         <header>
             <nav class="navbar shadow-lg p-1 mb-5 bg-white rounded fixed-top navbar-expand-lg navbar-light bg-light">
-                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo03" aria-controls="navbarTogglerDemo03" aria-expanded="false" aria-label="Toggle navigation">
+                <button class="navbar-toggler" style="margin-left: 35px;" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo03" aria-controls="navbarTogglerDemo03" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
                 </button>
                 <a class="navbar-brand" href="#">PIXWAVE</a>
-                <div class="d-md-none d-lg-none d-lg-none d-lx-none">
+                <!--<div class="d-md-none d-lg-none d-lg-none d-lx-none">
                     <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><button type="button" class="btn btn-outline-warning bt"><i class="fas fa-user-circle"></i></button></a>
                     <div class="dropdown-menu" style="left: auto; right: 0;" aria-labelledby="navbarDropdown">
                         <a class="dropdown-item" href="pages/login.php">Sign In</a>
                     </div>   
-                </div>
-                <div class="d-md-none d-lg-none d-lg-none d-lx-none">
+                </div>-->
+               <div class="d-md-none d-lg-none d-lg-none d-lx-none">
                     <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><img class="logp rounded-circle" src="https://picsum.photos/id/237/200/300" alt=""></a>
                     <div class="dropdown-menu" style="left: auto; right: 0;" aria-labelledby="navbarDropdown">
                         <a class="dropdown-item" href="pages/profile.php">Account</a>
@@ -52,7 +52,7 @@
                         <li class="nav-item active">
                             <a class="nav-link" href="index.php" tabindex="-1" aria-disabled="true">Home</a>
                         </li>
-                        <li class="nav-item">
+                        <li class="nav-item active">
                             <a class="nav-link" href="pages/trendings.html" tabindex="-1" aria-disabled="true">Trending</a>
                         </li>
                         <li class="nav-item">
@@ -102,7 +102,7 @@
                     </form>
                     <ul class="navbar-nav">
                         <li class="nav-item">
-                            <a class="nav-link" href="pages/upload.php" tabindex="-1" aria-disabled="true"><button type="button" class="btn btn-success bt col-sm-12"><i class="fas fa-cloud-upload-alt"></i></button></a>
+                            <a class="nav-link" href="pages/upload.php" tabindex="-1" aria-disabled="true"><button type="button" class="btn btn-success bt col-sm-12"><i class="fas fa-cloud-upload-alt"></i> Upload</button></a>
                         </li>
                         <li class="nav-item dropleft text-decoration-none">
                             <div class="d-none d-md-block d-lg-block d-xl-block">
@@ -161,21 +161,21 @@
                 </ol>
                 <div class="carousel-inner">
                   <div class="carousel-item active">
-                    <img src="https://dummyimage.com/600x400/000/fff2.jpg" class="d-block w-100" alt="...">
+                    <img src="https://dummyimage.com/600x400/000/fff2.jpg" class="d-block cimg" alt="...">
                     <div class="carousel-caption d-none d-md-block">
                       <h5>Welcome to the Gallery</h5>
                       <p>Scrole For More.</p>
                     </div>
                   </div>
                   <div class="carousel-item">
-                    <img src="https://dummyimage.com/600x400/000/fff2.jpg" class="d-block w-100" alt="...">
+                    <img src="https://dummyimage.com/600x400/000/fff2.jpg" class="d-block cimg" alt="...">
                     <div class="carousel-caption d-none d-md-block">
                       <h5>Second slide label</h5>
                       <p>Some representative placeholder content for the second slide.</p>
                     </div>
                   </div>
                   <div class="carousel-item">
-                    <img src="https://dummyimage.com/600x400/000/fff2.jpg" class="d-block w-100" alt="...">
+                    <img src="https://dummyimage.com/600x400/000/fff2.jpg" class="d-block cimg" alt="...">
                     <div class="carousel-caption d-none d-md-block">
                       <h5>Third slide label</h5>
                       <p>Some representative placeholder content for the third slide.</p>
