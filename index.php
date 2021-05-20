@@ -14,6 +14,9 @@
             .dropleft .dropdown-toggle::before{
                 border-right: 0;
             }
+            .dropdown-toggle::after{
+                border-top: 0;
+            }
         </style>
 
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" rel="stylesheet">
@@ -23,31 +26,43 @@
         <!-----------------------------------nav section---------------------------------------------------->
         <header>
             <nav class="navbar shadow-lg p-1 mb-5 bg-white rounded fixed-top navbar-expand-lg navbar-light bg-light">
-                <a class="navbar-brand" href="index.php">Gallery</a>
-                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo03" aria-controls="navbarTogglerDemo03" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
                 </button>
-            
-                <div class="collapse navbar-collapse" id="navbarSupportedContent">
-                    <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
+                <a class="navbar-brand" href="#">PIXWAVE</a>
+                <div class="d-md-none d-lg-none d-lg-none d-lx-none">
+                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><button type="button" class="btn btn-outline-warning bt"><i class="fas fa-user-circle"></i></button></a>
+                    <div class="dropdown-menu" style="left: auto; right: 0;" aria-labelledby="navbarDropdown">
+                        <a class="dropdown-item" href="pages/login.php">Sign In</a>
+                    </div>   
+                </div>
+                <div class="d-md-none d-lg-none d-lg-none d-lx-none">
+                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><img class="logp rounded-circle" src="https://picsum.photos/id/237/200/300" alt=""></a>
+                    <div class="dropdown-menu" style="left: auto; right: 0;" aria-labelledby="navbarDropdown">
+                        <a class="dropdown-item" href="pages/profile.php">Account</a>
+                        <a class="dropdown-item" href="pages/editprofile.php">Edit Profile</a>
+                        <a class="dropdown-item" href="pages/favimg.php">Saved Images</a>
+                        <a class="dropdown-item" href="pages/usruploadimg.php">Your Uploads</a>
+                        <div class="dropdown-divider"></div>
+                        <a class="dropdown-item" href="#">SignOff</a>
+                    </div>
+                </div>
+                <div class="collapse navbar-collapse" id="navbarTogglerDemo03">
+                    <ul class="navbar-nav mr-auto mt-2 mt-lg-0 align-items-center">
                         <li class="nav-item active">
                             <a class="nav-link" href="index.php" tabindex="-1" aria-disabled="true">Home</a>
                         </li>
                         <li class="nav-item">
                             <a class="nav-link" href="pages/trendings.html" tabindex="-1" aria-disabled="true">Trending</a>
                         </li>
-                        <!-- <li class="nav-item">
-                            <a href="login.php"><button type="button" class="btn btn-outline-warning">LogIn/SignUP</button></a>
-                        </li> -->
-                    
-
                         <li class="nav-item">
                             <div class="btn-group">
-                                <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown" style="padding-left: 0;">Category</button>
+                                <button type="button" class="btn btn-default dropdown-toggle text-center" data-toggle="dropdown" style="padding-left: 15%;">Category</button>
                                 <ul class="dropdown-menu scrollable-menu" role="menu">
                                     <li><a class="dropdown-item" href="pages/abstract.html">Abstract</a></li>
-                                    <li><a class="dropdown-item" href="pages/animals.html">Animals</a></li>
                                     <li><a class="dropdown-item" href="pages/art.html">Art</a></li>
+                                    <li><a class="dropdown-item" href="pages/animals.html">Animals</a></li>
+                                    <li><a class="dropdown-item" href="pages/anime.html">Anime</a></li>
                                     <li><a class="dropdown-item" href="pages/astro.html">Astro</a></li>
                                     <li><a class="dropdown-item" href="pages/black.html">Black</a></li>
                                     <li><a class="dropdown-item" href="pages/bridge.html">Bridge</a></li>
@@ -59,10 +74,13 @@
                                     <li><a class="dropdown-item" href="pages/flowers.html">Flowers</a></li>
                                     <li><a class="dropdown-item" href="pages/food.html">Food</a></li>
                                     <li><a class="dropdown-item" href="pages/macro.html">Macro</a></li>
-                                    <li><a class="dropdown-item" href="pages/nature.html">Nature</a></li>
+                                    <li><a class="dropdown-item" href="pages/motorcycles.html">Motorcycles</a></li>
+                                    <li><a class="dropdown-item" href="pages/music.html">Music</a></li>
                                     <li><a class="dropdown-item" href="pages/motion.html">Motion</a></li>
+                                    <li><a class="dropdown-item" href="pages/nature.html">Nature</a></li>
                                     <li><a class="dropdown-item" href="pages/other.html">Other</a></li>
                                     <li><a class="dropdown-item" href="pages/people.html">people</a></li>
+                                    <li><a class="dropdown-item" href="pages/sky">Sky</a></li>
                                     <li><a class="dropdown-item" href="pages/sport.html">Sport</a></li>
                                     <li><a class="dropdown-item" href="pages/street.html">Street</a></li>
                                     <li><a class="dropdown-item" href="pages/technologie.html">Technologie</a></li>
@@ -71,7 +89,7 @@
                                 </ul>
                             </div>
                         </li>    
-                </ul>
+                    </ul>
                     <form class="my-2 my-lg-0">
                         <div class="row no-gutters align-items-center">
                             <input class="form-control sbdr rounded-pill pr-5" type="text" placeholder="Search" id="example-search-input2">
@@ -84,26 +102,28 @@
                     </form>
                     <ul class="navbar-nav">
                         <li class="nav-item">
-                            <a class="nav-link" href="pages/upload.php" tabindex="-1" aria-disabled="true"><button type="button" class="btn btn-outline-success"><i class="fas fa-cloud-upload-alt"></i></button></a>
+                            <a class="nav-link" href="pages/upload.php" tabindex="-1" aria-disabled="true"><button type="button" class="btn btn-success bt col-sm-12"><i class="fas fa-cloud-upload-alt"></i></button></a>
                         </li>
                         <li class="nav-item dropleft text-decoration-none">
-                            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><img class="logp rounded-circle" src="https://picsum.photos/id/237/200/300" alt=""></a>
-                            <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                                <a class="dropdown-item" href="pages/profile.php">Account</a>
-                                <a class="dropdown-item" href="pages/editprofile.php">Edit Profile</a>
-                                <a class="dropdown-item" href="pages/favimg.php">Saved Images</a>
-                                <a class="dropdown-item" href="pages/usruploadimg.php">Your Uploads</a>
-                                <div class="dropdown-divider"></div>
-                                <a class="dropdown-item" href="#">SignOff</a>
+                            <div class="d-none d-md-block d-lg-block d-xl-block">
+                                <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><img class="logp rounded-circle" src="https://picsum.photos/id/237/200/300" alt=""></a>
+                                <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                                    <a class="dropdown-item" href="pages/profile.php">Account</a>
+                                    <a class="dropdown-item" href="pages/editprofile.php">Edit Profile</a>
+                                    <a class="dropdown-item" href="pages/favimg.php">Saved Images</a>
+                                    <a class="dropdown-item" href="pages/usruploadimg.php">Your Uploads</a>
+                                    <div class="dropdown-divider"></div>
+                                    <a class="dropdown-item" href="#">SignOff</a>
+                                </div>
                             </div>
                         </li>
-                        <li class="nav-item dropleft text-decoration-none">
-                            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><button type="button" class="btn btn-outline-warning"><i class="fas fa-user-circle"></i></button></a>
-                            <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                                <a class="dropdown-item" href="pages/login.php">Sign In</a>
-                                <div class="dropdown-divider"></div>
-                                <a class="dropdown-item" href="pages/login.php">Sign UP</a>
-                            </div>
+                        <li class="nav-item dropleft text-decoration-none ">
+                            <div class="d-none d-md-block d-lg-block d-xl-block">
+                                <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><button type="button" class="btn btn-outline-warning bt"><i class="fas fa-user-circle"></i></button></a>
+                                <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                                    <a class="dropdown-item" href="pages/login.php">Sign In</a>
+                                </div>
+                            </div>    
                         </li>
                     </ul>
                 </div>
