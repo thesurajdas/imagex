@@ -16,7 +16,6 @@ if(isset($_COOKIE['user_id'])){
         $user_username=$row['username'];
         $user_name=$row['name'];
         $user_email=$row['email'];
-        
     }
     else{
         header("Location: $site_url/pages/login.php");
@@ -27,6 +26,40 @@ else{
     header("Location: $site_url/pages/login.php");
     exit();
 }
+//Get stats Table data
+$today_date=date('Y-m-d');
+$sql_stats="SELECT * FROM stats WHERE id=1;";
+$result_stats=$connect->query($sql_stats);
+$r_stats=$result_stats->fetch_assoc();
+$stats_date=$r_stats['date'];
+$today_active_users=$r_stats['today_active_users'];
+$total_image_upload=$r_stats['total_image_upload'];
+$today_image_upload=$r_stats['today_image_upload'];
+//check today with stats date
+if ($today_date!=$stats_date) {
+    $sql="UPDATE stats SET date='$today_date',today_active_users=0";
+    $connect->query($sql);
+}
+//users table
+$sql_users="SELECT * FROM users WHERE id='$id';";
+$result_users=$connect->query($sql_users);
+$r_users=$result_users->fetch_assoc();
+$last_active=$r_users['last_active'];
+//check last active and update
+if ($last_active!=$today_date) {
+    $sql1="UPDATE stats SET today_active_users=today_active_users+1 WHERE id=1;";
+    $connect->query($sql1);
+    $sql2="UPDATE users SET last_active='$today_date' WHERE id='$id';";
+    $connect->query($sql2);  
+}
+//Active Users
+$sql="SELECT * FROM users WHERE active=0;";
+$active_users=$connect->query($sql);
+$total_active_users=$active_users->num_rows;
+//row count
+$sql5="SELECT * FROM users;";
+$total=$connect->query($sql5);
+$total=$total->num_rows;
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -154,7 +187,7 @@ else{
             <div class="col-md-12 grid-margin">
               <div class="row">
                 <div class="col-12 col-xl-8 mb-4 mb-xl-0">
-                  <h3 class="font-weight-bold">Welcome <span>User First Name</span></h3>
+                  <h3 class="font-weight-bold">Welcome <span><?php echo $user_name; ?></span></h3>
                   <h6 class="font-weight-normal mb-0">Everything Allright?</h6>
                 </div>
                 
@@ -180,7 +213,7 @@ else{
                   <div class="card card-tale">
                     <div class="card-body">
                       <p class="mb-4">Today’s Post</p>
-                      <p class="fs-30 mb-2">4006</p>
+                      <p class="fs-30 mb-2"><?php echo $today_image_upload; ?></p>
                     </div>
                   </div>
                 </div>
@@ -188,25 +221,25 @@ else{
                   <div class="card card-dark-blue">
                     <div class="card-body">
                       <p class="mb-4">Total Post</p>
-                      <p class="fs-30 mb-2">61344</p>
+                      <p class="fs-30 mb-2"><?php echo $total_image_upload; ?></p>
                     </div>
                   </div>
                 </div>
               </div>
               <div class="row">
-                <div class="col-md-6 mb-4 mb-lg-0 stretch-card transparent">
-                  <div class="card card-light-blue">
-                    <div class="card-body">
-                      <p class="mb-4">Number of Users</p>
-                      <p class="fs-30 mb-2">34040</p>
-                    </div>
-                  </div>
-                </div>
                 <div class="col-md-6 stretch-card transparent">
                   <div class="card card-light-danger">
                     <div class="card-body">
                       <p class="mb-4">Today’s Active Users</p>
-                      <p class="fs-30 mb-2">47033</p>
+                      <p class="fs-30 mb-2"><?php echo $today_active_users; ?></p>
+                    </div>
+                  </div>
+                </div>
+                <div class="col-md-6 mb-4 mb-lg-0 stretch-card transparent">
+                  <div class="card card-light-blue">
+                    <div class="card-body">
+                      <p class="mb-4">Total Number of Users</p>
+                      <p class="fs-30 mb-2"><?php echo $total; ?></p>
                     </div>
                   </div>
                 </div>
