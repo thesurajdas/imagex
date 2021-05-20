@@ -129,17 +129,6 @@
                 border-right: 0;
             }
         </style>
-        <script>
-
-			$(function() {
-			    $('.dates #user1').datepicker({
-                    'format': 'yyyy-mm-dd',
-                    'autoclose': true
-			    });
-
-
-		    });
-		</script>
 
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" rel="stylesheet">
         <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.4.1/font/bootstrap-icons.css">
@@ -209,8 +198,33 @@
         </header>
         
         <!-------------------------------------------Form section--------------------------->
-
         <div class="container fstcon">
+            <div class="card shadow">
+                <h4 class="mtxt">Profile Picture</h4>
+                <hr class="mb-4">
+                <div class="col-sm-12">
+                    <div class="pimg">
+                        <img class="pdp" src="https://dummyimage.com/600x400/000/fff2.jpg" alt="">
+                    </div>
+                </div>
+                <form class="mfrm" action="/" method="POST">
+                    <div class="form-row">
+                        <div class="form-group col-12">
+                            <div class="input-group mb-3">
+                                <div class="input-group-prepend">
+                                    <button class="input-group-text" id="inputGroupFileAddon01">Upload</button>
+                                </div>
+                                <div class="custom-file">
+                                    <input type="file" class="custom-file-input" id="inputGroupFile01" aria-describedby="inputGroupFileAddon01">
+                                    <label class="custom-file-label" for="inputGroupFile01">Choose Profile Picture</label>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </form>    
+            </div>
+        </div>    
+        <div class="container sndcon">
             <div class="card shadow">
                 <h4 class="mtxt">Personal Details</h4>
                 <hr class="mb-4">
@@ -518,19 +532,17 @@
                         </div>
                     </div>
                     <div class="form-row smit justify-content-between">
-                        <button type="submit" class="btn btn-primary" name="psave">Save Changes</button>
-                    </form>
-                        <button type="button" class="btn btn-success" data-toggle="modal" data-target="#exampleModal">Change Password</button>
-                    </div>
-                
-            </div>
+                    <button type="submit" class="btn btn-primary" name="psave">Save Changes</button>
+                </form>
+                <button type="button" class="btn btn-success" data-toggle="modal" data-target="#exampleModal">Change Password</button>
+            </div>     
+            </div>    
         </div>    
-
         <!------------------------------------------device description-------------------------------------->
 
         <div class="container sndcon">
             <div class="card shadow">
-            <h4 class="col-12 ntxt">Device Details <small>(Device Use for Capturing Pictures)</small></h4>
+                <h4 class="col-12 ntxt">Device Details <small>(Device Use for Capturing Pictures)</small></h4>
                 <hr class="mb-4">
                 <form class="mfrm" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]);?>" method="POST">
                     <div class="form-row">
@@ -633,62 +645,68 @@
                         </div>
                     </div>-->
                 </div>
-            <div>    
+            </div>    
         </footer>
         
         <!--Password Change-->
         <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
             <div class="modal-dialog">
-              <div class="modal-content">
-                <div class="modal-header">
-                  <h5 class="modal-title" id="exampleModalLabel">Change Password</h5>
-                  <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                    <span aria-hidden="true">&times;</span>
-                  </button>
+                <div class="modal-content">
+                    <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLabel">Change Password</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                    </div>
+                    <div class="modal-body">
+                        <form action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]);?>" method="POST">
+                            <div class="form-group">
+                                <label for="oldpassword">Old Password</label>
+                                <input type="password" class="form-control" name="opassword" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="password">New Password</label>
+                                <input type="password" class="form-control" name="npassword" id="password" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="confirm_password">Confirm New Password</label>
+                                <input type="password" class="form-control" id="confirm_password" required>
+                            </div>
+                            <button type="submit" name="pwsave" class="btn btn-primary">Change Password</button>
+                        </form>
+                    </div>
+                    <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                    </div>
                 </div>
-                <div class="modal-body">
-                    <form action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]);?>" method="POST">
-                        <div class="form-group">
-                            <label for="oldpassword">Old Password</label>
-                            <input type="password" class="form-control" name="opassword" required>
-                        </div>
-                        <div class="form-group">
-                            <label for="password">New Password</label>
-                            <input type="password" class="form-control" name="npassword" id="password" required>
-                        </div>
-                        <div class="form-group">
-                            <label for="confirm_password">Confirm New Password</label>
-                            <input type="password" class="form-control" id="confirm_password" required>
-                        </div>
-                        <button type="submit" name="pwsave" class="btn btn-primary">Change Password</button>
-                    </form>
-                </div>
-                <div class="modal-footer">
-                  <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                </div>
-              </div>
             </div>
-          </div>
+        </div>
 
           <!-- Custom Javascript Functions -->
+            <script src="https://cdn.jsdelivr.net/npm/bs-custom-file-input/dist/bs-custom-file-input.js"></script>
             <script>
-                // Password Retype Password Checker
-                var password = document.getElementById("password")
-                , confirm_password = document.getElementById("confirm_password");
-            function validatePassword(){
-                if(password.value != confirm_password.value) {
-                confirm_password.setCustomValidity("Passwords Don't Match");
-                } else {
-                confirm_password.setCustomValidity('');
+                $(document).ready(function () {
+                    bsCustomFileInput.init()
+                })
+            </script>
+            <script>
+                    // Password Retype Password Checker
+                    var password = document.getElementById("password")
+                    , confirm_password = document.getElementById("confirm_password");
+                function validatePassword(){
+                    if(password.value != confirm_password.value) {
+                    confirm_password.setCustomValidity("Passwords Don't Match");
+                    } else {
+                    confirm_password.setCustomValidity('');
+                    }
                 }
-            }
-            password.onchange = validatePassword;
-            confirm_password.onkeyup = validatePassword;
-            //Space Remover from text input
-            function AvoidSpace(event) {
-                var k = event ? event.which : window.event.keyCode;
-                if (k == 32) return false;
-            }
+                password.onchange = validatePassword;
+                confirm_password.onkeyup = validatePassword;
+                //Space Remover from text input
+                function AvoidSpace(event) {
+                    var k = event ? event.which : window.event.keyCode;
+                    if (k == 32) return false;
+                }
             </script>
     </body>
 </html>
