@@ -34,7 +34,6 @@ if(isset($_COOKIE['user_id'])){
         if ($last_active!=$today_date) {
             $sql1="UPDATE stats SET today_active_users=today_active_users+1 WHERE id=1;";
             $connect->query($sql1);
-
         }
         //Update last active user every page refresh
         $sql2="UPDATE users SET last_active='$today_date' WHERE id='$id';";

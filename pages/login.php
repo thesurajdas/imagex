@@ -113,7 +113,7 @@ if (isset($_REQUEST['login'])) {
           }
           else{
             //Insert Data into table
-            $sql="INSERT INTO users (username,email,phone_no,password,name,register_date,last_active,country,city,role,ip_address) VALUES ('$username','$email','$phone_no','$password','$name','$register_date','$country','$city','$role','$ip')";
+            $sql="INSERT INTO users (username,email,phone_no,password,name,register_date,country,city,role,ip_address) VALUES ('$username','$email','$phone_no','$password','$name','$register_date','$country','$city','$role','$ip')";
             if ($connect->query($sql)===TRUE) {
               $sqli="SELECT id FROM users WHERE username='".$username."'";
               $result=$connect->query($sqli);
