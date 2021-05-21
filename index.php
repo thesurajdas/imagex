@@ -347,7 +347,7 @@
                                 <hrc class="mb-4">
                                 <p>All started with a vision of giving all users a place where users upload and download their pictures taken by mobile phone. And we created <b>PIXWAVE</b>. <a style="text-decoration: none;" href="#"><i>READ MORE</i></a></p>
                             </div>
-                            <div class="col-8 mt-3">
+                            <div class="col-lg-8 col-md-12 col-xl-8 col-sm-12 mt-3">
                                 <div class="qll">
                                     <h5 class="text-uppercase mb-4 font-wight-bold text-info text-dark">Quick Links</h5>
                                     <div class="row">
