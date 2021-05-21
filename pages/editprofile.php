@@ -215,7 +215,7 @@
                                     <button class="input-group-text" id="inputGroupFileAddon01">Upload</button>
                                 </div>
                                 <div class="custom-file">
-                                    <input type="file" class="custom-file-input" id="inputGroupFile01" aria-describedby="inputGroupFileAddon01">
+                                    <input type="file" class="custom-file-input" id="inputGroupFile01" aria-describedby="inputGroupFileAddon01" accept="image/*">
                                     <label class="custom-file-label" for="inputGroupFile01">Choose Profile Picture</label>
                                 </div>
                             </div>

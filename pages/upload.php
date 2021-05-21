@@ -108,7 +108,7 @@
             <div class="row col-12 mr-0 ml-0 justify-content-center">
                     <!-- Upload image input-->
                     <div class="input-group rounded-pill bg-white shadow-sm ">
-                        <input id="upload" type="file" onchange="readURL(this);" class="form-control border-0">
+                        <input id="upload" type="file" onchange="readURL(this);" class="form-control border-0" accept="image/*">
                         <label id="upload-label" for="upload" class="font-weight-light text-muted">Choose file</label>
                         <div class="input-group-append">
                             <label for="upload" class="btn btn-light m-0 rounded-pill px-4"> <i class="fa fa-cloud-upload mr-2 text-muted"></i><small class="text-uppercase font-weight-bold text-muted">Choose file</small></label>
