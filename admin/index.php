@@ -36,18 +36,6 @@ $stats_date=$r_stats['date'];
 $today_active_users=$r_stats['today_active_users'];
 $total_image_upload=$r_stats['total_image_upload'];
 $today_image_upload=$r_stats['today_image_upload'];
-//check today with stats date
-if ($today_date!=$stats_date) {
-    $sql="UPDATE stats SET date='$today_date',today_active_users=0";
-    $connect->query($sql);
-}
-//check last active and update
-if ($last_active!=$today_date) {
-    $sql1="UPDATE stats SET today_active_users=today_active_users+1 WHERE id=1;";
-    $connect->query($sql1);
-    $sql2="UPDATE users SET last_active='$today_date' WHERE id='$id';";
-    $connect->query($sql2);  
-}
 //Active Users
 $sql="SELECT * FROM users WHERE active=0;";
 $active_users=$connect->query($sql);

@@ -17,6 +17,14 @@ if(isset($_COOKIE['user_id'])){
         $user_name=$row['name'];
         $user_email=$row['email'];
         $last_active=$row['last_active'];
+        //Get stats Table data
+        $today_date=date('Y-m-d');
+        $sql_stats="SELECT * FROM stats WHERE id=1;";
+        $result_stats=$connect->query($sql_stats);
+        $r_stats=$result_stats->fetch_assoc();
+        $stats_date=$r_stats['date'];
+        //Today date
+        $today_date=date('Y-m-d');
         //check today with stats date
         if ($today_date!=$stats_date) {
             $sql="UPDATE stats SET date='$today_date',today_active_users=0";
