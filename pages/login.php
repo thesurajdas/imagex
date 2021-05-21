@@ -94,8 +94,6 @@ if (isset($_REQUEST['login'])) {
           $password=base64_encode($temp_password);
           $ip=filter_var(user_ip(), FILTER_VALIDATE_IP);
           $register_date=date("Y-m-d");
-          $last_active=date("Y-m-d");
-
           //Check Username and Email Exist or Not
           $usql="SELECT username FROM users WHERE username='$username'";
           $esql="SELECT email FROM users WHERE email='$email'";
@@ -115,7 +113,7 @@ if (isset($_REQUEST['login'])) {
           }
           else{
             //Insert Data into table
-            $sql="INSERT INTO users (username,email,phone_no,password,name,register_date,last_active,country,city,role,ip_address) VALUES ('$username','$email','$phone_no','$password','$name','$register_date','$last_active','$country','$city','$role','$ip')";
+            $sql="INSERT INTO users (username,email,phone_no,password,name,register_date,last_active,country,city,role,ip_address) VALUES ('$username','$email','$phone_no','$password','$name','$register_date','$country','$city','$role','$ip')";
             if ($connect->query($sql)===TRUE) {
               $sqli="SELECT id FROM users WHERE username='".$username."'";
               $result=$connect->query($sqli);
