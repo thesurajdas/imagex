@@ -172,3 +172,12 @@
           overflow-y:auto;
        }
 }
+
+.social-icons img{
+    width: 40px;
+    transition: 0.5s;
+}
+
+.social-icons a:hover img{
+    transform: translateY(-10px);
+}
