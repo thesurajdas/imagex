@@ -16,6 +16,7 @@ if(isset($_COOKIE['user_id'])){
         $user_username=$row['username'];
         $user_name=$row['name'];
         $user_email=$row['email'];
+        $last_active=$row['last_active'];
     }
     else{
         header("Location: $site_url/pages/login.php");
@@ -40,11 +41,6 @@ if ($today_date!=$stats_date) {
     $sql="UPDATE stats SET date='$today_date',today_active_users=0";
     $connect->query($sql);
 }
-//users table
-$sql_users="SELECT * FROM users WHERE id='$id';";
-$result_users=$connect->query($sql_users);
-$r_users=$result_users->fetch_assoc();
-$last_active=$r_users['last_active'];
 //check last active and update
 if ($last_active!=$today_date) {
     $sql1="UPDATE stats SET today_active_users=today_active_users+1 WHERE id=1;";

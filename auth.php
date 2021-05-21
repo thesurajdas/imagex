@@ -16,6 +16,20 @@ if(isset($_COOKIE['user_id'])){
         $user_username=$row['username'];
         $user_name=$row['name'];
         $user_email=$row['email'];
+        $last_active=$row['last_active'];
+        //check today with stats date
+        if ($today_date!=$stats_date) {
+            $sql="UPDATE stats SET date='$today_date',today_active_users=0";
+            $connect->query($sql);
+        }
+        //check last active and update
+        if ($last_active!=$today_date) {
+            $sql1="UPDATE stats SET today_active_users=today_active_users+1 WHERE id=1;";
+            $connect->query($sql1);
+            //Update last active user
+            $sql2="UPDATE users SET last_active='$today_date' WHERE id='$id';";
+            $connect->query($sql2);  
+        }
         //Add last active date
         $last_active=date("Y-m-d");
         $sql2="UPDATE users SET last_active='$last_active' WHERE id='$id';";
