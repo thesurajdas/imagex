@@ -1,5 +1,5 @@
 <?php
-  require('../connect.php');
+  require_once('../connect.php');
 //IP Address Function with 
   function user_ip(){
     //whether ip is from share internet

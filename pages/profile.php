@@ -1,6 +1,6 @@
 <?php
     //Add database connection
-    require('../auth.php');
+    require_once('../auth.php');
     //Add data into variables
     $user_gender=$row['gender'];
     $user_phone_no=$row['phone_no'];

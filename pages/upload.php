@@ -1,3 +1,50 @@
+<?php
+    require_once('../auth.php');
+	//Preloaded Data
+	$title="Profile Picture";
+	$availability=0;
+	$time=date('Y-m-d H:i:s');
+	$category_id=3;
+	//Upload Image
+	if (isset($_FILES['file'])) {
+		$file=$_FILES['file'];
+		if ($file['error']==0) {
+			$file_ext=explode('.',$file['name']);
+			$file_name=strtolower(current($file_ext));
+			$file_ext_check=strtolower(end($file_ext));
+			$file_name=bin2hex(random_bytes(5));
+			$file_full_name=$file_name.".".$file_ext_check;
+			$vaild_file_ext=array('png','jpeg','jpg');
+			$upload_location="../uploads/".$file_full_name;
+			//add extra data for database table
+			$image_id=$file_name;
+			$image_size=$file['size'];
+			$image_location=$upload_location;
+			//check file size
+			if (($file['size']>=51200) && ($file['size']<=5242880)) {
+				//Check file extention and upload
+				if (in_array($file_ext_check,$vaild_file_ext)) {
+					$sql="INSERT INTO images (user_id, image_id, image_size, title, availability, time, image_location, category_id) VALUES('$id','$image_id', '$image_size','$title','$availability','$time','$image_location','$category_id')";
+					if(($connect->query($sql)==1) && (move_uploaded_file($_FILES['file']['tmp_name'],$upload_location)==1)){
+							echo "<br><b>Uploaded Successfully!</b>";
+					}
+					else{
+						echo "<br><b>Unable to store the file!</b><br><br>";
+					}
+				}
+				else{
+					echo "<br><b>Invaild file extention!</b><br><br>";
+				}
+			}
+			else{
+				echo "<br><b>We allow only 500KB to 5MB Files!</b><br><br>";
+			}
+		}
+		else{
+			echo "<br><b>Something went wrong!</b><br><br>";
+		}
+	}
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -68,7 +115,7 @@
                         <a href="logsign.html"><button type="button" class="btn btn-outline-warning">LogIn/SignUP</button></a>
                     </li> -->
                 </ul>
-                <form class="form-inline my-2 my-lg-0">
+                <form action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]);?>" class="form-inline my-2 my-lg-0">
                     <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
                     <button class="btn btn btn-outline-info my-2 my-sm-0" type="submit"><i class="bi bi-search"></i></button>
                 </form>

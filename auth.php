@@ -1,6 +1,6 @@
 <?php
 //create connection
- require('../connect.php');
+ require_once('../connect.php');
 //Check only non-login users and redirect them to login page.
 if(isset($_COOKIE['user_id'])){
     //Decode login cookie
