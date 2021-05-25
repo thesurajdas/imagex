@@ -183,7 +183,7 @@
                             <div class="form-group col-md-6">
                                 <label for="inputimgtype"><i class="fas fa-grip-horizontal"></i> Image Type</label>
                                 <select id="inputimgtype" name="filetype" class="fc form-control" aria-placeholder="Moun" required>
-                                    <option selected>Select Here...</option>
+                                    <option selected></option>
                                     <option value="Abstract">Abstract</option>
                                     <option value="Animals">Animals</option>
                                     <option value="Anime">Anime</option>
