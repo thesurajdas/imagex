@@ -260,7 +260,6 @@
                                     <div class="row">
                                         <h3 class="col-10">Image Name</h3>
                                         <div class="btn-group dropleft col-2">
-                                            <!--<button type="button" class="btn text-white dropdown-toggle" style="border: 1px solid #423333a3"*/ data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><i class="fas fa-ellipsis-v"></i></button>-->
                                             <button type="button" class="btn text-white dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><i class="fas fa-ellipsis-v"></i></button>
                                             <div class="dropdown-menu">
                                                 <a class="dropdown-item" href="#">Edit</a>
@@ -284,6 +283,7 @@
                 </div>     
             </div>           
         </div>
+        <!---------------------------footer section--------------------------------->
         <footer>
             <div class="bg-light text-dark pt-5 pt-4">
                 <div class="container">
