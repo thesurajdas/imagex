@@ -252,13 +252,19 @@
             <div class="container shadow-lg p-3 mb-5 bg-white rounded my-3 glry">
                 <div class="row">
                     <!--main image start-->
+    <?php
+	//Get Image Data from Database
+	$sql="SELECT * FROM images";
+	$result_img=$connect->query($sql);
+	if ($result_img->num_rows>0) {
+        while($row=$result_img->fetch_assoc()): ?>
                     <div class="col-lg-4 col-md-6 col-sm-12 sglry">
                         <div class="card cds">
-                            <img class="im" src="https://dummyimage.com/600x400/000/fff2.jpg" alt="Card image cap">
+                            <img class="im" src="<?php echo $site_url,$row['image_location']; ?>" alt="Card image cap">
                             <div class="card-text cds-txt">
                                 <div class="container">
                                     <div class="row">
-                                        <h3 class="col-10">Image Name</h3>
+                                        <h3 class="col-10"><?php echo $row['title']; ?></h3>
                                         <div class="btn-group dropleft col-2">
                                             <button type="button" class="btn text-white dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><i class="fas fa-ellipsis-v"></i></button>
                                             <div class="dropdown-menu">
@@ -271,17 +277,18 @@
                                         </div>    
                                     </div>        
                                 </div>
-                                <a href="" class=" text-decoration-none text-white"><h5><img class="upimg" src="https://picsum.photos/id/237/200/300" alt=""> username</h5></a>
+                                <a href="<?php echo $site_url.'/'.$user_username; ?>" class=" text-decoration-none text-white"><h5><img class="upimg" src="https://picsum.photos/id/237/200/300" alt=""> <?php echo $user_username; ?></h5></a>
                                 <div class="container">
                                     <div class="row chbtn">
-                                        <a href="#" class="btn btn-outline-danger cbtn" title="Save This Image" style="margin-right: 5px;"><i class="fas fa-heart"></i> <span>500</span></a>
-                                        <a href="#" class="btn btn btn-outline-light cbtn" title="View Image" style="margin-left: 5px;"><i class="fas fa-eye"></i> <span>500</span></a>
+                                        <a href="#" class="btn btn-outline-danger cbtn" title="Save This Image" style="margin-right: 5px;"><i class="fas fa-heart"></i> <span><?php echo $row['likes']; ?></span></a>
+                                        <a href="#" class="btn btn btn-outline-light cbtn" title="View Image" style="margin-left: 5px;"><i class="fas fa-eye"></i> <span><?php echo $row['views']; ?></span></a>
                                     </div>
                                 </div>
                             </div>
                         </div>
                     </div>
-                    <!--main image end-->              
+                    <?php endwhile;} ?>
+            <!--main image end-->        
                 </div>     
             </div>           
         </div>
