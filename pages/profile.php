@@ -102,7 +102,7 @@
         <div class="container shadow-lg p-3 mb-5 bg-white rounded emp-profile">
 
             <form method="post">
-                <div class="row">
+                <div class="row" style="padding-top: 25px;">
                     <div class="col-md-4">
                         <div class="profile-img">
                             <img class="rounded-circle pix" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS52y5aInsxSm31CvHOFHWujqUx_wWTS9iM6s7BAm21oEN_RiGoog" alt=""/>
@@ -134,7 +134,7 @@
                         </div>
                     </div>
                     <div class="col-md-2 d-none d-xl-block d-lg-block d-xl-none">
-                        <a href="editprofile.php" class="btn btn-outline-warning">Edit Profile</a>
+                        <a href="editprofile.php" class="btn btn-outline-warning profile-edit-btn">Edit Profile</a>
                     </div>
                 </div>
                 <div class="row">
