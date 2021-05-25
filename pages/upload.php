@@ -43,7 +43,7 @@
                     }
                 }
                 else{
-                    echo "<script>alert('We allow only 500KB to 5MB Files!')</script>";
+                    echo "<script>alert('We allow only 100KB to 5MB Files!')</script>";
                 }
             }
             else{
