@@ -171,7 +171,7 @@
                         </div>
             
                         <!-- Uploaded image area-->
-                        <p class="font-italic text-dark text-center">The image uploaded will be rendered inside the box below. <b>(We allow only 100KB to 5MB Image Files!)</b></p>
+                        <p class="font-italic text-dark text-center">The image uploaded will be rendered inside the box below. <b>(We allow only .jpg .jpeg .png images within 100KB to 5MB!)</b></p>
                         <div class="image-area col-12 dsplyimg mb-4">
                             <img id="imageResult" src="#" alt="" class="img-fluid rounded shadow-sm mx-auto d-block">
                         </div>
