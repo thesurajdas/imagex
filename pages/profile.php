@@ -262,9 +262,11 @@
                                         <div class="btn-group dropleft col-2">
                                             <button type="button" class="btn text-white dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><i class="fas fa-ellipsis-v"></i></button>
                                             <div class="dropdown-menu">
-                                                <a class="dropdown-item" href="#">Edit</a>
+                                                <a class="dropdown-item" href="#">
+                                                    <button type="button" class="btn col-12" data-toggle="modal" data-target="#staticBackdrop"><i class="fas fa-edit"></i> Edit</button>
+                                                </a>
                                                 <div class="dropdown-divider"></div>
-                                                <a class="dropdown-item" href="#">Delete</a>
+                                                <a class="dropdown-item" href="#"><button type="button" class="btn col-12"><i class="fas fa-trash"></i> Delete</button></a>
                                             </div>
                                         </div>    
                                     </div>        
@@ -355,5 +357,75 @@
                 </div>
             <div>    
         </footer>
+        <!-------------------------------------------------------------edit image description----------------------------->
+        <div class="modal fade" id="staticBackdrop" data-backdrop="static" data-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+            <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="#staticBackdropLabel">Image Information</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <i class="far fa-times-circle"></i>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <form action="/">
+                        <div class="form-row">
+                                    <div class="form-group col-md-12">
+                                        <label for="title"><i class="fas fa-file-signature"></i> Image Name</label>
+                                        <input type="text" name="title" class="fc form-control" id="title" value="Violet Hill" required>
+                                    </div>
+                                    <div class="form-group col-md-6">
+                                        <label for="inputimgtype"><i class="fas fa-grip-horizontal"></i> Image Type</label>
+                                        <select id="inputimgtype" name="filetype" class="fc form-control" aria-placeholder="Moun" required>
+                                            <option selected></option>
+                                            <option value="Abstract">Abstract</option>
+                                            <option value="Animals">Animals</option>
+                                            <option value="Anime">Anime</option>
+                                            <option value="Art">Art</option>
+                                            <option value="Astro">Astro</option>
+                                            <option value="Black">Black</option>
+                                            <option value="Bridge">Bridge</option>
+                                            <option value="Cars">Cars</option>
+                                            <option value="City">City</option>
+                                            <option value="Cloud">Cloud</option>
+                                            <option value="Dark">Dark</option>
+                                            <option value="Fashion">Fashion</option>
+                                            <option value="Flowers">Flowers</option>
+                                            <option value="Food">Food</option>
+                                            <option value="Macro">Macro</option>
+                                            <option value="Motorcycles">Motorcycles</option>
+                                            <option value="Motion">Motion</option>
+                                            <option value="Mountain">Mountain</option>
+                                            <option value="Music">Music</option>
+                                            <option value="Nature">Nature</option>
+                                            <option value="Other">Other</option>
+                                            <option value="People">people</option>
+                                            <option value="Sky">Sky</option>
+                                            <option value="Sport">Sport</option>
+                                            <option value="Street">Street</option>
+                                            <option value="Technologie">Technologie</option>
+                                            <option value="Textures">Texture</option>
+                                            <option value="Travel">Travel</option>
+                                        </select>
+                                    </div>
+                                    <div class="form-group col-md-6">
+                                        <label for="title"><i class="fas fa-globe-americas"></i> Image Visibility</label>
+                                        <select id="inputimgtype" name="visibility" class="fc form-control" required>
+                                            <option value="Public" selected>Public</option>
+                                            <option value="Private">Private</option>
+                                        </select>    
+                                    </div>
+                                </div>
+                                <button type="submit" class="fc btn btn-success col-12"><i class="fas fa-check-circle"></i> Save changes</button>    
+                        </div>
+                        
+                    </from>    
+                <div class="modal-footer">
+                    <button type="button" class="fc btn btn-danger col-12" data-dismiss="modal"><i class="fas fa-times-circle"></i> Close</button>
+                </div>
+                </div>
+            </div>
+        </div>
+
     </body>
 </html>
