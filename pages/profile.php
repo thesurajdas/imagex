@@ -28,6 +28,9 @@
             .dropleft .dropdown-toggle::before{
                 border-right: none;
             }
+            .dropdown-toggle::after{
+                border-top: none;
+            }
         </style>
 
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" rel="stylesheet">
@@ -252,7 +255,19 @@
                         <div class="card cds">
                             <img class="im" src="https://dummyimage.com/600x400/000/fff2.jpg" alt="Card image cap">
                             <div class="card-text cds-txt">
-                                <h3>Image Name</h3>
+                                <div class="container">
+                                    <div class="row">
+                                        <h3 class="col-10">Image Name</h3>
+                                        <div class="btn-group dropleft col-2">
+                                            <button type="button" class="btn text-white dropdown-toggle" style="border: 1px solid #423333a3" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><i class="fas fa-ellipsis-v"></i></button>
+                                            <div class="dropdown-menu">
+                                                <a class="dropdown-item" href="#">Delete</a>
+                                                <div class="dropdown-divider"></div>
+                                                <a class="dropdown-item" href="#">View Full Size</a>
+                                            </div>
+                                        </div>    
+                                    </div>        
+                                </div>
                                 <a href="" class=" text-decoration-none text-white"><h5><img class="upimg" src="https://picsum.photos/id/237/200/300" alt=""> username</h5></a>
                                 <div class="container">
                                     <div class="row chbtn">
