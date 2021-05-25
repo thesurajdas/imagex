@@ -263,7 +263,7 @@
                                             <div class="dropdown-menu">
                                                 <a class="dropdown-item" href="#">Delete</a>
                                                 <div class="dropdown-divider"></div>
-                                                <a class="dropdown-item" href="#">View Full Size</a>
+                                                <a class="dropdown-item" href="#">Edit</a>
                                             </div>
                                         </div>    
                                     </div>        
