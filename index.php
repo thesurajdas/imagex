@@ -29,7 +29,7 @@
                 <button class="navbar-toggler" style="margin-left: 35px;" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo03" aria-controls="navbarTogglerDemo03" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
                 </button>
-                <a class="navbar-brand" href="#">PIXWAVE</a>
+                <a class="navbar-brand" href="#"><img style="height: 40px;" src="img/logo.jpg" alt=""></a>
                 <div class="d-md-none d-lg-none d-lg-none d-lx-none">
                     <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><button type="button" class="btn btn-outline-warning bt"><i class="fas fa-user-circle"></i></button></a>
                     <div class="dropdown-menu" style="left: auto; right: 0;" aria-labelledby="navbarDropdown">
