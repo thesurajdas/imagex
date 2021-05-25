@@ -1,48 +1,55 @@
 <?php
     require_once('../auth.php');
-	//Preloaded Data
-	$title="Profile Picture";
-	$availability=0;
 	$time=date('Y-m-d H:i:s');
-	$category_id=3;
 	//Upload Image
-	if (isset($_FILES['file'])) {
-		$file=$_FILES['file'];
-		if ($file['error']==0) {
-			$file_ext=explode('.',$file['name']);
-			$file_name=strtolower(current($file_ext));
-			$file_ext_check=strtolower(end($file_ext));
-			$file_name=bin2hex(random_bytes(5));
-			$file_full_name=$file_name.".".$file_ext_check;
-			$vaild_file_ext=array('png','jpeg','jpg');
-			$upload_location="../uploads/".$file_full_name;
-			//add extra data for database table
-			$image_id=$file_name;
-			$image_size=$file['size'];
-			$image_location=$upload_location;
-			//check file size
-			if (($file['size']>=51200) && ($file['size']<=5242880)) {
-				//Check file extention and upload
-				if (in_array($file_ext_check,$vaild_file_ext)) {
-					$sql="INSERT INTO images (user_id, image_id, image_size, title, availability, time, image_location, category_id) VALUES('$id','$image_id', '$image_size','$title','$availability','$time','$image_location','$category_id')";
-					if(($connect->query($sql)==1) && (move_uploaded_file($_FILES['file']['tmp_name'],$upload_location)==1)){
-							echo "<br><b>Uploaded Successfully!</b>";
-					}
-					else{
-						echo "<br><b>Unable to store the file!</b><br><br>";
-					}
-				}
-				else{
-					echo "<br><b>Invaild file extention!</b><br><br>";
-				}
-			}
-			else{
-				echo "<br><b>We allow only 500KB to 5MB Files!</b><br><br>";
-			}
-		}
-		else{
-			echo "<br><b>Something went wrong!</b><br><br>";
-		}
+	if (isset($_REQUEST['upload'])) {
+        if (($_FILES['file']=="")||($_REQUEST['title']=="")||($_REQUEST['filetype']=="")||($_REQUEST['visibility']=="")) {
+            echo "<script>alert('All fields are required!');</script>";
+        }
+        else{
+                $file=$_FILES['file'];
+            if ($file['error']==0) {
+                $file_ext=explode('.',$file['name']);
+                $file_name=strtolower(current($file_ext));
+                $file_ext_check=strtolower(end($file_ext));
+                $file_name=bin2hex(random_bytes(5));
+                $file_full_name=$file_name.".".$file_ext_check;
+                $vaild_file_ext=array('png','jpeg','jpg');
+                $image_location="/upload/images/".$file_full_name;
+                $upload_location="../upload/images/".$file_full_name;
+                //add extra data for database table
+                $image_id=$file_name;
+                $image_size=$file['size'];
+                $title=$_REQUEST['title'];
+                $visibility=0;
+                if ($_REQUEST['visibility']=='Private') {
+                    $visibility=1;
+                }
+                $category=$_REQUEST['filetype'];
+                //check file size
+                if (($file['size']>=100000) && ($file['size']<=5242880)) {
+                    //Check file extention and upload
+                    if (in_array($file_ext_check,$vaild_file_ext)) {
+                        $sql="INSERT INTO images (user_id, image_id, image_size, title, visibility, time, image_location, category) VALUES('$id','$image_id', '$image_size','$title','$visibility','$time','$image_location','$category')";
+                        if(($connect->query($sql)==1) && (move_uploaded_file($_FILES['file']['tmp_name'],$upload_location)==1)){
+                                echo "<script>alert('Uploaded Successfully!')</script>";
+                        }
+                        else{
+                            echo "<script>alert('Unable to store the file!')</script>";
+                        }
+                    }
+                    else{
+                        echo "<script>alert('Invaild file extention!')</script>";
+                    }
+                }
+                else{
+                    echo "<script>alert('We allow only 500KB to 5MB Files!')</script>";
+                }
+            }
+            else{
+                echo "<script>alert('Something went wrong!')</script>";
+            }
+        }
 	}
 ?>
 <!DOCTYPE html>
@@ -153,10 +160,10 @@
                     <h1 class="display-4">Upload Your Image</h1>
                 </div>
                 <div class="row col-12 mr-0 ml-0 justify-content-center">
-                    <form action="/">
+                    <form action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]);?>" method="POST" enctype="multipart/form-data">
                         <!-- Upload image input-->
                         <div class="input-group rounded-pill bg-white shadow-sm ">
-                            <input id="upload" type="file" onchange="readURL(this);" class="form-control border-0" accept="image/*">
+                            <input type="file" id="upload" name="file" onchange="readURL(this);" class="form-control border-0" accept="image/*">
                             <label id="upload-label" for="upload" class="font-weight-light text-muted">Choose file</label>
                             <div class="input-group-append">
                                 <label for="upload" class="btn btn-light m-0 rounded-pill px-4"> <i class="fa fa-cloud-upload mr-2 text-muted"></i><small class="text-uppercase font-weight-bold text-muted">Choose file</small></label>
@@ -164,19 +171,19 @@
                         </div>
             
                         <!-- Uploaded image area-->
-                        <p class="font-italic text-dark text-center">The image uploaded will be rendered inside the box below. <b>If you want to cahange the image, then you can re-choose the image from choose file option.</b></p>
+                        <p class="font-italic text-dark text-center">The image uploaded will be rendered inside the box below.</p>
                         <div class="image-area col-12 dsplyimg mb-4">
                             <img id="imageResult" src="#" alt="" class="img-fluid rounded shadow-sm mx-auto d-block">
                         </div>
                         <div class="form-row">
                             <div class="form-group col-md-12">
                                 <label for="title"><i class="fas fa-file-signature"></i> Image Name</label>
-                                <input type="text" class="fc form-control" id="title" placeholder="Violet Hill" required>
+                                <input type="text" name="title" class="fc form-control" id="title" placeholder="Violet Hill" required>
                             </div>
                             <div class="form-group col-md-6">
                                 <label for="inputimgtype"><i class="fas fa-grip-horizontal"></i> Image Type</label>
-                                <select id="inputimgtype" class="fc form-control" aria-placeholder="Moun" required>
-                                    <option selected></option>
+                                <select id="inputimgtype" name="filetype" class="fc form-control" aria-placeholder="Moun" required>
+                                    <option selected>Select Here...</option>
                                     <option value="Abstract">Abstract</option>
                                     <option value="Animals">Animals</option>
                                     <option value="Anime">Anime</option>
@@ -209,13 +216,13 @@
                             </div>
                             <div class="form-group col-md-6">
                                 <label for="title"><i class="fas fa-globe-americas"></i> Image Visibility</label>
-                                <select id="inputimgtype" class="fc form-control">
-                                    <option selected>Public</option>
+                                <select id="inputimgtype" name="visibility" class="fc form-control" required>
+                                    <option value="Public" selected>Public</option>
                                     <option value="Private">Private</option>
                                 </select>    
                             </div>
                         </div>
-                        <button type="submit" class="btn btn-success col-12 bt"><i class="fas fa-arrow-circle-up"></i> Upload</button>
+                        <button type="submit" name="upload" class="btn btn-success col-12 bt"><i class="fas fa-arrow-circle-up"></i> Upload</button>
                     </form>    
                 </div>
             </div>
