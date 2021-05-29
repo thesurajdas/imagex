@@ -1,6 +1,17 @@
 <?php
     //Add database connection
     require_once('../auth.php');
+    //Dynamic user profile id
+    if (isset($_GET['u'])) {
+        $u_id=$_GET['u'];
+        $sql="SELECT * FROM users WHERE username='$u_id'";
+        $result=$connect->query($sql);
+        $row=$result->fetch_assoc();
+        $id=$row['id'];
+        $user_username=$row['username'];
+        $user_name=$row['name'];
+        $user_email=$row['email'];
+    }
     //Add data into variables
     $user_gender=$row['gender'];
     $user_phone_no=$row['phone_no'];
@@ -254,7 +265,7 @@
                     <!--main image start-->
     <?php
 	//Get Image Data from Database
-	$sql="SELECT * FROM images";
+	$sql="SELECT * FROM images WHERE user_id='$id'";
 	$result_img=$connect->query($sql);
 	if ($result_img->num_rows>0) {
         while($row=$result_img->fetch_assoc()): ?>
@@ -287,7 +298,10 @@
                             </div>
                         </div>
                     </div>
-                    <?php endwhile;} ?>
+                    <?php endwhile;}
+                    else{
+                        echo "<center><b>No Image Found!</b></center>";
+                    } ?>
             <!--main image end-->        
                 </div>     
             </div>           
