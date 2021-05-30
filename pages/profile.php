@@ -288,9 +288,9 @@
                         <div class="card cds">
                             <img class="im" src="<?php echo $site_url,$row['image_location']; ?>" alt="Card image cap">
                             <div class="card-text cds-txt">
-                                <div class="container">
+                                <div class="container" style="padding-left: 0">
                                     <div class="row">
-                                        <h3 class="col-10"><a class="card-link" href="<?php echo $site_url; ?>/pages/image.php?id=<?php echo $row['image_id']; ?>"><?php echo $row['title']; ?></a></h3>
+                                        <h3 class="col-10"><a class="card-link text-white" href="<?php echo $site_url; ?>/pages/image.php?id=<?php echo $row['image_id']; ?>"><?php echo $row['title']; ?></a></h3>
                                         <div class="btn-group dropleft col-2">
                                             <button type="button" class="btn text-white dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><i class="fas fa-ellipsis-v"></i></button>
                                             <div class="dropdown-menu">
