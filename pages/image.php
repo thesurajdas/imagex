@@ -1,3 +1,19 @@
+<?php
+    //Add database connection
+    require_once('../auth.php');
+    //Get image id
+    if (isset($_GET['id'])) {
+        $img_id=$_GET['id'];
+        $sql="SELECT * FROM images WHERE image_id='$img_id'";
+        $result=$connect->query($sql);
+        $row=$result->fetch_assoc();
+        $title=$row['title'];
+        $image_location=$row['image_location'];
+    }
+    else{
+        echo "<script>alert('Something Went Wrong!')</script>";
+    }
+?>
 <!DOCTYPE html>
 <html lang="en">
     <head>
@@ -85,7 +101,7 @@
     <div class="container fimg">
         <!--<div class="col-lg-4 col-md-6 col-sm-12 sglry">-->
             <div class="card">
-                <img class="imx" src="https://dummyimage.com/600x400/000/fff2.jpg" alt="Card image cap">
+                <img class="imx" src="<?php echo $site_url,$row['image_location']; ?>" alt="Card image cap">
                 <div class="card-body">
                     <ul class="nav nav-tabs" id="myTab" role="tablist">
                         <li class="nav-item" role="presentation">
@@ -102,7 +118,7 @@
                             <!---------------image decription------------>
                         <div class="tab-pane fade show active" id="home" role="tabpanel" aria-labelledby="home-tab">
                             <div class="container tabcon">
-                                <h5>Full name</h5>
+                                <h1><?php echo $title; ?></h1>
                                 <p class="font-italic unm">username</p>
                                 <p class="font-weight-lighter">Camera Use (Model Name)</p>
                             </div>

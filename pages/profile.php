@@ -22,6 +22,23 @@
     $user_resolution=$row['resolution'];
     $user_focal_length=$row['focal_length'];
     $user_role=$row['role'];
+
+    //update image information
+    if (isset($_POST['update'])) {
+        if (($_REQUEST['img_id']=="")||($_REQUEST['title']=="")||($_REQUEST['filetype']=="")||($_REQUEST['visibility']=="")){
+            $img_id=$_REQUEST['img_id'];
+            $title=$_REQUEST['title'];
+            $filetype=$_REQUEST['filetype'];
+            $visibility=$_REQUEST['visibility'];
+            $sql="UPDATE images SET title='$title', category='$filetype', visibility='$visibility' WHERE id='$img_id'";
+            if ($connect->query($sql)) {
+                echo "<script>alert('Image Updated Successfully!')</script>";
+            }
+            else{
+                echo "<script>alert('Something Went Wrong!')</script>";
+            }
+        }
+    }
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -273,7 +290,7 @@
                             <div class="card-text cds-txt">
                                 <div class="container">
                                     <div class="row">
-                                        <h3 class="col-10"><?php echo $row['title']; ?></h3>
+                                        <h3 class="col-10"><a class="card-link" href="<?php echo $site_url; ?>/pages/image.php?id=<?php echo $row['image_id']; ?>"><?php echo $row['title']; ?></a></h3>
                                         <div class="btn-group dropleft col-2">
                                             <button type="button" class="btn text-white dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><i class="fas fa-ellipsis-v"></i></button>
                                             <div class="dropdown-menu">
@@ -281,12 +298,16 @@
                                                     <button type="button" class="btn col-12" data-toggle="modal" data-target="#staticBackdrop"><i class="fas fa-edit"></i> Edit</button>
                                                 </a>
                                                 <div class="dropdown-divider"></div>
+                                                <a class="dropdown-item" href="<?php echo $site_url,$row['image_location']; ?>" download="<?php echo $row['title']; ?>">
+                                                    <button type="button" class="btn col-12" data-toggle="modal" ><i class="fas fa-download"></i> Download</button>
+                                                </a>
+                                                <div class="dropdown-divider"></div>
                                                 <a class="dropdown-item" href="#"><button type="button" class="btn col-12"><i class="fas fa-trash"></i> Delete</button></a>
                                             </div>
                                         </div>    
                                     </div>        
                                 </div>
-                                <a href="<?php echo $site_url.'/'.$user_username; ?>" class=" text-decoration-none text-white"><h5><img class="upimg" src="https://picsum.photos/id/237/200/300" alt=""> <?php echo $user_username; ?></h5></a>
+                                <a href="<?php echo $site_url.'/pages/profile.php?u='.$user_username; ?>" class=" text-decoration-none text-white"><img class="upimg" src="https://picsum.photos/id/237/200/300" alt=""> <?php echo $user_username; ?></a>
                                 <div class="container">
                                     <div class="row chbtn">
                                         <a href="#" class="btn btn-outline-danger cbtn" title="Save This Image" style="margin-right: 5px;"><i class="fas fa-heart"></i> <span><?php echo $row['likes']; ?></span></a>
@@ -391,7 +412,7 @@
                         <div class="form-row">
                                     <div class="form-group col-md-12">
                                         <label for="title"><i class="fas fa-file-signature"></i> Image Name</label>
-                                        <input type="text" name="title" class="fc form-control" id="title" value="Violet Hill" required>
+                                        <input type="text" name="title" class="fc form-control" id="title" placeholder="Beautiful Nature" minlength="5" maxlength="15" required>
                                     </div>
                                     <div class="form-group col-md-6">
                                         <label for="inputimgtype"><i class="fas fa-grip-horizontal"></i> Image Type</label>
@@ -435,7 +456,7 @@
                                         </select>    
                                     </div>
                                 </div>
-                                <button type="submit" class="fc btn btn-success col-12"><i class="fas fa-check-circle"></i> Save changes</button>    
+                                <button type="submit" name="update" class="fc btn btn-success col-12"><i class="fas fa-check-circle"></i> Save changes</button>    
                         </div>
                         
                     </from>    
