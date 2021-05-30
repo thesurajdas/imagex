@@ -178,7 +178,7 @@
                         <div class="form-row">
                             <div class="form-group col-md-12">
                                 <label for="title"><i class="fas fa-file-signature"></i> Image Name</label>
-                                <input type="text" name="title" class="fc form-control" id="title" placeholder="Violet Hill" required>
+                                <input type="text" name="title" class="fc form-control" id="title" placeholder="Beautiful Nature" minlength="5" maxlength="15" required>
                             </div>
                             <div class="form-group col-md-6">
                                 <label for="inputimgtype"><i class="fas fa-grip-horizontal"></i> Image Type</label>
