@@ -5,10 +5,10 @@
     if (isset($_GET['id'])) {
         $img_id=$_GET['id'];
         $sql="SELECT * FROM images WHERE image_id='$img_id'";
-        $result=$connect->query($sql);
-        $row=$result->fetch_assoc();
-        $title=$row['title'];
-        $image_location=$row['image_location'];
+        $result_img=$connect->query($sql);
+        $row_img=$result_img->fetch_assoc();
+        $title=$row_img['title'];
+        $image_location=$row_img['image_location'];
     }
     else{
         echo "<script>alert('Something Went Wrong!')</script>";
@@ -43,7 +43,7 @@
     <div class="container fimg">
         <!--<div class="col-lg-4 col-md-6 col-sm-12 sglry">-->
             <div class="card">
-                <img class="imx" src="<?php echo $site_url,$row['image_location']; ?>" alt="Card image cap">
+                <img class="imx" src="<?php echo $site_url,$row_img['image_location']; ?>" alt="Card image cap">
                 <div class="card-body">
                     <ul class="nav nav-tabs" id="myTab" role="tablist">
                         <li class="nav-item" role="presentation">
