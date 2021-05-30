@@ -4,12 +4,14 @@
                 <span class="navbar-toggler-icon"></span>
                 </button>
                 <a class="navbar-brand" href="#"><img style="height: 40px;" src="../img/logo.jpg" alt=""></a>
+                <?php if (!isset($user_id)){?>
                 <div class="d-md-none d-lg-none d-lg-none d-lx-none">
                     <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><button type="button" class="btn btn-outline-warning bt"><i class="fas fa-user-circle"></i></button></a>
                     <div class="dropdown-menu" style="left: auto; right: 0;" aria-labelledby="navbarDropdown">
                         <a class="dropdown-item" href="login.php">Sign In</a>
                     </div>   
                 </div>
+                <?php } ?>
                 <?php if (isset($user_id)){?>
                 <div class="d-md-none d-lg-none d-lg-none d-lx-none">
                     <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><img class="logp rounded-circle" src="https://picsum.photos/id/237/200/300" alt=""></a>
@@ -101,6 +103,7 @@
                             </div>
                         </li>
                         <?php } ?>
+                        <?php if (!isset($user_id)){?>
                         <li class="nav-item dropleft text-decoration-none ">
                             <div class="d-none d-md-block d-lg-block d-xl-block">
                                 <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><button type="button" class="btn btn-outline-warning bt"><i class="fad fa-user-alt"></i></button></a>
@@ -109,6 +112,7 @@
                                 </div>
                             </div>    
                         </li>
+                        <?php } ?>
                     </ul>
                 </div>
             </nav>
