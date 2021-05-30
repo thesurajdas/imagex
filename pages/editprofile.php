@@ -137,7 +137,7 @@
         
         <!-------------------------------------------Form section--------------------------->
         <div class="container fstcon">
-            <div class="card shadow">
+            <div class="card shadow" style="padding-bottom: 20px">
                 <h4 class="mtxt">Profile Picture</h4>
                 <hr class="mb-4">
                 <div class="col-sm-12">
@@ -145,20 +145,20 @@
                         <img class="pdp" src="https://dummyimage.com/600x400/000/fff2.jpg" alt="">
                     </div>
                 </div>
-                <form class="mfrm" action="/" method="POST">
+                <form class="mfrm" style="text-align: center" action="/" method="POST">
                     <div class="form-row">
                         <div class="form-group col-12">
                             <div class="input-group mb-3">
                                 <div class="input-group-prepend">
-                                    <button class="input-group-text" id="inputGroupFileAddon01">Upload</button>
                                 </div>
                                 <div class="custom-file">
                                     <input type="file" class="custom-file-input" id="inputGroupFile01" aria-describedby="inputGroupFileAddon01" accept="image/*">
-                                    <label class="custom-file-label" for="inputGroupFile01">Choose Profile Picture</label>
+                                    <label class="custom-file-label" style="border-radius: 1.25rem;" for="inputGroupFile01">Choose Profile Picture</label>
                                 </div>
                             </div>
                         </div>
                     </div>
+                    <button type="submit" class="btn btn-primary bt" name="upload"><i class="fad fa-upload"></i> upload</button>
                 </form>    
             </div>
         </div>    
@@ -169,20 +169,20 @@
                 <form class="mfrm" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]);?>" method="POST">
                     <div class="form-row">
                         <div class="form-group col-md-4">
-                            <label for="inputFyllName"><i class="fas fa-signature"></i> Full Name</label>
-                            <input type="text" name="name" class="form-control" placeholder="Enter Full Name" minlength="3" maxlength="30" value="<?php echo $user_name; ?>" required>
+                            <label for="inputFyllName"><i class="fad fa-signature"></i> Full Name</label>
+                            <input type="text" name="name" class="form-control bt" placeholder="Enter Full Name" minlength="3" maxlength="30" value="<?php echo $user_name; ?>" required>
                         </div>
                         <div class="form-group col-md-4">
-                            <label for="inputFyllName"><i class="fas fa-user"></i> Username</label>
-                            <input type="text" name="username" class="form-control" placeholder="Username" minlength="5" maxlength="60" value="<?php echo $user_username; ?>" onkeypress="return AvoidSpace(event)" disabled>
+                            <label for="inputFyllName"><i class="fad fa-user-tie"></i> Username</label>
+                            <input type="text" name="username" class="form-control bt" placeholder="Username" minlength="5" maxlength="60" value="<?php echo $user_username; ?>" onkeypress="return AvoidSpace(event)" disabled>
                         </div>
                         <div class="form-group col-md-4">
-                            <label for="email"><i class="fas fa-at"></i> Email</label>
-                            <input type="text" name="email" class="form-control" placeholder="example@mail.com" value="<?php echo $user_email; ?>" maxlength="30" disabled>
+                            <label for="email"><i class="fad fa-at"></i> Email</label>
+                            <input type="text" name="email" class="form-control bt" placeholder="example@mail.com" value="<?php echo $user_email; ?>" maxlength="30" disabled>
                         </div>
                         <div class="form-group col-md-4">
-                            <label for="inputState"><i class="fas fa-user-cog"></i> Gender</label>
-                            <select name="gender" class="form-control" required>
+                            <label for="inputState"><i class="fad fa-venus-mars"></i> Gender</label>
+                            <select name="gender" class="form-control bt" required>
                                 <option value="Male" <?php $select="Male"; if(isset($select) && $select!=""){ if($user_gender==$select){ echo "selected"; }} ?>>Male</option>
                                 <option value="Female" <?php $select="Female"; if(isset($select) && $select!=""){ if($user_gender==$select){ echo "selected"; }} ?>>Female</option>
                                 <option value="Others" <?php $select="Others"; if(isset($select) && $select!=""){ if($user_gender==$select){ echo "selected"; }} ?>>Others</option>
@@ -190,19 +190,19 @@
                         </div>      
                         <!--<div class="form-group col-md-6">
                             <label for="inputPassword6">Password <i class="bi bi-file-lock2"></i></label>
-                            <input type="password" class="form-control" id="inputPassword6" placeholder="********">
+                            <input type="password" class="form-control bt" id="inputPassword6" placeholder="********">
                         </div>-->
                         <div class="form-group col-md-4">
-                            <label for="phone"><i class="fas fa-phone-volume"></i> Phone Number (Optional)</label>
-                            <input type="tel" name="phone_no" class="form-control" placeholder="1234567890" value="<?php echo $user_phone_no; ?>">
+                            <label for="phone"><i class="fad fa-phone-volume"></i> Phone Number (Optional)</label>
+                            <input type="tel" name="phone_no" class="form-control bt" placeholder="1234567890" value="<?php echo $user_phone_no; ?>">
                         </div>
                         <div class="form-group dates col-md-4">
-                            <label for="picker"><i class="far fa-calendar-alt"></i> Date Of Birth</label>
-                            <input type="date" name="birth_date" autocomplete="off" class="form-control" placeholder="yyyy-mm-dd" value="<?php echo $user_birth_date; ?>" required>
+                            <label for="picker"><i class="fad fa-calendar-edit"></i> Date Of Birth</label>
+                            <input type="date" name="birth_date" autocomplete="off" class="form-control bt" placeholder="yyyy-mm-dd" value="<?php echo $user_birth_date; ?>" required>
                         </div>
                         <div class="form-group col-md-3">
-                            <label for="inputState"><i class="far fa-flag"></i> Country</label>
-                            <select name="country" class="form-control" required>
+                            <label for="inputState"><i class="fad fa-globe-asia"></i> Country</label>
+                            <select name="country" class="form-control bt" required>
                                 <option value="Unkown" <?php $select="Unkown"; if($user_country==$select){ echo "selected"; } ?>>Choose...</option>
                                 <option value="Afganistan" <?php $select="Afganistan"; if(isset($select) && $select!=""){ if($user_country==$select){ echo "selected"; }} ?>>Afghanistan</option>
                                 <option value="Albania" <?php $select="Albania"; if(isset($select) && $select!=""){ if($user_country==$select){ echo "selected"; }} ?>>Albania</option>
@@ -453,16 +453,16 @@
                             </select>
                         </div>
                         <div class="form-group col-md-3">
-                            <label for="inputCity"><i class="fas fa-city"></i> City</label>
-                            <input type="text" name="city" class="form-control" maxlength="15" placeholder="Florida" value="<?php echo $user_city; ?>" required>
+                            <label for="inputCity"><i class="fad fa-city"></i> City</label>
+                            <input type="text" name="city" class="form-control bt" maxlength="15" placeholder="Florida" value="<?php echo $user_city; ?>" required>
                         </div>
                         <div class="form-group col-md-3">
-                            <label for="inputZip"><i class="fa fa-address-card" aria-hidden="true"></i> Zip Code (Optional)</label>
-                            <input type="text" name="zip_code" class="form-control" placeholder="700001" maxlength="6" id="inputZip" value="<?php echo $user_zip_code; ?>">
+                            <label for="inputZip"><i class="fad fa-map-pin"></i> Zip Code (Optional)</label>
+                            <input type="text" name="zip_code" class="form-control bt" placeholder="700001" maxlength="6" id="inputZip" value="<?php echo $user_zip_code; ?>">
                         </div>
                         <div class="form-group col-md-3">
-                            <label for="inputState"><i class="fas fa-user-cog"></i> Account Type</label>
-                            <select name="role" class="form-control" required>
+                            <label for="inputState"><i class="fad fa-user-cog"></i> Account Type</label>
+                            <select name="role" class="form-control bt" required>
                                 <option value="Viewer" <?php $select="Viewer"; if(isset($select) && $select!=""){ if($user_role==$select){ echo "selected"; }} ?>>Viewer</option>
                                 <option value="Uploader" <?php $select="Uploader"; if(isset($select) && $select!=""){ if($user_role==$select){ echo "selected"; }} ?>>Uploader</option>
                                 <option value="Photographer & Uploader" <?php $select="Photographer & Uploader"; if(isset($select) && $select!=""){ if($user_role==$select){ echo "selected"; }} ?>>Photographer & Uploader</option>
@@ -470,9 +470,9 @@
                         </div>
                     </div>
                     <div class="form-row smit justify-content-between">
-                    <button type="submit" class="btn btn-primary" name="psave">Save Changes</button>
+                    <button type="submit" class="btn btn-primary bt" name="psave"><i class="fad fa-check-circle"></i> Save Changes</button>
                 </form>
-                <button type="button" class="btn btn-success" data-toggle="modal" data-target="#exampleModal">Change Password</button>
+                <button type="button" class="btn btn-success bt" data-toggle="modal" data-target="#exampleModal"><i class="fad fa-key"></i> Change Password</button>
             </div>     
             </div>    
         </div>    
@@ -485,30 +485,30 @@
                 <form class="mfrm" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]);?>" method="POST">
                     <div class="form-row">
                         <div class="form-group col-md-6">
-                            <label for="mobileName"><i class="fas fa-mobile-alt"></i> Device Name</label>
-                            <input type="text" name="device_name" class="form-control" maxlength="25" placeholder="Pixel 2" value="<?php echo $user_device_name; ?>">
+                            <label for="mobileName"><i class="fad fa-mobile-android-alt"></i> Device Name</label>
+                            <input type="text" name="device_name" class="form-control bt" maxlength="25" placeholder="Pixel 2" value="<?php echo $user_device_name; ?>">
                         </div>
                         <div class="form-group col-md-6">
                             <label for="mobileModel">Device Model <small class="badge badge-primary text-wrap">(Check About Device Section)</small></label>
-                            <input type="text" name="device_model" class="form-control" maxlength="25" placeholder="G011A" value="<?php echo $user_device_model; ?>">
+                            <input type="text" name="device_model" class="form-control bt" maxlength="25" placeholder="G011A" value="<?php echo $user_device_model; ?>">
                         </div>
                     </div>
                     <div class="form-row">
                         <div class="form-group col-md-4">
                             <label for="mobileApertures"><b>ƒ</b> Apertures </label>
-                            <input type="text" name="apertures" class="form-control" maxlength="4" placeholder="1.7" value="<?php echo $user_apertures; ?>">
+                            <input type="text" name="apertures" class="form-control bt" maxlength="4" placeholder="1.7" value="<?php echo $user_apertures; ?>">
                         </div>
                         <div class="form-group col-md-4">
-                            <label for="mobileMp"><i class="fas fa-camera-retro"></i> Resolution <small>MP (Megapixel) </small></label>
-                            <input type="text" name="resolution" class="form-control" maxlength="4" placeholder="50" value="<?php echo $user_resolution; ?>">
+                            <label for="mobileMp"><i class="fad fa-camera-retro"></i> Resolution <small>MP (Megapixel) </small></label>
+                            <input type="text" name="resolution" class="form-control bt" maxlength="4" placeholder="50" value="<?php echo $user_resolution; ?>">
                         </div>
                         <div class="form-group col-md-4">
-                            <label for="mobileFocalLength"><i class="fas fa-question-circle"></i> Focal Length <small>(mm)</small></label>
-                            <input type="text" name="focal_length" class="form-control" maxlength="4" placeholder="3.61" value="<?php echo $user_focal_length; ?>">
+                            <label for="mobileFocalLength"><i class="fad fa-question-circle"></i> Focal Length <small>(mm)</small></label>
+                            <input type="text" name="focal_length" class="form-control bt" maxlength="4" placeholder="3.61" value="<?php echo $user_focal_length; ?>">
                         </div>
                     </div>
                     <div class="form-row smit">
-                        <button type="submit" name="dsave" class="btn btn-primary">Save Changes</button>
+                        <button type="submit" name="dsave" class="btn btn-primary bt"><i class="fad fa-check-circle"></i> Save Changes</button>
                     </div>
                 </form>
             </div>
@@ -600,15 +600,15 @@
                         <form action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]);?>" method="POST">
                             <div class="form-group">
                                 <label for="oldpassword">Old Password</label>
-                                <input type="password" class="form-control" name="opassword" required>
+                                <input type="password" class="form-control bt" name="opassword" required>
                             </div>
                             <div class="form-group">
                                 <label for="password">New Password</label>
-                                <input type="password" class="form-control" name="npassword" id="password" required>
+                                <input type="password" class="form-control bt" name="npassword" id="password" required>
                             </div>
                             <div class="form-group">
                                 <label for="confirm_password">Confirm New Password</label>
-                                <input type="password" class="form-control" id="confirm_password" required>
+                                <input type="password" class="form-control bt" id="confirm_password" required>
                             </div>
                             <button type="submit" name="pwsave" class="btn btn-primary">Change Password</button>
                         </form>

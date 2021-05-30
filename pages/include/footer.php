@@ -17,9 +17,14 @@
                                                 <a href="#" class="text-dark" style="text-decoration: none;" ><i class="fad fa-person-sign"></i> About US</a>
                                             </p>
                                         </div>
-                                        <div class="col-md-4">
+                                        <div class="col-md-3">
                                             <p>
-                                                <a href="#" class="text-dark" style="text-decoration: none;" ><i class="fad fa-file-check"></i> Terms & Conditions</a>
+                                                <a href="#" class="text-dark" style="text-decoration: none;" ><i class="fad fa-address-book"></i> Contact US</a>
+                                            </p>
+                                        </div>
+                                        <div class="col-md-2">
+                                            <p>
+                                                <a href="#" class="text-dark" style="text-decoration: none;" data-toggle="tooltip" title="Terms And Conditions" ><i class="fad fa-file-check"></i> TOS</a>
                                             </p>
                                         </div>
                                         <div class="col-md-3">
@@ -36,7 +41,7 @@
                                 <div class="container pl-0">
                                     <div class="col-md-2">
                                         <div class="social-icons">
-                                            <a href="#"><img src="assets/img/fb.png"></a>
+                                            <a href="#" ><img src="assets/img/fb.png"></a>
                                             <a href="#"><img src="assets/img/ins.png"></a>
                                             <a href="#"><img src="assets/img/tw.png"></a>
                                             <a href="#"><img src="assets/img/in.png"></a>
@@ -56,3 +61,9 @@
                 </div>
             <div>    
 </footer>
+<!-------bootstrap tooltip script---->
+<script>
+$(document).ready(function(){
+  $('[data-toggle="tooltip"]').tooltip();   
+});
+</script>

@@ -98,17 +98,30 @@
                     </div>
                     <div class="col-md-6">
                         <div class="profile-head">
-                                    <h1>
+                                    <h1 class="col-md-12 d-none d-md-block d-lg-block d-xl-block">
                                         <?php echo $user_name; ?>
                                     </h1>
-                                    <h6>
+                                    <h1 class="col-sm-12 text-center d-md-none d-lg-none d-lg-none d-lx-none">
+                                        <?php echo $user_name; ?>
+                                    </h1>
+                                    <h6 class="col-md-12 d-none d-md-block d-lg-block d-xl-block">
                                     <?php echo $user_role; ?>
                                     </h6>
-                                    <div class="container">
+                                    <h6 class="col-sm-12 text-center d-md-none d-lg-none d-lg-none d-lx-none">
+                                    <?php echo $user_role; ?>
+                                    </h6>
+                                    <div class="container col-md-12 d-none d-md-block d-lg-block d-xl-block">
                                         <div class="row">
-                                            <p class="col-4 "><i class="far fa-eye"></i> <span><?php echo $user_total_views; ?></span></p>
-                                            <p class="col-4"><i class="far fa-heart"></i> <span><?php echo $user_total_likes; ?></span></p>
-                                            <p class="col-4"><i class="fal fa-download"></i> <span><?php echo $user_total_downloads; ?></span></p>
+                                            <p class="col-4 "><i class="fad fa-eye" style="color: #212529bf;"></i> <span><?php echo $user_total_views; ?></span></p>
+                                            <p class="col-4"><i class="fad fa-heart" style="color: #ff0000c2;"></i> <span><?php echo $user_total_likes; ?></span></p>
+                                            <p class="col-4"><i class="fad fa-download" style="color: #008e00d1;"></i> <span><?php echo $user_total_downloads; ?></span></p>
+                                        </div>
+                                    </div>
+                                    <div class="container col-sm-12 text-center text-center d-md-none d-lg-none d-lg-none d-lx-none">
+                                        <div class="row">
+                                            <p class="col-4 "><i class="fad fa-eye" style="color: #212529bf;"></i> <span><?php echo $user_total_views; ?></span></p>
+                                            <p class="col-4"><i class="fad fa-heart" style="color: #ff0000c2;"></i> <span><?php echo $user_total_likes; ?></span></p>
+                                            <p class="col-4"><i class="fad fa-download" style="color: #008e00d1;"></i> <span><?php echo $user_total_downloads; ?></span></p>
                                         </div>
                                     </div>
                             <ul class="nav nav-tabs" id="myTab" role="tablist">
