@@ -10,17 +10,22 @@
                         <a class="dropdown-item" href="login.php">Sign In</a>
                     </div>   
                 </div>
+                <?php if (isset($user_id)){?>
                 <div class="d-md-none d-lg-none d-lg-none d-lx-none">
                     <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><img class="logp rounded-circle" src="https://picsum.photos/id/237/200/300" alt=""></a>
                     <div class="dropdown-menu" style="left: auto; right: 0;" aria-labelledby="navbarDropdown">
-                        <a class="dropdown-item" href="profile.php">Account</a>
+                        <a class="dropdown-item" href="<?php echo $site_url.'/pages/profile.php?u='.$user_username; ?>">My Profile</a>
                         <a class="dropdown-item" href="editprofile.php">Edit Profile</a>
                         <a class="dropdown-item" href="favimg.php">Saved Images</a>
                         <a class="dropdown-item" href="usruploadimg.php">Your Uploads</a>
+                        <?php if ($row['admin']==1) {
+                                    echo "<div class='dropdown-divider'></div><a class='dropdown-item' href='../admin'>Admin Panel</a>";
+                                } ?>
                         <div class="dropdown-divider"></div>
-                        <a class="dropdown-item" href="logout.php">SignOff</a>
+                        <a class="dropdown-item" href="logout.php">Sign out</a>
                     </div>
                 </div>
+                <?php } ?>
                 <div class="collapse navbar-collapse" id="navbarTogglerDemo03">
                     <ul class="navbar-nav mr-auto mt-2 mt-lg-0 align-items-center">
                         <li class="nav-item active">
@@ -78,19 +83,24 @@
                         <li class="nav-item">
                             <a class="nav-link" href="upload.php" tabindex="-1" aria-disabled="true"><button type="button" class="btn btn-success bt col-sm-12"><i class="fad fa-cloud-upload"></i> Upload</button></a>
                         </li>
+                        <?php if (isset($user_id)){?>
                         <li class="nav-item dropleft text-decoration-none">
                             <div class="d-none d-md-block d-lg-block d-xl-block">
                                 <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><img class="logp rounded-circle" src="https://picsum.photos/id/237/200/300" alt=""></a>
                                 <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                                    <a class="dropdown-item" href="profile.php">Account</a>
+                                    <a class="dropdown-item" href="<?php echo $site_url.'/pages/profile.php?u='.$user_username; ?>">My Profile</a>
                                     <a class="dropdown-item" href="editprofile.php">Edit Profile</a>
                                     <a class="dropdown-item" href="favimg.php">Saved Images</a>
                                     <a class="dropdown-item" href="usruploadimg.php">Your Uploads</a>
+                                    <?php if ($row['admin']==1) {
+                                    echo "<div class='dropdown-divider'></div><a class='dropdown-item' href='../admin'>Admin Panel</a>";
+                                } ?>
                                     <div class="dropdown-divider"></div>
-                                    <a class="dropdown-item" href="#">SignOff</a>
+                                    <a class="dropdown-item" href="logout.php">Sign out</a>
                                 </div>
                             </div>
                         </li>
+                        <?php } ?>
                         <li class="nav-item dropleft text-decoration-none ">
                             <div class="d-none d-md-block d-lg-block d-xl-block">
                                 <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><button type="button" class="btn btn-outline-warning bt"><i class="fad fa-user-alt"></i></button></a>

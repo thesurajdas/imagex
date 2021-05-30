@@ -44,8 +44,5 @@ if(isset($_COOKIE['user_id'])){
         exit();
     }
 }
-else{
-    header("Location:login.php");
-    exit();
-}
+
 ?>
