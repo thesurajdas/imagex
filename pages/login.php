@@ -38,9 +38,10 @@ if(isset($_COOKIE['user_id'])){
   $sql="SELECT * FROM users WHERE id='".$user_id."'";
   $result=$connect->query($sql);
   $row=$result->fetch_assoc();
+  $user_username=$row['username'];
   //Check cookie id with database id with === operator
   if ($user_id===$row['id']) {
-      header("Location:profile.php");
+      header("Location:profile.php?u=$user_username");
       exit();
   }
 }
@@ -55,6 +56,7 @@ if (isset($_REQUEST['login'])) {
   $result=$connect->query($sql);
   $row=$result->fetch_assoc();
   $user_id=$row['id'];
+  $user_username=$row['username'];
   //Encode Cookie Value
   $user_id=convert_uuencode($user_id);
   //Check Row Exist or Not
@@ -62,7 +64,7 @@ if (isset($_REQUEST['login'])) {
           //Add cookies
           $cookie_time=time()+60*60*24*365;
           setcookie("user_id",$user_id,$cookie_time,"/");
-          header("Location:profile.php");
+          header("Location:profile.php?u=$user_username");
           exit();
       }
       else{

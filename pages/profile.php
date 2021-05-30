@@ -3,6 +3,11 @@
     require_once('../auth.php');
     //Dynamic user profile id
     if (isset($_GET['u'])) {
+        $username=$_GET['u'];
+        //Get Data from SQL
+        $sql="SELECT * FROM users WHERE username='$username'";
+        $result_log=$connect->query($sql);
+        if ($result_log->num_rows==1) {
         $u_id=$_GET['u'];
         $sql="SELECT * FROM users WHERE username='$u_id'";
         $result=$connect->query($sql);
@@ -11,10 +16,17 @@
         $user_username=$row['username'];
         $user_name=$row['name'];
         $user_email=$row['email'];
+        }
+        else{
+            echo "<script>alert('No User Found!')</script>";
+        }
     }
     else {
-        echo "<script>alert('Something Went Wrong!')</script>";
-        die('Something Went Wrong!');
+        //Check Login
+        if ($login!=1) {
+            header("Location:login.php");
+            exit();
+        }
     }
     //Add data into variables
     $user_gender=$row['gender'];
