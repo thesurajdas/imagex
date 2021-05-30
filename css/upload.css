@@ -43,3 +43,9 @@
 .bt{
   border-radius: 1.25rem;
 }
+
+.scrollable-menu {
+  height: auto;
+  max-height: 500px;
+  overflow-x: hidden;
+}
