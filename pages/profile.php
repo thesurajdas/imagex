@@ -154,10 +154,10 @@
                                     </div>
                             <ul class="nav nav-tabs" id="myTab" role="tablist">
                                 <li class="nav-item">
-                                    <a class="nav-link active" id="home-tab" data-toggle="tab" href="#home" role="tab" aria-controls="home" aria-selected="true"><i class="bi bi-info-circle"></i> About</a>
+                                    <a class="nav-link active" id="home-tab" data-toggle="tab" href="#home" role="tab" aria-controls="home" aria-selected="true"><i class="fad fa-address-card"></i> About</a>
                                 </li>
                                 <li class="nav-item">
-                                    <a class="nav-link" id="profile-tab" data-toggle="tab" href="#profile" role="tab" aria-controls="profile" aria-selected="false"><i class="bi bi-camera"></i> Camera</a>
+                                    <a class="nav-link" id="profile-tab" data-toggle="tab" href="#profile" role="tab" aria-controls="profile" aria-selected="false"><i class="fad fa-mobile-android"></i> Camera</a>
                                 </li>
                             </ul>
                         </div>
@@ -276,127 +276,79 @@
             <hr class="mb-4">
             <!-------------------------------------------------Uploaded Images main body------------------------------------------>
             <div class="container shadow-lg p-3 mb-5 bg-white rounded my-3 glry">
-                <div class="row">
-                    <!--main image start-->
-    <?php
-	//Get Image Data from Database
-	$sql="SELECT * FROM images WHERE user_id='$id'";
-	$result_img=$connect->query($sql);
-	if ($result_img->num_rows>0) {
-        while($row=$result_img->fetch_assoc()): ?>
-                    <div class="col-lg-4 col-md-6 col-sm-12 sglry">
-                        <div class="card cds">
-                            <img class="im" src="<?php echo $site_url,$row['image_location']; ?>" alt="Card image cap">
-                            <div class="card-text cds-txt">
-                                <div class="container" style="padding-left: 0">
-                                    <div class="row">
-                                        <h3 class="col-10"><a class="card-link text-white" href="<?php echo $site_url; ?>/pages/image.php?id=<?php echo $row['image_id']; ?>"><?php echo $row['title']; ?></a></h3>
-                                        <div class="btn-group dropleft col-2">
-                                            <button type="button" class="btn text-white dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><i class="fas fa-ellipsis-v"></i></button>
-                                            <div class="dropdown-menu">
-                                                <a class="dropdown-item" href="#">
-                                                    <button type="button" class="btn col-12" data-toggle="modal" data-target="#staticBackdrop"><i class="fas fa-edit"></i> Edit</button>
-                                                </a>
-                                                <div class="dropdown-divider"></div>
-                                                <a class="dropdown-item" href="<?php echo $site_url,$row['image_location']; ?>" download="<?php echo $row['title']; ?>">
-                                                    <button type="button" class="btn col-12" data-toggle="modal" ><i class="fas fa-download"></i> Download</button>
-                                                </a>
-                                                <div class="dropdown-divider"></div>
-                                                <a class="dropdown-item" href="#"><button type="button" class="btn col-12"><i class="fas fa-trash"></i> Delete</button></a>
+                <ul class="nav nav-tabs" id="myiTab" role="tablist">
+                        <li class="nav-item" role="presentation">
+                            <a class="nav-link active" id="uimg-tab" data-toggle="tab" href="#uimg" role="tab" aria-controls="uimg" aria-selected="true"><i class="fad fa-folder-upload"></i> Uploads</a>
+                        </li>
+                        <li class="nav-item" role="presentation">
+                            <a class="nav-link" id="simg-tab" data-toggle="tab" href="#simg" role="tab" aria-controls="simg" aria-selected="false"><i class="fad fa-bookmark" style="color: red;"></i> Saved</a>
+                        </li>
+                    </ul>
+                    <div class="tab-content" id="myiTabContent">
+                        <div class="tab-pane fade show active" id="uimg" role="tabpanel" aria-labelledby="uimg-tab">
+                            <div class="row">
+                                <!--User Upoaded image start-->
+                                <?php
+	                            //Get Image Data from Database
+	                            $sql="SELECT * FROM images WHERE user_id='$id'";
+	                            $result_img=$connect->query($sql);
+	                            if ($result_img->num_rows>0) {
+                                while($row=$result_img->fetch_assoc()): ?>
+                                    <div class="col-lg-4 col-md-6 col-sm-12 sglry">
+                                        <div class="card cds">
+                                            <img class="im" src="<?php echo $site_url,$row['image_location']; ?>" alt="Card image cap">
+                                            <div class="card-text cds-txt">
+                                                <div class="container" style="padding-left: 0">
+                                                    <div class="row">
+                                                        <h3 class="col-10 inm"><a class="card-link il" href="<?php echo $site_url; ?>/pages/image.php?id=<?php echo $row['image_id']; ?>"><?php echo $row['title']; ?></a></h3>
+                                                        <div class="btn-group dropleft col-2">
+                                                            <button type="button" class="btn text-white dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><i class="fas fa-ellipsis-v"></i></button>
+                                                            <div class="dropdown-menu">
+                                                                <a class="dropdown-item" href="#">
+                                                                    <button type="button" class="btn col-12" data-toggle="modal" data-target="#staticBackdrop"><i class="fad fa-file-edit"></i> Edit</button>
+                                                                </a>
+                                                                <div class="dropdown-divider"></div>
+                                                                <a class="dropdown-item" href="<?php echo $site_url,$row['image_location']; ?>" download="<?php echo $row['title']; ?>">
+                                                                    <button type="button" class="btn col-12" data-toggle="modal" ><i class="fad fa-cloud-download-alt"></i> Download</button>
+                                                                </a>
+                                                                <div class="dropdown-divider"></div>
+                                                                <a class="dropdown-item" href="#"><button type="button" class="btn col-12"><i class="fad fa-trash"></i> Delete</button></a>
+                                                            </div>
+                                                        </div>    
+                                                    </div>        
+                                                </div>
+                                                <a href="<?php echo $site_url.'/pages/profile.php?u='.$user_username; ?>" class=" text-decoration-none text-white"><img class="upimg" src="https://picsum.photos/id/237/200/300" alt=""> <?php echo $user_username; ?></a>
+                                                <div class="container">
+                                                    <div class="row chbtn">
+                                                        <a href="#" class="btn btn-outline-danger cbtn" title="Save This Image" style="margin-right: 5px;"><i class="fas fa-heart"></i> <span><?php echo $row['likes']; ?></span></a>
+                                                        <a href="#" class="btn btn btn-outline-light cbtn" title="View Image" style="margin-left: 5px;"><i class="fas fa-eye"></i> <span><?php echo $row['views']; ?></span></a>
+                                                    </div>
+                                                </div>
                                             </div>
-                                        </div>    
-                                    </div>        
-                                </div>
-                                <a href="<?php echo $site_url.'/pages/profile.php?u='.$user_username; ?>" class=" text-decoration-none text-white"><img class="upimg" src="https://picsum.photos/id/237/200/300" alt=""> <?php echo $user_username; ?></a>
-                                <div class="container">
-                                    <div class="row chbtn">
-                                        <a href="#" class="btn btn-outline-danger cbtn" title="Save This Image" style="margin-right: 5px;"><i class="fas fa-heart"></i> <span><?php echo $row['likes']; ?></span></a>
-                                        <a href="#" class="btn btn btn-outline-light cbtn" title="View Image" style="margin-left: 5px;"><i class="fas fa-eye"></i> <span><?php echo $row['views']; ?></span></a>
+                                        </div>
                                     </div>
-                                </div>
-                            </div>
+                                <?php endwhile;}
+                                else{
+                                    echo "<center><b>No Image Found!</b></center>";
+                                    } ?>
+
+                                <!--user uploaded image end-->        
+                            </div> 
                         </div>
-                    </div>
-                    <?php endwhile;}
-                    else{
-                        echo "<center><b>No Image Found!</b></center>";
-                    } ?>
-            <!--main image end-->        
-                </div>     
+                        <div class="tab-pane fade" id="simg" role="tabpanel" aria-labelledby="simg-tab">
+                            <!-----------saved mimages starts hare-->
+                                <div class="row">
+                                    
+                                </div>
+                            <!-----------saved mimages end hare-->
+                        </div>
+                    </div>    
             </div>           
         </div>
         <!---------------------------footer section--------------------------------->
-        <footer>
-            <div class="bg-light text-dark pt-5 pt-4">
-                <div class="container">
-                    <div class="row text-center text-md-left ">
-                        <div class="col-md-3 col-lg-3 col-lx-3 mx-auto mt-3">
-                            <h5 class="text-uppercase mb-4 font-wight-bold text-info text-dark">About Us</h5>
-                            <hrc class="mb-4">
-                                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Porro ipsum ipsam quibusdam molestias, vero perspiciatis ea cum sapiente in nesciunt tempore blanditiis beatae corrupti et suscipit commodi animi iste molestiae!</p>
-                        </div>
-                        <div class="col-md-2 col-lg-2 col-lx-2 mx-auto mt-3">
-                            <h5 class="text-uppercase mb-4 font-wight-bold text-info text-dark">Quick Links</h5>
-                            <hrc class="mb-4">
-                                <p>
-                                    <a href="#" class="text-dark" style="text-decoration: none;" >Your Account</a>
-                                </p>
-                                <p>
-                                    <a href="#" class="text-dark" style="text-decoration: none;" >Favorites</a>
-                                </p>
-                                <p>
-                                    <a href="#" class="text-dark" style="text-decoration: none;" >Uploads</a>
-                                </p>
-                                <p>
-                                    <a href="#" class="text-dark" style="text-decoration: none;" >Trending</a>
-                                </p>
-                        </div>
-                        <div class="col-md-4 col-lg-3 col-lx-3 mx-auto mt-3">
-                            <h5 class="text-uppercase mb-4 font-wight-bold text-info text-dark">Connect With Us</h5>
-                            <hrc class="mb-4">
-                            <p>
-                                <i class="bi bi-house mr-3" ></i>Short Address,pin-0000000
-                                    
-                            </p>
-                            <p>
-                                <i class="bi bi-envelope mr-3"></i>abc@xyz.com
-                                    
-                            </p>
-                            <p>
-                                <i class="bi bi-telephone-plus mr-3"></i>1234567890
-                                    
-                            </p>
-                        </div>
-                    </div>
-                    <hr class="mb-4">
-                    <div class="row d-flex justify-content-center">
-                        <div>
-                            <p>
-                                Copyright &copy; <script>document.write(new Date().getFullYear())</script> <a href="/"><strong class="text-dark" style="text-decoration: none;"> Gallery Name </strong></a> - All rights reserved
-                            </p>
-                        </div>
-                    </div>
-                    <!--<div class="row d-flex justify-content-center">
-                        <div class="text-center ">
-                            <ul class="list-unstyled list-inline">
-                                <li class="list-inline-item">
-                                    <a href="#" class="text-dark" ><i class="bi bi-facebook"></i></a>
-                                </li>
-                                <li class="list-inline-item">
-                                    <a href="#" class= "text-dark" ><i class="bi bi-twitter"></i></a>
-                                </li>
-                                <li class="list-inline-item">
-                                    <a href="#" class=" text-dark" ><i class="fab bi bi-google"></i></a>
-                                </li>
-                                <li class="list-inline-item">
-                                    <a href="#" class=" text-dark" ><i class="bi bi-linkedin"></i></a>
-                                </li>
-                            </ul>
-                        </div>
-                    </div>-->
-                </div>
-            <div>    
-        </footer>
+        <?php
+            include('../pages/include/footer.php')
+        ?>
         <!-------------------------------------------------------------edit image description----------------------------->
         <div class="modal fade" id="staticBackdrop" data-backdrop="static" data-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
             <div class="modal-dialog" role="document">

@@ -6,7 +6,7 @@
                             <div class="col-12 mt-3">
                                 <h5 class="text-uppercase mb-4 font-wight-bold text-info text-dark">About Us</h5>
                                 <hrc class="mb-4">
-                                <p>All started with a vision of giving all users a place where users upload and download their pictures taken by mobile phone. And we created <b>PIXWAVE</b>. <a style="text-decoration: none;" href="#"><i>READ MORE</i></a></p>
+                                <p>All started with a vision of giving all users a place where users upload and download their pictures taken by mobile phone. And we created <b>PIXWAVE</b>.
                             </div>
                             <div class="col-lg-8 col-md-12 col-xl-8 col-sm-12 mt-3">
                                 <div class="qll">
@@ -36,10 +36,10 @@
                                 <div class="container pl-0">
                                     <div class="col-md-2">
                                         <div class="social-icons">
-                                            <a href="#"><img src="pages/assets/img/fb.png"></a>
-                                            <a href="#"><img src="pages/assets/img/ins.png"></a>
-                                            <a href="#"><img src="pages/assets/img/tw.png"></a>
-                                            <a href="#"><img src="pages/assets/img/in.png"></a>
+                                            <a href="#"><img src="assets/img/fb.png"></a>
+                                            <a href="#"><img src="assets/img/ins.png"></a>
+                                            <a href="#"><img src="assets/img/tw.png"></a>
+                                            <a href="#"><img src="assets/img/in.png"></a>
                                         </div>
                                     </div>
                                 </div>

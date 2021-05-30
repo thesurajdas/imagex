@@ -51,6 +51,7 @@
 .bt{
     border-radius: 1.25rem;
   }
+  
 .glry{
     padding-top: 10px;
     align-items: center;
@@ -181,4 +182,12 @@
 
 .social-icons a:hover img{
     transform: translateY(-10px);
+}
+
+.il{
+    color: white;
+}
+
+.inm .il:hover{
+    color: rgba(235, 228, 228, 0.842);
 }

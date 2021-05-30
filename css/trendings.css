@@ -1,7 +1,24 @@
 .logp{
-    width: 20px;
-    height: 20px;
+    width: 35px;
+    height: 35px;
 }
+
+.sbdr{
+    border: 1px;
+    background-color: #dddfe0de!important;;
+}
+
+.bt{
+    border-radius: 1.25rem;
+}
+
+.social-icons img{
+    width: 40px;
+    transition: 0.5s;
+    padding: 5px;
+}
+
+
 
 .glry{
     margin-top: 100px;
@@ -122,4 +139,12 @@
     height: 25px;
     width: 25px;
     border-radius: 25px;
+}
+
+.il{
+    color: white;
+}
+
+.inm .il:hover{
+    color: rgba(235, 228, 228, 0.842);
 }

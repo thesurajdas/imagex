@@ -1,8 +1,28 @@
 
 .logp{
-    width: 20px;
-    height: 20px;
+    width: 35px;
+    height: 35px;
 }
+
+.sbdr{
+    border: 1px;
+    background-color: #dddfe0de!important;;
+}
+
+.bt{
+    border-radius: 1.25rem;
+}
+
+.social-icons img{
+    width: 40px;
+    transition: 0.5s;
+    padding: 5px;
+}
+
+.social-icons a:hover img{
+    transform: translateY(-10px);
+}
+
 .emp-profile{
     padding: 3%;
     margin-top: 100px;
@@ -215,8 +235,8 @@
 }
 
 .upimg{
-    height: 25px;
-    width: 25px;
+    height: 20px;
+    width: 20px;
     border-radius: 25px;
 }
 
@@ -252,3 +272,11 @@
 .fc{
     border-radius: 1.25rem;
   }
+
+.il{
+    color: white;
+}
+
+.inm .il:hover{
+    color: rgba(235, 228, 228, 0.842);
+}

@@ -1,10 +1,29 @@
 .logp{
-  width: 20px;
-  height: 20px;
+  width: 35px;
+  height: 35px;
+}
+
+.sbdr{
+  border: 1px;
+  background-color: #dddfe0de!important;;
+}
+
+.bt{
+  border-radius: 1.25rem;
 }
 
 .maincon{
   margin-top: 100px;
+}
+
+.social-icons img{
+  width: 40px;
+  transition: 0.5s;
+  padding: 5px;
+}
+
+.social-icons a:hover img{
+  transform: translateY(-10px);
 }
 
 .hdrtxt{
