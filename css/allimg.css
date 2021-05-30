@@ -44,6 +44,10 @@
     object-fit: cover;
 }
 
+.bt{
+    border-radius: 1.25rem;
+}
+
 .btn{
     font-weight: 500;
 }
