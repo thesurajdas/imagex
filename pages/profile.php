@@ -26,6 +26,9 @@
     $user_resolution=$row['resolution'];
     $user_focal_length=$row['focal_length'];
     $user_role=$row['role'];
+    $user_total_views=$row['total_views'];
+    $user_total_likes=$row['total_likes'];
+    $user_total_downloads=$row['total_downloads'];
 
     //update image information
     if (isset($_POST['update'])) {
@@ -91,9 +94,9 @@
                                     </h6>
                                     <div class="container">
                                         <div class="row">
-                                            <p class="col-4 "><i class="bi bi-eye"></i> <span>1000</span></p>
-                                            <p class="col-4"><i class="bi bi-heart"></i> <span>1000</span></p>
-                                            <p class="col-4"><i class="bi bi-file-earmark-arrow-down"></i> <span>1000</span></p>
+                                            <p class="col-4 "><i class="far fa-eye"></i> <span><?php echo $user_total_views; ?></span></p>
+                                            <p class="col-4"><i class="far fa-heart"></i> <span><?php echo $user_total_likes; ?></span></p>
+                                            <p class="col-4"><i class="fal fa-download"></i> <span><?php echo $user_total_downloads; ?></span></p>
                                         </div>
                                     </div>
                             <ul class="nav nav-tabs" id="myTab" role="tablist">
@@ -264,8 +267,8 @@
                                                 <a href="<?php echo $site_url.'/pages/profile.php?u='.$user_username; ?>" class=" text-decoration-none text-white"><img class="upimg" src="https://picsum.photos/id/237/200/300" alt=""> <?php echo $user_username; ?></a>
                                                 <div class="container">
                                                     <div class="row chbtn">
-                                                        <a href="#" class="btn btn-outline-danger cbtn" title="Save This Image" style="margin-right: 5px;"><i class="fas fa-heart"></i> <span><?php echo $row['likes']; ?></span></a>
-                                                        <a href="#" class="btn btn btn-outline-light cbtn" title="View Image" style="margin-left: 5px;"><i class="fas fa-eye"></i> <span><?php echo $row['views']; ?></span></a>
+                                                        <a href="#" class="btn btn-outline-danger cbtn" title="Like This Image" style="margin-right: 5px;"><i class="fas fa-heart"></i> <span><?php echo $row['likes']; ?></span></a>
+                                                        <a href="<?php echo $site_url; ?>/pages/image.php?id=<?php echo $row['image_id']; ?>" class="btn btn btn-outline-light cbtn" title="View Image" style="margin-left: 5px;"><i class="fas fa-eye"></i> <span><?php echo $row['views']; ?></span></a>
                                                     </div>
                                                 </div>
                                             </div>
