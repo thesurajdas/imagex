@@ -4,9 +4,9 @@
         <title></title>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
-        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css" integrity="sha384-B0vP5xmATw1+K9KRQjQERJvTumQW0nPEzvF6L/Z6nronJ3oUOFUFpCjEUQouq2+l" crossorigin="anonymous">
-        <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
-        <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-Piv4xVNRyMGpqkS2by6br4gNJ7DXjqk09RmUpJ8jgGtD7zP9yug3goQfGII0yAns" crossorigin="anonymous"></script>
+        <link rel="stylesheet" href="css/bootstrap.min.css">
+        <script src="js/jquery-3.5.1.slim.min.js"></script>
+        <script src="js/bootstrap.bundle.min.js"></script>
         <link href="css/home.css" rel="stylesheet">
 
             <!-------bootstrap css custom styling -> (OVERRIDE) <- --------------------->
@@ -18,9 +18,7 @@
                 border-top: 0;
             }
         </style>
-
-        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" rel="stylesheet">
-        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.4.1/font/bootstrap-icons.css">
+        <script src="js/fontawesome.js"></script>
     </head>
     <body>
         <!-----------------------------------nav section---------------------------------------------------->
@@ -50,14 +48,14 @@
                 <div class="collapse navbar-collapse" id="navbarTogglerDemo03">
                     <ul class="navbar-nav mr-auto mt-2 mt-lg-0 align-items-center">
                         <li class="nav-item active">
-                            <a class="nav-link" href="index.php" tabindex="-1" aria-disabled="true">Home</a>
+                            <a class="nav-link" href="index.php" tabindex="-1" aria-disabled="true" style="color: rgba(18, 18, 221, 0.699);"><i class="fad fa-home" style="color: rgba(18, 18, 221, 0.699);" ></i> Home</a>
                         </li>
                         <li class="nav-item active">
-                            <a class="nav-link" href="pages/trendings.html" tabindex="-1" aria-disabled="true">Trending</a>
+                            <a class="nav-link" href="pages/trendings.html" tabindex="-1" aria-disabled="true"><i class="fad fa-fire" style=" color: rgb(255, 22, 22);"></i> Trending</a>
                         </li>
                         <li class="nav-item">
                             <div class="btn-group">
-                                <button type="button" class="btn btn-default dropdown-toggle text-center" data-toggle="dropdown" style="padding-left: 15%;">Category</button>
+                                <button type="button" class="btn btn-default dropdown-toggle text-center" data-toggle="dropdown" style="padding-left: 15%;"><i class="fad fa-bars" style="color: rgba(136, 255, 0, 0.815);"></i> Category</button>
                                 <ul class="dropdown-menu scrollable-menu" role="menu">
                                     <li><a class="dropdown-item" href="pages/abstract.html">Abstract</a></li>
                                     <li><a class="dropdown-item" href="pages/art.html">Art</a></li>
@@ -95,14 +93,14 @@
                             <input class="form-control sbdr rounded-pill pr-5" type="text" placeholder="Search" id="example-search-input2">
                             <div class="col-auto">
                                 <button class="btn btn-outline-light text-dark border-0 rounded-pill ml-n5" type="button">
-                                    <i class="fas fa-search"></i>
+                                <i class="fad fa-search"></i>
                                 </button>
                             </div>
                         </div>
                     </form>
                     <ul class="navbar-nav">
                         <li class="nav-item">
-                            <a class="nav-link" href="pages/upload.php" tabindex="-1" aria-disabled="true"><button type="button" class="btn btn-success bt col-sm-12"><i class="fas fa-cloud-upload-alt"></i> Upload</button></a>
+                            <a class="nav-link" href="pages/upload.php" tabindex="-1" aria-disabled="true"><button type="button" class="btn btn-success bt col-sm-12"><i class="fad fa-cloud-upload"></i> Upload</button></a>
                         </li>
                         <li class="nav-item dropleft text-decoration-none">
                             <div class="d-none d-md-block d-lg-block d-xl-block">
@@ -119,7 +117,7 @@
                         </li>
                         <li class="nav-item dropleft text-decoration-none ">
                             <div class="d-none d-md-block d-lg-block d-xl-block">
-                                <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><button type="button" class="btn btn-outline-warning bt"><i class="fas fa-user-circle"></i></button></a>
+                                <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><button type="button" class="btn btn-outline-warning bt"><i class="fad fa-user-alt"></i></button></a>
                                 <div class="dropdown-menu" aria-labelledby="navbarDropdown">
                                     <a class="dropdown-item" href="pages/login.php">Sign In</a>
                                 </div>
@@ -206,7 +204,7 @@
                                 <div class="container">
                                     <div class="row chbtn">
                                         <a href="#" class="btn btn-outline-danger cbtn" title="Save This Image" style="margin-right: 5px;"><i class="fas fa-heart"></i> <span>500</span></a>
-                                        <a href="#" class="btn btn btn-outline-light cbtn" title="View Image" style="margin-left: 5px;"><i class="fas fa-eye"></i> <span>500</span></a>
+                                        <a href="#" class="btn btn btn-outline-light cbtn" title="View Image" style="margin-left: 5px;"><i class="fad fa-eye"></i> <span>500</span></a>
                                     </div>
                                 </div>
                             </div>
@@ -221,7 +219,7 @@
                                 <div class="container">
                                     <div class="row chbtn">
                                         <a href="#" class="btn btn-outline-danger cbtn" title="Save This Image" style="margin-right: 5px;"><i class="fas fa-heart"></i> <span>500</span></a>
-                                        <a href="#" class="btn btn btn-outline-light cbtn" title="View Image" style="margin-left: 5px;"><i class="fas fa-eye"></i> <span>500</span></a>
+                                        <a href="#" class="btn btn btn-outline-light cbtn" title="View Image" style="margin-left: 5px;"><i class="fad fa-eye"></i> <span>500</span></a>
                                     </div>
                                 </div>
                             </div>
@@ -236,7 +234,7 @@
                                 <div class="container">
                                     <div class="row chbtn">
                                         <a href="#" class="btn btn-outline-danger cbtn" title="Save This Image" style="margin-right: 5px;"><i class="fas fa-heart"></i> <span>500</span></a>
-                                        <a href="#" class="btn btn btn-outline-light cbtn" title="View Image" style="margin-left: 5px;"><i class="fas fa-eye"></i> <span>500</span></a>
+                                        <a href="#" class="btn btn btn-outline-light cbtn" title="View Image" style="margin-left: 5px;"><i class="fad fa-eye"></i> <span>500</span></a>
                                     </div>
                                 </div>
                             </div>
@@ -251,7 +249,7 @@
                                 <div class="container">
                                     <div class="row chbtn">
                                         <a href="#" class="btn btn-outline-danger cbtn" title="Save This Image" style="margin-right: 5px;"><i class="fas fa-heart"></i> <span>500</span></a>
-                                        <a href="#" class="btn btn btn-outline-light cbtn" title="View Image" style="margin-left: 5px;"><i class="fas fa-eye"></i> <span>500</span></a>
+                                        <a href="#" class="btn btn btn-outline-light cbtn" title="View Image" style="margin-left: 5px;"><i class="fad fa-eye"></i> <span>500</span></a>
                                     </div>
                                 </div>
                             </div>
@@ -266,7 +264,7 @@
                                 <div class="container">
                                     <div class="row chbtn">
                                         <a href="#" class="btn btn-outline-danger cbtn" title="Save This Image" style="margin-right: 5px;"><i class="fas fa-heart"></i> <span>500</span></a>
-                                        <a href="#" class="btn btn btn-outline-light cbtn" title="View Image" style="margin-left: 5px;"><i class="fas fa-eye"></i> <span>500</span></a>
+                                        <a href="#" class="btn btn btn-outline-light cbtn" title="View Image" style="margin-left: 5px;"><i class="fad fa-eye"></i> <span>500</span></a>
                                     </div>
                                 </div>
                             </div>
@@ -281,7 +279,7 @@
                                 <div class="container">
                                     <div class="row chbtn">
                                         <a href="#" class="btn btn-outline-danger cbtn" title="Save This Image" style="margin-right: 5px;"><i class="fas fa-heart"></i> <span>500</span></a>
-                                        <a href="#" class="btn btn btn-outline-light cbtn" title="View Image" style="margin-left: 5px;"><i class="fas fa-eye"></i> <span>500</span></a>
+                                        <a href="#" class="btn btn btn-outline-light cbtn" title="View Image" style="margin-left: 5px;"><i class="fad fa-eye"></i> <span>500</span></a>
                                     </div>
                                 </div>
                             </div>
@@ -296,7 +294,7 @@
                                 <div class="container">
                                     <div class="row chbtn">
                                         <a href="#" class="btn btn-outline-danger cbtn" title="Save This Image" style="margin-right: 5px;"><i class="fas fa-heart"></i> <span>500</span></a>
-                                        <a href="#" class="btn btn btn-outline-light cbtn" title="View Image" style="margin-left: 5px;"><i class="fas fa-eye"></i> <span>500</span></a>
+                                        <a href="#" class="btn btn btn-outline-light cbtn" title="View Image" style="margin-left: 5px;"><i class="fad fa-eye"></i> <span>500</span></a>
                                     </div>
                                 </div>
                             </div>
@@ -311,7 +309,7 @@
                                 <div class="container">
                                     <div class="row chbtn">
                                         <a href="#" class="btn btn-outline-danger cbtn" title="Save This Image" style="margin-right: 5px;"><i class="fas fa-heart"></i> <span>500</span></a>
-                                        <a href="#" class="btn btn btn-outline-light cbtn" title="View Image" style="margin-left: 5px;"><i class="fas fa-eye"></i> <span>500</span></a>
+                                        <a href="#" class="btn btn btn-outline-light cbtn" title="View Image" style="margin-left: 5px;"><i class="fad fa-eye"></i> <span>500</span></a>
                                     </div>
                                 </div>
                             </div>
@@ -326,7 +324,7 @@
                                 <div class="container">
                                     <div class="row chbtn">
                                         <a href="#" class="btn btn-outline-danger cbtn" title="Save This Image" style="margin-right: 5px;"><i class="fas fa-heart"></i> <span>500</span></a>
-                                        <a href="#" class="btn btn btn-outline-light cbtn" title="View Image" style="margin-left: 5px;"><i class="fas fa-eye"></i> <span>500</span></a>
+                                        <a href="#" class="btn btn btn-outline-light cbtn" title="View Image" style="margin-left: 5px;"><i class="fad fa-eye"></i> <span>500</span></a>
                                     </div>
                                 </div>
                             </div>
@@ -353,22 +351,17 @@
                                     <div class="row">
                                         <div class="col-md-3">
                                             <p>
-                                                <a href="#" class="text-dark" style="text-decoration: none;" ><i class="fas fa-user-alt"></i> Account</a>
+                                                <a href="#" class="text-dark" style="text-decoration: none;" ><i class="fad fa-person-sign"></i> About US</a>
+                                            </p>
+                                        </div>
+                                        <div class="col-md-4">
+                                            <p>
+                                                <a href="#" class="text-dark" style="text-decoration: none;" ><i class="fad fa-file-check"></i> Terms & Conditions</a>
                                             </p>
                                         </div>
                                         <div class="col-md-3">
                                             <p>
-                                                <a href="#" class="text-dark" style="text-decoration: none;" ><i class="fab fa-gratipay"></i> Favorites</a>
-                                            </p>
-                                        </div>
-                                        <div class="col-md-3">
-                                            <p>
-                                                <a href="#" class="text-dark" style="text-decoration: none;" ><i class="fas fa-cloud-upload-alt"></i> Uploads</a>
-                                            </p>
-                                        </div>
-                                        <div class="col-md-3">
-                                            <p>
-                                                <a href="#" class="text-dark" style="text-decoration: none;" ><i class="fas fa-star-of-david"></i> Trending</a>
+                                                <a href="#" class="text-dark" style="text-decoration: none;" ><i class="fad fa-shield-check"></i> Privacy policy</a>
                                             </p>
                                         </div>
                                     </div>    

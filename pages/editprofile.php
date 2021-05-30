@@ -110,28 +110,24 @@
 <!DOCTYPE html>
 <html lang="en">
     <head>
-        <title>Personal Details</title>
+        <title></title>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
-        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css" integrity="sha384-B0vP5xmATw1+K9KRQjQERJvTumQW0nPEzvF6L/Z6nronJ3oUOFUFpCjEUQouq2+l" crossorigin="anonymous">
-        <!---<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/datepicker/1.0.10/datepicker.min.css">-->
-        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
-        <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-Piv4xVNRyMGpqkS2by6br4gNJ7DXjqk09RmUpJ8jgGtD7zP9yug3goQfGII0yAns" crossorigin="anonymous"></script>
-        <!--<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-datetimepicker/2.5.20/jquery.datetimepicker.full.min.js"></script>-->
+        <link rel="stylesheet" href="../css/bootstrap.min.css">
+        <script src="../js/jquery-3.5.1.slim.min.js"></script>
+        <script src="../js/bootstrap.bundle.min.js"></script>
         <link href="../css/editprofile.css" rel="stylesheet">
-        <link rel="stylesheet" href="../css/datepicker.css">
-        <script src="js/datetimepicker.js"></script>
 
             <!-------bootstrap css custom styling -> (OVERRIDE) <- --------------------->
         <style>
             .dropleft .dropdown-toggle::before{
                 border-right: 0;
             }
+            .dropdown-toggle::after{
+                border-top: 0;
+            }
         </style>
-
-        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" rel="stylesheet">
-        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.4.1/font/bootstrap-icons.css">
+        <script src="../js/fontawesome.js"></script>
     </head>
     <body>
 
@@ -167,11 +163,11 @@
                     </ul>
                     <form class="form-inline my-2 my-lg-0">
                         <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
-                        <button class="btn btn btn-outline-info my-2 my-sm-0" type="submit"><i class="bi bi-search"></i></button>
+                        <button class="btn btn btn-outline-info my-2 my-sm-0" type="submit"><i class="fad fa-search"></i></button>
                     </form>
                     <ul class="navbar-nav">
                         <li class="nav-item">
-                            <a class="nav-link" href="upload.php" tabindex="-1" aria-disabled="true"><button type="button" class="btn btn-outline-success"><i class="bi bi-cloud-arrow-up"></i></button></a>
+                            <a class="nav-link" href="upload.php" tabindex="-1" aria-disabled="true"><button type="button" class="btn btn-outline-success"><i class="fad fa-cloud-upload"></i></button></a>
                         </li>
                         <li class="nav-item dropleft text-decoration-none">
                             <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><button type="button" class="btn btn-outline-warning"><img class="logp rounded-circle" src="https://picsum.photos/id/237/200/300" alt=""></button></a>
@@ -683,7 +679,7 @@
         </div>
 
           <!-- Custom Javascript Functions -->
-            <script src="https://cdn.jsdelivr.net/npm/bs-custom-file-input/dist/bs-custom-file-input.js"></script>
+            <script src="../js/bs-custom-file-input.js"></script>
             <script>
                 $(document).ready(function () {
                     bsCustomFileInput.init()

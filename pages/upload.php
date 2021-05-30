@@ -83,14 +83,15 @@
         <script src="https://cdnjs.cloudflare.com/ajax/libs/lightbox2/2.8.2/js/lightbox.min.js"></script>
 
             <!-------bootstrap css custom styling -> (OVERRIDE) <- --------------------->
-        <style>
-            .dropleft .dropdown-toggle::before{
-                border-right: 0;
-            }
-        </style>
-
-        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.4.1/font/bootstrap-icons.css">
-        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" rel="stylesheet">
+            <style>
+                .dropleft .dropdown-toggle::before{
+                    border-right: 0;
+                }
+                .dropdown-toggle::after{
+                    border-top: 0;
+                }
+            </style>
+            <script src="../js/fontawesome.js"></script>    
     </head>
     <body>
         <!-----------------------------------nav section---------------------------------------------------->

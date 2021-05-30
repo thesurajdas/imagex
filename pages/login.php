@@ -164,21 +164,6 @@ if (isset($_REQUEST['login'])) {
               <input type="password" name="password" placeholder="Password" id="lpassword" minlength="5" maxlength="60" onkeypress="return AvoidSpace(event)" required/>
             </div>
             <input type="submit" name="login" value="Login" class="btn solid" />
-            <!--<p class="social-text">Or Sign in with social platforms</p>
-            <div class="social-media">
-              <a href="#" class="social-icon">
-                <i class="fab fa-facebook-f"></i>
-              </a>
-              <a href="#" class="social-icon">
-                <i class="fab fa-twitter"></i>
-              </a>
-              <a href="#" class="social-icon">
-                <i class="fab fa-google"></i>
-              </a>
-              <a href="#" class="social-icon">
-                <i class="fab fa-linkedin-in"></i>
-              </a>
-            </div>-->
           </form>
           <form action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]);?>" method="POST" class="sign-up-form">
             <h2 class="title">Sign up</h2>
