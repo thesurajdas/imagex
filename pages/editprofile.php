@@ -38,10 +38,10 @@
             //Update Data into table
             $sql="UPDATE users SET phone_no='$phone_no', name='$name', gender='$gender', birth_date='$birth_date', country='$country', city='$city', zip_code='$zip_code', role='$role' WHERE id='$id';";
             if ($connect->query($sql)===TRUE) {
-                echo "<script>alert('Profile Details Updated Successfully!');</script>";
+                header("Location:editprofile.php?success=1#pd");
             }
             else{
-                echo "<script>alert('Unable to update the details!');</script>";
+                header("Location:editprofile.php?success=0#pd");
             }
           }
         }
@@ -162,10 +162,21 @@
                 </form>    
             </div>
         </div>    
-        <div class="container sndcon">
+        <div class="container sndcon" id="pd">
             <div class="card shadow">
                 <h4 class="mtxt">Personal Details</h4>
                 <hr class="mb-4">
+                <?php if((isset($_GET['success'])) && ($_GET['success']==1)){echo '<div class="alert alert-success alert-dismissible fade show" role="alert">
+                Profile Details Updated Sueccssfully!
+                <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                  <span aria-hidden="true">&times;</span>
+                </button>
+              </div>';} elseif((isset($_GET['success'])) && ($_GET['success']==0)){echo '<div class="alert alert-danger alert-dismissible fade show" role="alert">
+                Something Went Wrong!
+                <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                  <span aria-hidden="true">&times;</span>
+                </button>
+              </div>';} ?>
                 <form class="mfrm" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]);?>" method="POST">
                     <div class="form-row">
                         <div class="form-group col-md-4">
