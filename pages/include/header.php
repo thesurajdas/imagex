@@ -3,7 +3,7 @@
                 <button class="navbar-toggler" style="margin-left: 35px;" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo03" aria-controls="navbarTogglerDemo03" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
                 </button>
-                <a class="navbar-brand" href="#"><img style="height: 40px;" src="../img/logo.jpg" alt=""></a>
+                <a class="navbar-brand" href="../index.php"><img style="height: 40px;" src="../img/logo.jpg" alt=""></a>
                 <?php if (!isset($user_id)){?>
                 <div class="d-md-none d-lg-none d-lg-none d-lx-none">
                     <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><button type="button" class="btn btn-outline-warning bt"><i class="fas fa-user-circle"></i></button></a>
@@ -18,8 +18,6 @@
                     <div class="dropdown-menu" style="left: auto; right: 0;" aria-labelledby="navbarDropdown">
                         <a class="dropdown-item" href="<?php echo $site_url.'/pages/profile.php?u='.$user_username; ?>">My Profile</a>
                         <a class="dropdown-item" href="editprofile.php">Edit Profile</a>
-                        <a class="dropdown-item" href="favimg.php">Saved Images</a>
-                        <a class="dropdown-item" href="usruploadimg.php">Your Uploads</a>
                         <?php if ($row['admin']==1) {
                                     echo "<div class='dropdown-divider'></div><a class='dropdown-item' href='../admin'>Admin Panel</a>";
                                 } ?>
@@ -92,11 +90,9 @@
                                 <div class="dropdown-menu" aria-labelledby="navbarDropdown">
                                     <a class="dropdown-item" href="<?php echo $site_url.'/pages/profile.php?u='.$user_username; ?>">My Profile</a>
                                     <a class="dropdown-item" href="editprofile.php">Edit Profile</a>
-                                    <a class="dropdown-item" href="favimg.php">Saved Images</a>
-                                    <a class="dropdown-item" href="usruploadimg.php">Your Uploads</a>
                                     <?php if ($row['admin']==1) {
-                                    echo "<div class='dropdown-divider'></div><a class='dropdown-item' href='../admin'>Admin Panel</a>";
-                                } ?>
+                                        echo "<div class='dropdown-divider'></div><a class='dropdown-item' href='../admin'>Admin Panel</a>";
+                                    } ?>
                                     <div class="dropdown-divider"></div>
                                     <a class="dropdown-item" href="logout.php">Sign out</a>
                                 </div>

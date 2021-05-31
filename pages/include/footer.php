@@ -24,7 +24,7 @@
                                         </div>
                                         <div class="col-md-2">
                                             <p>
-                                                <a href="#" class="text-dark" style="text-decoration: none;" data-toggle="tooltip" title="Terms And Conditions" ><i class="fad fa-file-check"></i> TOS</a>
+                                                <a href="tos.php" class="text-dark" style="text-decoration: none;" data-toggle="tooltip" title="Terms And Conditions" ><i class="fad fa-file-check"></i> TOS</a>
                                             </p>
                                         </div>
                                         <div class="col-md-3">
