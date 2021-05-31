@@ -23,12 +23,12 @@
     </head>
     <body>
         <?php require_once('include/header.php'); ?>
-        <div class="container-fluid pl-0 pr-0 glry">
-            <section class="page_404 pl-0 pr-0">
-                <div class="container-fluid pl-0 pr-0">
-                    <div class="row p-0">	
-                        <div class="col-sm-12 ">
-                            <div class="col-sm-12 p-0 text-center">
+        <div class="glry">
+            <section class="page_404">
+                <div class="container-fluid">
+                    <div class="row">	
+                        <div class="col-sm-12 ghhg">
+                            <div class="text-center">
                                 <div class="four_zero_four_bg">
                                     <h1 class="text-center "><i class="fad fa-book-dead"></i> 404</h1>
                                 
