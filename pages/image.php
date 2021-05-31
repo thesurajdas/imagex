@@ -42,15 +42,20 @@
     <!--------------------------------------------------Full Size Image----------------------------------------->
     <div class="container fimg">
         <!--<div class="col-lg-4 col-md-6 col-sm-12 sglry">-->
-            <div class="card">
+            <div class="card cdll shadow-lg">
+                <div class="card-header" style="border-radius: 1.25rem">
+                    <a class="text-decoration-none" href="#">
+                        <div class="row">
+                            <img class="pimgg ml-3" src="https://dummyimage.com/600x400/000/fff2.jpg" alt="">
+                            <h4 class="pl-2">username</h4>
+                        </div>
+                    </a>
+                </div>
                 <img class="imx" src="<?php echo $site_url,$row_img['image_location']; ?>" alt="Card image cap">
                 <div class="card-body">
-                    <ul class="nav nav-tabs" id="myTab" role="tablist">
+                    <ul class="nav nav-tabs justify-content-center" id="myTab" role="tablist">
                         <li class="nav-item" role="presentation">
                           <a class="nav-link active" id="home-tab" data-toggle="tab" href="#home" role="tab" aria-controls="home" aria-selected="true">Photographer</a>
-                        </li>
-                        <li class="nav-item" role="presentation">
-                          <a class="nav-link" id="profile-tab" data-toggle="tab" href="#profile" role="tab" aria-controls="profile" aria-selected="false">Image Details</a>
                         </li>
                         <li class="nav-item" role="presentation">
                           <a class="nav-link" id="contact-tab" data-toggle="tab" href="#contact" role="tab" aria-controls="contact" aria-selected="false">Capture Details</a>
@@ -60,58 +65,71 @@
                             <!---------------image decription------------>
                         <div class="tab-pane fade show active" id="home" role="tabpanel" aria-labelledby="home-tab">
                             <div class="container tabcon">
-                                <h1><?php echo $title; ?></h1>
-                                <p class="font-italic unm">username</p>
+                                <h6><?php echo $title; ?></h6>
                                 <p class="font-weight-lighter">Camera Use (Model Name)</p>
-                            </div>
-                        </div>
-                        <div class="tab-pane fade" id="profile" role="tabpanel" aria-labelledby="profile-tab">
-                            <div class="container tabcon">
-                                <h5>Image Name</h5>
-                                <p class="font-weight-bolder">Badges</p><p><span class="badge badge-secondary">title</span></p>
                             </div>
                         </div>
                         <div class="tab-pane fade" id="contact" role="tabpanel" aria-labelledby="contact-tab">
                             <div class="container tabcon">
                                 <div class="row">
-                                    <div class="col-6">
-                                        <h5>Camera Used:</h5>
+                                    <div class="col-md-6 col-sm-12">
+                                        <div class="row">
+                                            <div class="col-6">
+                                                <h6><i class="fad fa-mobile-android" style="color: #6161bbd6;"></i> Camera Used:</h6>
+                                            </div>
+                                            <div class="col-6">
+                                                <p class="badge" style="color: #fff; background-color: #6161bbd6;">Camera Model</p>
+                                            </div>
+                                        </div>
                                     </div>
-                                    <div class="col-6">
-                                        <p>Camera Model</p>
+                                    <div class="col-md-6">
+                                        <div class="row">
+                                            <div class="col-6">
+                                                <h6><i class="fad fa-stopwatch" style="color: #ff0000c9"></i> Exposure Time:</h6>
+                                            </div>
+                                            <div class="col-6">
+                                                <p class="badge" style="color: #fff; background-color: #ff0000c9;">1/430</p>
+                                            </div>
+                                        </div>
                                     </div>
-                                    <div class="col-6">
-                                        <h5>ƒ:</h5>
+                                    <div class="col-md-6">
+                                        <div class="row">
+                                            <div class="col-6">
+                                                <h6><i class="fad fa-expand-arrows" style="color: #0fe43dd1"></i> Resolution:</h6>
+                                            </div>
+                                            <div class="col-6">
+                                                <p class="badge" style="color: #fff; background-color: #0fe43dd1;">1911X1434</p>
+                                            </div>
+                                        </div>
                                     </div>
-                                    <div class="col-6">
-                                        <p>Focal Lenght eg. 1.7</p>
+                                    <div class="col-md-6">
+                                        <div class="row">
+                                            <div class="col-6">
+                                                <h6><i class="fad fa-border-none" style="color: #ff5e00d4"></i> Image Size:</h6>
+                                            </div>
+                                            <div class="col-6">
+                                                <p class="badge" style="color: #fff; background-color: #ff5e00d4;">283kb</p>
+                                            </div>
+                                        </div>
                                     </div>
-                                    <div class="col-6">
-                                        <h5>Exposure Time:</h5>
-                                    </div>
-                                    <div class="col-6">
-                                        <p>1/430</p>
-                                    </div>
-                                    <div class="col-6">
-                                        <h5>Image Resolution:</h5>
-                                    </div>
-                                    <div class="col-6">
-                                        <p>1911X1434</p>
-                                    </div>
-                                    <div class="col-6">
-                                        <h5>Image Size:</h5>
-                                    </div>
-                                    <div class="col-6">
-                                        <p>283kb</p>
+                                    <div class="col-md-6">
+                                        <div class="row">
+                                            <div class="col-6">
+                                                <h6><i class="fad fa-question-circle" style="color: #00a1ffe8"></i> ƒ:</h6>
+                                            </div>
+                                            <div class="col-6">
+                                                <p class="badge" style="color: #fff; background-color: #00a1ffe8;">Focal Lenght eg. 1.7</p>
+                                            </div>
+                                        </div>
                                     </div>
                                 </div>
                             </div>
                         </div>
                     </div>
                     <div class="container">
-                        <div class="row justify-content-between">
-                            <a href="#" class="btn btn-danger col-2"><i class="bi bi-suit-heart-fill"></i></a>
-                            <a href="#" class="btn btn-success col-2"><i class="bi bi-download"></i></a>
+                        <div class="row justify-content-center">
+                            <a href="#" class="btn btn-danger col-md-2 col-sm-12 bt"><i class="fad fa-heart"></i></a>
+                            <!--<a href="#" class="btn btn-success col-2"><i class="bi bi-download"></i></a>-->
                         </div>
                     </div>
                 </div>
@@ -336,6 +354,13 @@
             </div>
         <div>    
     </footer>
+    <button type="button" class="btn cbtnn shadow-lg" data-toggle="tooltip" title="Download Now (123)"><i class="fad fa-cloud-download-alt" style="width: 50px; height: 50px"></i></button>
+
+    <script>
+    $(document).ready(function(){
+    $('[data-toggle="tooltip"]').tooltip();   
+    });
+    </script>
 </body>
 </html>
 

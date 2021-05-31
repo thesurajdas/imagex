@@ -175,3 +175,34 @@
 .navbar-nav .dropdown-menu{
     position: absolute;
 }
+
+.imx{
+    margin-right: 15px;
+    margin-left: 15px;
+    margin-top: 25px;
+    width: auto;
+    max-height: 400px;
+    object-fit: contain;
+}
+
+.cdll{
+    border-radius: 1.25rem;
+}
+
+.pimgg{
+    height: 35px;
+    width: 35px;
+    border-radius: 35px;
+}
+
+.cbtnn{
+    position: fixed;
+    bottom: 40px;
+    right: 50px;
+    width: 100px;
+    height: 100px;
+    border-radius: 100px;
+    color: rgba(153, 211, 175, 0.952);
+    background: rgb(3, 116, 12);
+    border: 7px solid rgba(80, 146, 5, 0.637);
+}
