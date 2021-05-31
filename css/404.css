@@ -1,0 +1,143 @@
+.logp {
+    width: 35px;
+    height: 35px;
+}
+
+.glry {
+    margin-top: 50px;
+    align-items: center;
+}
+
+.sbdr {
+    border: 1px;
+    background-color: #dddfe0de !important;
+    ;
+}
+
+.bt {
+    border-radius: 1.25rem;
+}
+
+.social-icons img {
+    width: 40px;
+    transition: 0.5s;
+    padding: 5px;
+}
+
+.social-icons a:hover img {
+    transform: translateY(-10px);
+}
+
+.fstcon {
+    margin-top: 110px;
+    margin-bottom: 20px;
+}
+
+.sndcon {
+    margin-top: 50px;
+    margin-bottom: 20px;
+}
+
+.pdp {
+    height: 200px;
+    width: 200px;
+    border-radius: 100px;
+    object-fit: cover;
+    border: 5px solid;
+    border-color: rgba(114, 114, 114, 0.226);
+}
+
+.pimg {
+    text-align: center;
+    padding-bottom: 30px;
+}
+
+.mtxt {
+    text-align: center;
+    padding-top: 20px;
+    padding-bottom: 5px;
+}
+
+.mfrm {
+    padding-left: 10px;
+    padding-right: 10px;
+}
+
+.ntxt {
+    text-align: center;
+    padding-top: 20px;
+    padding-bottom: 25px;
+}
+
+.smit {
+    padding-top: 30px;
+    padding-bottom: 30px;
+}
+
+.scrollable-menu {
+    height: auto;
+    max-height: 500px;
+    overflow-x: hidden;
+}
+
+.ctxtnf {
+    padding-top: 7%;
+    padding-bottom: 7%;
+}
+
+.social-icons img {
+    width: 40px;
+    transition: 0.5s;
+    padding: 5px;
+}
+
+.social-icons a:hover img {
+    transform: translateY(-10px);
+}
+
+.mbt {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+}
+
+.page_404 {
+    padding: 40px 0;
+    background: #fff;
+}
+
+.page_404 img {
+    width: 100%;
+}
+
+.four_zero_four_bg {
+
+    background-image: url(../img/cgif.gif);
+    height: 400px;
+    background-position: center;
+}
+
+
+.four_zero_four_bg h1 {
+    font-size: 80px;
+}
+
+.four_zero_four_bg h3 {
+    font-size: 80px;
+}
+
+.link_404 {
+    color: #fff !important;
+    padding: 10px 20px;
+    border-radius: 1.35rem;
+    background: #025806f8;
+    margin: 20px 0;
+    display: inline-block;
+}
+
+.link_404:hover{
+    background: #0a5a04ef;
+}
+.contant_box_404 {
+    margin-top: -50px;
+}
