@@ -223,7 +223,7 @@ if (isset($_REQUEST['login'])) {
             <a href="../index.html"><button class="btn transparent">
               Home</a>
           </div>
-          <img src="../uploads/website_images/log.svg" class="image" alt="" />
+          <img src="../img/log.svg" class="image" alt="" />
         </div>
         <div class="panel right-panel">
           <div class="content">
@@ -239,7 +239,7 @@ if (isset($_REQUEST['login'])) {
               Home</a>
             </button>
           </div>
-          <img src="../uploads/website_images/register.svg" class="image" alt="" />
+          <img src="../img/register.svg" class="image" alt="" />
         </div>
       </div>
     </div>
