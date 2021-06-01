@@ -8,7 +8,9 @@
         $result_img=$connect->query($sql);
         $row_img=$result_img->fetch_assoc();
         $title=$row_img['title'];
+        $cat=$row_img['category'];
         $image_location=$row_img['image_location'];
+        $p_time=$row_img['time'];
     }
     else{
         echo "<script>alert('Something Went Wrong!')</script>";
@@ -45,9 +47,18 @@
             <div class="card cdll shadow-lg">
                 <div class="card-header" style="border-radius: 1.25rem">
                     <a class="text-decoration-none" href="#">
-                        <div class="row">
-                            <img class="pimgg ml-3" src="https://dummyimage.com/600x400/000/fff2.jpg" alt="">
-                            <h4 class="pl-2" style="color: black">username</h4>
+                        <div class="row justify-content-md-between">
+                            <div>
+                                <div class="row">
+                                    <img class="pimgg ml-3" src="https://dummyimage.com/600x400/000/fff2.jpg" alt="">
+                                    <h4 class="pl-2" style="color: black">username</h4>
+                                </div>
+                            </div>
+                            <div class="pr-3">
+                                <div class="row">
+                                   
+                                </div>
+                            </div>
                         </div>
                     </a>
                 </div>
@@ -70,23 +81,38 @@
                                         <div class="col-12 pb-4">
                                             <div class="row">
                                                 <div class="col-md-4 col-sm-12">
-                                                    <div class="col-12">
-                                                        <h6><i class="fad fa-folder-download" style="color: #15c500e0;"></i> Total Downloads: <span class="badge" style="color: #fff; background-color: #15c500e0;"> 40</span></h6>
+                                                    <div class="row">
+                                                        <div class="col-6">
+                                                            <h6><i class="fad fa-eye" style="color: #6161bbd6;"></i> Viewes:</h6>    
+                                                        </div>
+                                                        <div class="col-6">
+                                                            <h6 class="badge" style="color: #fff; background-color: #6161bbd6;">80</h6>    
+                                                        </div>
+                                                    </div>    
+                                                </div>
+                                                <div class="col-md-4 col-sm-12">
+                                                    <div class="row">
+                                                        <div class="col-6">
+                                                            <h6><i class="fad fa-heart-circle" style="color: #ff0076d6;"></i> Hearts:</h6>
+                                                        </div>
+                                                        <div class="col-6">
+                                                            <h6 class="badge" style="color: #fff; background-color: #ff0076d6;">50</h6>
+                                                        </div>
                                                     </div>
                                                 </div>
                                                 <div class="col-md-4 col-sm-12">
-                                                    <div class="col-12">
-                                                        <h6><i class="fad fa-heart-circle" style="color: #ff0076d6;"></i> Total Hearts: <span class="badge" style="color: #fff; background-color: #ff0076d6;"> 50</span></h6>
-                                                    </div>
-                                                </div>
-                                                <div class="col-md-4 col-sm-12">
-                                                    <div class="col-12">
-                                                        <h6><i class="fad fa-eye" style="color: #6161bbd6;"></i> Total Viewes: <span class="badge" style="color: #fff; background-color: #6161bbd6;"> 80</span></h6>
+                                                    <div class="row">
+                                                        <div class="col-6">
+                                                            <h6 style="color: #15c500e0;"></i> Downloads:</h6>
+                                                        </div>
+                                                        <div class="col-6">
+                                                            <h6 class="badge" style="color: #fff; background-color: #15c500e0;">40</h6>
+                                                        </div>
                                                     </div>
                                                 </div>
                                             </div>
                                         </div>
-                                        <div class="col-md-6 col-sm-12">
+                                        <div class="col-md-4 col-sm-12">
                                             <div class="row">
                                                 <div class="col-6">
                                                     <h6><i class="fad fa-file-signature" style="color: #0062ccde;"></i> Image Name:</h6>
@@ -96,13 +122,23 @@
                                                 </div>
                                             </div>
                                         </div>
-                                        <div class="col-md-6 col-sm-12">
+                                        <div class="col-md-4 col-sm-12">
                                             <div class="row">
                                                 <div class="col-6">
                                                     <h6><i class="fad fa-grip-vertical" style="color: #ff7600d6;"></i> Image Category:</h6>
                                                 </div>
                                                 <div class="col-6">
-                                                    <h6 class="badge" style="color: #fff; background-color: #ff7600d6;"><?php echo $title; ?></h6>
+                                                    <h6 class="badge" style="color: #fff; background-color: #ff7600d6;"><?php echo $cat; ?></h6>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-4 col-sm-12">
+                                            <div class="row">
+                                                <div class="col-6">
+                                                    <h6><i class="fad fa-grip-vertical" style="color: #ff7600d6;"></i> Publish On:</h6>
+                                                </div>
+                                                <div class="col-6">
+                                                    <h6 class="badge" style="color: #fff; background-color: #ff7600d6;"><?php echo $p_time; ?></h6>
                                                 </div>
                                             </div>
                                         </div>
@@ -158,7 +194,7 @@
                                                     <h6><i class="fad fa-question-circle" style="color: #00a1ffe8"></i> ƒ:</h6>
                                                 </div>
                                                 <div class="col-6">
-                                                    <p class="badge" style="color: #fff; background-color: #00a1ffe8;">Focal Lenght eg. 1.7</p>
+                                                    <p class="badge" style="color: #fff; background-color: #00a1ffe8;">1.7</p>
                                                 </div>
                                             </div>
                                         </div>
@@ -169,7 +205,7 @@
                     </div>
                     <div class="container">
                         <div class="row justify-content-center">
-                            <a href="#" class="btn btn-danger col-md-2 col-sm-12 bt"><i class="fad fa-heart"></i></a>
+                            <a href="#" class="btn btn-danger dg col-md-2 col-sm-12 bt" style="margin-top: 10px"><i class="fad fa-heart"></i> <span> 56</span></a>
                             <!--<a href="#" class="btn btn-success col-2"><i class="bi bi-download"></i></a>-->
                         </div>
                     </div>
@@ -396,7 +432,7 @@
             </div>
         <div>    
     </footer>
-    <button type="button" class="btn cbtnn shadow-lg" data-toggle="tooltip" title="Download Now (123)"><i class="fad fa-cloud-download-alt" style="width: 50px; height: 50px"></i></button>
+    <button type="button" class="btn btn-outline-success cbtnn" data-toggle="tooltip" title="Download Now (123)"><i class="fad fa-cloud-download-alt" style="width: 35px; height: 35px"></i></button>
 
     <script>
     $(document).ready(function(){

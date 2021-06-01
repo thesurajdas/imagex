@@ -1,5 +1,5 @@
 .fimg{
-    padding-top: 100px;
+    padding-top: 90px;
 }
 
 
@@ -190,7 +190,7 @@
     margin-left: 15px;
     margin-top: 25px;
     width: auto;
-    max-height: 400px;
+    max-height: 440px;
     object-fit: contain;
 }
 
@@ -207,11 +207,26 @@
 .cbtnn{
     position: fixed;
     bottom: 40px;
-    right: 50px;
-    width: 100px;
-    height: 100px;
-    border-radius: 100px;
-    color: rgba(153, 211, 175, 0.952);
-    background: rgb(3, 116, 12);
-    border: 7px solid rgba(80, 146, 5, 0.637);
+    right: 35px;
+    width: 75px;
+    height: 75px;
+    border-radius: 75px;
+    color: rgb(255, 255, 255);
+    background-color: green;
+    box-shadow: 0 0 0 0 rgba(0, 155, 13, 0.918);
+    transition: ease-out 0.4s;
+    outline: none;
+    font-size: 1rem;
+}
+
+.cbtnn:hover{
+
+    box-shadow: 0 0 70px 0 rgba(0, 155, 13, 0.918);
+}
+
+.dg{
+    color: #dc3545;
+    background-color: transparent;
+    border: 2px solid;
+    border-color: #dc3545;
 }
