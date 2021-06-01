@@ -87,7 +87,7 @@
 
         <!-----------------------------------------Profile section------------------------------------------------------>
 
-        <div class="container shadow-lg p-3 mb-5 bg-white rounded emp-profile">
+        <div class="container shadow-lg p-3 mb-5 bg-white emp-profile" style="border-radius: 1.25rem;">
 
             <form method="post">
                 <div class="row" style="padding-top: 25px;">
@@ -98,18 +98,18 @@
                     </div>
                     <div class="col-md-6">
                         <div class="profile-head">
-                                    <h1 class="col-md-12 d-none d-md-block d-lg-block d-xl-block">
-                                        <?php echo $user_name; ?>
-                                    </h1>
-                                    <h1 class="col-sm-12 text-center d-md-none d-lg-none d-lg-none d-lx-none">
-                                        <?php echo $user_name; ?>
-                                    </h1>
-                                    <h6 class="col-md-12 d-none d-md-block d-lg-block d-xl-block">
+                                <h1 class="col-md-12 d-none d-md-block d-lg-block d-xl-block">
+                                    <?php echo $user_name; ?>
+                                </h1>
+                                <h1 class="col-sm-12 text-center d-md-none d-lg-none d-lg-none d-lx-none">
+                                    <?php echo $user_name; ?>
+                                </h1>
+                                <h6 class="col-md-12 d-none d-md-block d-lg-block d-xl-block">
                                     <?php echo $user_role; ?>
-                                    </h6>
-                                    <h6 class="col-sm-12 text-center d-md-none d-lg-none d-lg-none d-lx-none">
+                                </h6>
+                                <h6 class="col-sm-12 text-center d-md-none d-lg-none d-lg-none d-lx-none">
                                     <?php echo $user_role; ?>
-                                    </h6>
+                                </h6>
                                     <div class="container col-md-12 d-none d-md-block d-lg-block d-xl-block">
                                         <div class="row">
                                             <p class="col-4 "><i class="fad fa-eye" style="color: #212529bf;"></i> <span><?php echo $user_total_views; ?></span></p>
@@ -124,7 +124,7 @@
                                             <p class="col-4"><i class="fad fa-download" style="color: #008e00d1;"></i> <span><?php echo $user_total_downloads; ?></span></p>
                                         </div>
                                     </div>
-                            <ul class="nav nav-tabs" id="myTab" role="tablist">
+                            <ul class="nav nav-tabs justify-content-center justify-content-md-start" id="myTab" role="tablist">
                                 <li class="nav-item">
                                     <a class="nav-link active" id="home-tab" data-toggle="tab" href="#home" role="tab" aria-controls="home" aria-selected="true"><i class="fad fa-address-card"></i> About</a>
                                 </li>
@@ -149,9 +149,9 @@
                     </div>
                     <div class="col-md-8">
                         <div class="tab-content profile-tab" id="myTabContent">
-                            <div class="tab-pane fade show active" id="home" role="tabpanel" aria-labelledby="home-tab">
+                            <div class="tab-pane text-md-left text-center fade show active" id="home" role="tabpanel" aria-labelledby="home-tab">
                                         <div class="row">
-                                            <div class="col-3">
+                                            <div class="col-5">
                                                 <label><i class="fad fa-at" style="color: rgb(255, 0, 0);"></i> Username</label>
                                             </div>
                                             <div class="col-6">
@@ -159,7 +159,7 @@
                                             </div>
                                         </div>
                                         <div class="row">
-                                            <div class="col-3">
+                                            <div class="col-5">
                                                 <label><i class="fad fa-male" style="color: rgb(255, 165, 0);"></i> Name</label>
                                             </div>
                                             <div class="col-6">
@@ -167,7 +167,7 @@
                                             </div>
                                         </div>
                                         <div class="row">
-                                            <div class="col-3">
+                                            <div class="col-5">
                                                 <label><i class="fad fa-venus-mars" style="color:rgb(238, 130, 238);"></i> Gender</label>
                                             </div>
                                             <div class="col-6">
@@ -175,15 +175,15 @@
                                             </div>
                                         </div>
                                         <div class="row">
-                                            <div class="col-3">
+                                            <div class="col-5">
                                                 <label><i class="fad fa-envelope" style="color: rgb(0, 128, 0);"></i> Email</label>
                                             </div>
-                                            <div class="col-3">
+                                            <div class="col-6">
                                                 <p class="badge"style="color: #fff; background-color: rgb(0, 128, 0);"><?php echo $user_email; ?></p>
                                             </div>
                                         </div>
                                         <div class="row">
-                                            <div class="col-3">
+                                            <div class="col-5">
                                                 <label><i class="fad fa-phone-volume" style="color: rgb(0, 0, 255);"></i> Phone</label>
                                             </div>
                                             <div class="col-6">
@@ -191,53 +191,53 @@
                                             </div>
                                         </div>
                                         <div class="row">
-                                            <div class="col-3">
+                                            <div class="col-5">
                                                 <label><i class="far fa-globe-asia" style="color: rgb(75, 0, 130);"></i> Country</label>
                                             </div>
                                             <div class="col-6">
-                                                <p class="badge"style="color: #fff; background-color: rgb(75, 0, 130);"><?php echo $user_country; ?></p>
+                                                <p class="badge" style="color: #fff; background-color: rgb(75, 0, 130);"><?php echo $user_country; ?></p>
                                             </div>
                                         </div>
                             </div>
-                            <div class="tab-pane fade" id="profile" role="tabpanel" aria-labelledby="profile-tab">
+                            <div class="tab-pane fade text-md-left text-center" id="profile" role="tabpanel" aria-labelledby="profile-tab">
                                         <div class="row">
-                                            <div class="col-3">
-                                                <label><i class="fad fa-mobile-android"></i> Device</label>
+                                            <div class="col-5">
+                                                <label><i class="fad fa-mobile-android" style="color: rgb(0, 128, 0);"></i> Device</label>
                                             </div>
                                             <div class="col-6">
-                                                <p><?php echo $user_device_name; ?></p>
+                                                <p class="badge" style="color: #fff; background-color: rgb(0, 128, 0);"><?php echo $user_device_name; ?></p>
                                             </div>
                                         </div>
                                         <div class="row">
-                                            <div class="col-3">
-                                                <label><i class="fad fa-tablet-rugged"></i> Model</label>
+                                            <div class="col-5">
+                                                <label><i class="fad fa-tablet-rugged" style="color: rgb(75, 0, 130);"></i> Model</label>
                                             </div>
                                             <div class="col-6">
-                                                <p><?php echo $user_device_model; ?></p>
+                                                <p class="badge" style="color: #fff; background-color: rgb(75, 0, 130);"><?php echo $user_device_model; ?></p>
                                             </div>
                                         </div>
                                         <div class="row">
-                                            <div class="col-3">
-                                                <label><i class="fad fa-border-none"></i> Resolution</label>
+                                            <div class="col-5">
+                                                <label><i class="fad fa-border-none" style="color:rgb(238, 130, 238);"></i> Resolution</label>
                                             </div>
                                             <div class="col-6">
-                                                <p><?php echo $user_resolution." MP (Mega Pixel)"; ?></p>
+                                                <p class="badge"style="color: #fff; background-color: rgb(238, 130, 238);"><?php echo $user_resolution." MP (Mega Pixel)"; ?></p>
                                             </div>
                                         </div>
                                         <div class="row">
-                                            <div class="col-3">
-                                                <label><i class="fad fa-question-circle"></i> Focal Length</label>
+                                            <div class="col-5">
+                                                <label><i class="fad fa-question-circle" style="color: rgb(255, 165, 0);"></i> Focal Length</label>
                                             </div>
                                             <div class="col-6">
-                                                <p><?php echo $user_focal_length; ?></p>
+                                                <p class="badge" style="color: #fff; background-color: rgb(255, 165, 0);"><?php echo $user_focal_length; ?></p>
                                             </div>
                                         </div>
                                         <div class="row">
-                                            <div class="col-3">
-                                                <label><i class="fad fa-info-circle"></i> Apperture</label>
+                                            <div class="col-5">
+                                                <label><i class="fad fa-info-circle"  style="color: rgb(255, 0, 0);"></i> Apperture</label>
                                             </div>
                                             <div class="col-6">
-                                                <p><?php echo $user_apertures; ?></p>
+                                                <p class="badge" style="color: #fff; background-color: rgb(255, 0, 0);"><?php echo $user_apertures; ?></p>
                                             </div>
                                         </div>
                             </div>
@@ -247,8 +247,9 @@
             </form>
             <hr class="mb-4">
             <!-------------------------------------------------Uploaded Images main body------------------------------------------>
-            <div class="container shadow-lg p-3 mb-5 bg-white rounded my-3 glry">
-                <ul class="nav nav-tabs" id="myiTab" role="tablist">
+            <div class="container shadow-lg p-3 mb-5 bg-white my-3 glry" style="border-radius: 1.25rem">
+                <div class="profile-hd">
+                    <ul class="nav nav-tabs justify-content-center justify-content-md-start" id="myiTab" role="tablist">
                         <li class="nav-item" role="presentation">
                             <a class="nav-link active" id="uimg-tab" data-toggle="tab" href="#uimg" role="tab" aria-controls="uimg" aria-selected="true"><i class="fad fa-folder-upload"></i> Uploads</a>
                         </li>
@@ -256,6 +257,7 @@
                             <a class="nav-link" id="simg-tab" data-toggle="tab" href="#simg" role="tab" aria-controls="simg" aria-selected="false"><i class="fad fa-bookmark" style="color: red;"></i> Saved</a>
                         </li>
                     </ul>
+                </div>    
                     <div class="tab-content" id="myiTabContent">
                         <div class="tab-pane fade show active" id="uimg" role="tabpanel" aria-labelledby="uimg-tab">
                             <div class="row">

@@ -88,6 +88,17 @@
     border: none;
     border-bottom:2px solid #0062cc;
 }
+.profile-hd .nav-tabs{
+    margin-bottom:2%;
+}
+.profile-hd .nav-tabs .nav-link{
+    font-weight:600;
+    border: none;
+}
+.profile-hd .nav-tabs .nav-link.active{
+    border: none;
+    border-bottom:2px solid #0062cc;
+}
 .profile-work{
     padding: 14%;
     margin-top: -15%;
