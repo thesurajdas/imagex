@@ -77,38 +77,34 @@
                                 <!---------------image decription------------>
                             <div class="tab-pane fade show active" id="home" role="tabpanel" aria-labelledby="home-tab">
                                 <div class="container tabcon">
-                                    <div class="row text-center">
-                                        <div class="col-12 pb-4">
+                                    <div class="row">
+                                        <div class="col-md-4 col-sm-12">
                                             <div class="row">
-                                                <div class="col-md-4 col-sm-12">
-                                                    <div class="row">
-                                                        <div class="col-6">
-                                                            <h6><i class="fad fa-eye" style="color: #6161bbd6;"></i> Viewes:</h6>    
-                                                        </div>
-                                                        <div class="col-6">
-                                                            <h6 class="badge" style="color: #fff; background-color: #6161bbd6;">80</h6>    
-                                                        </div>
-                                                    </div>    
+                                                <div class="col-6">
+                                                    <h6><i class="fad fa-eye" style="color: #6161bbd6;"></i> Viewes:</h6>    
                                                 </div>
-                                                <div class="col-md-4 col-sm-12">
-                                                    <div class="row">
-                                                        <div class="col-6">
-                                                            <h6><i class="fad fa-heart-circle" style="color: #ff0076d6;"></i> Hearts:</h6>
-                                                        </div>
-                                                        <div class="col-6">
-                                                            <h6 class="badge" style="color: #fff; background-color: #ff0076d6;">50</h6>
-                                                        </div>
-                                                    </div>
+                                                <div class="col-6">
+                                                    <h6 class="badge" style="color: #fff; background-color: #6161bbd6;">80</h6>    
                                                 </div>
-                                                <div class="col-md-4 col-sm-12">
-                                                    <div class="row">
-                                                        <div class="col-6">
-                                                            <h6 style="color: #15c500e0;"></i> Downloads:</h6>
-                                                        </div>
-                                                        <div class="col-6">
-                                                            <h6 class="badge" style="color: #fff; background-color: #15c500e0;">40</h6>
-                                                        </div>
-                                                    </div>
+                                            </div>    
+                                        </div>
+                                        <div class="col-md-4 col-sm-12">
+                                            <div class="row">
+                                                <div class="col-6">
+                                                    <h6><i class="fad fa-heart-circle" style="color: #ff0076d6;"></i> Hearts:</h6>
+                                                </div>
+                                                <div class="col-6">
+                                                    <h6 class="badge" style="color: #fff; background-color: #ff0076d6;">50</h6>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-4 col-sm-12">
+                                            <div class="row">
+                                                <div class="col-6">
+                                                    <h6 style="color: #15c500e0;"></i> Downloads:</h6>
+                                                </div>
+                                                <div class="col-6">
+                                                    <h6 class="badge" style="color: #fff; background-color: #15c500e0;">40</h6>
                                                 </div>
                                             </div>
                                         </div>
@@ -135,10 +131,10 @@
                                         <div class="col-md-4 col-sm-12">
                                             <div class="row">
                                                 <div class="col-6">
-                                                    <h6><i class="fad fa-grip-vertical" style="color: #ff7600d6;"></i> Publish On:</h6>
+                                                    <h6><i class="fad fa-clock" style="color: rgb(0 0 0 / 74%);"></i> Publish On:</h6>
                                                 </div>
                                                 <div class="col-6">
-                                                    <h6 class="badge" style="color: #fff; background-color: #ff7600d6;"><?php echo $p_time; ?></h6>
+                                                    <h6 class="badge" style="color: #fff; background-color: rgb(0 0 0 / 74%);"><?php echo $p_time; ?></h6>
                                                 </div>
                                             </div>
                                         </div>
@@ -148,7 +144,7 @@
                             <div class="tab-pane fade" id="contact" role="tabpanel" aria-labelledby="contact-tab">
                                 <div class="container tabcon">
                                     <div class="row">
-                                        <div class="col-md-6 col-sm-12">
+                                        <div class="col-md-4 col-sm-12">
                                             <div class="row">
                                                 <div class="col-6">
                                                     <h6><i class="fad fa-mobile-android" style="color: #6161bbd6;"></i> Camera Used:</h6>
@@ -158,7 +154,7 @@
                                                 </div>
                                             </div>
                                         </div>
-                                        <div class="col-md-6">
+                                        <div class="col-md-4">
                                             <div class="row">
                                                 <div class="col-6">
                                                     <h6><i class="fad fa-stopwatch" style="color: #ff0000c9"></i> Exposure Time:</h6>
@@ -168,7 +164,7 @@
                                                 </div>
                                             </div>
                                         </div>
-                                        <div class="col-md-6">
+                                        <div class="col-md-4">
                                             <div class="row">
                                                 <div class="col-6">
                                                     <h6><i class="fad fa-expand-arrows" style="color: #01b528e3;"></i> Resolution:</h6>
@@ -178,7 +174,7 @@
                                                 </div>
                                             </div>
                                         </div>
-                                        <div class="col-md-6">
+                                        <div class="col-md-4">
                                             <div class="row">
                                                 <div class="col-6">
                                                     <h6><i class="fad fa-border-none" style="color: #ff5e00d4"></i> Image Size:</h6>
@@ -188,7 +184,7 @@
                                                 </div>
                                             </div>
                                         </div>
-                                        <div class="col-md-6">
+                                        <div class="col-md-4">
                                             <div class="row">
                                                 <div class="col-6">
                                                     <h6><i class="fad fa-question-circle" style="color: #00a1ffe8"></i> ƒ:</h6>
