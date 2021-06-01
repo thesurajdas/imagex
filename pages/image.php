@@ -47,78 +47,119 @@
                     <a class="text-decoration-none" href="#">
                         <div class="row">
                             <img class="pimgg ml-3" src="https://dummyimage.com/600x400/000/fff2.jpg" alt="">
-                            <h4 class="pl-2">username</h4>
+                            <h4 class="pl-2" style="color: black">username</h4>
                         </div>
                     </a>
                 </div>
                 <img class="imx" src="<?php echo $site_url,$row_img['image_location']; ?>" alt="Card image cap">
                 <div class="card-body">
-                    <ul class="nav nav-tabs justify-content-center" id="myTab" role="tablist">
-                        <li class="nav-item" role="presentation">
-                          <a class="nav-link active" id="home-tab" data-toggle="tab" href="#home" role="tab" aria-controls="home" aria-selected="true">Photographer</a>
-                        </li>
-                        <li class="nav-item" role="presentation">
-                          <a class="nav-link" id="contact-tab" data-toggle="tab" href="#contact" role="tab" aria-controls="contact" aria-selected="false">Capture Details</a>
-                        </li>
-                    </ul>
-                    <div class="tab-content" id="myTabContent">
-                            <!---------------image decription------------>
-                        <div class="tab-pane fade show active" id="home" role="tabpanel" aria-labelledby="home-tab">
-                            <div class="container tabcon">
-                                <h6><?php echo $title; ?></h6>
-                                <p class="font-weight-lighter">Camera Use (Model Name)</p>
+                    <div class="profile-head">
+                        <ul class="nav nav-tabs justify-content-center" id="myTab" role="tablist">
+                            <li class="nav-item" role="presentation">
+                            <a class="nav-link active" id="home-tab" data-toggle="tab" href="#home" role="tab" aria-controls="home" aria-selected="true">Photographer</a>
+                            </li>
+                            <li class="nav-item" role="presentation">
+                            <a class="nav-link" id="contact-tab" data-toggle="tab" href="#contact" role="tab" aria-controls="contact" aria-selected="false">Capture Details</a>
+                            </li>
+                        </ul>
+                        <div class="tab-content" id="myTabContent">
+                                <!---------------image decription------------>
+                            <div class="tab-pane fade show active" id="home" role="tabpanel" aria-labelledby="home-tab">
+                                <div class="container tabcon">
+                                    <div class="row text-center">
+                                        <div class="col-12 pb-4">
+                                            <div class="row">
+                                                <div class="col-md-4 col-sm-12">
+                                                    <div class="col-12">
+                                                        <h6><i class="fad fa-folder-download" style="color: #15c500e0;"></i> Total Downloads: <span class="badge" style="color: #fff; background-color: #15c500e0;"> 40</span></h6>
+                                                    </div>
+                                                </div>
+                                                <div class="col-md-4 col-sm-12">
+                                                    <div class="col-12">
+                                                        <h6><i class="fad fa-heart-circle" style="color: #ff0076d6;"></i> Total Hearts: <span class="badge" style="color: #fff; background-color: #ff0076d6;"> 50</span></h6>
+                                                    </div>
+                                                </div>
+                                                <div class="col-md-4 col-sm-12">
+                                                    <div class="col-12">
+                                                        <h6><i class="fad fa-eye" style="color: #6161bbd6;"></i> Total Viewes: <span class="badge" style="color: #fff; background-color: #6161bbd6;"> 80</span></h6>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-6 col-sm-12">
+                                            <div class="row">
+                                                <div class="col-6">
+                                                    <h6><i class="fad fa-file-signature" style="color: #0062ccde;"></i> Image Name:</h6>
+                                                </div>
+                                                <div class="col-6">
+                                                    <h6 class="badge" style="color: #fff; background-color: #0062ccde;"><?php echo $title; ?></h6>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-6 col-sm-12">
+                                            <div class="row">
+                                                <div class="col-6">
+                                                    <h6><i class="fad fa-grip-vertical" style="color: #ff7600d6;"></i> Image Category:</h6>
+                                                </div>
+                                                <div class="col-6">
+                                                    <h6 class="badge" style="color: #fff; background-color: #ff7600d6;"><?php echo $title; ?></h6>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
                             </div>
-                        </div>
-                        <div class="tab-pane fade" id="contact" role="tabpanel" aria-labelledby="contact-tab">
-                            <div class="container tabcon">
-                                <div class="row">
-                                    <div class="col-md-6 col-sm-12">
-                                        <div class="row">
-                                            <div class="col-6">
-                                                <h6><i class="fad fa-mobile-android" style="color: #6161bbd6;"></i> Camera Used:</h6>
-                                            </div>
-                                            <div class="col-6">
-                                                <p class="badge" style="color: #fff; background-color: #6161bbd6;">Camera Model</p>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="col-md-6">
-                                        <div class="row">
-                                            <div class="col-6">
-                                                <h6><i class="fad fa-stopwatch" style="color: #ff0000c9"></i> Exposure Time:</h6>
-                                            </div>
-                                            <div class="col-6">
-                                                <p class="badge" style="color: #fff; background-color: #ff0000c9;">1/430</p>
+                            <div class="tab-pane fade" id="contact" role="tabpanel" aria-labelledby="contact-tab">
+                                <div class="container tabcon">
+                                    <div class="row">
+                                        <div class="col-md-6 col-sm-12">
+                                            <div class="row">
+                                                <div class="col-6">
+                                                    <h6><i class="fad fa-mobile-android" style="color: #6161bbd6;"></i> Camera Used:</h6>
+                                                </div>
+                                                <div class="col-6">
+                                                    <p class="badge" style="color: #fff; background-color: #6161bbd6;">Camera Model</p>
+                                                </div>
                                             </div>
                                         </div>
-                                    </div>
-                                    <div class="col-md-6">
-                                        <div class="row">
-                                            <div class="col-6">
-                                                <h6><i class="fad fa-expand-arrows" style="color: #0fe43dd1"></i> Resolution:</h6>
-                                            </div>
-                                            <div class="col-6">
-                                                <p class="badge" style="color: #fff; background-color: #0fe43dd1;">1911X1434</p>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="col-md-6">
-                                        <div class="row">
-                                            <div class="col-6">
-                                                <h6><i class="fad fa-border-none" style="color: #ff5e00d4"></i> Image Size:</h6>
-                                            </div>
-                                            <div class="col-6">
-                                                <p class="badge" style="color: #fff; background-color: #ff5e00d4;">283kb</p>
+                                        <div class="col-md-6">
+                                            <div class="row">
+                                                <div class="col-6">
+                                                    <h6><i class="fad fa-stopwatch" style="color: #ff0000c9"></i> Exposure Time:</h6>
+                                                </div>
+                                                <div class="col-6">
+                                                    <p class="badge" style="color: #fff; background-color: #ff0000c9;">1/430</p>
+                                                </div>
                                             </div>
                                         </div>
-                                    </div>
-                                    <div class="col-md-6">
-                                        <div class="row">
-                                            <div class="col-6">
-                                                <h6><i class="fad fa-question-circle" style="color: #00a1ffe8"></i> ƒ:</h6>
+                                        <div class="col-md-6">
+                                            <div class="row">
+                                                <div class="col-6">
+                                                    <h6><i class="fad fa-expand-arrows" style="color: #01b528e3;"></i> Resolution:</h6>
+                                                </div>
+                                                <div class="col-6">
+                                                    <p class="badge" style="color: #fff; background-color: #01b528e3;">1911X1434</p>
+                                                </div>
                                             </div>
-                                            <div class="col-6">
-                                                <p class="badge" style="color: #fff; background-color: #00a1ffe8;">Focal Lenght eg. 1.7</p>
+                                        </div>
+                                        <div class="col-md-6">
+                                            <div class="row">
+                                                <div class="col-6">
+                                                    <h6><i class="fad fa-border-none" style="color: #ff5e00d4"></i> Image Size:</h6>
+                                                </div>
+                                                <div class="col-6">
+                                                    <p class="badge" style="color: #fff; background-color: #ff5e00d4;">283kb</p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-6">
+                                            <div class="row">
+                                                <div class="col-6">
+                                                    <h6><i class="fad fa-question-circle" style="color: #00a1ffe8"></i> ƒ:</h6>
+                                                </div>
+                                                <div class="col-6">
+                                                    <p class="badge" style="color: #fff; background-color: #00a1ffe8;">Focal Lenght eg. 1.7</p>
+                                                </div>
                                             </div>
                                         </div>
                                     </div>
@@ -138,10 +179,11 @@
     </div>
     <!-------------------------------------------------Related Images Text------------------------------------------>
     <div class="container ht">
-            <h1>Related Images</h1>
+            
     </div>
     <!-------------------------------------------------Related Images main body------------------------------------------>
-    <div class="container shadow-lg p-3 mb-5 bg-white rounded my-3 glry">
+    <div class="container shadow-lg p-3 mb-5 bg-white my-3 glry" style="border-radius: 1.25rem">
+    <h2 class="text-center"><span class="badge" style="color: #4ba0ffa8; background-color:#dee2e69e;">Related Images</span></h2>
         <div class="row">
             <div class="col-lg-4 col-md-6 col-sm-12 sglry">
                 <div class="card cds">
