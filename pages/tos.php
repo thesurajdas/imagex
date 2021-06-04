@@ -26,9 +26,9 @@
 
         <!------------------------------------------main body section--------------------------------------------------->
         
-        <div class="container glry">
-            <div class="card shadow" style="padding-bottom: 20px">
-                <div class="container p-4">
+        <div class="container glry" style="border-radius: 1.25rem">
+            <div class="card shadow" style="padding-bottom: 20px; border-radius: 1.25rem; ">
+                <div class="container p-5">
                             <h2 class="text-center"><strong><i class="fad fa-clipboard-list-check" style="color: #7FFFD4;"></i> Terms and Conditions</strong></h2>
 
                             <p>Welcome to pixwave!</p>
@@ -153,7 +153,6 @@
                 </div>
             </div>  
         </div>
-
         <?php require_once('include/footer.php'); ?>
     </body>
 </html>

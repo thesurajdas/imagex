@@ -14,12 +14,12 @@
                                     <div class="row">
                                         <div class="col-md-3">
                                             <p>
-                                                <a href="#" class="text-dark" style="text-decoration: none;" ><i class="fad fa-person-sign"></i> About US</a>
+                                                <a href="aboutus.php" class="text-dark" style="text-decoration: none;" ><i class="fad fa-person-sign"></i> About US</a>
                                             </p>
                                         </div>
                                         <div class="col-md-3">
                                             <p>
-                                                <a href="#" class="text-dark" style="text-decoration: none;" ><i class="fad fa-address-book"></i> Contact US</a>
+                                                <a href="contactus.php" class="text-dark" style="text-decoration: none;" ><i class="fad fa-address-book"></i> Contact US</a>
                                             </p>
                                         </div>
                                         <div class="col-md-2">
