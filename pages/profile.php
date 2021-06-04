@@ -1,47 +1,6 @@
 <?php
     //Add database connection
     require_once('../auth.php');
-    //Dynamic user profile id
-    if (isset($_GET['u'])) {
-        $username=$_GET['u'];
-        //Get Data from SQL
-        $sql="SELECT * FROM users WHERE username='$username'";
-        $result_log=$connect->query($sql);
-        if ($result_log->num_rows==1) {
-        $u_id=$_GET['u'];
-        $sql="SELECT * FROM users WHERE username='$u_id'";
-        $result=$connect->query($sql);
-        $row=$result->fetch_assoc();
-        $id=$row['id'];
-        $user_username=$row['username'];
-        $user_name=$row['name'];
-        $user_email=$row['email'];
-        }
-        else{
-            echo "<script>alert('No User Found!')</script>";
-        }
-    }
-    else {
-        //Check Login
-        if ($login!=1) {
-            header("Location:login.php");
-            exit();
-        }
-    }
-    //Add data into variables
-    $user_gender=$row['gender'];
-    $user_phone_no=$row['phone_no'];
-    $user_country=$row['country'];
-    $user_device_name=$row['device_name'];
-    $user_device_model=$row['device_model'];
-    $user_apertures=$row['apertures'];
-    $user_resolution=$row['resolution'];
-    $user_focal_length=$row['focal_length'];
-    $user_role=$row['role'];
-    $user_total_views=$row['total_views'];
-    $user_total_likes=$row['total_likes'];
-    $user_total_downloads=$row['total_downloads'];
-
     //update image information
     if (isset($_POST['update'])) {
         if (($_REQUEST['img_id']=="")||($_REQUEST['title']=="")||($_REQUEST['filetype']=="")||($_REQUEST['visibility']=="")){
@@ -67,6 +26,7 @@
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <link rel="stylesheet" href="../css/bootstrap.min.css">
         <script src="../js/jquery-3.5.1.slim.min.js"></script>
+        <script src="../js/jquery.min.js"></script>
         <script src="../js/bootstrap.bundle.min.js"></script>
         <link href="../css/profile.css" rel="stylesheet">
 
@@ -83,7 +43,49 @@
     </head>
     <body>
         <!--------------------------------------nav Section--------------------------------------------------------->
-       <?php require_once('include/header.php'); ?>
+       <?php
+            require_once('include/header.php');
+                //Dynamic user profile id
+    if (isset($_GET['u'])) {
+        $username=$_GET['u'];
+        //Get Data from SQL
+        $sql="SELECT * FROM users WHERE username='$username'";
+        $result_log=$connect->query($sql);
+        if ($result_log->num_rows==1) {
+        $u_id=$_GET['u'];
+        $sql="SELECT * FROM users WHERE username='$u_id'";
+        $result=$connect->query($sql);
+        $row=$result->fetch_assoc();
+        $id=$row['id'];
+        $user_username=$row['username'];
+        $user_name=$row['name'];
+        $user_email=$row['email'];
+        }
+        else{
+            header("Location:404.php");
+        }
+    }
+    else {
+        //Check Login
+        if ($login!=1) {
+            header("Location:login.php");
+            exit();
+        }
+    }
+    //Add data into variables
+    $user_gender=$row['gender'];
+    $user_phone_no=$row['phone_no'];
+    $user_country=$row['country'];
+    $user_device_name=$row['device_name'];
+    $user_device_model=$row['device_model'];
+    $user_apertures=$row['apertures'];
+    $user_resolution=$row['resolution'];
+    $user_focal_length=$row['focal_length'];
+    $user_role=$row['role'];
+    $user_total_views=$row['total_views'];
+    $user_total_likes=$row['total_likes'];
+    $user_total_downloads=$row['total_downloads'];
+       ?>
 
         <!-----------------------------------------Profile section------------------------------------------------------>
 
@@ -294,7 +296,21 @@
                                                 <a href="<?php echo $site_url.'/pages/profile.php?u='.$user_username; ?>" class=" text-decoration-none text-white"><img class="upimg" src="https://picsum.photos/id/237/200/300" alt=""> <?php echo $user_username; ?></a>
                                                 <div class="container">
                                                     <div class="row chbtn">
-                                                        <a href="#" class="btn btn-outline-danger cbtn" title="Like This Image" style="margin-right: 5px;"><i class="fas fa-heart"></i> <span><?php echo $row['likes']; ?></span></a>
+                                                    <?php
+                                                        $image_id=$row['id'];
+                                                            //Check liked or not
+                                                            $sql="SELECT * FROM likes WHERE image_id='$image_id' AND user_id='$id'";
+                                                            $result_like=$connect->query($sql);
+                                                            if(($result_like->num_rows>=1) && ($login==1)){
+                                                                $icon="fas";
+                                                                $like_color="color:red;";
+                                                            }
+                                                            else{
+                                                                $icon="fal";
+                                                                $like_color="";
+                                                            }
+                                                    ?>
+                                                        <p class="btn btn-outline-danger cbtn" id="<?php echo $image_id; ?>" onclick="mylike(<?php echo $image_id; ?>)" title="Like This Image" style="margin-right: 5px;"><span style="<?php echo $like_color;?>"><i class="<?php echo $icon; ?> fa-heart"></i></span> <span><?php echo $row['likes']; ?></span></p>
                                                         <a href="<?php echo $site_url; ?>/pages/image.php?id=<?php echo $row['image_id']; ?>" class="btn btn btn-outline-light cbtn" title="View Image" style="margin-left: 5px;"><i class="fas fa-eye"></i> <span><?php echo $row['views']; ?></span></a>
                                                     </div>
                                                 </div>
@@ -392,6 +408,30 @@
                 </div>
             </div>
         </div>
-
+        <?php if ($login==1) { ?>
+        <script>
+        //AJAX Like
+            function mylike(id){
+                $(document).ready(function(){
+                    //Send AJAX request
+                    $.ajax({
+                        url: 'like.php',
+                        type: 'POST',
+                        data: 'user_id=<?php echo $user_id; ?>&image_id='+id,
+                            success: function(result){
+                            $('#'+id).html(result);
+                        }
+                    });
+                });
+            }
+        </script>
+        <?php } else{ ?>
+        <script>
+        //Not Login Like
+            function mylike(id){
+                alert('You need to login to like this post!');
+            }
+        </script>
+        <?php } ?>
     </body>
 </html>
