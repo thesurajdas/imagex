@@ -43,26 +43,28 @@
     </head>
     <body>
         <!--------------------------------------nav Section--------------------------------------------------------->
-       <?php
-            require_once('include/header.php');
-                //Dynamic user profile id
+    <?php
+        require_once('include/header.php');
+        //Dynamic user profile id
     if (isset($_GET['u'])) {
         $username=$_GET['u'];
         //Get Data from SQL
         $sql="SELECT * FROM users WHERE username='$username'";
         $result_log=$connect->query($sql);
         if ($result_log->num_rows==1) {
-        $u_id=$_GET['u'];
-        $sql="SELECT * FROM users WHERE username='$u_id'";
-        $result=$connect->query($sql);
-        $row=$result->fetch_assoc();
-        $id=$row['id'];
-        $user_username=$row['username'];
-        $user_name=$row['name'];
-        $user_email=$row['email'];
+            $u_id=$_GET['u'];
+            $sql="SELECT * FROM users WHERE username='$u_id'";
+            $result=$connect->query($sql);
+            $row=$result->fetch_assoc();
+            $id=$row['id'];
+            $user_username=$row['username'];
+            $user_name=$row['name'];
+            $user_email=$row['email'];
         }
         else{
             header("Location:404.php");
+            exit();
+            // echo "<script>alert('No user found!')</script>";
         }
     }
     else {
@@ -300,12 +302,18 @@
                                                     <div class="row chbtn">
                                                     <?php
                                                         $image_id=$row['id'];
-                                                            //Check liked or not
-                                                            $sql="SELECT * FROM likes WHERE image_id='$image_id' AND user_id='$user_id'";
-                                                            $result_like=$connect->query($sql);
-                                                            if(($result_like->num_rows>=1) && ($login==1)){
-                                                                $icon="fad";
-                                                                $like_color="color:red;";
+                                                            if($login==1){
+                                                                //Check liked or not
+                                                                $sql="SELECT * FROM likes WHERE image_id='$image_id' AND user_id='$user_id'";
+                                                                $result_like=$connect->query($sql);
+                                                                if($result_like->num_rows==1){
+                                                                    $icon="fad";
+                                                                    $like_color="color:red;";
+                                                                }
+                                                                else{
+                                                                    $icon="fal";
+                                                                    $like_color="";
+                                                                }
                                                             }
                                                             else{
                                                                 $icon="fal";

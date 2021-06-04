@@ -10,7 +10,7 @@
             if($result_like->num_rows==1){
                 $input_type="dislike";
             }
-            else{
+            elseif($result_like->num_rows==0){
                 $input_type="like";
                 $like_color="color:red;";
             }
@@ -30,7 +30,7 @@
             }
             elseif($input_type=='dislike'){
                 //delete like
-                $sql="DELETE FROM likes WHERE image_id='$image_id'";
+                $sql="DELETE FROM likes WHERE image_id='$image_id' AND user_id='$user_id'";
                 $connect->query($sql);
                 //Update like
                 $sql="UPDATE images SET likes=likes-1 WHERE id='$image_id'";
