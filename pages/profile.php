@@ -44,8 +44,8 @@
     <body>
         <!--------------------------------------nav Section--------------------------------------------------------->
     <?php
-        require_once('include/header.php');
-        //Dynamic user profile id
+        // require_once('include/header.php');
+    //Dynamic user profile id
     if (isset($_GET['u'])) {
         $username=$_GET['u'];
         //Get Data from SQL
@@ -64,7 +64,6 @@
         else{
             header("Location:404.php");
             exit();
-            // echo "<script>alert('No user found!')</script>";
         }
     }
     else {
@@ -87,7 +86,7 @@
     $user_total_views=$row['total_views'];
     $user_total_likes=$row['total_likes'];
     $user_total_downloads=$row['total_downloads'];
-       ?>
+?>
 
         <!-----------------------------------------Profile section------------------------------------------------------>
 
