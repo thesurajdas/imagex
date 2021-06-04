@@ -17,6 +17,31 @@
             }
         }
     }
+    //Dynamic user profile id
+    if (isset($_GET['u'])) {
+        $username=$_GET['u'];
+        //Get Data from SQL
+        $sql="SELECT * FROM users WHERE username='$username'";
+        $result_log=$connect->query($sql);
+        if ($result_log->num_rows==1) {
+            $u_id=$_GET['u'];
+            $sql="SELECT * FROM users WHERE username='$u_id'";
+            $result=$connect->query($sql);
+            $row=$result->fetch_assoc();
+            $id=$row['id'];
+        }
+        else{
+            header("Location:404.php");
+            exit();
+        }
+    }
+    else {
+        //Check Login
+        if ($login!=1) {
+            header("Location:login.php");
+            exit();
+        }
+    }
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -43,50 +68,24 @@
     </head>
     <body>
         <!--------------------------------------nav Section--------------------------------------------------------->
-    <?php
-        // require_once('include/header.php');
-    //Dynamic user profile id
-    if (isset($_GET['u'])) {
-        $username=$_GET['u'];
-        //Get Data from SQL
-        $sql="SELECT * FROM users WHERE username='$username'";
-        $result_log=$connect->query($sql);
-        if ($result_log->num_rows==1) {
-            $u_id=$_GET['u'];
-            $sql="SELECT * FROM users WHERE username='$u_id'";
-            $result=$connect->query($sql);
-            $row=$result->fetch_assoc();
-            $id=$row['id'];
+        <?php require_once('include/header.php');
+            //Add data into variables
             $user_username=$row['username'];
             $user_name=$row['name'];
             $user_email=$row['email'];
-        }
-        else{
-            header("Location:404.php");
-            exit();
-        }
-    }
-    else {
-        //Check Login
-        if ($login!=1) {
-            header("Location:login.php");
-            exit();
-        }
-    }
-    //Add data into variables
-    $user_gender=$row['gender'];
-    $user_phone_no=$row['phone_no'];
-    $user_country=$row['country'];
-    $user_device_name=$row['device_name'];
-    $user_device_model=$row['device_model'];
-    $user_apertures=$row['apertures'];
-    $user_resolution=$row['resolution'];
-    $user_focal_length=$row['focal_length'];
-    $user_role=$row['role'];
-    $user_total_views=$row['total_views'];
-    $user_total_likes=$row['total_likes'];
-    $user_total_downloads=$row['total_downloads'];
-?>
+            $user_gender=$row['gender'];
+            $user_phone_no=$row['phone_no'];
+            $user_country=$row['country'];
+            $user_device_name=$row['device_name'];
+            $user_device_model=$row['device_model'];
+            $user_apertures=$row['apertures'];
+            $user_resolution=$row['resolution'];
+            $user_focal_length=$row['focal_length'];
+            $user_role=$row['role'];
+            $user_total_views=$row['total_views'];
+            $user_total_likes=$row['total_likes'];
+            $user_total_downloads=$row['total_downloads'];
+        ?>
 
         <!-----------------------------------------Profile section------------------------------------------------------>
 
