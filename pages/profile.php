@@ -279,7 +279,7 @@
                                                         <h3 class="col-10 inm"><a class="card-link il" href="<?php echo $site_url; ?>/pages/image.php?id=<?php echo $row['image_id']; ?>"><?php echo $row['title']; ?></a></h3>
                                                         <div class="btn-group dropleft col-2">
                                                         <?php if(($login==1) && ($user_id==$id)){ ?>
-                                                            <button type="button" class="btn text-white dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><i class="fas fa-ellipsis-v"></i></button>
+                                                            <button type="button" class="btn text-white dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><i class="fad fa-ellipsis-v"></i></button>
                                                         <?php } ?>
                                                             <div class="dropdown-menu">
                                                                 <a class="dropdown-item" href="#">
@@ -301,10 +301,10 @@
                                                     <?php
                                                         $image_id=$row['id'];
                                                             //Check liked or not
-                                                            $sql="SELECT * FROM likes WHERE image_id='$image_id' AND user_id='$id'";
+                                                            $sql="SELECT * FROM likes WHERE image_id='$image_id' AND user_id='$user_id'";
                                                             $result_like=$connect->query($sql);
                                                             if(($result_like->num_rows>=1) && ($login==1)){
-                                                                $icon="fas";
+                                                                $icon="fad";
                                                                 $like_color="color:red;";
                                                             }
                                                             else{
@@ -313,7 +313,7 @@
                                                             }
                                                     ?>
                                                         <p class="btn btn-outline-danger cbtn" id="<?php echo $image_id; ?>" onclick="mylike(<?php echo $image_id; ?>)" title="Like This Image" style="margin-right: 5px;"><span style="<?php echo $like_color;?>"><i class="<?php echo $icon; ?> fa-heart"></i></span> <span><?php echo $row['likes']; ?></span></p>
-                                                        <a href="<?php echo $site_url; ?>/pages/image.php?id=<?php echo $row['image_id']; ?>" class="btn btn btn-outline-light cbtn" title="View Image" style="margin-left: 5px;"><i class="fas fa-eye"></i> <span><?php echo $row['views']; ?></span></a>
+                                                        <a href="<?php echo $site_url; ?>/pages/image.php?id=<?php echo $row['image_id']; ?>" class="btn btn btn-outline-light cbtn" title="View Image" style="margin-left: 5px;"><i class="fad fa-eye"></i> <span><?php echo $row['views']; ?></span></a>
                                                     </div>
                                                 </div>
                                             </div>
@@ -355,11 +355,11 @@
                     <form action="/">
                         <div class="form-row">
                                     <div class="form-group col-md-12">
-                                        <label for="title"><i class="fas fa-file-signature"></i> Image Name</label>
+                                        <label for="title"><i class="fad fa-file-signature"></i> Image Name</label>
                                         <input type="text" name="title" class="fc form-control" id="title" placeholder="Beautiful Nature" minlength="5" maxlength="15" required>
                                     </div>
                                     <div class="form-group col-md-6">
-                                        <label for="inputimgtype"><i class="fas fa-grip-horizontal"></i> Image Type</label>
+                                        <label for="inputimgtype"><i class="fad fa-grip-horizontal"></i> Image Type</label>
                                         <select id="inputimgtype" name="filetype" class="fc form-control" aria-placeholder="Moun" required>
                                             <option selected></option>
                                             <option value="Abstract">Abstract</option>
@@ -373,7 +373,7 @@
                                             <option value="City">City</option>
                                             <option value="Cloud">Cloud</option>
                                             <option value="Dark">Dark</option>
-                                            <option value="Fashion">Fashion</option>
+                                            <option value="fadhion">fadhion</option>
                                             <option value="Flowers">Flowers</option>
                                             <option value="Food">Food</option>
                                             <option value="Macro">Macro</option>
@@ -393,19 +393,19 @@
                                         </select>
                                     </div>
                                     <div class="form-group col-md-6">
-                                        <label for="title"><i class="fas fa-globe-americas"></i> Image Visibility</label>
+                                        <label for="title"><i class="fad fa-globe-americas"></i> Image Visibility</label>
                                         <select id="inputimgtype" name="visibility" class="fc form-control" required>
                                             <option value="Public" selected>Public</option>
                                             <option value="Private">Private</option>
                                         </select>    
                                     </div>
                                 </div>
-                                <button type="submit" name="update" class="fc btn btn-success col-12"><i class="fas fa-check-circle"></i> Save changes</button>    
+                                <button type="submit" name="update" class="fc btn btn-success col-12"><i class="fad fa-check-circle"></i> Save changes</button>    
                         </div>
                         
                     </from>    
                 <div class="modal-footer">
-                    <button type="button" class="fc btn btn-danger col-12" data-dismiss="modal"><i class="fas fa-times-circle"></i> Close</button>
+                    <button type="button" class="fc btn btn-danger col-12" data-dismiss="modal"><i class="fad fa-times-circle"></i> Close</button>
                 </div>
                 </div>
             </div>

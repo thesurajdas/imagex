@@ -26,7 +26,7 @@
                 $sql="SELECT * FROM images WHERE id='$image_id'";
                 $result=$connect->query($sql);
                 $row=$result->fetch_assoc();
-                echo "<span style='".$like_color."'><i class='fas fa-heart'></i></span> ".$row['likes'];
+                echo "<span style='".$like_color."'><i class='fad fa-heart'></i></span> ".$row['likes'];
             }
             elseif($input_type=='dislike'){
                 //delete like

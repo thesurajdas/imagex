@@ -13,7 +13,7 @@
         $p_time=$row_img['time'];
     }
     else{
-        echo "<script>alert('Something Went Wrong!')</script>";
+        header('location: 404.php');
     }
 ?>
 <!DOCTYPE html>
