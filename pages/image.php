@@ -11,6 +11,61 @@
         $cat=$row_img['category'];
         $image_location=$row_img['image_location'];
         $p_time=$row_img['time'];
+
+        //View System
+        //whether ip is from share internet
+        if (!empty($_SERVER['HTTP_CLIENT_IP']))   
+        {
+            $ip_address = $_SERVER['HTTP_CLIENT_IP'];
+        }
+        //whether ip is from proxy
+        elseif (!empty($_SERVER['HTTP_X_FORWARDED_FOR']))  
+        {
+            $ip_address = $_SERVER['HTTP_X_FORWARDED_FOR'];
+        }
+        //whether ip is from remote address
+        else
+        {
+            $ip_address = $_SERVER['REMOTE_ADDR'];
+        }
+    
+        //create cookies
+        $cookie_time = time()+60*60*24*10;
+        if((!isset($_COOKIE['ip_address'])) OR (!isset($_COOKIE['tmp_id']))){
+            //Set IP address cookie
+            if (!isset($_COOKIE['ip_address'])) {
+                $cookie_name = "ip_address";
+                $cookie_value = $ip_address;
+                setcookie($cookie_name,$cookie_value,$cookie_time);
+            }
+            //Set image ID cookie
+            if (!isset($_COOKIE['tmp_id'])) {
+                $cookie_name = "tmp_id";
+                $cookie_value = $img_id;
+                setcookie($cookie_name,$cookie_value,$cookie_time);
+            }
+                //Update page view
+                $sql="UPDATE images SET views=views+1 WHERE image_id='$img_id'";
+                $connect->query($sql);
+        }
+        elseif((isset($_COOKIE['tmp_id'])) && ($_COOKIE['tmp_id']!=$img_id)){
+            //Set Image ID cookie
+            $cookie_name = "tmp_id";
+            $cookie_value = $img_id;
+            setcookie($cookie_name,$cookie_value,$cookie_time);
+            //Set ip address cookie
+            $cookie_name = "ip_address";
+            $cookie_value = $ip_address;
+            setcookie($cookie_name,$cookie_value,$cookie_time);
+            if((isset($_COOKIE['ip_address'])) && ($_COOKIE['ip_address']==$ip_address)){
+                //Update page view
+                $sql="UPDATE images SET views=views+1 WHERE image_id='$img_id'";
+                $connect->query($sql);
+            }
+        }
+        //Show images data
+        $sql="SELECT * FROM images";
+        $result=$connect->query($sql);
     }
     else{
         header('location: 404.php');
@@ -81,10 +136,10 @@
                                         <div class="col-md-4 col-sm-12">
                                             <div class="row">
                                                 <div class="col-6">
-                                                    <h6><i class="fad fa-eye" style="color: #6161bbd6;"></i> Viewes:</h6>    
+                                                    <h6><i class="fad fa-eye" style="color: #6161bbd6;"></i> Views:</h6>    
                                                 </div>
                                                 <div class="col-6">
-                                                    <h6 class="badge" style="color: #fff; background-color: #6161bbd6;">80</h6>    
+                                                    <h6 class="badge" style="color: #fff; background-color: #6161bbd6;"><?php echo $row_img['views']; ?></h6>    
                                                 </div>
                                             </div>    
                                         </div>
