@@ -74,6 +74,7 @@
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <link rel="stylesheet" href="../css/bootstrap.min.css">
         <script src="../js/jquery-3.5.1.slim.min.js"></script>
+        <script src="../js/jquery.min.js"></script>
         <script src="../js/bootstrap.bundle.min.js"></script>
         <link href="../css/fullimg.css" rel="stylesheet">
 
@@ -251,7 +252,27 @@
                     </div>
                     <div class="container">
                         <div class="row justify-content-center">
-                            <a href="#" class="btn btn-danger dg col-md-2 col-sm-12 bt" style="margin-top: 10px"><i class="fad fa-heart"></i> <span> <?php echo $row_img['likes']; ?></span></a>
+                        <?php
+                                                            $image_id=$row_img['id'];
+                                                                if($login==1){
+                                                                    //Check liked or not
+                                                                    $sql="SELECT * FROM likes WHERE image_id='$image_id' AND user_id='$user_id'";
+                                                                    $result_like=$connect->query($sql);
+                                                                    if($result_like->num_rows==1){
+                                                                        $icon="fad";
+                                                                        $like_color="color:red;";
+                                                                    }
+                                                                    else{
+                                                                        $icon="fal";
+                                                                        $like_color="";
+                                                                    }
+                                                                }
+                                                                else{
+                                                                    $icon="fal";
+                                                                    $like_color="";
+                                                                }
+                                                        ?>
+                            <a class="btn btn-danger dg col-md-2 col-sm-12 bt" style="margin-top: 10px" id="<?php echo $image_id; ?>" onclick="mylike(<?php echo $image_id; ?>)"><span style="<?php echo $like_color;?>"><i class="<?php echo $icon; ?> fa-heart"></i></span> <span> <?php echo $row_img['likes']; ?></span></a>
                             <!--<a href="#" class="btn btn-success col-2"><i class="bi bi-download"></i></a>-->
                         </div>
                     </div>
@@ -417,6 +438,31 @@
     $('[data-toggle="tooltip"]').tooltip();   
     });
     </script>
+     <?php if ($login==1) { ?>
+        <script>
+        //AJAX Like
+            function mylike(id){
+                $(document).ready(function(){
+                    //Send AJAX request
+                    $.ajax({
+                        url: 'like.php',
+                        type: 'POST',
+                        data: 'user_id=<?php echo $user_id; ?>&image_id='+id,
+                            success: function(result){
+                            $('#'+id).html(result);
+                        }
+                    });
+                });
+            }
+        </script>
+        <?php } else{ ?>
+        <script>
+        //Not Login Like
+            function mylike(id){
+                alert('You need to login to like this post!');
+            }
+        </script>
+        <?php } ?>
 </body>
 </html>
 
