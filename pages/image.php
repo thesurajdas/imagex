@@ -294,6 +294,7 @@
 	                            $result_img=$connect->query($sql);
 	                            if ($result_img->num_rows>0) {
                                 while($row=$result_img->fetch_assoc()):
+                                if(($row['image_id']!=$img_id)){
                             ?>           
                                 <div class="col-lg-4 col-md-6 col-sm-12 sglry">
                                         <div class="card cds">
@@ -320,7 +321,7 @@
                                                         </div>    
                                                     </div>        
                                                 </div>
-                                                <a href="<?php $image_user_id=$row_img['user_id'];
+                                                <a href="<?php $image_user_id=$row['user_id'];
                                                 $sql="SELECT * FROM users WHERE id='$image_user_id'";
                                                 $result_img_r=$connect->query($sql);
                                                 $row_img_user=$result_img_r->fetch_assoc();
@@ -356,7 +357,7 @@
                                             </div>
                                         </div>
                                     </div>              
-            <?php endwhile;}
+            <?php }endwhile;}
                             else{
                                 echo "<center><b>No Image Found!</b></center>";
                             } ?>
