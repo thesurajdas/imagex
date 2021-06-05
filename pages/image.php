@@ -320,7 +320,13 @@
                                                         </div>    
                                                     </div>        
                                                 </div>
-                                                <a href="<?php echo $site_url.'/pages/profile.php?u='.$user_username; ?>" class=" text-decoration-none text-white"><img class="upimg" src="https://picsum.photos/id/237/200/300" alt=""> <?php echo $user_username; ?></a>
+                                                <a href="<?php $image_user_id=$row_img['user_id'];
+                                                $sql="SELECT * FROM users WHERE id='$image_user_id'";
+                                                $result_img_r=$connect->query($sql);
+                                                $row_img_user=$result_img_r->fetch_assoc();
+                                                $username=$row_img_user['username'];
+                                                $fullname=$row_img_user['name'];
+                                                echo $site_url.'/pages/profile.php?u='.$username; ?>" class=" text-decoration-none text-white"><img class="upimg" src="https://picsum.photos/id/237/200/300" alt=""> <?php echo $fullname; ?></a>
                                                 <div class="container">
                                                     <div class="row chbtn">
                                                         <?php

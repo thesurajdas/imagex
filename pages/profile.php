@@ -295,7 +295,7 @@
                                                         </div>    
                                                     </div>        
                                                 </div>
-                                                <a href="<?php echo $site_url.'/pages/profile.php?u='.$user_username; ?>" class=" text-decoration-none text-white"><img class="upimg" src="https://picsum.photos/id/237/200/300" alt=""> <?php echo $user_username; ?></a>
+                                                <a href="<?php echo $site_url.'/pages/profile.php?u='.$user_username; ?>" class=" text-decoration-none text-white"><img class="upimg" src="https://picsum.photos/id/237/200/300" alt=""> <?php echo $user_name; ?></a>
                                                 <div class="container">
                                                     <div class="row chbtn">
                                                         <?php
