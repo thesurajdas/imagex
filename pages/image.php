@@ -7,11 +7,6 @@
         $sql="SELECT * FROM images WHERE image_id='$img_id'";
         $result_img=$connect->query($sql);
         $row_img=$result_img->fetch_assoc();
-        $title=$row_img['title'];
-        $cat=$row_img['category'];
-        $image_location=$row_img['image_location'];
-        $p_time=$row_img['time'];
-
         //View System
         //whether ip is from share internet
         if (!empty($_SERVER['HTTP_CLIENT_IP']))   
@@ -139,7 +134,7 @@
                                                     <h6><i class="fad fa-eye" style="color: #6161bbd6;"></i> Views:</h6>    
                                                 </div>
                                                 <div class="col-6">
-                                                    <h6 class="badge" style="color: #fff; background-color: #6161bbd6;"><?php echo $row_img['views']; ?></h6>    
+                                                    <h6 class="badge" style="color: #fff; background-color: #6161bbd6;"><?php $views=number_format($row_img['views']); echo $views; ?></h6>    
                                                 </div>
                                             </div>    
                                         </div>
@@ -149,7 +144,7 @@
                                                     <h6><i class="fad fa-heart-circle" style="color: #ff0076d6;"></i> Hearts:</h6>
                                                 </div>
                                                 <div class="col-6">
-                                                    <h6 class="badge" style="color: #fff; background-color: #ff0076d6;">50</h6>
+                                                    <h6 class="badge" style="color: #fff; background-color: #ff0076d6;"><?php $likes=number_format($row_img['likes']); echo $likes; ?></h6>
                                                 </div>
                                             </div>
                                         </div>
@@ -159,7 +154,7 @@
                                                     <h6 style="color: #15c500e0;"></i> Downloads:</h6>
                                                 </div>
                                                 <div class="col-6">
-                                                    <h6 class="badge" style="color: #fff; background-color: #15c500e0;">40</h6>
+                                                    <h6 class="badge" style="color: #fff; background-color: #15c500e0;"><?php $downloads=number_format($row_img['downloads']); echo $downloads; ?></h6>
                                                 </div>
                                             </div>
                                         </div>
@@ -169,7 +164,7 @@
                                                     <h6><i class="fad fa-file-signature" style="color: #0062ccde;"></i> Image Name:</h6>
                                                 </div>
                                                 <div class="col-6">
-                                                    <h6 class="badge" style="color: #fff; background-color: #0062ccde;"><?php echo $title; ?></h6>
+                                                    <h6 class="badge" style="color: #fff; background-color: #0062ccde;"><?php echo $row_img['title']; ?></h6>
                                                 </div>
                                             </div>
                                         </div>
@@ -179,7 +174,7 @@
                                                     <h6><i class="fad fa-grip-vertical" style="color: #ff7600d6;"></i> Image Category:</h6>
                                                 </div>
                                                 <div class="col-6">
-                                                    <h6 class="badge" style="color: #fff; background-color: #ff7600d6;"><?php echo $cat; ?></h6>
+                                                    <h6 class="badge" style="color: #fff; background-color: #ff7600d6;"><?php echo $row_img['category']; ?></h6>
                                                 </div>
                                             </div>
                                         </div>
@@ -189,7 +184,7 @@
                                                     <h6><i class="fad fa-clock" style="color: rgb(0 0 0 / 74%);"></i> Publish On:</h6>
                                                 </div>
                                                 <div class="col-6">
-                                                    <h6 class="badge" style="color: #fff; background-color: rgb(0 0 0 / 74%);"><?php echo $p_time; ?></h6>
+                                                    <h6 class="badge" style="color: #fff; background-color: rgb(0 0 0 / 74%);"><?php $date=date_create($row_img['time']); echo date_format($date,"d F, Y h:i A"); ?></h6>
                                                 </div>
                                             </div>
                                         </div>
@@ -235,7 +230,7 @@
                                                     <h6><i class="fad fa-border-none" style="color: #ff5e00d4"></i> Image Size:</h6>
                                                 </div>
                                                 <div class="col-6">
-                                                    <p class="badge" style="color: #fff; background-color: #ff5e00d4;">283kb</p>
+                                                    <p class="badge" style="color: #fff; background-color: #ff5e00d4;"><?php $image_size=round($row_img['image_size']/1024); echo $image_size." KB"; ?></p>
                                                 </div>
                                             </div>
                                         </div>
@@ -256,7 +251,7 @@
                     </div>
                     <div class="container">
                         <div class="row justify-content-center">
-                            <a href="#" class="btn btn-danger dg col-md-2 col-sm-12 bt" style="margin-top: 10px"><i class="fad fa-heart"></i> <span> 56</span></a>
+                            <a href="#" class="btn btn-danger dg col-md-2 col-sm-12 bt" style="margin-top: 10px"><i class="fad fa-heart"></i> <span> <?php echo $row_img['likes']; ?></span></a>
                             <!--<a href="#" class="btn btn-success col-2"><i class="bi bi-download"></i></a>-->
                         </div>
                     </div>
