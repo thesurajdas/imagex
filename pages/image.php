@@ -102,7 +102,15 @@
                             <div>
                                 <div class="row">
                                     <img class="pimgg ml-3" src="https://dummyimage.com/600x400/000/fff2.jpg" alt="">
-                                    <h4 class="pl-2" style="color: black">username</h4>
+                                    <?php
+                                    $img_user_id=$row_img['user_id'];
+                                    $sql="SELECT * FROM users WHERE id='$img_user_id'";
+                                    $result_img=$connect->query($sql);
+                                    $row_img_user=$result_img->fetch_assoc();
+                                    ?>
+                                    <h4 class="pl-2" style="color: black"><a href="<?php echo $site_url."/".$row_img_user['username']; ?>"><?php
+                                    echo $row_img_user['name'];
+                                    ?></a></h4>
                                 </div>
                             </div>
                             <div class="pr-3">
