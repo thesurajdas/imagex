@@ -245,6 +245,46 @@
                                                 </div>
                                             </div>
                                         </div>
+                                        <div class="col-md-4">
+                                            <div class="row">
+                                                <div class="col-6">
+                                                    <h6><i class="fad fa-water" style="color:darkslategray"></i></i> Focus Distance:</h6>
+                                                </div>
+                                                <div class="col-6">
+                                                    <p class="badge" style="color: #fff; background-color: darkslategray;">0.10m</p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-4">
+                                            <div class="row">
+                                                <div class="col-6">
+                                                    <h6><i class="fab fa-uncharted" style="color:cornflowerblue"></i> Software:</h6>
+                                                </div>
+                                                <div class="col-6">
+                                                    <p class="badge" style="color: #fff; background-color: cornflowerblue;">Lightroom 6.5.0</p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-4">
+                                            <div class="row">
+                                                <div class="col-6">
+                                                    <h6><i class="fad fa-sort-circle" style="color:goldenrod"></i> ISO:</h6>
+                                                </div>
+                                                <div class="col-6">
+                                                    <p class="badge" style="color: #fff; background-color: goldenrod;">165</p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-4">
+                                            <div class="row">
+                                                <div class="col-6">
+                                                    <h6><i class="fad fa-alarm-exclamation" style="color:darkmagenta"></i> Capture Time:</h6>
+                                                </div>
+                                                <div class="col-6">
+                                                    <p class="badge" style="color: #fff; background-color: darkmagenta;">30 May, 2021 09:07 AM</p>
+                                                </div>
+                                            </div>
+                                        </div>
                                     </div>
                                 </div>
                             </div>
