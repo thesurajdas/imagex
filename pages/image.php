@@ -108,7 +108,7 @@
                                     $result_img=$connect->query($sql);
                                     $row_img_user=$result_img->fetch_assoc();
                                     ?>
-                                    <h4 class="pl-2" style="color: black"><a href="<?php echo $site_url."/".$row_img_user['username']; ?>"><?php
+                                    <h4 class="pl-2" style="color: black"><a href="<?php echo $site_url."/pages/profile.php?u=".$row_img_user['username']; ?>"><?php
                                     echo $row_img_user['name'];
                                     ?></a></h4>
                                 </div>
