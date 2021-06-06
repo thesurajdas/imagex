@@ -401,6 +401,7 @@
                             else{
                                 echo "<center><b>No Image Found!</b></center>";
                             } ?>
+                            <!--user uploaded image end-->
         </div>
     </div>
     <!----------------------Footer Section---------------------------------------------------->
