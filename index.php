@@ -51,7 +51,7 @@
                             <a class="nav-link" href="index.php" tabindex="-1" aria-disabled="true" style="color: rgba(18, 18, 221, 0.699);"><i class="fad fa-home" style="color: rgba(18, 18, 221, 0.699);" ></i> Home</a>
                         </li>
                         <li class="nav-item active">
-                            <a class="nav-link" href="pages/trendings.html" tabindex="-1" aria-disabled="true"><i class="fad fa-fire" style=" color: rgb(255, 22, 22);"></i> Trending</a>
+                            <a class="nav-link" href="pages/trending.php" tabindex="-1" aria-disabled="true"><i class="fad fa-fire" style=" color: rgb(255, 22, 22);"></i> Trending</a>
                         </li>
                         <li class="nav-item">
                             <div class="btn-group">
