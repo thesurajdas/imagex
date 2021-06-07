@@ -113,11 +113,11 @@
                                     ?></a></h5>
                                 </div>
                             </div>
-                            <div class="pr-3">
+                            <!-- <div class="pr-3">  ///follow
                                 <div class="row">
-                                   
+                                   <button>follow</button>
                                 </div>
-                            </div>
+                            </div> -->
                         </div>
                     </a>
                 </div>
