@@ -134,6 +134,13 @@
                         </ul>
                         <div class="tab-content" id="myTabContent">
                                 <!---------------image decription------------>
+                                <?php
+                                    // Open a the file from local folder
+                                    $fl="../".$row_img['image_location'];
+                                    $fp = fopen($fl, 'rb');
+                                    // Read the exif headers
+                                    $headers = exif_read_data($fp);
+                                ?>
                             <div class="tab-pane fade show active" id="home" role="tabpanel" aria-labelledby="home-tab">
                                 <div class="container tabcon">
                                     <div class="row">
@@ -209,7 +216,7 @@
                                                     <h6><i class="fad fa-mobile-android" style="color: #6161bbd6;"></i> Camera Used:</h6>
                                                 </div>
                                                 <div class="col-6">
-                                                    <p class="badge" style="color: #fff; background-color: #6161bbd6;">Camera Model</p>
+                                                    <p class="badge" style="color: #fff; background-color: #6161bbd6;"><?php if(isset($headers['Model'])){echo $headers['Model'];} else{echo "Unknown!";} ?></p>
                                                 </div>
                                             </div>
                                         </div>
@@ -219,7 +226,7 @@
                                                     <h6><i class="fad fa-stopwatch" style="color: #ff0000c9"></i> Exposure Time:</h6>
                                                 </div>
                                                 <div class="col-6">
-                                                    <p class="badge" style="color: #fff; background-color: #ff0000c9;">1/430</p>
+                                                    <p class="badge" style="color: #fff; background-color: #ff0000c9;"><?php if(isset($headers['ExposureTime'])){echo $headers['ExposureTime'];} else{echo "Unknown!";} ?></p>
                                                 </div>
                                             </div>
                                         </div>
@@ -229,7 +236,7 @@
                                                     <h6><i class="fad fa-expand-arrows" style="color: #01b528e3;"></i> Resolution:</h6>
                                                 </div>
                                                 <div class="col-6">
-                                                    <p class="badge" style="color: #fff; background-color: #01b528e3;">1911X1434</p>
+                                                    <p class="badge" style="color: #fff; background-color: #01b528e3;"><?php if((isset($headers['COMPUTED']['Height']))&&(isset($headers['COMPUTED']['Width']))){echo $headers['COMPUTED']['Width']."x".$headers['COMPUTED']['Height'];} else{echo "Unknown!";} ?></p>
                                                 </div>
                                             </div>
                                         </div>
@@ -249,7 +256,7 @@
                                                     <h6><i class="fad fa-question-circle" style="color: #00a1ffe8"></i> ƒ:</h6>
                                                 </div>
                                                 <div class="col-6">
-                                                    <p class="badge" style="color: #fff; background-color: #00a1ffe8;">1.7</p>
+                                                    <p class="badge" style="color: #fff; background-color: #00a1ffe8;"><?php if(isset($headers['COMPUTED']['ApertureFNumber'])){echo $headers['COMPUTED']['ApertureFNumber'];} else{echo "Unknown!";} ?></p>
                                                 </div>
                                             </div>
                                         </div>
@@ -259,7 +266,7 @@
                                                     <h6><i class="fad fa-water" style="color:darkslategray"></i></i> Focus Distance:</h6>
                                                 </div>
                                                 <div class="col-6">
-                                                    <p class="badge" style="color: #fff; background-color: darkslategray;">0.10m</p>
+                                                    <p class="badge" style="color: #fff; background-color: darkslategray;"><?php if(isset($headers['FocusDistance'])){echo $headers['FocusDistance'];} else{echo "Unknown!";} ?></p>
                                                 </div>
                                             </div>
                                         </div>
@@ -269,7 +276,7 @@
                                                     <h6><i class="fab fa-uncharted" style="color:cornflowerblue"></i> Software:</h6>
                                                 </div>
                                                 <div class="col-6">
-                                                    <p class="badge" style="color: #fff; background-color: cornflowerblue;">Lightroom 6.5.0</p>
+                                                    <p class="badge" style="color: #fff; background-color: cornflowerblue;"><?php if(isset($headers['Software'])){echo $headers['Software'];} else{echo "Unknown!";} ?></p>
                                                 </div>
                                             </div>
                                         </div>
@@ -279,7 +286,7 @@
                                                     <h6><i class="fad fa-sort-circle" style="color:goldenrod"></i> ISO:</h6>
                                                 </div>
                                                 <div class="col-6">
-                                                    <p class="badge" style="color: #fff; background-color: goldenrod;">165</p>
+                                                    <p class="badge" style="color: #fff; background-color: goldenrod;"><?php if(!empty($headers['ISOSpeedRatings'])){echo $headers['ISOSpeedRatings'];} else{echo "Unknown!";} ?></p>
                                                 </div>
                                             </div>
                                         </div>
@@ -289,7 +296,7 @@
                                                     <h6><i class="fad fa-alarm-exclamation" style="color:darkmagenta"></i> Capture Time:</h6>
                                                 </div>
                                                 <div class="col-6">
-                                                    <p class="badge" style="color: #fff; background-color: darkmagenta;">30 May, 2021 09:07 AM</p>
+                                                    <p class="badge" style="color: #fff; background-color: darkmagenta;"><?php if(!empty($headers['DateTimeOriginal'])){$date=date_create($headers['DateTimeOriginal']); echo date_format($date,"d F, Y h:i A");} else{echo "Unknown!";} ?></</p>
                                                 </div>
                                             </div>
                                         </div>
