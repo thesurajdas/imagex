@@ -28,19 +28,19 @@
         <div class="container shadow-lg p-3 mb-5 bg-white glry" style="border-radius: 1.25rem;">
             <div class="col-12 text-center text-uppercase font-weight-bolder"><h2>All Images</h2></div>
             <div class="container shadow-lg pl-3 pr-3 pt-1 mt-4" style="border-radius: 1.25rem;">
-                <div class="row pl-3 pr-3 pt-3">
-                    <div class="text-right col-12">
-                        <div class="btn-group btn-group-sm" role="group">
-                            <button id="btnGroupDrop1" type="button" class="btn btn-secondary dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" style="border-radius: 1.25rem;"><i class="fad fa-caret-circle-down"></i> Short By</button>
-                            <div class="dropdown-menu" style="min-width: auto;" aria-labelledby="btnGroupDrop1">
-                            <a class="dropdown-item " style="text-align: start; color: rgba(99, 96, 96, 0.856); font-size: 80%; font-weight: 700;" href="#"><i class="fad fa-eye"></i> View</a>
-                            <a class="dropdown-item " style="text-align: start; color: rgba(220, 20, 60, 0.842); font-size: 80%; font-weight: 700;" href="#"><i class="fad fa-heart-circle"></i> Like</a>
-                            <a class="dropdown-item " style="text-align: start; color: rgba(0, 128, 0, 0.815); font-size: 80%; font-weight: 700;" href="#"><i class="fad fa-download"></i> Download</a>
-                            <a class="dropdown-item " style="text-align: start; color: rgba(28, 102, 177, 0.863); font-size: 80%; font-weight: 700;" href="#"><i class="fad fa-share-square"></i> Share</a>
+                    <div class="row pl-3 pr-3 pt-3">
+                        <div class="text-right col-12">
+                            <div class="btn-group btn-group-sm" role="group">
+                                <button id="btnGroupDrop1" type="button" class="btn btn-secondary dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" style="border-radius: 1.25rem;"><i class="fad fa-caret-circle-down"></i> Short By</button>
+                                <div class="dropdown-menu" style="min-width: auto;" aria-labelledby="btnGroupDrop1">
+                                <a class="dropdown-item " style="text-align: start; color: rgba(99, 96, 96, 0.856); font-size: 80%; font-weight: 700;" href="#"><i class="fad fa-eye"></i> View</a>
+                                <a class="dropdown-item " style="text-align: start; color: rgba(220, 20, 60, 0.842); font-size: 80%; font-weight: 700;" href="#"><i class="fad fa-heart-circle"></i> Like</a>
+                                <a class="dropdown-item " style="text-align: start; color: rgba(0, 128, 0, 0.815); font-size: 80%; font-weight: 700;" href="#"><i class="fad fa-download"></i> Download</a>
+                                <a class="dropdown-item " style="text-align: start; color: rgba(28, 102, 177, 0.863); font-size: 80%; font-weight: 700;" href="#"><i class="fad fa-share-square"></i> Share</a>
+                                </div>
                             </div>
                         </div>
                     </div>
-                </div>
                     <div class="row">
                         <div class="col-lg-4 col-md-6 col-sm-12 sglry">
                             <div class="card cds">
@@ -58,13 +58,10 @@
                             </div>
                         </div>                            
                     </div>        
-                </div>
-                <div class="container pn" style="margin-top: 25px;">
-                    <div class="row justify-content-center">
-                        <a href="#" class="btn btn-outline-dark col-2" style="margin-right: 10px;">Previous Page <i class="bi bi-arrow-bar-left"></i></a>
-                        <a href="#" class="btn btn-outline-dark col-2" style="margin-left: 10px;">Next Page <i class="bi bi-arrow-bar-right"></i></a>
-                    </div>         
-                </div>
+            </div>
+                <!----------------------------page options starts here---------------------------------->
+
+                <!----------------------------page options ends here---------------------------------->
             </div>    
         </div>
         <!----------------------Footer Section---------------------------------------------------->
