@@ -98,19 +98,19 @@
             <div class="card cdll shadow-lg">
                 <div class="card-header" style="border-radius: 1.25rem">
                     <a class="text-decoration-none" href="#">
-                        <div class="row justify-content-md-between">
+                        <div class="row">
                             <div>
                                 <div class="row">
-                                    <img class="pimgg ml-3" src="https://dummyimage.com/600x400/000/fff2.jpg" alt="">
+                                    <img class="pimgg ml-4" src="https://dummyimage.com/600x400/000/fff2.jpg" alt="">
                                     <?php
                                     $img_user_id=$row_img['user_id'];
                                     $sql="SELECT * FROM users WHERE id='$img_user_id'";
                                     $result_img=$connect->query($sql);
                                     $row_img_user=$result_img->fetch_assoc();
                                     ?>
-                                    <h4 class="pl-2" style="color: black"><a href="<?php echo $site_url."/pages/profile.php?u=".$row_img_user['username']; ?>"><?php
-                                    echo $row_img_user['name'];
-                                    ?></a></h4>
+                                    <h5 class="pl-2 "><a class="text-decoration-none" href="<?php echo $site_url."/pages/profile.php?u=".$row_img_user['username']; ?>"><?php
+                                    echo $row_img_user['username'];
+                                    ?></a></h5>
                                 </div>
                             </div>
                             <div class="pr-3">
