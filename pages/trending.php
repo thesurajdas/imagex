@@ -108,7 +108,8 @@
                                     } ?>
                                 <!--user uploaded image end-->
             </div>
-        </div>        
+        </div>
+        <div class="text-center"><button type="button" class="btn btn-info mt-4 mb-2" style="border-radius: 1.25rem;"><i class="fad fa-plus-circle"></i> Load More</button></div>
     </div>
     <!----------------------Footer Section---------------------------------------------------->
     <?php require_once('include/footer.php'); ?>

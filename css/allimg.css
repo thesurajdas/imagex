@@ -1,6 +1,11 @@
 .logp{
-    width: 20px;
-    height: 20px;
+    width: 35px;
+    height: 35px;
+}
+
+.sbdr{
+    border: 1px;
+    background-color: #dddfe0de!important;;
 }
 
 .navbar-toggler{
