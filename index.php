@@ -1,3 +1,6 @@
+<?php
+    require_once('connect.php');
+?>
 <!DOCTYPE html>
 <html lang="en">
     <head>
@@ -57,33 +60,13 @@
                             <div class="btn-group">
                                 <button type="button" class="btn btn-default dropdown-toggle text-center" data-toggle="dropdown" style="padding-left: 15%;"><i class="fad fa-bars" style="color: rgba(136, 255, 0, 0.815);"></i> Category</button>
                                 <ul class="dropdown-menu scrollable-menu" role="menu">
-                                    <li><a class="dropdown-item" href="pages/abstract.html">Abstract</a></li>
-                                    <li><a class="dropdown-item" href="pages/art.html">Art</a></li>
-                                    <li><a class="dropdown-item" href="pages/animals.html">Animals</a></li>
-                                    <li><a class="dropdown-item" href="pages/anime.html">Anime</a></li>
-                                    <li><a class="dropdown-item" href="pages/astro.html">Astro</a></li>
-                                    <li><a class="dropdown-item" href="pages/black.html">Black</a></li>
-                                    <li><a class="dropdown-item" href="pages/bridge.html">Bridge</a></li>
-                                    <li><a class="dropdown-item" href="pages/cars.html">Cars</a></li>
-                                    <li><a class="dropdown-item" href="pages/city.html">City</a></li>
-                                    <li><a class="dropdown-item" href="pages/cloud.html">Cloud</a></li>
-                                    <li><a class="dropdown-item" href="pages/dark.html">Dark</a></li>
-                                    <li><a class="dropdown-item" href="pages/fashion.html">Fashion</a></li>
-                                    <li><a class="dropdown-item" href="pages/flowers.html">Flowers</a></li>
-                                    <li><a class="dropdown-item" href="pages/food.html">Food</a></li>
-                                    <li><a class="dropdown-item" href="pages/macro.html">Macro</a></li>
-                                    <li><a class="dropdown-item" href="pages/motorcycles.html">Motorcycles</a></li>
-                                    <li><a class="dropdown-item" href="pages/music.html">Music</a></li>
-                                    <li><a class="dropdown-item" href="pages/motion.html">Motion</a></li>
-                                    <li><a class="dropdown-item" href="pages/nature.html">Nature</a></li>
-                                    <li><a class="dropdown-item" href="pages/other.html">Other</a></li>
-                                    <li><a class="dropdown-item" href="pages/people.html">people</a></li>
-                                    <li><a class="dropdown-item" href="pages/sky">Sky</a></li>
-                                    <li><a class="dropdown-item" href="pages/sport.html">Sport</a></li>
-                                    <li><a class="dropdown-item" href="pages/street.html">Street</a></li>
-                                    <li><a class="dropdown-item" href="pages/technologie.html">Technologie</a></li>
-                                    <li><a class="dropdown-item" href="pages/texture.html">Texture</a></li>
-                                    <li><a class="dropdown-item" href="pages/travel.html">Travel</a></li>
+                                <?php
+                                    $sql="SELECT * FROM categories";
+                                    $result_cat=$connect->query($sql);
+                                    while($row_cat=$result_cat->fetch_assoc()):
+                                ?>
+                                    <li><a class="dropdown-item" href="pages/category.php?id=<?php echo $row_cat['id']; ?>"><?php echo $row_cat['category']; ?></a></li>
+                                    <?php endwhile; ?>
                                 </ul>
                             </div>
                         </li>    

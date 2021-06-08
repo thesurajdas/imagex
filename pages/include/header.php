@@ -37,33 +37,14 @@
                             <div class="btn-group">
                                 <button type="button" class="btn btn-default dropdown-toggle text-center" data-toggle="dropdown" style="padding-left: 15%;"><i class="fad fa-bars" style="color: rgba(136, 255, 0, 0.815);"></i> Category</button>
                                 <ul class="dropdown-menu scrollable-menu" role="menu">
-                                    <li><a class="dropdown-item" href="abstract.html">Abstract</a></li>
-                                    <li><a class="dropdown-item" href="art.html">Art</a></li>
-                                    <li><a class="dropdown-item" href="animals.html">Animals</a></li>
-                                    <li><a class="dropdown-item" href="anime.html">Anime</a></li>
-                                    <li><a class="dropdown-item" href="astro.html">Astro</a></li>
-                                    <li><a class="dropdown-item" href="black.html">Black</a></li>
-                                    <li><a class="dropdown-item" href="bridge.html">Bridge</a></li>
-                                    <li><a class="dropdown-item" href="cars.html">Cars</a></li>
-                                    <li><a class="dropdown-item" href="city.html">City</a></li>
-                                    <li><a class="dropdown-item" href="cloud.html">Cloud</a></li>
-                                    <li><a class="dropdown-item" href="dark.html">Dark</a></li>
-                                    <li><a class="dropdown-item" href="fashion.html">Fashion</a></li>
-                                    <li><a class="dropdown-item" href="flowers.html">Flowers</a></li>
-                                    <li><a class="dropdown-item" href="food.html">Food</a></li>
-                                    <li><a class="dropdown-item" href="macro.html">Macro</a></li>
-                                    <li><a class="dropdown-item" href="motorcycles.html">Motorcycles</a></li>
-                                    <li><a class="dropdown-item" href="music.html">Music</a></li>
-                                    <li><a class="dropdown-item" href="motion.html">Motion</a></li>
-                                    <li><a class="dropdown-item" href="nature.html">Nature</a></li>
-                                    <li><a class="dropdown-item" href="other.html">Other</a></li>
-                                    <li><a class="dropdown-item" href="people.html">people</a></li>
-                                    <li><a class="dropdown-item" href="sky">Sky</a></li>
-                                    <li><a class="dropdown-item" href="sport.html">Sport</a></li>
-                                    <li><a class="dropdown-item" href="street.html">Street</a></li>
-                                    <li><a class="dropdown-item" href="technologie.html">Technologie</a></li>
-                                    <li><a class="dropdown-item" href="texture.html">Texture</a></li>
-                                    <li><a class="dropdown-item" href="travel.html">Travel</a></li>
+                                <?php
+                                    include('../connect.php');
+                                    $sql="SELECT * FROM categories";
+                                    $result_cat=$connect->query($sql);
+                                    while($row_cat=$result_cat->fetch_assoc()):
+                                ?>
+                                    <li><a class="dropdown-item" href="category.php?id=<?php echo $row_cat['id']; ?>"><?php echo $row_cat['category']; ?></a></li>
+                                    <?php endwhile; ?>
                                 </ul>
                             </div>
                         </li>    
