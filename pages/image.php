@@ -273,7 +273,7 @@
                                                     <h6><i class="fad fa-water" style="color:darkslategray"></i></i> Focus Distance:</h6>
                                                 </div>
                                                 <div class="col-6">
-                                                    <p class="badge" style="color: #fff; background-color: darkslategray;"><?php if(isset($headers['FocusDistance'])){echo $headers['FocusDistance'];} else{echo "Unknown!";} ?></p>
+                                                    <p class="badge" style="color: #fff; background-color: darkslategray;"><?php if(isset($headers['COMPUTED']['FocusDistance'])){echo $headers['COMPUTED']['FocusDistance'];} else{echo "Unknown!";} ?></p>
                                                 </div>
                                             </div>
                                         </div>
@@ -293,7 +293,7 @@
                                                     <h6><i class="fad fa-sort-circle" style="color:goldenrod"></i> ISO:</h6>
                                                 </div>
                                                 <div class="col-6">
-                                                    <p class="badge" style="color: #fff; background-color: goldenrod;"><?php if(!empty($headers['ISOSpeedRatings'])){echo $headers['ISOSpeedRatings'][0];} else{echo "Unknown!";} ?></p>
+                                                    <p class="badge" style="color: #fff; background-color: goldenrod;"><?php if(isset($headers['ISOSpeedRatings'])){if(!empty($headers['ISOSpeedRatings'][0])){echo $headers['ISOSpeedRatings'][0];} else{echo $headers['ISOSpeedRatings'];}} else{echo "Unknown!";} ?></p>
                                                 </div>
                                             </div>
                                         </div>
@@ -303,7 +303,7 @@
                                                     <h6><i class="fad fa-alarm-exclamation" style="color:darkmagenta"></i> Capture Time:</h6>
                                                 </div>
                                                 <div class="col-6">
-                                                    <p class="badge" style="color: #fff; background-color: darkmagenta;"><?php if(!empty($headers['DateTimeOriginal'])){$date=date_create($headers['DateTimeOriginal']); echo date_format($date,"d F, Y h:i A");} else{echo "Unknown!";} ?></</p>
+                                                    <p class="badge" style="color: #fff; background-color: darkmagenta;"><?php if(isset($headers['DateTimeOriginal'])){$date=date_create($headers['DateTimeOriginal']); echo date_format($date,"d F, Y h:i A");} else{echo "Unknown!";} ?></</p>
                                                 </div>
                                             </div>
                                         </div>
