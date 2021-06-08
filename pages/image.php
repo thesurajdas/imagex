@@ -286,7 +286,7 @@
                                                     <h6><i class="fad fa-sort-circle" style="color:goldenrod"></i> ISO:</h6>
                                                 </div>
                                                 <div class="col-6">
-                                                    <p class="badge" style="color: #fff; background-color: goldenrod;"><?php if(!empty($headers['ISOSpeedRatings'])){echo $headers['ISOSpeedRatings'];} else{echo "Unknown!";} ?></p>
+                                                    <p class="badge" style="color: #fff; background-color: goldenrod;"><?php if(!empty($headers['ISOSpeedRatings'])){echo $headers['ISOSpeedRatings'][0];} else{echo "Unknown!";} ?></p>
                                                 </div>
                                             </div>
                                         </div>
