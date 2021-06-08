@@ -190,7 +190,14 @@
                                                     <h6><i class="fad fa-grip-vertical" style="color: #ff7600d6;"></i> Image Category:</h6>
                                                 </div>
                                                 <div class="col-6">
-                                                    <h6 class="badge" style="color: #fff; background-color: #ff7600d6;"><?php $category=$row_img['category']; echo $category; ?></h6>
+                                                    <h6 class="badge" style="color: #fff; background-color: #ff7600d6;"><?php
+                                                    //Check category Name
+                                                    $category_id=$row_img['category'];
+                                                        $sql="SELECT * FROM categories WHERE id='$category_id'";
+                                                        $result_cat_name=$connect->query($sql);
+                                                        $row_cat_name=$result_cat_name->fetch_assoc();
+                                                    echo $row_cat_name['category']; 
+                                                    ?></h6>
                                                 </div>
                                             </div>
                                         </div>
@@ -345,7 +352,7 @@
         <div class="row">
                             <?php
 	                            //Get Image Data from Database
-	                            $sql="SELECT * FROM images WHERE category='$category'";
+	                            $sql="SELECT * FROM images WHERE category='$category_id'";
 	                            $result_img=$connect->query($sql);
 	                            if ($result_img->num_rows>0) {
                                 while($row=$result_img->fetch_assoc()):
