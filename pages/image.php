@@ -86,6 +86,9 @@
             .dropdown-toggle::after{
                 border-top: 0;
             }
+            .badge{
+                white-space: unset;
+            }
         </style>
         <script src="../js/fontawesome.js"></script>
     </head>
@@ -260,7 +263,7 @@
                                         <div class="col-md-4">
                                             <div class="row">
                                                 <div class="col-6">
-                                                    <h6><i class="fad fa-question-circle" style="color: #00a1ffe8"></i> ƒ:</h6>
+                                                    <h6><i class="fad fa-question-circle" style="color: #00a1ffe8"></i> Aperture:</h6>
                                                 </div>
                                                 <div class="col-6">
                                                     <p class="badge" style="color: #fff; background-color: #00a1ffe8;"><?php if(isset($headers['COMPUTED']['ApertureFNumber'])){echo $headers['COMPUTED']['ApertureFNumber'];} else{echo "Unknown!";} ?></p>
