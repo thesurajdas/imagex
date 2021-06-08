@@ -129,7 +129,7 @@
                                     </div>
                                 <?php endwhile;}
                                 else{
-                                    echo "<center><b>No Image Found!</b></center>";
+                                    echo "<div class='container text-center'><p class='text-center'>No image Found!</p></div>";
                                     } ?>
                                 <!--user uploaded image end-->
                     </div>        
