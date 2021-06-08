@@ -91,7 +91,7 @@
 
     // Add Click Event on ajaxbtn
     $(document).on("click","#ajaxbtn",function(){
-      $("#ajaxbtn").html("Loading...");
+      $("#ajaxbtn").html("<div class='spinner-border spinner-border-sm text-info' role='status'><span class='sr-only'></span></div> Loading...");
       var pid = $(this).data("id");
       loadTable(pid);
     });
