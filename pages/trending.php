@@ -80,7 +80,7 @@
             $("#pagination").remove();
             $("#loadData").append(data);
           }else{
-            $("#ajaxbtn").html("Finished!");
+            $("#ajaxbtn").html("<i class='fad fa-sad-cry'></i> Finished!");
             $("#ajaxbtn").prop("disabled",true);
           }
           
