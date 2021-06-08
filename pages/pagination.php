@@ -12,7 +12,7 @@ if(isset($_POST['page_no'])){
 	                            $sql="SELECT * FROM images LIMIT {$page},$limit";
 	                            $result_img=$connect->query($sql);
 	                            if ($result_img->num_rows>0) {
-                                ?><?php
+                                ?><div class="row"><?php
                                 while($row=$result_img->fetch_assoc()):
                                     $last_id = $row["id"]; ?>
                                     <div class="col-lg-4 col-md-6 col-sm-12 sglry">
@@ -78,7 +78,7 @@ if(isset($_POST['page_no'])){
                                     </div>
                                     <!--user uploaded image end-->
                                 <?php endwhile; ?>
-                                
+                                </div>
                                 <div class="text-center" id="pagination"> <button type="button" id="ajaxbtn" data-id="<?php echo $last_id; ?>" class="btn btn-info mt-4 mb-2" style="border-radius: 1.25rem;"><i class="fad fa-plus-circle"></i> Load More</button></div>
                                 <?php
                                 }else{

@@ -32,11 +32,9 @@
 
     <div class="container shadow-lg p-3 mb-5 bg-white glry" style="border-radius: 1.25rem;">
         <div  class="col-md-12 pb-3 pt-2"><h1 class="text-center chdr" style="color:crimson"><i class="fad fa-fire"></i> Trendings</h1></div>
-        <div class="container shadow-lg p-3" style="border-radius: 1.25rem;">
-                <div id="loadData" class="row">
+        <div id="loadData" class="container shadow-lg p-3" style="border-radius: 1.25rem;">        
                         <!-- Load Images Here -->
                         <!-- Load Button Here -->
-                </div>
         </div>
     </div>
     <!----------------------Footer Section---------------------------------------------------->
