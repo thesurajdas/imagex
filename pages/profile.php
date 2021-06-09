@@ -256,7 +256,7 @@
                             <a class="nav-link active" id="uimg-tab" data-toggle="tab" href="#uimg" role="tab" aria-controls="uimg" aria-selected="true"><i class="fad fa-folder-upload"></i> Uploads</a>
                         </li>
                         <li class="nav-item" role="presentation">
-                            <a class="nav-link" id="simg-tab" data-toggle="tab" href="#simg" role="tab" aria-controls="simg" aria-selected="false"><i class="fad fa-bookmark" style="color: red;"></i> Saved</a>
+                            <a class="nav-link" id="simg-tab" data-toggle="tab" href="#simg" role="tab" aria-controls="simg" aria-selected="false"><i class="fad fa-bookmark"></i> Saved</a>
                         </li>
                     </ul>
                 </div>    
