@@ -374,6 +374,32 @@
             }
         </script>
         <?php } ?>
+        <!-- Liked Imgaes like system -->
+        <?php if ($login==1) { ?>
+        <script>
+        //AJAX Like
+            function myliked(id){
+                $(document).ready(function(){
+                    //Send AJAX request
+                    $.ajax({
+                        url: 'like-pagination.php',
+                        type: 'POST',
+                        data: 'user_id=<?php echo $user_id; ?>&image_id='+id,
+                            success: function(result){
+                            $('#l'+id).html(result);
+                        }
+                    });
+                });
+            }
+        </script>
+        <?php } else{ ?>
+        <script>
+        //Not Login Like
+            function mylike(id){
+                alert('You need to login to like this post!');
+            }
+        </script>
+        <?php } ?>
 
 <script>
   $(document).ready(function(){
@@ -412,7 +438,7 @@
     // Load Data from Database with Ajax
     function loadTable(page){
       $.ajax({
-        url: "like-pagination.php",
+        url: "liked-image-pagination.php",
         type: "POST",
         data : { page_no : page, id: <?php echo $id; ?> },
         success: function(data){
