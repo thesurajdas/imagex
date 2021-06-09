@@ -360,7 +360,7 @@
                         type: 'POST',
                         data: 'user_id=<?php echo $user_id; ?>&image_id='+id,
                             success: function(result){
-                            $('#'+id).html(result);
+                            $('#like'+id).html(result);
                         }
                     });
                 });
