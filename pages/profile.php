@@ -468,15 +468,18 @@
         //AJAX Delete
             function mydel(id){
                 $(document).ready(function(){
-                    //Send AJAX request
-                    $.ajax({
-                        url: 'delete.php',
-                        type: 'POST',
-                        data: 'user_id=<?php echo $user_id; ?>&image_id='+id,
-                            success: function(result){
-                            $('#'+id).html(result);
-                        }
-                    });
+                    var r = confirm("Are you sure to delete this image?");
+                     if (r == true) {
+                        //Send AJAX request
+                        $.ajax({
+                            url: 'delete.php',
+                            type: 'POST',
+                            data: 'user_id=<?php echo $user_id; ?>&image_id='+id,
+                                success: function(result){
+                                $('#'+id).html(result);
+                            }
+                        });
+                    }
                 });
             }
     </script>

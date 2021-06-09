@@ -9,9 +9,9 @@
             $result_del=$connect->query($sql);
             $row_img_del=$result_del->fetch_assoc();
             if($result_del->num_rows==1){
-                $sql="DELETE FROM imagesx WHERE id='$image_id'";
+                $sql="DELETE FROM images WHERE id='$image_id'";
                 $sql2="DELETE FROM likes WHERE image_id='$image_id'";
-                if($result_delete=$connect->query($sql)==1){
+                if(($connect->query($sql)===TRUE)&&($connect->query($sql2)===TRUE)){
                     echo "<script>alert('Image deleted successfully!');</script>";
                     $fl="../".$row_img_del['image_location'];
                     unlink($fl);
