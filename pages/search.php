@@ -72,23 +72,7 @@
                                             <div class="card-text cds-txt">
                                                 <div class="container" style="padding-left: 0">
                                                     <div class="row">
-                                                        <h3 class="col-10 inm"><a class="card-link il" href="<?php echo $site_url; ?>/pages/image.php?id=<?php echo $row['image_id']; ?>"><?php echo $row['title']; ?></a></h3>
-                                                        <div class="btn-group dropleft col-2">
-                                                        <?php if(($login==1) && ($user_id==$row['user_id'])){ ?>
-                                                            <button type="button" class="btn text-white dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><i class="fad fa-ellipsis-v"></i></button>
-                                                        <?php } ?>
-                                                            <div class="dropdown-menu">
-                                                                <a class="dropdown-item" href="#">
-                                                                    <button type="button" class="btn col-12" data-toggle="modal" data-target="#staticBackdrop"><i class="fad fa-file-edit"></i> Edit</button>
-                                                                </a>
-                                                                <div class="dropdown-divider"></div>
-                                                                <a class="dropdown-item" href="<?php echo $site_url,$row['image_location']; ?>" download="<?php echo $row['title']; ?>">
-                                                                    <button type="button" class="btn col-12" data-toggle="modal" ><i class="fad fa-cloud-download-alt"></i> Download</button>
-                                                                </a>
-                                                                <div class="dropdown-divider"></div>
-                                                                <a class="dropdown-item" href="#"><button type="button" class="btn col-12"><i class="fad fa-trash"></i> Delete</button></a>
-                                                            </div>
-                                                        </div>    
+                                                        <h3 class="col-10 inm"><a class="card-link il" href="<?php echo $site_url; ?>/pages/image.php?id=<?php echo $row['image_id']; ?>"><?php echo $row['title']; ?></a></h3>   
                                                     </div>        
                                                 </div>
                                                 <a href="<?php $image_user_id=$row['user_id'];
