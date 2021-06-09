@@ -72,7 +72,7 @@
     // Load Data from Database with Ajax
     function loadTable(page){
       $.ajax({
-        url: "pagination.php",
+        url: "trending-pagination.php",
         type: "POST",
         data : { page_no : page },
         success: function(data){
