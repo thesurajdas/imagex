@@ -61,11 +61,8 @@
                     <div id="loadData" class="row">
                        <!--User Upoaded image start-->
                         <!--user uploaded image end-->
-                    </div>        
-            </div>
-                <!----------------------------page options starts here---------------------------------->
-
-                <!----------------------------page options ends here---------------------------------->
+                    </div>
+                </div>
             </div>    
         </div>
         <!----------------------Footer Section---------------------------------------------------->

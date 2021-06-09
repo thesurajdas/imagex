@@ -2,15 +2,15 @@
     //Add database connection
     require_once('../auth.php');
     //Check category id available or not
-    if (isset($_GET['id'])) {
-        $id=$_GET['id'];
+    if (isset($_GET['q'])) {
+        $q=$_GET['q'];
     }
     else{
         header("Location:404.php");
         exit();
     }
     //Check category Name
-    $sql="SELECT * FROM categories WHERE id='$id'";
+    $sql="SELECT * FROM categories WHERE id='$q'";
     $result_cat_name=$connect->query($sql);
     $row_cat_name=$result_cat_name->fetch_assoc();
 ?>
@@ -62,7 +62,7 @@
                        <!--User Upoaded image start-->
                        <?php
 	                            //Get Image Data from Database
-	                            $sql="SELECT * FROM images WHERE category='$id'";
+	                            $sql="SELECT * FROM images WHERE title='$q'";
 	                            $result_img=$connect->query($sql);
 	                            if ($result_img->num_rows>0) {
                                 while($row=$result_img->fetch_assoc()): ?>

@@ -39,7 +39,7 @@
                                 <ul class="dropdown-menu scrollable-menu" role="menu">
                                 <?php
                                     include('../connect.php');
-                                    $sql="SELECT * FROM categories";
+                                    $sql="SELECT * FROM categories ORDER BY category ASC";
                                     $result_cat=$connect->query($sql);
                                     while($row_cat=$result_cat->fetch_assoc()):
                                 ?>
@@ -49,9 +49,9 @@
                             </div>
                         </li>    
                     </ul>
-                    <form class="my-2 my-lg-0">
+                    <form action="search.php" method="GET" class="my-2 my-lg-0">
                         <div class="row no-gutters align-items-center">
-                            <input class="form-control sbdr rounded-pill pr-5" type="text" placeholder="Search" id="example-search-input2">
+                            <input name="q" class="form-control sbdr rounded-pill pr-5" type="text" placeholder="Search" id="example-search-input2">
                             <div class="col-auto">
                                 <button class="btn btn-outline-light text-dark border-0 rounded-pill ml-n5" type="button">
                                 <i class="fad fa-search"></i>
