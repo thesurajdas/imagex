@@ -463,5 +463,23 @@
     });
   });
 </script>
+<?php if ($login==1) { ?>
+    <script>
+        //AJAX Delete
+            function mydel(id){
+                $(document).ready(function(){
+                    //Send AJAX request
+                    $.ajax({
+                        url: 'delete.php',
+                        type: 'POST',
+                        data: 'user_id=<?php echo $user_id; ?>&image_id='+id,
+                            success: function(result){
+                            $('#'+id).html(result);
+                        }
+                    });
+                });
+            }
+    </script>
+        <?php }?>
     </body>
 </html>

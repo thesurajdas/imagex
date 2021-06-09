@@ -20,7 +20,7 @@ $last_id = $page+$limit;
 	                            $result_img=$connect->query($sql);
 	                            if ($result_img->num_rows>0) {
                                 while($row=$result_img->fetch_assoc()):?>
-                                    <div id="<?php $row['id'];?>" class="col-lg-4 col-md-6 col-sm-12 sglry">
+                                    <div id="<?php echo $row['id'];?>" class="col-lg-4 col-md-6 col-sm-12 sglry">
                                         <div class="card cds">
                                             <img class="im" src="<?php echo $site_url,$row['image_location']; ?>" alt="Card image cap">
                                             <div class="card-text cds-txt">
@@ -40,7 +40,7 @@ $last_id = $page+$limit;
                                                                     <button type="button" class="btn col-12" data-toggle="modal" ><i class="fad fa-cloud-download-alt"></i> Download</button>
                                                                 </a>
                                                                 <div class="dropdown-divider"></div>
-                                                                <a class="dropdown-item" href="#"><button type="button" class="btn col-12"><i class="fad fa-trash"></i> Delete</button></a>
+                                                                <a class="dropdown-item"><button type="button" onclick="mydel(<?php echo $row['id']; ?>)" class="btn col-12"><i class="fad fa-trash"></i> Delete</button></a>
                                                             </div>
                                                         </div>    
                                                     </div>        
