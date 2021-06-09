@@ -395,7 +395,7 @@
         <?php } else{ ?>
         <script>
         //Not Login Like
-            function mylike(id){
+            function myliked(id){
                 alert('You need to login to like this post!');
             }
         </script>
