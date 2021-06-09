@@ -2,18 +2,19 @@
 
 require_once('../auth.php');
 
-$limit = 6;
+$limit = 3;
 if(isset($_POST['page_no'])){
   $page = $_POST['page_no'];
 }else{
   $page = 0;
 }
+$last_id = $page+$limit;
 	                            //Get Image Data from Database
 	                            $sql="SELECT * FROM images ORDER BY likes DESC LIMIT {$page},$limit";
 	                            $result_img=$connect->query($sql);
 	                            if ($result_img->num_rows>0) {
                                 while($row=$result_img->fetch_assoc()):
-                                    $last_id = 9999999999999; ?>
+                                     ?>
                                     <div class="col-lg-4 col-md-6 col-sm-12 sglry">
                                         <div class="card cds">
                                             <img class="im" src="<?php echo $site_url,$row['image_location']; ?>" alt="Card image cap">

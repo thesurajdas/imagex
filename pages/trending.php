@@ -80,7 +80,7 @@
             $("#pagination").remove();
             $("#loadData").append(data);
           }else{
-            $("#ajaxbtn").html("<i class='fad fa-sad-cry'></i> Top 6 images already shown!");
+            $("#ajaxbtn").html("<i class='fad fa-sad-cry'></i> No more images found!");
             $("#ajaxbtn").prop("disabled",true);
           }
           
