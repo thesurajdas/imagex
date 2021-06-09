@@ -382,7 +382,7 @@
                 $(document).ready(function(){
                     //Send AJAX request
                     $.ajax({
-                        url: 'like-pagination.php',
+                        url: 'liked-like.php',
                         type: 'POST',
                         data: 'user_id=<?php echo $user_id; ?>&image_id='+id,
                             success: function(result){

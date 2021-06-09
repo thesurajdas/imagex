@@ -15,7 +15,7 @@ $last_id = $page+$limit;
 	                            if ($result_img->num_rows>0) {
                                 while($row=$result_img->fetch_assoc()):
                                      ?>
-                                    <div class="col-lg-4 col-md-6 col-sm-12 sglry">
+                                    <div id="<?php $row['id'];?>" class="col-lg-4 col-md-6 col-sm-12 sglry">
                                         <div class="card cds">
                                             <img class="im" src="<?php echo $site_url,$row['image_location']; ?>" alt="Card image cap">
                                             <div class="card-text cds-txt">
