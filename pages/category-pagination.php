@@ -1,19 +1,26 @@
 <?php
 
 require_once('../auth.php');
-
-$limit = 6;
-if(isset($_POST['page_no'])){
-  $page = $_POST['page_no'];
+//Check last page no
+$limit = 2;
+if(isset($_GET['page_no'])){
+  $page = $_GET['page_no'];
 }else{
   $page = 0;
 }
+//Check category id available or not
+if (isset($_GET['id'])) {
+    $id=$_GET['id'];
+}
+else{
+    $id=19;
+}
 	                            //Get Image Data from Database
-	                            $sql="SELECT * FROM images ORDER BY likes DESC LIMIT {$page},$limit";
+	                            $sql="SELECT * FROM images WHERE category={$id} LIMIT {$page},{$limit}";
 	                            $result_img=$connect->query($sql);
 	                            if ($result_img->num_rows>0) {
                                 while($row=$result_img->fetch_assoc()):
-                                    $last_id = 9999999999999; ?>
+                                    $last_id =  $row['id']; ?>
                                     <div class="col-lg-4 col-md-6 col-sm-12 sglry">
                                         <div class="card cds">
                                             <img class="im" src="<?php echo $site_url,$row['image_location']; ?>" alt="Card image cap">
