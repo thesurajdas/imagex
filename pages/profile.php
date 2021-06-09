@@ -256,7 +256,7 @@
                             <a class="nav-link active" id="uimg-tab" data-toggle="tab" href="#uimg" role="tab" aria-controls="uimg" aria-selected="true"><i class="fad fa-folder-upload"></i> Uploads</a>
                         </li>
                         <li class="nav-item" role="presentation">
-                            <a class="nav-link" id="simg-tab" data-toggle="tab" href="#simg" role="tab" aria-controls="simg" aria-selected="false"><i class="fad fa-bookmark" style="color: red;"></i> Saved</a>
+                            <a class="nav-link" id="simg-tab" data-toggle="tab" href="#simg" role="tab" aria-controls="simg" aria-selected="false"><i class="fad fa-bookmark"></i> Saved</a>
                         </li>
                     </ul>
                 </div>    
@@ -327,7 +327,7 @@
                                     </div>
                                 <?php endwhile;}
                                 else{
-                                    echo "<center><b>No Image Found!</b></center>";
+                                    echo " <div class='container text-center'><img style='height: 150px; width: 150px; object-fit: contain;' src='../img/notfound.svg' alt=''><h2 style='padding-top: 20px; padding-bottom: 25px; color: #6c757dd4;'>You Haven't Uploaded Any Images Yet. <a href='upload.php' class='btn btn-success rounded-pill shadow-sm'><i class='fad fa-cloud-upload'></i> Upload Now</a></h2></div> ";
                                     } ?>
 
                                 <!--user uploaded image end-->
