@@ -12,11 +12,11 @@ if (isset($_POST['id'])) {
     $id=$_POST['id'];
 }
 else{
-    $id=19;
+    $id=$user_id;
 }
 $last_id = $page+$limit;
 	                            //Get Image Data from Database
-	                            $sql="SELECT * FROM images WHERE category={$id} LIMIT {$page},{$limit}";
+	                            $sql="SELECT * FROM images WHERE user_id={$id} LIMIT {$page},{$limit}";
 	                            $result_img=$connect->query($sql);
 	                            if ($result_img->num_rows>0) {
                                 while($row=$result_img->fetch_assoc()):?>

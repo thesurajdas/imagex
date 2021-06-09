@@ -99,7 +99,7 @@
     function loadTable(page){
       $.ajax({
         url: "category-pagination.php",
-        type: "GET",
+        type: "POST",
         data : { page_no : page, id: <?php echo $id; ?> },
         success: function(data){
           if(data){
