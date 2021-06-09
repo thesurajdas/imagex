@@ -15,8 +15,15 @@ else{
     $id=$user_id;
 }
 $last_id = $page+$limit;
+
+    //Get User Liked images
+    $sql="SELECT * FROM likes WHERE user_id={$id} LIMIT {$page},{$limit}";
+    $result_liked=$connect->query($sql);
+    if ($result_liked->num_rows>0) {
+    while($row_liked=$result_liked->fetch_assoc()):
+            $img_id=$row_liked['image_id'];
 	                            //Get Image Data from Database
-	                            $sql="SELECT * FROM images WHERE user_id={$id} LIMIT {$page},{$limit}";
+	                            $sql="SELECT * FROM images WHERE id={$img_id}";
 	                            $result_img=$connect->query($sql);
 	                            if ($result_img->num_rows>0) {
                                 while($row=$result_img->fetch_assoc()):?>
@@ -81,7 +88,9 @@ $last_id = $page+$limit;
                                             </div>
                                         </div>
                                     </div>
-                                <?php endwhile; ?>
+                                <?php
+                                endwhile;}endwhile;
+                                ?>
                                 <div class="col-12 text-center" id="pagination-like"> <button type="button" id="ajaxbtn-like" data-id="<?php echo $last_id; ?>" class="btn btn-info mt-4 mb-2" style="border-radius: 1.25rem;"><i class="fad fa-plus-circle"></i> Load More</button></div>
                                 <?php
                                 }else{
