@@ -256,7 +256,7 @@
                             <a class="nav-link active" id="uimg-tab" data-toggle="tab" href="#uimg" role="tab" aria-controls="uimg" aria-selected="true"><i class="fad fa-folder-upload"></i> Uploads</a>
                         </li>
                         <li class="nav-item" role="presentation">
-                            <a class="nav-link" id="simg-tab" data-toggle="tab" href="#simg" role="tab" aria-controls="simg" aria-selected="false"><i class="fad fa-bookmark"></i> Saved</a>
+                            <a class="nav-link" data-toggle="tab" href="#simg" role="tab" aria-controls="simg" aria-selected="false"><i class="fad fa-bookmark"></i> Favourite Images</a>
                         </li>
                     </ul>
                 </div>    
@@ -268,7 +268,7 @@
                         </div>
                         <div class="tab-pane fade" id="simg" role="tabpanel" aria-labelledby="simg-tab">
                             <!-----------saved images starts hare-->
-                                <div class="row">
+                                <div id="loadLiked" class="row">
                                     
                                 </div>
                             <!-----------saved mimages end hare-->
@@ -404,6 +404,37 @@
       loadTable(pid);
     });
 
+  });
+</script>
+<!-- Liked Images Show -->
+<script>
+  $(document).ready(function(){
+    // Load Data from Database with Ajax
+    function loadTable(page){
+      $.ajax({
+        url: "like-pagination.php",
+        type: "POST",
+        data : { page_no : page, id: <?php echo $id; ?> },
+        success: function(data){
+          if(data){
+            $("#pagination-like").remove();
+            $("#loadLiked").append(data);
+          }else{
+            $("#ajaxbtn-like").html("<i class='fad fa-sad-cry'></i> No more images found!");
+            $("#ajaxbtn-like").prop("disabled",true);
+          }
+          
+        }
+      });
+    }
+    loadTable();
+
+    // Add Click Event on ajaxbtn
+    $(document).on("click","#ajaxbtn-like",function(){
+      $("#ajaxbtn-like").html("<div class='spinner-border spinner-border-sm text-info' role='status'><span class='sr-only'></span></div> Loading...");
+      var pid = $(this).data("id");
+      loadTable(pid);
+    });
   });
 </script>
     </body>
