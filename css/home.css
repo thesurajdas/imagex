@@ -18,6 +18,7 @@
 .logp{
     width: 35px;
     height: 35px;
+    object-fit: cover;
 }
 
 .fstcon{
