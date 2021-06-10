@@ -19,6 +19,7 @@ if(isset($_COOKIE['user_id'])){
         $user_name=$row['name'];
         $user_email=$row['email'];
         $last_active=$row['last_active'];
+        $user_avatar=$row['avatar'];
         //Get stats Table data
         $today_date=date('Y-m-d');
         $sql_stats="SELECT * FROM stats WHERE id=1;";

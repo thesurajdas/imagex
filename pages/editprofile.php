@@ -13,6 +13,7 @@
     $user_role=$row['role'];
     $user_birth_date=$row['birth_date'];
     $user_zip_code=$row['zip_code'];
+    $user_avatar=$row['avatar'];
 
     //Save Personal Details
     if (isset($_REQUEST['psave'])) {
@@ -110,9 +111,9 @@
 //Upload Profile Picture
 	$time=date('Y-m-d H:i:s');
 	//Upload Image
-	if (isset($_REQUEST['upload'])) {
+	if (isset($_REQUEST['a-upload'])) {
         if ($_FILES['file']=="") {
-            echo "<script>alert('All fields are required!');</script>";
+            echo "<script>alert('Please select a profile picture!');</script>";
         }
         else{
                 $file=$_FILES['file'];
@@ -123,24 +124,18 @@
                 $file_name=bin2hex(random_bytes(5));
                 $file_full_name=$file_name.".".$file_ext_check;
                 $vaild_file_ext=array('png','jpeg','jpg');
-                $image_location="/upload/images/".$file_full_name;
+                $image_location="upload/profile/".$file_full_name;
                 $upload_location="../upload/profile/".$file_full_name;
                 //add extra data for database table
                 $image_id=$file_name;
                 $image_size=$file['size'];
-                $title=$_REQUEST['title'];
-                $visibility=0;
-                if ($_REQUEST['visibility']=='Private') {
-                    $visibility=1;
-                }
-                $category=$_REQUEST['filetype'];
                 //check file size
                 if (($file['size']>=100000) && ($file['size']<=5242880)) {
                     //Check file extention and upload
                     if (in_array($file_ext_check,$vaild_file_ext)) {
-                        $sql="INSERT INTO images (user_id, image_id, image_size, title, visibility, time, image_location, category) VALUES('$id','$image_id', '$image_size','$title','$visibility','$time','$image_location','$category')";
+                        $sql="UPDATE users set avatar='$image_location' WHERE id='$id'";
                         if(($connect->query($sql)==1) && (move_uploaded_file($_FILES['file']['tmp_name'],$upload_location)==1)){
-                                echo "<script>alert('Uploaded Successfully!')</script>";
+                                header("Location:editprofile.php?success-avatar=1#pp");
                         }
                         else{
                             echo "<script>alert('Unable to store the file!')</script>";
@@ -155,7 +150,7 @@
                 }
             }
             else{
-                echo "<script>alert('Something went wrong!')</script>";
+                header("Location:editprofile.php?success-avatar=0#pp");
             }
         }
 	}
@@ -189,29 +184,40 @@
         <?php require_once('include/header.php'); ?>
         
         <!-------------------------------------------Form section--------------------------->
-        <div class="container fstcon">
+        <div class="container fstcon" id="pp">
             <div class="card shadow" style="padding-bottom: 20px">
                 <h4 class="mtxt">Profile Picture</h4>
                 <hr class="mb-4">
+                <?php if((isset($_GET['success-avatar'])) && ($_GET['success-avatar']==1)){echo '<div class="alert alert-success alert-dismissible fade show" role="alert">
+                Profile Picture Updated Sueccssfully!
+                <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                  <span aria-hidden="true">&times;</span>
+                </button>
+              </div>';} elseif((isset($_GET['success-avatar'])) && ($_GET['success-avatar']==0)){echo '<div class="alert alert-danger alert-dismissible fade show" role="alert">
+                Something Went Wrong!
+                <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                  <span aria-hidden="true">&times;</span>
+                </button>
+              </div>';} ?>
                 <div class="col-sm-12">
                     <div class="pimg">
-                        <img class="pdp" src="../img/avatar.png" alt="">
+                        <img class="pdp" src="<?php echo $site_url."/".$user_avatar; ?>">
                     </div>
                 </div>
-                <form class="mfrm" style="text-align: center" action="/" method="POST">
+                <form class="mfrm" style="text-align: center" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]);?>" method="POST" enctype="multipart/form-data">
                     <div class="form-row">
                         <div class="form-group col-12">
                             <div class="input-group mb-3">
                                 <div class="input-group-prepend">
                                 </div>
                                 <div class="custom-file">
-                                    <input type="file" class="custom-file-input" id="inputGroupFile01" aria-describedby="inputGroupFileAddon01" accept="image/*">
+                                    <input type="file" name="file" class="custom-file-input" id="inputGroupFile01" aria-describedby="inputGroupFileAddon01" accept="image/*">
                                     <label class="custom-file-label" style="border-radius: 1.25rem;" for="inputGroupFile01">Choose Profile Picture</label>
                                 </div>
                             </div>
                         </div>
                     </div>
-                    <button type="submit" class="btn btn-primary bt" name="upload"><i class="fad fa-upload"></i> upload</button>
+                    <button type="submit" class="btn btn-primary bt" name="a-upload"><i class="fad fa-upload"></i> upload</button>
                 </form>    
             </div>
         </div>    

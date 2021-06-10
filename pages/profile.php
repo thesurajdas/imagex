@@ -81,6 +81,7 @@
             $user_apertures=$row['apertures'];
             $user_resolution=$row['resolution'];
             $user_focal_length=$row['focal_length'];
+            $user_avatar=$row['avatar'];
             $user_role=$row['role'];
             $user_total_views=$row['total_views'];
             $user_total_likes=$row['total_likes'];
@@ -95,7 +96,7 @@
                 <div class="row" style="padding-top: 25px;">
                     <div class="col-md-4">
                         <div class="profile-img">
-                            <img class="rounded-circle pix" src="../img/avatar.png" alt=""/>
+                            <img class="rounded-circle pix" src="<?php echo $site_url."/".$user_avatar; ?>" alt=""/>
                         </div>
                     </div>
                     <div class="col-md-6">

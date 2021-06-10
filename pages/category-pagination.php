@@ -35,7 +35,8 @@ $last_id = $page+$limit;
                                                 $row_img_user=$result_img_r->fetch_assoc();
                                                 $username=$row_img_user['username'];
                                                 $fullname=$row_img_user['name'];
-                                                echo $site_url.'/pages/profile.php?u='.$username; ?>" class=" text-decoration-none text-white"><img class="upimg" src="https://picsum.photos/id/237/200/300" alt=""> <?php echo $fullname; ?></a>
+                                                $user_avatar=$row_img_user['avatar'];
+                                                echo $site_url.'/pages/profile.php?u='.$username; ?>" class=" text-decoration-none text-white"><img class="upimg" src="<?php echo $site_url."/".$user_avatar; ?>" alt=""> <?php echo $fullname; ?></a>
                                                 <div class="container">
                                                     <div class="row chbtn">
                                                         <?php
