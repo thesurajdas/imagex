@@ -95,7 +95,7 @@
                 <div class="row" style="padding-top: 25px;">
                     <div class="col-md-4">
                         <div class="profile-img">
-                            <img class="rounded-circle pix" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS52y5aInsxSm31CvHOFHWujqUx_wWTS9iM6s7BAm21oEN_RiGoog" alt=""/>
+                            <img class="rounded-circle pix" src="../img/avatar.png" alt=""/>
                         </div>
                     </div>
                     <div class="col-md-6">
