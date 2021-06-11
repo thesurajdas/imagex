@@ -34,8 +34,6 @@ $result_stats=$connect->query($sql_stats);
 $r_stats=$result_stats->fetch_assoc();
 $stats_date=$r_stats['date'];
 $today_active_users=$r_stats['today_active_users'];
-$total_image_upload=$r_stats['total_image_upload'];
-$today_image_upload=$r_stats['today_image_upload'];
 //Active Users
 $sql="SELECT * FROM users WHERE active=0;";
 $active_users=$connect->query($sql);
@@ -44,6 +42,17 @@ $total_active_users=$active_users->num_rows;
 $sql5="SELECT * FROM users;";
 $total=$connect->query($sql5);
 $total=$total->num_rows;
+//Get total images data
+$sql="SELECT * FROM images";
+$result_img=$connect->query($sql);
+$row_img=$result_img->fetch_assoc();
+$total_image_upload=$result_img->num_rows;
+$today_image_upload=0;
+while($row_img=$result_img->fetch_assoc()){
+  if (strpos($row_img['time'], $today_date) !== false) {
+    $today_image_upload=$today_image_upload+1;
+  }
+}
 ?>
 <!DOCTYPE html>
 <html lang="en">
