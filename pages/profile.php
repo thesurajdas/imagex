@@ -137,9 +137,11 @@
                             </ul>
                         </div>
                     </div>
+                    <?php if($login==1):?>
                     <div class="col-md-2 d-none d-xl-block d-lg-block d-xl-none">
                         <a href="editprofile.php" class="btn btn-outline-warning profile-edit-btn">Edit Profile</a>
                     </div>
+                    <?php endif; ?>
                 </div>
                 <div class="row">
                     <div class="col-md-4 d-none d-xl-block d-lg-block d-xl-none">
@@ -257,7 +259,7 @@
                             <a class="nav-link active" id="uimg-tab" data-toggle="tab" href="#uimg" role="tab" aria-controls="uimg" aria-selected="true"><i class="fad fa-folder-upload"></i> Uploads</a>
                         </li>
                         <li class="nav-item" role="presentation">
-                            <a class="nav-link" data-toggle="tab" href="#simg" role="tab" aria-controls="simg" aria-selected="false"><i class="fad fa-bookmark"></i> Favourite Images</a>
+                            <a class="nav-link" data-toggle="tab" href="#simg" role="tab" aria-controls="simg" aria-selected="false"><i class="fad fa-bookmark"></i> Favourites</a>
                         </li>
                     </ul>
                 </div>    
