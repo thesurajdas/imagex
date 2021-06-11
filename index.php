@@ -117,8 +117,8 @@
         <div class="searchbar">
             <div class="container">
                 <form action="">
-                    <div class="row no-gutters mt-3 align-items-center">
-                        <input class="form-control sbdr bg-light rounded-pill pr-5" type="text" placeholder="Search Images Eg: Nature, Potrait, Abstract etc." id="example-search-input2" style="height: 48px;">
+                    <div class="row no-gutters mt-3 justify-content-center">
+                        <input class="form-control col-md-10 sbdr bg-light rounded-pill pr-5" type="text" placeholder="Search Images Eg: Nature, Potrait, Abstract etc." id="example-search-input2" style="padding-left: 25px">
                         <div class="col-auto">
                             <button class="btn btn-outline-light text-dark border-0 rounded-pill ml-n5" type="button">
                                 <i class="fas fa-search"></i>
@@ -175,148 +175,247 @@
         </div>
 
         <!-----------------------------------------------image-section-------------------------------------------->
-
-        <div class="container shadow-lg p-3 mb-5 bg-white rounded my-3 glry">
-            <div class="row">
-                    <div class="col-lg-4 col-md-6 col-sm-12 sglry">
-                        <div class="card cds">
-                            <img class="im" src="https://dummyimage.com/600x400/000/fff2.jpg" alt="Card image cap">
-                            <div class="card-text cds-txt">
-                                <h3>Image Name</h3>
-                                <a href="" class=" text-decoration-none text-white"><h5><img class="upimg" src="https://picsum.photos/id/237/200/300" alt=""> username</h5></a>
-                                <div class="container">
-                                    <div class="row chbtn">
-                                        <a href="#" class="btn btn-outline-danger cbtn" title="Save This Image" style="margin-right: 5px;"><i class="fas fa-heart"></i> <span>500</span></a>
-                                        <a href="#" class="btn btn btn-outline-light cbtn" title="View Image" style="margin-left: 5px;"><i class="fad fa-heart"></i> <span>500</span></a>
+        <div class="container shadow-lg p-3 mt-4 mb-5 my-3" style="border-radius: 1.25rem;">
+            <div class="container shadow-lg p-3 mb-5 bg-white my-3 glry" style="border-radius: 1.25rem">
+                <h3 class="text-center " data-toggle="tooltip" title="Best Of Week" style="color: #047dffc7"><i class="fad fa-star-of-david"></i> Featured</h3>
+                <hr class="mb-3" style="border-radius: 1.25rem; border-top: 5px solid #dae0e5c4;">
+                <div class="row">
+                            <div class="col-lg-4 col-md-6 col-sm-12 sglry">
+                                <div class="card cds">
+                                    <img class="im" src="https://dummyimage.com/600x400/000/fff2.jpg" alt="Card image cap">
+                                    <div class="card-text cds-txt">
+                                        <h3>Image Name</h3>
+                                        <a href="" class=" text-decoration-none text-white"><h5><img class="upimg" src="https://picsum.photos/id/237/200/300" alt=""> username</h5></a>
+                                        <div class="container">
+                                            <div class="row chbtn">
+                                                <a href="#" class="btn btn-outline-danger cbtn" title="Save This Image" style="margin-right: 5px;"><i class="fas fa-heart"></i> <span>500</span></a>
+                                                <a href="#" class="btn btn btn-outline-light cbtn" title="View Image" style="margin-left: 5px;"><i class="fad fa-heart"></i> <span>500</span></a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>         
+                            <div class="col-lg-4 col-md-6 col-sm-12 sglry">
+                                <div class="card cds">
+                                    <img class="im" src="https://dummyimage.com/600x400/000/fff2.jpg" alt="Card image cap">
+                                    <div class="card-text cds-txt">
+                                        <h3>Image Name</h3>
+                                        <a href="" class=" text-decoration-none text-white"><h5><img class="upimg" src="https://picsum.photos/id/237/200/300" alt=""> username</h5></a>
+                                        <div class="container">
+                                            <div class="row chbtn">
+                                                <a href="#" class="btn btn-outline-danger cbtn" title="Save This Image" style="margin-right: 5px;"><i class="fas fa-heart"></i> <span>500</span></a>
+                                                <a href="#" class="btn btn btn-outline-light cbtn" title="View Image" style="margin-left: 5px;"><i class="fad fa-eye"></i> <span>500</span></a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>               
+                            <div class="col-lg-4 col-md-6 col-sm-12 sglry">
+                                <div class="card cds">
+                                    <img class="im" src="https://dummyimage.com/600x400/000/fff2.jpg" alt="Card image cap">
+                                    <div class="card-text cds-txt">
+                                        <h3>Image Name</h3>
+                                        <a href="" class=" text-decoration-none text-white"><h5><img class="upimg" src="https://picsum.photos/id/237/200/300" alt=""> username</h5></a>
+                                        <div class="container">
+                                            <div class="row chbtn">
+                                                <a href="#" class="btn btn-outline-danger cbtn" title="Save This Image" style="margin-right: 5px;"><i class="fas fa-heart"></i> <span>500</span></a>
+                                                <a href="#" class="btn btn btn-outline-light cbtn" title="View Image" style="margin-left: 5px;"><i class="fad fa-eye"></i> <span>500</span></a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>         
+                            <div class="col-lg-4 col-md-6 col-sm-12 sglry">
+                                <div class="card cds">
+                                    <img class="im" src="https://dummyimage.com/600x400/000/fff2.jpg" alt="Card image cap">
+                                    <div class="card-text cds-txt">
+                                        <h3>Image Name</h3>
+                                        <a href="" class=" text-decoration-none text-white"><h5><img class="upimg" src="https://picsum.photos/id/237/200/300" alt=""> username</h5></a>
+                                        <div class="container">
+                                            <div class="row chbtn">
+                                                <a href="#" class="btn btn-outline-danger cbtn" title="Save This Image" style="margin-right: 5px;"><i class="fas fa-heart"></i> <span>500</span></a>
+                                                <a href="#" class="btn btn btn-outline-light cbtn" title="View Image" style="margin-left: 5px;"><i class="fad fa-heart"></i> <span>500</span></a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>         
+                            <div class="col-lg-4 col-md-6 col-sm-12 sglry">
+                                <div class="card cds">
+                                    <img class="im" src="https://dummyimage.com/600x400/000/fff2.jpg" alt="Card image cap">
+                                    <div class="card-text cds-txt">
+                                        <h3>Image Name</h3>
+                                        <a href="" class=" text-decoration-none text-white"><h5><img class="upimg" src="https://picsum.photos/id/237/200/300" alt=""> username</h5></a>
+                                        <div class="container">
+                                            <div class="row chbtn">
+                                                <a href="#" class="btn btn-outline-danger cbtn" title="Save This Image" style="margin-right: 5px;"><i class="fas fa-heart"></i> <span>500</span></a>
+                                                <a href="#" class="btn btn btn-outline-light cbtn" title="View Image" style="margin-left: 5px;"><i class="fad fa-eye"></i> <span>500</span></a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>               
+                            <div class="col-lg-4 col-md-6 col-sm-12 sglry">
+                                <div class="card cds">
+                                    <img class="im" src="https://dummyimage.com/600x400/000/fff2.jpg" alt="Card image cap">
+                                    <div class="card-text cds-txt">
+                                        <h3>Image Name</h3>
+                                        <a href="" class=" text-decoration-none text-white"><h5><img class="upimg" src="https://picsum.photos/id/237/200/300" alt=""> username</h5></a>
+                                        <div class="container">
+                                            <div class="row chbtn">
+                                                <a href="#" class="btn btn-outline-danger cbtn" title="Save This Image" style="margin-right: 5px;"><i class="fas fa-heart"></i> <span>500</span></a>
+                                                <a href="#" class="btn btn btn-outline-light cbtn" title="View Image" style="margin-left: 5px;"><i class="fad fa-eye"></i> <span>500</span></a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>         
+                </div>                  
+            </div>
+            <div class="container shadow-lg p-3 mb-5 bg-white my-3 glry" style="border-radius: 1.25rem">
+                <h3 class="text-center " data-toggle="tooltip" title="Letest Images" style="color: #00bb3a"><i class="fad fa-layer-plus"></i> Fresh Captured</h3>
+                <hr class="mb-3" style="border-radius: 1.25rem; border-top: 5px solid #dae0e5c4;">
+                <div class="row">
+                        <div class="col-lg-4 col-md-6 col-sm-12 sglry">
+                            <div class="card cds">
+                                <img class="im" src="https://dummyimage.com/600x400/000/fff2.jpg" alt="Card image cap">
+                                <div class="card-text cds-txt">
+                                    <h3>Image Name</h3>
+                                    <a href="" class=" text-decoration-none text-white"><h5><img class="upimg" src="https://picsum.photos/id/237/200/300" alt=""> username</h5></a>
+                                    <div class="container">
+                                        <div class="row chbtn">
+                                            <a href="#" class="btn btn-outline-danger cbtn" title="Save This Image" style="margin-right: 5px;"><i class="fas fa-heart"></i> <span>500</span></a>
+                                            <a href="#" class="btn btn btn-outline-light cbtn" title="View Image" style="margin-left: 5px;"><i class="fad fa-heart"></i> <span>500</span></a>
+                                        </div>
                                     </div>
                                 </div>
                             </div>
-                        </div>
-                    </div>         
-                    <div class="col-lg-4 col-md-6 col-sm-12 sglry">
-                        <div class="card cds">
-                            <img class="im" src="https://dummyimage.com/600x400/000/fff2.jpg" alt="Card image cap">
-                            <div class="card-text cds-txt">
-                                <h3>Image Name</h3>
-                                <a href="" class=" text-decoration-none text-white"><h5><img class="upimg" src="https://picsum.photos/id/237/200/300" alt=""> username</h5></a>
-                                <div class="container">
-                                    <div class="row chbtn">
-                                        <a href="#" class="btn btn-outline-danger cbtn" title="Save This Image" style="margin-right: 5px;"><i class="fas fa-heart"></i> <span>500</span></a>
-                                        <a href="#" class="btn btn btn-outline-light cbtn" title="View Image" style="margin-left: 5px;"><i class="fad fa-eye"></i> <span>500</span></a>
+                        </div>         
+                        <div class="col-lg-4 col-md-6 col-sm-12 sglry">
+                            <div class="card cds">
+                                <img class="im" src="https://dummyimage.com/600x400/000/fff2.jpg" alt="Card image cap">
+                                <div class="card-text cds-txt">
+                                    <h3>Image Name</h3>
+                                    <a href="" class=" text-decoration-none text-white"><h5><img class="upimg" src="https://picsum.photos/id/237/200/300" alt=""> username</h5></a>
+                                    <div class="container">
+                                        <div class="row chbtn">
+                                            <a href="#" class="btn btn-outline-danger cbtn" title="Save This Image" style="margin-right: 5px;"><i class="fas fa-heart"></i> <span>500</span></a>
+                                            <a href="#" class="btn btn btn-outline-light cbtn" title="View Image" style="margin-left: 5px;"><i class="fad fa-eye"></i> <span>500</span></a>
+                                        </div>
                                     </div>
                                 </div>
                             </div>
-                        </div>
-                    </div>               
-                    <div class="col-lg-4 col-md-6 col-sm-12 sglry">
-                        <div class="card cds">
-                            <img class="im" src="https://dummyimage.com/600x400/000/fff2.jpg" alt="Card image cap">
-                            <div class="card-text cds-txt">
-                                <h3>Image Name</h3>
-                                <a href="" class=" text-decoration-none text-white"><h5><img class="upimg" src="https://picsum.photos/id/237/200/300" alt=""> username</h5></a>
-                                <div class="container">
-                                    <div class="row chbtn">
-                                        <a href="#" class="btn btn-outline-danger cbtn" title="Save This Image" style="margin-right: 5px;"><i class="fas fa-heart"></i> <span>500</span></a>
-                                        <a href="#" class="btn btn btn-outline-light cbtn" title="View Image" style="margin-left: 5px;"><i class="fad fa-eye"></i> <span>500</span></a>
+                        </div>               
+                        <div class="col-lg-4 col-md-6 col-sm-12 sglry">
+                            <div class="card cds">
+                                <img class="im" src="https://dummyimage.com/600x400/000/fff2.jpg" alt="Card image cap">
+                                <div class="card-text cds-txt">
+                                    <h3>Image Name</h3>
+                                    <a href="" class=" text-decoration-none text-white"><h5><img class="upimg" src="https://picsum.photos/id/237/200/300" alt=""> username</h5></a>
+                                    <div class="container">
+                                        <div class="row chbtn">
+                                            <a href="#" class="btn btn-outline-danger cbtn" title="Save This Image" style="margin-right: 5px;"><i class="fas fa-heart"></i> <span>500</span></a>
+                                            <a href="#" class="btn btn btn-outline-light cbtn" title="View Image" style="margin-left: 5px;"><i class="fad fa-eye"></i> <span>500</span></a>
+                                        </div>
                                     </div>
                                 </div>
                             </div>
-                        </div>
-                    </div>               
-                    <div class="col-lg-4 col-md-6 col-sm-12 sglry">
-                        <div class="card cds">
-                            <img class="im" src="https://dummyimage.com/600x400/000/fff2.jpg" alt="Card image cap">
-                            <div class="card-text cds-txt">
-                                <h3>Image Name</h3>
-                                <a href="" class=" text-decoration-none text-white"><h5><img class="upimg" src="https://picsum.photos/id/237/200/300" alt=""> username</h5></a>
-                                <div class="container">
-                                    <div class="row chbtn">
-                                        <a href="#" class="btn btn-outline-danger cbtn" title="Save This Image" style="margin-right: 5px;"><i class="fas fa-heart"></i> <span>500</span></a>
-                                        <a href="#" class="btn btn btn-outline-light cbtn" title="View Image" style="margin-left: 5px;"><i class="fad fa-eye"></i> <span>500</span></a>
+                        </div>               
+                        <div class="col-lg-4 col-md-6 col-sm-12 sglry">
+                            <div class="card cds">
+                                <img class="im" src="https://dummyimage.com/600x400/000/fff2.jpg" alt="Card image cap">
+                                <div class="card-text cds-txt">
+                                    <h3>Image Name</h3>
+                                    <a href="" class=" text-decoration-none text-white"><h5><img class="upimg" src="https://picsum.photos/id/237/200/300" alt=""> username</h5></a>
+                                    <div class="container">
+                                        <div class="row chbtn">
+                                            <a href="#" class="btn btn-outline-danger cbtn" title="Save This Image" style="margin-right: 5px;"><i class="fas fa-heart"></i> <span>500</span></a>
+                                            <a href="#" class="btn btn btn-outline-light cbtn" title="View Image" style="margin-left: 5px;"><i class="fad fa-eye"></i> <span>500</span></a>
+                                        </div>
                                     </div>
                                 </div>
                             </div>
-                        </div>
-                    </div>         
-                    <div class="col-lg-4 col-md-6 col-sm-12 sglry">
-                        <div class="card cds">
-                            <img class="im" src="https://dummyimage.com/600x400/000/fff2.jpg" alt="Card image cap">
-                            <div class="card-text cds-txt">
-                                <h3>Image Name</h3>
-                                <a href="" class=" text-decoration-none text-white"><h5><img class="upimg" src="https://picsum.photos/id/237/200/300" alt=""> username</h5></a>
-                                <div class="container">
-                                    <div class="row chbtn">
-                                        <a href="#" class="btn btn-outline-danger cbtn" title="Save This Image" style="margin-right: 5px;"><i class="fas fa-heart"></i> <span>500</span></a>
-                                        <a href="#" class="btn btn btn-outline-light cbtn" title="View Image" style="margin-left: 5px;"><i class="fad fa-eye"></i> <span>500</span></a>
+                        </div>         
+                        <div class="col-lg-4 col-md-6 col-sm-12 sglry">
+                            <div class="card cds">
+                                <img class="im" src="https://dummyimage.com/600x400/000/fff2.jpg" alt="Card image cap">
+                                <div class="card-text cds-txt">
+                                    <h3>Image Name</h3>
+                                    <a href="" class=" text-decoration-none text-white"><h5><img class="upimg" src="https://picsum.photos/id/237/200/300" alt=""> username</h5></a>
+                                    <div class="container">
+                                        <div class="row chbtn">
+                                            <a href="#" class="btn btn-outline-danger cbtn" title="Save This Image" style="margin-right: 5px;"><i class="fas fa-heart"></i> <span>500</span></a>
+                                            <a href="#" class="btn btn btn-outline-light cbtn" title="View Image" style="margin-left: 5px;"><i class="fad fa-eye"></i> <span>500</span></a>
+                                        </div>
                                     </div>
                                 </div>
                             </div>
-                        </div>
-                    </div>               
-                    <div class="col-lg-4 col-md-6 col-sm-12 sglry">
-                        <div class="card cds">
-                            <img class="im" src="https://dummyimage.com/600x400/000/fff2.jpg" alt="Card image cap">
-                            <div class="card-text cds-txt">
-                                <h3>Image Name</h3>
-                                <a href="" class=" text-decoration-none text-white"><h5><img class="upimg" src="https://picsum.photos/id/237/200/300" alt=""> username</h5></a>
-                                <div class="container">
-                                    <div class="row chbtn">
-                                        <a href="#" class="btn btn-outline-danger cbtn" title="Save This Image" style="margin-right: 5px;"><i class="fas fa-heart"></i> <span>500</span></a>
-                                        <a href="#" class="btn btn btn-outline-light cbtn" title="View Image" style="margin-left: 5px;"><i class="fad fa-eye"></i> <span>500</span></a>
+                        </div>               
+                        <div class="col-lg-4 col-md-6 col-sm-12 sglry">
+                            <div class="card cds">
+                                <img class="im" src="https://dummyimage.com/600x400/000/fff2.jpg" alt="Card image cap">
+                                <div class="card-text cds-txt">
+                                    <h3>Image Name</h3>
+                                    <a href="" class=" text-decoration-none text-white"><h5><img class="upimg" src="https://picsum.photos/id/237/200/300" alt=""> username</h5></a>
+                                    <div class="container">
+                                        <div class="row chbtn">
+                                            <a href="#" class="btn btn-outline-danger cbtn" title="Save This Image" style="margin-right: 5px;"><i class="fas fa-heart"></i> <span>500</span></a>
+                                            <a href="#" class="btn btn btn-outline-light cbtn" title="View Image" style="margin-left: 5px;"><i class="fad fa-eye"></i> <span>500</span></a>
+                                        </div>
                                     </div>
                                 </div>
                             </div>
-                        </div>
-                    </div>               
-                    <div class="col-lg-4 col-md-6 col-sm-12 sglry">
-                        <div class="card cds">
-                            <img class="im" src="https://dummyimage.com/600x400/000/fff2.jpg" alt="Card image cap">
-                            <div class="card-text cds-txt">
-                                <h3>Image Name</h3>
-                                <a href="" class=" text-decoration-none text-white"><h5><img class="upimg" src="https://picsum.photos/id/237/200/300" alt=""> username</h5></a>
-                                <div class="container">
-                                    <div class="row chbtn">
-                                        <a href="#" class="btn btn-outline-danger cbtn" title="Save This Image" style="margin-right: 5px;"><i class="fas fa-heart"></i> <span>500</span></a>
-                                        <a href="#" class="btn btn btn-outline-light cbtn" title="View Image" style="margin-left: 5px;"><i class="fad fa-eye"></i> <span>500</span></a>
+                        </div>               
+                        <div class="col-lg-4 col-md-6 col-sm-12 sglry">
+                            <div class="card cds">
+                                <img class="im" src="https://dummyimage.com/600x400/000/fff2.jpg" alt="Card image cap">
+                                <div class="card-text cds-txt">
+                                    <h3>Image Name</h3>
+                                    <a href="" class=" text-decoration-none text-white"><h5><img class="upimg" src="https://picsum.photos/id/237/200/300" alt=""> username</h5></a>
+                                    <div class="container">
+                                        <div class="row chbtn">
+                                            <a href="#" class="btn btn-outline-danger cbtn" title="Save This Image" style="margin-right: 5px;"><i class="fas fa-heart"></i> <span>500</span></a>
+                                            <a href="#" class="btn btn btn-outline-light cbtn" title="View Image" style="margin-left: 5px;"><i class="fad fa-eye"></i> <span>500</span></a>
+                                        </div>
                                     </div>
                                 </div>
                             </div>
-                        </div>
-                    </div>         
-                    <div class="col-lg-4 col-md-6 col-sm-12 sglry">
-                        <div class="card cds">
-                            <img class="im" src="https://dummyimage.com/600x400/000/fff2.jpg" alt="Card image cap">
-                            <div class="card-text cds-txt">
-                                <h3>Image Name</h3>
-                                <a href="" class=" text-decoration-none text-white"><h5><img class="upimg" src="https://picsum.photos/id/237/200/300" alt=""> username</h5></a>
-                                <div class="container">
-                                    <div class="row chbtn">
-                                        <a href="#" class="btn btn-outline-danger cbtn" title="Save This Image" style="margin-right: 5px;"><i class="fas fa-heart"></i> <span>500</span></a>
-                                        <a href="#" class="btn btn btn-outline-light cbtn" title="View Image" style="margin-left: 5px;"><i class="fad fa-eye"></i> <span>500</span></a>
+                        </div>         
+                        <div class="col-lg-4 col-md-6 col-sm-12 sglry">
+                            <div class="card cds">
+                                <img class="im" src="https://dummyimage.com/600x400/000/fff2.jpg" alt="Card image cap">
+                                <div class="card-text cds-txt">
+                                    <h3>Image Name</h3>
+                                    <a href="" class=" text-decoration-none text-white"><h5><img class="upimg" src="https://picsum.photos/id/237/200/300" alt=""> username</h5></a>
+                                    <div class="container">
+                                        <div class="row chbtn">
+                                            <a href="#" class="btn btn-outline-danger cbtn" title="Save This Image" style="margin-right: 5px;"><i class="fas fa-heart"></i> <span>500</span></a>
+                                            <a href="#" class="btn btn btn-outline-light cbtn" title="View Image" style="margin-left: 5px;"><i class="fad fa-eye"></i> <span>500</span></a>
+                                        </div>
                                     </div>
                                 </div>
                             </div>
-                        </div>
-                    </div>               
-                    <div class="col-lg-4 col-md-6 col-sm-12 sglry">
-                        <div class="card cds">
-                            <img class="im" src="https://dummyimage.com/600x400/000/fff2.jpg" alt="Card image cap">
-                            <div class="card-text cds-txt">
-                                <h3>Image Name</h3>
-                                <a href="" class=" text-decoration-none text-white"><h5><img class="upimg" src="https://picsum.photos/id/237/200/300" alt=""> username</h5></a>
-                                <div class="container">
-                                    <div class="row chbtn">
-                                        <a href="#" class="btn btn-outline-danger cbtn" title="Save This Image" style="margin-right: 5px;"><i class="fas fa-heart"></i> <span>500</span></a>
-                                        <a href="#" class="btn btn btn-outline-light cbtn" title="View Image" style="margin-left: 5px;"><i class="fad fa-eye"></i> <span>500</span></a>
+                        </div>               
+                        <div class="col-lg-4 col-md-6 col-sm-12 sglry">
+                            <div class="card cds">
+                                <img class="im" src="https://dummyimage.com/600x400/000/fff2.jpg" alt="Card image cap">
+                                <div class="card-text cds-txt">
+                                    <h3>Image Name</h3>
+                                    <a href="" class=" text-decoration-none text-white"><h5><img class="upimg" src="https://picsum.photos/id/237/200/300" alt=""> username</h5></a>
+                                    <div class="container">
+                                        <div class="row chbtn">
+                                            <a href="#" class="btn btn-outline-danger cbtn" title="Save This Image" style="margin-right: 5px;"><i class="fas fa-heart"></i> <span>500</span></a>
+                                            <a href="#" class="btn btn btn-outline-light cbtn" title="View Image" style="margin-left: 5px;"><i class="fad fa-eye"></i> <span>500</span></a>
+                                        </div>
                                     </div>
                                 </div>
                             </div>
-                        </div>
-                    </div>               
-                             
-                             
-            </div>        
-        </div>
+                        </div>               
+                                
+                                
+                </div>        
+            </div>
+        </div>    
         <!----------------------Footer Section---------------------------------------------------->
         <footer>
             <div class="bg-light text-dark pt-1">
@@ -376,5 +475,11 @@
                 </div>
             <div>    
         </footer>
+        <script>
+            $(document).ready(function(){
+            $('[data-toggle="tooltip"]').tooltip();   
+            });
+        </script>
+
     </body>
 </html>
