@@ -51,9 +51,9 @@
                     </ul>
                     <form action="search.php" method="GET" class="my-2 my-lg-0">
                         <div class="row no-gutters align-items-center">
-                            <input name="q" class="form-control sbdr rounded-pill pr-5" type="text" placeholder="Search" id="example-search-input2">
+                            <input type="search" name="q" class="form-control sbdr rounded-pill pr-5" placeholder="Search" id="example-search-input2">
                             <div class="col-auto">
-                                <button class="btn btn-outline-light text-dark border-0 rounded-pill ml-n5" type="button">
+                                <button type="submit" class="btn btn-outline-light text-dark border-0 rounded-pill ml-n5">
                                 <i class="fad fa-search"></i>
                                 </button>
                             </div>

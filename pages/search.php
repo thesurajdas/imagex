@@ -43,7 +43,7 @@
         <!-----------------------------------------------image-section-------------------------------------------->
 
         <div class="container shadow-lg p-3 mb-5 bg-white glry" style="border-radius: 1.25rem;">
-            <div class="col-12 text-center font-weight-bolder"><h2><?php echo $row_cat_name['category']; ?></h2></div>
+            <div class="col-12 text-center font-weight-bolder"><h2>Search Results For: <?php echo $q; ?></h2></div>
             <div class="container shadow-lg pl-3 pr-3 pt-1 mt-4" style="border-radius: 1.25rem;">
                     <div class="row pl-3 pr-3 pt-3">
                         <div class="text-right col-12">
