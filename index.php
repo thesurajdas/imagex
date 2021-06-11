@@ -118,7 +118,7 @@
             <div class="container">
                 <form action="">
                     <div class="row no-gutters mt-3 justify-content-center">
-                        <input class="form-control col-md-10 sbdr bg-light rounded-pill pr-5" type="text" placeholder="Search Images Eg: Nature, Potrait, Abstract etc." id="example-search-input2" style="padding-left: 25px">
+                        <input class="form-control col-md-8 sbdr bg-light rounded-pill pr-5" type="text" placeholder="Search Images Eg: Nature, Potrait, Abstract etc." id="example-search-input2" style="padding-left: 25px">
                         <div class="col-auto">
                             <button class="btn btn-outline-light text-dark border-0 rounded-pill ml-n5" type="button">
                                 <i class="fas fa-search"></i>

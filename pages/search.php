@@ -43,13 +43,13 @@
         <!-----------------------------------------------image-section-------------------------------------------->
 
         <div class="container shadow-lg p-3 mb-5 bg-white glry" style="border-radius: 1.25rem;">
-            <div class="col-12 text-center font-weight-bolder"><h2>Search Results For: <?php echo $q; ?></h2></div>
+            <div class="col-12 text-center font-weight-bolder" style="color: #495057b0"><div class="row text-center justify-content-center"><h2><i class="fad fa-bolt" style="color: gold"></i> Search Results For:</h2><h2> <?php echo $q; ?></h2></div></div>
             <div class="container shadow-lg pl-3 pr-3 pt-1 mt-4" style="border-radius: 1.25rem;">
                     <div class="row pl-3 pr-3 pt-3">
                         <div class="text-right col-12">
                             <div class="btn-group btn-group-sm" role="group">
                                 <button id="btnGroupDrop1" type="button" class="btn btn-secondary dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" style="border-radius: 1.25rem;"><i class="fad fa-caret-circle-down"></i> Short By</button>
-                                <div class="dropdown-menu" style="min-width: auto;" aria-labelledby="btnGroupDrop1">
+                                <div class="dropdown-menu" style="min-width: auto; background-color: rgba(125, 119, 119, 0.1);" aria-labelledby="btnGroupDrop1">
                                 <a class="dropdown-item " style="text-align: start; color: rgba(99, 96, 96, 0.856); font-size: 80%; font-weight: 700;" href="#"><i class="fad fa-eye"></i> View</a>
                                 <a class="dropdown-item " style="text-align: start; color: rgba(220, 20, 60, 0.842); font-size: 80%; font-weight: 700;" href="#"><i class="fad fa-heart-circle"></i> Like</a>
                                 <a class="dropdown-item " style="text-align: start; color: rgba(0, 128, 0, 0.815); font-size: 80%; font-weight: 700;" href="#"><i class="fad fa-download"></i> Download</a>
@@ -113,7 +113,7 @@
                                     </div>
                                 <?php endwhile;}
                                 else{
-                                    echo " <div class='container text-center'><img style='height: 150px; width: 150px; object-fit: contain;' src='../img/notfound.svg' alt=''><h2 style='padding-top: 20px; padding-bottom: 25px; color: #6c757dd4;'>You Haven't Uploaded Any Images Yet. <a href='upload.php' class='btn btn-success rounded-pill shadow-sm'><i class='fad fa-cloud-upload'></i> Upload Now</a></h2></div> ";
+                                    echo " <div class='container text-center'><img style='height: 150px; width: 150px; object-fit: contain;' src='../img/notfound.svg' alt=''><h2 style='padding-top: 20px; padding-bottom: 25px; color: #6c757dd4;'>Sorry! No Result Found. <i class='fad fa-heart-broken' style='color: red;'></i></div> ";
                                     } ?>
                                 <!--user uploaded image end-->
                     </div>        

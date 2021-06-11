@@ -111,8 +111,8 @@
                                     $result_img=$connect->query($sql);
                                     $row_img_user=$result_img->fetch_assoc();
                                     ?>
-                                    <h5 class="pl-2 "><a class="text-decoration-none" href="<?php echo $site_url."/pages/profile.php?u=".$row_img_user['username']; ?>"><?php
-                                    echo $row_img_user['username'];
+                                    <h5 class="pl-2 " style="padding-top: 3px;" data-toggle="tooltip" data-placement="bottom" title="<?php echo $row_img_user['username']; ?>"><a class="text-decoration-none" href="<?php echo $site_url."/pages/profile.php?u=".$row_img_user['username']; ?>"><?php
+                                    echo $row_img_user['name'];
                                     ?></a></h5>
                                 </div>
                             </div>
@@ -465,6 +465,11 @@
             }
         </script>
         <?php } ?>
+        <script>
+            $(document).ready(function(){
+            $('[data-toggle="tooltip"]').tooltip();   
+            });
+        </script>
 </body>
 </html>
 
