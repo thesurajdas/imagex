@@ -226,7 +226,7 @@
                                                 <label><i class="fad fa-mobile-android" style="color: rgb(0, 128, 0);"></i> Device</label>
                                             </div>
                                             <div class="col-6">
-                                                <p class="badge" style="color: #fff; background-color: rgb(0, 128, 0);"><?php echo $user_device_name; ?></p>
+                                                <p class="badge" style="color: #fff; background-color: rgb(0, 128, 0);"><?php if(!empty($user_device_name)){echo $user_device_name;}else{echo "N/A";} ?></p>
                                             </div>
                                         </div>
                                         <div class="row">
@@ -234,7 +234,7 @@
                                                 <label><i class="fad fa-tablet-rugged" style="color: rgb(75, 0, 130);"></i> Model</label>
                                             </div>
                                             <div class="col-6">
-                                                <p class="badge" style="color: #fff; background-color: rgb(75, 0, 130);"><?php echo $user_device_model; ?></p>
+                                                <p class="badge" style="color: #fff; background-color: rgb(75, 0, 130);"><?php if(!empty($user_device_model)){echo $user_device_model;}else{echo "N/A";} ?></p>
                                             </div>
                                         </div>
                                         <div class="row">
@@ -242,7 +242,7 @@
                                                 <label><i class="fad fa-border-none" style="color:rgb(238, 130, 238);"></i> Resolution</label>
                                             </div>
                                             <div class="col-6">
-                                                <p class="badge"style="color: #fff; background-color: rgb(238, 130, 238);"><?php echo $user_resolution." MP (Mega Pixel)"; ?></p>
+                                                <p class="badge"style="color: #fff; background-color: rgb(238, 130, 238);"><?php if(!empty($user_resolution)){echo $user_resolution." MP (Mega Pixel)";}else{echo "N/A";} ?></p>
                                             </div>
                                         </div>
                                         <div class="row">
@@ -250,7 +250,7 @@
                                                 <label><i class="fad fa-question-circle" style="color: rgb(255, 165, 0);"></i> Focal Length</label>
                                             </div>
                                             <div class="col-6">
-                                                <p class="badge" style="color: #fff; background-color: rgb(255, 165, 0);"><?php echo $user_focal_length; ?></p>
+                                                <p class="badge" style="color: #fff; background-color: rgb(255, 165, 0);"><?php if(!empty($user_focal_length)){echo $user_focal_length;}else{echo "N/A";} ?></p>
                                             </div>
                                         </div>
                                         <div class="row">
@@ -258,7 +258,7 @@
                                                 <label><i class="fad fa-info-circle"  style="color: rgb(255, 0, 0);"></i> Apperture</label>
                                             </div>
                                             <div class="col-6">
-                                                <p class="badge" style="color: #fff; background-color: rgb(255, 0, 0);"><?php echo $user_apertures; ?></p>
+                                                <p class="badge" style="color: #fff; background-color: rgb(255, 0, 0);"><?php if(!empty($user_apertures)){echo $user_apertures;}else{echo "N/A";} ?></p>
                                             </div>
                                         </div>
                             </div>
