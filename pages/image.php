@@ -8,31 +8,9 @@
         $result_img=$connect->query($sql);
         $row_img=$result_img->fetch_assoc();
         //View System
-        //whether ip is from share internet
-        if (!empty($_SERVER['HTTP_CLIENT_IP']))   
-        {
-            $ip_address = $_SERVER['HTTP_CLIENT_IP'];
-        }
-        //whether ip is from proxy
-        elseif (!empty($_SERVER['HTTP_X_FORWARDED_FOR']))  
-        {
-            $ip_address = $_SERVER['HTTP_X_FORWARDED_FOR'];
-        }
-        //whether ip is from remote address
-        else
-        {
-            $ip_address = $_SERVER['REMOTE_ADDR'];
-        }
-    
         //create cookies
         $cookie_time = time()+60*60*24*10;
-        if((!isset($_COOKIE['ip_address'])) OR (!isset($_COOKIE['tmp_id']))){
-            //Set IP address cookie
-            if (!isset($_COOKIE['ip_address'])) {
-                $cookie_name = "ip_address";
-                $cookie_value = $ip_address;
-                setcookie($cookie_name,$cookie_value,$cookie_time);
-            }
+        if(!isset($_COOKIE['tmp_id'])){
             //Set image ID cookie
             if (!isset($_COOKIE['tmp_id'])) {
                 $cookie_name = "tmp_id";
@@ -48,15 +26,9 @@
             $cookie_name = "tmp_id";
             $cookie_value = $img_id;
             setcookie($cookie_name,$cookie_value,$cookie_time);
-            //Set ip address cookie
-            $cookie_name = "ip_address";
-            $cookie_value = $ip_address;
-            setcookie($cookie_name,$cookie_value,$cookie_time);
-            if((isset($_COOKIE['ip_address'])) && ($_COOKIE['ip_address']==$ip_address)){
-                //Update page view
-                $sql="UPDATE images SET views=views+1 WHERE image_id='$img_id'";
-                $connect->query($sql);
-            }
+            //Update page view
+            $sql="UPDATE images SET views=views+1 WHERE image_id='$img_id'";
+            $connect->query($sql);
         }
         //Show images data
         $sql="SELECT * FROM images";
