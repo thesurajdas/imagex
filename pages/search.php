@@ -43,7 +43,7 @@
         <!-----------------------------------------------image-section-------------------------------------------->
 
         <div class="container shadow-lg p-3 mb-5 bg-white glry" style="border-radius: 1.25rem;">
-            <div class="col-12 text-center font-weight-bolder" style="color: #495057b0"><div class="row text-center justify-content-center"><h2><i class="fad fa-bolt" style="color: gold"></i> Search Results For:</h2><h2> <?php echo $q; ?></h2></div></div>
+            <div class="col-12 text-center font-weight-bolder" style="color: #495057b0"><div class="row text-center justify-content-center"><h2><i class="fad fa-bolt" style="color: gold"></i> Search Results For: <b><?php echo $q; ?></b></h2></div></div>
             <div class="container shadow-lg pl-3 pr-3 pt-1 mt-4" style="border-radius: 1.25rem;">
                     <div class="row pl-3 pr-3 pt-3">
                         <div class="text-right col-12">

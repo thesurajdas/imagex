@@ -83,9 +83,18 @@
             $user_focal_length=$row['focal_length'];
             $user_avatar=$row['avatar'];
             $user_role=$row['role'];
-            $user_total_views=$row['total_views'];
-            $user_total_likes=$row['total_likes'];
-            $user_total_downloads=$row['total_downloads'];
+            $user_total_views=0;
+            $user_total_likes=0;
+            $user_total_downloads=0;
+            //Get users uploaded images data
+            $sql="SELECT * FROM images WHERE user_id='$id'";
+            $result_img=$connect->query($sql);
+            //total views
+            while($row_img=$result_img->fetch_assoc()){
+                $user_total_views=$user_total_views+$row_img['views'];
+                $user_total_likes=$user_total_likes+$row_img['likes'];
+                $user_total_downloads=$user_total_downloads+$row_img['downloads'];
+            }
         ?>
 
         <!-----------------------------------------Profile section------------------------------------------------------>
@@ -115,9 +124,9 @@
                                 </h6>
                                     <div class="container col-md-12 d-none d-md-block d-lg-block d-xl-block">
                                         <div class="row">
-                                            <p class="col-4 "><i class="fad fa-eye" style="color: #212529bf;"></i> <span><?php echo $user_total_views; ?></span></p>
-                                            <p class="col-4"><i class="fad fa-heart" style="color: #ff0000c2;"></i> <span><?php echo $user_total_likes; ?></span></p>
-                                            <p class="col-4"><i class="fad fa-download" style="color: #008e00d1;"></i> <span><?php echo $user_total_downloads; ?></span></p>
+                                            <p class="col-4 "><i class="fad fa-eye" style="color: #212529bf;"></i> <span><?php echo number_format($user_total_views); ?></span></p>
+                                            <p class="col-4"><i class="fad fa-heart" style="color: #ff0000c2;"></i> <span><?php echo number_format($user_total_likes); ?></span></p>
+                                            <p class="col-4"><i class="fad fa-download" style="color: #008e00d1;"></i> <span><?php echo number_format($user_total_downloads); ?></span></p>
                                         </div>
                                     </div>
                                     <div class="container col-sm-12 text-center text-center d-md-none d-lg-none d-lg-none d-lx-none">
