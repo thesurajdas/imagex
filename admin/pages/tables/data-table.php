@@ -187,7 +187,10 @@ if (isset($_REQUEST['delete'])) {
                 </a>
                 <div class="collapse" id="tables">
                     <ul class="nav flex-column sub-menu">
-                        <li class="nav-item"> <a class="nav-link" href="../../pages/tables/data-table.php">Data table</a></li>
+                        <li class="nav-item"> <a class="nav-link" href="../../pages/tables/data-table.php">Users</a></li>
+                    </ul>
+                    <ul class="nav flex-column sub-menu">
+                        <li class="nav-item"> <a class="nav-link" href="../../pages/tables/image-table.php">Images</a></li>
                     </ul>
                 </div>
             </li>
