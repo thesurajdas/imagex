@@ -230,6 +230,8 @@ if (isset($_REQUEST['delete'])) {
                             <th>Uploader</th>
                             <th>Visibility</th>
                             <th>Time</th>
+                            <th>View</th>
+                            <th>Like</th>
                             <th>Action</th>
                             
                         </tr>
@@ -244,6 +246,8 @@ if (isset($_REQUEST['delete'])) {
                               <label class="badge badge-success">Public</label>
                             </td>
                             <td>25/12/2020</td>
+                            <td>25</td>
+                            <td>12</td>
                             <td>
                               <button type="button" class="btn btn-outline-primary" data-toggle="modal" data-target="#usersModal"><i class="bi bi-pencil-square"></i></button>
                               <button class="btn btn-outline-primary" onclick="showSwal('success-message')"><i class="bi bi-trash"></i></button>
@@ -258,6 +262,8 @@ if (isset($_REQUEST['delete'])) {
                               <label class="badge badge-success">Public</label>
                             </td>
                             <td>25/12/2020</td>
+                            <td>25</td>
+                            <td>12</td>
                             <td>
                               <button type="button" class="btn btn-outline-primary" data-toggle="modal" data-target="#usersModal"><i class="bi bi-pencil-square"></i></button>
                               <button class="btn btn-outline-primary" onclick="showSwal('success-message')"><i class="bi bi-trash"></i></button>
