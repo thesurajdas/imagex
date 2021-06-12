@@ -155,7 +155,7 @@
                             </ul>
                         </div>
                     </div>
-                    <?php if($login==1):?>
+                    <?php if(($login==1)&&($user_id==$id)):?>
                     <div class="col-md-2 d-none d-xl-block d-lg-block d-xl-none">
                         <a href="editprofile.php" class="btn btn-outline-warning profile-edit-btn">Edit Profile</a>
                     </div>
