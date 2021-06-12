@@ -13,7 +13,7 @@
                 <?php } ?>
                 <?php if (isset($user_id)){?>
                 <div class="d-md-none d-lg-none d-lg-none d-lx-none">
-                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><img class="logp rounded-circle" src="../img/avatar.png" alt=""></a>
+                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><img class="logp rounded-circle" src="<?php echo $site_url."/".$user_avatar; ?>" alt="<?php echo $user_username; ?>" alt=""></a>
                     <div class="dropdown-menu" style="left: auto; right: 0;" aria-labelledby="navbarDropdown">
                         <a class="dropdown-item" href="<?php echo $site_url.'/pages/profile.php?u='.$user_username; ?>">My Profile</a>
                         <a class="dropdown-item" href="editprofile.php">Edit Profile</a>

@@ -95,6 +95,15 @@
                 $user_total_likes=$user_total_likes+$row_img['likes'];
                 $user_total_downloads=$user_total_downloads+$row_img['downloads'];
             }
+            //Total uploading count
+            $sql="SELECT * FROM images WHERE user_id='$id'";
+            $result_img=$connect->query($sql);
+            $total_uploads=$result_img->num_rows;
+            //total like count
+            $sql="SELECT * FROM likes WHERE user_id='$id'";
+            $result_like=$connect->query($sql);
+            $total_favourites=$result_like->num_rows;
+            
         ?>
 
         <!-----------------------------------------Profile section------------------------------------------------------>
@@ -263,10 +272,10 @@
                 <div class="profile-hd">
                     <ul class="nav nav-tabs justify-content-center justify-content-md-start" id="myiTab" role="tablist">
                         <li class="nav-item" role="presentation">
-                            <a class="nav-link active" id="uimg-tab" data-toggle="tab" href="#uimg" role="tab" aria-controls="uimg" aria-selected="true"><i class="fad fa-folder-upload"></i> Uploads</a>
+                            <a class="nav-link active" id="uimg-tab" data-toggle="tab" href="#uimg" role="tab" aria-controls="uimg" aria-selected="true"><i class="fad fa-folder-upload"></i> Uploads (<?php echo $total_uploads; ?>)</a>
                         </li>
                         <li class="nav-item" role="presentation">
-                            <a class="nav-link" data-toggle="tab" href="#simg" role="tab" aria-controls="simg" aria-selected="false"><i class="fad fa-bookmark"></i> Favourites</a>
+                            <a class="nav-link" data-toggle="tab" href="#simg" role="tab" aria-controls="simg" aria-selected="false"><i class="fad fa-bookmark"></i> Favourites (<?php echo $total_favourites; ?>)</a>
                         </li>
                     </ul>
                 </div>    
