@@ -156,9 +156,7 @@
                     <div class="col-md-4 d-none d-xl-block d-lg-block d-xl-none">
                         <div class="profile-work">
                             <p>User Account</p>
-                            <a href="">Uploaded Photos</a><br/>
-                            <a href="">Edit Profile</a><br/>
-                            <a href="">Saved Photos</a>
+                            <a href="editprofile.php">Edit Profile</a><br/>
                         </div>
                     </div>
                     <div class="col-md-8">
