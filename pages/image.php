@@ -76,13 +76,13 @@
                         <div class="row">
                             <div>
                                 <div class="row">
-                                    <img class="pimgg ml-4" src="https://dummyimage.com/600x400/000/fff2.jpg" alt="">
                                     <?php
                                     $img_user_id=$row_img['user_id'];
                                     $sql="SELECT * FROM users WHERE id='$img_user_id'";
                                     $result_img=$connect->query($sql);
                                     $row_img_user=$result_img->fetch_assoc();
                                     ?>
+                                    <img class="pimgg ml-4" src="<?php echo $site_url."/".$row_img_user['avatar']; ?>" alt="">
                                     <h5 class="pl-2 " style="padding-top: 3px;" data-toggle="tooltip" data-placement="bottom" title="<?php echo $row_img_user['username']; ?>"><a class="text-decoration-none" href="<?php echo $site_url."/pages/profile.php?u=".$row_img_user['username']; ?>"><?php
                                     echo $row_img_user['name'];
                                     ?></a></h5>
@@ -122,7 +122,7 @@
                                         <div class="col-md-4 col-sm-12">
                                             <div class="row">
                                                 <div class="col-6">
-                                                    <h6><i class="fad fa-eye" style="color: #6161bbd6;"></i> Views:</h6>    
+                                                    <h6><i class="fad fa-eye" style="color: #6161bbd6;"></i> Views:</h6>
                                                 </div>
                                                 <div class="col-6">
                                                     <h6 class="badge" style="color: #fff; background-color: #6161bbd6;"><?php $views=number_format($row_img['views']); echo $views; ?></h6>    
@@ -405,8 +405,9 @@
     <?php
         include('../pages/include/footer.php')
     ?>
-    <button type="button" class="btn btn-outline-success cbtnn" data-toggle="tooltip" title="Download Now (123)"><i class="fad fa-cloud-download-alt" style="width: 35px; height: 35px"></i></button>
-
+    <a href="<?php echo $site_url,$row_img['image_location']; ?>" download="<?php echo $row_img['title']; ?>">
+    <button type="button" id="countDown" onclick="countDownload(<?php echo $row_img['id']; ?>)" class="btn btn-outline-success cbtnn" data-toggle="tooltip" title="Download Now (<?php $downloads=number_format($row_img['downloads']); echo $downloads; ?>)"><i class="fad fa-cloud-download-alt" style="width: 35px; height: 35px"></i></button>
+    </a>
     <script>
     $(document).ready(function(){
     $('[data-toggle="tooltip"]').tooltip();   
@@ -441,6 +442,21 @@
             $(document).ready(function(){
             $('[data-toggle="tooltip"]').tooltip();   
             });
+        </script>
+         <script>
+        //Count Download
+        function countDownload(id){
+            $(document).ready(function(){
+                $.ajax({
+                    url: 'download.php',
+                    type: 'POST',
+                    data: 'id='+id,
+                    success: function(result){
+                        $('#countDown').append(result);
+                    }
+                });
+            });
+        }
         </script>
 </body>
 </html>
