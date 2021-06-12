@@ -66,12 +66,12 @@ $last_id = $page+$limit;
                                                                         $like_color="color:red;";
                                                                     }
                                                                     else{
-                                                                        $icon="fal";
+                                                                        $icon="far";
                                                                         $like_color="";
                                                                     }
                                                                 }
                                                                 else{
-                                                                    $icon="fal";
+                                                                    $icon="far";
                                                                     $like_color="";
                                                                 }
                                                         ?>

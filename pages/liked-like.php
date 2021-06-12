@@ -39,14 +39,14 @@
                 $sql="SELECT * FROM images WHERE id='$image_id'";
                 $result=$connect->query($sql);
                 $row=$result->fetch_assoc();
-                echo "<i class='fal fa-heart'></i> ".$row['likes'];
+                echo "<i class='far fa-heart'></i> ".$row['likes'];
             }
             else{
                 //Display like
                 $sql="SELECT * FROM images WHERE id='$image_id'";
                 $result=$connect->query($sql);
                 $row=$result->fetch_assoc();
-                echo "<i class='fal fa-heart'></i> (".$row['likes'].")<script>alert('You need to login to like this post!');</script>";
+                echo "<i class='far fa-heart'></i> (".$row['likes'].")<script>alert('You need to login to like this post!');</script>";
             }
         }
 ?>
