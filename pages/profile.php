@@ -503,5 +503,20 @@
             }
     </script>
         <?php }?>
+        <script>
+        //Count Download
+        function countDownload(id){
+            $(document).ready(function(){
+                $.ajax({
+                    url: 'download.php',
+                    type: 'POST',
+                    data: 'id='+id,
+                    success: function(result){
+                        $('#countDown').append(result);
+                    }
+                });
+            });
+        }
+        </script>
     </body>
 </html>
