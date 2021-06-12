@@ -31,11 +31,11 @@
                             <a class="nav-link" href="../index.php" tabindex="-1" aria-disabled="true" style="color: rgba(18, 18, 221, 0.699);"><i class="fad fa-home" style="color: rgba(18, 18, 221, 0.699);" ></i> Home</a>
                         </li>
                         <li class="nav-item active">
-                            <a class="nav-link" href="trending.php" tabindex="-1" aria-disabled="true"><i class="fad fa-fire" style=" color: rgb(255, 22, 22);"></i> Trending</a>
+                            <a class="nav-link" href="trending.php" tabindex="-1" aria-disabled="true" style="color: rgb(255, 22, 22)"><i class="fad fa-fire"></i> Trending</a>
                         </li>
                         <li class="nav-item">
                             <div class="btn-group">
-                                <button type="button" class="btn btn-default dropdown-toggle text-center" data-toggle="dropdown" style="padding-left: 15%;"><i class="fad fa-bars" style="color: rgba(136, 255, 0, 0.815);"></i> Category</button>
+                                <button type="button" class="btn btn-default dropdown-toggle text-center" data-toggle="dropdown" style="font-weight: 400; color: rgb(13 150 4 / 89%)"><i class="fad fa-th-large"></i> Category</button>
                                 <ul class="dropdown-menu scrollable-menu" role="menu">
                                 <?php
                                     include('../connect.php');
