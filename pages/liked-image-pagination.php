@@ -17,7 +17,7 @@ else{
 $last_id = $page+$limit;
 
     //Get User Liked images
-    $sql="SELECT * FROM likes WHERE user_id={$id} LIMIT {$page},{$limit}";
+    $sql="SELECT * FROM likes WHERE user_id={$id} ORDER BY id DESC LIMIT {$page},{$limit}";
     $result_liked=$connect->query($sql);
     if ($result_liked->num_rows>0) {
     while($row_liked=$result_liked->fetch_assoc()):
