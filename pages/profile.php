@@ -163,11 +163,11 @@
                 </div>
                 <div class="row">
                     <div class="col-md-4 d-none d-xl-block d-lg-block d-xl-none">
-                    <?php if(($login==1)&&($user_id==$id)):?>
-                        <div class="profile-work">
-                            <p>User Account</p>
-                            <a href="editprofile.php">Edit Profile</a><br/>
-                        </div>
+                        <?php if(($login==1)&&($user_id==$id)):?>
+                            <div class="profile-work">
+                                <p>User Account</p>
+                                <a href="editprofile.php">Edit Profile</a><br/>
+                            </div>
                         <?php endif; ?>
                     </div>
                     <div class="col-md-8">
@@ -197,6 +197,7 @@
                                                 <p class="badge"style="color: #fff; background-color: rgb(238, 130, 238);"><?php echo $user_gender; ?></p>
                                             </div>
                                         </div>
+                                        <?php if(($login==1)&&($user_id==$id)):?>
                                         <div class="row">
                                             <div class="col-5">
                                                 <label><i class="fad fa-envelope" style="color: rgb(0, 128, 0);"></i> Email</label>
@@ -213,6 +214,7 @@
                                                 <p class="badge"style="color: #fff; background-color: rgb(0, 0, 255);"><?php echo $user_phone_no; ?></p>
                                             </div>
                                         </div>
+                                        <?php endif; ?>
                                         <div class="row">
                                             <div class="col-5">
                                                 <label><i class="far fa-globe-asia" style="color: rgb(75, 0, 130);"></i> Country</label>
