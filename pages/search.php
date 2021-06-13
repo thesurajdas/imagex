@@ -62,7 +62,7 @@
                        <!--User Upoaded image start-->
                        <?php
 	                            //Get Image Data from Database
-	                            $sql="SELECT * FROM images WHERE title LIKE '%{$q}%'";
+	                            $sql="SELECT * FROM images WHERE title LIKE '%{$q}%' ORDER BY views DESC, likes DESC, downloads DESC";
 	                            $result_img=$connect->query($sql);
 	                            if ($result_img->num_rows>0) {
                                 while($row=$result_img->fetch_assoc()): ?>
