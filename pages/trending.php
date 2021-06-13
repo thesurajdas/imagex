@@ -67,36 +67,36 @@
         </script>
         <?php } ?>
 
-<script>
-  $(document).ready(function(){
-    // Load Data from Database with Ajax
-    function loadTable(page){
-      $.ajax({
-        url: "trending-pagination.php",
-        type: "POST",
-        data : { page_no : page },
-        success: function(data){
-          if(data){
-            $("#pagination").remove();
-            $("#loadData").append(data);
-          }else{
-            $("#ajaxbtn").html("<i class='fad fa-sad-cry'></i> No more images found!");
-            $("#ajaxbtn").prop("disabled",true);
-          }
-          
-        }
-      });
-    }
-    loadTable();
+        <script>
+        $(document).ready(function(){
+            // Load Data from Database with Ajax
+            function loadTable(page){
+            $.ajax({
+                url: "trending-pagination.php",
+                type: "POST",
+                data : { page_no : page },
+                success: function(data){
+                if(data){
+                    $("#pagination").remove();
+                    $("#loadData").append(data);
+                }else{
+                    $("#ajaxbtn").html("<i class='fad fa-sad-cry'></i> No more images found!");
+                    $("#ajaxbtn").prop("disabled",true);
+                }
+                
+                }
+            });
+            }
+            loadTable();
 
-    // Add Click Event on ajaxbtn
-    $(document).on("click","#ajaxbtn",function(){
-      $("#ajaxbtn").html("<div class='spinner-border spinner-border-sm text-info' role='status'><span class='sr-only'></span></div> Loading...");
-      var pid = $(this).data("id");
-      loadTable(pid);
-    });
+            // Add Click Event on ajaxbtn
+            $(document).on("click","#ajaxbtn",function(){
+            $("#ajaxbtn").html("<div class='spinner-border spinner-border-sm text-info' role='status'><span class='sr-only'></span></div> Loading...");
+            var pid = $(this).data("id");
+            loadTable(pid);
+            });
 
-  });
-</script>
+        });
+        </script>
 </body>
 </html>
