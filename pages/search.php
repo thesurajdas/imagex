@@ -62,7 +62,7 @@
                        <!--User Upoaded image start-->
                        <?php
 	                            //Get Image Data from Database
-	                            $sql="SELECT * FROM images WHERE title='$q'";
+	                            $sql="SELECT * FROM images WHERE title LIKE '%{$q}%'";
 	                            $result_img=$connect->query($sql);
 	                            if ($result_img->num_rows>0) {
                                 while($row=$result_img->fetch_assoc()): ?>
@@ -150,5 +150,31 @@
             }
         </script>
         <?php } ?>
+
+        <script>
+        //Send Searching Request
+    $(document).ready(function(){
+        $('#query').keyup(function(){
+            var query = $(this).val();
+            if(query!=''){
+                $.ajax({
+                    url: "search-value.php",
+                    method: "GET",
+                    data: {q:query},
+                    success: function(data){
+                        $('#search-box').fadeIn("fast").html(data);
+                    }
+                });
+            }
+            else{
+                $('#search-box').fadeOut();
+            }
+        });
+    });
+    $(document).on('click','#search-box a',function(){
+        $('#query').val($(this).text());
+        $('#search-box').fadeOut("fast");
+    });
+    </script>
     </body>
 </html>
