@@ -8,11 +8,11 @@
         $output.='';
         if ($result->num_rows>0) {
             while ($row=$result->fetch_assoc()) {
-        $output.='<a href="?q='.$row['title'].'" class="list-group-item list-group-item-action border-1">'.$row['title']."</a>";
+        $output.='<a href="?q='.$row['title'].'" class="dropdown-item" ">'.$row['title']."</a>";
             }
         }
         else{
-            $output.="<p class='list-group-item list-group-item-action border-1'>No Data Found!</p>";
+            $output.="<p class='dropdown-item''>No Data Found!</p>";
         }
         $output.="";
         echo $output;

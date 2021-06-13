@@ -5,16 +5,13 @@
                 <a class="navbar-brand" href="../index.php"><img style="height: 40px;" src="../img/logo.jpg" alt=""></a>
                 <?php if (!isset($user_id)){?>
                 <div class="d-md-none d-lg-none d-lg-none d-lx-none">
-                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><button type="button" class="btn btn-outline-warning bt"><i class="fas fa-user-circle"></i></button></a>
-                    <div class="dropdown-menu" style="left: auto; right: 0;" aria-labelledby="navbarDropdown">
-                        <a class="dropdown-item" href="login.php">Sign In</a>
-                    </div>   
+                    <a class="nav-link dropdown-toggle" href="login.php" role="button"><button type="button" class="btn btn-outline-warning bt"><i class="fas fa-user-circle"></i></button></a>   
                 </div>
                 <?php } ?>
                 <?php if (isset($user_id)){?>
                 <div class="d-md-none d-lg-none d-lg-none d-lx-none">
                     <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><img class="logp rounded-circle" src="<?php echo $site_url."/".$user_avatar; ?>" alt="<?php echo $user_username; ?>" alt=""></a>
-                    <div class="dropdown-menu" style="left: auto; right: 0;" aria-labelledby="navbarDropdown">
+                    <div class="dropdown-menu" style="left: auto; right: 0; top: 20; min-width: none; margin-right: 10px;" aria-labelledby="navbarDropdown">
                         <a class="dropdown-item" href="<?php echo $site_url.'/pages/profile.php?u='.$user_username; ?>">My Profile</a>
                         <a class="dropdown-item" href="editprofile.php">Edit Profile</a>
                         <?php if ($row['admin']==1) {
@@ -35,8 +32,8 @@
                         </li>
                         <li class="nav-item">
                             <div class="btn-group">
-                                <button type="button" class="btn btn-default dropdown-toggle text-center" data-toggle="dropdown" style="font-weight: 400; color: rgb(13 150 4 / 89%)"><i class="fad fa-th-large"></i> Category</button>
-                                <ul class="dropdown-menu scrollable-menu" role="menu">
+                                <button type="button" class="btn btn-default dropdown-toggle text-center" data-toggle="dropdown" style="font-weight: 400; color: rgb(13 150 4 / 89%); padding-right: inherit;"><i class="fad fa-th-large"></i> Category</button>
+                                <ul class="dropdown-menu scrollable-menu" role="menu" style="top: 100%">
                                 <?php
                                     include('../connect.php');
                                     $sql="SELECT * FROM categories ORDER BY category ASC";
@@ -51,14 +48,14 @@
                     </ul>
                     <form action="search.php" method="GET" class="my-2 my-lg-0">
                         <div class="row no-gutters align-items-center">
-                            <input type="search" name="q" id="query" class="form-control sbdr rounded-pill pr-5" placeholder="Search" <?php if(isset($_GET['q'])){echo "value='".$_GET['q']."' ";} ?>>
+                            <input type="search" autocomplete="off" name="q" id="query" class="form-control sbdr rounded-pill pr-5" placeholder="Search" <?php if(isset($_GET['q'])){echo "value='".$_GET['q']."' ";} ?>>
                             <div class="col-auto">
                                 <button type="submit" class="btn btn-outline-light text-dark border-0 rounded-pill ml-n5">
                                 <i class="fad fa-search"></i>
                                 </button>
                             </div>
                             <!-- Here autocomplete list will be display -->
-                                <div class="list-group" id="search-box"></div>
+                                <div class="dropdown-menu" id="search-box" style="top: 80%"></div>
                         </div>
                     </form>
                     <ul class="navbar-nav">
@@ -84,10 +81,7 @@
                         <?php if (!isset($user_id)){?>
                         <li class="nav-item dropleft text-decoration-none ">
                             <div class="d-none d-md-block d-lg-block d-xl-block">
-                                <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><button type="button" class="btn btn-outline-warning bt"><i class="fad fa-user-alt"></i></button></a>
-                                <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                                    <a class="dropdown-item" href="login.php">Sign In</a>
-                                </div>
+                            <a class="nav-link dropdown-toggle" href="login.php" role="button"><button type="button" class="btn btn-outline-warning bt"><i class="fas fa-user-circle"></i> Log IN</button></a>
                             </div>    
                         </li>
                         <?php } ?>

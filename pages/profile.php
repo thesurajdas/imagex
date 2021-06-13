@@ -138,7 +138,7 @@
                                             <p class="col-4"><i class="fad fa-download" style="color: #008e00d1;"></i> <span><?php echo number_format($user_total_downloads); ?></span></p>
                                         </div>
                                     </div>
-                                    <div class="container col-sm-12 text-center text-center d-md-none d-lg-none d-lg-none d-lx-none">
+                                    <div class="container col-sm-12 text-center text-center d-md-none d-lg-none d-lg-none d-lx-none" style="margin-top: 15px;">
                                         <div class="row">
                                             <p class="col-4 "><i class="fad fa-eye" style="color: #212529bf;"></i> <span><?php echo $user_total_views; ?></span></p>
                                             <p class="col-4"><i class="fad fa-heart" style="color: #ff0000c2;"></i> <span><?php echo $user_total_likes; ?></span></p>
