@@ -101,10 +101,11 @@ if (isset($_REQUEST['delete'])) {
   <link rel="stylesheet" href="../../../css/imagetable.css">
   <style>
     .table td img, .jsgrid .jsgrid-table td img {
-        width: 150px;
+        width: 114px;
         height: auto;
         border-radius: 0;
         object-fit: contain;
+        transition: 0.25s;
         }
    
   </style>
