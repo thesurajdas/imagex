@@ -58,9 +58,7 @@
                                 </button>
                             </div>
                             <!-- Here autocomplete list will be display -->
-                            <!-- <div class="col-md-5" style="position: relative;margin-top: -38px;margin-left: 215px;"> -->
                                 <div class="list-group" id="search-box"></div>
-                            <!-- </div> -->
                         </div>
                     </form>
                     <ul class="navbar-nav">
