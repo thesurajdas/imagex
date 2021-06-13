@@ -163,10 +163,12 @@
                 </div>
                 <div class="row">
                     <div class="col-md-4 d-none d-xl-block d-lg-block d-xl-none">
+                    <?php if(($login==1)&&($user_id==$id)):?>
                         <div class="profile-work">
                             <p>User Account</p>
                             <a href="editprofile.php">Edit Profile</a><br/>
                         </div>
+                        <?php endif; ?>
                     </div>
                     <div class="col-md-8">
                         <div class="tab-content profile-tab" id="myTabContent">
