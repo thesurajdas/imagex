@@ -2,7 +2,7 @@
 
 require_once('../auth.php');
 
-$limit = 3;
+$limit = 15;
 if(isset($_POST['page_no'])){
   $page = $_POST['page_no'];
 }else{
@@ -10,7 +10,7 @@ if(isset($_POST['page_no'])){
 }
 $last_id = $page+$limit;
 	                            //Get Image Data from Database
-	                            $sql="SELECT * FROM images ORDER BY views DESC LIMIT {$page},$limit";
+	                            $sql="SELECT * FROM images ORDER BY likes DESC, views DESC, downloads DESC LIMIT {$page},$limit";
 	                            $result_img=$connect->query($sql);
 	                            if ($result_img->num_rows>0) {
                                 while($row=$result_img->fetch_assoc()):
