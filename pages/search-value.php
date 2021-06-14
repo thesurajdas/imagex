@@ -8,7 +8,7 @@
         $output.='';
         if ($result->num_rows>0) {
             while ($row=$result->fetch_assoc()) {
-        $output.='<a href="?q='.$row['title'].'" class="dropdown-item" ">'.$row['title']."</a>";
+        $output.='<a href="?q='.strtolower($row['title']).'" class="dropdown-item" ">'.strtolower($row['title'])."</a>";
             }
         }
         else{

@@ -48,14 +48,14 @@
                     </ul>
                     <form action="search.php" method="GET" class="my-2 my-lg-0">
                         <div class="row no-gutters align-items-center">
-                            <input type="search" autocomplete="off" name="q" id="query" data-toggle="dropdown" class="form-control sbdr rounded-pill pr-5" placeholder="Search" <?php if(isset($_GET['q'])){echo "value='".$_GET['q']."' ";} ?> required>
+                            <input type="text" autocomplete="off" name="q" id="query" data-toggle="dropdown" class="form-control sbdr rounded-pill pr-5" placeholder="Search" <?php if(isset($_GET['q'])){echo "value='".$_GET['q']."' ";} ?> required>
                             <div class="col-auto">
                                 <button type="submit" class="btn btn-outline-light text-dark border-0 rounded-pill ml-n5">
                                 <i class="fad fa-search"></i>
                                 </button>
                             </div>
                             <!-- Here autocomplete list will be display -->
-                                <div class="dropdown-menu" id="search-box" style="top: 80%"></div>
+                            <div id="search-box" class="dropdown-menu" style="top: 100%"><div class="dropdown-item">Type something...</div></div>
                         </div>
                     </form>
                     <ul class="navbar-nav">
