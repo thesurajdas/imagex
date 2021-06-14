@@ -86,7 +86,7 @@
 }
 .profile-head .nav-tabs .nav-link.active{
     border: none;
-    border-bottom:2px solid #0062cc;
+    border-bottom:2px solid #009c24;
 }
 .profile-hd .nav-tabs{
     margin-bottom:2%;
@@ -97,7 +97,7 @@
 }
 .profile-hd .nav-tabs .nav-link.active{
     border: none;
-    border-bottom:2px solid #0062cc;
+    border-bottom:2px solid #009c24;
 }
 .profile-work{
     padding: 14%;
@@ -300,4 +300,13 @@
 
 .navbar-nav .dropdown-menu{
     position: absolute;
+}
+
+a{
+    color: #545b62;
+    transition: 0.2s;
+}
+
+a:hover{
+    color: #26610ddb;
 }
