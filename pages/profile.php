@@ -313,59 +313,9 @@
                     <i class="far fa-times-circle"></i>
                     </button>
                 </div>
-                <div class="modal-body">
-                    <form action="/">
-                        <div class="form-row">
-                                    <div class="form-group col-md-12">
-                                        <label for="title"><i class="fad fa-file-signature"></i> Image Name</label>
-                                        <input type="text" name="title" class="fc form-control" id="title" placeholder="Beautiful Nature" minlength="5" maxlength="15" required>
-                                    </div>
-                                    <div class="form-group col-md-6">
-                                        <label for="inputimgtype"><i class="fad fa-grip-horizontal"></i> Image Type</label>
-                                        <select id="inputimgtype" name="filetype" class="fc form-control" aria-placeholder="Moun" required>
-                                            <option selected></option>
-                                            <option value="Abstract">Abstract</option>
-                                            <option value="Animals">Animals</option>
-                                            <option value="Anime">Anime</option>
-                                            <option value="Art">Art</option>
-                                            <option value="Astro">Astro</option>
-                                            <option value="Black">Black</option>
-                                            <option value="Bridge">Bridge</option>
-                                            <option value="Cars">Cars</option>
-                                            <option value="City">City</option>
-                                            <option value="Cloud">Cloud</option>
-                                            <option value="Dark">Dark</option>
-                                            <option value="fadhion">fadhion</option>
-                                            <option value="Flowers">Flowers</option>
-                                            <option value="Food">Food</option>
-                                            <option value="Macro">Macro</option>
-                                            <option value="Motorcycles">Motorcycles</option>
-                                            <option value="Motion">Motion</option>
-                                            <option value="Mountain">Mountain</option>
-                                            <option value="Music">Music</option>
-                                            <option value="Nature">Nature</option>
-                                            <option value="Other">Other</option>
-                                            <option value="People">people</option>
-                                            <option value="Sky">Sky</option>
-                                            <option value="Sport">Sport</option>
-                                            <option value="Street">Street</option>
-                                            <option value="Technologie">Technologie</option>
-                                            <option value="Textures">Texture</option>
-                                            <option value="Travel">Travel</option>
-                                        </select>
-                                    </div>
-                                    <div class="form-group col-md-6">
-                                        <label for="title"><i class="fad fa-globe-americas"></i> Image Visibility</label>
-                                        <select id="inputimgtype" name="visibility" class="fc form-control" required>
-                                            <option value="Public" selected>Public</option>
-                                            <option value="Private">Private</option>
-                                        </select>    
-                                    </div>
-                                </div>
-                                <button type="submit" name="update" class="fc btn btn-success col-12"><i class="fad fa-check-circle"></i> Save changes</button>    
-                        </div>
-                        
-                    </from>    
+                <div id="loadedit" class="modal-body">
+                    <!-- Image edit option loaded here -->   
+                </div>
                 <div class="modal-footer">
                     <button type="button" class="fc btn btn-danger col-12" data-dismiss="modal"><i class="fad fa-times-circle"></i> Close</button>
                 </div>
@@ -517,6 +467,21 @@
                     data: 'id='+id,
                     success: function(result){
                         $('#countDown').append(result);
+                    }
+                });
+            });
+        }
+        </script>
+        <script>
+        //Edit Image Details
+        function editimg(id){
+            $(document).ready(function(){
+                $.ajax({
+                    url: 'edit-image.php',
+                    type: 'POST',
+                    data: 'id='+id,
+                    success: function(result){
+                        $('#loadedit').html(result);
                     }
                 });
             });

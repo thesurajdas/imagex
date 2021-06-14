@@ -33,7 +33,7 @@ $last_id = $page+$limit;
                                                         <?php } ?>
                                                             <div class="dropdown-menu">
                                                                 <a class="dropdown-item" href="#">
-                                                                    <button type="button" class="btn col-12" data-toggle="modal" data-target="#staticBackdrop"><i class="fad fa-file-edit"></i> Edit</button>
+                                                                    <button type="button" onclick="editimg(<?php echo $row['id']; ?>)" class="btn col-12" data-toggle="modal" data-target="#staticBackdrop"><i class="fad fa-file-edit"></i> Edit</button>
                                                                 </a>
                                                                 <div class="dropdown-divider"></div>
                                                                 <a class="dropdown-item" id="countDown" onclick="countDownload(<?php echo $row['id']; ?>)" href="<?php echo $site_url,$row['image_location']; ?>" download="<?php echo $row['title']; ?>">
