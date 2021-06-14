@@ -3,7 +3,6 @@
     //Get image id from profile page
     if (isset($_POST['id'])) {
         $edit_img_id=$_POST['id'];
-    }
     //Get image data from database
     $sql="SELECT * FROM images WHERE id='$edit_img_id'";
     $result_edit=$connect->query($sql);
@@ -16,7 +15,7 @@
                                     </div>
                                     <div class="form-group col-md-6">
                                         <label for="inputimgtype"><i class="fad fa-grip-horizontal"></i> Image Type</label>
-                                        <select id="imgtype" name="imgtype" class="fc form-control" aria-placeholder="Moun" required>
+                                        <select id="imgcat" name="imgcat" class="fc form-control" aria-placeholder="Moun" required>
                                             <option selected></option>
                                             <?php
                                                 $sql="SELECT * FROM categories ORDER BY category ASC";
@@ -35,4 +34,22 @@
                                         </select>    
                                     </div>
  </div>
- <button type="submit" name="update" id="updateimg" class="fc btn btn-success col-12"><i class="fad fa-check-circle"></i> Save changes</button> 
+ <button type="submit" name="update" id="" class="fc btn btn-success col-12"><i class="fad fa-check-circle"></i> Save changes</button>
+ <?php } ?>
+ <?php
+    //Get image id to update the image
+    if(isset($_POST['editID'])){
+        $edit_id=$_POST['editID'];
+        $edit_title=$_POST['title'];
+        $edit_imgcat=$_POST['imgcat'];
+        $edit_visibility=$_POST['visibility'];
+        //Update image details
+        $sql="UPDATE images SET title='$edit_title',visibility='$edit_visibility', category='$edit_imgcat' WHERE id='$edit_id'";
+        if($result_update=$connect->query($sql)){
+            echo "<script>alert('Image Updated Successfully!');</script>";
+        }
+        else{
+            echo "<script>alert('Unable to update the image details!');</script>";
+        }
+    }
+ ?>

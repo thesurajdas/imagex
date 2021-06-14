@@ -486,6 +486,7 @@
                 });
             });
         }
+        //Image Update Details
         </script>
     </body>
 </html>
