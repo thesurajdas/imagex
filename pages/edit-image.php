@@ -8,9 +8,11 @@
     $result_edit=$connect->query($sql);
     $row_edit=$result_edit->fetch_assoc();
 ?>
+<form id="update-img" method="POST">
  <div class="form-row">
 <div class="form-group col-md-12">
                                         <label for="title"><i class="fad fa-file-signature"></i> Image Name</label>
+                                        <input type="hidden" id="update-id" value="<?php echo $row_edit['id'] ?>">
                                         <input type="text" name="title" class="fc form-control" id="title" placeholder="Beautiful Nature" value="<?php echo $row_edit['title'] ?>" minlength="5" maxlength="15" required>
                                     </div>
                                     <div class="form-group col-md-6">
@@ -34,7 +36,8 @@
                                         </select>    
                                     </div>
  </div>
- <button type="submit" name="update" id="" class="fc btn btn-success col-12"><i class="fad fa-check-circle"></i> Save changes</button>
+ <button type="submit" name="update" class="fc btn btn-success col-12"><i class="fad fa-check-circle"></i> Save changes</button>
+ </form>
  <?php } ?>
  <?php
     //Get image id to update the image
@@ -45,7 +48,7 @@
         $edit_visibility=$_POST['visibility'];
         //Update image details
         $sql="UPDATE images SET title='$edit_title',visibility='$edit_visibility', category='$edit_imgcat' WHERE id='$edit_id'";
-        if($result_update=$connect->query($sql)){
+        if($connect->query($sql)==TRUE){
             echo "<script>alert('Image Updated Successfully!');</script>";
         }
         else{

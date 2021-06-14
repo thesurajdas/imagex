@@ -313,9 +313,10 @@
                     <i class="far fa-times-circle"></i>
                     </button>
                 </div>
-                <div id="loadedit" class="modal-body">
+                <div id="loadEdit" class="modal-body">
                     <!-- Image edit option loaded here -->   
                 </div>
+                <div id="loadUpdate"></div>
                 <div class="modal-footer">
                     <button type="button" class="fc btn btn-danger col-12" data-dismiss="modal"><i class="fad fa-times-circle"></i> Close</button>
                 </div>
@@ -481,12 +482,28 @@
                     type: 'POST',
                     data: 'id='+id,
                     success: function(result){
-                        $('#loadedit').html(result);
+                        $('#loadEdit').html(result);
                     }
                 });
             });
         }
         //Image Update Details
+            $(document).ready(function(){
+                $('#update-img').on('submit', function(){
+                    var id = $('#update-id').val();
+                    var title = $('#title').val();
+                    var imgcat = $('#imgcat').val();
+                    var visibility = $('#visibility').val();
+                    $.ajax({
+                        url: 'edit-image.php',
+                        type: 'POST',
+                        data: {editID:id, title:title, imgcat:imgcat, visibility:visibility},
+                        success: function(result){
+                            $('#loadUpdate').html(result);
+                        }
+                    });
+                });
+            });
         </script>
     </body>
 </html>
