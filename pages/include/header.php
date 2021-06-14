@@ -2,7 +2,7 @@
                 <button class="navbar-toggler" style="margin-left: 35px;" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo03" aria-controls="navbarTogglerDemo03" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
                 </button>
-                <a class="navbar-brand" href="../index.php"><img style="height: 40px;" src="../img/logo.jpg" alt=""></a>
+                <a class="navbar-brand" href="../index.php"><img style="height: 40px;" src="../img/logo.svg" alt=""></a>
                 <?php if (!isset($user_id)){?>
                 <div class="d-md-none d-lg-none d-lg-none d-lx-none">
                     <a class="nav-link dropdown-toggle" href="login.php" role="button"><button type="button" class="btn btn-outline-warning bt"><i class="fas fa-user-circle"></i></button></a>   
@@ -55,7 +55,7 @@
                                 </button>
                             </div>
                             <!-- Here autocomplete list will be display -->
-                            <div id="search-box" class="dropdown-menu" style="top: 100%"><div class="dropdown-item">Type something...</div></div>
+                            <div id="search-box" class="dropdown-menu" style="top: 80%"><div class="dropdown-item">Type something...</div></div>
                         </div>
                     </form>
                     <ul class="navbar-nav">

@@ -215,8 +215,7 @@ if (isset($_REQUEST['login'])) {
           <div class="content">
             <h3>New here ?</h3>
             <p>
-              Lorem ipsum, dolor sit amet consectetur adipisicing elit. Debitis,
-              ex ratione. Aliquid!
+              Join Us Now, Fell free to join a new world of Mobile Photography.
             </p>
             <button class="btn transparent" id="sign-up-btn">
               Sign up
@@ -230,8 +229,7 @@ if (isset($_REQUEST['login'])) {
           <div class="content">
             <h3>One of us ?</h3>
             <p>
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Nostrum
-              laboriosam ad deleniti.
+              Sign In Now!
             </p>
             <button class="btn transparent" id="sign-in-btn">
               Sign in
