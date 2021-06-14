@@ -324,82 +324,7 @@
     <!-------------------------------------------------Related Images main body------------------------------------------>
     <div class="container shadow-lg p-3 mb-5 bg-white my-3 glry" style="border-radius: 1.25rem">
     <h2 class="text-center"><span class="badge" style="color: #4ba0ffa8; background-color:#dee2e69e;">Related Images</span></h2>
-        <div class="row">
-                            <?php
-	                            //Get Image Data from Database
-	                            $sql="SELECT * FROM images WHERE category='$category_id'";
-	                            $result_img=$connect->query($sql);
-	                            if ($result_img->num_rows>0) {
-                                while($row=$result_img->fetch_assoc()):
-                                if(($row['image_id']!=$img_id)){
-                            ?>           
-                                <div class="col-lg-4 col-md-6 col-sm-12 sglry">
-                                        <div class="card cds">
-                                            <img class="im" src="<?php echo $site_url,$row['image_location']; ?>" alt="Card image cap">
-                                            <div class="card-text cds-txt">
-                                                <div class="container" style="padding-left: 0">
-                                                    <div class="row">
-                                                        <h3 class="col-10 inm"><a class="card-link il" href="<?php echo $site_url; ?>/pages/image.php?id=<?php echo $row['image_id']; ?>"><?php echo $row['title']; ?></a></h3>
-                                                        <div class="btn-group dropleft col-2">
-                                                        <?php if(($login==1) && ($user_id==$row['user_id'])){ ?>
-                                                            <button type="button" class="btn text-white dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><i class="fad fa-ellipsis-v"></i></button>
-                                                        <?php } ?>
-                                                            <div class="dropdown-menu">
-                                                                <a class="dropdown-item" href="#">
-                                                                    <button type="button" class="btn col-12" data-toggle="modal" data-target="#staticBackdrop"><i class="fad fa-file-edit"></i> Edit</button>
-                                                                </a>
-                                                                <div class="dropdown-divider"></div>
-                                                                <a class="dropdown-item" href="<?php echo $site_url,$row['image_location']; ?>" download="<?php echo $row['title']; ?>">
-                                                                    <button type="button" class="btn col-12" data-toggle="modal" ><i class="fad fa-cloud-download-alt"></i> Download</button>
-                                                                </a>
-                                                                <div class="dropdown-divider"></div>
-                                                                <a class="dropdown-item" href="#"><button type="button" class="btn col-12"><i class="fad fa-trash"></i> Delete</button></a>
-                                                            </div>
-                                                        </div>    
-                                                    </div>        
-                                                </div>
-                                                <a href="<?php $image_user_id=$row['user_id'];
-                                                $sql="SELECT * FROM users WHERE id='$image_user_id'";
-                                                $result_img_r=$connect->query($sql);
-                                                $row_img_user=$result_img_r->fetch_assoc();
-                                                $username=$row_img_user['username'];
-                                                $fullname=$row_img_user['name'];
-                                                echo $site_url.'/pages/profile.php?u='.$username; ?>" class=" text-decoration-none text-white"><img class="upimg" src="https://picsum.photos/id/237/200/300" alt=""> <?php echo $fullname; ?></a>
-                                                <div class="container">
-                                                    <div class="row chbtn">
-                                                        <?php
-                                                            $image_id=$row['id'];
-                                                                if($login==1){
-                                                                    //Check liked or not
-                                                                    $sql="SELECT * FROM likes WHERE image_id='$image_id' AND user_id='$user_id'";
-                                                                    $result_like=$connect->query($sql);
-                                                                    if($result_like->num_rows==1){
-                                                                        $icon="fad";
-                                                                        $like_color="color:red;";
-                                                                    }
-                                                                    else{
-                                                                        $icon="far";
-                                                                        $like_color="";
-                                                                    }
-                                                                }
-                                                                else{
-                                                                    $icon="far";
-                                                                    $like_color="";
-                                                                }
-                                                        ?>
-                                                        <a class="btn btn-outline-danger cbtn" style="margin-right: 5px;" id="<?php echo $image_id; ?>" onclick="mylike(<?php echo $image_id; ?>)" title="Like This Image"><span style="<?php echo $like_color;?>"><i class="<?php echo $icon; ?> fa-heart"></i></span> <span><?php echo $row['likes']; ?></span></a>
-                                                        <a href="<?php echo $site_url; ?>/pages/image.php?id=<?php echo $row['image_id']; ?>" class="btn btn btn-outline-light cbtn" title="View Image" style="margin-left: 5px;"><i class="fad fa-eye"></i> <span><?php echo $row['views']; ?></span></a>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>              
-            <?php }endwhile;}
-                            else{
-                                echo "<center><b>No Image Found!</b></center>";
-                            } ?>
-                            <!--user uploaded image end-->
-        </div>
+        <div id="loadData" class="row"></div>
     </div>
     <!----------------------Footer Section---------------------------------------------------->
     <?php
@@ -458,6 +383,37 @@
             });
         }
         </script>
+        <script>
+  $(document).ready(function(){
+    // Load Data from Database with Ajax
+    function loadTable(page){
+      $.ajax({
+        url: "related-pagination.php",
+        type: "POST",
+        data : { page_no : page, category:<?php echo $category_id; ?>, img_id:<?php echo $row_img['id']; ?>},
+        success: function(data){
+          if(data){
+            $("#pagination").remove();
+            $("#loadData").append(data);
+          }else{
+            $("#ajaxbtn").html("<i class='fad fa-sad-cry'></i> No more images found!");
+            $("#ajaxbtn").prop("disabled",true);
+          }
+          
+        }
+      });
+    }
+    loadTable();
+
+    // Add Click Event on ajaxbtn
+    $(document).on("click","#ajaxbtn",function(){
+      $("#ajaxbtn").html("<div class='spinner-border spinner-border-sm text-info' role='status'><span class='sr-only'></span></div> Loading...");
+      var pid = $(this).data("id");
+      loadTable(pid);
+    });
+
+  });
+</script>
 </body>
 </html>
 
