@@ -57,7 +57,8 @@
                             </div>
                         </div>
                     </div>
-                    <div id="loadData" class="row"></div>        
+                    <div id="loadData" class="row"></div>
+                    <div class='container text-center'><img style='height: 150px; width: 150px; object-fit: contain;' src='../img/notfound.svg' alt=''><h2 style='padding-top: 20px; padding-bottom: 25px; color: #6c757dd4;'>Sorry! No Result Found. <i class='fad fa-heart-broken' style='color: red;'></i></div>     
             </div>
                 <!----------------------------page options starts here---------------------------------->
 
