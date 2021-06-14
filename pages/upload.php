@@ -1,5 +1,8 @@
 <?php
     require_once('../auth.php');
+    if($login!=1){
+        header('location:login.php');
+    }
 	$time=date('Y-m-d H:i:s');
 	//Upload Image
 	if (isset($_REQUEST['upload'])) {
