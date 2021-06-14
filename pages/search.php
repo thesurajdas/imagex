@@ -150,31 +150,5 @@
             }
         </script>
         <?php } ?>
-
-        <script>
-        //Send Searching Request
-    $(document).ready(function(){
-        $('#query').keyup(function(){
-            var query = $(this).val();
-            if(query!=''){
-                $.ajax({
-                    url: "search-value.php",
-                    method: "GET",
-                    data: {q:query},
-                    success: function(data){
-                        $('#search-box').fadeIn("fast").html(data);
-                    }
-                });
-            }
-            else{
-                $('#search-box').fadeOut();
-            }
-        });
-    });
-    $(document).on('click','#search-box a',function(){
-        $('#query').val($(this).text());
-        $('#search-box').fadeOut("fast");
-    });
-    </script>
     </body>
 </html>
