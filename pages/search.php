@@ -9,10 +9,9 @@
         header("Location:404.php");
         exit();
     }
-    //Check category Name
-    $sql="SELECT * FROM categories WHERE id='$q'";
-    $result_cat_name=$connect->query($sql);
-    $row_cat_name=$result_cat_name->fetch_assoc();
+    //Check search result number
+    $sql="SELECT * FROM images WHERE title LIKE '%{$q}%'";
+    $result_search=$connect->query($sql);
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -43,7 +42,7 @@
         <!-----------------------------------------------image-section-------------------------------------------->
 
         <div class="container shadow-lg p-3 mb-5 bg-white glry" style="border-radius: 1.25rem;">
-            <div class="col-12 text-center font-weight-bolder" style="color: #495057b0"><div class="row text-center justify-content-center"><h2><i class="fad fa-bolt" style="color: gold"></i> Search Results For: <b><?php echo $q; ?></b></h2></div></div>
+            <div class="col-12 text-center font-weight-bolder" style="color: #495057b0"><div class="row text-center justify-content-center"><h2><i class="fad fa-bolt" style="color: gold"></i> (<?php echo number_format($result_search->num_rows); ?>) Search Results For: <b><?php echo $q; ?></b></h2></div></div>
             <div class="container shadow-lg pl-3 pr-3 pt-1 mt-4" style="border-radius: 1.25rem;">
                     <div class="row pl-3 pr-3 pt-3">
                         <div class="text-right col-12">
@@ -58,65 +57,7 @@
                             </div>
                         </div>
                     </div>
-                    <div class="row">
-                       <!--User Upoaded image start-->
-                       <?php
-	                            //Get Image Data from Database
-	                            $sql="SELECT * FROM images WHERE title LIKE '%{$q}%' ORDER BY views DESC, likes DESC, downloads DESC";
-	                            $result_img=$connect->query($sql);
-	                            if ($result_img->num_rows>0) {
-                                while($row=$result_img->fetch_assoc()): ?>
-                                    <div class="col-lg-4 col-md-6 col-sm-12 sglry">
-                                        <div class="card cds">
-                                            <img class="im" src="<?php echo $site_url,$row['image_location']; ?>" alt="Card image cap">
-                                            <div class="card-text cds-txt">
-                                                <div class="container" style="padding-left: 0">
-                                                    <div class="row">
-                                                        <h3 class="col-10 inm"><a class="card-link il" href="<?php echo $site_url; ?>/pages/image.php?id=<?php echo $row['image_id']; ?>"><?php echo $row['title']; ?></a></h3>   
-                                                    </div>        
-                                                </div>
-                                                <a href="<?php $image_user_id=$row['user_id'];
-                                                $sql="SELECT * FROM users WHERE id='$image_user_id'";
-                                                $result_img_r=$connect->query($sql);
-                                                $row_img_user=$result_img_r->fetch_assoc();
-                                                $username=$row_img_user['username'];
-                                                $fullname=$row_img_user['name'];
-                                                echo $site_url.'/pages/profile.php?u='.$username; ?>" class=" text-decoration-none text-white"><img class="upimg" src="https://picsum.photos/id/237/200/300" alt=""> <?php echo $fullname; ?></a>
-                                                <div class="container">
-                                                    <div class="row chbtn">
-                                                        <?php
-                                                            $image_id=$row['id'];
-                                                                if($login==1){
-                                                                    //Check liked or not
-                                                                    $sql="SELECT * FROM likes WHERE image_id='$image_id' AND user_id='$user_id'";
-                                                                    $result_like=$connect->query($sql);
-                                                                    if($result_like->num_rows==1){
-                                                                        $icon="fad";
-                                                                        $like_color="color:red;";
-                                                                    }
-                                                                    else{
-                                                                        $icon="far";
-                                                                        $like_color="";
-                                                                    }
-                                                                }
-                                                                else{
-                                                                    $icon="far";
-                                                                    $like_color="";
-                                                                }
-                                                        ?>
-                                                        <a class="btn btn-outline-danger cbtn" style="margin-right: 5px;" id="<?php echo $image_id; ?>" onclick="mylike(<?php echo $image_id; ?>)" title="Like This Image"><span style="<?php echo $like_color;?>"><i class="<?php echo $icon; ?> fa-heart"></i></span> <span><?php echo $row['likes']; ?></span></a>
-                                                        <a href="<?php echo $site_url; ?>/pages/image.php?id=<?php echo $row['image_id']; ?>" class="btn btn btn-outline-light cbtn" title="View Image" style="margin-left: 5px;"><i class="fad fa-eye"></i> <span><?php echo $row['views']; ?></span></a>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                <?php endwhile;}
-                                else{
-                                    echo " <div class='container text-center'><img style='height: 150px; width: 150px; object-fit: contain;' src='../img/notfound.svg' alt=''><h2 style='padding-top: 20px; padding-bottom: 25px; color: #6c757dd4;'>Sorry! No Result Found. <i class='fad fa-heart-broken' style='color: red;'></i></div> ";
-                                    } ?>
-                                <!--user uploaded image end-->
-                    </div>        
+                    <div id="loadData" class="row"></div>        
             </div>
                 <!----------------------------page options starts here---------------------------------->
 
@@ -150,5 +91,36 @@
             }
         </script>
         <?php } ?>
+        <script>
+        $(document).ready(function(){
+            // Load Data from Database with Ajax
+            function loadTable(page){
+            $.ajax({
+                url: "search-pagination.php",
+                type: "GET",
+                data : { page_no : page, q:'<?php echo $q; ?>' },
+                success: function(data){
+                if(data){
+                    $("#pagination").remove();
+                    $("#loadData").append(data);
+                }else{
+                    $("#ajaxbtn").html("<i class='fad fa-sad-cry'></i> No more images found!");
+                    $("#ajaxbtn").prop("disabled",true);
+                }
+                
+                }
+            });
+            }
+            loadTable();
+
+            // Add Click Event on ajaxbtn
+            $(document).on("click","#ajaxbtn",function(){
+            $("#ajaxbtn").html("<div class='spinner-border spinner-border-sm text-info' role='status'><span class='sr-only'></span></div> Loading...");
+            var pid = $(this).data("id");
+            loadTable(pid);
+            });
+
+        });
+        </script>
     </body>
 </html>
