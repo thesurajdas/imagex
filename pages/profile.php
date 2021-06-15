@@ -314,7 +314,7 @@
                 <div id="loadEdit" class="modal-body">
                     <!-- Image edit option loaded here -->   
                 </div>
-                <div id="loadUpdate"></div>
+                <div id="loadUpdate"> <!-- Image output option loaded here --></div>
                 <div class="modal-footer">
                     <button type="button" class="fc btn btn-danger col-12" data-dismiss="modal"><i class="fad fa-times-circle"></i> Close</button>
                 </div>
