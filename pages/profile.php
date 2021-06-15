@@ -109,8 +109,6 @@
         <!-----------------------------------------Profile section------------------------------------------------------>
 
         <div class="container shadow-lg p-3 mb-5 bg-white emp-profile" style="border-radius: 1.25rem;">
-
-            <form method="post">
                 <div class="row" style="padding-top: 25px;">
                     <div class="col-md-4">
                         <div class="profile-img">
@@ -269,7 +267,6 @@
                         </div>
                     </div>
                 </div>
-            </form>
             <hr class="mb-4">
             <!-------------------------------------------------Uploaded Images main body------------------------------------------>
             <div class="container shadow-lg p-3 mb-5 bg-white my-3 glry" style="border-radius: 1.25rem">
@@ -489,7 +486,8 @@
         }
         //Image Update Details
             $(document).ready(function(){
-                $('#update-img').on('submit', function(){
+                $('#updateIMG').on('submit', function(e){
+                    e.preventDefault();
                     var id = $('#update-id').val();
                     var title = $('#title').val();
                     var imgcat = $('#imgcat').val();
