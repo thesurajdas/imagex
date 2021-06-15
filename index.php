@@ -8,8 +8,12 @@
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <link rel="stylesheet" href="css/bootstrap.min.css">
+        <link rel="stylesheet" href="css/owl.theme.default.min.css">
+        <link rel="stylesheet" href="css/owl.carousel.min.css">
         <script src="js/jquery-3.5.1.slim.min.js"></script>
         <script src="js/bootstrap.bundle.min.js"></script>
+        <script src="js/jquery.min.js"></script>
+        <script src="js/owl.carousel.min.js"></script>
         <link href="css/home.css" rel="stylesheet">
 
             <!-------bootstrap css custom styling -> (OVERRIDE) <- --------------------->
@@ -179,97 +183,19 @@
             <div class="container shadow-lg p-3 mb-5 bg-white my-3 glry" style="border-radius: 1.25rem">
                 <h3 class="text-center " data-toggle="tooltip" title="Best Of Week" style="color: #047dffc7"><i class="fad fa-star-of-david"></i> Featured</h3>
                 <hr class="mb-3" style="border-radius: 1.25rem; border-top: 5px solid #dae0e5c4;">
-                <div class="row">
-                            <div class="col-lg-4 col-md-6 col-sm-12 sglry">
-                                <div class="card cds">
-                                    <img class="im" src="https://dummyimage.com/600x400/000/fff2.jpg" alt="Card image cap">
-                                    <div class="card-text cds-txt">
-                                        <h3>Image Name</h3>
-                                        <a href="" class=" text-decoration-none text-white"><h5><img class="upimg" src="https://picsum.photos/id/237/200/300" alt=""> username</h5></a>
-                                        <div class="container">
-                                            <div class="row chbtn">
-                                                <a href="#" class="btn btn-outline-danger cbtn" title="Save This Image" style="margin-right: 5px;"><i class="fas fa-heart"></i> <span>500</span></a>
-                                                <a href="#" class="btn btn btn-outline-light cbtn" title="View Image" style="margin-left: 5px;"><i class="fad fa-heart"></i> <span>500</span></a>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>         
-                            <div class="col-lg-4 col-md-6 col-sm-12 sglry">
-                                <div class="card cds">
-                                    <img class="im" src="https://dummyimage.com/600x400/000/fff2.jpg" alt="Card image cap">
-                                    <div class="card-text cds-txt">
-                                        <h3>Image Name</h3>
-                                        <a href="" class=" text-decoration-none text-white"><h5><img class="upimg" src="https://picsum.photos/id/237/200/300" alt=""> username</h5></a>
-                                        <div class="container">
-                                            <div class="row chbtn">
-                                                <a href="#" class="btn btn-outline-danger cbtn" title="Save This Image" style="margin-right: 5px;"><i class="fas fa-heart"></i> <span>500</span></a>
-                                                <a href="#" class="btn btn btn-outline-light cbtn" title="View Image" style="margin-left: 5px;"><i class="fad fa-eye"></i> <span>500</span></a>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>               
-                            <div class="col-lg-4 col-md-6 col-sm-12 sglry">
-                                <div class="card cds">
-                                    <img class="im" src="https://dummyimage.com/600x400/000/fff2.jpg" alt="Card image cap">
-                                    <div class="card-text cds-txt">
-                                        <h3>Image Name</h3>
-                                        <a href="" class=" text-decoration-none text-white"><h5><img class="upimg" src="https://picsum.photos/id/237/200/300" alt=""> username</h5></a>
-                                        <div class="container">
-                                            <div class="row chbtn">
-                                                <a href="#" class="btn btn-outline-danger cbtn" title="Save This Image" style="margin-right: 5px;"><i class="fas fa-heart"></i> <span>500</span></a>
-                                                <a href="#" class="btn btn btn-outline-light cbtn" title="View Image" style="margin-left: 5px;"><i class="fad fa-eye"></i> <span>500</span></a>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>         
-                            <div class="col-lg-4 col-md-6 col-sm-12 sglry">
-                                <div class="card cds">
-                                    <img class="im" src="https://dummyimage.com/600x400/000/fff2.jpg" alt="Card image cap">
-                                    <div class="card-text cds-txt">
-                                        <h3>Image Name</h3>
-                                        <a href="" class=" text-decoration-none text-white"><h5><img class="upimg" src="https://picsum.photos/id/237/200/300" alt=""> username</h5></a>
-                                        <div class="container">
-                                            <div class="row chbtn">
-                                                <a href="#" class="btn btn-outline-danger cbtn" title="Save This Image" style="margin-right: 5px;"><i class="fas fa-heart"></i> <span>500</span></a>
-                                                <a href="#" class="btn btn btn-outline-light cbtn" title="View Image" style="margin-left: 5px;"><i class="fad fa-heart"></i> <span>500</span></a>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>         
-                            <div class="col-lg-4 col-md-6 col-sm-12 sglry">
-                                <div class="card cds">
-                                    <img class="im" src="https://dummyimage.com/600x400/000/fff2.jpg" alt="Card image cap">
-                                    <div class="card-text cds-txt">
-                                        <h3>Image Name</h3>
-                                        <a href="" class=" text-decoration-none text-white"><h5><img class="upimg" src="https://picsum.photos/id/237/200/300" alt=""> username</h5></a>
-                                        <div class="container">
-                                            <div class="row chbtn">
-                                                <a href="#" class="btn btn-outline-danger cbtn" title="Save This Image" style="margin-right: 5px;"><i class="fas fa-heart"></i> <span>500</span></a>
-                                                <a href="#" class="btn btn btn-outline-light cbtn" title="View Image" style="margin-left: 5px;"><i class="fad fa-eye"></i> <span>500</span></a>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>               
-                            <div class="col-lg-4 col-md-6 col-sm-12 sglry">
-                                <div class="card cds">
-                                    <img class="im" src="https://dummyimage.com/600x400/000/fff2.jpg" alt="Card image cap">
-                                    <div class="card-text cds-txt">
-                                        <h3>Image Name</h3>
-                                        <a href="" class=" text-decoration-none text-white"><h5><img class="upimg" src="https://picsum.photos/id/237/200/300" alt=""> username</h5></a>
-                                        <div class="container">
-                                            <div class="row chbtn">
-                                                <a href="#" class="btn btn-outline-danger cbtn" title="Save This Image" style="margin-right: 5px;"><i class="fas fa-heart"></i> <span>500</span></a>
-                                                <a href="#" class="btn btn btn-outline-light cbtn" title="View Image" style="margin-left: 5px;"><i class="fad fa-eye"></i> <span>500</span></a>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>         
+                <div class="owl-carousel owl-theme">
+                    <div class="item"><img class="fci" src="https://dummyimage.com/600x400/000/fff2.jpg" alt=""></div>
+                    <div class="item"><img class="fci" src="https://dummyimage.com/600x400/000/fff2.jpg" alt=""></div>
+                    <div class="item"><img class="fci" src="https://dummyimage.com/600x400/000/fff2.jpg" alt=""></div>
+                    <div class="item"><img class="fci" src="https://dummyimage.com/600x400/000/fff2.jpg" alt=""></div>
+                    <div class="item"><img class="fci" src="https://dummyimage.com/600x400/000/fff2.jpg" alt=""></div>
+                    <div class="item"><img class="fci" src="https://dummyimage.com/600x400/000/fff2.jpg" alt=""></div>
+                    <div class="item"><img class="fci" src="https://dummyimage.com/600x400/000/fff2.jpg" alt=""></div>
+                    <div class="item"><img class="fci" src="https://dummyimage.com/600x400/000/fff2.jpg" alt=""></div>
+                    <div class="item"><img class="fci" src="https://dummyimage.com/600x400/000/fff2.jpg" alt=""></div>
+                    <div class="item"><img class="fci" src="https://dummyimage.com/600x400/000/fff2.jpg" alt=""></div>
+                    <div class="item"><img class="fci" src="https://dummyimage.com/600x400/000/fff2.jpg" alt=""></div>
+                    <div class="item"><img class="fci" src="https://dummyimage.com/600x400/000/fff2.jpg" alt=""></div>
                 </div>                  
             </div>
             <div class="container shadow-lg p-3 mb-5 bg-white my-3 glry" style="border-radius: 1.25rem">
@@ -475,11 +401,51 @@
                 </div>
             <div>    
         </footer>
+        
         <script>
+            jQuery(document).ready(function() {
+                jQuery('.owl-carousel').owlCarousel({
+                loop: true,
+                nav:false,
+                margin:10,
+                autoplay: true,
+                slideTransition: 'linear',
+                autoplaySpeed: 6000,
+                smartSpeed: 6000,
+                center: true,
+                dots:false,
+                responsive:{
+                        0:{
+                            items:1
+                        },
+                        600:{
+                            items:3
+                        },            
+                        960:{
+                            items:3
+                        },
+                        1200:{
+                            items:3
+                        }
+                    }
+                });
+
+
+                jQuery('.owl-carousel').trigger('play.owl.autoplay',[2000]);
+
+                function setSpeed(){
+                    jQuery('.owl-carousel').trigger('play.owl.autoplay',[6000]);
+                }
+
+                setTimeout(setSpeed, 1000);
+            });
+        </script>
+       
+        <script type="text/javascript">
             $(document).ready(function(){
             $('[data-toggle="tooltip"]').tooltip();   
             });
         </script>
-
+    
     </body>
 </html>
