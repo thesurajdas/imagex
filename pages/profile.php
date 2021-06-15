@@ -68,7 +68,8 @@
     </head>
     <body>
         <!--------------------------------------nav Section--------------------------------------------------------->
-        <?php require_once('include/header.php');
+        <?php
+        require_once('include/header.php');
             //Add data into variables
             $user_username=$row['username'];
             $user_name=$row['name'];
@@ -486,16 +487,12 @@
         }
         //Image Update Details
             $(document).ready(function(){
-                $('#updateIMG').on('submit', function(e){
+                $('#formUpdate').on('submit', function(e){
                     e.preventDefault();
-                    var id = $('#update-id').val();
-                    var title = $('#title').val();
-                    var imgcat = $('#imgcat').val();
-                    var visibility = $('#visibility').val();
                     $.ajax({
                         url: 'edit-image.php',
                         type: 'POST',
-                        data: {editID:id, title:title, imgcat:imgcat, visibility:visibility},
+                        data: $('#formUpdate').serialize(),
                         success: function(result){
                             $('#loadUpdate').html(result);
                         }

@@ -8,16 +8,16 @@
     $result_edit=$connect->query($sql);
     $row_edit=$result_edit->fetch_assoc();
 ?>
-<form id="updateIMG">
- <div class="form-row">
+<form id="formUpdate">
+<div class="form-row">
 <div class="form-group col-md-12">
                                         <label for="title"><i class="fad fa-file-signature"></i> Image Name</label>
-                                        <input type="hidden" id="update-id" value="<?php echo $row_edit['id'] ?>">
-                                        <input type="text" id="title" class="fc form-control" placeholder="Beautiful Nature" value="<?php echo $row_edit['title'] ?>" minlength="5" maxlength="15" required>
+                                        <input type="hidden" name="editID" value="<?php echo $row_edit['id'] ?>">
+                                        <input type="text" name="title" class="fc form-control" placeholder="Beautiful Nature" value="<?php echo $row_edit['title'] ?>" minlength="5" maxlength="15" required>
                                     </div>
                                     <div class="form-group col-md-6">
                                         <label for="inputimgtype"><i class="fad fa-grip-horizontal"></i> Image Type</label>
-                                        <select id="imgcat" class="fc form-control" aria-placeholder="Moun" required>
+                                        <select name="imgcat" class="fc form-control" aria-placeholder="Moun" required>
                                             <option selected></option>
                                             <?php
                                                 $sql="SELECT * FROM categories ORDER BY category ASC";
@@ -30,7 +30,7 @@
                                     </div>
                                     <div class="form-group col-md-6">
                                         <label for="title"><i class="fad fa-globe-americas"></i> Image Visibility</label>
-                                        <select id="visibility" id="visibility" class="fc form-control" required>
+                                        <select name="visibility" id="visibility" class="fc form-control" required>
                                             <option value="0" <?php if($row_edit['visibility']==0){echo "selected";} ?>>Public</option>
                                             <option value="1" <?php if($row_edit['visibility']==1){echo "selected";} ?>>Private</option>
                                         </select>    
