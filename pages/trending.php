@@ -33,10 +33,8 @@
     <div class="container shadow-lg p-3 mb-5 bg-white glry" style="border-radius: 1.25rem;">
         <div  class="col-md-12 pb-3 pt-2"><h1 class="text-center chdr" style="color:crimson"><i class="fad fa-fire"></i> Trendings</h1></div>
         <div class="container shadow-lg p-3" style="border-radius: 1.25rem;">        
-                    <div id="loadData" class="row">
-                        <!-- Load Images Here -->
-                        <!-- Load Button Here -->
-                    </div>
+                    <div id="loadData" class="row"></div>
+                    <div id="searching" class='container text-center'><img style='height: 150px; width: 150px; object-fit: contain;' src='../img/notfound.svg' alt=''><h2 style='padding-top: 20px; padding-bottom: 25px; color: #6c757dd4;'>Sorry! No Result Found. <i class='fad fa-heart-broken' style='color: red;'></i></div>
         </div>
     </div>
     <!----------------------Footer Section---------------------------------------------------->
@@ -77,6 +75,7 @@
                 data : { page_no : page },
                 success: function(data){
                 if(data){
+                    $("#searching").remove();
                     $("#pagination").remove();
                     $("#loadData").append(data);
                 }else{

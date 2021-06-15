@@ -325,6 +325,7 @@
     <div class="container shadow-lg p-3 mb-5 bg-white my-3 glry" style="border-radius: 1.25rem">
     <h2 class="text-center"><span class="badge" style="color: #4ba0ffa8; background-color:#dee2e69e;">Related Images</span></h2>
         <div id="loadData" class="row"></div>
+        <div id="searching" class='container text-center'><img style='height: 150px; width: 150px; object-fit: contain;' src='../img/notfound.svg' alt=''><h2 style='padding-top: 20px; padding-bottom: 25px; color: #6c757dd4;'>Sorry! No Result Found. <i class='fad fa-heart-broken' style='color: red;'></i></div>
     </div>
     <!----------------------Footer Section---------------------------------------------------->
     <?php
@@ -393,6 +394,7 @@
         data : { page_no : page, category:<?php echo $category_id; ?>, img_id:<?php echo $row_img['id']; ?>},
         success: function(data){
           if(data){
+            $("#searching").remove();
             $("#pagination").remove();
             $("#loadData").append(data);
           }else{

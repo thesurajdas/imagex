@@ -102,8 +102,8 @@
                 data : { page_no : page, q:'<?php echo $q; ?>' },
                 success: function(data){
                     if(data){
-                        $("#pagination").remove();
                         $("#searching").remove();
+                        $("#pagination").remove();
                         $("#loadData").append(data);
                     }else{
                         $("#ajaxbtn").html("<i class='fad fa-sad-cry'></i> No more images found!");

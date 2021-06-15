@@ -58,10 +58,8 @@
                             </div>
                         </div>
                     </div>
-                    <div id="loadData" class="row">
-                       <!--User Upoaded image start-->
-                        <!--user uploaded image end-->
-                    </div>
+                    <div id="loadData" class="row"></div>
+                    <div id="searching" class='container text-center'><img style='height: 150px; width: 150px; object-fit: contain;' src='../img/notfound.svg' alt=''><h2 style='padding-top: 20px; padding-bottom: 25px; color: #6c757dd4;'>Sorry! No Result Found. <i class='fad fa-heart-broken' style='color: red;'></i></div>
                 </div>
             </div>    
         </div>
@@ -103,6 +101,7 @@
                 data : { page_no : page, id: <?php echo $id; ?> },
                 success: function(data){
                 if(data){
+                    $("#searching").remove();
                     $("#pagination").remove();
                     $("#loadData").append(data);
                 }else{

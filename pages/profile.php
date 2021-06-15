@@ -283,15 +283,13 @@
                 </div>    
                     <div class="tab-content" id="myiTabContent">
                         <div class="tab-pane fade show active" id="uimg" role="tabpanel" aria-labelledby="uimg-tab">
-                            <div id="loadData" class="row">
-                                <!-- Images -->
-                            </div> 
+                            <div id="loadData" class="row"></div> 
+                            <div id="searching" class='container text-center'><img style='height: 150px; width: 150px; object-fit: contain;' src='../img/notfound.svg' alt=''><h2 style='padding-top: 20px; padding-bottom: 25px; color: #6c757dd4;'>Sorry! No Result Found. <i class='fad fa-heart-broken' style='color: red;'></i></div>
                         </div>
                         <div class="tab-pane fade" id="simg" role="tabpanel" aria-labelledby="simg-tab">
                             <!-----------saved images starts hare-->
-                                <div id="loadLiked" class="row">
-                                    
-                                </div>
+                                <div id="loadLiked" class="row"></div>
+                                <div id="searchingl" class='container text-center'><img style='height: 150px; width: 150px; object-fit: contain;' src='../img/notfound.svg' alt=''><h2 style='padding-top: 20px; padding-bottom: 25px; color: #6c757dd4;'>Sorry! No Result Found. <i class='fad fa-heart-broken' style='color: red;'></i></div>
                             <!-----------saved mimages end hare-->
                         </div>
                     </div>    
@@ -383,6 +381,7 @@
         data : { page_no : page, id: <?php echo $id; ?> },
         success: function(data){
           if(data){
+            $("#searching").remove();
             $("#pagination").remove();
             $("#loadData").append(data);
           }else{
@@ -415,6 +414,7 @@
         data : { page_no : page, id: <?php echo $id; ?> },
         success: function(data){
           if(data){
+            $("#searchingl").remove();
             $("#pagination-like").remove();
             $("#loadLiked").append(data);
           }else{
