@@ -18,7 +18,6 @@
                                     <div class="form-group col-md-6">
                                         <label for="inputimgtype"><i class="fad fa-grip-horizontal"></i> Image Type</label>
                                         <select name="imgcat" class="fc form-control" aria-placeholder="Moun" required>
-                                            <option selected></option>
                                             <?php
                                                 $sql="SELECT * FROM categories ORDER BY category ASC";
                                                 $result_cat=$connect->query($sql);
@@ -30,7 +29,7 @@
                                     </div>
                                     <div class="form-group col-md-6">
                                         <label for="title"><i class="fad fa-globe-americas"></i> Image Visibility</label>
-                                        <select name="visibility" id="visibility" class="fc form-control" required>
+                                        <select name="visibility" class="fc form-control" required>
                                             <option value="0" <?php if($row_edit['visibility']==0){echo "selected";} ?>>Public</option>
                                             <option value="1" <?php if($row_edit['visibility']==1){echo "selected";} ?>>Private</option>
                                         </select>    
@@ -38,6 +37,21 @@
  </div>
  <button type="submit" class="fc btn btn-success col-12"><i class="fad fa-check-circle"></i> Save changes</button>
  </form>
+ <script>
+ //Image Update Details
+                $('#formUpdate').on('submit', function(e){
+                    e.preventDefault();
+                    $.ajax({
+                        url: 'edit-image.php',
+                        type: 'POST',
+                        data: $('#formUpdate').serialize(),
+                        success: function(result){
+                            $('#loadUpdate').html(result);
+                            // $('#staticBackdrop').hide();
+                        }
+                    });
+                });
+</script>
  <?php } ?>
  <?php
     //Get image id to update the image

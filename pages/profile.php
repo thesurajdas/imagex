@@ -485,20 +485,6 @@
                 });
             });
         }
-        //Image Update Details
-            $(document).ready(function(){
-                $('#formUpdate').on('submit', function(e){
-                    e.preventDefault();
-                    $.ajax({
-                        url: 'edit-image.php',
-                        type: 'POST',
-                        data: $('#formUpdate').serialize(),
-                        success: function(result){
-                            $('#loadUpdate').html(result);
-                        }
-                    });
-                });
-            });
         </script>
     </body>
 </html>
