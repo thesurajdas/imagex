@@ -23,7 +23,7 @@ $last_id = $page+$limit;
 	                            //Get Image Data from Database
 	                                                    $sql="SELECT * FROM images WHERE category={$category_id} ORDER BY views DESC, likes DESC, downloads DESC LIMIT {$page},$limit";
                                                         $result_img=$connect->query($sql);
-                                                        if ($result_img->num_rows>0) {
+                                                        if ($result_img->num_rows>1) {
                                                         while($row=$result_img->fetch_assoc()):
                                                         if(($row['id']!=$img_id)){
                                                     ?>           
