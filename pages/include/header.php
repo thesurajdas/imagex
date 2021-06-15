@@ -55,7 +55,7 @@
                                 </button>
                             </div>
                             <!-- Here autocomplete list will be display -->
-                            <div id="search-box" class="dropdown-menu" style="top: 80%"><div class="dropdown-item">Type something...</div></div>
+                            <div id="search-box" class="dropdown-menu" style="top: 80%"><div class="dropdown-item"><i class="fal fa-info-circle"></i> Type Something...</div></div>
                         </div>
                     </form>
                     <ul class="navbar-nav">
