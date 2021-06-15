@@ -150,7 +150,7 @@ if (isset($_REQUEST['login'])) {
     <script
       src="assets/js/fontawesomekit.js"></script>
     <link rel="stylesheet" href="../css/logsign.css" />
-    <title>Sign in & Sign up Form</title>
+    <title>Sign in & Sign up</title>
   </head>
   <body>
     <div class="container">
@@ -220,7 +220,7 @@ if (isset($_REQUEST['login'])) {
             <button class="btn transparent" id="sign-up-btn">
               Sign up
             </button>
-            <a href="../index.html"><button class="btn transparent">
+            <a href="../index.php"><button class="btn transparent">
               Home</a>
           </div>
           <img src="../img/log.svg" class="image" alt="" />
@@ -234,7 +234,7 @@ if (isset($_REQUEST['login'])) {
             <button class="btn transparent" id="sign-in-btn">
               Sign in
             </button>
-            <a href="../index.html"><button class="btn transparent">
+            <a href="../index.php"><button class="btn transparent">
               Home</a>
             </button>
           </div>
