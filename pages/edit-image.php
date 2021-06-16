@@ -15,7 +15,7 @@
                                         <img src="<?php echo $site_url,$row_edit['image_location']; ?>" class="img-fluid" alt="" style="height: 250px; object-fit: contain;">
                                     </div>
                                     <div class="col-md-12" style="margin-bottom: 10px; font-weight: 600;">
-                                        <label for="title" style="color: #b94d00;"><i class="fad fa-file-signature"></i> Image Name</label>
+                                        <label for="title" style="color: #b94d00; font-weight: 600;"><i class="fad fa-file-signature"></i> Image Name</label>
                                         <input type="hidden" name="editID" value="<?php echo $row_edit['id']; ?>">
                                         <input type="text" name="title" class="fc form-control" placeholder="Beautiful Nature" value="<?php echo $row_edit['title']; ?>" minlength="5" maxlength="15" required>
                                     </div>
@@ -37,6 +37,23 @@
                                             <option value="0" <?php if($row_edit['visibility']==0){echo "selected";} ?>>Public</option>
                                             <option value="1" <?php if($row_edit['visibility']==1){echo "selected";} ?>>Private</option>
                                         </select>    
+                                    </div>
+                                    <div class="form-group col-md-6">
+                                            <label for="phone" style="color:#bd2130; font-weight: 600;"><i class="fad fa-folder-download"></i> Download</label>
+                                            <select class="form-control fc" name="country" required>
+                                                <option value="Unkown">Choose...</option>
+                                                    <option value="Grant">Grant</option>
+                                                    <option value="Denied">Denied</option>
+                                            </select>    
+                                    </div>
+                                    <div class="form-group col-md-6">
+                                            <label for="phone" style="color:blueviolet; font-weight: 600;"><i class="fad fa-file-certificate"></i> License</label>
+                                            <select class="form-control fc" name="country" required>
+                                                <option value="Unkown">Choose...</option>
+                                                    <option value="Copyright Free">Copyright Free</option>
+                                                    <option value="Private">Creative Commons</option>
+                                                    <option value="Public Domain">Public Domain</option>
+                                            </select>    
                                     </div>
  </div>
  <button type="submit" class="fc btn btn-success col-12"><i class="fad fa-check-circle"></i> Save changes</button>

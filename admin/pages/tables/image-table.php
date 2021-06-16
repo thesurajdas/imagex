@@ -307,20 +307,37 @@ if (isset($_REQUEST['delete'])) {
                                 <hr class="mb-4">
                                 <form action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]);?>" method="POST">
                                     <div class="form-row">
-                                        <div class="form-group col-md-12">
+                                        <div class="form-group col-md-8">
                                             <label for="fname">Name</label>
                                             <input type="text" class="form-control" name="name" placeholder="Full Name" value="Iamge name" required>
                                         </div>
-                                        <div class="form-group col-md-6">
+                                        <div class="form-group col-md-4">
+                                            <label for="phone">License</label>
+                                            <select class="form-control" name="country" required>
+                                                <option value="Unkown">Choose...</option>
+                                                    <option value="Copyright Free">Copyright Free</option>
+                                                    <option value="Private">Creative Commons</option>
+                                                    <option value="Public Domain">Public Domain</option>
+                                            </select>    
+                                        </div>
+                                        <div class="form-group col-md-4">
                                             <label for="ctgry">Category</label>
                                             <input type="text" class="form-control" name="email" placeholder="example@email.com" value="Nature" required>
                                         </div>
-                                        <div class="form-group col-md-6">
+                                        <div class="form-group col-md-4">
                                             <label for="phone">Visibility</label>
                                             <select class="form-control" name="country" required>
                                                 <option value="Unkown">Choose...</option>
-                                                    <option value="Albania" >Public</option>
-                                                    <option value="Algeria">Private</option>
+                                                    <option value="Public" style="color:darkgreen">Public</option>
+                                                    <option value="Private" style="color:darkred">Private</option>
+                                            </select>    
+                                        </div>
+                                        <div class="form-group col-md-4">
+                                            <label for="phone">Download</label>
+                                            <select class="form-control" name="country" required>
+                                                <option value="Unkown">Choose...</option>
+                                                    <option value="Grant" style="color: green;"><i class="fad fa-times"></i> Grant</option>
+                                                    <option value="Denied" style="color: darkred"><i class="fad fa-times"></i> Denied</option>
                                             </select>    
                                         </div>
                                     </div>

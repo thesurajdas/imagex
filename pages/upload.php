@@ -100,7 +100,7 @@
         <!-----------------------------------nav section---------------------------------------------------->
         <?php require_once('include/header.php'); ?>
         <!----------------------------------------------------main containt section-------------------->
-        <div class="container shadow-lg p-3 mb-5 bg-white rounded maincon">
+        <div class="container shadow-lg p-3 mb-5 bg-white maincon" style="border-radius: 1.25rem;">
             <div class="row">
                 <div class="col-md-12 text-center hdrtxt">
                     <h1 class="display-4">Upload Your Image</h1>
@@ -123,11 +123,11 @@
                         </div>
                         <div class="form-row">
                             <div class="form-group col-md-12">
-                                <label for="title"><i class="fas fa-file-signature"></i> Image Name</label>
+                                <label for="title" style="color: #b94d00; font-weight: 600;"><i class="fad fa-file-signature"></i> Image Name</label>
                                 <input type="text" name="title" class="fc form-control" id="title" placeholder="Violet Hill" minlength="5" maxlength="16" required>
                             </div>
-                            <div class="form-group col-md-6">
-                                <label for="inputimgtype"><i class="fas fa-grip-horizontal"></i> Image Type</label>
+                            <div class="form-group col-md-3">
+                                <label for="inputimgtype" style="color: #0246bfeb; font-weight: 600;"><i class="fad fa-list-alt"></i> Image Type</label>
                                 <select id="inputimgtype" name="filetype" class="fc form-control" aria-placeholder="Moun" required>
                                     <option selected></option>
                                     <?php
@@ -139,12 +139,29 @@
                                     <?php endwhile; ?>
                                 </select>
                             </div>
-                            <div class="form-group col-md-6">
-                                <label for="title"><i class="fas fa-globe-americas"></i> Image Visibility</label>
+                            <div class="form-group col-md-3">
+                                <label for="title" style="color: #148e14; font-weight: 600;"><i class="fad fa-globe-americas"></i> Image Visibility</label>
                                 <select id="inputimgtype" name="visibility" class="fc form-control" required>
                                     <option value="Public" selected>Public</option>
                                     <option value="Private">Private</option>
                                 </select>    
+                            </div>
+                            <div class="form-group col-md-3">
+                                            <label for="phone" style="color:#bd2130; font-weight: 600;"><i class="fad fa-folder-download"></i> Download</label>
+                                            <select class="form-control fc" name="country" required>
+                                                <option value="Unkown">Choose...</option>
+                                                    <option value="Grant">Grant</option>
+                                                    <option value="Denied">Denied</option>
+                                            </select>    
+                            </div>
+                            <div class="form-group col-md-3">
+                                            <label for="phone" style="color:blueviolet; font-weight: 600;"><i class="fad fa-file-certificate"></i> License</label>
+                                            <select class="form-control fc" name="country" required>
+                                                <option value="Unkown">Choose...</option>
+                                                    <option value="Copyright Free">Copyright Free</option>
+                                                    <option value="Private">Creative Commons</option>
+                                                    <option value="Public Domain">Public Domain</option>
+                                            </select>    
                             </div>
                         </div>
                         <button type="submit" name="upload" class="btn btn-success col-12 bt"><i class="fas fa-arrow-circle-up"></i> Upload</button>
@@ -153,77 +170,7 @@
             </div>
         </div>
         <!----------------------Footer Section---------------------------------------------------->
-        <footer>
-            <div class="bg-light text-dark pt-5 pt-4">
-                <div class="container">
-                    <div class="row text-center text-md-left ">
-                        <div class="col-md-3 col-lg-3 col-lx-3 mx-auto mt-3">
-                            <h5 class="text-uppercase mb-4 font-wight-bold text-info text-dark">About Us</h5>
-                            <hrc class="mb-4">
-                                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Porro ipsum ipsam quibusdam molestias, vero perspiciatis ea cum sapiente in nesciunt tempore blanditiis beatae corrupti et suscipit commodi animi iste molestiae!</p>
-                        </div>
-                        <div class="col-md-2 col-lg-2 col-lx-2 mx-auto mt-3">
-                            <h5 class="text-uppercase mb-4 font-wight-bold text-info text-dark">Quick Links</h5>
-                            <hrc class="mb-4">
-                                <p>
-                                    <a href="#" class="text-dark" style="text-decoration: none;" >Your Account</a>
-                                </p>
-                                <p>
-                                    <a href="#" class="text-dark" style="text-decoration: none;" >Favorites</a>
-                                </p>
-                                <p>
-                                    <a href="#" class="text-dark" style="text-decoration: none;" >Uploads</a>
-                                </p>
-                                <p>
-                                    <a href="#" class="text-dark" style="text-decoration: none;" >Trending</a>
-                                </p>
-                        </div>
-                        <div class="col-md-4 col-lg-3 col-lx-3 mx-auto mt-3">
-                            <h5 class="text-uppercase mb-4 font-wight-bold text-info text-dark">Connect With Us</h5>
-                            <hrc class="mb-4">
-                            <p>
-                                <i class="bi bi-house mr-3" ></i>Short Address,pin-0000000
-                                    
-                            </p>
-                            <p>
-                                <i class="bi bi-envelope mr-3"></i>abc@xyz.com
-                                    
-                            </p>
-                            <p>
-                                <i class="bi bi-telephone-plus mr-3"></i>1234567890
-                                    
-                            </p>
-                        </div>
-                    </div>
-                    <hr class="mb-4">
-                    <div class="row d-flex justify-content-center">
-                        <div>
-                            <p>
-                                Copyright &copy; <script>document.write(new Date().getFullYear())</script> <a href="/"><strong class="text-dark" style="text-decoration: none;"> Gallery Name </strong></a> - All rights reserved
-                            </p>
-                        </div>
-                    </div>
-                    <!--<div class="row d-flex justify-content-center">
-                        <div class="text-center ">
-                            <ul class="list-unstyled list-inline">
-                                <li class="list-inline-item">
-                                    <a href="#" class="text-dark" ><i class="bi bi-facebook"></i></a>
-                                </li>
-                                <li class="list-inline-item">
-                                    <a href="#" class= "text-dark" ><i class="bi bi-twitter"></i></a>
-                                </li>
-                                <li class="list-inline-item">
-                                    <a href="#" class=" text-dark" ><i class="fab bi bi-google"></i></a>
-                                </li>
-                                <li class="list-inline-item">
-                                    <a href="#" class=" text-dark" ><i class="bi bi-linkedin"></i></a>
-                                </li>
-                            </ul>
-                        </div>
-                    </div>-->
-                </div>
-            <div>    
-        </footer>
+        <?php require_once('include/footer.php'); ?>
         <script src="assets/js/Bootstrap-Image-Uploader.js"></script>
     </body>
 </html>
