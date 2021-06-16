@@ -12,9 +12,10 @@
 <form id="formUpdate">
 <div class="form-row">
 <div class="form-group col-md-12">
+<img src="<?php echo $site_url,$row_edit['image_location']; ?>" class="img-fluid" alt="">
                                         <label for="title"><i class="fad fa-file-signature"></i> Image Name</label>
-                                        <input type="hidden" name="editID" value="<?php echo $row_edit['id'] ?>">
-                                        <input type="text" name="title" class="fc form-control" placeholder="Beautiful Nature" value="<?php echo $row_edit['title'] ?>" minlength="5" maxlength="15" required>
+                                        <input type="hidden" name="editID" value="<?php echo $row_edit['id']; ?>">
+                                        <input type="text" name="title" class="fc form-control" placeholder="Beautiful Nature" value="<?php echo $row_edit['title']; ?>" minlength="5" maxlength="15" required>
                                     </div>
                                     <div class="form-group col-md-6">
                                         <label for="inputimgtype"><i class="fad fa-grip-horizontal"></i> Image Type</label>
