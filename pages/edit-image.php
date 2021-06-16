@@ -8,6 +8,7 @@
     $result_edit=$connect->query($sql);
     $row_edit=$result_edit->fetch_assoc();
 ?>
+<div id="loadupdate"></div>
 <form id="formUpdate">
 <div class="form-row">
 <div class="form-group col-md-12">
@@ -47,7 +48,6 @@
                         data: $('#formUpdate').serialize(),
                         success: function(result){
                             $('#loadUpdate').html(result);
-                            // $('#staticBackdrop').hide();
                         }
                     });
                 });
@@ -63,10 +63,22 @@
         //Update image details
         $sql="UPDATE images SET title='$edit_title',visibility='$edit_visibility', category='$edit_imgcat' WHERE id='$edit_id'";
         if($connect->query($sql)===TRUE){
-            echo "<script>alert('Image Updated Successfully!');</script>";
+        ?>
+            <script>
+                $(document).ready(function(){
+                    $('#loadupdate').html("<div class='alert alert-success' role='alert'>Image details updated successfully!</div>");
+                });
+            </script>
+        <?php
         }
         else{
-            echo "<script>alert('Unable to update the image details!');</script>";
+           ?>
+           <script>
+                $(document).ready(function(){
+                    $('#loadupdate').html("<div class='alert alert-danger' role='alert'>Unable to update the details!</div>");
+                });
+            </script>
+           <?php
         }
     }
  ?>
