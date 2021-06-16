@@ -2,8 +2,8 @@
     //Add database connection
     require('../../auth.php');
     //Retrive Data from database
-    $sql1="SELECT * FROM users;";
-    $ur=$connect->query($sql1);
+    $sql="SELECT * FROM images;";
+    $img_result=$connect->query($sql);
 //Save Personal Details
 if (isset($_REQUEST['psave'])) {
   if ($_SERVER['REQUEST_METHOD']=='POST') {
@@ -64,15 +64,15 @@ if (isset($_REQUEST['psave'])) {
     echo "<script>alert('Wrong Submit Method!');</script>";
   }
 }
-//Delete User
+//Delete Images
 if (isset($_REQUEST['delete'])) {
-  $u_id=$_REQUEST['id'];
-  $sql="DELETE FROM users WHERE id='$u_id';";
+  $i_id=$_REQUEST['id'];
+  $sql="DELETE FROM images WHERE id='$i_id';";
   if ($connect->query($sql)===TRUE) {
-    echo "<script>alert('User Deleted Successfully!');</script>";
+    echo "<script>alert('Image Deleted Successfully!');</script>";
   }
   else{
-    echo "<script>alert('Unable to Delete the User!');</script>";
+    echo "<script>alert('Unable to Delete the Image!');</script>";
   }
 }
 ?>
@@ -239,37 +239,36 @@ if (isset($_REQUEST['delete'])) {
                       </thead>
                       <tbody>
                         <tr>
-                            <td>1</td>
-                            <td><img class="timg" src="../../../upload/images/bcf3d1af06.jpg" alt=""></td>
-                            <th>Image Name</th>
-                            <td>Uploader</td>
+                        <?php while($row=$img_result->fetch_assoc()): ?>
+                            <td><?php echo $row['id']; ?></td>
+                            <td><img class="timg" src="../../..<?php echo $row['image_location']; ?>" alt=""></td>
+                            <th><?php echo $row['title'];
+                            echo "<a href='".$site_url."/pages/image.php?id=".$row['image_id']."' target='_blank'> <i class='fas fa-external-link-alt'></i></a>";
+                            ?>
+                            </th>
+                            <td><?php
+                              $up_id=$row['user_id'];
+                              $sql2="SELECT * FROM users WHERE id='$up_id'";
+                              $up_result=$connect->query($sql2);
+                              $row_up=$up_result->fetch_assoc();
+                              echo "<a href='".$site_url."/pages/profile.php?u=".$row_up['username']."' target='_blank'>".$row_up['name']."</a>";
+                            ?></td>
                             <td>
-                              <label class="badge badge-success">Public</label>
+                              <?php
+                                if($row['visibility']==0){echo "<label class='badge badge-success'>public</label>";}
+                                elseif($row['visibility']==1){echo "<label class='badge badge-danger'>private</label>";}
+                                else{echo "Unkown";}
+                              ?>
                             </td>
-                            <td>25/12/2020</td>
-                            <td>25</td>
-                            <td>12</td>
-                            <td>
-                              <button type="button" class="btn btn-outline-primary" data-toggle="modal" data-target="#usersModal"><i class="bi bi-pencil-square"></i></button>
-                              <button class="btn btn-outline-primary" onclick="showSwal('success-message')"><i class="bi bi-trash"></i></button>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td>1</td>
-                            <td><img class="timg" src="../../../upload/images/96fbc5671e.jpg" alt=""></td>
-                            <th>Image Name</th>
-                            <td>Uploader</td>
-                            <td>
-                              <label class="badge badge-success">Public</label>
-                            </td>
-                            <td>25/12/2020</td>
-                            <td>25</td>
-                            <td>12</td>
+                            <td><?php $date=date_create($row['time']); echo date_format($date,"d F, Y h:i A"); ?></td>
+                            <td><?php echo $row['views']; ?></td>
+                            <td><?php echo $row['likes']; ?></td>
                             <td>
                               <button type="button" class="btn btn-outline-primary" data-toggle="modal" data-target="#usersModal"><i class="bi bi-pencil-square"></i></button>
                               <button class="btn btn-outline-primary" onclick="showSwal('success-message')"><i class="bi bi-trash"></i></button>
                             </td>
                         </tr>
+                        <?php endwhile; ?>
                         <!-- Modal -->
                         <div class="modal fade" id="usersModal<?php if (isset($rd['id'])) { echo $rd['id']; } ?>" aria-labelledby="exampleModalScrollableTitle" aria-hidden="true">
                             <div class="modal-dialog modal-dialog-scrollable" role="document">
