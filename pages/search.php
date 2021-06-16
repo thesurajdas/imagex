@@ -48,7 +48,7 @@
                         <div class="text-right col-12">
                             <div class="btn-group btn-group-sm" role="group">
                                 <button id="btnGroupDrop1" type="button" class="btn btn-secondary dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" style="border-radius: 1.25rem;"><i class="fad fa-caret-circle-down"></i> Short By</button>
-                                <div class="dropdown-menu" style="min-width: auto; background-color: rgba(125, 119, 119, 0.1);" aria-labelledby="btnGroupDrop1">
+                                <div class="dropdown-menu" style="min-width: auto; background-color: #f8f9fa;" aria-labelledby="btnGroupDrop1">
                                 <a class="dropdown-item " style="text-align: start; color: rgba(99, 96, 96, 0.856); font-size: 80%; font-weight: 700;" href="#"><i class="fad fa-eye"></i> View</a>
                                 <a class="dropdown-item " style="text-align: start; color: rgba(220, 20, 60, 0.842); font-size: 80%; font-weight: 700;" href="#"><i class="fad fa-heart-circle"></i> Like</a>
                                 <a class="dropdown-item " style="text-align: start; color: rgba(0, 128, 0, 0.815); font-size: 80%; font-weight: 700;" href="#"><i class="fad fa-download"></i> Download</a>
