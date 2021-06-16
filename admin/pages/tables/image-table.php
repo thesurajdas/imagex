@@ -97,8 +97,8 @@ if (isset($_REQUEST['delete'])) {
   <link rel="shortcut icon" href="../../images/favicon.png" />
 
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.4.1/font/bootstrap-icons.css">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" rel="stylesheet">
   <link rel="stylesheet" href="../../../css/imagetable.css">
+  <script src="../../../js/fontawesome.js"></script>
   <style>
     .table td img, .jsgrid .jsgrid-table td img {
         width: 114px;
@@ -243,7 +243,7 @@ if (isset($_REQUEST['delete'])) {
                             <td><?php echo $row['id']; ?></td>
                             <td><img class="timg" src="../../..<?php echo $row['image_location']; ?>" alt=""></td>
                             <th><?php echo $row['title'];
-                            echo "<a href='".$site_url."/pages/image.php?id=".$row['image_id']."' target='_blank'> <i class='fas fa-external-link-alt'></i></a>";
+                            echo "<a class='text-decoration-none' href='".$site_url."/pages/image.php?id=".$row['image_id']."' target='_blank'> <i class='fad fa-external-link-alt' style='margin-left: 3px; font-size: 12px;'></i></a>";
                             ?>
                             </th>
                             <td><?php
@@ -251,7 +251,7 @@ if (isset($_REQUEST['delete'])) {
                               $sql2="SELECT * FROM users WHERE id='$up_id'";
                               $up_result=$connect->query($sql2);
                               $row_up=$up_result->fetch_assoc();
-                              echo "<a href='".$site_url."/pages/profile.php?u=".$row_up['username']."' target='_blank'>".$row_up['name']."</a>";
+                              echo "<a class='text-decoration-none' style='font-weight: 550; font-size: 14px;' href='".$site_url."/pages/profile.php?u=".$row_up['username']."' target='_blank'>".$row_up['name']."  </a>";
                             ?></td>
                             <td>
                               <?php
