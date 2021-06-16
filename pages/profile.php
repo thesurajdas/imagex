@@ -304,7 +304,7 @@
             <div class="modal-dialog" role="document">
                 <div class="modal-content">
                 <div class="modal-header">
-                    <h5 class="modal-title" id="#staticBackdropLabel">Image Information</h5>
+                    <h5 class="modal-title" id="#staticBackdropLabel"><i class="fad fa-image-polaroid" style="color: #430669e0"></i> Image Information</h5>
                     <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                     <i class="far fa-times-circle"></i>
                     </button>
