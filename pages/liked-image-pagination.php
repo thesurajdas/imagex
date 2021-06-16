@@ -33,7 +33,7 @@ $last_id = $page+$limit;
                                             <div class="card-text cds-txt">
                                                 <div class="container" style="padding-left: 0">
                                                     <div class="row">
-                                                        <h3 class="col-10 inm"><a class="card-link il" href="<?php echo $site_url; ?>/pages/image.php?id=<?php echo $row['image_id']; ?>"><?php echo $row['title']; ?></a></h3>
+                                                        <h4 class="col-10 inm"><a class="card-link il" href="<?php echo $site_url; ?>/pages/image.php?id=<?php echo $row['image_id']; ?>"><?php echo $row['title']; ?></a></h4>
                                                     </div>        
                                                 </div>
                                                 <a href="<?php $image_user_id=$row['user_id'];

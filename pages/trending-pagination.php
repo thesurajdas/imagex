@@ -1,7 +1,7 @@
 <?php
 
 require_once('../auth.php');
-
+$time=$today_date;
 $limit = 15;
 if(isset($_POST['page_no'])){
   $page = $_POST['page_no'];
@@ -9,8 +9,9 @@ if(isset($_POST['page_no'])){
   $page = 0;
 }
 $last_id = $page+$limit;
+$count=0;
 	                            //Get Image Data from Database
-	                            $sql="SELECT * FROM images ORDER BY likes DESC, views DESC, downloads DESC LIMIT {$page},$limit";
+	                            $sql="SELECT * FROM images ORDER BY likes/views DESC, downloads DESC LIMIT {$page},$limit";
 	                            $result_img=$connect->query($sql);
 	                            if ($result_img->num_rows>0) {
                                 while($row=$result_img->fetch_assoc()):
@@ -21,7 +22,7 @@ $last_id = $page+$limit;
                                             <div class="card-text cds-txt">
                                                 <div class="container" style="padding-left: 0">
                                                     <div class="row">
-                                                        <h3 class="col-10 inm"><a class="card-link il" href="<?php echo $site_url; ?>/pages/image.php?id=<?php echo $row['image_id']; ?>"><?php echo $row['title']; ?></a></h3>   
+                                                        <h4 class="col-10 inm">#<?php $count=$count+1; echo $count; ?>. <a class="card-link il" href="<?php echo $site_url; ?>/pages/image.php?id=<?php echo $row['image_id']; ?>"><?php echo $row['title']; ?></a></h4>   
                                                     </div>        
                                                 </div>
                                                 <a href="<?php $image_user_id=$row['user_id'];
