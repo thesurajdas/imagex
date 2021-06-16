@@ -11,14 +11,16 @@
 <div id="loadupdate"></div>
 <form id="formUpdate">
 <div class="form-row">
-<div class="form-group col-md-12">
-<img src="<?php echo $site_url,$row_edit['image_location']; ?>" class="img-fluid" alt="">
-                                        <label for="title"><i class="fad fa-file-signature"></i> Image Name</label>
+                                    <div class="form-group col-md-12" style="padding: 5px; text-align:center;">
+                                        <img src="<?php echo $site_url,$row_edit['image_location']; ?>" class="img-fluid" alt="" style="height: 250px; object-fit: contain;">
+                                    </div>
+                                    <div class="col-md-12" style="margin-bottom: 10px; font-weight: 600;">
+                                        <label for="title" style="color: #b94d00;"><i class="fad fa-file-signature"></i> Image Name</label>
                                         <input type="hidden" name="editID" value="<?php echo $row_edit['id']; ?>">
                                         <input type="text" name="title" class="fc form-control" placeholder="Beautiful Nature" value="<?php echo $row_edit['title']; ?>" minlength="5" maxlength="15" required>
                                     </div>
                                     <div class="form-group col-md-6">
-                                        <label for="inputimgtype"><i class="fad fa-grip-horizontal"></i> Image Type</label>
+                                        <label for="inputimgtype" style="color: #0246bfeb; font-weight: 600;"><i class="fad fa-list-alt"></i> Image Type</label>
                                         <select name="imgcat" class="fc form-control" aria-placeholder="Moun" required>
                                             <?php
                                                 $sql="SELECT * FROM categories ORDER BY category ASC";
@@ -30,7 +32,7 @@
                                         </select>
                                     </div>
                                     <div class="form-group col-md-6">
-                                        <label for="title"><i class="fad fa-globe-americas"></i> Image Visibility</label>
+                                        <label for="title" style="color: #148e14; font-weight: 600;"><i class="fad fa-globe-americas"></i> Image Visibility</label>
                                         <select name="visibility" class="fc form-control" required>
                                             <option value="0" <?php if($row_edit['visibility']==0){echo "selected";} ?>>Public</option>
                                             <option value="1" <?php if($row_edit['visibility']==1){echo "selected";} ?>>Private</option>
