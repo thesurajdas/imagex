@@ -4,66 +4,6 @@
     //Retrive Data from database
     $sql="SELECT * FROM images;";
     $img_result=$connect->query($sql);
-//Save Personal Details
-if (isset($_REQUEST['psave'])) {
-  if ($_SERVER['REQUEST_METHOD']=='POST') {
-    //Check Empty String
-    if (($_REQUEST['username']=="")||($_REQUEST['email']=="")||($_REQUEST['name']=="")||($_REQUEST['gender']=="")||($_REQUEST['birth_date']=="")||($_REQUEST['active']=="")||($_REQUEST['country']=="")||($_REQUEST['city']=="")||($_REQUEST['role']=="")) {
-      echo "<script>alert('All fields are required!');</script>";
-    }
-    else{
-      //Take Form Input Securely
-      $u_id=$connect->real_escape_string($_REQUEST['id']);
-      $username=$connect->real_escape_string($_REQUEST['username']);
-      $email=$connect->real_escape_string($_REQUEST['email']);
-      $email=filter_var($email, FILTER_SANITIZE_EMAIL);
-      $phone_no=$connect->real_escape_string($_REQUEST['phone_no']);
-      $name=$connect->real_escape_string($_REQUEST['name']);
-      $gender=$connect->real_escape_string($_REQUEST['gender']);
-      $birth_date=$connect->real_escape_string($_REQUEST['birth_date']);
-      $active=$connect->real_escape_string($_REQUEST['active']);
-      $country=$connect->real_escape_string($_REQUEST['country']);
-      $city=$connect->real_escape_string($_REQUEST['city']);
-      $zip_code=$connect->real_escape_string($_REQUEST['zip_code']);
-      $role=$connect->real_escape_string($_REQUEST['role']);
-
-      //Update Data into table
-      $sql="UPDATE users SET username='$username', email='$email', phone_no='$phone_no', name='$name', gender='$gender', birth_date='$birth_date', active='$active', country='$country', city='$city', zip_code='$zip_code', role='$role' WHERE id='$u_id';";
-      if ($connect->query($sql)===TRUE) {
-          echo "<script>alert('Profile Updated Successfully!');</script>";
-      }
-      else{
-          echo "<script>alert('Unable to update the details!');</script>";
-      }
-    }
-  }
-  else{
-    echo "<script>alert('Wrong Submit Method!');</script>";
-  }
-}
- //Save Device Details
- if (isset($_REQUEST['dsave'])) {
-  if ($_SERVER['REQUEST_METHOD']=='POST') {
-      //Take Form Input Securely
-      $u_id=$connect->real_escape_string($_REQUEST['id']);
-      $device_name=$connect->real_escape_string($_REQUEST['device_name']);
-      $device_model=$connect->real_escape_string($_REQUEST['device_model']);
-      $apertures=$connect->real_escape_string($_REQUEST['apertures']);
-      $resolution=$connect->real_escape_string($_REQUEST['resolution']);
-      $focal_length=$connect->real_escape_string($_REQUEST['focal_length']);
-      //Update Data into table
-      $sql="UPDATE users SET device_name='$device_name', device_model='$device_model', apertures='$apertures', resolution='$resolution', focal_length='$focal_length' WHERE id='$u_id';";
-      if ($connect->query($sql)===TRUE) {
-          echo "<script>alert('Device Details Updated Successfully!');</script>";
-      }
-      else{
-          echo "<script>alert('Unable to update the details!');</script>";
-      }
-  }
-  else{
-    echo "<script>alert('Wrong Submit Method!');</script>";
-  }
-}
 //Delete Images
 if (isset($_REQUEST['delete'])) {
   $i_id=$_REQUEST['id'];
@@ -99,6 +39,7 @@ if (isset($_REQUEST['delete'])) {
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.4.1/font/bootstrap-icons.css">
   <link rel="stylesheet" href="../../../css/imagetable.css">
   <script src="../../../js/fontawesome.js"></script>
+  <script src="../../../js/jquery.min.js"></script>
   <style>
     .table td img, .jsgrid .jsgrid-table td img {
         width: 114px;
@@ -264,7 +205,7 @@ if (isset($_REQUEST['delete'])) {
                             <td><?php echo $row['views']; ?></td>
                             <td><?php echo $row['likes']; ?></td>
                             <td>
-                              <button type="button" class="btn btn-outline-primary" data-toggle="modal" data-target="#usersModal"><i class="bi bi-pencil-square"></i></button>
+                              <button type="button" onclick="editimg(<?php echo $row['id'] ?>)" class="btn btn-outline-primary" data-toggle="modal" data-target="#usersModal"><i class="bi bi-pencil-square"></i></button>
                               <button class="btn btn-outline-primary" onclick="showSwal('success-message')"><i class="bi bi-trash"></i></button>
                             </td>
                         </tr>
@@ -279,75 +220,10 @@ if (isset($_REQUEST['delete'])) {
                                     <span aria-hidden="true">&times;</span>
                                 </button>
                                 </div>
-                                <div class="modal-body">
-                                <h4 class="col-12 ntxt">Besic Info</h4>
-                                <hr class="mb-4">
-                                <form action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]);?>" method="POST">
-                                    <div class="form-row">
-                                        <div class="form-group col-md-12">
-                                        <label for="jd"> Image Id</label>
-                                        <input type="text" class="form-control" placeholder="Register Date" value="1" readonly>
-                                        </div>
-                                        <div class="form-group col-md-4">
-                                        <label for="vew">View</label>
-                                        <input type="text" class="form-control" placeholder="Last Active" value="25" readonly>
-                                        </div>
-                                        <div class="form-group col-md-4">
-                                            <label for="hrts">Hearts</label>
-                                            <input type="text" class="form-control" value="25" readonly>
-                                        </div>
-                                        <div class="form-group col-md-4">
-                                            <label for="dlod">Downloads</label>
-                                            <input type="text" class="form-control" value="25" readonly>
-                                        </div>
-                                    </div>
-                                </form>
-                                <hr class="mb-4">
-                                <h4 class="col-12 ntxt">Image Description</h4>
-                                <hr class="mb-4">
-                                <form action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]);?>" method="POST">
-                                    <div class="form-row">
-                                        <div class="form-group col-md-8">
-                                            <label for="fname">Name</label>
-                                            <input type="text" class="form-control" name="name" placeholder="Full Name" value="Iamge name" required>
-                                        </div>
-                                        <div class="form-group col-md-4">
-                                            <label for="phone">License</label>
-                                            <select class="form-control" name="country" required>
-                                                <option value="Unkown">Choose...</option>
-                                                    <option value="Copyright Free">Copyright Free</option>
-                                                    <option value="Private">Creative Commons</option>
-                                                    <option value="Public Domain">Public Domain</option>
-                                            </select>    
-                                        </div>
-                                        <div class="form-group col-md-4">
-                                            <label for="ctgry">Category</label>
-                                            <input type="text" class="form-control" name="email" placeholder="example@email.com" value="Nature" required>
-                                        </div>
-                                        <div class="form-group col-md-4">
-                                            <label for="phone">Visibility</label>
-                                            <select class="form-control" name="country" required>
-                                                <option value="Unkown">Choose...</option>
-                                                    <option value="Public" style="color:darkgreen">Public</option>
-                                                    <option value="Private" style="color:darkred">Private</option>
-                                            </select>    
-                                        </div>
-                                        <div class="form-group col-md-4">
-                                            <label for="phone">Download</label>
-                                            <select class="form-control" name="country" required>
-                                                <option value="Unkown">Choose...</option>
-                                                    <option value="Grant" style="color: green;"><i class="fad fa-times"></i> Grant</option>
-                                                    <option value="Denied" style="color: darkred"><i class="fad fa-times"></i> Denied</option>
-                                            </select>    
-                                        </div>
-                                    </div>
-                                    <button type="submit" name="psave" class="btn btn-primary">Save Changes</button>
-                                        
+                                  <div id="loadEdit" class="modal-body">
+                                  <!-- edit image modal -->
+                                  </div>
                                 </div>
-                                <div class="modal-footer">
-                                <button type="button" class="btn btn-secondary" data-dismiss="modal" style="color: #fff;">Close</button>
-                                </div>
-                            </div>
                             </div>
                         </div>
                       </tbody>
@@ -394,6 +270,21 @@ if (isset($_REQUEST['delete'])) {
   <script src="../../js/data-table.js"></script>
   <script src="../../js/alerts.js"></script>
   <script src="../../js/avgrund.js"></script>
+  <script>
+        //Edit Image Details
+        function editimg(id){
+            $(document).ready(function(){
+                $.ajax({
+                    url: 'edit-image-admin.php',
+                    type: 'POST',
+                    data: 'id='+id,
+                    success: function(result){
+                        $('#loadEdit').html(result);
+                    }
+                });
+            });
+        }
+        </script>
   <!-- End custom js for this page-->
 
   
