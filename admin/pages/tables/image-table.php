@@ -159,7 +159,8 @@ if (isset($_REQUEST['delete'])) {
         <div class="content-wrapper">
           <div class="card">
             <div class="card-body">
-              <h4 class="card-title">Data table</h4>
+              <h4 class="card-title">Image table</h4>
+              <div id="deletestatus"></div>
               <div class="row">
                 <div class="col-12">
                   <div class="table-responsive">
@@ -206,7 +207,7 @@ if (isset($_REQUEST['delete'])) {
                             <td><?php echo $row['likes']; ?></td>
                             <td>
                               <button type="button" onclick="editimg(<?php echo $row['id'] ?>)" class="btn btn-outline-primary" data-toggle="modal" data-target="#usersModal"><i class="bi bi-pencil-square"></i></button>
-                              <button class="btn btn-outline-primary" onclick="showSwal('success-message')"><i class="bi bi-trash"></i></button>
+                              <button class="btn btn-outline-primary" onclick="mydel(<?php echo $row['id']; ?>)"><i class="bi bi-trash"></i></button>
                             </td>
                         </tr>
                         <?php endwhile; ?>
@@ -284,10 +285,26 @@ if (isset($_REQUEST['delete'])) {
                 });
             });
         }
+        //AJAX Delete
+        function mydel(id){
+                $(document).ready(function(){
+                    var r = confirm("Are you sure to delete this image?");
+                     if (r == true) {
+                        //Send AJAX request
+                        $.ajax({
+                            url: 'delete-admin.php',
+                            type: 'POST',
+                            data: 'image_id='+id,
+                                success: function(result){
+                                  $('#deletestatus').html(result);
+                                location.reload();
+                            }
+                        });
+                    }
+                });
+            }
         </script>
   <!-- End custom js for this page-->
-
-  
 </body>
 
 </html>
