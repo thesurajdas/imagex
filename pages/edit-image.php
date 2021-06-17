@@ -40,20 +40,22 @@
                                     </div>
                                     <div class="form-group col-md-6">
                                             <label for="phone" style="color:#bd2130; font-weight: 600;"><i class="fad fa-folder-download"></i> Download</label>
-                                            <select class="form-control fc" name="country" required>
-                                                <option value="Unkown">Choose...</option>
-                                                    <option value="Grant">Grant</option>
-                                                    <option value="Denied">Denied</option>
+                                            <select class="form-control fc" name="downloadable" required>
+                                                    <option value="0" <?php if($row_edit['downloadable']==0){echo "selected";} ?>>Granted</option>
+                                                    <option value="1" <?php if($row_edit['downloadable']==1){echo "selected";} ?>>Denied</option>
                                             </select>    
                                     </div>
                                     <div class="form-group col-md-6">
                                             <label for="phone" style="color:blueviolet; font-weight: 600;"><i class="fad fa-file-certificate"></i> License</label>
-                                            <select class="form-control fc" name="country" required>
-                                                <option value="Unkown">Choose...</option>
-                                                    <option value="Copyright Free">Copyright Free</option>
-                                                    <option value="Private">Creative Commons</option>
-                                                    <option value="Public Domain">Public Domain</option>
-                                            </select>    
+                                            <select class="form-control" name="license_id" required>
+                                            <?php
+                                                $sql="SELECT * FROM license";
+                                                $result_lic=$connect->query($sql);
+                                                while($row_lic=$result_lic->fetch_assoc()):
+                                            ?>
+                                                <option value="<?php echo $row_lic['id']; ?>" <?php if($row_edit['license_id']==$row_lic['id']){echo "selected";}?>><?php echo $row_lic['license_name']; ?></option>
+                                                <?php endwhile; ?>
+                                            </select>
                                     </div>
  </div>
  <button type="submit" class="fc btn btn-success col-12"><i class="fad fa-check-circle"></i> Save changes</button>
@@ -67,7 +69,7 @@
                         type: 'POST',
                         data: $('#formUpdate').serialize(),
                         success: function(result){
-                            $('#loadUpdate').html(result);
+                            $('#loadupdate').html(result);
                         }
                     });
                 });
@@ -80,25 +82,15 @@
         $edit_title=$_POST['title'];
         $edit_imgcat=$_POST['imgcat'];
         $edit_visibility=$_POST['visibility'];
+        $edit_downloadable=$_POST['downloadable'];
+        $edit_license_id=$_POST['license_id'];
         //Update image details
-        $sql="UPDATE images SET title='$edit_title',visibility='$edit_visibility', category='$edit_imgcat' WHERE id='$edit_id'";
+        $sql="UPDATE images SET title='$edit_title',visibility='$edit_visibility', category='$edit_imgcat', downloadable='$edit_downloadable', license_id='$edit_license_id' WHERE id='$edit_id'";
         if($connect->query($sql)===TRUE){
-        ?>
-            <script>
-                $(document).ready(function(){
-                    $('#loadupdate').html("<div class='alert alert-success' role='alert'>Image details updated successfully!</div>");
-                });
-            </script>
-        <?php
+            echo "<div class='alert alert-success' role='alert'>Image details updated successfully!</div>";
         }
         else{
-           ?>
-           <script>
-                $(document).ready(function(){
-                    $('#loadupdate').html("<div class='alert alert-danger' role='alert'>Unable to update the details!</div>");
-                });
-            </script>
-           <?php
+            echo "<div class='alert alert-danger' role='alert'>Unable to update the details!</div>";
         }
     }
  ?>
