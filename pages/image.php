@@ -7,6 +7,14 @@
         $sql="SELECT * FROM images WHERE image_id='$img_id'";
         $result_img=$connect->query($sql);
         $row_img=$result_img->fetch_assoc();
+        if($row_img['visibility']!=0){
+            if(isset($user_id)){
+                if($user_id!=$row_img['user_id']){
+                    header('location: 404.php');
+                }
+            }
+            else{ header('location: 404.php'); }
+        }
         //View System
         //create cookies
         $cookie_time = time()+60*60*24*10;

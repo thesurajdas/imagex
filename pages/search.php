@@ -10,7 +10,7 @@
         exit();
     }
     //Check search result number
-    $sql="SELECT * FROM images WHERE title LIKE '%{$q}%'";
+    $sql="SELECT * FROM images WHERE visibility=0 AND title LIKE '%{$q}%'";
     $result_search=$connect->query($sql);
 ?>
 <!DOCTYPE html>

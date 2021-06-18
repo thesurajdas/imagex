@@ -3,7 +3,7 @@
     if (isset($_GET['q'])) {
         $query=$_GET['q'];
         $output="";
-        $sql="SELECT DISTINCT(title) FROM images WHERE title LIKE '%{$query}%' LIMIT 5";
+        $sql="SELECT DISTINCT(title) FROM images WHERE visibility=0 AND title LIKE '%{$query}%' LIMIT 5";
         $result=$connect->query($sql);
         $output.='';
         if ($result->num_rows>0) {
