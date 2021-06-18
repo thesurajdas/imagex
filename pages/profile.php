@@ -284,12 +284,14 @@
                     <div class="tab-content" id="myiTabContent">
                         <div class="tab-pane fade show active" id="uimg" role="tabpanel" aria-labelledby="uimg-tab">
                             <div id="loadData" class="row"></div> 
-                            <div id="searching" class='container text-center'><img style='height: 150px; width: 150px; object-fit: contain;' src='../img/notfound.svg' alt=''><h2 style='padding-top: 20px; padding-bottom: 25px; color: #6c757dd4;'>Sorry! No Result Found. <i class='fad fa-heart-broken' style='color: red;'></i></div>
+                            <div id="searching" class='container text-center'>Loading...</div>
                         </div>
                         <div class="tab-pane fade" id="simg" role="tabpanel" aria-labelledby="simg-tab">
                             <!-----------saved images starts hare-->
                                 <div id="loadLiked" class="row"></div>
-                                <div id="searchingl" class='container text-center'><img style='height: 150px; width: 150px; object-fit: contain;' src='../img/notfound.svg' alt=''><h2 style='padding-top: 20px; padding-bottom: 25px; color: #6c757dd4;'>Sorry! No Result Found. <i class='fad fa-heart-broken' style='color: red;'></i></div>
+                                <div id="searchingl" class='container text-center'>
+                                Loading...
+                                </div>
                             <!-----------saved mimages end hare-->
                         </div>
                     </div>    
@@ -384,7 +386,8 @@
             $("#searching").remove();
             $("#pagination").remove();
             $("#loadData").append(data);
-          }else{
+        }else{
+            $("#searching").html("<div class='container text-center'><img style='height: 150px; width: 150px; object-fit: contain;' src='../img/notfound.svg' alt=''><h2 style='padding-top: 20px; padding-bottom: 25px; color: #6c757dd4;'>Sorry! No Result Found. <i class='fad fa-heart-broken' style='color: red;'></i></div>");
             $("#ajaxbtn").html("<i class='fad fa-sad-cry'></i> No more images found!");
             $("#ajaxbtn").prop("disabled",true);
           }
@@ -407,7 +410,7 @@
 <script>
   $(document).ready(function(){
     // Load Data from Database with Ajax
-    function loadTable(page){
+    function loadTablel(page){
       $.ajax({
         url: "liked-image-pagination.php",
         type: "POST",
@@ -418,20 +421,20 @@
             $("#pagination-like").remove();
             $("#loadLiked").append(data);
           }else{
+            $("#searchingl").html("<div class='container text-center'><img style='height: 150px; width: 150px; object-fit: contain;' src='../img/notfound.svg' alt=''><h2 style='padding-top: 20px; padding-bottom: 25px; color: #6c757dd4;'>Sorry! No Result Found. <i class='fad fa-heart-broken' style='color: red;'></i></div>");
             $("#ajaxbtn-like").html("<i class='fad fa-sad-cry'></i> No more images found!");
             $("#ajaxbtn-like").prop("disabled",true);
           }
-          
         }
       });
     }
-    loadTable();
+    loadTablel();
 
     // Add Click Event on ajaxbtn
     $(document).on("click","#ajaxbtn-like",function(){
       $("#ajaxbtn-like").html("<div class='spinner-border spinner-border-sm text-info' role='status'><span class='sr-only'></span></div> Loading...");
       var pid = $(this).data("id");
-      loadTable(pid);
+      loadTablel(pid);
     });
   });
 </script>
