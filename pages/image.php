@@ -104,7 +104,7 @@
                         </div>
                     </a>
                 </div>
-                <img class="imx" src="<?php echo $site_url,$row_img['image_location']; ?>" alt="Card image cap">
+                <img class="imx" src="<?php echo $site_url,$row_img['image_location']; ?>" alt="<?php echo $row_img['title']; ?>" onContextMenu="return false;">
                 <div class="card-body">
                     <div class="profile-head">
                         <ul class="nav nav-tabs justify-content-center" id="myTab" role="tablist">
@@ -191,6 +191,22 @@
                                                 </div>
                                                 <div class="col-6">
                                                     <h6 class="badge" style="color: #fff; background-color: rgb(0 0 0 / 74%);"><?php $date=date_create($row_img['time']); echo date_format($date,"d F, Y h:i A"); ?></h6>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-4 col-sm-12">
+                                            <div class="row">
+                                                <div class="col-6">
+                                                    <h6><i class="fad fa-copyright" style="color: rgb(0 0 0 / 74%);"></i> License:</h6>
+                                                </div>
+                                                <div class="col-6">
+                                                <?php
+                                                    $sql="SELECT * FROM license";
+                                                    $result_lic=$connect->query($sql);
+                                                    while($row_lic=$result_lic->fetch_assoc()):
+                                                ?>
+                                                    <h6 class="badge" style="color: #fff; background-color: rgb(0 0 0 / 74%);"><?php if($row_img['license_id']==$row_lic['id']) {echo $row_lic['license_name'];} ?></h6>
+                                                <?php endwhile; ?>
                                                 </div>
                                             </div>
                                         </div>
