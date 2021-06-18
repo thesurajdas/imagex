@@ -9,14 +9,20 @@ if(isset($_POST['page_no'])){
 }
 //Check category id available or not
 if (isset($_POST['id'])) {
-    $id=$_POST['id'];
+    $cat_id=$_POST['id'];
 }
 else{
-    $id=19;
+    $cat_id=0;
+}
+//Get sorting method
+if(!empty($_POST['s'])){
+    $s = $_POST['s'];
+    $sql="SELECT * FROM images WHERE visibility=0 AND category={$cat_id} ORDER BY {$s} DESC LIMIT {$page},{$limit}";
+}
+else{
+    $sql="SELECT * FROM images WHERE visibility=0 AND category={$cat_id} ORDER BY time DESC LIMIT {$page},{$limit}";
 }
 $last_id = $page+$limit;
-	                            //Get Image Data from Database
-	                            $sql="SELECT * FROM images WHERE visibility=0 AND category={$id} ORDER BY time DESC LIMIT {$page},{$limit}";
 	                            $result_img=$connect->query($sql);
 	                            if ($result_img->num_rows>0) {
                                 while($row=$result_img->fetch_assoc()):?>
