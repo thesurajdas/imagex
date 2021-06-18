@@ -4,6 +4,14 @@
     //Check category id available or not
     if (isset($_GET['q'])) {
         $q=$_GET['q'];
+        $sort_by=array('likes','views','downloads','shares');
+        //Check sorting
+        if ((isset($_GET['s'])) && (in_array($_GET['s'],$sort_by))) {
+            $s=$_GET['s'];
+        }
+        else{
+            $s="";
+        }
     }
     else{
         header("Location:404.php");
@@ -47,12 +55,12 @@
                     <div class="row pl-3 pr-3 pt-3">
                         <div class="text-right col-12">
                             <div class="btn-group btn-group-sm" role="group">
-                                <button id="btnGroupDrop1" type="button" class="btn btn-secondary dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" style="border-radius: 1.25rem;"><i class="fad fa-caret-circle-down"></i> Short By</button>
+                                <button id="btnGroupDrop1" type="button" class="btn btn-secondary dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" style="border-radius: 1.25rem;"><i class="fad fa-caret-circle-down"></i> Sort by</button>
                                 <div class="dropdown-menu" style="min-width: auto; background-color: #f8f9fa;" aria-labelledby="btnGroupDrop1">
-                                <a class="dropdown-item " style="text-align: start; color: rgba(99, 96, 96, 0.856); font-size: 80%; font-weight: 700;" href="#"><i class="fad fa-eye"></i> View</a>
-                                <a class="dropdown-item " style="text-align: start; color: rgba(220, 20, 60, 0.842); font-size: 80%; font-weight: 700;" href="#"><i class="fad fa-heart-circle"></i> Like</a>
-                                <a class="dropdown-item " style="text-align: start; color: rgba(0, 128, 0, 0.815); font-size: 80%; font-weight: 700;" href="#"><i class="fad fa-download"></i> Download</a>
-                                <a class="dropdown-item " style="text-align: start; color: rgba(28, 102, 177, 0.863); font-size: 80%; font-weight: 700;" href="#"><i class="fad fa-share-square"></i> Share</a>
+                                <a class="dropdown-item " style="text-align: start; color: rgba(99, 96, 96, 0.856); font-size: 80%; font-weight: 700;" href="?q=<?php echo $q; ?>&s=views"><i class="fad fa-eye"></i> View</a>
+                                <a class="dropdown-item " style="text-align: start; color: rgba(220, 20, 60, 0.842); font-size: 80%; font-weight: 700;" href="?q=<?php echo $q; ?>&s=likes"><i class="fad fa-heart-circle"></i> Like</a>
+                                <a class="dropdown-item " style="text-align: start; color: rgba(0, 128, 0, 0.815); font-size: 80%; font-weight: 700;" href="?q=<?php echo $q; ?>&s=downloads"><i class="fad fa-download"></i> Download</a>
+                                <a class="dropdown-item " style="text-align: start; color: rgba(28, 102, 177, 0.863); font-size: 80%; font-weight: 700;" href="?q=<?php echo $q; ?>&s=shares"><i class="fad fa-share-square"></i> Share</a>
                                 </div>
                             </div>
                         </div>
@@ -99,7 +107,7 @@
             $.ajax({
                 url: "search-pagination.php",
                 type: "GET",
-                data : { page_no : page, q:'<?php echo $q; ?>' },
+                data : { page_no : page, q:'<?php echo $q; ?>', s:'<?php echo $s; ?>' },
                 success: function(data){
                     if(data){
                         $("#searching").remove();

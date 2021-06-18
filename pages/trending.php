@@ -133,10 +133,9 @@
         
                                 </svg>
                                 <h3 class="text-center" style="color: #28a745; font-weight: 600;">
-                                Please Wait! Images Are Loading! <div class="spinner-border spbb text-success" 
-                                    role="status" >
+                                <div class="spinner-border spbb text-success" role="status" ></div>
+                                Please wait...<br> Images are loading!
                                         <span class="sr-only">Loading...</span>
-                                    </div>
                                 </h3>
                             </div>
                         </div>
