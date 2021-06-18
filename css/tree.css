@@ -5,11 +5,20 @@
     position: relative;
     left: 50%;
     top: 50%;
-    transform: translate(-50%, 25%);
+    transform: translate(-50%, 15%);
 }
 
-.tree {
-    fill: #126d26ec;
+.tree-green {
+    fill: #569c56;
+}
+.tree-orrange {
+    fill: darkorange;
+}
+.tree-red {
+    fill: #eabcc1f7;
+}
+.tree-lite {
+    fill: #bdbfc1;
 }
 
 .circle-mask {
