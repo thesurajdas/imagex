@@ -1,5 +1,4 @@
 <?php
-sleep(5);
 require_once('../auth.php');
 //Check last page no
 $limit = 3;
@@ -17,10 +16,16 @@ else{
 }
 $last_id = $page+$limit;
 	                            //Get Image Data from Database
-	                            $sql="SELECT * FROM images WHERE user_id={$id} ORDER BY time DESC LIMIT {$page},{$limit}";
+                                if(($login==1) && ($user_id==$id)){
+	                                $sql="SELECT * FROM images WHERE user_id={$id} ORDER BY time DESC LIMIT {$page},{$limit}";
+                                }
+                                else{
+                                    $sql="SELECT * FROM images WHERE user_id={$id} AND visibility=0 ORDER BY time DESC LIMIT {$page},{$limit}";
+                                }
 	                            $result_img=$connect->query($sql);
 	                            if ($result_img->num_rows>0) {
-                                while($row=$result_img->fetch_assoc()):?>
+                                while($row=$result_img->fetch_assoc()):
+                                ?>
                                     <div id="<?php echo $row['id'];?>" class="col-lg-4 col-md-6 col-sm-12 sglry">
                                         <div class="card cds">
                                             <img class="im" src="<?php echo $site_url,$row['image_location']; ?>" alt="Card image cap">
@@ -37,7 +42,7 @@ $last_id = $page+$limit;
                                                                     <button type="button" onclick="editimg(<?php echo $row['id']; ?>)" class="btn col-12" data-toggle="modal" data-target="#exampleModal"><i class="fad fa-file-edit"></i> Edit</button>
                                                                 </a>
                                                                 <div class="dropdown-divider"></div>
-                                                                <a class="dropdown-item" id="countDown" onclick="countDownload(<?php echo $row['id']; ?>)" href="<?php echo $site_url,$row['image_location']; ?>" download="<?php echo $row['title']; ?>">
+                                                                <a class="dropdown-item" id="countDown" href="<?php echo $site_url,$row['image_location']; ?>" download="<?php echo $row['title']; ?>">
                                                                     <button type="button" class="btn col-12" data-toggle="modal" ><i class="fad fa-cloud-download-alt"></i> Download</button>
                                                                 </a>
                                                                 <div class="dropdown-divider"></div>

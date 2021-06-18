@@ -1,5 +1,4 @@
 <?php
-sleep(5);
 require_once('../auth.php');
 //Check last page no
 $limit = 3;
@@ -24,7 +23,7 @@ $last_id = $page+$limit;
     while($row_liked=$result_liked->fetch_assoc()):
             $img_id=$row_liked['image_id'];
 	                            //Get Image Data from Database
-	                            $sql="SELECT * FROM images WHERE id={$img_id}";
+	                            $sql="SELECT * FROM images WHERE id={$img_id} AND visibility=0";
 	                            $result_img=$connect->query($sql);
 	                            if ($result_img->num_rows>0) {
                                 while($row=$result_img->fetch_assoc()):?>
