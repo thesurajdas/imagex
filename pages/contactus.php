@@ -1,3 +1,7 @@
+<?php
+    //Add database connection
+    require_once('../auth.php');
+?>
 <!DOCTYPE html>
 <html lang="en">
     <head>
@@ -6,6 +10,7 @@
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <link rel="stylesheet" href="../css/bootstrap.min.css">
         <script src="../js/jquery-3.5.1.slim.min.js"></script>
+        <script src="../js/jquery.min.js"></script>
         <script src="../js/bootstrap.bundle.min.js"></script>
         <link href="../css/contactus.css" rel="stylesheet">
 
@@ -30,28 +35,30 @@
                     <div class="theading col-12 text-center text-uppercase text-monospace font-weight-bolder"><h1 class="font-weight-bolder">Contact Us</h1></div>
                 </div>
                 <hr class="mb-4"></hr>
-                <form>
+                <form id="contactus">
                     <div class="row justify-content-center">
                         <div class="col-md-8">
                             <div class="alert alert-primary alert-dismissible fade show" role="alert">
-                                <strong><i class="fas fa-info-circle"></i></strong><b> Fell free to contact us for any queries about our services.</b>
+                                <strong><i class="fas fa-info-circle"></i></strong><b> Feel free to contact us for any queries about our services.</b>
                                 <button type="button" class="close" data-dismiss="alert" aria-label="Close">
                                 <span aria-hidden="true">&times;</span>
                                 </button>
+                                <!-- Messgae send status -->
+                                <div id="loadmsg"></div>
                             </div>
                             <div class="form-row">
                                 <div class="form-group col-md-6">
                                 <label for="name">Name</label>
-                                <input type="text" class="form-control" id="name" placeholder="Joe Russo" required>
+                                <input type="name" class="form-control" name="name" placeholder="Enter your name" required>
                                 </div>
                                 <div class="form-group col-md-6">
                                 <label for="email">Email</label>
-                                <input type="email" class="form-control" id="email" placeholder="joe.russo@gmail.com" required>
+                                <input type="email" class="form-control" name="email" placeholder="admin@example.com" required>
                                 </div>
                             </div>
                             <div class="form-group">
                                 <label for="comment">Message</label>
-                                <textarea class="form-control" rows="6" id="comment" placeholder="Message" required></textarea>
+                                <input type="textarea" class="form-control" rows="6" name="msg" placeholder="Enter your message here..." required>
                             </div>
                             <button type="submit" class="btn tbtn btn-primary col-12">Send</button>
                         </div>
@@ -63,5 +70,20 @@
 
         <!-------------------------------------------------------Footer Section---------------------------------------------------->
         <?php require_once('include/footer.php'); ?>
+<script>
+ //Image Update Details
+                $('#contactus').on('submit', function(e){
+                    e.preventDefault();
+                    $.ajax({
+                        url: 'sendmail.php',
+                        type: 'POST',
+                        data: $('#contactus').serialize(),
+                        success: function(result){
+                            $('#loadmsg').html(result);
+                            console.log('Worked!');
+                        }
+                    });
+                });
+</script>
     </body>
 </html>
