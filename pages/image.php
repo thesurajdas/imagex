@@ -339,9 +339,11 @@
     <?php
         include('../pages/include/footer.php')
     ?>
+    <?php if($row_img['downloadable']==0): ?>
     <a href="<?php echo $site_url,$row_img['image_location']; ?>" download="<?php echo $row_img['title']; ?>">
     <button type="button" id="countDown" onclick="countDownload(<?php echo $row_img['id']; ?>)" class="btn btn-outline-success cbtnn" data-toggle="tooltip" title="Download Now (<?php $downloads=number_format($row_img['downloads']); echo $downloads; ?>)"><i class="fad fa-cloud-download-alt" style="width: 35px; height: 35px"></i></button>
     </a>
+    <?php endif; ?>
     <script>
     $(document).ready(function(){
     $('[data-toggle="tooltip"]').tooltip();   
