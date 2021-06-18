@@ -284,14 +284,12 @@
                     <div class="tab-content" id="myiTabContent">
                         <div class="tab-pane fade show active" id="uimg" role="tabpanel" aria-labelledby="uimg-tab">
                             <div id="loadData" class="row"></div> 
-                            <div id="searching" class='container text-center'>Loading...</div>
+                            <div id="searching" class='container text-center'><img style='height: 150px; width: 150px; object-fit: contain;' src='../img/notfound.svg' alt=''><h2 style='padding-top: 20px; padding-bottom: 25px; color: #6c757dd4;'>You Haven't Uploaded Any Images Yet. <a href="../pages/upload.php" class="btn btn-success rounded-pill shadow-sm"><i class="fas fa-cloud-upload"></i> Upload Now</a></div>
                         </div>
                         <div class="tab-pane fade" id="simg" role="tabpanel" aria-labelledby="simg-tab">
                             <!-----------saved images starts hare-->
                                 <div id="loadLiked" class="row"></div>
-                                <div id="searchingl" class='container text-center'>
-                                Loading...
-                                </div>
+                                <div id="searchingl" class='container text-center'><img style='height: 150px; width: 150px; object-fit: contain;' src='../img/heart.svg' alt=''><div class="container"><h2  style='padding-top: 20px; padding-bottom: 25px; color: #6c757dd4;'>You Haven't Saved Any Images Yet. <a href="../pages/trending.php" class="btn btn-danger rounded-pill shadow-sm"><i class="fad fa-lightbulb-on" style="color:#f8f9fa"></i> Browse</a></h2></div></div>
                             <!-----------saved mimages end hare-->
                         </div>
                     </div>    
