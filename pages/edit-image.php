@@ -47,7 +47,7 @@
                                     </div>
                                     <div class="form-group col-md-6">
                                             <label for="phone" style="color:blueviolet; font-weight: 600;"><i class="fad fa-file-certificate"></i> License</label>
-                                            <select class="form-control" name="license_id" required>
+                                            <select class="form-control fc" name="license_id" required>
                                             <?php
                                                 $sql="SELECT * FROM license";
                                                 $result_lic=$connect->query($sql);
