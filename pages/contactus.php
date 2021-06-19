@@ -40,12 +40,9 @@
                         <div class="col-md-8">
                             <div class="alert alert-primary alert-dismissible fade show" role="alert">
                                 <strong><i class="fas fa-info-circle"></i></strong><b> Feel free to contact us for any queries about our services.</b>
-                                <button type="button" class="close" data-dismiss="alert" aria-label="Close">
-                                <span aria-hidden="true">&times;</span>
-                                </button>
+                            </div>
                                 <!-- Messgae send status -->
                                 <div id="loadmsg"></div>
-                            </div>
                             <div class="form-row">
                                 <div class="form-group col-md-6">
                                 <label for="name">Name</label>
@@ -65,7 +62,7 @@
                     </div> 
                 </form>
                 <hr class="mb-4"></hr>
-                <p class="font-weight-normal pb-4 text-center">If you want to mail us directly, use this email addtess: <a class="text-decoration-none" href="mailto:someone@example.com">abc@imagex.com</a></p>
+                <p class="font-weight-normal pb-4 text-center">If you want to mail us directly, use this email addtess: <a class="text-decoration-none" href="mailto:contact@localhost.com">contact@localhost.com</a></p>
             </div>
 
         <!-------------------------------------------------------Footer Section---------------------------------------------------->
