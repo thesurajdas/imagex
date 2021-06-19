@@ -115,6 +115,7 @@
                             <li class="nav-item" role="presentation">
                             <a class="nav-link" id="contact-tab" data-toggle="tab" href="#contact" role="tab" aria-controls="contact" aria-selected="false">Capture Details</a>
                             </li>
+                            <button type="button" class="btn btn-secondary"  data-toggle="modal" data-target="#reportimg" style="position: absolute; left:87%; border-radius: 1.35rem"><i class="fad fa-exclamation-triangle"></i></button>
                         </ul>
                         <div class="tab-content" id="myTabContent">
                                 <!---------------image decription------------>
@@ -312,8 +313,8 @@
                             </div>
                         </div>
                     </div>
-                    <div class="container">
-                        <div class="row justify-content-center">
+                    <div class="container pr-10 pl-10" >
+                        <div class="row" style="justify-content: space-around;">
                         <?php
                                                             $image_id=$row_img['id'];
                                                                 if($login==1){
@@ -334,7 +335,12 @@
                                                                     $like_color="";
                                                                 }
                                                         ?>
-                            <a class="btn btn-danger dg col-md-2 col-sm-12 bt" style="margin-top: 10px" id="<?php echo $image_id; ?>" onclick="mylike(<?php echo $image_id; ?>)"><span style="<?php echo $like_color;?>"><i class="<?php echo $icon; ?> fa-heart"></i></span> <span> <?php echo $row_img['likes']; ?></span></a>
+                            <a class="btn btn-danger bt" style="margin-top: 10px; background-color: #6b0c2b; border-color: #6b0c2b;" id="<?php echo $image_id; ?>" onclick="mylike(<?php echo $image_id; ?>)"><span style="<?php echo $like_color;?>"><i class="<?php echo $icon; ?> fa-heart"></i></span> <span> <?php echo $row_img['likes']; ?> Heart</span></a>
+                            <?php if($row_img['downloadable']==0): ?>
+                            <a href="<?php echo $site_url,$row_img['image_location']; ?>" download="<?php echo $row_img['title']; ?>"><button type="button" id="countDown" onclick="countDownload(<?php echo $row_img['id']; ?>)" class="btn btn btn-success bt" style="margin-top: 10px" ><i class="fad fa-cloud-download-alt"></i> Download (<?php $downloads=number_format($row_img['downloads']); echo $downloads; ?>)</button></a>
+                            <?php endif; ?>
+                            <a class="btn btn-dark bt" style="margin-top: 10px" id=""><i class="fad fa-share-square"></i> Share</a>
+
                             <!--<a href="#" class="btn btn-success col-2"><i class="bi bi-download"></i></a>-->
                         </div>
                     </div>
@@ -456,6 +462,55 @@
     <?php
         include('../pages/include/footer.php')
     ?>
+
+    <!----------------------report popup start--------------------------------------->
+
+
+    <div class="modal fade" id="reportimg" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="reportimgLabel">Report Image</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <form action="/">
+                        <div class="form-row">
+                            <div class="form-group col-12" style="padding: 5px; text-align: center">
+                                <img src="../upload/images/96fbc5671e.jpg" alt="" style="height:250px; object-fit:contain;">
+                            </div>
+                            <div class="form-group col-12">
+                                <label for="Imagename" style="color:seagreen; font-weight:500; "><i class="fad fa-file-signature"></i> Image Name</label>
+                                <input type="text" class="form-control" id="Imagename" placeholder="Image Name" style="border-radius: 1.25rem;" disabled>
+                            </div>
+                            <div class="form-group col-12 pl-2">
+                                <div class="form-check pb-1">
+                                    <input class="form-check-input position-static" type="radio" name="blankRadio" id="blankRadio1" value="option1" aria-label="...">
+                                    <label class="form-check-label" for="blankRadio1" style="color:#f34f32; font-weight: 500;"><i class="fad fa-engine-warning"></i> Normal Report</label>
+                                </div>
+                                <div class="form-check pt-1">
+                                    <input class="form-check-input position-static" type="radio" name="blankRadio" id="blankRadio2" value="option2" aria-label="">
+                                    <label class="form-check-label" for="blankRadio2" style="color:#6b3c96; font-weight:500;"><i class="fad fa-file-certificate"></i> License Report</label>                                
+                                </div>
+                            </div>
+                        </div>
+                        <button type="submit" class="btn btn-primary mt-3" style="border-radius: 1.25rem"><i class="fad fa-exclamation-triangle"></i> Report</button>                                            
+                    </form>    
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary bt" data-dismiss="modal">Close</button>
+                </div>
+            </div>
+        </div>
+    </div>                                                        
+
+
+
+    <!----------------------report popup end--------------------------------------->
+
+
     <?php if($row_img['downloadable']==0): ?>
     <a href="<?php echo $site_url,$row_img['image_location']; ?>" download="<?php echo $row_img['title']; ?>">
     <button type="button" id="countDown" onclick="countDownload(<?php echo $row_img['id']; ?>)" class="btn btn-outline-success cbtnn" data-toggle="tooltip" title="Download Now (<?php $downloads=number_format($row_img['downloads']); echo $downloads; ?>)"><i class="fad fa-cloud-download-alt" style="width: 35px; height: 35px"></i></button>

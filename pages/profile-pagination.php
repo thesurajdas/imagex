@@ -87,12 +87,12 @@ $last_id = $page+$limit;
                                                             <a href="<?php echo $site_url; ?>/pages/image.php?id=<?php echo $row['image_id']; ?>" class="btn btn btn-outline-light cbtn" title="View Image" style="margin-left: 5px;"><i class="fad fa-eye"></i> <span><?php echo $row['views']; ?></span></a>
                                                         </div>
                                                         <div class="col-2 text-center pr-0 chbtn">
-                                                            <button type="button pr-0" class="btn" style="color:white"><i class="fad fa-share-square"></i></button>
+                                                            <button type="button" class="btn  pr-0" style="color:white"><i class="fad fa-share-square"></i></button>
                                                         </div>
                                                     </div>
                                                 </div>
                                                 <div class="container " style="margin-top:15%">
-                                                    <h2>public</h2>
+                                                    <p><i class="fad fa-lock-alt" style="color: #dc3545"></i> <span class="badge bg-danger">Private</span></p>
                                                 </div>
                                             </div>
                                         </div>
