@@ -11,7 +11,7 @@
             while ($row=$result->fetch_assoc()) {
         $output.='<a href="'.$site_url.'/pages/search.php?q='.strtolower($row['title']).'" class="dropdown-item" "><i class="fad fa-search" style="color: #3654a9; font-size: 13px"></i> '.strtolower($row['title'])."</a>";
     }
-    $output.='<div class="dropdown-divider"></div><a class="dropdown-item" style="color: green; font-weight: 600;" href="'.$site_url.'/pages/search.php?q="><i class="fad fa-search-plus"></i> More Results</a>';
+    $output.='<div class="dropdown-divider"></div><a class="dropdown-item" style="color: green; font-weight: 600;" href="'.$site_url.'/pages/search.php?q='.strtolower($query).'"><i class="fad fa-search-plus"></i> More Results</a>';
 }
 echo $output;
 }
