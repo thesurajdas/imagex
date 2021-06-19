@@ -1,5 +1,5 @@
 <?php
-sleep(100);
+sleep(1);
 require_once('../auth.php');
 //Check last page no
 $limit = 3;
