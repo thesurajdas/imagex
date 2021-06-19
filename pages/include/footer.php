@@ -4,9 +4,9 @@
                     <div class="row text-center text-md-left ">
                         <div class="col-md-10 col-xl-10 col-lg-10">
                             <div class="col-12 mt-3">
-                                <h5 class="text-uppercase mb-4 font-wight-bold text-info text-dark">About Us</h5>
+                                <h5 class="text-uppercase mb-4 font-wight-bold text-info text-dark">About</h5>
                                 <hrc class="mb-4">
-                                <p>All started with a vision of giving all users a place where users upload and download their pictures taken by mobile phone. And we created <b>PIXWAVE</b>.
+                                <p><b>Pixwave</b> started with a vision of giving all users a place where users upload and download their pictures taken by mobile phone.
                             </div>
                             <div class="col-lg-8 col-md-12 col-xl-8 col-sm-12 mt-3">
                                 <div class="qll">
@@ -14,22 +14,22 @@
                                     <div class="row">
                                         <div class="col-md-3">
                                             <p>
-                                                <a href="aboutus.php" class="text-dark" style="text-decoration: none;" ><i class="fad fa-person-sign"></i> About US</a>
+                                                <a href="aboutus.php" class="text-dark" style="text-decoration: none;" ><i class="fad fa-person-sign"></i> About Us</a>
                                             </p>
                                         </div>
                                         <div class="col-md-3">
                                             <p>
-                                                <a href="contactus.php" class="text-dark" style="text-decoration: none;" ><i class="fad fa-address-book"></i> Contact US</a>
+                                                <a href="contact.php" class="text-dark" style="text-decoration: none;" ><i class="fad fa-address-book"></i> Contact Us</a>
                                             </p>
                                         </div>
                                         <div class="col-md-2">
                                             <p>
-                                                <a href="tos.php" class="text-dark" style="text-decoration: none;" data-toggle="tooltip" title="Terms And Conditions" ><i class="fad fa-file-check"></i> TOS</a>
+                                                <a href="terms.php" class="text-dark" style="text-decoration: none;" data-toggle="tooltip" title="Terms And Conditions" ><i class="fad fa-file-check"></i> Terms</a>
                                             </p>
                                         </div>
                                         <div class="col-md-3">
                                             <p>
-                                                <a href="#" class="text-dark" style="text-decoration: none;" ><i class="fad fa-shield-check"></i> Privacy policy</a>
+                                                <a href="privacy.php" class="text-dark" style="text-decoration: none;" ><i class="fad fa-shield-check"></i> Privacy Policy</a>
                                             </p>
                                         </div>
                                     </div>    
@@ -37,7 +37,7 @@
                             </div>
                         </div>
                         <div class="col-md-2 col-lg-2 col-xl-2 mt-3">
-                            <h5 class="text-uppercase mb-4 font-wight-bold text-info text-dark">Join Us</h5>
+                            <h5 class="text-uppercase mb-4 font-wight-bold text-info text-dark">Connect with</h5>
                                 <div class="container pl-0">
                                     <div class="col-md-2">
                                         <div class="social-icons">

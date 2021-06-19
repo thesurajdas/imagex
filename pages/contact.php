@@ -55,7 +55,7 @@
                             </div>
                             <div class="form-group">
                                 <label for="comment">Message</label>
-                                <input type="textarea" class="form-control" rows="6" name="msg" placeholder="Enter your message here..." required>
+                                <textarea class="form-control" rows="6" name="msg" placeholder="Enter your message here..." required></textarea>
                             </div>
                             <button type="submit" class="btn tbtn btn-primary col-12">Send</button>
                         </div>
