@@ -91,6 +91,9 @@ $last_id = $page+$limit;
                                                         </div>
                                                     </div>
                                                 </div>
+                                                <div class="container " style="margin-top:15%">
+                                                    <h2>public</h2>
+                                                </div>
                                             </div>
                                         </div>
                                     </div>
