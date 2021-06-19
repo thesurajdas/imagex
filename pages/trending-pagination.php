@@ -1,5 +1,5 @@
 <?php
-sleep(5);
+sleep(0);
 require_once('../auth.php');
 $trend_date=date('Y-m');
 $limit = 15;
