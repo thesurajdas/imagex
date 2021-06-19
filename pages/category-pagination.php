@@ -44,29 +44,34 @@ $last_id = $page+$limit;
                                                 $user_avatar=$row_img_user['avatar'];
                                                 echo $site_url.'/pages/profile.php?u='.$username; ?>" class=" text-decoration-none text-white"><img class="upimg" src="<?php echo $site_url."/".$user_avatar; ?>" alt=""> <?php echo $username; ?></a>
                                                 <div class="container">
-                                                    <div class="row chbtn">
-                                                        <?php
-                                                            $image_id=$row['id'];
-                                                                if($login==1){
-                                                                    //Check liked or not
-                                                                    $sql="SELECT * FROM likes WHERE image_id='$image_id' AND user_id='$user_id'";
-                                                                    $result_like=$connect->query($sql);
-                                                                    if($result_like->num_rows==1){
-                                                                        $icon="fad";
-                                                                        $like_color="color:red;";
+                                                    <div class="row">
+                                                        <div class="row col-10 chbtn">
+                                                            <?php
+                                                                $image_id=$row['id'];
+                                                                    if($login==1){
+                                                                        //Check liked or not
+                                                                        $sql="SELECT * FROM likes WHERE image_id='$image_id' AND user_id='$user_id'";
+                                                                        $result_like=$connect->query($sql);
+                                                                        if($result_like->num_rows==1){
+                                                                            $icon="fad";
+                                                                            $like_color="color:red;";
+                                                                        }
+                                                                        else{
+                                                                            $icon="far";
+                                                                            $like_color="";
+                                                                        }
                                                                     }
                                                                     else{
                                                                         $icon="far";
                                                                         $like_color="";
                                                                     }
-                                                                }
-                                                                else{
-                                                                    $icon="far";
-                                                                    $like_color="";
-                                                                }
-                                                        ?>
-                                                        <a class="btn btn-outline-danger cbtn" style="margin-right: 5px;" id="<?php echo $image_id; ?>" onclick="mylike(<?php echo $image_id; ?>)" title="Like This Image"><span style="<?php echo $like_color;?>"><i class="<?php echo $icon; ?> fa-heart"></i></span> <span><?php echo $row['likes']; ?></span></a>
-                                                        <a href="<?php echo $site_url; ?>/pages/image.php?id=<?php echo $row['image_id']; ?>" class="btn btn btn-outline-light cbtn" title="View Image" style="margin-left: 5px;"><i class="fad fa-eye"></i> <span><?php echo $row['views']; ?></span></a>
+                                                            ?>
+                                                            <a class="btn btn-outline-danger cbtn" style="margin-right: 5px;" id="<?php echo $image_id; ?>" onclick="mylike(<?php echo $image_id; ?>)" title="Like This Image"><span style="<?php echo $like_color;?>"><i class="<?php echo $icon; ?> fa-heart"></i></span> <span><?php echo $row['likes']; ?></span></a>
+                                                            <a href="<?php echo $site_url; ?>/pages/image.php?id=<?php echo $row['image_id']; ?>" class="btn btn btn-outline-light cbtn" title="View Image" style="margin-left: 5px;"><i class="fad fa-eye"></i> <span><?php echo $row['views']; ?></span></a>
+                                                        </div>
+                                                        <div class="col-2 text-center pr-0 chbtn">
+                                                            <button type="button pr-0" class="btn" style="color:white"><i class="fad fa-share-square"></i></button>
+                                                        </div>
                                                     </div>
                                                 </div>
                                             </div>
