@@ -55,10 +55,12 @@ if (isset($_REQUEST['login'])) {
   $sql="SELECT id,username,email,password FROM users WHERE (username='".$userid."' OR email='".$userid."') AND password='".$password."' LIMIT 1";
   $result=$connect->query($sql);
   $row=$result->fetch_assoc();
-  $user_id=$row['id'];
-  $user_username=$row['username'];
-  //Encode Cookie Value
-  $user_id=convert_uuencode($user_id);
+  if(isset($row['id'])){
+    $user_id=$row['id'];
+    $user_username=$row['username'];
+    //Encode Cookie Value
+    $user_id=convert_uuencode($user_id);
+}
   //Check Row Exist or Not
       if ($result->num_rows==1) {
           //Add cookies
