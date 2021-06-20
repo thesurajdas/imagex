@@ -215,7 +215,7 @@
                         $("#pagination").remove();
                         $("#loadData").append(data);
                     }else{
-                        $("#searching").html("<div class='container text-center'><img style='height: 150px; width: 150px; object-fit: contain;' src='../img/notfound.svg' alt=''><h2 style='padding-top: 20px; padding-bottom: 25px; color: #6c757dd4;'>Sorry! No Result Found. <i class='fad fa-heart-broken' style='color: red;'></i></div>");
+                        $("#searching").html("<div class='container text-center'><img style='height: 150px; width: 150px; object-fit: contain;' src='../img/notfound.svg' alt=''><h2 style='padding-top: 20px; padding-bottom: 25px; color: #6c757dd4;'>Sorry! No Result Found. Try Something Else <i class='fad fa-laugh-wink' style='color: gold;'></i></div>");
                         $("#ajaxbtn").html("<i class='fad fa-sad-cry'></i> No more images found!");
                         $("#ajaxbtn").prop("disabled",true);
                     }
