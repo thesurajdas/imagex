@@ -34,6 +34,7 @@
                             <div class="btn-group">
                                 <button type="button" class="btn btn-default dropdown-toggle text-center" data-toggle="dropdown" style="font-weight: 400; color: rgb(13 150 4 / 89%); padding-right: inherit;"><i class="fad fa-list-alt"></i> Category</button>
                                 <ul class="dropdown-menu scrollable-menu" role="menu" style="top: 100%">
+                                <li><a class="dropdown-item" href="category.php?id=0">All Images</a></li>
                                 <?php
                                     include('../connect.php');
                                     $sql="SELECT * FROM categories ORDER BY category ASC";
