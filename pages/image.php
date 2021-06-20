@@ -215,7 +215,7 @@
                                         <div class="col-md-4 col-sm-12">
                                             <div class="row">
                                                 <div class="col-6">
-                                                    <h6><i class="fad fa-copyright" style="color: rgb(0 0 0 / 74%);"></i> License:</h6>
+                                                    <h6><i class="fad fa-copyright" style="color: #b6b900;"></i> License:</h6>
                                                 </div>
                                                 <div class="col-6">
                                                 <?php
@@ -223,7 +223,7 @@
                                                     $result_lic=$connect->query($sql);
                                                     while($row_lic=$result_lic->fetch_assoc()):
                                                 ?>
-                                                    <h6 class="badge" style="color: #fff; background-color: rgb(0 0 0 / 74%);"><?php if($row_img['license_id']==$row_lic['id']) {echo $row_lic['license_name'];} ?></h6>
+                                                    <h6 class="badge" style="color: #fff; background-color: #b6b900"><?php if($row_img['license_id']==$row_lic['id']) {echo $row_lic['license_name'];} ?></h6>
                                                 <?php endwhile; ?>
                                                 </div>
                                             </div>
@@ -575,10 +575,12 @@
                         </div>
                         <div class="col-12" style="margin-top: 25px;">
                             <div class="row">
-                                <a class="col-3 text-center" href=""><img src="../img/facebook.png" alt="" style="height: 60px"></a>
-                                <a class="col-3 text-center" href=""><img src="../img/twitter.png" alt="" style="height: 60px"></a>
-                                <a class="col-3 text-center" href=""><img src="../img/instagram.png" alt="" style="height: 60px"></a>
-                                <a class="col-3 text-center" href=""><img src="../img/whatsapp.png" alt="" style="height: 60px"></a>
+                                <a class="col-2 text-center" href=""><img src="../img/facebook.png" alt="" style="height: 50px"></a>
+                                <a class="col-2 text-center" href=""><img src="../img/twitter.png" alt="" style="height: 50px"></a>
+                                <a class="col-2 text-center" href=""><img src="../img/instagram.png" alt="" style="height: 50px"></a>
+                                <a class="col-2 text-center" href=""><img src="../img/whatsapp.png" alt="" style="height: 50px"></a>
+                                <a class="col-2 text-center" href=""><img src="../img/pinterest.png" alt="" style="height: 50px"></a>
+                                <a class="col-2 text-center" href=""><img src="../img/discord.png" alt="" style="height: 50px"></a>
                             </div>    
                         </div>        
             </div>

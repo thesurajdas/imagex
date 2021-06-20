@@ -1,4 +1,5 @@
 <?php
+sleep(5);
 require_once('../auth.php');
 $limit = 6;
 if(isset($_GET['page_no'])){
