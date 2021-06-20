@@ -1,5 +1,4 @@
 <?php
-sleep(2);
 require_once('../auth.php');
 //Check last page no
 $limit = 3;
@@ -9,19 +8,25 @@ if(isset($_POST['page_no'])){
   $page = 0;
 }
 //Check category id available or not
-if (isset($_POST['id'])) {
+if ((isset($_POST['id']))&&($_POST['id']!=0)) {
     $cat_id=$_POST['id'];
+    //Get sorting method
+    if(!empty($_POST['s'])){
+        $s = $_POST['s'];
+        $sql="SELECT * FROM images WHERE visibility=0 AND category={$cat_id} ORDER BY {$s} DESC LIMIT {$page},{$limit}";
+    }
+    else{
+        $sql="SELECT * FROM images WHERE visibility=0 AND category={$cat_id} ORDER BY time DESC LIMIT {$page},{$limit}";
+    }
 }
 else{
-    $cat_id=0;
-}
-//Get sorting method
-if(!empty($_POST['s'])){
-    $s = $_POST['s'];
-    $sql="SELECT * FROM images WHERE visibility=0 AND category={$cat_id} ORDER BY {$s} DESC LIMIT {$page},{$limit}";
-}
-else{
-    $sql="SELECT * FROM images WHERE visibility=0 AND category={$cat_id} ORDER BY time DESC LIMIT {$page},{$limit}";
+    if(!empty($_POST['s'])){
+        $s = $_POST['s'];
+        $sql="SELECT * FROM images WHERE visibility=0 ORDER BY {$s} DESC LIMIT {$page},{$limit}";
+    }
+    else{
+        $sql="SELECT * FROM images WHERE visibility=0 LIMIT {$page},{$limit}";
+    }
 }
 $last_id = $page+$limit;
 	                            $result_img=$connect->query($sql);

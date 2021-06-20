@@ -17,10 +17,12 @@
         header("Location:404.php");
         exit();
     }
-    //Check category Name
-    $sql="SELECT * FROM categories WHERE id='$cat_id'";
-    $result_cat_name=$connect->query($sql);
-    $row_cat_name=$result_cat_name->fetch_assoc();
+    if($cat_id!=0){
+        //Check category Name
+        $sql="SELECT * FROM categories WHERE id='$cat_id'";
+        $result_cat_name=$connect->query($sql);
+        $row_cat_name=$result_cat_name->fetch_assoc();
+    }
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -52,7 +54,7 @@
         <!-----------------------------------------------image-section-------------------------------------------->
 
         <div class="container shadow-lg p-3 mb-5 bg-white glry" style="border-radius: 1.25rem;">
-            <div class="col-12 text-center font-weight-bolder"><h2><?php echo $row_cat_name['category']; ?></h2></div>
+            <div class="col-12 text-center font-weight-bolder"><h2><?php if($cat_id!=0){echo $row_cat_name['category'];}else{echo "All Images";} ?></h2></div>
             <div class="container shadow-lg pl-3 pr-3 pt-1 mt-4" style="border-radius: 1.25rem;">
                     <div class="row pl-3 pr-3 pt-3">
                         <div class="text-right col-12">
