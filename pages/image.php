@@ -556,7 +556,7 @@
                                         <div class="row">
                                             <input type="text" class="form-control col-10" id="shrtxt" value="http://localhost/imagez/pages/image.php?id=6b3ecf9326" style="border-radius: 1.25rem;" readonly>
                                             <div class="col-2">
-                                                <button type="button" class="btn btn-light bt" id="shrbtn" style="background-color: #e2e6ea;"><i class="fad fa-clipboard-list-check" style="color:#004498ed;"></i></button>
+                                                <button type="button" class="btn btn-light bt" id="shrbtn"  data-container="body" data-toggle="popover" data-placement="right" data-content="✔ Copied" style="background-color: #e2e6ea;"><i class="fad fa-clipboard-list-check" style="color:#004498ed;"></i></button><span></span>
                                             </div>    
                                         </div>
                                     </div>
@@ -609,6 +609,13 @@
             document.execCommand("copy")
         }
     </script>
+
+    <script>
+            $(function () {
+                $('[data-toggle="popover"]').popover()
+                })
+    </script>
+
     <script>
     $(document).ready(function(){
     $('[data-toggle="tooltip"]').tooltip();   
