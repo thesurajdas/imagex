@@ -70,6 +70,22 @@
             .badge{
                 white-space: unset;
             }
+
+            /* .nav-tabs .nav-item.show .nav-link, .nav-tabs .nav-link.active{
+                color: #5a5a5a;
+                background-color: #c5c5c5;
+                border-color: #dee2e6 #dee2e6;
+            } */
+
+            a.badge-secondary.focus, a.badge-secondary:focus{
+                box-shadow: none;
+            }
+
+            .btn-light {
+                color: #212529;
+                background-color: #f8f9fa;
+                border: 2px solid #d8dadc;
+            }
         </style>
         <script src="../js/fontawesome.js"></script>
     </head>
@@ -115,7 +131,7 @@
                             <li class="nav-item" role="presentation">
                             <a class="nav-link" id="contact-tab" data-toggle="tab" href="#contact" role="tab" aria-controls="contact" aria-selected="false">Capture Details</a>
                             </li>
-                            <button type="button" class="btn btn-secondary"  data-toggle="modal" data-target="#reportimg" style="position: absolute; left:87%; border-radius: 1.35rem"><i class="fad fa-exclamation-triangle"></i></button>
+                            <button type="button" class="btn text-warning"data-toggle="modal" data-target="#reportimg" style="position: absolute; left:87%; border-radius: 1.35rem"><i class="fad fa-exclamation-triangle"></i></button>
                         </ul>
                         <div class="tab-content" id="myTabContent">
                                 <!---------------image decription------------>
@@ -339,7 +355,7 @@
                             <?php if($row_img['downloadable']==0): ?>
                             <a href="<?php echo $site_url,$row_img['image_location']; ?>" download="<?php echo $row_img['title']; ?>"><button type="button" id="countDown" onclick="countDownload(<?php echo $row_img['id']; ?>)" class="btn btn btn-success bt" style="margin-top: 10px" ><i class="fad fa-cloud-download-alt"></i> Download (<?php $downloads=number_format($row_img['downloads']); echo $downloads; ?>)</button></a>
                             <?php endif; ?>
-                            <a class="btn btn-dark bt" style="margin-top: 10px" id=""><i class="fad fa-share-square"></i> Share</a>
+                            <a class="btn btn-dark bt" data-toggle="modal" data-target="#shareimg" style="margin-top: 10px" id=""><i class="fad fa-share-square"></i> Share</a>
 
                             <!--<a href="#" class="btn btn-success col-2"><i class="bi bi-download"></i></a>-->
                         </div>
@@ -509,7 +525,90 @@
 
 
     <!----------------------report popup end--------------------------------------->
+    <!----------------------Share popup start--------------------------------------->
 
+    <div class="modal fade" id="shareimg" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLabel">Share Image</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                        <div class="col-12" style="padding: 5px; text-align: center;">
+                            <img src="../upload/images/96fbc5671e.jpg" alt="" style="height:250px; object-fit:contain;">
+                        </div>
+                        <hr class="mb-3">
+                        <div class="col-12">
+                            <ul class="nav nav-tabs" id="mytab" role="tablist" style="justify-content: center;  border-bottom: none;">
+                                <li class="nav-item" role="presentation" style="margin-right:5px;">
+                                    <a class="nav-link active rounded-pill badge badge-secondary" id="sharelink-tab" data-toggle="tab" href="#sharelink" role="tab" aria-controls="sharelink" aria-selected="true"><i class="fad fa-link"></i> Link</a>
+                                </li>
+                                <li class="nav-item" role="presentation" style="margin-left: 5px;">
+                                    <a class="nav-link rounded-pill badge badge-secondary" id="embed-tab" data-toggle="tab" href="#embed" role="tab" aria-controls="embed" aria-selected="false"><i class="fad fa-code"></i> Embed</a>
+                                </li>
+                            </ul>
+                            <div class="tab-content" id="myTabContent">
+                                <div class="tab-pane fade show active" id="sharelink" role="tabpanel" aria-labelledby="sharelink-tab">
+                                    <div class="col-12" style="margin-top: 15px;">
+                                        <div class="row">
+                                            <input type="text" class="form-control col-10" id="shrtxt" value="http://localhost/imagez/pages/image.php?id=6b3ecf9326" style="border-radius: 1.25rem;" readonly>
+                                            <div class="col-2">
+                                                <button type="button" class="btn btn-light bt" id="shrbtn" style="background-color: #e2e6ea;"><i class="fad fa-clipboard-list-check" style="color:#004498ed;"></i></button>
+                                            </div>    
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="tab-pane fade" id="embed" role="tabpanel" aria-labelledby="embed-tab">
+                                    <div class="col-12" style="margin-top: 15px;">
+                                        <div class="row">
+                                            <input type="text" class="form-control col-10" id="shrtxtt" value="http://localhost/imagez/pages/image.php?id=6b3ecf9326" style="border-radius: 1.25rem;" readonly>
+                                            <div class="col-2">
+                                                <button type="button" class="btn btn-light bt" id="shrbtnn" style="background-color: #e2e6ea;"><i class="fad fa-clipboard-list-check" style="color:#004498ed;"></i></button>
+                                            </div>    
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-12" style="margin-top: 25px;">
+                            <div class="row">
+                                <a class="col-3 text-center" href=""><img src="../img/facebook.png" alt="" style="height: 60px"></a>
+                                <a class="col-3 text-center" href=""><img src="../img/twitter.png" alt="" style="height: 60px"></a>
+                                <a class="col-3 text-center" href=""><img src="../img/instagram.png" alt="" style="height: 60px"></a>
+                                <a class="col-3 text-center" href=""><img src="../img/whatsapp.png" alt="" style="height: 60px"></a>
+                            </div>    
+                        </div>        
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary bt" data-dismiss="modal">Close</button>
+            </div>
+            </div>
+        </div>
+    </div>                           
+
+
+    <!----------------------Share popup end--------------------------------------->
+    <script type="text/javascript">
+        const shrtxt = document.getElementById('shrtxt');
+        const shrbtn = document.getElementById('shrbtn');
+
+        shrbtn.onclick = function () {
+            shrtxt.select();
+            document.execCommand("copy")
+        }
+    </script>
+    <script type="text/javascript">
+        const shrtxtt = document.getElementById('shrtxtt');
+        const shrbtnn = document.getElementById('shrbtnn');
+
+        shrbtnn.onclick = function () {
+            shrtxtt.select();
+            document.execCommand("copy")
+        }
+    </script>
 
     <?php if($row_img['downloadable']==0): ?>
     <a href="<?php echo $site_url,$row_img['image_location']; ?>" download="<?php echo $row_img['title']; ?>">

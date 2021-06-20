@@ -4704,7 +4704,7 @@ input[type=submit].btn-block {
 .nav-tabs .nav-link.active {
     color: #1e7e34;
     background-color: #fff;
-    border-color: #dee2e6 #dee2e6 #fff
+    border-color: #dee2e6 #dee2e6;
 }
 
 .nav-tabs .dropdown-menu {

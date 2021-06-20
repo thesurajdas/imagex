@@ -231,3 +231,12 @@
     border: 2px solid;
     border-color: #dc3545;
 }
+
+a{
+    color: #545b62;
+    transition: 0.2s;
+}
+
+a:hover{
+    color: #26610ddb;
+}

@@ -168,3 +168,12 @@
 .navbar-nav .dropdown-menu{
     position: absolute;
 }
+
+a{
+    color: #545b62;
+    transition: 0.2s;
+}
+
+a:hover{
+    color: #26610ddb;
+}
