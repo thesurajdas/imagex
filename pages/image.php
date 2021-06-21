@@ -538,7 +538,7 @@
             </div>
             <div class="modal-body">
                         <div class="col-12" style="padding: 5px; text-align: center;">
-                            <img src="<?php echo $site_url,$row_img['image_location']; ?>" alt="" style="height:250px; object-fit:contain;">
+                            <img class="img-fluid" src="<?php echo $site_url,$row_img['image_location']; ?>" alt="" style="height:250px; object-fit:contain;">
                         </div>
                         <hr class="mb-3">
                         <div class="col-12">
