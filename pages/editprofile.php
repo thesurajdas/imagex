@@ -221,6 +221,32 @@
                 </form>    
             </div>
         </div>    
+        <div class="container fstcon">
+            <div class="card shadow" style="padding-bottom: 20px">
+                <h4 class="mtxt">Profile WallPaper</h4>
+                <hr class="mb-4">
+                <div class="col-sm-12">
+                    <div class="pimg">
+                        <img class="pwp img-fluid" src="../upload/images/93a3ec6d33.jpg">
+                    </div>
+                </div>
+                <form class="mfrm" style="text-align: center" action="" method="POST" >
+                    <div class="form-row">
+                        <div class="form-group col-12">
+                            <div class="input-group mb-3">
+                                <div class="input-group-prepend">
+                                </div>
+                                <div class="custom-file">
+                                    <input type="file" name="file" class="custom-file-input" id="inputGroupFile01" aria-describedby="inputGroupFileAddon01" accept="image/*">
+                                    <label class="custom-file-label" style="border-radius: 1.25rem;" for="inputGroupFile01">Choose WallPaper</label>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <button type="submit" class="btn btn-primary bt" name="a-upload"><i class="fad fa-upload"></i> upload</button>
+                </form>    
+            </div>
+        </div>    
         <div class="container sndcon" id="pd">
             <div class="card shadow">
                 <h4 class="mtxt">Personal Details</h4>

@@ -41,6 +41,14 @@
     border-color: rgba(114, 114, 114, 0.226);
 }
 
+.pwp{
+    object-fit:contain;
+    max-height: 350px;
+    border: 5px solid;
+    border-color: rgba(114, 114, 114, 0.226);
+    border-radius: 1.25rem;
+}
+
 .pimg{
     text-align: center;
     padding-bottom: 30px;
