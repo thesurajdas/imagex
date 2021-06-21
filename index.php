@@ -149,7 +149,7 @@
                                     <a class="dropdown-item" href="<?php echo $site_url.'/pages/profile.php?u='.$user_username; ?>">My Profile</a>
                                     <a class="dropdown-item" href="pages/editprofile.php">Edit Profile</a>
                                     <?php if ($row['admin']==1) {
-                                        echo "<div class='dropdown-divider'></div><a class='dropdown-item' href='pages/admin'>Admin Panel</a>";
+                                        echo "<div class='dropdown-divider'></div><a class='dropdown-item' href='admin'>Admin Panel</a>";
                                     } ?>
                                     <div class="dropdown-divider"></div>
                                     <a class="dropdown-item" href="pages/logout.php">Sign out</a>
@@ -174,11 +174,11 @@
         <!---------------------------------------Search bar------------------------------------->
         <div class="searchbar">
             <div class="container">
-                <form action="">
+                <form action="pages/search.php" method="GET">
                     <div class="row no-gutters mt-3 justify-content-center">
-                        <input class="form-control col-md-8 sbdr bg-light rounded-pill pr-5" type="text" placeholder="Search Images Eg: Nature, Potrait, Abstract etc." id="example-search-input2" style="padding-left: 25px">
+                        <input type="search" name="q" placeholder="Search Images Eg: Nature, Potrait, Abstract etc." class="form-control col-md-8 sbdr bg-light rounded-pill pr-5" style="padding-left: 25px">
                         <div class="col-auto">
-                            <button class="btn btn-outline-light text-dark border-0 rounded-pill ml-n5" type="button">
+                            <button type="submit" class="btn btn-outline-light text-dark border-0 rounded-pill ml-n5">
                                 <i class="fas fa-search"></i>
                             </button>
                         </div>
@@ -238,18 +238,14 @@
                 <h3 class="text-center " data-toggle="tooltip" title="Best Of Week" style="color: #047dffc7"><i class="fad fa-star-of-david"></i> Featured</h3>
                 <hr class="mb-3" style="border-radius: 1.25rem; border-top: 5px solid #dae0e5c4;">
                 <div class="owl-carousel owl-theme">
-                    <div class="item"><img class="fci" src="https://dummyimage.com/600x400/000/fff2.jpg" alt=""></div>
-                    <div class="item"><img class="fci" src="https://dummyimage.com/600x400/000/fff2.jpg" alt=""></div>
-                    <div class="item"><img class="fci" src="https://dummyimage.com/600x400/000/fff2.jpg" alt=""></div>
-                    <div class="item"><img class="fci" src="https://dummyimage.com/600x400/000/fff2.jpg" alt=""></div>
-                    <div class="item"><img class="fci" src="https://dummyimage.com/600x400/000/fff2.jpg" alt=""></div>
-                    <div class="item"><img class="fci" src="https://dummyimage.com/600x400/000/fff2.jpg" alt=""></div>
-                    <div class="item"><img class="fci" src="https://dummyimage.com/600x400/000/fff2.jpg" alt=""></div>
-                    <div class="item"><img class="fci" src="https://dummyimage.com/600x400/000/fff2.jpg" alt=""></div>
-                    <div class="item"><img class="fci" src="https://dummyimage.com/600x400/000/fff2.jpg" alt=""></div>
-                    <div class="item"><img class="fci" src="https://dummyimage.com/600x400/000/fff2.jpg" alt=""></div>
-                    <div class="item"><img class="fci" src="https://dummyimage.com/600x400/000/fff2.jpg" alt=""></div>
-                    <div class="item"><img class="fci" src="https://dummyimage.com/600x400/000/fff2.jpg" alt=""></div>
+                <?php
+                $fi_date=date('Y-m');
+                $sql="SELECT * FROM images WHERE visibility=0 AND time LIKE '{$fi_date}%' ORDER BY id,likes+views DESC, downloads DESC LIMIT 5";
+                $result_fi=$connect->query($sql);
+                while($row_fi=$result_fi->fetch_assoc()):
+                ?>
+                    <div class="item im"><img class="fci" src="<?php echo $site_url,$row_fi['image_location']; ?>" alt=""></div>
+                <?php endwhile; ?>
                 </div>                  
             </div>
             <div class="container shadow-lg p-3 mb-5 bg-white my-3 glry" style="border-radius: 1.25rem">
