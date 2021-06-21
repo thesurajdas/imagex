@@ -109,9 +109,9 @@
         ?>
 
         <!-----------------------------------------Profile section------------------------------------------------------>
-
-        <div class="container shadow-lg p-3 mb-5 bg-white emp-profile" style="border-radius: 1.25rem;">
-                <div class="row" style="padding-top: 25px;">
+        <img src="../upload/images/91129aa8a8.jpg" class="bacwall" alt="">
+        <div class="container-fluid shadow-lg p-3 mb-5 bg-white emp-profile" style="border-radius: 1.25rem;">
+                <div class="row prow" style=" margin-top: 100px">
                     <div class="col-md-4">
                         <div class="profile-img">
                             <img class="rounded-circle pix" src="<?php echo $site_url."/".$user_avatar; ?>" alt=""/>
@@ -156,7 +156,7 @@
                         </div>
                     </div>
                     <?php if(($login==1)&&($user_id==$id)):?>
-                    <div class="col-md-2 d-none d-xl-block d-lg-block d-xl-none">
+                    <div class="col-md-2 d-none d-xl-block d-lg-block d-xl-none edtpfbtn">
                         <a href="editprofile.php" class="btn btn-outline-warning profile-edit-btn">Edit Profile</a>
                     </div>
                     <?php endif; ?>
