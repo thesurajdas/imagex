@@ -93,7 +93,7 @@
                     </form>
                     <ul class="navbar-nav">
                         <li class="nav-item">
-                            <a class="nav-link" href="upload.php" tabindex="-1" aria-disabled="true"><button type="button" class="btn btn-success bt col-sm-12"><i class="fad fa-cloud-upload"></i> Upload</button></a>
+                            <a class="nav-link" href="pages/upload.php" tabindex="-1" aria-disabled="true"><button type="button" class="btn btn-success bt col-sm-12"><i class="fad fa-cloud-upload"></i> Upload</button></a>
                         </li>
                         <?php if (isset($user_id)){?>
                         <li class="nav-item dropleft text-decoration-none">
@@ -114,7 +114,7 @@
                         <?php if (!isset($user_id)){?>
                         <li class="nav-item dropleft text-decoration-none ">
                             <div class="d-none d-md-block d-lg-block d-xl-block">
-                            <a class="nav-link dropdown-toggle" href="login.php" role="button"><button type="button" class="btn btn-outline-warning bt"><i class="fas fa-user-circle"></i> Log IN</button></a>
+                            <a class="nav-link dropdown-toggle" href="pages/login.php" role="button"><button type="button" class="btn btn-outline-warning bt"><i class="fas fa-user-circle"></i> Join Now</button></a>
                             </div>    
                         </li>
                         <?php } ?>
@@ -367,22 +367,22 @@
                                     <div class="row">
                                         <div class="col-md-3">
                                             <p>
-                                                <a href="aboutus.php" class="text-dark" style="text-decoration: none;" ><i class="fad fa-person-sign"></i> About Us</a>
+                                                <a href="pages/about.php" class="text-dark" style="text-decoration: none;" ><i class="fad fa-person-sign"></i> About Us</a>
                                             </p>
                                         </div>
                                         <div class="col-md-3">
                                             <p>
-                                                <a href="contact.php" class="text-dark" style="text-decoration: none;" ><i class="fad fa-address-book"></i> Contact Us</a>
+                                                <a href="pages/contact.php" class="text-dark" style="text-decoration: none;" ><i class="fad fa-address-book"></i> Contact Us</a>
                                             </p>
                                         </div>
                                         <div class="col-md-2">
                                             <p>
-                                                <a href="terms.php" class="text-dark" style="text-decoration: none;" data-toggle="tooltip" title="Terms And Conditions" ><i class="fad fa-file-check"></i> Terms</a>
+                                                <a href="pages/terms.php" class="text-dark" style="text-decoration: none;" data-toggle="tooltip" title="Terms And Conditions" ><i class="fad fa-file-check"></i> Terms</a>
                                             </p>
                                         </div>
                                         <div class="col-md-3">
                                             <p>
-                                                <a href="privacy.php" class="text-dark" style="text-decoration: none;" ><i class="fad fa-shield-check"></i> Privacy Policy</a>
+                                                <a href="pages/privacy.php" class="text-dark" style="text-decoration: none;" ><i class="fad fa-shield-check"></i> Privacy Policy</a>
                                             </p>
                                         </div>
                                     </div>    
