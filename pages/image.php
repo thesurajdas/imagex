@@ -564,7 +564,7 @@
                                 <div class="tab-pane fade" id="embed" role="tabpanel" aria-labelledby="embed-tab">
                                     <div class="col-12" style="margin-top: 15px;">
                                         <div class="row">
-                                            <textarea class="form-control col-10" id="shrtxt" readonly><?php echo '<iframe src="'.$site_url.'/pages/image.php?id='.$img_id.'" style="border:none;" width="100%" height="500" title="'.$row_img['title'].'"></iframe>'; ?></textarea>
+                                            <textarea class="form-control col-10" id="shrtxtt" readonly><?php echo '<iframe src="'.$site_url.'/pages/image.php?id='.$img_id.'" style="border:none;" width="100%" height="500" title="'.$row_img['title'].'"></iframe>'; ?></textarea>
                                             <div class="col-2">
                                                 <button type="button" class="btn btn-light bt" id="shrbtnn" style="background-color: #e2e6ea;"><i class="fad fa-clipboard-list-check" style="color:#004498ed;"></i></button>
                                             </div>    
