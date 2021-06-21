@@ -174,11 +174,11 @@
         <!---------------------------------------Search bar------------------------------------->
         <div class="searchbar">
             <div class="container">
-                <form action="">
+                <form action="pages/search.php" method="GET">
                     <div class="row no-gutters mt-3 justify-content-center">
-                        <input class="form-control col-md-8 sbdr bg-light rounded-pill pr-5" type="text" placeholder="Search Images Eg: Nature, Potrait, Abstract etc." id="example-search-input2" style="padding-left: 25px">
+                        <input type="search" name="q" placeholder="Search Images Eg: Nature, Potrait, Abstract etc." class="form-control col-md-8 sbdr bg-light rounded-pill pr-5" style="padding-left: 25px">
                         <div class="col-auto">
-                            <button class="btn btn-outline-light text-dark border-0 rounded-pill ml-n5" type="button">
+                            <button type="submit" class="btn btn-outline-light text-dark border-0 rounded-pill ml-n5">
                                 <i class="fas fa-search"></i>
                             </button>
                         </div>
