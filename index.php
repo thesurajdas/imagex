@@ -57,8 +57,8 @@
         <link rel="stylesheet" href="css/owl.theme.default.min.css">
         <link rel="stylesheet" href="css/owl.carousel.min.css">
         <script src="js/jquery-3.5.1.slim.min.js"></script>
-        <script src="js/bootstrap.bundle.min.js"></script>
         <script src="js/jquery.min.js"></script>
+        <script src="js/bootstrap.bundle.min.js"></script>
         <script src="js/owl.carousel.min.js"></script>
         <link href="css/home.css" rel="stylesheet">
 
@@ -235,7 +235,7 @@
         <!-----------------------------------------------image-section-------------------------------------------->
         <div class="container shadow-lg p-3 mt-4 mb-5 my-3" style="border-radius: 1.25rem;">
             <div class="container shadow-lg p-3 mb-5 bg-white my-3 glry" style="border-radius: 1.25rem">
-                <h3 class="text-center " data-toggle="tooltip" title="Best Of Week" style="color: #047dffc7"><i class="fad fa-star-of-david"></i> Featured</h3>
+                <h3 class="text-center " data-toggle="tooltip" title="Best Of Week" data-placement="top" style="color: #047dffc7"><i class="fad fa-star-of-david"></i> Featured</h3>
                 <hr class="mb-3" style="border-radius: 1.25rem; border-top: 5px solid #dae0e5c4;">
                 <div class="owl-carousel owl-theme">
                 <?php
@@ -256,158 +256,153 @@
             </div>
         </div>    
         <!----------------------Footer Section---------------------------------------------------->
-<footer>
-<div class="bg-light text-dark pt-1">
-                <div class="container">
-                    <div class="row text-center text-md-left ">
-                        <div class="col-md-10 col-xl-10 col-lg-10">
-                            <div class="col-12 mt-3">
-                                <h5 class="text-uppercase mb-4 font-wight-bold text-info text-dark">About</h5>
-                                <hrc class="mb-4">
-                                <p><b>Pixwave</b> started with a vision of giving all users a place where users upload and download their pictures taken by mobile phone.
+        <footer>
+            <div class="bg-light text-dark pt-1">
+                    <div class="container">
+                        <div class="row text-center text-md-left ">
+                            <div class="col-md-10 col-xl-10 col-lg-10">
+                                <div class="col-12 mt-3">
+                                    <h5 class="text-uppercase mb-4 font-wight-bold text-info text-dark">About</h5>
+                                    <hrc class="mb-4">
+                                    <p><b>Pixwave</b> started with a vision of giving all users a place where users upload and download their pictures taken by mobile phone.
+                                </div>
+                                <div class="col-lg-8 col-md-12 col-xl-8 col-sm-12 mt-3">
+                                    <div class="qll">
+                                        <h5 class="text-uppercase mb-4 font-wight-bold text-info text-dark">Quick Links</h5>
+                                        <div class="row">
+                                            <div class="col-md-3">
+                                                <p>
+                                                    <a href="pages/about.php" class="text-dark" style="text-decoration: none;" ><i class="fad fa-person-sign"></i> About Us</a>
+                                                </p>
+                                            </div>
+                                            <div class="col-md-3">
+                                                <p>
+                                                    <a href="pages/contact.php" class="text-dark" style="text-decoration: none;" ><i class="fad fa-address-book"></i> Contact Us</a>
+                                                </p>
+                                            </div>
+                                            <div class="col-md-2">
+                                                <p>
+                                                    <a href="pages/terms.php" class="text-dark" style="text-decoration: none;" data-toggle="tooltip" title="Terms And Conditions" ><i class="fad fa-file-check"></i> Terms</a>
+                                                </p>
+                                            </div>
+                                            <div class="col-md-3">
+                                                <p>
+                                                    <a href="pages/privacy.php" class="text-dark" style="text-decoration: none;" ><i class="fad fa-shield-check"></i> Privacy Policy</a>
+                                                </p>
+                                            </div>
+                                        </div>    
+                                    </div> 
+                                </div>
                             </div>
-                            <div class="col-lg-8 col-md-12 col-xl-8 col-sm-12 mt-3">
-                                <div class="qll">
-                                    <h5 class="text-uppercase mb-4 font-wight-bold text-info text-dark">Quick Links</h5>
-                                    <div class="row">
-                                        <div class="col-md-3">
-                                            <p>
-                                                <a href="pages/about.php" class="text-dark" style="text-decoration: none;" ><i class="fad fa-person-sign"></i> About Us</a>
-                                            </p>
-                                        </div>
-                                        <div class="col-md-3">
-                                            <p>
-                                                <a href="pages/contact.php" class="text-dark" style="text-decoration: none;" ><i class="fad fa-address-book"></i> Contact Us</a>
-                                            </p>
-                                        </div>
+                            <div class="col-md-2 col-lg-2 col-xl-2 mt-3">
+                                <h5 class="text-uppercase mb-4 font-wight-bold text-info text-dark">Connect with</h5>
+                                    <div class="container pl-0">
                                         <div class="col-md-2">
-                                            <p>
-                                                <a href="pages/terms.php" class="text-dark" style="text-decoration: none;" data-toggle="tooltip" title="Terms And Conditions" ><i class="fad fa-file-check"></i> Terms</a>
-                                            </p>
-                                        </div>
-                                        <div class="col-md-3">
-                                            <p>
-                                                <a href="pages/privacy.php" class="text-dark" style="text-decoration: none;" ><i class="fad fa-shield-check"></i> Privacy Policy</a>
-                                            </p>
-                                        </div>
-                                    </div>    
-                                </div> 
-                            </div>
-                        </div>
-                        <div class="col-md-2 col-lg-2 col-xl-2 mt-3">
-                            <h5 class="text-uppercase mb-4 font-wight-bold text-info text-dark">Connect with</h5>
-                                <div class="container pl-0">
-                                    <div class="col-md-2">
-                                        <div class="social-icons">
-                                            <a href="#" ><img src="pages/assets/img/fb.png"></a>
-                                            <a href="#"><img src="pages/assets/img/ins.png"></a>
-                                            <a href="#"><img src="pages/assets/img/tw.png"></a>
-                                            <a href="#"><img src="pages/assets/img/in.png"></a>
+                                            <div class="social-icons">
+                                                <a href="#" ><img src="pages/assets/img/fb.png"></a>
+                                                <a href="#"><img src="pages/assets/img/ins.png"></a>
+                                                <a href="#"><img src="pages/assets/img/tw.png"></a>
+                                                <a href="#"><img src="pages/assets/img/in.png"></a>
+                                            </div>
                                         </div>
                                     </div>
-                                </div>
+                            </div>
+                        </div>
+                        <hr class="mb-4">
+                        <div class="row d-flex justify-content-center">
+                            <div>
+                                <p>
+                                    Copyright &copy; <script>document.write(new Date().getFullYear())</script> <a style="text-decoration: none;" href="/"><strong class="text-dark" style="text-decoration: none;"> PIXWAVE </strong></a> - All rights reserved
+                                </p>
+                            </div>
                         </div>
                     </div>
-                    <hr class="mb-4">
-                    <div class="row d-flex justify-content-center">
-                        <div>
-                            <p>
-                                Copyright &copy; <script>document.write(new Date().getFullYear())</script> <a style="text-decoration: none;" href="/"><strong class="text-dark" style="text-decoration: none;"> PIXWAVE </strong></a> - All rights reserved
-                            </p>
-                        </div>
-                    </div>
-                </div>
             <div>    
-</footer>
-<!-- Index pagination -->
-<script>
-        $(document).ready(function(){
-            // Load Data from Database with Ajax
-            function loadTable(page){
-            $.ajax({
-                url: "pages/index-pagination.php",
-                type: "POST",
-                data : { page_no : page },
-                success: function(data){
-                if(data){
-                    $("#searching").remove();
-                    $("#pagination").remove();
-                    $("#loadData").append(data);
-                }else{
-                    $("#searching").html("<div class='container text-center'><img style='height: 150px; width: 150px; object-fit: contain;' src='../img/notfound.svg' alt=''><h2 style='padding-top: 20px; padding-bottom: 25px; color: #6c757dd4;'>Sorry! No Result Found. <i class='fad fa-heart-broken' style='color: red;'></i></div>");
-                    $("#ajaxbtn").html("<i class='fad fa-sad-cry'></i> No more images found!");
-                    $("#ajaxbtn").prop("disabled",true);
-                }
-                
-                }
-            });
-            }
-            loadTable();
-            // Add Click Event on ajaxbtn
-            $(document).on("click","#ajaxbtn",function(){
-            $("#ajaxbtn").html("<div class='spinner-border spinner-border-sm text-info' role='status'><span class='sr-only'></span></div> Loading...");
-            var pid = $(this).data("id");
-            loadTable(pid);
-            });
-
-        });
-        </script>
-        <?php if ($login==1) { ?>
-        <script>
-        //AJAX Like
-            function mylike(id){
+        </footer>
+        <!-- Index pagination -->
+            <script>
                 $(document).ready(function(){
-                    //Send AJAX request
+                    // Load Data from Database with Ajax
+                    function loadTable(page){
                     $.ajax({
-                        url: 'pages/like.php',
-                        type: 'POST',
-                        data: 'user_id=<?php echo $user_id; ?>&image_id='+id,
-                            success: function(result){
-                            $('#'+id).html(result);
+                        url: "pages/index-pagination.php",
+                        type: "POST",
+                        data : { page_no : page },
+                        success: function(data){
+                        if(data){
+                            $("#searching").remove();
+                            $("#pagination").remove();
+                            $("#loadData").append(data);
+                        }else{
+                            $("#searching").html("<div class='container text-center'><img style='height: 150px; width: 150px; object-fit: contain;' src='../img/notfound.svg' alt=''><h2 style='padding-top: 20px; padding-bottom: 25px; color: #6c757dd4;'>Sorry! No Result Found. <i class='fad fa-heart-broken' style='color: red;'></i></div>");
+                            $("#ajaxbtn").html("<i class='fad fa-sad-cry'></i> No more images found!");
+                            $("#ajaxbtn").prop("disabled",true);
+                        }
+                        
                         }
                     });
+                    }
+                    loadTable();
+                    // Add Click Event on ajaxbtn
+                    $(document).on("click","#ajaxbtn",function(){
+                    $("#ajaxbtn").html("<div class='spinner-border spinner-border-sm text-info' role='status'><span class='sr-only'></span></div> Loading...");
+                    var pid = $(this).data("id");
+                    loadTable(pid);
+                    });
+
                 });
-            }
-        </script>
-        <?php } else{ ?>
+            </script>
+                <?php if ($login==1) { ?>
+                <script>
+                //AJAX Like
+                    function mylike(id){
+                        $(document).ready(function(){
+                            //Send AJAX request
+                            $.ajax({
+                                url: 'pages/like.php',
+                                type: 'POST',
+                                data: 'user_id=<?php echo $user_id; ?>&image_id='+id,
+                                    success: function(result){
+                                    $('#'+id).html(result);
+                                }
+                            });
+                        });
+                    }
+                </script>
+                <?php } else{ ?>
+                <script>
+                //Not Login Like
+                    function mylike(id){
+                        alert('You need to login to like this post!');
+                    }
+                </script>
+                <?php } ?>
+        <!-------bootstrap tooltip script---->
         <script>
-        //Not Login Like
-            function mylike(id){
-                alert('You need to login to like this post!');
-            }
-        </script>
-        <?php } ?>
-<!-------bootstrap tooltip script---->
-<script>
-$(document).ready(function(){
-  $('[data-toggle="tooltip"]').tooltip();   
-});
-</script>
-<script>
-        //Send Searching Request
-    $(document).ready(function(){
-        $('#query').keyup(function(){
-            var query = $(this).val();
-            if(query!=''){
-                $.ajax({
-                    url: "pages/search-value.php",
-                    method: "GET",
-                    data: {q:query},
-                    success: function(data){
-                        $('#search-box').fadeIn("fast").html(data);
+                //Send Searching Request
+            $(document).ready(function(){
+                $('#query').keyup(function(){
+                    var query = $(this).val();
+                    if(query!=''){
+                        $.ajax({
+                            url: "pages/search-value.php",
+                            method: "GET",
+                            data: {q:query},
+                            success: function(data){
+                                $('#search-box').fadeIn("fast").html(data);
+                            }
+                        });
+                    }
+                    else{
+                        $('#search-box').fadeOut();
                     }
                 });
-            }
-            else{
-                $('#search-box').fadeOut();
-            }
-        });
-    });
-    $(document).on('click','#search-box a',function(){
-        $('#query').val($(this).text());
-        $('#search-box').fadeOut("fast");
-    });
-</script>
+            });
+            $(document).on('click','#search-box a',function(){
+                $('#query').val($(this).text());
+                $('#search-box').fadeOut("fast");
+            });
+        </script>
         
         <script>
             jQuery(document).ready(function() {
@@ -426,10 +421,10 @@ $(document).ready(function(){
                             items:1
                         },
                         600:{
-                            items:3
+                            items:2
                         },            
                         960:{
-                            items:3
+                            items:1
                         },
                         1200:{
                             items:3
@@ -447,11 +442,10 @@ $(document).ready(function(){
                 setTimeout(setSpeed, 1000);
             });
         </script>
-       
-        <script type="text/javascript">
-            $(document).ready(function(){
-            $('[data-toggle="tooltip"]').tooltip();   
-            });
+        <script>
+            $(function () {
+                $('[data-toggle="tooltip"]').tooltip()
+                })
         </script>
     
     </body>

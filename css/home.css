@@ -5,6 +5,12 @@
     width: 100%;
 }
 
+@media (max-width:576px) {
+    .searchbar{
+       top: 13%
+    }
+}
+
 .scrollable-menu {
     height: auto;
     max-height: 500px;
@@ -31,6 +37,11 @@
     object-fit: cover;
 }
 
+@media (max-width:576px) {
+    .cimg{
+        max-height: 300px;
+    }
+}
 .wlc{
     align-items: center;
     position: absolute;
