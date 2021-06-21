@@ -149,7 +149,7 @@
                                     <a class="dropdown-item" href="<?php echo $site_url.'/pages/profile.php?u='.$user_username; ?>">My Profile</a>
                                     <a class="dropdown-item" href="pages/editprofile.php">Edit Profile</a>
                                     <?php if ($row['admin']==1) {
-                                        echo "<div class='dropdown-divider'></div><a class='dropdown-item' href='pages/admin'>Admin Panel</a>";
+                                        echo "<div class='dropdown-divider'></div><a class='dropdown-item' href='admin'>Admin Panel</a>";
                                     } ?>
                                     <div class="dropdown-divider"></div>
                                     <a class="dropdown-item" href="pages/logout.php">Sign out</a>
