@@ -238,18 +238,14 @@
                 <h3 class="text-center " data-toggle="tooltip" title="Best Of Week" style="color: #047dffc7"><i class="fad fa-star-of-david"></i> Featured</h3>
                 <hr class="mb-3" style="border-radius: 1.25rem; border-top: 5px solid #dae0e5c4;">
                 <div class="owl-carousel owl-theme">
-                    <div class="item"><img class="fci" src="https://dummyimage.com/600x400/000/fff2.jpg" alt=""></div>
-                    <div class="item"><img class="fci" src="https://dummyimage.com/600x400/000/fff2.jpg" alt=""></div>
-                    <div class="item"><img class="fci" src="https://dummyimage.com/600x400/000/fff2.jpg" alt=""></div>
-                    <div class="item"><img class="fci" src="https://dummyimage.com/600x400/000/fff2.jpg" alt=""></div>
-                    <div class="item"><img class="fci" src="https://dummyimage.com/600x400/000/fff2.jpg" alt=""></div>
-                    <div class="item"><img class="fci" src="https://dummyimage.com/600x400/000/fff2.jpg" alt=""></div>
-                    <div class="item"><img class="fci" src="https://dummyimage.com/600x400/000/fff2.jpg" alt=""></div>
-                    <div class="item"><img class="fci" src="https://dummyimage.com/600x400/000/fff2.jpg" alt=""></div>
-                    <div class="item"><img class="fci" src="https://dummyimage.com/600x400/000/fff2.jpg" alt=""></div>
-                    <div class="item"><img class="fci" src="https://dummyimage.com/600x400/000/fff2.jpg" alt=""></div>
-                    <div class="item"><img class="fci" src="https://dummyimage.com/600x400/000/fff2.jpg" alt=""></div>
-                    <div class="item"><img class="fci" src="https://dummyimage.com/600x400/000/fff2.jpg" alt=""></div>
+                <?php
+                $fi_date=date('Y-m');
+                $sql="SELECT * FROM images WHERE visibility=0 AND time LIKE '{$fi_date}%' ORDER BY id,likes+views DESC, downloads DESC LIMIT 5";
+                $result_fi=$connect->query($sql);
+                while($row_fi=$result_fi->fetch_assoc()):
+                ?>
+                    <div class="item im"><img class="fci" src="<?php echo $site_url,$row_fi['image_location']; ?>" alt=""></div>
+                <?php endwhile; ?>
                 </div>                  
             </div>
             <div class="container shadow-lg p-3 mb-5 bg-white my-3 glry" style="border-radius: 1.25rem">
