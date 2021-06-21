@@ -185,7 +185,7 @@
         
         <!-------------------------------------------Form section--------------------------->
         <div class="container fstcon" id="pp">
-            <div class="card shadow" style="padding-bottom: 20px">
+            <div class="card shadow" style="padding-bottom: 20px; border-radius: 1.25rem; ">
                 <h4 class="mtxt">Profile Picture</h4>
                 <hr class="mb-4">
                 <?php if((isset($_GET['success-avatar'])) && ($_GET['success-avatar']==1)){echo '<div class="alert alert-success alert-dismissible fade show" role="alert">
@@ -221,8 +221,8 @@
                 </form>    
             </div>
         </div>    
-        <div class="container fstcon">
-            <div class="card shadow" style="padding-bottom: 20px">
+        <div class="container sndcon">
+            <div class="card shadow" style="padding-bottom: 20px; border-radius: 1.25rem;">
                 <h4 class="mtxt">Profile WallPaper</h4>
                 <hr class="mb-4">
                 <div class="col-sm-12">
@@ -248,7 +248,7 @@
             </div>
         </div>    
         <div class="container sndcon" id="pd">
-            <div class="card shadow">
+            <div class="card shadow" style="border-radius: 1.25rem;">
                 <h4 class="mtxt">Personal Details</h4>
                 <hr class="mb-4">
                 <?php if((isset($_GET['success'])) && ($_GET['success']==1)){echo '<div class="alert alert-success alert-dismissible fade show" role="alert">
@@ -575,7 +575,7 @@
         <!------------------------------------------device description-------------------------------------->
 
         <div class="container sndcon">
-            <div class="card shadow">
+            <div class="card shadow" style="border-radius: 1.25rem;">
                 <h4 class="col-12 ntxt">Device Details <small>(Device Use for Capturing Pictures)</small></h4>
                 <hr class="mb-4">
                 <form class="mfrm" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]);?>" method="POST">
