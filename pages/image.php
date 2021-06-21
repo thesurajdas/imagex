@@ -580,7 +580,7 @@
                                 <a class="col-2 text-center" href=""><img src="../img/instagram.png" alt="" style="height: 41px"></a>
                                 <a class="col-2 text-center" href=""><img src="../img/whatsapp.png" alt="" style="height: 41px"></a>
                                 <a class="col-2 text-center" href=""><img src="../img/pinterest.png" alt="" style="height: 41px"></a>
-                                <a class="col-2 text-center" href=""><button type="button" class="btn btn-light bt" style="background-color: #e2e6ea;"><i class="fad fa-ellipsis-h" style="color:#3f8278ed;"></i></button></a>
+                                <a class="col-2 text-center" href=""><button type="button" class="btn btn-light bt" style="background-color: #e2e6ea;"><i class="fad fa-ellipsis-h" style="color:#738885ed;"></i></button></a>
                             </div>    
                         </div>        
             </div>
