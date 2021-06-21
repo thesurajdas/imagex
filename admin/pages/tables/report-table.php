@@ -49,14 +49,6 @@
         </button>
         <ul class="navbar-nav mr-lg-2">
           <li class="nav-item nav-search d-none d-lg-block">
-            <div class="input-group">
-              <div class="input-group-prepend hover-cursor" id="navbar-search-icon">
-                <span class="input-group-text" id="search">
-                  <i class="icon-search"></i>
-                </span>
-              </div>
-              <input type="text" class="form-control" id="navbar-search-input" placeholder="Search now" aria-label="search" aria-describedby="search">
-            </div>
           </li>
         </ul>
         <ul class="navbar-nav navbar-nav-right">
@@ -157,7 +149,6 @@
                             <th>Uploader</th>
                             <th>Reporter</th>
                             <th>Report</th>
-                            <th>Text</th>
                             <th>Actions</th>
                         </tr>
                       </thead>
@@ -168,13 +159,17 @@
                             <th>Image Name</th>
                             <td>Uploader Name</td>
                             <td>Reporter Name</td>
-                            <td>Report Type</td>
+                            <td>Report Type <a class="btn" data-toggle="modal" data-target="#usersModal"><i class="fad fa-comment-exclamation"></i></a></td>
                             <td>
-                              <textarea name="" id="" cols="25" rows="4">Report Message</textarea>
-                            </td>
-                            <td>
-                              <button type="button" class="btn btn-outline-primary" data-toggle="tooltip" data-placement="top" title="Ignore"><i class="fad fa-ban"></i></button>
-                              <button class="btn btn-outline-primary" onclick="showSwal('success-message')" data-toggle="tooltip" data-placement=top data-custom-class="tooltip-Danger" title="Delete"><i class="bi bi-trash"></i></button>
+                                <div class="row">
+                                <div class="dropdown dropleft" style="margin-right: 2px; margin-bottom: 2px">
+                                    <button type="button" class="btn btn-outline-primary dropdown-toggle"  id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><i class="fad fa-ban" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"></i></button>
+                                    <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                                        <a class="dropdown-item" href="#">Public</a>
+                                        <a class="dropdown-item" href="#">Private</a>
+                                    </div>
+                                </div>    
+                                <button class="btn btn-outline-primary" onclick="showSwal('success-message')" data-toggle="tooltip" data-placement=top data-custom-class="tooltip-Danger" title="Delete" style="margin-left: 2px"><i class="bi bi-trash"></i></button>
                             </td>
                         </tr>
                       </tbody>
@@ -197,6 +192,37 @@
       <!-- main-panel ends -->
     </div>
     <!-- page-body-wrapper ends -->
+  </div>
+
+  <!-- Modal -->
+  <div class="modal fade" id="usersModal<?php if (isset($rd['id'])) { echo $rd['id']; } ?>" aria-labelledby="exampleModalScrollableTitle" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-scrollable" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLabel">Report Details</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+            </div>
+            <div class="modal-body">
+                <form>
+                    <div class="form-row">
+                        <div class="form-group col-12">
+                            <label for="jd">Report Origin Date and Time</label>
+                            <input type="date" class="form-control" id="jd" placeholder="11/12/2005" readonly>
+                        </div> 
+                        <div class="form-group col-12">
+                            <label for="reportmsg">Report Message</label>
+                            <textarea class="form-control" id="reportmsg" rows="3" readonly></textarea>
+                        </div> 
+                    </div>
+                </form>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+            </div>
+        </div>
+    </div>
   </div>
   <!-- container-scroller -->
   <!-- plugins:js -->
