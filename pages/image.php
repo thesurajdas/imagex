@@ -339,19 +339,19 @@
                                                                     $result_like=$connect->query($sql);
                                                                     if($result_like->num_rows==1){
                                                                         $icon="fad";
-                                                                        $like_color="";
+                                                                        $like_color="color:red";
                                                                     }
                                                                     else{
                                                                         $icon="far";
-                                                                        $like_color="color:red";
+                                                                        $like_color="";
                                                                     }
                                                                 }
                                                                 else{
                                                                     $icon="far";
-                                                                    $like_color="color:red";
+                                                                    $like_color="";
                                                                 }
                                                         ?>
-                            <a class="btn btn-outline-danger bt" style="margin-top: 10px;" id="<?php echo $image_id; ?>" onclick="mylike(<?php echo $image_id; ?>)"><span style="<?php echo $like_color;?>"><i class="<?php echo $icon; ?> fa-heart"></i></span> <span> <?php echo $row_img['likes']; ?> Heart</span></a>
+                            <a class="btn btn-outline-danger bt" style="margin-top: 10px;" onclick="mylike(<?php echo $image_id; ?>)"><span id="<?php echo $image_id; ?>"><span style="<?php echo $like_color;?>"><i class="<?php echo $icon; ?> fa-heart"></i></span> <?php echo $row_img['likes']; ?></span><span> Heart</span></a>
                             <?php if($row_img['downloadable']==0): ?>
                             <a href="<?php echo $site_url,$row_img['image_location']; ?>" download="<?php echo $row_img['title']; ?>"><button type="button" id="countDown" onclick="countDownload(<?php echo $row_img['id']; ?>)" class="btn btn btn-outline-success bt" style="margin-top: 10px" ><i class="fad fa-cloud-download-alt"></i> Download (<?php $downloads=number_format($row_img['downloads']); echo $downloads; ?>)</button></a>
                             <?php endif; ?>
