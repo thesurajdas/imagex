@@ -244,7 +244,7 @@
                 $result_fi=$connect->query($sql);
                 while($row_fi=$result_fi->fetch_assoc()):
                 ?>
-                    <div class="item im"><img class="fci" src="<?php echo $site_url,$row_fi['image_location']; ?>" alt=""></div>
+                    <div class="item"><img class="fci im" src="<?php echo $site_url,$row_fi['image_location']; ?>" alt=""></div>
                 <?php endwhile; ?>
                 </div>                  
             </div>
