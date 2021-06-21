@@ -196,6 +196,9 @@ if (isset($_REQUEST['delete'])) {
                     <ul class="nav flex-column sub-menu">
                         <li class="nav-item"> <a class="nav-link" href="../../pages/tables/image-table.php">Images</a></li>
                     </ul>
+                    <ul class="nav flex-column sub-menu">
+                        <li class="nav-item"> <a class="nav-link" href="../../pages/tables/report-table.php">Reports</a></li>
+                    </ul>
                 </div>
             </li>
             <li class="nav-item">

@@ -1,21 +1,3 @@
-<?php
-    //Add database connection
-    require('../../auth.php');
-    //Retrive Data from database
-    $sql="SELECT * FROM images;";
-    $img_result=$connect->query($sql);
-//Delete Images
-if (isset($_REQUEST['delete'])) {
-  $i_id=$_REQUEST['id'];
-  $sql="DELETE FROM images WHERE id='$i_id';";
-  if ($connect->query($sql)===TRUE) {
-    echo "<script>alert('Image Deleted Successfully!');</script>";
-  }
-  else{
-    echo "<script>alert('Unable to Delete the Image!');</script>";
-  }
-}
-?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -55,11 +37,11 @@ if (isset($_REQUEST['delete'])) {
 
 <body>
   <div class="container-scroller">
-    <!-- partial:../../partials/_navbar.php -->
+    <!-- partial:../../partials/_navbar.html -->
     <nav class="navbar col-lg-12 col-12 p-0 fixed-top d-flex flex-row">
       <div class="text-center navbar-brand-wrapper d-flex align-items-center justify-content-center">
-        <a class="navbar-brand brand-logo mr-5" href="../../index.php"><img src="../../images/logo.svg" class="mr-2" alt="logo"/></a>
-        <a class="navbar-brand brand-logo-mini" href="../../index.php"><img src="../../images/logo-mini.svg" alt="logo"/></a>
+        <a class="navbar-brand brand-logo mr-5" href="../../index.html"><img src="../../images/logo.svg" class="mr-2" alt="logo"/></a>
+        <a class="navbar-brand brand-logo-mini" href="../../index.html"><img src="../../images/logo-mini.svg" alt="logo"/></a>
       </div>
       <div class="navbar-menu-wrapper d-flex align-items-center justify-content-end">
         <button class="navbar-toggler navbar-toggler align-self-center" type="button" data-toggle="minimize">
@@ -80,21 +62,17 @@ if (isset($_REQUEST['delete'])) {
         <ul class="navbar-nav navbar-nav-right">
           <li class="nav-item nav-profile dropdown">
             <a class="nav-link dropdown-toggle" href="#" data-toggle="dropdown" id="profileDropdown">
-              <?php
-                 $user_username=$row['username'];
-                 $user_avatar=$row['avatar'];
-              ?>
-              <img src="<?php echo $site_url."/".$user_avatar; ?>" alt="<?php echo $user_username; ?>"/>
+              <img src="../../images/faces/face28.jpg" alt="profile"/>
             </a>
             <div class="dropdown-menu dropdown-menu-right navbar-dropdown" aria-labelledby="profileDropdown">
-              <a class="dropdown-item" href="../../../pages/profile.php">
-                <i class="ti-user text-primary"></i>
-                 My Proflie
-                </a>
-              <a class="dropdown-item" href="../../../pages/logout.php">
+              <!--<a class="dropdown-item">
+                <i class="ti-settings text-primary"></i>
+                Settings
+              </a>-->
+              <a class="dropdown-item">
                 <i class="ti-power-off text-primary"></i>
-                 Logout
-                </a>
+                Logout
+              </a>
             </div>
           </li>
         </ul>
@@ -106,7 +84,7 @@ if (isset($_REQUEST['delete'])) {
     <!-- partial -->
     <!-- page-body-wrapper ends -->
     <div class="container-fluid page-body-wrapper">
-      <!-- partial:../../partials/_settings-panel.php -->
+      <!-- partial:../../partials/_settings-panel.html -->
       <div class="theme-setting-wrapper">
         <div id="settings-trigger"><i class="ti-settings"></i></div>
         <div id="theme-settings" class="settings-panel">
@@ -126,9 +104,9 @@ if (isset($_REQUEST['delete'])) {
         </div>
       </div>
       <!-- partial -->
-      <!-- partial:../../partials/_sidebar.php -->
+      <!-- partial:../../partials/_sidebar.html -->
       <nav class="sidebar sidebar-offcanvas" id="sidebar">
-        <ul class="nav">
+      <ul class="nav">
             <li class="nav-item">
             <a class="nav-link" href="../../index.php">
                 <i class="icon-grid menu-icon"></i>
@@ -158,7 +136,7 @@ if (isset($_REQUEST['delete'])) {
                     <i class="icon-cog menu-icon"></i>
                     <span class="menu-title">Settings</span>
                 </a>
-                </li>
+            </li>
         </ul>
     </nav>
       <!-- partial -->
@@ -166,8 +144,7 @@ if (isset($_REQUEST['delete'])) {
         <div class="content-wrapper">
           <div class="card">
             <div class="card-body">
-              <h4 class="card-title">Image table</h4>
-              <div id="deletestatus"></div>
+              <h4 class="card-title">Report table</h4>
               <div class="row">
                 <div class="col-12">
                   <div class="table-responsive">
@@ -178,62 +155,28 @@ if (isset($_REQUEST['delete'])) {
                             <th>Image</th>
                             <th>Name</th>
                             <th>Uploader</th>
-                            <th>Visibility</th>
-                            <th>Time</th>
-                            <th>View</th>
-                            <th>Like</th>
-                            <th>Action</th>
-                            
+                            <th>Reporter</th>
+                            <th>Report</th>
+                            <th>Text</th>
+                            <th>Actions</th>
                         </tr>
                       </thead>
                       <tbody>
                         <tr>
-                        <?php while($row=$img_result->fetch_assoc()): ?>
-                            <td><?php echo $row['id']; ?></td>
+                            <td>1</td>
                             <td><img class="timg" src="../../..<?php echo $row['image_location']; ?>" alt=""></td>
-                            <th><?php echo $row['title'];
-                            echo "<a class='text-decoration-none' href='".$site_url."/pages/image.php?id=".$row['image_id']."' target='_blank'> <i class='fad fa-external-link-alt' style='margin-left: 3px; font-size: 12px;'></i></a>";
-                            ?>
-                            </th>
-                            <td><?php
-                              $up_id=$row['user_id'];
-                              $sql2="SELECT * FROM users WHERE id='$up_id'";
-                              $up_result=$connect->query($sql2);
-                              $row_up=$up_result->fetch_assoc();
-                              echo "<a class='text-decoration-none' style='font-weight: 550; font-size: 14px;' href='".$site_url."/pages/profile.php?u=".$row_up['username']."' target='_blank'>".$row_up['name']."  </a>";
-                            ?></td>
+                            <th>Image Name</th>
+                            <td>Uploader Name</td>
+                            <td>Reporter Name</td>
+                            <td>Report Type</td>
                             <td>
-                              <?php
-                                if($row['visibility']==0){echo "<label class='badge badge-success'>public</label>";}
-                                elseif($row['visibility']==1){echo "<label class='badge badge-danger'>private</label>";}
-                                else{echo "Unkown";}
-                              ?>
+                              <textarea name="" id="" cols="25" rows="4">Report Message</textarea>
                             </td>
-                            <td><?php $date=date_create($row['time']); echo date_format($date,"d F, Y h:i A"); ?></td>
-                            <td><?php echo $row['views']; ?></td>
-                            <td><?php echo $row['likes']; ?></td>
                             <td>
-                              <button type="button" onclick="editimg(<?php echo $row['id'] ?>)" class="btn btn-outline-primary" data-toggle="modal" data-target="#usersModal"><i class="bi bi-pencil-square"></i></button>
-                              <button class="btn btn-outline-primary" onclick="mydel(<?php echo $row['id']; ?>)"><i class="bi bi-trash"></i></button>
+                              <button type="button" class="btn btn-outline-primary" data-toggle="tooltip" data-placement="top" title="Ignore"><i class="fad fa-ban"></i></button>
+                              <button class="btn btn-outline-primary" onclick="showSwal('success-message')" data-toggle="tooltip" data-placement=top data-custom-class="tooltip-Danger" title="Delete"><i class="bi bi-trash"></i></button>
                             </td>
                         </tr>
-                        <?php endwhile; ?>
-                        <!-- Modal -->
-                        <div class="modal fade" id="usersModal<?php if (isset($rd['id'])) { echo $rd['id']; } ?>" aria-labelledby="exampleModalScrollableTitle" aria-hidden="true">
-                            <div class="modal-dialog modal-dialog-scrollable" role="document">
-                            <div class="modal-content">
-                                <div class="modal-header">
-                                <h5 class="modal-title" id="exampleModalLabel">Edit Details</h5>
-                                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                                    <span aria-hidden="true">&times;</span>
-                                </button>
-                                </div>
-                                  <div id="loadEdit" class="modal-body">
-                                  <!-- edit image modal -->
-                                  </div>
-                                </div>
-                            </div>
-                        </div>
                       </tbody>
                     </table>
                   </div>
@@ -243,7 +186,7 @@ if (isset($_REQUEST['delete'])) {
           </div>
         </div>
         <!-- content-wrapper ends -->
-        <!-- partial:../../partials/_footer.php -->
+        <!-- partial:../../partials/_footer.html -->
         <footer class="footer">
           <div class="d-sm-flex justify-content-center justify-content-sm-between">
             <span class="text-muted text-center text-sm-left d-block d-sm-inline-block">Copyright © 2021. <a href="#" target="_blank">our_gallery_name</a> All rights reserved.</span>
@@ -255,8 +198,6 @@ if (isset($_REQUEST['delete'])) {
     </div>
     <!-- page-body-wrapper ends -->
   </div>
-
-  <!-- Modal -->
   <!-- container-scroller -->
   <!-- plugins:js -->
   <script src="../../vendors/js/vendor.bundle.base.js"></script>
@@ -278,40 +219,13 @@ if (isset($_REQUEST['delete'])) {
   <script src="../../js/data-table.js"></script>
   <script src="../../js/alerts.js"></script>
   <script src="../../js/avgrund.js"></script>
-  <script>
-        //Edit Image Details
-        function editimg(id){
-            $(document).ready(function(){
-                $.ajax({
-                    url: 'edit-image-admin.php',
-                    type: 'POST',
-                    data: 'id='+id,
-                    success: function(result){
-                        $('#loadEdit').html(result);
-                    }
-                });
-            });
-        }
-        //AJAX Delete
-        function mydel(id){
-                $(document).ready(function(){
-                    var r = confirm("Are you sure to delete this image?");
-                     if (r == true) {
-                        //Send AJAX request
-                        $.ajax({
-                            url: 'delete-admin.php',
-                            type: 'POST',
-                            data: 'image_id='+id,
-                                success: function(result){
-                                  $('#deletestatus').html(result);
-                                location.reload();
-                            }
-                        });
-                    }
-                });
-            }
-        </script>
+  <script src="path-to/js/tooltips.js"></script>
   <!-- End custom js for this page-->
-</body>
-
+        <script>
+            $(function () {
+                $('[data-toggle="tooltip"]').tooltip()
+                })
+        </script>
+  
+</body>>
 </html>
