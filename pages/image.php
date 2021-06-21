@@ -575,12 +575,12 @@
                         </div>
                         <div class="col-12" style="margin-top: 25px;">
                             <div class="row">
-                                <a class="col-2 text-center" href=""><img src="../img/facebook.png" alt="" style="height: 50px"></a>
-                                <a class="col-2 text-center" href=""><img src="../img/twitter.png" alt="" style="height: 50px"></a>
-                                <a class="col-2 text-center" href=""><img src="../img/instagram.png" alt="" style="height: 50px"></a>
-                                <a class="col-2 text-center" href=""><img src="../img/whatsapp.png" alt="" style="height: 50px"></a>
-                                <a class="col-2 text-center" href=""><img src="../img/pinterest.png" alt="" style="height: 50px"></a>
-                                <a class="col-2 text-center" href=""><i class="fad fa-ellipsis-h" style="height: 50px"></i></a>
+                                <a class="col-2 text-center" href=""><img src="../img/facebook.png" alt="" style="height: 41px"></a>
+                                <a class="col-2 text-center" href=""><img src="../img/twitter.png" alt="" style="height: 41px"></a>
+                                <a class="col-2 text-center" href=""><img src="../img/instagram.png" alt="" style="height: 41px"></a>
+                                <a class="col-2 text-center" href=""><img src="../img/whatsapp.png" alt="" style="height: 41px"></a>
+                                <a class="col-2 text-center" href=""><img src="../img/pinterest.png" alt="" style="height: 41px"></a>
+                                <a class="col-2 text-center" href=""><button type="button" class="btn btn-light bt" style="background-color: #e2e6ea;"><i class="fad fa-ellipsis-h" style="color:#3f8278ed;"></i></button></a>
                             </div>    
                         </div>        
             </div>
