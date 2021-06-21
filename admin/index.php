@@ -103,11 +103,11 @@ while($row_img=$result_img->fetch_assoc()){
               <img src="<?php echo $site_url."/".$user_avatar; ?>" alt="<?php echo $user_username; ?>"/>
             </a>
             <div class="dropdown-menu dropdown-menu-right navbar-dropdown" aria-labelledby="profileDropdown">
-            <a class="dropdown-item" href="../../../pages/profile.php">
+            <a class="dropdown-item" href="../pages/profile.php">
                 <i class="ti-user text-primary"></i>
                  My Proflie
                 </a>
-              <a class="dropdown-item" href="../../../pages/logout.php">
+              <a class="dropdown-item" href="../pages/logout.php">
                 <i class="ti-power-off text-primary"></i>
                  Logout
                 </a>
