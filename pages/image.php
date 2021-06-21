@@ -355,7 +355,7 @@
                             <?php if($row_img['downloadable']==0): ?>
                             <a href="<?php echo $site_url,$row_img['image_location']; ?>" download="<?php echo $row_img['title']; ?>"><button type="button" id="countDown" onclick="countDownload(<?php echo $row_img['id']; ?>)" class="btn btn btn-outline-success bt" style="margin-top: 10px" ><i class="fad fa-cloud-download-alt"></i> Download (<?php $downloads=number_format($row_img['downloads']); echo $downloads; ?>)</button></a>
                             <?php endif; ?>
-                            <a class="btn btn-outline-dark bt" data-toggle="modal" data-target="#shareimg" style="margin-top: 10px" id=""><i class="fad fa-share-square"></i> Share</a>
+                            <a class="btn btn-outline-dark bt" data-toggle="modal" data-target="#shareimg" style="margin-top: 10px" id=""><i class="fad fa-share-square"></i> Share (<?php $shares=number_format($row_img['shares']); echo $shares; ?>)</a>
 
                             <!--<a href="#" class="btn btn-success col-2"><i class="bi bi-download"></i></a>-->
                         </div>
@@ -538,7 +538,7 @@
             </div>
             <div class="modal-body">
                         <div class="col-12" style="padding: 5px; text-align: center;">
-                            <img src="../upload/images/96fbc5671e.jpg" alt="" style="height:250px; object-fit:contain;">
+                            <img src="<?php echo $site_url,$row_img['image_location']; ?>" alt="" style="height:250px; object-fit:contain;">
                         </div>
                         <hr class="mb-3">
                         <div class="col-12">
@@ -554,7 +554,7 @@
                                 <div class="tab-pane fade show active" id="sharelink" role="tabpanel" aria-labelledby="sharelink-tab">
                                     <div class="col-12" style="margin-top: 15px;">
                                         <div class="row">
-                                            <input type="text" class="form-control col-10" id="shrtxt" value="http://localhost/imagez/pages/image.php?id=6b3ecf9326" style="border-radius: 1.25rem;" readonly>
+                                            <input type="text" class="form-control col-10" id="shrtxt" value="<?php echo $site_url."/pages/image.php?id=".$img_id; ?>" style="border-radius: 1.25rem;" readonly>
                                             <div class="col-2">
                                                 <button type="button" class="btn btn-light bt" id="shrbtn"  data-container="body" data-toggle="popover" data-placement="right" data-content="✔ Copied" style="background-color: #e2e6ea;"><i class="fad fa-clipboard-list-check" style="color:#004498ed;"></i></button><span></span>
                                             </div>    
@@ -564,7 +564,7 @@
                                 <div class="tab-pane fade" id="embed" role="tabpanel" aria-labelledby="embed-tab">
                                     <div class="col-12" style="margin-top: 15px;">
                                         <div class="row">
-                                            <input type="text" class="form-control col-10" id="shrtxtt" value="http://localhost/imagez/pages/image.php?id=6b3ecf9326" style="border-radius: 1.25rem;" readonly>
+                                            <textarea class="form-control col-10" id="shrtxt" readonly><?php echo '<iframe src="'.$site_url.'/pages/image.php?id='.$img_id.'" style="border:none;" width="100%" height="500" title="'.$row_img['title'].'"></iframe>'; ?></textarea>
                                             <div class="col-2">
                                                 <button type="button" class="btn btn-light bt" id="shrbtnn" style="background-color: #e2e6ea;"><i class="fad fa-clipboard-list-check" style="color:#004498ed;"></i></button>
                                             </div>    
@@ -580,7 +580,7 @@
                                 <a class="col-2 text-center" href=""><img src="../img/instagram.png" alt="" style="height: 50px"></a>
                                 <a class="col-2 text-center" href=""><img src="../img/whatsapp.png" alt="" style="height: 50px"></a>
                                 <a class="col-2 text-center" href=""><img src="../img/pinterest.png" alt="" style="height: 50px"></a>
-                                <a class="col-2 text-center" href=""><img src="../img/discord.png" alt="" style="height: 50px"></a>
+                                <a class="col-2 text-center" href=""><i class="fad fa-ellipsis-h" style="height: 50px"></i></a>
                             </div>    
                         </div>        
             </div>
