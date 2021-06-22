@@ -202,5 +202,16 @@
 
         });
         </script>
+        <script type="text/javascript">
+     $(function()
+        {
+            $('img').bind('contextmenu',function()
+            {
+                return false;
+        })
+
+    })
+     
+  </script>
 </body>
 </html>
