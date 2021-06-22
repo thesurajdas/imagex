@@ -109,12 +109,12 @@
         ?>
 
         <!-----------------------------------------Profile section------------------------------------------------------>
-        <img src="../upload/images/91129aa8a8.jpg" class="bacwall" alt="">
+        <img draggable="false" src="../upload/images/91129aa8a8.jpg" class="bacwall" alt="">
         <div class="container-fluid shadow-lg p-3 mb-5 bg-white emp-profile" style="border-radius: 1.25rem;">
                 <div class="row prow" style=" margin-top: 100px">
                     <div class="col-md-4">
                         <div class="profile-img">
-                            <img class="rounded-circle pix" src="<?php echo $site_url."/".$user_avatar; ?>" alt=""/>
+                            <img draggable="false" class="rounded-circle pix" src="<?php echo $site_url."/".$user_avatar; ?>" alt=""/>
                         </div>
                     </div>
                     <div class="col-md-6">
@@ -687,5 +687,16 @@
             });
         }
         </script>
+        <script type="text/javascript">
+     $(function()
+        {
+            $('img').bind('contextmenu',function()
+            {
+                return false;
+        })
+
+    })
+     
+  </script>
     </body>
 </html>

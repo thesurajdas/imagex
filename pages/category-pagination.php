@@ -34,7 +34,7 @@ $last_id = $page+$limit;
                                 while($row=$result_img->fetch_assoc()):?>
                                     <div id="<?php $row['id'];?>" class="col-lg-4 col-md-6 col-sm-12 sglry">
                                         <div class="card cds">
-                                            <img class="im" src="<?php echo $site_url,$row['image_location']; ?>" alt="Card image cap">
+                                            <img class="im" draggable="false" src="<?php echo $site_url,$row['image_location']; ?>" alt="Card image cap">
                                             <div class="card-text cds-txt">
                                                 <div class="container" style="padding-left: 0">
                                                     <div class="row">
@@ -89,3 +89,15 @@ $last_id = $page+$limit;
                                 }else{
                                     echo "";
                                     } ?>
+
+<script type="text/javascript">
+     $(function()
+        {
+            $('img').bind('contextmenu',function()
+            {
+                return false;
+        })
+
+    })
+     
+  </script>
