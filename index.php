@@ -89,7 +89,7 @@
                 <?php } ?>
                 <?php if (isset($user_id)){?>
                 <div class="d-md-none d-lg-none d-lg-none d-lx-none">
-                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><img class="logp rounded-circle" src="<?php echo $site_url."/".$user_avatar; ?>" alt="<?php echo $user_username; ?>" alt=""></a>
+                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><img class="logp rounded-circle" draggable="false" src="<?php echo $site_url."/".$user_avatar; ?>" alt="<?php echo $user_username; ?>" alt=""></a>
                     <div class="dropdown-menu" style="left: auto; right: 0; top: 20; min-width: none; margin-right: 10px;" aria-labelledby="navbarDropdown">
                         <a class="dropdown-item" href="pages/<?php echo $site_url.'/pages/profile.php?u='.$user_username; ?>">My Profile</a>
                         <a class="dropdown-item" href="pages/editprofile.php">Edit Profile</a>
@@ -145,7 +145,7 @@
                         <?php if (isset($user_id)){?>
                         <li class="nav-item dropleft text-decoration-none">
                             <div class="d-none d-md-block d-lg-block d-xl-block">
-                                <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><img class="logp rounded-circle" src="<?php echo $site_url."/".$user_avatar; ?>" alt="<?php echo $user_username; ?>"></a>
+                                <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><img draggable="false" class="logp rounded-circle" src="<?php echo $site_url."/".$user_avatar; ?>" alt="<?php echo $user_username; ?>"></a>
                                 <div class="dropdown-menu" aria-labelledby="navbarDropdown">
                                     <a class="dropdown-item" href="<?php echo $site_url.'/pages/profile.php?u='.$user_username; ?>">My Profile</a>
                                     <a class="dropdown-item" href="pages/editprofile.php">Edit Profile</a>

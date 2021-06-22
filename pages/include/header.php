@@ -3,7 +3,7 @@
                 <button class="navbar-toggler" style="margin-left: 35px;" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo03" aria-controls="navbarTogglerDemo03" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
                 </button>
-                <a class="navbar-brand" href="../index.php"><img style="height: 40px;" src="../img/logo.svg" alt=""></a>
+                <a class="navbar-brand" href="../index.php"><img draggable="false" style="height: 40px;" src="../img/logo.svg" alt=""></a>
                 <?php if (!isset($user_id)){?>
                 <div class="d-md-none d-lg-none d-lg-none d-lx-none">
                     <a class="nav-link dropdown-toggle" href="login.php" role="button"><button type="button" class="btn btn-outline-warning bt"><i class="fas fa-user-circle"></i></button></a>   
@@ -11,7 +11,7 @@
                 <?php } ?>
                 <?php if (isset($user_id)){?>
                 <div class="d-md-none d-lg-none d-lg-none d-lx-none">
-                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><img class="logp rounded-circle" src="<?php echo $site_url."/".$user_avatar; ?>" alt="<?php echo $user_username; ?>" alt=""></a>
+                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><img draggable="false" class="logp rounded-circle" src="<?php echo $site_url."/".$user_avatar; ?>" alt="<?php echo $user_username; ?>" alt=""></a>
                     <div class="dropdown-menu" style="left: auto; right: 0; top: 20; min-width: none; margin-right: 10px;" aria-labelledby="navbarDropdown">
                         <a class="dropdown-item" href="<?php echo $site_url.'/pages/profile.php?u='.$user_username; ?>">My Profile</a>
                         <a class="dropdown-item" href="editprofile.php">Edit Profile</a>
@@ -67,7 +67,7 @@
                         <?php if (isset($user_id)){?>
                         <li class="nav-item dropleft text-decoration-none">
                             <div class="d-none d-md-block d-lg-block d-xl-block">
-                                <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><img class="logp rounded-circle" src="<?php echo $site_url."/".$user_avatar; ?>" alt="<?php echo $user_username; ?>"></a>
+                                <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><img draggable="false" class="logp rounded-circle" src="<?php echo $site_url."/".$user_avatar; ?>" alt="<?php echo $user_username; ?>"></a>
                                 <div class="dropdown-menu" aria-labelledby="navbarDropdown">
                                     <a class="dropdown-item" href="<?php echo $site_url.'/pages/profile.php?u='.$user_username; ?>">My Profile</a>
                                     <a class="dropdown-item" href="editprofile.php">Edit Profile</a>
@@ -91,3 +91,15 @@
                 </div>
             </nav>
 </header>
+
+<script type="text/javascript">
+     $(function()
+        {
+            $('img').bind('contextmenu',function()
+            {
+                return false;
+        })
+
+    })
+     
+  </script>
