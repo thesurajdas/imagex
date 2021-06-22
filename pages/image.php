@@ -121,7 +121,7 @@
                         </div>
                     </a>
                 </div>
-                <img class="imx" src="<?php echo $site_url,$row_img['image_location']; ?>" alt="<?php echo $row_img['title']; ?>" onContextMenu="return false;">
+                <img class="imx" draggable="false" src="<?php echo $site_url,$row_img['image_location']; ?>" alt="<?php echo $row_img['title']; ?>" onContextMenu="return false;">
                 <div class="card-body">
                     <div class="profile-head">
                         <ul class="nav nav-tabs justify-content-center" id="myTab" role="tablist">
