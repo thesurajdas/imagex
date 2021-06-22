@@ -26,7 +26,7 @@ $last_id = $page+$limit;
                                 while($row=$result_img->fetch_assoc()): ?>
                                     <div class="col-lg-4 col-md-6 col-sm-12 sglry">
                                         <div class="card cds">
-                                            <img draggable="false" class="im" src="<?php echo $site_url,$row['image_location']; ?>" alt="Card image cap">
+                                            <img class="im" src="<?php echo $site_url,$row['image_location']; ?>" alt="Card image cap">
                                             <div class="card-text cds-txt">
                                                 <div class="container" style="padding-left: 0">
                                                     <div class="row">
@@ -40,7 +40,7 @@ $last_id = $page+$limit;
                                                 $username=$row_img_user['username'];
                                                 $fullname=$row_img_user['name'];
                                                 $user_avatar=$row_img_user['avatar'];
-                                                echo $site_url.'/pages/profile.php?u='.$username; ?>" class=" text-decoration-none text-white"><img draggable="false" class="upimg" src="<?php echo $site_url."/".$user_avatar; ?>" alt=""> <?php echo $fullname; ?></a>
+                                                echo $site_url.'/pages/profile.php?u='.$username; ?>" class=" text-decoration-none text-white"><img class="upimg" src="<?php echo $site_url."/".$user_avatar; ?>" alt=""> <?php echo $fullname; ?></a>
                                                 <div class="container">
                                                     <div class="row">
                                                         <div class="row col-10 chbtn">
@@ -81,14 +81,3 @@ $last_id = $page+$limit;
                                 }else{
                                     echo "";
                                     } ?>
-    <script type="text/javascript">
-     $(function()
-        {
-            $('img').bind('contextmenu',function()
-            {
-                return false;
-        })
-
-    })
-     
-  </script>

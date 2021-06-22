@@ -225,7 +225,7 @@ if (isset($_REQUEST['login'])) {
             <a href="../index.php"><button class="btn transparent">
               Home</a>
           </div>
-          <img draggable="false" src="../img/log.svg" class="image" alt="" />
+          <img src="../img/log.svg" class="image" alt="" />
         </div>
         <div class="panel right-panel">
           <div class="content">
@@ -240,7 +240,7 @@ if (isset($_REQUEST['login'])) {
               Home</a>
             </button>
           </div>
-          <img draggable="false" src="../img/register.svg" class="image" alt="" />
+          <img src="../img/register.svg" class="image" alt="" />
         </div>
       </div>
     </div>
@@ -266,16 +266,5 @@ function AvoidSpace(event) {
   }
 </script>
     <script src="../js/logsign.js"></script>
-    <script type="text/javascript">
-     $(function()
-        {
-            $('img').bind('contextmenu',function()
-            {
-                return false;
-        })
-
-    })
-     
-  </script>
   </body>
 </html>
