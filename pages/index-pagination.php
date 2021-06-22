@@ -18,7 +18,7 @@ $count=0;
                                      ?>
                                     <div id="<?php $row['id'];?>" class="col-lg-4 col-md-6 col-sm-12 sglry">
                                         <div class="card cds">
-                                            <img class="im" src="<?php echo $site_url,$row['image_location']; ?>" alt="Card image cap">
+                                            <img class="im" draggable="false" src="<?php echo $site_url,$row['image_location']; ?>" onContextMenu="return false;" alt="Card image cap">
                                             <div class="card-text cds-txt">
                                                 <div class="container" style="padding-left: 0">
                                                     <div class="row">
@@ -32,7 +32,7 @@ $count=0;
                                                 $username=$row_img_user['username'];
                                                 $fullname=$row_img_user['name'];
                                                 $user_avatar=$row_img_user['avatar'];
-                                                echo $site_url.'/pages/profile.php?u='.$username; ?>" class=" text-decoration-none text-white"><img class="upimg" src="<?php echo $site_url."/".$user_avatar; ?>" alt=""> <?php echo $username; ?></a>
+                                                echo $site_url.'/pages/profile.php?u='.$username; ?>" class=" text-decoration-none text-white"><img draggable="false" class="upimg" src="<?php echo $site_url."/".$user_avatar; ?>" onContextMenu="return false;" alt=""> <?php echo $username; ?></a>
                                                 <div class="container">
                                                     <div class="row">
                                                         <div class="row col-10 chbtn">

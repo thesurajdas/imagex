@@ -121,7 +121,7 @@
                         </div>
                     </a>
                 </div>
-                <img class="imx" src="<?php echo $site_url,$row_img['image_location']; ?>" alt="<?php echo $row_img['title']; ?>" onContextMenu="return false;">
+                <img class="imx" draggable="false" src="<?php echo $site_url,$row_img['image_location']; ?>" alt="<?php echo $row_img['title']; ?>" onContextMenu="return false;">
                 <div class="card-body">
                     <div class="profile-head">
                         <ul class="nav nav-tabs justify-content-center" id="myTab" role="tablist">
@@ -556,7 +556,7 @@
                                         <div class="row">
                                             <input type="text" class="form-control col-10" id="shrtxt" value="<?php echo $site_url."/pages/image.php?id=".$img_id; ?>" style="border-radius: 1.25rem;" readonly>
                                             <div class="col-2">
-                                                <button type="button" class="btn btn-light bt" id="shrbtn"  data-container="body" data-toggle="popover" data-placement="right" data-content="✔ Copied" style="background-color: #e2e6ea;"><i class="fad fa-clipboard-list-check" style="color:#004498ed;"></i></button><span></span>
+                                                <button type="button" class="btn btn-light bt" id="shrbtn" data-container="body" data-toggle="popover" data-placement="right" data-content="✔ Copied" style="background-color: #e2e6ea;"><i class="fad fa-clipboard-list-check" style="color:#004498ed;"></i></button><span></span>
                                             </div>    
                                         </div>
                                     </div>
@@ -566,7 +566,7 @@
                                         <div class="row">
                                             <textarea class="form-control col-10" id="shrtxtt" readonly><?php echo '<iframe src="'.$site_url.'/pages/image.php?id='.$img_id.'" style="border:none;" width="100%" height="500" title="'.$row_img['title'].'"></iframe>'; ?></textarea>
                                             <div class="col-2">
-                                                <button type="button" class="btn btn-light bt" id="shrbtnn" style="background-color: #e2e6ea;"><i class="fad fa-clipboard-list-check" style="color:#004498ed;"></i></button>
+                                                <button type="button" class="btn btn-light bt" id="shrbtnn" data-container="body" data-toggle="popover" data-placement="right" data-content="✔ Copied" style="background-color: #e2e6ea;"><i class="fad fa-clipboard-list-check" style="color:#004498ed;"></i></button>
                                             </div>    
                                         </div>
                                     </div>
