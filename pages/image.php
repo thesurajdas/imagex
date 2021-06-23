@@ -58,7 +58,6 @@
         <script src="../js/jquery.min.js"></script>
         <script src="../js/bootstrap.bundle.min.js"></script>
         <link href="../css/fullimg.css" rel="stylesheet">
-
             <!-------bootstrap css custom styling -> (OVERRIDE) <- --------------------->
         <style>
             .dropleft .dropdown-toggle::before{
@@ -355,7 +354,7 @@
                             <?php if($row_img['downloadable']==0): ?>
                             <a href="<?php echo $site_url,$row_img['image_location']; ?>" download="<?php echo $row_img['title']; ?>"><button type="button" id="countDown" onclick="countDownload(<?php echo $row_img['id']; ?>)" class="btn btn btn-outline-success bt" style="margin-top: 10px" ><i class="fad fa-cloud-download-alt"></i> Download (<?php $downloads=number_format($row_img['downloads']); echo $downloads; ?>)</button></a>
                             <?php endif; ?>
-                            <a class="btn btn-outline-dark bt" data-toggle="modal" data-target="#shareimg" style="margin-top: 10px" id=""><i class="fad fa-share-square"></i> Share (<?php $shares=number_format($row_img['shares']); echo $shares; ?>)</a>
+                            <a class="btn btn-outline-dark bt" data-toggle="modal" data-target="#shareimg" style="margin-top: 10px" id=""><i class="fad fa-share-square"></i> Share (<span id="sharecount"><?php $shares=number_format($row_img['shares']); echo $shares; ?></span>)</a>
 
                             <!--<a href="#" class="btn btn-success col-2"><i class="bi bi-download"></i></a>-->
                         </div>
@@ -554,7 +553,7 @@
                                 <div class="tab-pane fade show active" id="sharelink" role="tabpanel" aria-labelledby="sharelink-tab">
                                     <div class="col-12" style="margin-top: 15px;">
                                         <div class="row">
-                                            <input type="text" class="form-control col-10" id="shrtxt" value="<?php echo $site_url."/pages/image.php?id=".$img_id; ?>" style="border-radius: 1.25rem;" readonly>
+                                            <input type="text" class="form-control col-10" id="shrtxt" value="<?php $img_url=$site_url."/pages/image.php?id=".$img_id; echo $img_url; ?>" style="border-radius: 1.25rem;" readonly>
                                             <div class="col-2">
                                                 <button type="button" class="btn btn-light bt" id="shrbtn" data-container="body" data-toggle="popover" data-placement="right" data-content="✔ Copied" style="background-color: #e2e6ea;"><i class="fad fa-clipboard-list-check" style="color:#004498ed;"></i></button><span></span>
                                             </div>    
@@ -564,7 +563,7 @@
                                 <div class="tab-pane fade" id="embed" role="tabpanel" aria-labelledby="embed-tab">
                                     <div class="col-12" style="margin-top: 15px;">
                                         <div class="row">
-                                            <textarea class="form-control col-10" id="shrtxtt" readonly><?php echo '<iframe src="'.$site_url.'/pages/image.php?id='.$img_id.'" style="border:none;" width="100%" height="500" title="'.$row_img['title'].'"></iframe>'; ?></textarea>
+                                            <textarea class="form-control col-10" id="shrtxtt" readonly><?php echo '<iframe src="'.$img_url.'" style="border:none;" width="100%" height="500" title="'.$row_img['title'].'"></iframe>'; ?></textarea>
                                             <div class="col-2">
                                                 <button type="button" class="btn btn-light bt" id="shrbtnn" data-container="body" data-toggle="popover" data-placement="right" data-content="✔ Copied" style="background-color: #e2e6ea;"><i class="fad fa-clipboard-list-check" style="color:#004498ed;"></i></button>
                                             </div>    
@@ -575,12 +574,12 @@
                         </div>
                         <div class="col-12" style="margin-top: 25px;">
                             <div class="row">
-                                <a class="col-2 text-center" href=""><img src="../img/facebook.png" alt="" style="height: 41px"></a>
-                                <a class="col-2 text-center" href=""><img src="../img/twitter.png" alt="" style="height: 41px"></a>
-                                <a class="col-2 text-center" href=""><img src="../img/instagram.png" alt="" style="height: 41px"></a>
-                                <a class="col-2 text-center" href=""><img src="../img/whatsapp.png" alt="" style="height: 41px"></a>
-                                <a class="col-2 text-center" href=""><img src="../img/pinterest.png" alt="" style="height: 41px"></a>
-                                <a class="col-2 text-center" href=""><button type="button" class="btn btn-light bt" style="background-color: #e2e6ea;"><i class="fad fa-ellipsis-h" style="color:#738885ed;"></i></button></a>
+                                <a class="col-2 text-center" id="share-btn" href="https://www.facebook.com/sharer/sharer.php?u=<?php echo $img_url; ?>" target="_blank"><img src="../img/facebook.png" alt="" style="height: 41px"></a>
+                                <a class="col-2 text-center" id="share-btn" href="https://twitter.com/intent/tweet?text=<?php echo $img_url; ?>" target="_blank"><img src="../img/twitter.png" alt="" style="height: 41px"></a>
+                                <a class="col-2 text-center" id="share-btn" href="https://www.reddit.com/submit?url=<?php echo $img_url; ?>&title=<?php echo $row_img['title']; ?>" target="_blank"><img src="../img/instagram.png" alt="" style="height: 41px"></a>
+                                <a class="col-2 text-center" id="share-btn" href="https://in.pinterest.com/pin/create/button/?url=<?php echo $img_url; ?>" target="_blank"><img src="../img/pinterest.png" alt="" style="height: 41px"></a>
+                                <a class="col-2 text-center" id="share-btn" href="https://wa.me/?text=<?php echo $img_url; ?>" target="_blank"><img src="../img/whatsapp.png" alt="" style="height: 41px"></a>
+                                <a class="col-2 text-center"><button type="button" onclick="share()" class="btn btn-light bt" style="background-color: #e2e6ea;"><i class="fad fa-ellipsis-h" style="color:#738885ed;"></i></button></a>
                             </div>    
                         </div>        
             </div>
@@ -698,8 +697,33 @@
       var pid = $(this).data("id");
       loadTable(pid);
     });
-
   });
+  //share script
+  function share(){
+      if (navigator.share) {
+      navigator.share({
+        title: '<?php echo $row_img['title']; ?>',
+        text: '<?php echo $row_img['title']." by ".$row_img_user['name']; ?>',
+        url: document.location.href,
+      })
+        .then(() => console.log('Successful Share'))
+        .catch((error) => console.log('Error sharing', error));
+    }
+  }
+//Count Share
+//Count Download
+            $(document).ready(function(){
+                $('#share-btn').click(function(){
+                    $.ajax({
+                        url: 'share-count.php',
+                        type: 'POST',
+                        data: 'shareid='+<?php echo $row_img['id']; ?>,
+                        success: function(result){
+                            $('#sharecount').html(result);
+                        }
+                    });
+                });
+            });
 </script>
 </body>
 </html>
