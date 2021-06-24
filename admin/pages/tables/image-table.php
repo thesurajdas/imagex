@@ -168,7 +168,7 @@ if (isset($_REQUEST['delete'])) {
                         <tr>
                             <th>ID</th>
                             <th>Image</th>
-                            <th>Name</th>
+                            <th>Image ID</th>
                             <th>Uploader</th>
                             <th>Visibility</th>
                             <th>Time</th>
@@ -183,7 +183,7 @@ if (isset($_REQUEST['delete'])) {
                         <?php while($row=$img_result->fetch_assoc()): ?>
                             <td><?php echo $row['id']; ?></td>
                             <td><img class="timg" src="../../..<?php echo $row['image_location']; ?>" alt=""></td>
-                            <th><?php echo $row['title'];
+                            <th><?php echo $row['image_id'];
                             echo "<a class='text-decoration-none' href='".$site_url."/pages/image.php?id=".$row['image_id']."' target='_blank'> <i class='fad fa-external-link-alt' style='margin-left: 3px; font-size: 12px;'></i></a>";
                             ?>
                             </th>
