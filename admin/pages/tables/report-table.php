@@ -144,6 +144,7 @@
           <div class="card">
             <div class="card-body">
               <h4 class="card-title">Report table</h4>
+              <div id="deletestatus"></div>
               <div class="row">
                 <div class="col-12">
                   <div class="table-responsive">
@@ -197,7 +198,7 @@
                                         <a class="dropdown-item" href="#">Private</a>
                                     </div>
                                 </div>    
-                                <button class="btn btn-outline-primary" onclick="showSwal('success-message')" data-toggle="tooltip" data-placement=top data-custom-class="tooltip-Danger" title="Delete" style="margin-left: 2px"><i class="bi bi-trash"></i></button>
+                                <button class="btn btn-outline-primary" onclick="mydel(<?php echo $row['id']; ?>)" data-toggle="tooltip" data-placement=top data-custom-class="tooltip-Danger" title="Delete" style="margin-left: 2px"><i class="bi bi-trash"></i></button>
                             </td>
                         </tr>
                               <!-- Modal -->
@@ -279,7 +280,26 @@
         <script>
             $(function () {
                 $('[data-toggle="tooltip"]').tooltip()
-                })
+                });
+ //AJAX Delete
+ function mydel(id){
+                $(document).ready(function(){
+                    var r = confirm("Are you sure to delete this report?");
+                     if (r == true) {
+                        //Send AJAX request
+                        $.ajax({
+                            url: 'delete-report.php',
+                            type: 'POST',
+                            data: 'report_id='+id,
+                                success: function(result){
+                                  $('#deletestatus').html(result);
+                                location.reload();
+                            }
+                        });
+                    }
+                });
+            }
+        </script>
         </script>
   
 </body>>
