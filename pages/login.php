@@ -225,7 +225,7 @@ if (isset($_REQUEST['login'])) {
             <a href="../index.php"><button class="btn transparent">
               Home</a>
           </div>
-          <img src="../img/log.svg" class="image" alt="" />
+          <img draggable="fclose" src="../img/log.svg" class="image" onContextMenu="return false;" alt="" />
         </div>
         <div class="panel right-panel">
           <div class="content">
@@ -240,7 +240,7 @@ if (isset($_REQUEST['login'])) {
               Home</a>
             </button>
           </div>
-          <img src="../img/register.svg" class="image" alt="" />
+          <img draggable="false" src="../img/register.svg" class="image" onContextMenu="return false;" alt="" />
         </div>
       </div>
     </div>

@@ -201,7 +201,7 @@
               </div>';} ?>
                 <div class="col-sm-12">
                     <div class="pimg">
-                        <img class="pdp" src="<?php echo $site_url."/".$user_avatar; ?>">
+                        <img draggable="false" class="pdp" src="<?php echo $site_url."/".$user_avatar; ?>" onContextMenu="return false;">
                     </div>
                 </div>
                 <form class="mfrm" style="text-align: center" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]);?>" method="POST" enctype="multipart/form-data">
@@ -227,7 +227,7 @@
                 <hr class="mb-4">
                 <div class="col-sm-12">
                     <div class="pimg">
-                        <img class="pwp img-fluid" src="../upload/images/93a3ec6d33.jpg">
+                        <img draggable="false" class="pwp img-fluid" src="../upload/images/93a3ec6d33.jpg" onContextMenu="return false;">
                     </div>
                 </div>
                 <form class="mfrm" style="text-align: center" action="" method="POST" >
