@@ -157,6 +157,7 @@
                             <th>Uploader</th>
                             <th>Reporter</th>
                             <th>Report</th>
+                            <th>Status</th>
                             <th>Actions</th>
                         </tr>
                       </thead>
@@ -189,6 +190,12 @@
                               echo "<a class='text-decoration-none' style='font-weight: 550; font-size: 14px;' href='".$site_url."/pages/profile.php?u=".$row_rp['username']."' target='_blank'>".$row_rp['name']."  </a>";
                             ?></td>
                             <td><?php if($row['report_type']==0){echo "<label class='badge badge-success'>Normal</label>";}elseif($row['report_type']==1){echo "<label class='badge badge-danger'>Copyright</label>";}else{echo "Unknown!";} ?> <a class="btn" data-toggle="modal" data-target="#usersModal<?php if (isset($row['id'])) { echo $row['id']; } ?>"><i class="fad fa-comment-exclamation"></i></a></td>
+                            <td><?php
+                                if($row_img['visibility']==0){echo "<label class='badge badge-success'>public</label>";}
+                                elseif($row_img['visibility']==1){echo "<label class='badge badge-secondary'>private</label>";}
+                                elseif($row_img['visibility']==2){echo "<label class='badge badge-danger'>blocked</label>";}
+                                else{echo "Unkown";}
+                              ?></td>
                             <td>
                                 <div class="row">
                                 <div class="dropdown dropleft" style="margin-right: 2px; margin-bottom: 2px">

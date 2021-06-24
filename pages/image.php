@@ -1,6 +1,7 @@
 <?php
     //Add database connection
     require_once('../auth.php');
+    $time=date('Y-m-d H:i:s');
     //Get image id
     if (isset($_GET['id'])) {
         $img_id=$_GET['id'];
@@ -490,29 +491,38 @@
                     <span aria-hidden="true">&times;</span>
                     </button>
                 </div>
+                <div id="output">
                 <div class="modal-body">
-                    <form action="/">
+                    <form id="reportForm">
+                    <input type="hidden" name="imgID" value="<?php echo $row_img['id']; ?>">
+                    <input type="hidden" name="rpID" value="<?php echo $user_id; ?>">
+                    <input type="hidden" name="upID" value="<?php echo $row_img['user_id']; ?>">
+                    <input type="hidden" name="time" value="<?php echo $time; ?>">
                         <div class="form-row">
                             <div class="form-group col-12" style="padding: 5px; text-align: center">
-                                <img src="../upload/images/96fbc5671e.jpg" alt="" style="height:250px; object-fit:contain;">
+                                <img src="<?php echo $site_url,$row_img['image_location']; ?>" alt="" style="height:250px; object-fit:contain;">
                             </div>
                             <div class="form-group col-12">
                                 <label for="Imagename" style="color:seagreen; font-weight:500; "><i class="fad fa-file-signature"></i> Image Name</label>
-                                <input type="text" class="form-control" id="Imagename" placeholder="Image Name" style="border-radius: 1.25rem;" disabled>
+                                <input type="text" class="form-control" value="<?php echo $row_img['title']; ?>" style="border-radius: 1.25rem;" disabled>
                             </div>
                             <div class="form-group col-12 pl-2">
                                 <div class="form-check pb-1">
-                                    <input class="form-check-input position-static" type="radio" name="blankRadio" id="blankRadio1" value="option1" aria-label="...">
+                                    <input class="form-check-input position-static" type="radio" name="reportType" value="0" checked />
                                     <label class="form-check-label" for="blankRadio1" style="color:#f34f32; font-weight: 500;"><i class="fad fa-engine-warning"></i> Normal Report</label>
                                 </div>
                                 <div class="form-check pt-1">
-                                    <input class="form-check-input position-static" type="radio" name="blankRadio" id="blankRadio2" value="option2" aria-label="">
-                                    <label class="form-check-label" for="blankRadio2" style="color:#6b3c96; font-weight:500;"><i class="fad fa-file-certificate"></i> License Report</label>                                
+                                    <input class="form-check-input position-static" type="radio" name="reportType" value="1" />
+                                    <label class="form-check-label" for="blankRadio2" style="color:#6b3c96; font-weight:500;"><i class="fad fa-file-certificate"></i> Copyright Report</label>                                
                                 </div>
+                            </div>
+                            <div class="input-group">
+                                <textarea class="form-control col-10" name="description" placeholder="Enter the reason...(Optional)" minlength="5" maxlength="500"></textarea>
                             </div>
                         </div>
                         <button type="submit" class="btn btn-primary mt-3" style="border-radius: 1.25rem"><i class="fad fa-exclamation-triangle"></i> Report</button>                                            
                     </form>    
+                </div>
                 </div>
                 <div class="modal-footer">
                     <button type="button" class="btn btn-secondary bt" data-dismiss="modal">Close</button>
@@ -729,6 +739,21 @@ $(document).on("click","#shrbtn",function(){
 $(document).on("click","#shrbtnn",function(){
     sharecount();
 });
+//Report Image
+$(document).ready(function () {
+        //1st form logic
+        $('#reportForm').on('submit', function (e) {
+          e.preventDefault();
+          $.ajax({
+            type: 'POST',
+            url: 'report.php',
+            data: $('#reportForm').serialize(),
+            success: function (result) {
+              $('#output').html(result);
+            }
+          });
+        });
+    });
 </script>
 </body>
 </html>
