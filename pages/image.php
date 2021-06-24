@@ -574,11 +574,11 @@
                         </div>
                         <div class="col-12" style="margin-top: 25px;">
                             <div class="row">
-                                <a class="col-2 text-center" id="share-btn" href="https://www.facebook.com/sharer/sharer.php?u=<?php echo $img_url; ?>" target="_blank"><img src="../img/facebook.png" alt="" style="height: 41px"></a>
-                                <a class="col-2 text-center" id="share-btn" href="https://twitter.com/intent/tweet?text=<?php echo $img_url; ?>" target="_blank"><img src="../img/twitter.png" alt="" style="height: 41px"></a>
-                                <a class="col-2 text-center" id="share-btn" href="https://www.reddit.com/submit?url=<?php echo $img_url; ?>&title=<?php echo $row_img['title']; ?>" target="_blank"><img src="../img/instagram.png" alt="" style="height: 41px"></a>
-                                <a class="col-2 text-center" id="share-btn" href="https://in.pinterest.com/pin/create/button/?url=<?php echo $img_url; ?>" target="_blank"><img src="../img/pinterest.png" alt="" style="height: 41px"></a>
-                                <a class="col-2 text-center" id="share-btn" href="https://wa.me/?text=<?php echo $img_url; ?>" target="_blank"><img src="../img/whatsapp.png" alt="" style="height: 41px"></a>
+                                <a class="col-2 text-center" onclick="sharecount()" href="https://www.facebook.com/sharer/sharer.php?u=<?php echo $img_url; ?>" target="_blank"><i class="fab fa-facebook" style="font-size: 40px;color:#4267B2;"></i></a>
+                                <a class="col-2 text-center" onclick="sharecount()" href="https://twitter.com/intent/tweet?text=<?php echo $img_url; ?>" target="_blank"><i class="fab fa-twitter" style="font-size: 40px;color:#1DA1F2;"></i></a>
+                                <a class="col-2 text-center" onclick="sharecount()" href="https://www.reddit.com/submit?url=<?php echo $img_url; ?>&title=<?php echo $row_img['title']; ?>" target="_blank"><i class="fab fa-reddit" style="font-size: 40px;color:orangered;"></i></a>
+                                <a class="col-2 text-center" onclick="sharecount()" href="https://in.pinterest.com/pin/create/button/?url=<?php echo $img_url; ?>" target="_blank"><i class="fab fa-pinterest" style="font-size: 40px;color:#E60023;"></i></a>
+                                <a class="col-2 text-center" onclick="sharecount()" href="https://wa.me/?text=<?php echo $img_url; ?>" target="_blank"><i class="fab fa-whatsapp" style="font-size: 40px;color:#075E54;"></i></a>
                                 <a class="col-2 text-center"><button type="button" onclick="share()" class="btn btn-light bt" style="background-color: #e2e6ea;"><i class="fad fa-ellipsis-h" style="color:#738885ed;"></i></button></a>
                             </div>    
                         </div>        
@@ -706,14 +706,13 @@
         text: '<?php echo $row_img['title']." by ".$row_img_user['name']; ?>',
         url: document.location.href,
       })
-        .then(() => console.log('Successful Share'))
+        .then(() => sharecount())
         .catch((error) => console.log('Error sharing', error));
     }
   }
 //Count Share
-//Count Download
+function sharecount(){
             $(document).ready(function(){
-                $('#share-btn').click(function(){
                     $.ajax({
                         url: 'share-count.php',
                         type: 'POST',
@@ -722,8 +721,14 @@
                             $('#sharecount').html(result);
                         }
                     });
-                });
             });
+}
+$(document).on("click","#shrbtn",function(){
+    sharecount();
+});
+$(document).on("click","#shrbtnn",function(){
+    sharecount();
+});
 </script>
 </body>
 </html>
