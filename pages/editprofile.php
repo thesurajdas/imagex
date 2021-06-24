@@ -221,7 +221,7 @@
                 </form>    
             </div>
         </div>    
-        <div class="container sndcon">
+        <!-- <div class="container sndcon">
             <div class="card shadow" style="padding-bottom: 20px; border-radius: 1.25rem;">
                 <h4 class="mtxt">Profile WallPaper</h4>
                 <hr class="mb-4">
@@ -246,7 +246,7 @@
                     <button type="submit" class="btn btn-primary bt" name="a-upload"><i class="fad fa-upload"></i> upload</button>
                 </form>    
             </div>
-        </div>    
+        </div>     -->
         <div class="container sndcon" id="pd">
             <div class="card shadow" style="border-radius: 1.25rem;">
                 <h4 class="mtxt">Personal Details</h4>

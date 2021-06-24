@@ -573,13 +573,13 @@
                             </div>
                         </div>
                         <div class="col-12" style="margin-top: 25px;">
-                            <div class="row">
-                                <a class="col-2 text-center" onclick="sharecount()" href="https://www.facebook.com/sharer/sharer.php?u=<?php echo $img_url; ?>" target="_blank"><i class="fab fa-facebook" style="font-size: 40px;color:#4267B2;"></i></a>
-                                <a class="col-2 text-center" onclick="sharecount()" href="https://twitter.com/intent/tweet?text=<?php echo $img_url; ?>" target="_blank"><i class="fab fa-twitter" style="font-size: 40px;color:#1DA1F2;"></i></a>
+                            <div class="row" style="justify-content: space-around">
+                                <a class=" text-center" onclick="sharecount()" href="https://www.facebook.com/sharer/sharer.php?u=<?php echo $img_url; ?>" target="_blank"><i class="fab fa-facebook" style="font-size: 40px;color:#4267B2;"></i></a>
+                                <a class=" text-center" onclick="sharecount()" href="https://twitter.com/intent/tweet?text=<?php echo $img_url; ?>" target="_blank"><i class="fab fa-twitter" style="font-size: 40px;color:#1DA1F2;"></i></a>
                                 <!-- <a class="col-2 text-center" onclick="sharecount()" href="https://www.reddit.com/submit?url=<?php echo $img_url; ?>&title=<?php echo $row_img['title']; ?>" target="_blank"><i class="fab fa-reddit" style="font-size: 40px;color:orangered;"></i></a> -->
-                                <a class="col-2 text-center" onclick="sharecount()" href="https://in.pinterest.com/pin/create/button/?url=<?php echo $img_url; ?>" target="_blank"><i class="fab fa-pinterest" style="font-size: 40px;color:#E60023;"></i></a>
-                                <a class="col-2 text-center" onclick="sharecount()" href="https://wa.me/?text=<?php echo $img_url; ?>" target="_blank"><i class="fab fa-whatsapp" style="font-size: 40px;color:#1ead1e;"></i></a>
-                                <a class="col-2 text-center"><button type="button" onclick="share()" class="btn btn-light bt" style="background-color: #e2e6ea;"><i class="fad fa-ellipsis-h" style="color:#738885ed;"></i></button></a>
+                                <a class=" text-center" onclick="sharecount()" href="https://in.pinterest.com/pin/create/button/?url=<?php echo $img_url; ?>" target="_blank"><i class="fab fa-pinterest" style="font-size: 40px;color:#E60023;"></i></a>
+                                <a class=" text-center" onclick="sharecount()" href="https://wa.me/?text=<?php echo $img_url; ?>" target="_blank"><i class="fab fa-whatsapp" style="font-size: 40px;color:#1ead1e;"></i></a>
+                                <a class=" text-center"><button type="button" onclick="share()" class="btn btn-light bt" style="background-color: #e2e6ea;"><i class="fad fa-ellipsis-h" style="color:#738885ed;"></i></button></a>
                             </div>    
                         </div>        
             </div>
