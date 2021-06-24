@@ -80,7 +80,7 @@
                 <button class="navbar-toggler" style="margin-left: 35px;" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo03" aria-controls="navbarTogglerDemo03" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
                 </button>
-                <a class="navbar-brand" href="index.php"><img style="height: 40px;" src="img/logo.svg" alt=""></a>
+                <a class="navbar-brand" href="index.php"><img draggable="false" style="height: 40px;" src="img/logo.svg" alt="" onContextMenu="return false;"></a>
                 <?php if (!isset($user_id)){?>
                 <div class="d-md-none d-lg-none d-lg-none d-lx-none">
                     <a class="nav-link dropdown-toggle" href="login.php" role="button"><button type="button" class="btn btn-outline-warning bt"><i class="fas fa-user-circle"></i></button></a>   
@@ -88,7 +88,7 @@
                 <?php } ?>
                 <?php if (isset($user_id)){?>
                 <div class="d-md-none d-lg-none d-lg-none d-lx-none">
-                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><img class="logp rounded-circle" src="<?php echo $site_url."/".$user_avatar; ?>" alt="<?php echo $user_username; ?>" alt=""></a>
+                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><img draggable="false" class="logp rounded-circle" src="<?php echo $site_url."/".$user_avatar; ?>" alt="<?php echo $user_username; ?>" alt="" onContextMenu="return false;"></a>
                     <div class="dropdown-menu" style="left: auto; right: 0; top: 20; min-width: none; margin-right: 10px;" aria-labelledby="navbarDropdown">
                         <a class="dropdown-item" href="pages/<?php echo $site_url.'/pages/profile.php?u='.$user_username; ?>">My Profile</a>
                         <a class="dropdown-item" href="pages/editprofile.php">Edit Profile</a>
@@ -144,7 +144,7 @@
                         <?php if (isset($user_id)){?>
                         <li class="nav-item dropleft text-decoration-none">
                             <div class="d-none d-md-block d-lg-block d-xl-block">
-                                <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><img class="logp rounded-circle" src="<?php echo $site_url."/".$user_avatar; ?>" alt="<?php echo $user_username; ?>"></a>
+                                <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><img draggable="false" class="logp rounded-circle" src="<?php echo $site_url."/".$user_avatar; ?>" alt="<?php echo $user_username; ?>" onContextMenu="return false;"></a>
                                 <div class="dropdown-menu" aria-labelledby="navbarDropdown">
                                     <a class="dropdown-item" href="<?php echo $site_url.'/pages/profile.php?u='.$user_username; ?>">My Profile</a>
                                     <a class="dropdown-item" href="pages/editprofile.php">Edit Profile</a>
@@ -200,21 +200,21 @@
                 </ol>
                 <div class="carousel-inner">
                   <div class="carousel-item active">
-                    <img src="upload\images\d50c792a35.jpg" class="d-block cimg" alt="...">
+                    <img draggable="false" src="upload\images\d50c792a35.jpg" class="d-block cimg" alt="..." onContextMenu="return false;">
                     <div class="carousel-caption d-none d-md-block">
                       <h5>Welcome to the Gallery</h5>
                       <p>Scrole For More.</p>
                     </div>
                   </div>
                   <div class="carousel-item">
-                    <img src="upload\images\75c37a2060.jpg" class="d-block cimg" alt="...">
+                    <img draggable="false" src="upload\images\75c37a2060.jpg" class="d-block cimg" alt="..." onContextMenu="return false;">
                     <div class="carousel-caption d-none d-md-block">
                       <h5>Second slide label</h5>
                       <p>Some representative placeholder content for the second slide.</p>
                     </div>
                   </div>
                   <div class="carousel-item">
-                    <img src="upload\images\96fbc5671e.jpg" class="d-block cimg" alt="...">
+                    <img draggable="false" src="upload\images\96fbc5671e.jpg" class="d-block cimg" alt="..." onContextMenu="return false;">
                     <div class="carousel-caption d-none d-md-block">
                       <h5>Third slide label</h5>
                       <p>Some representative placeholder content for the third slide.</p>
@@ -244,7 +244,7 @@
                 $result_fi=$connect->query($sql);
                 while($row_fi=$result_fi->fetch_assoc()):
                 ?>
-                    <a href="<?php echo "pages/image.php?id=".$row_fi['image_id']; ?>"><div class="item"><img class="fci im" src="<?php echo $site_url,$row_fi['image_location']; ?>" alt=""></div></a>
+                    <a href="<?php echo "pages/image.php?id=".$row_fi['image_id']; ?>"><div class="item"><img draggable="false" class="fci im" src="<?php echo $site_url,$row_fi['image_location']; ?>" alt="" onContextMenu="return false;"></div></a>
                 <?php endwhile; ?>
                 </div>                  
             </div>

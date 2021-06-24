@@ -119,7 +119,7 @@
                         <!-- Uploaded image area-->
                         <p class="font-italic text-dark text-center">The image uploaded will be rendered inside the box below. <b>(We allow only .jpg .jpeg .png images within 100KB to 5MB!)</b></p>
                         <div class="image-area col-12 dsplyimg mb-4">
-                            <img id="imageResult" src="#" alt="" class="img-fluid rounded shadow-sm mx-auto d-block">
+                            <img draggable="false" id="imageResult" src="#" alt="" class="img-fluid rounded shadow-sm mx-auto d-block" onContextMenu="return false;">
                         </div>
                         <div class="form-row">
                             <div class="form-group col-md-12">

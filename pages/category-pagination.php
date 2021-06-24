@@ -34,7 +34,7 @@ $last_id = $page+$limit;
                                 while($row=$result_img->fetch_assoc()):?>
                                     <div id="<?php $row['id'];?>" class="col-lg-4 col-md-6 col-sm-12 sglry">
                                         <div class="card cds">
-                                            <img class="im" src="<?php echo $site_url,$row['image_location']; ?>" alt="Card image cap">
+                                            <img draggable="false" class="im" src="<?php echo $site_url,$row['image_location']; ?>" alt="Card image cap" onContextMenu="return false;">
                                             <div class="card-text cds-txt">
                                                 <div class="container" style="padding-left: 0">
                                                     <div class="row">
@@ -48,7 +48,7 @@ $last_id = $page+$limit;
                                                 $username=$row_img_user['username'];
                                                 $fullname=$row_img_user['name'];
                                                 $user_avatar=$row_img_user['avatar'];
-                                                echo $site_url.'/pages/profile.php?u='.$username; ?>" class=" text-decoration-none text-white"><img class="upimg" src="<?php echo $site_url."/".$user_avatar; ?>" alt=""> <?php echo $username; ?></a>
+                                                echo $site_url.'/pages/profile.php?u='.$username; ?>" class=" text-decoration-none text-white"><img draggable="false" class="upimg" onContextMenu="return false;" src="<?php echo $site_url."/".$user_avatar; ?>" alt=""> <?php echo $username; ?></a>
                                                 <div class="container">
                                                     <div class="row">
                                                         <div class="row col-10 chbtn">

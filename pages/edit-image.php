@@ -12,7 +12,7 @@
 <form id="formUpdate">
 <div class="form-row">
                                     <div class="form-group col-md-12" style="padding: 5px; text-align:center;">
-                                        <img src="<?php echo $site_url,$row_edit['image_location']; ?>" class="img-fluid" alt="" style="height: 250px; object-fit: contain;">
+                                        <img draggable="false" src="<?php echo $site_url,$row_edit['image_location']; ?>" class="img-fluid" alt="" style="height: 250px; object-fit: contain;" onContextMenu="return false;">
                                     </div>
                                     <div class="col-md-12" style="margin-bottom: 10px; font-weight: 600;">
                                         <label for="title" style="color: #b94d00; font-weight: 600;"><i class="fad fa-file-signature"></i> Image Name</label>
