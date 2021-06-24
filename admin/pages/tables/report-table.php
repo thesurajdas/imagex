@@ -153,7 +153,7 @@
                         <tr>
                             <th>ID</th>
                             <th>Image</th>
-                            <th>Name</th>
+                            <th>Image ID</th>
                             <th>Uploader</th>
                             <th>Reporter</th>
                             <th>Report</th>
@@ -171,7 +171,7 @@
                         <tr>
                             <td><?php echo $row['id']; ?></td>
                             <td><img class="timg" src="../../..<?php echo $row_img['image_location']; ?>" alt=""></td>
-                            <th><?php echo $row_img['title'];
+                            <th><?php echo $row_img['image_id'];
                             echo "<a class='text-decoration-none' href='".$site_url."/pages/image.php?id=".$row_img['image_id']."' target='_blank'> <i class='fad fa-external-link-alt' style='margin-left: 3px; font-size: 12px;'></i></a>";
                             ?></th>
                             <td><?php
@@ -194,8 +194,8 @@
                                 <div class="dropdown dropleft" style="margin-right: 2px; margin-bottom: 2px">
                                     <button type="button" class="btn btn-outline-primary dropdown-toggle"  id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><i class="fad fa-ban" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"></i></button>
                                     <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-                                        <a class="dropdown-item" href="#">Public</a>
-                                        <a class="dropdown-item" href="#">Private</a>
+                                        <a class="dropdown-item" onclick="private(<?php echo $img_id; ?>)">Private</a>
+                                        <a class="dropdown-item" onclick="tmp_block(<?php echo $img_id; ?>)">Temporary Blocked</a>
                                     </div>
                                 </div>    
                                 <button class="btn btn-outline-primary" onclick="mydel(<?php echo $row['id']; ?>)" data-toggle="tooltip" data-placement=top data-custom-class="tooltip-Danger" title="Delete" style="margin-left: 2px"><i class="bi bi-trash"></i></button>
@@ -299,8 +299,35 @@
                     }
                 });
             }
+//report action
+function private(id){
+  $(document).ready(function(){
+                        //Send AJAX request
+                        $.ajax({
+                            url: 'private-report.php',
+                            type: 'POST',
+                            data: 'img_id='+id,
+                                success: function(result){
+                                  $('#deletestatus').html(result);
+                                location.reload();
+                            }
+                        });
+                });
+}
+function tmp_block(id){
+  $(document).ready(function(){
+                        //Send AJAX request
+                        $.ajax({
+                            url: 'block-report.php',
+                            type: 'POST',
+                            data: 'img_id='+id,
+                                success: function(result){
+                                  $('#deletestatus').html(result);
+                                location.reload();
+                            }
+                        });
+                });
+}
         </script>
-        </script>
-  
 </body>>
 </html>

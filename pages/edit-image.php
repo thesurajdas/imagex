@@ -34,8 +34,12 @@
                                     <div class="form-group col-md-6">
                                         <label for="title" style="color: #148e14; font-weight: 600;"><i class="fad fa-globe-americas"></i> Image Visibility</label>
                                         <select name="visibility" class="fc form-control" required>
+                                        <?php if($row_edit['visibility']!=2){ ?>
                                             <option value="0" <?php if($row_edit['visibility']==0){echo "selected";} ?>>Public</option>
                                             <option value="1" <?php if($row_edit['visibility']==1){echo "selected";} ?>>Private</option>
+                                        <?php }else{ ?>
+                                            <option value="2" <?php if($row_edit['visibility']==2){echo "selected";} ?>>Temporary Blocked</option>
+                                        <?php } ?>
                                         </select>    
                                     </div>
                                     <div class="form-group col-md-6">

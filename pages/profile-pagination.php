@@ -91,11 +91,17 @@ $last_id = $page+$limit;
                                                         </div>
                                                     </div>
                                                 </div>
-                                                <?php if($row['visibility']==1): ?>
-                                                <div class="container " style="margin-top:15%">
+                                                <?php if($row['visibility']==1){ ?>
+                                                <div class="container" style="margin-top:15%">
                                                     <p><i class="fad fa-lock-alt" style="color: #dc3545"></i> <span class="badge bg-danger">Private</span></p>
                                                 </div>
-                                                <?php endif; ?>
+                                                <?php }
+                                                elseif($row['visibility']==2){
+                                                ?>
+                                                <div class="container" style="margin-top:15%">
+                                                    <p><i class="fad fa-lock-alt" style="color: #dc3545"></i> <span class="badge bg-danger">Temporary Blocked</span></p>
+                                                </div>
+                                                <?php } ?>
                                             </div>
                                         </div>
                                     </div>
