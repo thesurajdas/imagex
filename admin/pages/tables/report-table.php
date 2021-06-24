@@ -1,5 +1,9 @@
 <?php
-
+    //Add database connection
+    require('../../auth.php');
+    //Retrive Data from database
+    $sql="SELECT * FROM reports";
+    $report_result=$connect->query($sql);
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -156,13 +160,34 @@
                         </tr>
                       </thead>
                       <tbody>
+                      <?php
+                        while($row=$report_result->fetch_assoc()):
+                          $img_id=$row['image_id'];
+                          $sql2="SELECT * FROM images WHERE id='$img_id'";
+                          $img_result=$connect->query($sql2);
+                        while($row_img=$img_result->fetch_assoc()):
+                      ?>
                         <tr>
-                            <td>1</td>
-                            <td><img class="timg" src="../../..<?php echo $row['image_location']; ?>" alt=""></td>
-                            <th>Image Name</th>
-                            <td>Uploader Name</td>
-                            <td>Reporter Name</td>
-                            <td>Report Type <a class="btn" data-toggle="modal" data-target="#usersModal"><i class="fad fa-comment-exclamation"></i></a></td>
+                            <td><?php echo $row['id']; ?></td>
+                            <td><img class="timg" src="../../..<?php echo $row_img['image_location']; ?>" alt=""></td>
+                            <th><?php echo $row_img['title'];
+                            echo "<a class='text-decoration-none' href='".$site_url."/pages/image.php?id=".$row_img['image_id']."' target='_blank'> <i class='fad fa-external-link-alt' style='margin-left: 3px; font-size: 12px;'></i></a>";
+                            ?></th>
+                            <td><?php
+                              $up_id=$row['uploader_id'];
+                              $sql3="SELECT * FROM users WHERE id='$up_id'";
+                              $up_result=$connect->query($sql3);
+                              $row_up=$up_result->fetch_assoc();
+                              echo "<a class='text-decoration-none' style='font-weight: 550; font-size: 14px;' href='".$site_url."/pages/profile.php?u=".$row_up['username']."' target='_blank'>".$row_up['name']."  </a>";
+                            ?></td>
+                            <td><?php
+                              $rp_id=$row['reporter_id'];
+                              $sql4="SELECT * FROM users WHERE id='$rp_id'";
+                              $rp_result=$connect->query($sql4);
+                              $row_rp=$rp_result->fetch_assoc();
+                              echo "<a class='text-decoration-none' style='font-weight: 550; font-size: 14px;' href='".$site_url."/pages/profile.php?u=".$row_rp['username']."' target='_blank'>".$row_rp['name']."  </a>";
+                            ?></td>
+                            <td><?php if($row['report_type']==0){echo "<label class='badge badge-success'>Normal</label>";}elseif($row['report_type']==1){echo "<label class='badge badge-danger'>Copyright</label>";}else{echo "Unknown!";} ?> <a class="btn" data-toggle="modal" data-target="#usersModal<?php if (isset($row['id'])) { echo $row['id']; } ?>"><i class="fad fa-comment-exclamation"></i></a></td>
                             <td>
                                 <div class="row">
                                 <div class="dropdown dropleft" style="margin-right: 2px; margin-bottom: 2px">
@@ -175,6 +200,37 @@
                                 <button class="btn btn-outline-primary" onclick="showSwal('success-message')" data-toggle="tooltip" data-placement=top data-custom-class="tooltip-Danger" title="Delete" style="margin-left: 2px"><i class="bi bi-trash"></i></button>
                             </td>
                         </tr>
+                              <!-- Modal -->
+                              <div class="modal fade" id="usersModal<?php if (isset($row['id'])) { echo $row['id']; } ?>" aria-labelledby="exampleModalScrollableTitle" aria-hidden="true">
+                                <div class="modal-dialog modal-dialog-scrollable" role="document">
+                                    <div class="modal-content">
+                                        <div class="modal-header">
+                                            <h5 class="modal-title" id="exampleModalLabel">Report Details</h5>
+                                                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                                    <span aria-hidden="true">&times;</span>
+                                                </button>
+                                        </div>
+                                        <div class="modal-body">
+                                            <form>
+                                                <div class="form-row">
+                                                    <div class="form-group col-12">
+                                                        <label for="jd">Report Origin Date and Time</label>
+                                                        <input type="text" class="form-control" id="jd" value="<?php $date=date_create($row['time']); echo date_format($date,"d F, Y h:i A"); ?>" readonly>
+                                                    </div> 
+                                                    <div class="form-group col-12">
+                                                        <label for="reportmsg">Report Message</label>
+                                                        <textarea class="form-control" id="reportmsg" rows="3" readonly><?php echo $row['description']; ?></textarea>
+                                                    </div> 
+                                                </div>
+                                            </form>
+                                        </div>
+                                        <div class="modal-footer">
+                                            <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                                        </div>
+                                    </div>
+                                </div>
+                              </div>
+                        <?php endwhile;endwhile; ?>
                       </tbody>
                     </table>
                   </div>
@@ -197,36 +253,6 @@
     <!-- page-body-wrapper ends -->
   </div>
 
-  <!-- Modal -->
-  <div class="modal fade" id="usersModal<?php if (isset($rd['id'])) { echo $rd['id']; } ?>" aria-labelledby="exampleModalScrollableTitle" aria-hidden="true">
-    <div class="modal-dialog modal-dialog-scrollable" role="document">
-        <div class="modal-content">
-            <div class="modal-header">
-                <h5 class="modal-title" id="exampleModalLabel">Report Details</h5>
-                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                        <span aria-hidden="true">&times;</span>
-                    </button>
-            </div>
-            <div class="modal-body">
-                <form>
-                    <div class="form-row">
-                        <div class="form-group col-12">
-                            <label for="jd">Report Origin Date and Time</label>
-                            <input type="date" class="form-control" id="jd" placeholder="11/12/2005" readonly>
-                        </div> 
-                        <div class="form-group col-12">
-                            <label for="reportmsg">Report Message</label>
-                            <textarea class="form-control" id="reportmsg" rows="3" readonly></textarea>
-                        </div> 
-                    </div>
-                </form>
-            </div>
-            <div class="modal-footer">
-                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-            </div>
-        </div>
-    </div>
-  </div>
   <!-- container-scroller -->
   <!-- plugins:js -->
   <script src="../../vendors/js/vendor.bundle.base.js"></script>
