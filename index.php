@@ -90,7 +90,7 @@
                 <div class="d-md-none d-lg-none d-lg-none d-lx-none">
                     <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><img draggable="false" class="logp rounded-circle" src="<?php echo $site_url."/".$user_avatar; ?>" alt="<?php echo $user_username; ?>" alt="" onContextMenu="return false;"></a>
                     <div class="dropdown-menu" style="left: auto; right: 0; top: 20; min-width: none; margin-right: 10px;" aria-labelledby="navbarDropdown">
-                        <a class="dropdown-item" href="pages/<?php echo $site_url.'/pages/profile.php?u='.$user_username; ?>">My Profile</a>
+                        <a class="dropdown-item" href="<?php echo $site_url.'/pages/profile.php?u='.$user_username; ?>">My Profile</a>
                         <a class="dropdown-item" href="pages/editprofile.php">Edit Profile</a>
                         <?php if ($row['admin']==1) {
                                     echo "<div class='dropdown-divider'></div><a class='dropdown-item' href='admin'>Admin Panel</a>";
@@ -200,24 +200,24 @@
                 </ol>
                 <div class="carousel-inner">
                   <div class="carousel-item active">
-                    <img draggable="false" src="upload\images\d50c792a35.jpg" class="d-block cimg" alt="..." onContextMenu="return false;">
+                    <img draggable="false" src="upload\slide\slide1.jpg" class="d-block cimg" alt="..." onContextMenu="return false;">
                     <div class="carousel-caption d-none d-md-block">
                       <h5>Welcome to the Gallery</h5>
                       <p>Scrole For More.</p>
                     </div>
                   </div>
                   <div class="carousel-item">
-                    <img draggable="false" src="upload\images\75c37a2060.jpg" class="d-block cimg" alt="..." onContextMenu="return false;">
+                    <img draggable="false" src="upload\slide\slide2.jpeg" class="d-block cimg" alt="..." onContextMenu="return false;">
                     <div class="carousel-caption d-none d-md-block">
-                      <h5>Second slide label</h5>
-                      <p>Some representative placeholder content for the second slide.</p>
+                      <!-- <h5>Second slide label</h5>
+                      <p>Some representative placeholder content for the second slide.</p> -->
                     </div>
                   </div>
                   <div class="carousel-item">
-                    <img draggable="false" src="upload\images\96fbc5671e.jpg" class="d-block cimg" alt="..." onContextMenu="return false;">
+                    <img draggable="false" src="upload\images\slide3.jpg" class="d-block cimg" alt="..." onContextMenu="return false;">
                     <div class="carousel-caption d-none d-md-block">
-                      <h5>Third slide label</h5>
-                      <p>Some representative placeholder content for the third slide.</p>
+                      <!-- <h5>Third slide label</h5>
+                      <p>Some representative placeholder content for the third slide.</p> -->
                     </div>
                   </div>
                 </div>
