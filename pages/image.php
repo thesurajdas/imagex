@@ -589,7 +589,7 @@
                                 <!-- <a class="col-2 text-center" onclick="sharecount()" href="https://www.reddit.com/submit?url=<?php echo $img_url; ?>&title=<?php echo $row_img['title']; ?>" target="_blank"><i class="fab fa-reddit" style="font-size: 40px;color:orangered;"></i></a> -->
                                 <a class=" text-center" onclick="sharecount()" href="https://in.pinterest.com/pin/create/button/?url=<?php echo $img_url; ?>" target="_blank"><i class="fab fa-pinterest" style="font-size: 40px;color:#E60023;"></i></a>
                                 <a class=" text-center" onclick="sharecount()" href="https://wa.me/?text=<?php echo $img_url; ?>" target="_blank"><i class="fab fa-whatsapp" style="font-size: 40px;color:#1ead1e;"></i></a>
-                                <a class=" text-center"><button type="button" onclick="share()" class="btn btn-light bt" style="background-color: #e2e6ea;"><i class="fad fa-ellipsis-h" style="color:#738885ed;"></i></button></a>
+                                <a class=" text-center"><button type="button" onclick="sharemain()" class="btn btn-light bt" style="background-color: #e2e6ea;"><i class="fad fa-ellipsis-h" style="color:#738885ed;"></i></button></a>
                             </div>    
                         </div>        
             </div>
@@ -725,7 +725,7 @@
     });
   });
   //share script
-  function share(){
+  function sharemain(){
       if (navigator.share) {
       navigator.share({
         title: '<?php echo $row_img['title']; ?>',
@@ -749,10 +749,10 @@ function sharecount(){
                     });
             });
 }
-$(document).on("click","#shrbtn",function(){
+$(document).on("click","#imgshrbtn",function(){
     sharecount();
 });
-$(document).on("click","#shrbtnn",function(){
+$(document).on("click","#imgshrbtnn",function(){
     sharecount();
 });
 //Report Image
