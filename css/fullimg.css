@@ -71,6 +71,9 @@
 .tabcon{
     margin-top: 15px;
 }
+.navbar-toggler{
+    border: none;
+}
 
 .btn{
     font-weight: 500;

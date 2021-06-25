@@ -26,6 +26,9 @@
 .social-icons a:hover img{
   transform: translateY(-10px);
 }
+.navbar-toggler{
+  border: none;
+}
 
 .hdrtxt{
   padding-top: 20px;

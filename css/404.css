@@ -69,6 +69,9 @@
     padding-top: 20px;
     padding-bottom: 25px;
 }
+.navbar-toggler{
+    border: none;
+}
 
 .smit {
     padding-top: 30px;

@@ -40,6 +40,9 @@
     border: 5px solid;
     border-color: rgba(114, 114, 114, 0.226);
 }
+.navbar-toggler{
+    border: none;
+}
 
 .pwp{
     object-fit:contain;

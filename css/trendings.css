@@ -172,3 +172,6 @@ a{
 a:hover{
     color: #26610ddb;
 }
+.navbar-toggler{
+    border: none;
+}

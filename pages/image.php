@@ -500,7 +500,7 @@
                     <input type="hidden" name="time" value="<?php echo $time; ?>">
                         <div class="form-row">
                             <div class="form-group col-12" style="padding: 5px; text-align: center">
-                                <img src="<?php echo $site_url,$row_img['image_location']; ?>" alt="" style="height:250px; object-fit:contain;">
+                                <img draggable="false" src="<?php echo $site_url,$row_img['image_location']; ?>" alt="" style="height:250px; object-fit:contain; max-width: 345px;" onContextMenu="return false;">
                             </div>
                             <div class="form-group col-12">
                                 <label for="Imagename" style="color:seagreen; font-weight:500; "><i class="fad fa-file-signature"></i> Image Name</label>

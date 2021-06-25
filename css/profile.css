@@ -307,6 +307,9 @@
     border: 2px solid white;
 }
 
+.navbar-toggler{
+    border: none;
+}
 .fc{
     border-radius: 1.25rem;
   }

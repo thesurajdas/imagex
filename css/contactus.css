@@ -9,6 +9,9 @@
     background-color: #dddfe0de!important;;
 }
 
+.navbar-toggler{
+    border: none;
+}
 .bt{
     border-radius: 1.25rem;
 }
