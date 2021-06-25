@@ -319,6 +319,24 @@
                     </div>
             <div>    
         </footer>
+        <!----------------------Share popup start--------------------------------------->
+  <div class="modal fade" id="shareimg" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLabel">Share Image</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+    <div id="sharepop"></div>
+    <div class="modal-footer">
+                <button type="button" class="btn btn-secondary bt" data-dismiss="modal">Close</button>
+            </div>
+            </div>
+        </div>
+    </div>
+     <!----------------------Share popup end--------------------------------------->
         <!-- Index pagination -->
             <script>
                 $(document).ready(function(){
@@ -446,6 +464,19 @@
             $(function () {
                 $('[data-toggle="tooltip"]').tooltip()
                 })
+                //Share scripts
+        function shareimgpop(id){
+            $(document).ready(function(){
+                $.ajax({
+                    url: 'pages/share-load.php',
+                    type: 'POST',
+                    data: 'img_id='+id,
+                    success: function(result){
+                        $('#sharepop').html(result);
+                    }
+                });
+            });
+        }
         </script>
     
     </body>

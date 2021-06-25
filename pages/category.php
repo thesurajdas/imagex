@@ -176,6 +176,24 @@
         </div>
         <!----------------------Footer Section---------------------------------------------------->
         <?php require_once('include/footer.php'); ?>
+         <!----------------------Share popup start--------------------------------------->
+  <div class="modal fade" id="shareimg" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLabel">Share Image</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+    <div id="sharepop"></div>
+    <div class="modal-footer">
+                <button type="button" class="btn btn-secondary bt" data-dismiss="modal">Close</button>
+            </div>
+            </div>
+        </div>
+    </div>
+     <!----------------------Share popup end--------------------------------------->
         <?php if ($login==1) { ?>
         <script>
         //AJAX Like
@@ -234,6 +252,19 @@
             });
 
         });
+        //Share scripts
+        function shareimgpop(id){
+            $(document).ready(function(){
+                $.ajax({
+                    url: 'share-load.php',
+                    type: 'POST',
+                    data: 'img_id='+id,
+                    success: function(result){
+                        $('#sharepop').html(result);
+                    }
+                });
+            });
+        }
         </script>
     </body>
 </html>

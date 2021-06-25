@@ -219,8 +219,8 @@
             });
 
         });
-         //Share scripts
-         function shareimgpop(id){
+        //Share scripts
+        function shareimgpop(id){
             $(document).ready(function(){
                 $.ajax({
                     url: 'share-load.php',
