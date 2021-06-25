@@ -7,7 +7,6 @@
 	$time=date('Y-m-d H:i:s');
     //check user active or not to upload
     if ($user_active!=0) {
-        echo "<script>alert('You are temporary blocked from uploading image!');</script>";
         header("location: contact.php?block=1");
 
     }
