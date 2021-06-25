@@ -1,7 +1,7 @@
 <?php
 require_once('../auth.php');
 //Check last page no
-$limit = 5;
+$limit = 15;
 if(isset($_POST['page_no'])){
   $page = $_POST['page_no'];
 }else{

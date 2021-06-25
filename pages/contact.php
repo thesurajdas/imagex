@@ -35,6 +35,7 @@
                     <div class="theading col-12 text-center text-uppercase text-monospace font-weight-bolder"><h1 class="font-weight-bolder">Contact Us</h1></div>
                 </div>
                 <hr class="mb-4"></hr>
+                <?php if((isset($_GET['block']))&&($_GET['block']==1)){ echo '<div class="alert alert-danger">You are blocked from uploading images on this site. Contact us from this page to reactive your account.</div>';} ?>
                 <form id="contactus">
                     <div class="row justify-content-center">
                         <div class="col-md-8">
