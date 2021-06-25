@@ -553,14 +553,14 @@
                         <div class="col-12">
                             <ul class="nav nav-tabs" id="mytab" role="tablist" style="justify-content: center;  border-bottom: none;">
                                 <li class="nav-item" role="presentation" style="margin-right:5px;">
-                                    <a class="nav-link active rounded-pill badge badge-secondary" id="sharelink-tab" data-toggle="tab" href="#sharelink" role="tab" aria-controls="sharelink" aria-selected="true"><i class="fad fa-link"></i> Link</a>
+                                    <a class="nav-link active rounded-pill badge badge-secondary" id="sharelinkimg-tab" data-toggle="tab" href="#sharelinkimg" role="tab" aria-controls="sharelink" aria-selected="true"><i class="fad fa-link"></i> Link</a>
                                 </li>
                                 <li class="nav-item" role="presentation" style="margin-left: 5px;">
-                                    <a class="nav-link rounded-pill badge badge-secondary" id="embed-tab" data-toggle="tab" href="#embed" role="tab" aria-controls="embed" aria-selected="false"><i class="fad fa-code"></i> Embed</a>
+                                    <a class="nav-link rounded-pill badge badge-secondary" id="embedimg-tab" data-toggle="tab" href="#embedimg" role="tab" aria-controls="embedimg" aria-selected="false"><i class="fad fa-code"></i> Embed</a>
                                 </li>
                             </ul>
                             <div class="tab-content" id="myTabContent">
-                                <div class="tab-pane fade show active" id="sharelink" role="tabpanel" aria-labelledby="sharelink-tab">
+                                <div class="tab-pane fade show active" id="sharelinkimg" role="tabpanel" aria-labelledby="sharelinkimg-tab">
                                     <div class="col-12" style="margin-top: 15px;">
                                         <div class="row">
                                             <input type="text" class="form-control col-10" id="imgshrtxt" value="<?php $img_url=$site_url."/pages/image.php?id=".$img_id; echo $img_url; ?>" style="border-radius: 1.25rem;" readonly>
@@ -570,7 +570,7 @@
                                         </div>
                                     </div>
                                 </div>
-                                <div class="tab-pane fade" id="embed" role="tabpanel" aria-labelledby="embed-tab">
+                                <div class="tab-pane fade" id="embedimg" role="tabpanel" aria-labelledby="embedimg-tab">
                                     <div class="col-12" style="margin-top: 15px;">
                                         <div class="row">
                                             <textarea class="form-control col-10" id="imgshrtxtt" readonly><?php echo '<iframe src="'.$img_url.'" style="border:none;" width="100%" height="500" title="'.$row_img['title'].'"></iframe>'; ?></textarea>
