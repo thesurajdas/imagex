@@ -9,8 +9,7 @@
         $cover=$row_c['image_location'];
         $sql="UPDATE users SET cover='$cover' WHERE id='$user_id'";
         if ($connect->query($sql)==TRUE) {
-            echo '<div class="alert alert-success alert-dismissible">
-            <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>Cover Photo Updated Sucessfully!</div>';
+            echo "<script>alert('Cover Photo Updated Sucessfully!');</script>";
         }
         else{
             echo "<script>alert('Something went wrong!');</script>";

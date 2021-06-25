@@ -697,6 +697,7 @@
                     data: 'user_id=<?php echo $user_id; ?>&img_id='+id,
                     success: function(result){
                         $('#loadcover').html(result);
+                        location.reload();
                     }
                 });
             });
