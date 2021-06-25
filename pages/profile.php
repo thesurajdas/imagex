@@ -84,6 +84,7 @@
             $user_resolution=$row['resolution'];
             $user_focal_length=$row['focal_length'];
             $user_avatar=$row['avatar'];
+            $user_cover=$row['cover'];
             $user_role=$row['role'];
             $user_total_views=0;
             $user_total_likes=0;
@@ -109,7 +110,7 @@
         ?>
 
         <!-----------------------------------------Profile section------------------------------------------------------>
-        <img draggable="false" src="../upload/images/91129aa8a8.jpg" class="bacwall" alt="" onContextMenu="return false;">
+        <img draggable="false" src="..<?php echo $user_cover; ?>" class="bacwall" alt="" onContextMenu="return false;">
         <div class="container-fluid shadow-lg p-3 mb-5 bg-white emp-profile" style="border-radius: 1.25rem;">
                 <div class="row prow" style=" margin-top: 100px">
                     <div class="col-md-4">
@@ -270,6 +271,7 @@
                     </div>
                 </div>
             <hr class="mb-4">
+            <div id="loadcover"></div>
             <!-------------------------------------------------Uploaded Images main body------------------------------------------>
             <div class="container shadow-lg p-3 mb-5 bg-white my-3 glry" style="border-radius: 1.25rem">
                 <div class="profile-hd">
@@ -682,6 +684,19 @@
                     data: 'id='+id,
                     success: function(result){
                         $('#loadEdit').html(result);
+                    }
+                });
+            });
+        }
+        //SET Cover Photo
+        function setcover(id){
+            $(document).ready(function(){
+                $.ajax({
+                    url: 'set-cover.php',
+                    type: 'POST',
+                    data: 'user_id=<?php echo $user_id; ?>&img_id='+id,
+                    success: function(result){
+                        $('#loadcover').html(result);
                     }
                 });
             });
