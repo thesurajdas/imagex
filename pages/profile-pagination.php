@@ -40,18 +40,18 @@ $last_id = $page+$limit;
                                                         <?php } ?>
                                                             <div class="dropdown-menu " style="padding: 0.8rem;">
                                                                 <a class="dropdown-item p-0" onclick="setcover(<?php echo $row['id'];?>)">
-                                                                    <button type="button" class="btn col-12" data-toggle="modal" ><i class="fad fa-image"></i> Make it Cover</button>
+                                                                    <button type="button" class="btn col-12" data-toggle="modal" style="text-align:start"><i class="fad fa-image"></i> Make it Cover</button>
                                                                 </a>
                                                                 <!-- <div class="dropdown-divider"></div> -->
                                                                 <a class="dropdown-item p-0" href="#">
-                                                                    <button type="button" onclick="editimg(<?php echo $row['id']; ?>)" class="btn col-12" data-toggle="modal" data-target="#exampleModal"><i class="fad fa-file-edit"></i> Edit</button>
+                                                                    <button type="button" onclick="editimg(<?php echo $row['id']; ?>)" class="btn col-12" data-toggle="modal" data-target="#exampleModal" style="text-align:start"><i class="fad fa-file-edit"></i> Edit</button>
                                                                 </a>
                                                                 <!-- /// -->
                                                                 <a class="dropdown-item p-0" id="countDown" href="<?php echo $site_url,$row['image_location']; ?>" download="<?php echo $row['title']; ?>">
-                                                                    <button type="button" class="btn col-12" data-toggle="modal" ><i class="fad fa-cloud-download-alt"></i> Download</button>
+                                                                    <button type="button" class="btn col-12" data-toggle="modal"  style="text-align:start"><i class="fad fa-cloud-download-alt"></i> Download</button>
                                                                 </a>
                                                                 <!-- <div class="dropdown-divider"></div> -->
-                                                                <a class="dropdown-item p-0"><button type="button" onclick="mydel(<?php echo $row['id']; ?>)" class="btn col-12"><i class="fad fa-trash"></i> Delete</button></a>
+                                                                <a class="dropdown-item p-0"><button type="button" onclick="mydel(<?php echo $row['id']; ?>)" class="btn col-12" style="text-align:start"><i class="fad fa-trash"></i> Delete</button></a>
                                                             </div>
                                                         </div>    
                                                     </div>        
