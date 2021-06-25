@@ -59,8 +59,6 @@
                             </div>    
                         </div>        
             </div>
-                                    
-    <!----------------------Share popup end--------------------------------------->
     <script type="text/javascript">
         const shrtxt = document.getElementById('shrtxt');
         const shrbtn = document.getElementById('shrbtn');
