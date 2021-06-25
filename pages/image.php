@@ -355,7 +355,7 @@
                             <?php if($row_img['downloadable']==0): ?>
                             <a href="<?php echo $site_url,$row_img['image_location']; ?>" download="<?php echo $row_img['title']; ?>"><button type="button" id="countDown" onclick="countDownload(<?php echo $row_img['id']; ?>)" class="btn btn btn-outline-success bt" style="margin-top: 10px" ><i class="fad fa-cloud-download-alt"></i> Download (<?php $downloads=number_format($row_img['downloads']); echo $downloads; ?>)</button></a>
                             <?php endif; ?>
-                            <a class="btn btn-outline-dark bt" data-toggle="modal" data-target="#shareimg" style="margin-top: 10px" id=""><i class="fad fa-share-square"></i> Share (<span id="sharecount"><?php $shares=number_format($row_img['shares']); echo $shares; ?></span>)</a>
+                            <a class="btn btn-outline-dark bt" data-toggle="modal" data-target="#share-img" style="margin-top: 10px" id=""><i class="fad fa-share-square"></i> Share (<span id="sharecount"><?php $shares=number_format($row_img['shares']); echo $shares; ?></span>)</a>
 
                             <!--<a href="#" class="btn btn-success col-2"><i class="bi bi-download"></i></a>-->
                         </div>
@@ -534,9 +534,9 @@
 
 
     <!----------------------report popup end--------------------------------------->
-    <!----------------------Share popup start--------------------------------------->
+    <!----------------------Main Share popup start--------------------------------------->
 
-    <div class="modal fade" id="shareimg" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal fade" id="share-img" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
         <div class="modal-dialog">
             <div class="modal-content">
             <div class="modal-header">
@@ -599,7 +599,25 @@
             </div>
         </div>
     </div>                           
-    <!----------------------Share popup end--------------------------------------->
+    <!----------------------Main Share popup end--------------------------------------->
+     <!----------------------Share popup start--------------------------------------->
+  <div class="modal fade" id="shareimg" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLabel">Share Image</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+    <div id="sharepop"></div>
+    <div class="modal-footer">
+                <button type="button" class="btn btn-secondary bt" data-dismiss="modal">Close</button>
+            </div>
+            </div>
+        </div>
+    </div>
+     <!----------------------Share popup end--------------------------------------->
     <script type="text/javascript">
         const shrtxt = document.getElementById('shrtxt');
         const shrbtn = document.getElementById('shrbtn');
@@ -752,6 +770,19 @@ $(document).ready(function () {
           });
         });
     });
+    //Share scripts related image
+    function shareimgpop(id){
+            $(document).ready(function(){
+                $.ajax({
+                    url: 'share-load.php',
+                    type: 'POST',
+                    data: 'img_id='+id,
+                    success: function(result){
+                        $('#sharepop').html(result);
+                    }
+                });
+            });
+        }
 </script>
 </body>
 </html>

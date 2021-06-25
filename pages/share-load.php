@@ -101,12 +101,10 @@
 function sharecount(){
             $(document).ready(function(){
                     $.ajax({
-                        url: 'share-count.php',
+                        url: '<?php echo $site_url; ?>/pages/share-count.php',
                         type: 'POST',
                         data: 'shareid='+<?php echo $row_img['id']; ?>,
-                        success: function(result){
-                            $('#sharecount').html(result);
-                        }
+                        success: function(result){}
                     });
             });
 }
