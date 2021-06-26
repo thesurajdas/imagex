@@ -155,7 +155,7 @@
                             <div class="form-group col-md-3">
                                             <label for="phone" style="color:#bd2130; font-weight: 600;"><i class="fad fa-folder-download"></i> Download</label>
                                             <select class="form-control fc" name="country" required>
-                                                    <option value="0">Grant</option>
+                                                    <option value="0" selected>Grant</option>
                                                     <option value="1">Denied</option>
                                             </select>    
                             </div>
@@ -167,8 +167,9 @@
                                                 $result_lic=$connect->query($sql);
                                                 while($row_lic=$result_lic->fetch_assoc()):
                                             ?>
-                                                <option value="<?php echo $row_lic['id']; ?>" <?php if($row_edit['license_id']==$row_lic['id']){echo "selected";}?>><?php echo $row_lic['license_name']; ?></option>
-                                                <?php endwhile; ?>  
+                                                <option value="<?php echo $row_lic['id']; ?>"><?php echo $row_lic['license_name']; ?></option>
+                                                <?php endwhile; ?>
+                                            </select>
                             </div>
                         </div>
                         <button type="submit" name="upload" class="btn btn-success col-12 bt"><i class="fas fa-arrow-circle-up"></i> Upload</button>
