@@ -1,6 +1,7 @@
 .logp{
     width: 35px;
     height: 35px;
+    object-fit: cover;
 }
 
 .sbdr{
@@ -138,6 +139,7 @@
     height: 25px;
     width: 25px;
     border-radius: 25px;
+    object-fit: cover;
 }
 
 /*.card:hover{

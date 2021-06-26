@@ -180,6 +180,7 @@
     height: 25px;
     width: 25px;
     border-radius: 25px;
+    object-fit: cover;
 }
 
 @media (max-width: 300px) {
