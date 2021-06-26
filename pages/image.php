@@ -565,7 +565,7 @@
                                         <div class="row">
                                             <input type="text" class="form-control col-10" id="imgshrtxt" value="<?php $img_url=$site_url."/pages/image.php?id=".$img_id; echo $img_url; ?>" style="border-radius: 1.25rem;" readonly>
                                             <div class="col-2">
-                                                <button type="button" class="btn btn-light bt" id="imgshrbtn" data-container="body" data-toggle="popover" data-placement="right" data-content="✔ Copied" style="background-color: #e2e6ea;"><i class="fad fa-clipboard-list-check" style="color:#004498ed;"></i></button><span></span>
+                                                <button type="button" class="btn btn-light bt ex-shr" tooltip="click to copy" tooltip-position="top" style="background-color: #e2e6ea;"><i class="fad fa-clipboard-list-check" style="color:#004498ed;"></i></button><span></span>
                                             </div>    
                                         </div>
                                     </div>
@@ -575,7 +575,7 @@
                                         <div class="row">
                                             <textarea class="form-control col-10" id="imgshrtxtt" readonly><?php echo '<iframe src="'.$img_url.'" style="border:none;" width="100%" height="500" title="'.$row_img['title'].'"></iframe>'; ?></textarea>
                                             <div class="col-2">
-                                                <button type="button" class="btn btn-light bt" id="imgshrbtnn" data-container="body" data-toggle="popover" data-placement="right" data-content="✔ Copied" style="background-color: #e2e6ea;"><i class="fad fa-clipboard-list-check" style="color:#004498ed;"></i></button>
+                                                <button type="button" class="btn btn-light bt ex-shr" tooltip="click to copy" tooltip-position="top" style="background-color: #e2e6ea;"><i class="fad fa-clipboard-list-check" style="color:#004498ed;"></i></button>
                                             </div>    
                                         </div>
                                     </div>
@@ -619,29 +619,31 @@
     </div>
      <!----------------------Share popup end--------------------------------------->
     <script>
-        const imgshrtxt = document.getElementById('imgshrtxt');
-        const imgshrbtn = document.getElementById('imgshrbtn');
 
-        imgshrbtn.onclick = function () {
-            imgshrtxt.select();
-            document.execCommand("copy")
-        }
+            const showUserInfo = (user)=>{
+                $('#imgshrtxt').val(user.lc);
+                $('#imgshrtxtt').val(user.ec);
+                
+            }
+
+            $('.ex-shr').on('click', function(event){
+                event.currentTarget.parentNode.childNodes[1].select();
+                // console.log(event.currentTarget.prev())
+                document.execCommand('copy');
+                // console.log($(this).attr('tooltip'));
+                $(this).attr('tooltip', 'copied');
+            });
+
+            $('.ex-shr').on('mouseleave',function(event){
+            $(this).attr('tooltip', 'click to copy');
+            })
     </script>
-    <script type="text/javascript">
-        const imgshrtxtt = document.getElementById('imgshrtxtt');
-        const imgshrbtnn = document.getElementById('imgshrbtnn');
 
-        imgshrbtnn.onclick = function () {
-            imgshrtxtt.select();
-            document.execCommand("copy")
-        }
-    </script>
-
-    <script>
+    <!-- <script>
             $(function () {
                 $('[data-toggle="popover"]').popover()
                 })
-    </script>
+    </script> -->
 
     <script>
     $(document).ready(function(){
