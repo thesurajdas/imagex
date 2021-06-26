@@ -58,6 +58,7 @@
         <link rel="stylesheet" href="css/owl.carousel.min.css">
         <script src="js/jquery-3.5.1.slim.min.js"></script>
         <script src="js/jquery.min.js"></script>
+        <script src="js/clipboard.min.js"></script>
         <script src="js/bootstrap.bundle.min.js"></script>
         <script src="js/owl.carousel.min.js"></script>
         <link href="css/home.css" rel="stylesheet">

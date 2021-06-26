@@ -29,9 +29,9 @@
                                 <div class="tab-pane fade show active" id="sharelink" role="tabpanel" aria-labelledby="sharelink-tab">
                                     <div class="col-12" style="margin-top: 15px;">
                                         <div class="row">
-                                            <input type="text" class="form-control col-10" id="shrtxt" value="<?php $img_url=$site_url."/pages/image.php?id=".$row_img['image_id']; echo $img_url; ?>" style="border-radius: 1.25rem;" readonly>
+                                            <input type="text" class="form-control col-10" id="loo" value="<?php $img_url=$site_url."/pages/image.php?id=".$row_img['image_id']; echo $img_url; ?>" style="border-radius: 1.25rem;" readonly>
                                             <div class="col-2">
-                                                <button type="button" class="btn btn-light bt" id="shrbtn" data-container="body" data-toggle="popover" data-placement="right" data-content="✔ Copied" style="background-color: #e2e6ea;"><i class="fad fa-clipboard-list-check" style="color:#004498ed;"></i></button><span></span>
+                                                <button type="button" class="btn btn-light bt" id="xc" data-clipboard-target="#loo" data-container="body" data-toggle="popover" data-placement="right" data-content="✔ Copied" style="background-color: #e2e6ea;"><i class="fad fa-clipboard-list-check" style="color:#004498ed;"></i></button><span></span>
                                             </div>    
                                         </div>
                                     </div>
@@ -39,9 +39,9 @@
                                 <div class="tab-pane fade" id="embed" role="tabpanel" aria-labelledby="embed-tab">
                                     <div class="col-12" style="margin-top: 15px;">
                                         <div class="row">
-                                            <textarea class="form-control col-10" id="shrtxtt" readonly><?php echo '<iframe src="'.$img_url.'" style="border:none;" width="100%" height="500" title="'.$row_img['title'].'"></iframe>'; ?></textarea>
+                                            <textarea class="form-control col-10" id="hoo" readonly><?php echo '<iframe src="'.$img_url.'" style="border:none;" width="100%" height="500" title="'.$row_img['title'].'"></iframe>'; ?></textarea>
                                             <div class="col-2">
-                                                <button type="button" class="btn btn-light bt" id="shrbtnn" data-container="body" data-toggle="popover" data-placement="right" data-content="✔ Copied" style="background-color: #e2e6ea;"><i class="fad fa-clipboard-list-check" style="color:#004498ed;"></i></button>
+                                                <button type="button" class="btn btn-light bt" id="yc" data-clipboard-target="#hoo" id="shrbtnn" data-container="body" data-toggle="popover" data-placement="right" data-content="✔ Copied" style="background-color: #e2e6ea;"><i class="fad fa-clipboard-list-check" style="color:#004498ed;"></i></button>
                                             </div>    
                                         </div>
                                     </div>
@@ -59,23 +59,29 @@
                             </div>    
                         </div>        
             </div>
-    <script type="text/javascript">
-        const shrtxt = document.getElementById('shrtxt');
-        const shrbtn = document.getElementById('shrbtn');
+    <script>
+        var btn = document.getElementById('xc');
+        var clipboard = new ClipboardJS(btn);
 
-        shrbtn.onclick = function () {
-            shrtxt.select();
-            document.execCommand("copy")
-        }
+        clipboard.on('success', function (e) {
+            console.log(e);
+        });
+
+        clipboard.on('error', function (e) {
+            console.log(e);
+        });
     </script>
-    <script type="text/javascript">
-        const shrtxtt = document.getElementById('shrtxtt');
-        const shrbtnn = document.getElementById('shrbtnn');
+    <script>
+        var btn = document.getElementById('yc');
+        var clipboard = new ClipboardJS(btn);
 
-        shrbtnn.onclick = function () {
-            shrtxtt.select();
-            document.execCommand("copy")
-        }
+        clipboard.on('success', function (e) {
+            console.log(e);
+        });
+
+        clipboard.on('error', function (e) {
+            console.log(e);
+        });
     </script>
 
     <script>

@@ -57,6 +57,7 @@
         <link rel="stylesheet" href="../css/tree.css">
         <script src="../js/jquery-3.5.1.slim.min.js"></script>
         <script src="../js/jquery.min.js"></script>
+        <script src="../js/clipboard.min.js"></script>
         <script src="../js/bootstrap.bundle.min.js"></script>
         <link href="../css/fullimg.css" rel="stylesheet">
             <!-------bootstrap css custom styling -> (OVERRIDE) <- --------------------->
@@ -563,9 +564,9 @@
                                 <div class="tab-pane fade show active" id="sharelinkimg" role="tabpanel" aria-labelledby="sharelinkimg-tab">
                                     <div class="col-12" style="margin-top: 15px;">
                                         <div class="row">
-                                            <input type="text" class="form-control col-10" id="imgshrtxt" value="<?php $img_url=$site_url."/pages/image.php?id=".$img_id; echo $img_url; ?>" style="border-radius: 1.25rem;" readonly>
+                                            <input type="text" class="form-control col-10" id="foo" value="<?php $img_url=$site_url."/pages/image.php?id=".$img_id; echo $img_url; ?>" style="border-radius: 1.25rem;" readonly>
                                             <div class="col-2">
-                                                <button type="button" class="btn btn-light bt ex-shr" tooltip="click to copy" tooltip-position="top" style="background-color: #e2e6ea;"><i class="fad fa-clipboard-list-check" style="color:#004498ed;"></i></button><span></span>
+                                                <button type="button" class="btn btn-light bt ex-shr" id="x" data-clipboard-target="#foo" style="background-color: #e2e6ea;"><i class="fad fa-clipboard-list-check" style="color:#004498ed;"></i></button><span></span>
                                             </div>    
                                         </div>
                                     </div>
@@ -573,9 +574,9 @@
                                 <div class="tab-pane fade" id="embedimg" role="tabpanel" aria-labelledby="embedimg-tab">
                                     <div class="col-12" style="margin-top: 15px;">
                                         <div class="row">
-                                            <textarea class="form-control col-10" id="imgshrtxtt" readonly><?php echo '<iframe src="'.$img_url.'" style="border:none;" width="100%" height="500" title="'.$row_img['title'].'"></iframe>'; ?></textarea>
+                                            <textarea class="form-control col-10" id="goo" readonly><?php echo '<iframe src="'.$img_url.'" style="border:none;" width="100%" height="500" title="'.$row_img['title'].'"></iframe>'; ?></textarea>
                                             <div class="col-2">
-                                                <button type="button" class="btn btn-light bt ex-shr" tooltip="click to copy" tooltip-position="top" style="background-color: #e2e6ea;"><i class="fad fa-clipboard-list-check" style="color:#004498ed;"></i></button>
+                                                <button type="button" class="btn btn-light bt ex-shr" id="y" data-clipboard-target="#goo" style="background-color: #e2e6ea;"><i class="fad fa-clipboard-list-check" style="color:#004498ed;"></i></button>
                                             </div>    
                                         </div>
                                     </div>
@@ -619,31 +620,29 @@
     </div>
      <!----------------------Share popup end--------------------------------------->
     <script>
+        var btn = document.getElementById('x');
+        var clipboard = new ClipboardJS(btn);
 
-            const showUserInfo = (user)=>{
-                $('#imgshrtxt').val(user.lc);
-                $('#imgshrtxtt').val(user.ec);
-                
-            }
+        clipboard.on('success', function (e) {
+            console.log(e);
+        });
 
-            $('.ex-shr').on('click', function(event){
-                event.currentTarget.parentNode.childNodes[1].select();
-                // console.log(event.currentTarget.prev())
-                document.execCommand('copy');
-                // console.log($(this).attr('tooltip'));
-                $(this).attr('tooltip', 'copied');
-            });
-
-            $('.ex-shr').on('mouseleave',function(event){
-            $(this).attr('tooltip', 'click to copy');
-            })
+        clipboard.on('error', function (e) {
+            console.log(e);
+        });
     </script>
+    <script>
+        var btn = document.getElementById('y');
+        var clipboard = new ClipboardJS(btn);
 
-    <!-- <script>
-            $(function () {
-                $('[data-toggle="popover"]').popover()
-                })
-    </script> -->
+        clipboard.on('success', function (e) {
+            console.log(e);
+        });
+
+        clipboard.on('error', function (e) {
+            console.log(e);
+        });
+    </script>
 
     <script>
     $(document).ready(function(){
