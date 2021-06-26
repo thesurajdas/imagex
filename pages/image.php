@@ -566,7 +566,7 @@
                                         <div class="row">
                                             <input type="text" class="form-control col-10" id="foo" value="<?php $img_url=$site_url."/pages/image.php?id=".$img_id; echo $img_url; ?>" style="border-radius: 1.25rem;" readonly>
                                             <div class="col-2">
-                                                <button type="button" class="btn btn-light bt ex-shr" id="x" data-clipboard-target="#foo" style="background-color: #e2e6ea;"><i class="fad fa-clipboard-list-check" style="color:#004498ed;"></i></button><span></span>
+                                                <button type="button" class="btn btn-light bt ex-shr" id="x" data-clipboard-target="#foo"  data-container="body" data-toggle="popover" data-placement="right" data-content="✔ Copied" style="background-color: #e2e6ea;" style="background-color: #e2e6ea;"><i class="fad fa-clipboard-list-check" style="color:#004498ed;"></i></button><span></span>
                                             </div>    
                                         </div>
                                     </div>
@@ -576,7 +576,7 @@
                                         <div class="row">
                                             <textarea class="form-control col-10" id="goo" readonly><?php echo '<iframe src="'.$img_url.'" style="border:none;" width="100%" height="500" title="'.$row_img['title'].'"></iframe>'; ?></textarea>
                                             <div class="col-2">
-                                                <button type="button" class="btn btn-light bt ex-shr" id="y" data-clipboard-target="#goo" style="background-color: #e2e6ea;"><i class="fad fa-clipboard-list-check" style="color:#004498ed;"></i></button>
+                                                <button type="button" class="btn btn-light bt ex-shr" id="y" data-clipboard-target="#goo"  data-container="body" data-toggle="popover" data-placement="right" data-content="✔ Copied" style="background-color: #e2e6ea;" style="background-color: #e2e6ea;"><i class="fad fa-clipboard-list-check" style="color:#004498ed;"></i></button>
                                             </div>    
                                         </div>
                                     </div>
@@ -642,6 +642,9 @@
         clipboard.on('error', function (e) {
             console.log(e);
         });
+            $(function () {
+                $('[data-toggle="popover"]').popover()
+            })
     </script>
 
     <script>
