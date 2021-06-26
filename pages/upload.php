@@ -173,6 +173,10 @@
                             </div>
                         </div>
                         <button type="submit" name="upload" class="btn btn-success col-12 bt"><i class="fas fa-arrow-circle-up"></i> Upload</button>
+                        <hr>
+                        <div class="progress">
+                        <div class="progress-bar" role="progressbar" style="width: 25%;" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100">25%</div>
+                        </div>
                     </form>    
                 </div>
             </div>
