@@ -148,26 +148,27 @@
                             <div class="form-group col-md-3">
                                 <label for="title" style="color: #148e14; font-weight: 600;"><i class="fad fa-globe-americas"></i> Image Visibility</label>
                                 <select id="inputimgtype" name="visibility" class="fc form-control" required>
-                                    <option value="Public" selected>Public</option>
-                                    <option value="Private">Private</option>
+                                    <option value="0" selected>Public</option>
+                                    <option value="1">Private</option>
                                 </select>    
                             </div>
                             <div class="form-group col-md-3">
                                             <label for="phone" style="color:#bd2130; font-weight: 600;"><i class="fad fa-folder-download"></i> Download</label>
                                             <select class="form-control fc" name="country" required>
-                                                <option value="Unkown">Choose...</option>
-                                                    <option value="Grant">Grant</option>
-                                                    <option value="Denied">Denied</option>
+                                                    <option value="0">Grant</option>
+                                                    <option value="1">Denied</option>
                                             </select>    
                             </div>
                             <div class="form-group col-md-3">
                                             <label for="phone" style="color:blueviolet; font-weight: 600;"><i class="fad fa-file-certificate"></i> License</label>
                                             <select class="form-control fc" name="country" required>
-                                                <option value="Unkown">Choose...</option>
-                                                    <option value="Copyright Free">Copyright Free</option>
-                                                    <option value="Private">Creative Commons</option>
-                                                    <option value="Public Domain">Public Domain</option>
-                                            </select>    
+                                            <?php
+                                                $sql="SELECT * FROM license";
+                                                $result_lic=$connect->query($sql);
+                                                while($row_lic=$result_lic->fetch_assoc()):
+                                            ?>
+                                                <option value="<?php echo $row_lic['id']; ?>" <?php if($row_edit['license_id']==$row_lic['id']){echo "selected";}?>><?php echo $row_lic['license_name']; ?></option>
+                                                <?php endwhile; ?>  
                             </div>
                         </div>
                         <button type="submit" name="upload" class="btn btn-success col-12 bt"><i class="fas fa-arrow-circle-up"></i> Upload</button>
