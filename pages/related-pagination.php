@@ -59,7 +59,7 @@ $last_id = $page+$limit;
                                                                         $username=$row_img_user['username'];
                                                                         $fullname=$row_img_user['name'];
                                                                         $avatar=$row_img_user['avatar'];
-                                                                        echo $site_url.'/pages/profile.php?u='.$username; ?>" class=" text-decoration-none text-white"><img draggable="false" class="upimg" src="<?php echo $site_url."/".$row_img_user['avatar']; ?>" onContextMenu="return false;" alt=""> <?php echo $username; ?></a>
+                                                                        echo $site_url.'/pages/profile.php?u='.$username; ?>" class=" text-decoration-none text-white"><img draggable="false" class="upimg" src="<?php echo $site_url."/".$row_img_user['avatar']; ?>" onContextMenu="return false;" alt="" style="object-fit: cover;"> <?php echo $username; ?></a>
                                                                         <div class="container">
                                                                             <div class="row">
                                                                                 <div class="row col-10 chbtn">
