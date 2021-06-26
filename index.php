@@ -217,7 +217,7 @@
                     </div>
                   </div>
                   <div class="carousel-item">
-                    <img draggable="false" src="upload\images\slide3.jpg" class="d-block cimg" alt="..." onContextMenu="return false;">
+                    <img draggable="false" src="upload\slide\slide3.jpg" class="d-block cimg" alt="..." onContextMenu="return false;">
                     <div class="carousel-caption d-none d-md-block">
                       <!-- <h5>Third slide label</h5>
                       <p>Some representative placeholder content for the third slide.</p> -->
