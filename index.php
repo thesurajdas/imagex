@@ -70,6 +70,9 @@
             .dropdown-toggle::after{
                 border-top: 0;
             }
+            .navbar-toggler{
+                border: none;
+            }
         </style>
         <script src="js/fontawesome.js"></script>
     </head>
