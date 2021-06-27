@@ -87,7 +87,7 @@
                 <a class="navbar-brand" href="index.php"><img draggable="false" style="height: 40px;" src="img/logo.svg" alt="" onContextMenu="return false;"></a>
                 <?php if (!isset($user_id)){?>
                 <div class="d-md-none d-lg-none d-lg-none d-lx-none">
-                    <a class="nav-link dropdown-toggle" href="login.php" role="button"><button type="button" class="btn btn-outline-warning bt"><i class="fas fa-user-circle"></i></button></a>   
+                    <a class="nav-link dropdown-toggle" href="pages/login.php" role="button"><button type="button" class="btn btn-outline-warning bt"><i class="fas fa-user-circle"></i></button></a>   
                 </div>
                 <?php } ?>
                 <?php if (isset($user_id)){?>
