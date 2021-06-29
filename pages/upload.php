@@ -17,6 +17,7 @@
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>Upload Image</title>
+        <script src="assets/js/jquery.min.js"></script>
         <link rel="stylesheet" href="assets/bootstrap/css/bootstrap.min.css">
         <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Montserrat">
         <link rel="stylesheet" href="assets/fonts/font-awesome.min.css">
@@ -34,7 +35,7 @@
         -->
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-Piv4xVNRyMGpqkS2by6br4gNJ7DXjqk09RmUpJ8jgGtD7zP9yug3goQfGII0yAns" crossorigin="anonymous"></script>
         <link href="../css/upload.css" rel="stylesheet">
-        <script src="assets/js/jquery.min.js"></script>
+        
         <script src="assets/bootstrap/js/bootstrap.min.js"></script>
         <script src="assets/js/Drag-and-Drop-File-Input.js"></script>
         <script src="assets/js/Drag-and-Drop-Multiple-File-Form-Input-upload-Advanced.js"></script>
