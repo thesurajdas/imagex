@@ -1,8 +1,9 @@
 <?php
     require('../auth.php');
-	if (isset($_POST['upload'])) {
-        if (($_FILES['file']=="")||($_POST['title']=="")||($_POST['filetype']=="")||($_POST['visibility']=="")) {
-            echo "<script>alert('All fields are required!');</script>";
+    $upload = 'err';
+	if (!empty($_FILES['file'])) {
+        if (($_POST['title']=="")||($_POST['filetype']=="")||($_POST['visibility']=="")) {
+            $upload = 'allr';
         }
         else{
                 $file=$_FILES['file'];
@@ -17,12 +18,10 @@
                 $upload_location="../upload/images/".$file_full_name;
                 //add extra data for database table
                 $image_id=$file_name;
+                $time=$_POST['time'];
                 $image_size=$file['size'];
                 $title=$_POST['title'];
-                $visibility=0;
-                if ($_POST['visibility']=='Private') {
-                    $visibility=1;
-                }
+                $visibility=$_POST['visibility'];
                 $category=$_POST['filetype'];
                 //check file size
                 if (($file['size']>=100000) && ($file['size']<=5242880)) {
@@ -30,23 +29,24 @@
                     if (in_array($file_ext_check,$vaild_file_ext)) {
                         $sql="INSERT INTO images (user_id, image_id, image_size, title, visibility, time, image_location, category) VALUES('$id','$image_id', '$image_size','$title','$visibility','$time','$image_location','$category')";
                         if(($connect->query($sql)==1) && (move_uploaded_file($_FILES['file']['tmp_name'],$upload_location)==1)){
-                                echo "<script>alert('Uploaded Successfully!')</script>";
+                            $upload = 'ok';
                         }
                         else{
-                            echo "<script>alert('Unable to store the file!')</script>";
+                            $upload = 'uper';
                         }
                     }
                     else{
-                        echo "<script>alert('Invaild file extention!')</script>";
+                        $upload = 'fext';
                     }
                 }
                 else{
-                    echo "<script>alert('We allow only 100KB to 5MB Files!')</script>";
+                    $upload = 'siz';
                 }
             }
             else{
-                echo "<script>alert('Something went wrong!')</script>";
+                $upload = 'sww';
             }
         }
 	}
+    echo $upload;
 ?>

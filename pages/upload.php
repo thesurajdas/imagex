@@ -61,9 +61,10 @@
                     <h1 class="display-4">Upload Your Image</h1>
                 </div>
                 <div class="row col-12 mr-0 ml-0 justify-content-center">
-                    <form action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]);?>" method="POST" enctype="multipart/form-data">
+                    <form id="uploadForm" enctype="multipart/form-data">
                         <!-- Upload image input-->
                         <div class="input-group rounded-pill bg-white shadow-sm ">
+                        <input type="hidden" name="time" value="<?php echo $time; ?>">
                             <input type="file" id="upload" name="file" onchange="readURL(this);" class="form-control border-0" accept="image/*">
                             <label id="upload-label" for="upload" class="font-weight-light text-muted">Choose file</label>
                             <div class="input-group-append">
@@ -79,7 +80,7 @@
                         <div class="form-row">
                             <div class="form-group col-md-12">
                                 <label for="title" style="color: #b94d00; font-weight: 600;"><i class="fad fa-file-signature"></i> Image Name</label>
-                                <input type="text" name="title" class="fc form-control" id="title" placeholder="Violet Hill" minlength="5" maxlength="16" required>
+                                <input type="text" name="title" class="fc form-control" id="title" placeholder="Violet Hill" minlength="3" maxlength="16" required>
                             </div>
                             <div class="form-group col-md-3">
                                 <label for="inputimgtype" style="color: #0246bfeb; font-weight: 600;"><i class="fad fa-list-alt"></i> Image Type</label>
@@ -121,17 +122,88 @@
                                             </select>
                             </div>
                         </div>
-                        <button type="submit" name="upload" class="btn btn-success col-12 bt"><i class="fas fa-arrow-circle-up"></i> Upload</button>
+                        <button type="submit" id="uploadForm" name="upload" class="btn btn-success col-12 bt"><i class="fas fa-arrow-circle-up"></i> Upload</button>
                         <hr>
                         <div class="progress">
-                        <div class="progress-bar" role="progressbar" style="width: 25%;" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100">25%</div>
+                            <div class="progress-bar" role="progressbar" style="width: 10%;" aria-valuenow="10" aria-valuemin="0" aria-valuemax="100">10%</div>
                         </div>
-                    </form>    
+                    </form>
+                        <br><br>
+                    <!-- Display upload status -->
+                    <div id="uploadStatus"></div>
                 </div>
             </div>
         </div>
         <!----------------------Footer Section---------------------------------------------------->
         <?php require_once('include/footer.php'); ?>
         <script src="assets/js/Bootstrap-Image-Uploader.js"></script>
+<script>
+    $(".progress").hide();
+    $(document).ready(function(){
+        // File upload via Ajax
+        $("#uploadForm").on('submit', function(e){
+            e.preventDefault();
+            $.ajax({
+                xhr: function() {
+                    var xhr = new window.XMLHttpRequest();
+                    xhr.upload.addEventListener("progress", function(evt) {
+                        if (evt.lengthComputable) {
+                            var percentComplete = Math.round(((evt.loaded / evt.total) * 100));
+                            $(".progress").show();
+                            $(".progress-bar").width(percentComplete + '%');
+                            $(".progress-bar").html(percentComplete+'%');
+                        }
+                    }, false);
+                    return xhr;
+                },
+                type: 'POST',
+                url: 'upload-process.php',
+                data: new FormData(this),
+                contentType: false,
+                cache: false,
+                processData:false,
+                beforeSend: function(){
+                    $(".progress-bar").width('0%');
+                    $('#uploadStatus').html('<div class="spinner-border" role="status"><span class="sr-only">Uploading...</span></div>');
+                },
+                error:function(){
+                    $('#uploadStatus').html('<p style="color:#EA4335;">File upload failed, please try again.</p>');
+                },
+                success: function(resp){
+                    if(resp == 'ok'){
+                        $('#uploadForm')[0].reset();
+                        $('#uploadStatus').html('<p style="color:#28A74B;">File has uploaded successfully!</p>');
+                    }else if(resp == 'err'){
+                        $('#uploadStatus').html('<p style="color:#EA4335;">Please select a valid file to upload.</p>');
+                    }else if(resp == 'allr'){
+                        $('#uploadStatus').html('<p style="color:#EA4335;">All fields are required!</p>');
+                    }else if(resp == 'uper'){
+                        $('#uploadStatus').html('<p style="color:#EA4335;">Unable to Store the file!</p>');
+                    }else if(resp == 'fext'){
+                        $('#uploadStatus').html('<p style="color:#EA4335;">Invaild file extention!</p>');
+                    }else if(resp == 'siz'){
+                        $('#uploadStatus').html('<p style="color:#EA4335;">We allow only 100KB to 5MB Files!</p>');
+                    }else if(resp == 'sww'){
+                        $('#uploadStatus').html('<p style="color:#EA4335;">Something went wrong while uploading!</p>');
+                    }else{
+                        $('#uploadStatus').html('<p style="color:#EA4335;">Something went wrong!</p>');
+                    }
+                }
+            });
+        });
+        
+        // File type validation
+        $("#upload").change(function(){
+            var allowedTypes = ['application/pdf', 'application/msword', 'application/vnd.ms-office', 'application/vnd.openxmlformats-officedocument.wordprocessingml.document', 'image/jpeg', 'image/png', 'image/jpg', 'image/gif'];
+            var file = this.files[0];
+            var fileType = file.type;
+            if(!allowedTypes.includes(fileType)){
+                alert('Please select a valid file (PDF/DOC/DOCX/JPEG/JPG/PNG/GIF).');
+                $("#upload").val('');
+                return false;
+            }
+        });
+    });
+        </script>
     </body>
 </html>
