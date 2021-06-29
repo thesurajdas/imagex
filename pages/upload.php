@@ -129,7 +129,6 @@
                             <div class="progress-bar" role="progressbar" style="width: 10%;" aria-valuenow="10" aria-valuemin="0" aria-valuemax="100">10%</div>
                         </div>
                     </form>
-                        <br><br>
                     <!-- Display upload status -->
                     <div id="uploadStatus"></div>
                 </div>
@@ -168,26 +167,28 @@
                     $('#uploadStatus').html('<div class="spinner-border" role="status"><span class="sr-only">Uploading...</span></div>');
                 },
                 error:function(){
-                    $('#uploadStatus').html('<p style="color:#EA4335;">File upload failed, please try again.</p>');
+                    $(".progress").hide();
+                    $('#uploadStatus').html('<div class="alert alert-danger">File upload failed, please try again.</div>');
                 },
                 success: function(resp){
+                    $(".progress").hide();
                     if(resp == 'ok'){
                         $('#uploadForm')[0].reset();
-                        $('#uploadStatus').html('<p style="color:#28A74B;">File has uploaded successfully!</p>');
+                        $('#uploadStatus').html('<div class="alert alert-success">File has uploaded successfully!</div>');
                     }else if(resp == 'err'){
-                        $('#uploadStatus').html('<p style="color:#EA4335;">Please select a valid file to upload.</p>');
+                        $('#uploadStatus').html('<div class="alert alert-danger">Please select a valid file to upload.</div>');
                     }else if(resp == 'allr'){
-                        $('#uploadStatus').html('<p style="color:#EA4335;">All fields are required!</p>');
+                        $('#uploadStatus').html('<div class="alert alert-danger">All fields are required!</div>');
                     }else if(resp == 'uper'){
-                        $('#uploadStatus').html('<p style="color:#EA4335;">Unable to Store the file!</p>');
+                        $('#uploadStatus').html('<div class="alert alert-danger">Unable to Store the file!</div>');
                     }else if(resp == 'fext'){
-                        $('#uploadStatus').html('<p style="color:#EA4335;">Invaild file extention!</p>');
+                        $('#uploadStatus').html('<div class="alert alert-danger">Invaild file extention!</div>');
                     }else if(resp == 'siz'){
-                        $('#uploadStatus').html('<p style="color:#EA4335;">We allow only 100KB to 5MB Files!</p>');
+                        $('#uploadStatus').html('<div class="alert alert-danger">We allow only 100KB to 5MB Files!</div>');
                     }else if(resp == 'sww'){
-                        $('#uploadStatus').html('<p style="color:#EA4335;">Something went wrong while uploading!</p>');
+                        $('#uploadStatus').html('<div class="alert alert-danger">Something went wrong while uploading!</div>');
                     }else{
-                        $('#uploadStatus').html('<p style="color:#EA4335;">Something went wrong!</p>');
+                        $('#uploadStatus').html('<div class="alert alert-danger">Something went wrong!</div>');
                     }
                 }
             });
@@ -195,11 +196,11 @@
         
         // File type validation
         $("#upload").change(function(){
-            var allowedTypes = ['application/pdf', 'application/msword', 'application/vnd.ms-office', 'application/vnd.openxmlformats-officedocument.wordprocessingml.document', 'image/jpeg', 'image/png', 'image/jpg', 'image/gif'];
+            var allowedTypes = ['image/jpeg', 'image/png', 'image/jpg'];
             var file = this.files[0];
             var fileType = file.type;
             if(!allowedTypes.includes(fileType)){
-                alert('Please select a valid file (PDF/DOC/DOCX/JPEG/JPG/PNG/GIF).');
+                alert('Please select a valid file (JPEG/JPG/PNG).');
                 $("#upload").val('');
                 return false;
             }
