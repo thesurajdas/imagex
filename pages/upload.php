@@ -183,7 +183,7 @@
                     }else if(resp == 'allr'){
                         $('#uploadStatus').html('<div class="alert alert-danger">All fields are required!</div>');
                         swal("Upload Error", "All fields are required!", "error");
-                        swal("Upload Error", "", "error");
+                        swal("Upload Error", "All fields are required!", "error");
                     }else if(resp == 'uper'){
                         $('#uploadStatus').html('<div class="alert alert-danger">Unable to Store the file!</div>');
                         swal("Upload Error", "Unable to Store the file!", "error");
