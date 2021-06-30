@@ -14,22 +14,22 @@
                                     <div class="row">
                                         <div class="col-md-3">
                                             <p>
-                                                <a href="about.php" class="text-dark" style="text-decoration: none;" ><i class="fad fa-person-sign"></i> About Us</a>
+                                                <a href="about.php" class="text-dark" style="text-decoration: none; font-weight: 300; font-size: 13px;" ><i class="fad fa-person-sign"></i> About Us</a>
                                             </p>
                                         </div>
                                         <div class="col-md-3">
                                             <p>
-                                                <a href="contact.php" class="text-dark" style="text-decoration: none;" ><i class="fad fa-address-book"></i> Contact Us</a>
+                                                <a href="contact.php" class="text-dark" style="text-decoration: none; font-weight: 300; font-size: 13px;" ><i class="fad fa-address-book"></i> Contact Us</a>
                                             </p>
                                         </div>
                                         <div class="col-md-2">
                                             <p>
-                                                <a href="terms.php" class="text-dark" style="text-decoration: none;" data-toggle="tooltip" title="Terms And Conditions" ><i class="fad fa-file-check"></i> Terms</a>
+                                                <a href="terms.php" class="text-dark" style="text-decoration: none; font-weight: 300; font-size: 13px;" data-toggle="tooltip" title="Terms And Conditions" ><i class="fad fa-file-check"></i> Terms</a>
                                             </p>
                                         </div>
                                         <div class="col-md-3">
                                             <p>
-                                                <a href="privacy.php" class="text-dark" style="text-decoration: none;" ><i class="fad fa-shield-check"></i> Privacy Policy</a>
+                                                <a href="privacy.php" class="text-dark" style="text-decoration: none; font-weight: 300; font-size: 13px;" ><i class="fad fa-shield-check"></i> Privacy Policy</a>
                                             </p>
                                         </div>
                                     </div>    
