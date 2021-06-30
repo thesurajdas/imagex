@@ -40,6 +40,8 @@
         <script src="assets/js/Drag-and-Drop-File-Input.js"></script>
         <script src="assets/js/Drag-and-Drop-Multiple-File-Form-Input-upload-Advanced.js"></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/lightbox2/2.8.2/js/lightbox.min.js"></script>
+        <script src="../js/fontawesome.js"></script>
+        <script src="../js/sweetalert.min.js"></script>
 
             <!-------bootstrap css custom styling -> (OVERRIDE) <- --------------------->
             <style>
@@ -50,7 +52,6 @@
                     border-top: 0;
                 }
             </style>
-            <script src="../js/fontawesome.js"></script>    
     </head>
     <body>
         <!-----------------------------------nav section---------------------------------------------------->
@@ -175,18 +176,26 @@
                     if(resp == 'ok'){
                         $('#uploadForm')[0].reset();
                         $('#uploadStatus').html('<div class="alert alert-success">File has uploaded successfully!</div>');
+                        swal("Upload Success", "File has uploaded successfully!", "success");
                     }else if(resp == 'err'){
-                        $('#uploadStatus').html('<div class="alert alert-danger">Please select a valid file to upload.</div>');
+                        $('#uploadStatus').html('<div class="alert alert-danger">Please select a valid file to upload!</div>');
+                        swal("Upload Error", "Please select a valid file to upload!", "error");
                     }else if(resp == 'allr'){
                         $('#uploadStatus').html('<div class="alert alert-danger">All fields are required!</div>');
+                        swal("Upload Error", "All fields are required!", "error");
+                        swal("Upload Error", "", "error");
                     }else if(resp == 'uper'){
                         $('#uploadStatus').html('<div class="alert alert-danger">Unable to Store the file!</div>');
+                        swal("Upload Error", "Unable to Store the file!", "error");
                     }else if(resp == 'fext'){
                         $('#uploadStatus').html('<div class="alert alert-danger">Invaild file extention!</div>');
+                        swal("Upload Error", "Invaild file extention!", "error");
                     }else if(resp == 'siz'){
-                        $('#uploadStatus').html('<div class="alert alert-danger">We allow only 100KB to 5MB Files!</div>');
+                        $('#uploadStatus').html('<div class="alert alert-danger"><b>Upload failed!</b> We allow only 100KB to 5MB Files!</div>');
+                        swal("Upload Error", "We allow only 100KB to 5MB Files!", "error");
                     }else if(resp == 'sww'){
                         $('#uploadStatus').html('<div class="alert alert-danger">Something went wrong while uploading!</div>');
+                        swal("Upload Error", "Something went wrong while uploading!", "error");
                     }else{
                         $('#uploadStatus').html('<div class="alert alert-danger">Something went wrong!</div>');
                     }
