@@ -29,7 +29,8 @@ $last_id = $page+$limit;
                                                     ?>           
                                                         <div class="col-lg-4 col-md-6 col-sm-12 sglry">
                                                                 <div class="card cds">
-                                                                    <img class="im" draggable="false" src="<?php echo $site_url,$row['image_location']; ?>" onContextMenu="return false;" alt="Card image cap">
+                                                                <?php $img_url=$site_url.$row['image_location']; ?>
+                                                                    <img class="im" draggable="false" src="http://localhost/imagez/pages/api.php?image=<?php echo $img_url; ?>" onContextMenu="return false;" alt="Card image cap">
                                                                     <div class="card-text cds-txt">
                                                                         <div class="container" style="padding-left: 0">
                                                                             <div class="row">
