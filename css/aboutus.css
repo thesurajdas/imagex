@@ -1,3 +1,11 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700&display=swap');
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Poppins', sans-serif;
+}
+
 .logp{
     width: 35px;
     height: 35px;
@@ -72,7 +80,32 @@
   
   .social-link:hover,
   .social-link:focus {
-    background: #ddd;
+    background: #fff0;
     text-decoration: none;
     color: #555;
   }
+
+  .fbb:hover{
+    color: #4267B2;
+    /* border: 1px solid #4267B2; */
+  }
+
+  .tww:hover{
+    color: #1DA1F2;
+    /* border: 1px solid #1DA1F2; */
+  }
+
+  .ins:hover{
+      color: #fff;
+      background: radial-gradient(circle at 30% 107%, #fdf497 0%, #fdf497 5%, #fd5949 45%,#d6249f 60%,#285AEB 90%);
+  }
+
+  .chdr{
+    text-shadow: -1px 2px 20px rgb(255 0 0 / 50%);
+}
+
+.cthhumb{
+    max-width: 100px;
+    max-height: 100px;
+    object-fit: cover;
+}
