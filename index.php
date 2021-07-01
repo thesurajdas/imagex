@@ -316,7 +316,7 @@
                         <div class="row d-flex justify-content-center">
                             <div>
                                 <p>
-                                    Copyright &copy; <script>document.write(new Date().getFullYear())</script> <a style="text-decoration: none;" href="/"><strong class="text-dark" style="text-decoration: none;"> PIXWAVE </strong></a> - All rights reserved
+                                    Copyright &copy; <span id="year"></span><script>let d = new Date(); let n = d.getFullYear(); document.getElementById("year").innerHTML = n;</script> <a style="text-decoration: none;" href="/"><strong class="text-dark" style="text-decoration: none;"> PIXWAVE </strong></a> - All rights reserved
                                 </p>
                             </div>
                         </div>
