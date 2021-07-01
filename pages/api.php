@@ -17,10 +17,8 @@
     header('Content-Type: image/jpeg');
     $file=$_GET['image'];
     list($width,$height)=getimagesize($file);
-    // $nwidth=$_GET['w'];
-    // $nhieght=$_GET['h'];
-    $nwidth=$width/4;
-    $nhieght=$height/4;
+    $nwidth=$width/5;
+    $nhieght=$height/5;
     $newimage=imagecreatetruecolor($nwidth,$nhieght);
     $source=imagecreatefromjpeg($file);
     imagecopyresized($newimage,$source,0,0,0,0,$nwidth,$nhieght,$width,$height);
