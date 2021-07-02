@@ -98,10 +98,6 @@ function sharemain(){
         text: '<?php echo $row_img['title']." by ".$row_img_user['name']; ?>',
         url: document.location.href,
       }
-
-      const btn = document.querySelector('#shareapi');
-
-      btn.addEventListener('click', () => {
         navigator.share(shareData)
           .then(() =>
           sharecount()
@@ -109,7 +105,6 @@ function sharemain(){
           .catch((e) =>
           console.log('Error sharing', e)
           )
-      });
 }
     </script>
 <script>
