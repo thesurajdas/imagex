@@ -55,7 +55,7 @@
                                 <!-- <a class="col-2 text-center" onclick="sharecount()" href="https://www.reddit.com/submit?url=<?php echo $img_url; ?>&title=<?php echo $row_img['title']; ?>" target="_blank"><i class="fab fa-reddit" style="font-size: 40px;color:orangered;"></i></a> -->
                                 <a class=" text-center" onclick="sharecount()" href="https://in.pinterest.com/pin/create/button/?url=<?php echo $img_url; ?>" target="_blank"><i class="fab fa-pinterest" style="font-size: 40px;color:#E60023;"></i></a>
                                 <a class=" text-center" onclick="sharecount()" href="https://wa.me/?text=<?php echo $img_url; ?>" target="_blank"><i class="fab fa-whatsapp" style="font-size: 40px;color:#1ead1e;"></i></a>
-                                <a class=" text-center"><button type="button" onclick="share()" class="btn btn-light bt" style="background-color: #e2e6ea;"><i class="fad fa-ellipsis-h" style="color:#738885ed;"></i></button></a>
+                                <a class=" text-center"><button type="button" id="shareapi" class="btn btn-light bt" style="background-color: #e2e6ea;"><i class="fad fa-ellipsis-h" style="color:#738885ed;"></i></button></a>
                             </div>    
                         </div>        
             </div>
@@ -91,18 +91,25 @@
     </script>
 
 <script>
-//share script
-  function share(){
-      if (navigator.share) {
-      navigator.share({
+      let shareData = {
         title: '<?php echo $row_img['title']; ?>',
         text: '<?php echo $row_img['title']." by ".$row_img_user['name']; ?>',
         url: document.location.href,
-      })
-        .then(() => sharecount())
-        .catch((error) => console.log('Error sharing', error));
-    }
-  }
+      }
+
+      const btn = document.querySelector('#shareapi');
+
+      btn.addEventListener('click', () => {
+        navigator.share(shareData)
+          .then(() =>
+          sharecount()
+          )
+          .catch((e) =>
+          console.log('Error sharing', e)
+          )
+      });
+    </script>
+<script>
 //Count Share
 function sharecount(){
             $(document).ready(function(){
