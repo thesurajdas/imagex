@@ -10,6 +10,12 @@
             <script src="../js/jquery.min.js"></script>
             <script src="../js/bootstrap.bundle.min.js"></script>
             <link href="../css/aboutus.css" rel="stylesheet">
+            <link rel="stylesheet" href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css"
+   integrity="sha512-xodZBNTC5n17Xt2atTPuE1HxjVMSvLVW9ocqUKLsCC5CXdbqCmblAshOMAS6/keqq/sMZMZ19scR4PsZChSR7A=="
+   crossorigin=""/>
+   <script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"
+   integrity="sha512-XQoYMqMTK8LvdxXYG3nZ448hOEQiglfqkJs1NOQV44cWnUrBc8PkAOcXy20w0vlaXaVUearIOBhiXZ5V3ynxwA=="
+   crossorigin=""></script>
 
                 <!-------bootstrap css custom styling -> (OVERRIDE) <- --------------------->
             <style>
@@ -39,13 +45,43 @@
                     </div>
                 </div>
                 <!-- -------------map start------------------- -->
-
-
-                
+                <div id="map" style="width: 100%; height: 90vh;"></div>
                 <!-- -------------map end------------------- -->
             </div>
         </div>
     <?php require_once('include/footer.php'); ?>    
-    
+    <script src="map-data.php"></script>
+	<script>
+		var map = L.map('map').setView([45, 0], 2);
+		map.options.minZoom = 2;
+		map.options.maxZoom = 15;
+
+		L.control.scale().addTo(map);
+
+		L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+			attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
+		}).addTo(map);
+
+		function makeContent(ix) {
+			return `
+				<div>
+					<h4>${ix.properties.title}</h4>
+					<p><a href="${ix.properties.iurl}" target="_blank"><img src="${ix.properties.url}" height="100px" width="150px"></a></p>
+				</div>
+				`;
+		}
+
+		function onEachFeature(feature, layer) {
+			layer.bindPopup(makeContent(feature), { closeButton: false });
+		}
+
+		const imgLayer = L.geoJSON(imgList, {
+			onEachFeature: onEachFeature,
+			pointToLayer: function (feature, latlng) {
+				return L.marker(latlng);
+			}
+		});
+		imgLayer.addTo(map);
+	</script>
 </body>
 </html>
