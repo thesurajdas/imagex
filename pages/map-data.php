@@ -45,10 +45,10 @@ $data=array();
 if($result->num_rows>0){
     while ($row = $result->fetch_assoc()) {
         $id = $row['image_id'];
-        $iurl = "http://localhost/imagez/pages/image.php?id=".$id;
+        $iurl = $site_url."/pages/image.php?id=".$id;
         $title = $row['title'];
         $url = $row['image_location'];
-        $img_url = "http://localhost/imagez".$url;
+        $img_url = $site_url.$url;
         // $img_url = "../upload/mobile.jpg";
         $imgLocation = get_image_location($img_url);
         if(!empty($imgLocation)){
