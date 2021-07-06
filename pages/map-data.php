@@ -1,7 +1,7 @@
 <?php
 function get_image_location($image = ''){
     $exif = exif_read_data($image, 0, true);
-    if($exif && isset($exif['GPS'])){
+    if($exif && (isset($exif['GPS'])) && ($exif['GPS']['GPSLatitudeRef']!=0) && ($exif['GPS']['GPSLongitudeRef']!=0)){
         $GPSLatitudeRef = $exif['GPS']['GPSLatitudeRef'];
         $GPSLatitude    = $exif['GPS']['GPSLatitude'];
         $GPSLongitudeRef= $exif['GPS']['GPSLongitudeRef'];

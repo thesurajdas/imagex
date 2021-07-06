@@ -16,6 +16,36 @@
    <script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"
    integrity="sha512-XQoYMqMTK8LvdxXYG3nZ448hOEQiglfqkJs1NOQV44cWnUrBc8PkAOcXy20w0vlaXaVUearIOBhiXZ5V3ynxwA=="
    crossorigin=""></script>
+   <!-- Map CSS -->
+   <style>
+		* {
+			padding: 0;
+			margin: 0;
+			box-sizing: border-box;
+		}
+
+		.leaflet-popup-content-wrapper {
+			padding: 0;
+			overflow: hidden;
+		}
+
+		.leaflet-popup-content-wrapper .leaflet-popup-content {
+			margin: 0;
+		}
+
+		.leaflet-popup-content-wrapper h4 {
+			padding: 12px;
+			background-color: #ff6808;
+			color: white;
+			font-size: 14px;
+		}
+
+		.leaflet-popup-content-wrapper p {
+			padding: 0 16px;
+			font-size: 14px;
+			margin-bottom: 14px;
+		}
+	</style>
 
                 <!-------bootstrap css custom styling -> (OVERRIDE) <- --------------------->
             <style>
