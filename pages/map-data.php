@@ -49,13 +49,10 @@ if($result->num_rows>0){
         $title = $row['title'];
         $url = $row['image_location'];
         $img_url = $site_url.$url;
-        // $img_url = "../upload/mobile.jpg";
         $imgLocation = get_image_location($img_url);
         if(!empty($imgLocation)){
             $imgLat = $imgLocation['latitude'];
             $imgLng = $imgLocation['longitude'];
-            // echo $imgLat.",";
-            // echo $imgLng;
             echo '{
                 "type": "Feature",
                 "geometry": {
