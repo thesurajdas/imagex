@@ -6,6 +6,10 @@
   font-family: 'Poppins', sans-serif;
 }
 
+.cdll{
+    border-radius: 1.25rem;
+}
+
 .logp{
     width: 35px;
     height: 35px;

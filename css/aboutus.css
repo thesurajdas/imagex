@@ -6,6 +6,10 @@
   font-family: 'Poppins', sans-serif;
 }
 
+.cdll{
+    border-radius: 1.25rem;
+}
+
 .logp{
     width: 35px;
     height: 35px;
@@ -108,4 +112,15 @@
     max-width: 100px;
     max-height: 100px;
     object-fit: cover;
+}
+
+.fia{
+    height: 25px;
+    width: 25px;
+    border-radius: 1.25rem;
+}
+
+.fcig{
+    max-height: 410px;
+    object-fit: contain;
 }
