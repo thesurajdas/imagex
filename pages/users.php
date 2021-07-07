@@ -34,15 +34,27 @@
                     <!-- Team item-->
                     <?php
                         while($ru = $result->fetch_assoc()):
+                            $tmp_id=$ru['id'];
+                            //Temp variables
+                            $user_total_views=0;
+                            $user_total_likes=0;
+                            //Get users uploaded images data
+                            $sql="SELECT * FROM images WHERE user_id='$tmp_id'";
+                            $result_img=$connect->query($sql);
+                            //total views
+                            while($row_img=$result_img->fetch_assoc()){
+                                $user_total_views=$user_total_views+$row_img['views'];
+                                $user_total_likes=$user_total_likes+$row_img['likes'];
+                            }
                     ?>
                     <div class="col-xl-4 col-sm-6 mb-5" >
                         <div class="bg-white shadow-sm py-5 px-4" style="border-radius: 1.25rem;"><img src="../<?php if(!empty($ru['avatar'])){echo $ru['avatar']; } else {echo 'img/avatar.png';}  ?>" alt="" width="100" class="img-fluid rounded-circle mb-3 img-thumbnail shadow-sm cthhumb">
                             <h5 class="mb-0"><a href="profile.php?u=<?php echo $ru['username']; ?>" target="_blank"><?php echo $ru['name']; ?></a></h5><span class="small text-uppercase text-muted"><?php echo $ru['role']; ?></span>
                             <ul class="social mb-0 list-inline mt-3 mb-2">
-                                <li class="list-inline-item"><a href="#" class="btn fbb" style="border-radius: 1.25rem;" disabled><i class="fad fa-cloud-download-alt"></i> <span>500</span></a></li>
-                                <li class="list-inline-item"><a href="#" class="btn tww"  style="border-radius: 1.25rem;" disabled><i class="fad fa-smile-plus"></i> <span>500</span></a></li>
+                                <li class="list-inline-item"><a href="#" class="btn fbb" style="border-radius: 1.25rem;" disabled><i class="fad fa-eye" style="color: #212529bf;"></i> <span><?php echo  $user_total_views; ?></span></a></li>
+                                <li class="list-inline-item"><a href="#" class="btn tww"  style="border-radius: 1.25rem;" disabled><i class="fad fa-heart" style="color: #ff0000c2;"></i> <span><?php echo  $user_total_likes; ?></span></a></li>
                             </ul>
-                            <button type="button" class="btn btn-outline-warning" style="border-radius: 1.25rem;"><i class="fad fa-user-plus"></i> Follow</button>
+                            <!-- <button type="button" class="btn btn-outline-warning" style="border-radius: 1.25rem;"><i class="fad fa-user-plus"></i> Follow</button> -->
                         </div>
                     </div>
                     <?php endwhile; ?>
