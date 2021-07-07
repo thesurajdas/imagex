@@ -2,7 +2,7 @@
 sleep(0);
 require_once('../auth.php');
 $trend_date=date('Y-m');
-$limit = 3;
+$limit = 10;
 if(isset($_POST['page_no'])){
   $page = $_POST['page_no'];
 }else{
@@ -31,7 +31,6 @@ $count=0;
                                 $user_total_likes=$user_total_likes+$row_img['likes'];
                             }
                     ?>
-                    <div id="<?php $ru['id'];?>" class="col-xl-4 col-sm-6 mb-5" >
                         <div class="bg-white shadow-sm py-5 px-4" style="border-radius: 1.25rem;"><img src="../<?php if(!empty($ru['avatar'])){echo $ru['avatar']; } else {echo 'img/avatar.png';}  ?>" alt="" width="100" class="img-fluid rounded-circle mb-3 img-thumbnail shadow-sm cthhumb">
                             <h5 class="mb-0"><a href="profile.php?u=<?php echo $ru['username']; ?>" target="_blank"><?php echo $ru['name']; ?></a></h5><span class="small text-uppercase text-muted"><?php echo $ru['role']; ?></span>
                             <ul class="social mb-0 list-inline mt-3 mb-2">
@@ -40,7 +39,6 @@ $count=0;
                             </ul>
                             <!-- <button type="button" class="btn btn-outline-warning" style="border-radius: 1.25rem;"><i class="fad fa-user-plus"></i> Follow</button> -->
                         </div>
-                    </div>
                     <?php endwhile; ?>
                                 <div class="col-12 text-center" id="pagination"> <button type="button" id="ajaxbtn" data-id="<?php echo $last_id; ?>" class="btn btn-info mt-4 mb-2" style="border-radius: 1.25rem;"><i class="fad fa-plus-circle"></i> Load More</button></div>
                                 <?php
