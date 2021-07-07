@@ -127,6 +127,9 @@
                                     <?php endwhile; ?>
                                 </ul>
                             </div>
+                        </li>
+                        <li class="nav-item active">
+                            <a class="nav-link" href="map.php" tabindex="-1" aria-disabled="true" style="color: rgb(13 212 222);"><i class="fad fa-map-marked"></i> Map</a>
                         </li>    
                     </ul>
                     <form action="search.php" method="GET" class="my-2 my-lg-0">

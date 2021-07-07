@@ -48,6 +48,10 @@
 			font-size: 14px;
 			margin-bottom: 14px;
 		}
+
+		img{
+			object-fit: cover;
+		}
 	</style>
 
                 <!-------bootstrap css custom styling -> (OVERRIDE) <- --------------------->
@@ -78,7 +82,7 @@
                     </div>
                 </div>
                 <!-- -------------map start------------------- -->
-                <div id="map" style="width: 100%; height: 90vh;"></div>
+                <div id="map" style="width: 100%; height: 90vh; padding: 10px; margin-top: 10px; border-radius: 1.25rem;"></div>
                 <!-- -------------map end------------------- -->
             </div>
         </div>
