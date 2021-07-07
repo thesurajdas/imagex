@@ -116,7 +116,7 @@
                 <div class="row prow" style=" margin-top: 100px">
                     <div class="col-md-4">
                         <div class="profile-img">
-                            <img draggable="false" class="rounded-circle pix" src="<?php echo $site_url."/".$user_avatar; ?>" onContextMenu="return false;" alt=""/>
+                            <img draggable="false" class="rounded-circle pix" src="../<?php if(!empty($user_avatar)){echo $user_avatar; } else {echo 'img/avatar.png';}  ?>" onContextMenu="return false;" alt=""/>
                         </div>
                     </div>
                     <div class="col-md-6">
