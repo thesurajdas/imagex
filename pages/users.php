@@ -1,7 +1,6 @@
 <?php
-    require('../connect.php');
-    $sql = "SELECT * FROM users";
-    $result = $connect->query($sql);
+    //Add database connection
+    require_once('../auth.php');
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -31,36 +30,44 @@
             <div  class="col-md-12 pb-3 pt-2"><h1 class="text-center" style="color: rgb(23 109 222 / 72%);"><i class="fad fa-users"></i> Users</h1></div>
             <div class="container bg-light shadow-lg p-3" style="border-radius: 1.25rem;">
                 <div class="row text-center">
-                    <!-- Team item-->
-                    <?php
-                        while($ru = $result->fetch_assoc()):
-                            $tmp_id=$ru['id'];
-                            //Temp variables
-                            $user_total_views=0;
-                            $user_total_likes=0;
-                            //Get users uploaded images data
-                            $sql="SELECT * FROM images WHERE user_id='$tmp_id'";
-                            $result_img=$connect->query($sql);
-                            //total views
-                            while($row_img=$result_img->fetch_assoc()){
-                                $user_total_views=$user_total_views+$row_img['views'];
-                                $user_total_likes=$user_total_likes+$row_img['likes'];
-                            }
-                    ?>
-                    <div class="col-xl-4 col-sm-6 mb-5" >
-                        <div class="bg-white shadow-sm py-5 px-4" style="border-radius: 1.25rem;"><img src="../<?php if(!empty($ru['avatar'])){echo $ru['avatar']; } else {echo 'img/avatar.png';}  ?>" alt="" width="100" class="img-fluid rounded-circle mb-3 img-thumbnail shadow-sm cthhumb">
-                            <h5 class="mb-0"><a href="profile.php?u=<?php echo $ru['username']; ?>" target="_blank"><?php echo $ru['name']; ?></a></h5><span class="small text-uppercase text-muted"><?php echo $ru['role']; ?></span>
-                            <ul class="social mb-0 list-inline mt-3 mb-2">
-                                <li class="list-inline-item"><a href="#" class="btn fbb" style="border-radius: 1.25rem;" disabled><i class="fad fa-eye" style="color: #212529bf;"></i> <span><?php echo  $user_total_views; ?></span></a></li>
-                                <li class="list-inline-item"><a href="#" class="btn tww"  style="border-radius: 1.25rem;" disabled><i class="fad fa-heart" style="color: #ff0000c2;"></i> <span><?php echo  $user_total_likes; ?></span></a></li>
-                            </ul>
-                            <!-- <button type="button" class="btn btn-outline-warning" style="border-radius: 1.25rem;"><i class="fad fa-user-plus"></i> Follow</button> -->
-                        </div>
+                    <div id="loadData" class="col-xl-4 col-sm-6 mb-5">
+                        <div id="searching">loading...</div>
                     </div>
-                    <?php endwhile; ?>
                 </div>
             </div>
         </div>
         <?php require_once('include/footer.php'); ?>
+        <script>
+        $(document).ready(function(){
+            // Load Data from Database with Ajax
+            function loadTable(page){
+            $.ajax({
+                url: "users-pagination.php",
+                type: "POST",
+                data : { page_no : page },
+                success: function(data){
+                if(data){
+                    $("#searching").remove();
+                    $("#pagination").remove();
+                    $("#loadData").append(data);
+                }else{
+                    $("#searching").html("<div class='container text-center'><img style='height: 150px; width: 150px; object-fit: contain;' src='../img/notfound.svg' alt=''><h2 style='padding-top: 20px; padding-bottom: 25px; color: #6c757dd4;'>Sorry! No Result Found. <i class='fad fa-heart-broken' style='color: red;'></i></div>");
+                    $("#ajaxbtn").html("<i class='fad fa-sad-cry'></i> No more users found!");
+                    $("#ajaxbtn").prop("disabled",true);
+                }
+                
+                }
+            });
+            }
+            loadTable();
+            // Add Click Event on ajaxbtn
+            $(document).on("click","#ajaxbtn",function(){
+            $("#ajaxbtn").html("<div class='spinner-border spinner-border-sm text-info' role='status'><span class='sr-only'></span></div> Loading...");
+            var pid = $(this).data("id");
+            loadTable(pid);
+            });
+
+        });
+        </script>
     </body>
 </html>
