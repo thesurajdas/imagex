@@ -30,7 +30,7 @@
             <div  class="col-md-12 pb-3 pt-2"><h1 class="text-center" style="color: rgb(23 109 222 / 72%);"><i class="fad fa-users"></i> Users</h1></div>
             <div class="container bg-light shadow-lg p-3" style="border-radius: 1.25rem;">
                 <div class="row text-center">
-                    <div id="loadData" class="col-xl-4 col-sm-6 mb-5">
+                    <div id="loadData" class="col-md-4 col-xl-4 col-lg-4 col-sm-12 mb-5">
                         <div id="searching">loading...</div>
                     </div>
                 </div>
