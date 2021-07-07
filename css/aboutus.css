@@ -124,3 +124,23 @@
     max-height: 410px;
     object-fit: contain;
 }
+
+.im {
+    width: 100%;
+    height: 195px;
+    object-fit: cover;
+}
+
+.nav-tabs .nav-item.show .nav-link, .nav-tabs .nav-link.active {
+    color: #495057;
+    background-color: #fff;
+    border-color: #dee2e6 #dee2e6 #fff;
+}
+
+.ctb{
+    padding: 1rem;
+    border-radius: 1.25rem;
+    border-bottom: 1px solid #dee2e6;
+    border-left: 1px solid #dee2e6;
+    border-right: 1px solid #dee2e6;
+}
