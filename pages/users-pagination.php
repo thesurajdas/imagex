@@ -2,7 +2,7 @@
 sleep(0);
 require_once('../auth.php');
 $trend_date=date('Y-m');
-$limit = 3;
+$limit = 9;
 if(isset($_POST['page_no'])){
   $page = $_POST['page_no'];
 }else{
