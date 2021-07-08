@@ -33,8 +33,8 @@ $last_id = $page+$limit;
                         <div class="bg-white shadow-sm py-5 px-4" style="border-radius: 1.25rem;"><img src="../<?php if(!empty($ru['avatar'])){echo $ru['avatar']; } else {echo 'img/avatar.png';}  ?>" alt="" width="100" class="img-fluid rounded-circle mb-3 img-thumbnail shadow-sm cthhumb">
                             <h5 class="mb-0 "><a class="text-decoration-none" href="profile.php?u=<?php echo $ru['username']; ?>" target="_blank"><?php echo $ru['name']; ?></a></h5><span class="small text-uppercase text-muted"><?php echo $ru['role']; ?></span>
                             <ul class="social mb-0 list-inline mt-3 mb-2">
-                                <li class="list-inline-item"><a href="#" class="btn fbb" style="border-radius: 1.25rem;" disabled><i class="fad fa-eye" style="color: #212529bf;"></i> <span><?php echo $user_total_views; ?></span></a></li>
-                                <li class="list-inline-item"><a href="#" class="btn tww"  style="border-radius: 1.25rem;" disabled><i class="fad fa-heart" style="color: #ff0000c2;"></i> <span><?php echo $user_total_likes; ?></span></a></li>
+                                <li class="list-inline-item" style="border-radius: 1.25rem;" disabled><i class="fad fa-eye" style="color: #212529bf;"></i> <span><?php echo $user_total_views; ?></span></a></li>
+                                <li class="list-inline-item" style="border-radius: 1.25rem;" disabled><i class="fad fa-heart" style="color: #ff0000c2;"></i> <span><?php echo $user_total_likes; ?></span></a></li>
                             </ul>
                             <!-- <button type="button" class="btn btn-outline-warning" style="border-radius: 1.25rem;"><i class="fad fa-user-plus"></i> Follow</button> -->
                         </div>
