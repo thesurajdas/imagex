@@ -178,6 +178,13 @@
       });
     }
     //start index stats
+    $.ajax({
+      url: "../admin/stats-data.php",
+      method: "GET",
+      success: function(datax) {
+      var up_data = '['+datax+']';
+      console.log(up_data);
+  
     if ($("#sales-chart").length) {
       var SalesChartCanvas = $("#sales-chart").get(0).getContext("2d");
       var SalesChart = new Chart(SalesChartCanvas, {
@@ -186,12 +193,12 @@
           labels: ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"],
           datasets: [{
             label: 'Images',
-            data: [480, 230, 470, 210, 330, 4, 7],
+            data: up_data,
             backgroundColor: '#98BDFF'
           },
           {
             label: 'Users',
-            data: [400, 340, 550, 480, 170, 9],
+            data: [10, 30, 50, 40, 25],
             backgroundColor: '#4B49AC'
           }
           ]
@@ -216,17 +223,18 @@
                 drawBorder: false,
                 color: "#F2F2F2"
               },
-              ticks: {
-                display: true,
-                min: 0,
-                max: 560,
-                callback: function (value, index, values) {
-                  return value + '';
-                },
-                autoSkip: true,
-                maxTicksLimit: 10,
-                fontColor: "#6C7383"
-              }
+              //Custom Max Min value
+              // ticks: {
+              //   display: true,
+              //   min: 0,
+              //   max: 9999,
+              //   callback: function (value, index, values) {
+              //     return value + '';
+              //   },
+              //   autoSkip: true,
+              //   maxTicksLimit: 10,
+              //   fontColor: "#6C7383"
+              // }
             }],
             xAxes: [{
               stacked: false,
@@ -251,9 +259,11 @@
           }
         },
       });
-      //end index stats
       document.getElementById('sales-legend').innerHTML = SalesChart.generateLegend();
     }
+  }
+});
+    //end index stats
     if ($("#sales-chart-dark").length) {
       var SalesChartCanvas = $("#sales-chart-dark").get(0).getContext("2d");
       var SalesChart = new Chart(SalesChartCanvas, {
