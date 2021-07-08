@@ -195,7 +195,7 @@ while($row_img=$result_img->fetch_assoc()){
               <div class="card">
                 <div class="card-body">
                  <div class="d-flex justify-content-between">
-                  <p class="card-title">REGISTRATION AND UPLOAD INFO</p>
+                  <p class="card-title">Registration and Uploading Stats</p>
                   <!--<a href="#" class="text-info">View all</a>-->
                  </div>
                   <div id="sales-legend" class="chartjs-legend mt-4 mb-2"></div>
@@ -208,15 +208,15 @@ while($row_img=$result_img->fetch_assoc()){
                 <div class="col-md-6 mb-4 stretch-card transparent">
                   <div class="card card-tale">
                     <div class="card-body">
-                      <p class="mb-4">Today’s Post</p>
+                      <p class="mb-4">Today’s Images</p>
                       <p class="fs-30 mb-2"><?php echo $today_image_upload; ?></p>
                     </div>
                   </div>
                 </div>
                 <div class="col-md-6 mb-4 stretch-card transparent">
-                  <div class="card card-dark-blue">
+                  <div class="card card-light-danger">
                     <div class="card-body">
-                      <p class="mb-4">Total Post</p>
+                      <p class="mb-4">Total Images</p>
                       <p class="fs-30 mb-2"><?php echo $total_image_upload; ?></p>
                     </div>
                   </div>
@@ -224,7 +224,7 @@ while($row_img=$result_img->fetch_assoc()){
               </div>
               <div class="row">
                 <div class="col-md-6 stretch-card transparent">
-                  <div class="card card-light-danger">
+                  <div class="card card-dark-blue">
                     <div class="card-body">
                       <p class="mb-4">Today’s Active Users</p>
                       <p class="fs-30 mb-2"><?php echo $today_active_users; ?></p>
@@ -247,7 +247,7 @@ while($row_img=$result_img->fetch_assoc()){
         <!-- partial:partials/_footer.php -->
         <footer class="footer">
           <div class="d-sm-flex justify-content-center justify-content-sm-between">
-            <span class="text-muted text-center text-sm-left d-block d-sm-inline-block">Copyright © 2021. <a href="#" target="_blank">Gallery Name</a>. All rights reserved.</span>
+            <span class="text-muted text-center text-sm-left d-block d-sm-inline-block">Copyright © 2021. <a href="#" target="_blank">Pixwave</a>. All rights reserved.</span>
           </div>
         </footer>
         <!-- partial -->
