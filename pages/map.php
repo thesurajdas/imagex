@@ -73,7 +73,6 @@
                 <div class="row pl-3 pr-3 pt-3">
                     <div class="text-right col-12">
                         <div class="btn-group btn-group-sm" role="group">
-                            <button id="btnGroupDrop1" type="button" class="btn btn-secondary dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" style="border-radius: 1.25rem;"><i class="fad fa-caret-circle-down"></i> Short By</button>
                             <div class="dropdown-menu" style="min-width: auto;" aria-labelledby="btnGroupDrop1">
                                 <a class="dropdown-item " style="text-align: start; color: rgba(99, 96, 96, 0.856); font-size: 80%; font-weight: 700;" href="?id=<?php echo $cat_id; ?>&s=views">View Item</a>
                                 <a class="dropdown-item " style="text-align: start; color: rgba(220, 20, 60, 0.842); font-size: 80%; font-weight: 700;" href="?id=<?php echo $cat_id; ?>&s=likes">View Item</a>
