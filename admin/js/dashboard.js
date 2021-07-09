@@ -181,88 +181,88 @@
     $.ajax({
       url: "../admin/stats-data.php",
       method: "GET",
-      success: function(datax) {
-      var up_data = '['+datax+']';
-      console.log(up_data);
-  
-    if ($("#sales-chart").length) {
-      var SalesChartCanvas = $("#sales-chart").get(0).getContext("2d");
-      var SalesChart = new Chart(SalesChartCanvas, {
-        type: 'bar',
-        data: {
-          labels: ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"],
-          datasets: [{
-            label: 'Images',
-            data: up_data,
-            backgroundColor: '#98BDFF'
-          },
-          {
-            label: 'Users',
-            data: [10, 30, 50, 40, 25],
-            backgroundColor: '#4B49AC'
-          }
-          ]
-        },
-        options: {
-          cornerRadius: 5,
-          responsive: true,
-          maintainAspectRatio: true,
-          layout: {
-            padding: {
-              left: 0,
-              right: 0,
-              top: 20,
-              bottom: 0
-            }
-          },
-          scales: {
-            yAxes: [{
-              display: true,
-              gridLines: {
-                display: true,
-                drawBorder: false,
-                color: "#F2F2F2"
+      success: function (datax) {
+        let datay = datax;
+        let dataz = datay.split(",");
+        const up_data = dataz;
+        if ($("#sales-chart").length) {
+          var SalesChartCanvas = $("#sales-chart").get(0).getContext("2d");
+          var SalesChart = new Chart(SalesChartCanvas, {
+            type: 'bar',
+            data: {
+              labels: ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"],
+              datasets: [{
+                label: 'Images',
+                data: up_data,
+                backgroundColor: '#98BDFF'
               },
-              //Custom Max Min value
-              // ticks: {
-              //   display: true,
-              //   min: 0,
-              //   max: 9999,
-              //   callback: function (value, index, values) {
-              //     return value + '';
-              //   },
-              //   autoSkip: true,
-              //   maxTicksLimit: 10,
-              //   fontColor: "#6C7383"
-              // }
-            }],
-            xAxes: [{
-              stacked: false,
-              ticks: {
-                beginAtZero: true,
-                fontColor: "#6C7383"
+              {
+                label: 'Users',
+                data: [10, 30, 50, 40, 25, 75, 62],
+                backgroundColor: '#4B49AC'
+              }
+              ]
+            },
+            options: {
+              cornerRadius: 5,
+              responsive: true,
+              maintainAspectRatio: true,
+              layout: {
+                padding: {
+                  left: 0,
+                  right: 0,
+                  top: 20,
+                  bottom: 0
+                }
               },
-              gridLines: {
-                color: "rgba(0, 0, 0, 0)",
+              scales: {
+                yAxes: [{
+                  display: true,
+                  gridLines: {
+                    display: true,
+                    drawBorder: false,
+                    color: "#F2F2F2"
+                  },
+                  //Custom Max Min value
+                  // ticks: {
+                  //   display: true,
+                  //   min: 0,
+                  //   max: 9999,
+                  //   callback: function (value, index, values) {
+                  //     return value + '';
+                  //   },
+                  //   autoSkip: true,
+                  //   maxTicksLimit: 10,
+                  //   fontColor: "#6C7383"
+                  // }
+                }],
+                xAxes: [{
+                  stacked: false,
+                  ticks: {
+                    beginAtZero: true,
+                    fontColor: "#6C7383"
+                  },
+                  gridLines: {
+                    color: "rgba(0, 0, 0, 0)",
+                    display: false
+                  },
+                  barPercentage: 1
+                }]
+              },
+              legend: {
                 display: false
               },
-              barPercentage: 1
-            }]
-          },
-          legend: {
-            display: false
-          },
-          elements: {
-            point: {
-              radius: 0
-            }
-          }
-        },
-      });
-      document.getElementById('sales-legend').innerHTML = SalesChart.generateLegend();
-    }
-  }
-});
+              elements: {
+                point: {
+                  radius: 0
+                }
+              }
+            },
+          });
+          document.getElementById('sales-legend').innerHTML = SalesChart.generateLegend();
+        }
+      }
+    });
     //end index stats
     if ($("#sales-chart-dark").length) {
       var SalesChartCanvas = $("#sales-chart-dark").get(0).getContext("2d");
