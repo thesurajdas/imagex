@@ -17,83 +17,78 @@
                 .dropdown-toggle::after{
                     border-top: 0;
                 }
+                .dropdown-toggle::after {
+                    display: inline-block;
+                    content: none;
+                }
             </style>
             <script src="../js/fontawesome.js"></script>
     </head>
     <body>
         <div class="container shadow-lg mb-5 glry" style="border-radius: 1.25rem;">
-            <ul class="nav nav-tabs justify-content-center" id="myTab" role="tablist">
-                <li class="nav-item" role="presentation">
-                  <a class="nav-link active" id="home-tab" data-toggle="tab" href="#home" role="tab" aria-controls="home" aria-selected="true">Home</a>
-                </li>
-                <li class="nav-item" role="presentation">
-                  <a class="nav-link" id="profile-tab" data-toggle="tab" href="#profile" role="tab" aria-controls="profile" aria-selected="false">Profile</a>
-                </li>
-            </ul>
-            <div class="tab-content ctb" id="myTabContent">
-                <div class="tab-pane fade show active pb-3 pt-3" id="home" role="tabpanel" aria-labelledby="home-tab">
+            <div class="album py-5">
+                <div class="container">
                     <div class="row">
-                        <div class="col-md-4">
-                            <div class="card">
-                                <div class="card-body p-0 m-0">
-                                    <img src="../upload/images/0b45a9f0ab.jpg" class="im" alt="">
-                                </div>
-                                <div class="card-footer text-center">
-                                    <a href=""><button type="button" class="btn btn-warning"><i class="fad fa-images"></i> Add To Album</button></a>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-md-4">
-                            <div class="card">
-                                <div class="card-body p-0 m-0">
-                                    <img src="../upload/images/0b45a9f0ab.jpg" class="im" alt="">
-                                </div>
-                                <div class="card-footer text-center">
-                                    <a href=""><button type="button" class="btn btn-warning"><i class="fad fa-images"></i> Add To Album</button></a>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-md-4">
-                            <div class="card">
-                                <div class="card-body p-0 m-0">
-                                    <img src="../upload/images/0b45a9f0ab.jpg" class="im" alt="">
-                                </div>
-                                <div class="card-footer text-center">
-                                    <a href=""><button type="button" class="btn btn-warning"><i class="fad fa-images"></i> Add To Album</button></a>
+                        <div class="col-md-6 col-lg-4 col-sm-12">
+                            <div class="card mb-4 shadow-sm" style="border-radius: 1.25rem;">
+                                <img class="im" src="../upload/images/2d7e4ce48b.jpg" alt="" style="border-top-left-radius: 1.25rem; border-top-right-radius: 1.25rem">
+                                <div class="card-body">
+                                    <a class="text-decoration-none text-dark" href=""><h2>Album Name</h2></a>
+                                    <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+                                    <div class="d-flex justify-content-between align-items-center">
+                                        <button type="button" class="btn btn-outline-success btn-sm" style="border-radius: 1.25rem;">View Album</button>
+                                        <div class="dropdown">
+                                            <button class="btn btn-outline-info btn-sm dropdown-toggle" type="button" id="dropdownMenu2" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" style="border-radius: 1.25rem;">
+                                                <i class="fad fa-cog"></i>
+                                            </button>
+                                            <div class="dropdown-menu" aria-labelledby="dropdownMenu2">
+                                              <button class="dropdown-item" type="button">Edit</button>
+                                              <button class="dropdown-item" type="button">Delete</button>
+                                            </div>
+                                        </div>
+                                    </div>
                                 </div>
                             </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="tab-pane fade pt-3 pb-3" id="profile" role="tabpanel" aria-labelledby="profile-tab">
-                    <div class="row">
-                        <div class="col-md-4">
-                            <div class="card">
-                                <div class="card-body p-0 m-0">
-                                    <img src="../upload/images/0b45a9f0ab.jpg" class="im" alt="">
-                                </div>
-                                <div class="card-footer text-center">
-                                    <a href=""><button type="button" class="btn btn-warning"><i class="fad fa-images"></i> Add To Album</button></a>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-md-4">
-                            <div class="card">
-                                <div class="card-body p-0 m-0">
-                                    <img src="../upload/images/0b45a9f0ab.jpg" class="im" alt="">
-                                </div>
-                                <div class="card-footer text-center">
-                                    <a href=""><button type="button" class="btn btn-warning"><i class="fad fa-images"></i> Add To Album</button></a>
+                        </div>    
+                        <div class="col-md-6 col-lg-4 col-sm-12">
+                            <div class="card mb-4 shadow-sm" style="border-radius: 1.25rem;">
+                                <img class="im" src="../upload/images/33418be901.jpg" alt="" style="border-top-left-radius: 1.25rem; border-top-right-radius: 1.25rem">
+                                <div class="card-body">
+                                    <a class="text-decoration-none text-dark" href=""><h2>Album Name</h2></a>
+                                    <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+                                    <div class="d-flex justify-content-between align-items-center">
+                                        <button type="button" class="btn btn-outline-success btn-sm" style="border-radius: 1.25rem;">View Album</button>
+                                        <div class="dropdown">
+                                            <button class="btn btn-outline-info btn-sm dropdown-toggle" type="button" id="dropdownMenu2" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" style="border-radius: 1.25rem;">
+                                                <i class="fad fa-cog"></i>
+                                            </button>
+                                            <div class="dropdown-menu" aria-labelledby="dropdownMenu2">
+                                              <button class="dropdown-item" type="button">Edit</button>
+                                              <button class="dropdown-item" type="button">Delete</button>
+                                            </div>
+                                        </div>
+                                    </div>
                                 </div>
                             </div>
-                        </div>
-                        <div class="col-md-4">
-                            <div class="card">
-                                <div class="card-body p-0 m-0">
-                                    <img src="../upload/images/0b45a9f0ab.jpg" class="im" alt="">
-                                </div>
-                                <div class="card-footer text-center">
-                                    <a href=""><button type="button" class="btn btn-warning"><i class="fad fa-images"></i> Add To Album</button></a>
+                        </div>    
+                        <div class="col-md-6 col-lg-4 col-sm-12">
+                            <div class="card mb-4 shadow-sm" style="border-radius: 1.25rem;">
+                                <img class="im" src="../upload/images/0b45a9f0ab.jpg" alt="" style="border-top-left-radius: 1.25rem; border-top-right-radius: 1.25rem">
+                                <div class="card-body">
+                                    <a class="text-decoration-none text-dark" href=""><h2>Album Name</h2></a>
+                                    <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+                                    <div class="d-flex justify-content-between align-items-center">
+                                        <button type="button" class="btn btn-outline-success btn-sm" style="border-radius: 1.25rem;">View Album</button>
+                                        <div class="dropdown">
+                                            <button class="btn btn-outline-info btn-sm dropdown-toggle" type="button" id="dropdownMenu2" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" style="border-radius: 1.25rem;">
+                                                <i class="fad fa-cog"></i>
+                                            </button>
+                                            <div class="dropdown-menu" aria-labelledby="dropdownMenu2">
+                                              <button class="dropdown-item" type="button">Edit</button>
+                                              <button class="dropdown-item" type="button">Delete</button>
+                                            </div>
+                                        </div>
+                                    </div>
                                 </div>
                             </div>
                         </div>
