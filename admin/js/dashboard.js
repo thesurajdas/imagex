@@ -179,12 +179,15 @@
     }
     //start index stats
     $.ajax({
-      url: "../admin/stats-data.php",
+      url: "../admin/stats-data.php?id=i_chart",
       method: "GET",
-      success: function (datax) {
-        let datay = datax;
-        let dataz = datay.split(",");
-        const up_data = dataz;
+      success: function (idata) {
+        let i_data = idata.split(",");
+    $.ajax({
+      url: "../admin/stats-data.php?id=u_chart",
+      method: "GET",
+      success: function (udata) {
+        let u_data = udata.split(",");
         if ($("#sales-chart").length) {
           var SalesChartCanvas = $("#sales-chart").get(0).getContext("2d");
           var SalesChart = new Chart(SalesChartCanvas, {
@@ -193,12 +196,12 @@
               labels: ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"],
               datasets: [{
                 label: 'Images',
-                data: up_data,
+                data: i_data,
                 backgroundColor: '#98BDFF'
               },
               {
                 label: 'Users',
-                data: [10, 30, 50, 40, 25, 75, 62],
+                data: u_data,
                 backgroundColor: '#4B49AC'
               }
               ]
@@ -263,6 +266,8 @@
         }
       }
     });
+  }
+});
     //end index stats
     if ($("#sales-chart-dark").length) {
       var SalesChartCanvas = $("#sales-chart-dark").get(0).getContext("2d");
