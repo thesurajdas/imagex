@@ -54,6 +54,9 @@
                             </div>
                         </li>
                         <li class="nav-item active">
+                            <a class="nav-link" href="users.php" tabindex="-1" aria-disabled="true" style="color: rgb(158 0 160);"><i class="fad fa-users-crown"></i> Users</a>
+                        </li>    
+                        <li class="nav-item active">
                             <a class="nav-link" href="map.php" tabindex="-1" aria-disabled="true" style="color: rgb(13 212 222);"><i class="fad fa-map-marked"></i> Map</a>
                         </li>    
                     </ul>

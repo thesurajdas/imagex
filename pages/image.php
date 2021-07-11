@@ -87,6 +87,10 @@
                 background-color: #f8f9fa;
                 border: 2px solid #d8dadc;
             }
+
+            h6{
+                font-size: 0.9rem;
+            }
         </style>
         <script src="../js/fontawesome.js"></script>
     </head>
@@ -324,6 +328,12 @@
                                                     <p class="badge" style="color: #fff; background-color: darkmagenta;"><?php if(isset($headers['DateTimeOriginal'])){$date=date_create($headers['DateTimeOriginal']); echo date_format($date,"d F, Y h:i A");} else{echo "Unknown!";} ?></</p>
                                                 </div>
                                             </div>
+                                        </div>
+                                        <div class="col-12">
+                                            <!-- -------------image location in map start----------- -->
+
+                                            
+                                            <!-- -------------image location in map end----------- -->
                                         </div>
                                     </div>
                                 </div>
