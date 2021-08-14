@@ -309,10 +309,10 @@
                                     <div class="container pl-0">
                                         <div class="col-md-2">
                                             <div class="social-icons">
-                                                <a href="#" ><img src="pages/assets/img/fb.png"></a>
-                                                <a href="#"><img src="pages/assets/img/ins.png"></a>
-                                                <a href="#"><img src="pages/assets/img/tw.png"></a>
-                                                <a href="#"><img src="pages/assets/img/in.png"></a>
+                                                <a href="#" ><img src="pages/assets/img/fb.png" loading="lazy"></a>
+                                                <a href="#"><img src="pages/assets/img/ins.png" loading="lazy"></a>
+                                                <a href="#"><img src="pages/assets/img/tw.png" loading="lazy"></a>
+                                                <a href="#"><img src="pages/assets/img/in.png" loading="lazy"></a>
                                             </div>
                                         </div>
                                     </div>
