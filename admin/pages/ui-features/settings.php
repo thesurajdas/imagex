@@ -150,196 +150,25 @@
                 <div class="col-md-6 grid-margin stretch-card">
                     <div class="card">
                         <div class="card-body">
-                            <p class="card-title">User Settings:</p>
-                            <div class="d-flex justify-content-between">
-                                <p>Maintenance Mode:</p>
-                                <div class="custom-control custom-switch">
-                                    <input type="checkbox" class="custom-control-input" id="m_m" checked>
-                                    <label class="custom-control-label" for="m_m">Toggle for Enabel</label>
-                                </div>
-                            </div>
-                            <div class="d-flex justify-content-between">
-                                <p>Registration:</p>
-                                <div class="custom-control custom-switch">
-                                    <input type="checkbox" class="custom-control-input" id="u_r" checked>
-                                    <label class="custom-control-label" for="u_r">Toggle for Enabel</label>
-                                </div>
-                            </div>
-                            <div class="d-flex justify-content-between">
-                                <p>E-mail Verification:</p>
-                                <div class="custom-control custom-switch">
-                                    <input type="checkbox" class="custom-control-input" id="u_e_v" checked>
-                                    <label class="custom-control-label" for="u_e_v">Toggle for Enabel</label>
-                                </div>
-                            </div>
-                            <div class="d-flex justify-content-between">
-                                <p>Upload:</p>
-                                <div class="custom-control custom-switch">
-                                    <input type="checkbox" class="custom-control-input" id="upload" checked>
-                                    <label class="custom-control-label" for="upload">Toggle for Enabel</label>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-md-6 grid-margin stretch-card">
-                    <div class="card">
-                        <div class="card-body">
-                            <h4 class="card-title">WebSite Detailes</h4>
+                            <h4 class="card-title">Website Details</h4>
                             <p class="card-description">
-                                Edit Detailes
+                                Edit Details
                             </p>
                             <form class="forms-sample">
                                 <div class="form-group">
-                                    <label for="sitetitle">Site Title</label>
+                                    <label for="sitetitle">Site Name</label>
                                     <input type="text" class="form-control" id="sitetitle" placeholder="ImageX">
                                 </div>
                                 <div class="form-group">
-                                    <label for="sitename">Site Name</label>
+                                    <label for="sitename">Home Page Title</label>
                                     <input type="text" class="form-control" id="sitename" placeholder="ImageX">
-                                </div>
-                                <div class="form-group">
-                                    <label for="siteemail">Site Email</label>
-                                    <input type="text" class="form-control" id="siteemail" placeholder="something@xyz.com">
                                 </div>
                                 <div class="form-group">
                                     <label for="sitedescp">Site Description</label>
                                     <input type="text" class="form-control" id="sitedescp" placeholder="type something">
                                 </div>
-                                
-                                <button type="submit" class="btn btn-primary mr-2">Submit</button>
-                                <button class="btn btn-light">Cancel</button>
-                            </form>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="row">
-                <div class="col-md-6 grid-margin stretch-card">
-                    <div class="card">
-                        <div class="card-body">
-                            <p class="card-title">Site Email Settings:</p>
-                            <form class="forms-sample">
-                                <p>Server Type (Choose One):</p>
-                                <div class="d-flex justify-content-start">
-                                    <div class="form-check form-check-inline">
-                                        <input type="radio" class="form-check-input" id="mailserver" name="mail_s" mdbInput>
-                                        <label class="form-check-label" for="mailserver">SMTP</label>
-                                    </div>
-                                    
-                                    <div class="form-check form-check-inline">
-                                        <input type="radio" class="form-check-input" id="m_s" name="mail_s" mdbInput>
-                                        <label class="form-check-label" for="mailserver">Server Mail(Default)</label>
-                                    </div>
-                                </div>
-                                <div class="form-group" style="padding-top: 20px;">
-                                    <label for="smtphost">SMTP Host</label>
-                                    <input type="text" class="form-control" id="smtphost">
-                                </div>
-                                <div class="form-group">
-                                    <label for="smtpusername">SMTP Username</label>
-                                    <input type="text" class="form-control" id="smtpusername">
-                                </div>
-                                <div class="form-group">
-                                    <label for="smtppassword">SMTP Username</label>
-                                    <input type="text" class="form-control" id="smtpupassword">
-                                </div>
-                                <div class="form-group" style="padding-bottom: 20PX;">
-                                    <label for="smtpport">SMTP Port</label>
-                                    <input type="text" class="form-control" id="smtpport">
-                                </div>
-                                <p>SMTP Encryption (Choose One):</p>
-                                <div class="d-flex justify-content-start" style="padding-bottom: 20PX;">
-                                    <div class="form-check form-check-inline">
-                                        <input type="radio" class="form-check-input" id="smtpencryption" name="site_e" mdbInput>
-                                        <label class="form-check-label" for="smtpencryption">TLS</label>
-                                    </div>
-                                    
-                                    <div class="form-check form-check-inline">
-                                        <input type="radio" class="form-check-input" id="smtpencryption" name="site_e" mdbInput>
-                                        <label class="form-check-label" for="smtpencryption">SSL</label>
-                                    </div>
-                                </div>
                                 <button type="submit" class="btn btn-primary mr-2">Save</button>
-                                <button class="btn btn-light">Test E-Mail Server</button>
-                                
-                            </form>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-md-6 grid-margin stretch-card">
-                    <div class="card">
-                        <div class="card-body">
-                            <p class="card-title">Custom Image Design</p>
-                            <form class="forms-sample">
-                                <div class="form-group">
-                                    <label>Logo</label>
-                                    <input type="file" name="img[]" class="file-upload-default">
-                                    <div class="input-group col-xs-12">
-                                        <input type="text" class="form-control file-upload-info" disabled="" placeholder="Upload Image">
-                                        <span class="input-group-append">
-                                            <button class="file-upload-browse btn btn-primary" type="button">Upload</button>
-                                        </span>
-                                    </div>
-                                </div>
-                                <div class="form-group">
-                                    <label>FavIcon</label>
-                                    <input type="file" name="img[]" class="file-upload-default">
-                                    <div class="input-group col-xs-12">
-                                        <input type="text" class="form-control file-upload-info" disabled="" placeholder="Upload Image">
-                                        <span class="input-group-append">
-                                            <button class="file-upload-browse btn btn-primary" type="button">Upload</button>
-                                        </span>
-                                    </div>
-                                </div>
-                                <div class="form-group">
-                                    <label>Home Page Header Image</label>
-                                    <input type="file" name="img[]" class="file-upload-default">
-                                    <div class="input-group col-xs-12">
-                                        <input type="text" class="form-control file-upload-info" disabled="" placeholder="Upload Image">
-                                        <span class="input-group-append">
-                                            <button class="file-upload-browse btn btn-primary" type="button">Upload</button>
-                                        </span>
-                                    </div>
-                                </div>
-                                
-                            </form>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-12 grid-margin stretch-card">
-                    <div class="card">
-                        <div class="card-body">
-                            <p class="card-title">carousel Image[3]</p>
-                            <form class="forms-sample">
-                                <div class="form-group">
-                                    <label>Image One</label>
-                                    <div class="input-group col-xs-12">
-                                        <input type="text" class="form-control"  placeholder="Image Name eg. 6b3ecf9326">
-                                        <span class="input-group-append">
-                                            <button class="btn btn-primary" type="button">Save</button>
-                                        </span>
-                                    </div>
-                                </div>
-                                <div class="form-group">
-                                    <label>Image Two</label>
-                                    <div class="input-group col-xs-12">
-                                        <input type="text" class="form-control"  placeholder="Image Name eg. 6b3ecf9326">
-                                        <span class="input-group-append">
-                                            <button class="btn btn-primary" type="button">Save</button>
-                                        </span>
-                                    </div>
-                                </div>
-                                <div class="form-group">
-                                    <label>Image Three</label>
-                                    <div class="input-group col-xs-12" >
-                                        <input type="text" class="form-control"  placeholder="Image Name eg. 6b3ecf9326">
-                                        <span class="input-group-append">
-                                            <button class="btn btn-primary" type="button">Save</button>
-                                        </span>
-                                    </div>
-                                </div>
-                                
+                                <button class="btn btn-light">Cancel</button>
                             </form>
                         </div>
                     </div>
@@ -350,7 +179,7 @@
         <!-- partial:partials/_footer.php -->
         <footer class="footer">
           <div class="d-sm-flex justify-content-center justify-content-sm-between">
-            <span class="text-muted text-center text-sm-left d-block d-sm-inline-block">Copyright © 2021. <a href="#" target="_blank">Gallery Name</a>. All rights reserved.</span>
+            <span class="text-muted text-center text-sm-left d-block d-sm-inline-block">Copyright © 2021. <a href="" target="_blank">Pixwave</a>. All rights reserved.</span>
           </div>
         </footer>
         <!-- partial -->
