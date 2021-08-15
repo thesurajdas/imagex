@@ -168,7 +168,6 @@
                                     <input type="text" class="form-control" id="sitedescp" placeholder="type something">
                                 </div>
                                 <button type="submit" class="btn btn-primary mr-2">Save</button>
-                                <button class="btn btn-light">Cancel</button>
                             </form>
                         </div>
                     </div>

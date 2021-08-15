@@ -101,12 +101,12 @@
               <div class="row text-center">
                 <!-- Team item-->
                 <div class="col-xl-4 col-sm-6 mb-5">
-                    <div class="bg-white rounded shadow-sm py-5 px-4"><img src="../img/avatar.png" alt="" width="100" class="img-fluid rounded-circle mb-3 img-thumbnail shadow-sm">
-                        <h5 class="mb-0">Manuella Nevoresky</h5><span class="small text-uppercase text-muted">CEO - Founder</span>
+                    <div class="bg-white rounded shadow-sm py-5 px-4"><img src="../img/akash.jpg" alt="" width="200" class="img-fluid rounded-circle mb-3 img-thumbnail shadow-sm">
+                        <h5 class="mb-0">Akash Sarkar</h5><span class="small text-uppercase text-muted">Front-end Developer</span>
                         <ul class="social mb-0 list-inline mt-3">
                             <li class="list-inline-item"><a href="#" class="social-link"><i class="fa fa-facebook-f"></i></a></li>
                             <li class="list-inline-item"><a href="#" class="social-link"><i class="fa fa-twitter"></i></a></li>
-                            <li class="list-inline-item"><a href="#" class="social-link"><i class="fa fa-instagram"></i></a></li>
+                            <li class="list-inline-item"><a href="https://github.com/akashs-arkar1489" class="social-link"><i class="fa fa-github"></i></a></li>
                             <li class="list-inline-item"><a href="#" class="social-link"><i class="fa fa-linkedin"></i></a></li>
                         </ul>
                     </div>
@@ -115,12 +115,12 @@
           
                 <!-- Team item-->
                 <div class="col-xl-4 col-sm-6 mb-5">
-                    <div class="bg-white rounded shadow-sm py-5 px-4"><img src="../img/avatar.png" alt="" width="100" class="img-fluid rounded-circle mb-3 img-thumbnail shadow-sm">
-                        <h5 class="mb-0">Samuel Hardy</h5><span class="small text-uppercase text-muted">CEO - Founder</span>
+                    <div class="bg-white rounded shadow-sm py-5 px-4"><img src="../img/suraj.jpg" alt="" width="200" class="img-fluid rounded-circle mb-3 img-thumbnail shadow-sm">
+                        <h5 class="mb-0">Suraj Das</h5><span class="small text-uppercase text-muted">back-end Developer</span>
                         <ul class="social mb-0 list-inline mt-3">
                             <li class="list-inline-item"><a href="#" class="social-link"><i class="fa fa-facebook-f"></i></a></li>
                             <li class="list-inline-item"><a href="#" class="social-link"><i class="fa fa-twitter"></i></a></li>
-                            <li class="list-inline-item"><a href="#" class="social-link"><i class="fa fa-instagram"></i></a></li>
+                            <li class="list-inline-item"><a href="https://github.com/thesurajdas" class="social-link"><i class="fa fa-github"></i></a></li>
                             <li class="list-inline-item"><a href="#" class="social-link"><i class="fa fa-linkedin"></i></a></li>
                         </ul>
                     </div>
@@ -129,12 +129,12 @@
           
                 <!-- Team item-->
                 <div class="col-xl-4 col-sm-6 mb-5">
-                    <div class="bg-white rounded shadow-sm py-5 px-4"><img src="../img/avatar.png" alt="" width="100" class="img-fluid rounded-circle mb-3 img-thumbnail shadow-sm">
-                        <h5 class="mb-0">Tom Sunderland</h5><span class="small text-uppercase text-muted">CEO - Founder</span>
+                    <div class="bg-white rounded shadow-sm py-5 px-4"><img src="../img/kingshuk.jpg" alt="" width="200" class="img-fluid rounded-circle mb-3 img-thumbnail shadow-sm">
+                        <h5 class="mb-0">Kingshuk Chowlia</h5><span class="small text-uppercase text-muted">Project Manager</span>
                             <ul class="social mb-0 list-inline mt-3">
                             <li class="list-inline-item"><a href="#" class="social-link"><i class="fa fa-facebook-f"></i></a></li>
                             <li class="list-inline-item"><a href="#" class="social-link"><i class="fa fa-twitter"></i></a></li>
-                            <li class="list-inline-item"><a href="#" class="social-link"><i class="fa fa-instagram"></i></a></li>
+                            <li class="list-inline-item"><a href="https://github.com/kingshuk11" class="social-link"><i class="fa fa-github"></i></a></li>
                             <li class="list-inline-item"><a href="#" class="social-link"><i class="fa fa-linkedin"></i></a></li>
                         </ul>
                     </div>
