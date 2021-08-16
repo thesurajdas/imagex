@@ -38,7 +38,7 @@
                 <div class="row h-100 align-items-center py-5">
                     <div class="col-lg-6">
                         <h1 class="display-4 ">About us</h1>
-                        <p class="lead text-muted mb-0">PIXWAVE is internet source of freely usable unlimited images. PIXWAVE provides high quality and completely free stock photos licensed under the PIXWAVE license. All photos are nicely tagged, searchable and also easy to discover.</p>
+                        <p class="lead text-muted mb-0"><?php echo $row_config['site_name']; ?> is internet source of freely usable unlimited images. <?php echo $row_config['site_name']; ?> provides high quality and completely free stock photos licensed under the <?php echo $row_config['site_name']; ?> license. All photos are nicely tagged, searchable and also easy to discover.</p>
                     </div>
                     <div class="col-lg-6 d-none d-lg-block"><img src="../img/about us.svg" alt="" class="img-fluid"></div>
                 </div>
@@ -50,7 +50,7 @@
                 <div class="row align-items-center mb-5">
                     <div class="col-lg-6 order-2 order-lg-1"><i class="fad fa-images fa-2x mb-3" style="color: #00B0FF;"></i>
                         <h2 class="font-weight-light">Photos</h2>
-                        <p class="font-italic text-muted mb-4">We have free stock photos and every day new high-resolution photos will be added. All photos are hand-picked from photos uploaded by our users. Here on PIXWAVE all of our published photos and images are free to download.</p>
+                        <p class="font-italic text-muted mb-4">We have free stock photos and every day new high-resolution photos will be added. All photos are hand-picked from photos uploaded by our users. Here on <?php echo $row_config['site_name']; ?> all of our published photos and images are free to download.</p>
                     </div>
                     <div class="col-lg-5 px-5 mx-auto order-1 order-lg-2"><img src="../img/photo.svg" alt="" class="img-fluid mb-4 mb-lg-0"></div>
                 </div>
@@ -78,7 +78,7 @@
                 <div class="row align-items-center mb-5">
                     <div class="col-lg-6 order-2 order-lg-1"><i class="fad fa-handshake fa-2x mb-3" style="color: #F9A826"></i>
                         <h2 class="font-weight-light">Community</h2>
-                        <p class="font-italic text-muted mb-4">Anyone can join the PIXWAVE community. We’re the place where creators meet their audience, where individuals become a community and where anyone can become a source for creativity. If you are interested your images are welcome.</p>
+                        <p class="font-italic text-muted mb-4">Anyone can join the <?php echo $row_config['site_name']; ?> community. We’re the place where creators meet their audience, where individuals become a community and where anyone can become a source for creativity. If you are interested your images are welcome.</p>
                     </div>
                     <div class="col-lg-5 px-5 mx-auto order-1 order-lg-2"><img src="../img/community.svg" alt="" class="img-fluid mb-4 mb-lg-0"></div>
                 </div>
@@ -86,7 +86,7 @@
                     <div class="col-lg-5 px-5 mx-auto"><img src="../img/contribute.svg" alt="" class="img-fluid mb-4 mb-lg-0"></div>
                     <div class="col-lg-6"><i class="fad fa-box-heart fa-2x mb-3" style="color: #6C63FF;"></i>
                         <h2 class="font-weight-light">Contribute</h2>
-                        <p class="font-italic text-muted mb-4">All submitted photos are moderated by us and we sure all the accepted images are high quality. To support us you can sign up and upload your own pictures to the PIXWAVE community.</p><a href="#" class="btn btn-light px-5 rounded-pill shadow-sm">Join now</a>
+                        <p class="font-italic text-muted mb-4">All submitted photos are moderated by us and we sure all the accepted images are high quality. To support us you can sign up and upload your own pictures to the <?php echo $row_config['site_name']; ?> community.</p><a href="#" class="btn btn-light px-5 rounded-pill shadow-sm">Join now</a>
                     </div>
                 </div>
             </div>
@@ -97,7 +97,7 @@
                 <div class="row mb-4">
                     <div class="col-lg-5">
                         <h2 class="display-4 font-weight-light"><i class="fad fa-users" style="color: rgb(125, 145, 145);"></i> Our team</h2>
-                        <p class="font-italic text-muted">PIXWAVE is a free stock photo site created in 2021 by Akash Sarkar, Suraj Das and Kingshuk Chowlia.</p>
+                        <p class="font-italic text-muted"><?php echo $row_config['site_name']; ?> is a free stock photo site created in 2021 by Akash Sarkar, Suraj Das and Kingshuk Chowlia.</p>
                     </div>
                 </div>
           

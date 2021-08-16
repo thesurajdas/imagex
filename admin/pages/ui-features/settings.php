@@ -1,6 +1,23 @@
 <?php
     //Add database connection
     require('../../auth.php');
+//Update Settings
+if (isset($_REQUEST['site_title'])) {
+  $site_title=$_REQUEST['site_title'];
+  $site_name=$_REQUEST['site_name'];
+  $site_desc=$_REQUEST['site_desc'];
+  $sql2="UPDATE config SET site_name='$site_name', site_title='$site_title', site_desc='$site_desc' WHERE id='1';";
+  if ($connect->query($sql2)===TRUE) {
+    echo "<script>alert('Settings Update Successfully!');</script>";
+  }
+  else{
+    echo "<script>alert('Unable to change Settings!');</script>";
+  }
+}
+    //Retrive Data from database
+    $sql7="SELECT * FROM config;";
+    $result=$connect->query($sql7);
+    $row_config=$result->fetch_assoc();
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -153,21 +170,19 @@
                     <div class="card">
                         <div class="card-body">
                             <h4 class="card-title">Website Details</h4>
-                            <p class="card-description">
-                                Edit Details
-                            </p>
-                            <form class="forms-sample">
+                            <p class="card-description">Edit Details</p>
+                            <form class="forms-sample" method="POST">
                                 <div class="form-group">
                                     <label for="sitetitle">Site Name</label>
-                                    <input type="text" class="form-control" id="sitetitle" placeholder="ImageX">
+                                    <input type="text" class="form-control" name="site_title" id="" value="<?php echo $row_config['site_title']; ?>">
                                 </div>
                                 <div class="form-group">
                                     <label for="sitename">Home Page Title</label>
-                                    <input type="text" class="form-control" id="sitename" placeholder="ImageX">
+                                    <input type="text" class="form-control" name="site_name" id="" value="<?php echo $row_config['site_name']; ?>">
                                 </div>
                                 <div class="form-group">
-                                    <label for="sitedescp">Site Description</label>
-                                    <input type="text" class="form-control" id="sitedescp" placeholder="type something">
+                                    <label for="sitedescp">Site Description (HTML Supported)</label>
+                                    <input type="text" class="form-control" name="site_desc" id="" value="<?php echo $row_config['site_desc']; ?>">
                                 </div>
                                 <button type="submit" class="btn btn-primary mr-2">Save</button>
                             </form>

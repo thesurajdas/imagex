@@ -27,6 +27,10 @@
             $stats_date=$r_stats['date'];
             //Today date
             $today_date=date('Y-m-d');
+            //Retrive Settings Data
+            $sql7="SELECT * FROM config;";
+            $result=$connect->query($sql7);
+            $row_config=$result->fetch_assoc();
             //check today with stats date
             if ($today_date!=$stats_date) {
                 $sql="UPDATE stats SET date='$today_date',today_active_users=0";
@@ -50,7 +54,7 @@
 <!DOCTYPE html>
 <html lang="en">
     <head>
-        <title>Pixwave - Image Sharing System</title>
+        <title><?php echo $row_config['site_title']; ?></title>
         <!-- Favicon -->
 		<link rel="shortcut icon" href="img/icon.png" type="image/x-icon">
         <link rel="icon" href="img/icon.png" type="image/x-icon">
@@ -277,7 +281,7 @@
                                 <div class="col-12 mt-3">
                                     <h5 class="text-uppercase mb-4 font-wight-bold text-info text-dark">About</h5>
                                     <hrc class="mb-4">
-                                    <p><b>Pixwave</b> started with a vision of giving all users a place where users upload and download their pictures taken by mobile phone.
+                                    <p><?php echo $row_config['site_desc']; ?></p>
                                 </div>
                                 <div class="col-lg-8 col-md-12 col-xl-8 col-sm-12 mt-3">
                                     <div class="qll">
@@ -325,7 +329,7 @@
                         <div class="row d-flex justify-content-center">
                             <div>
                                 <p>
-                                    Copyright &copy; <span id="year"></span><script>let d = new Date(); let n = d.getFullYear(); document.getElementById("year").innerHTML = n;</script> <a style="text-decoration: none;" href="<?php echo $site_url; ?>"><strong class="text-dark" style="text-decoration: none;"> PIXWAVE </strong></a> - All rights reserved
+                                    Copyright &copy; <span id="year"></span><script>let d = new Date(); let n = d.getFullYear(); document.getElementById("year").innerHTML = n;</script> <a style="text-decoration: none;" href="<?php echo $site_url; ?>"><strong class="text-dark" style="text-decoration: none;"> <?php echo $row_config['site_name']; ?> </strong></a> - All rights reserved
                                 </p>
                             </div>
                         </div>
