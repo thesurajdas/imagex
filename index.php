@@ -139,7 +139,7 @@
                             <a class="nav-link" href="pages/users.php" tabindex="-1" aria-disabled="true" style="color: rgb(158 0 160);"><i class="fad fa-users-crown"></i> Users</a>
                         </li>
                         <li class="nav-item active">
-                            <a class="nav-link" href="map.php" tabindex="-1" aria-disabled="true" style="color: rgb(13 212 222);"><i class="fad fa-map-marked"></i> Map</a>
+                            <a class="nav-link" href="pages/map.php" tabindex="-1" aria-disabled="true" style="color: rgb(13 212 222);"><i class="fad fa-map-marked"></i> Map</a>
                         </li>    
                     </ul>
                     <form action="search.php" method="GET" class="my-2 my-lg-0">
@@ -304,7 +304,7 @@
                                             </div>
                                             <div class="col-md-3">
                                                 <p>
-                                                    <a href="pages/privacy.php" class="text-dark" style="text-decoration: none;" ><i class="fad fa-shield-check"></i> Privacy Policy</a>
+                                                    <a href="pages/privacy.php" class="text-dark" style="text-decoration: none;" ><i class="fad fa-shield-check"></i> Privacy</a>
                                                 </p>
                                             </div>
                                         </div>    

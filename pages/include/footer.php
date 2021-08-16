@@ -30,7 +30,7 @@
                                             </div>
                                             <div class="col-md-3">
                                                 <p>
-                                                    <a href="privacy.php" class="text-dark" style="text-decoration: none;" ><i class="fad fa-shield-check"></i> Privacy Policy</a>
+                                                    <a href="privacy.php" class="text-dark" style="text-decoration: none;" ><i class="fad fa-shield-check"></i> Privacy</a>
                                                 </p>
                                             </div>
                                         </div>    
