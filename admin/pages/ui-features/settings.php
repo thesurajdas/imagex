@@ -25,7 +25,7 @@ if (isset($_REQUEST['site_title'])) {
         <!-- Required meta tags -->
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-        <title>Edit Profile</title>
+        <title>Site Settings</title>
         <!-- Favicon -->
 		<link rel="shortcut icon" href="../../../img/icon.png" type="image/x-icon">
         <link rel="icon" href="../../../img/icon.png" type="image/x-icon">
