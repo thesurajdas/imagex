@@ -103,3 +103,9 @@
                 </div>
             </nav>
 </header>
+<?php
+//Retrive Settings Data
+        $sql7="SELECT * FROM config;";
+        $result=$connect->query($sql7);
+        $row_config=$result->fetch_assoc();
+?>

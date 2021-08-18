@@ -1,5 +1,9 @@
 <?php
     require_once('connect.php');
+    //Retrive Settings Data
+    $sql7="SELECT * FROM config;";
+    $result=$connect->query($sql7);
+    $row_config=$result->fetch_assoc();
     $login=0;
     //Check only non-login users and redirect them to login page.
     if(isset($_COOKIE['user_id'])){
@@ -27,10 +31,6 @@
             $stats_date=$r_stats['date'];
             //Today date
             $today_date=date('Y-m-d');
-            //Retrive Settings Data
-            $sql7="SELECT * FROM config;";
-            $result=$connect->query($sql7);
-            $row_config=$result->fetch_assoc();
             //check today with stats date
             if ($today_date!=$stats_date) {
                 $sql="UPDATE stats SET date='$today_date',today_active_users=0";
